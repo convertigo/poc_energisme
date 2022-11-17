@@ -1,0 +1,217 @@
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        /*Begin_c8o_CompImport*/
+        /*End_c8o_CompImport*/
+        /*Begin_c8o_CompDeclaration*/
+        	/*End_c8o_CompDeclaration*/
+        /*Begin_c8o_CompConstructor*/
+        		/*End_c8o_CompConstructor*/
+        /*Begin_c8o_CompInitialization*/
+        		/*End_c8o_CompInitialization*/
+        /*Begin_c8o_CompFinalization*/
+        		/*End_c8o_CompFinalization*/
+        /*Begin_c8o_CompChanges*/
+        		/*End_c8o_CompChanges*/
+        /*Begin_c8o_CompDoCheck*/
+        		/*End_c8o_CompDoCheck*/
+        /*Begin_c8o_CompAfterContentInit*/
+        		/*End_c8o_CompAfterContentInit*/
+        /*Begin_c8o_CompAfterContentChecked*/
+        		/*End_c8o_CompAfterContentChecked*/
+        /*Begin_c8o_CompAfterViewInit*/
+        		/*End_c8o_CompAfterViewInit*/
+        /*Begin_c8o_CompAfterViewChecked*/
+        		/*End_c8o_CompAfterViewChecked*/
+        /*Begin_c8o_CompFunction*/
+        	String(string) {
+        		return new String(string)
+        	}
+        	/*End_c8o_CompFunction*/
+        
+↓Grid [ngx.components.UIDynamicElement-1667815940116]: 
+  beanData: '{"ionBean":"Grid"}'
+  tagName: ion-grid
+  ↓rowHeader [ngx.components.UIDynamicElement-1667815940118]: 
+    beanData: |
+      '{
+       "ionBean": "GridRow",
+       "Height": "plain",
+       "FlexAlignement": "plain:ion-align-items-center"
+      }'
+    tagName: ion-row
+    ↓colTitle [ngx.components.UIDynamicElement-1667815940120]: 
+      beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+      tagName: ion-col
+      ↓Label [ngx.components.UIDynamicElement-1667815940122]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓Text [ngx.components.UIText-1667815940124]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.title","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓colActionButtons [ngx.components.UIDynamicElement-1667815940126]: 
+      beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+      tagName: ion-col
+      ↓GenericItem [ngx.components.UIDynamicElement-1667816245054]: 
+        beanData: '{"ionBean":"GenericItem","Lines":"plain:none"}'
+        tagName: ion-item
+        ↓ButtonSet [ngx.components.UIDynamicElement-1667816245056]: 
+          beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+          tagName: ion-buttons
+          ↓Button [ngx.components.UIDynamicElement-1667816245058]: 
+            beanData: '{"ionBean":"Button"}'
+            tagName: ion-button
+            ↓Event [ngx.components.UIControlEvent-1667816245062]: 
+            ↓Icon [ngx.components.UIDynamicElement-1667816344210]: 
+              beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+              tagName: ion-icon
+          ↓Button1 [ngx.components.UIDynamicElement-1667816245064]: 
+            beanData: '{"ionBean":"Button"}'
+            tagName: ion-button
+            ↓Event [ngx.components.UIControlEvent-1667816245068]: 
+            ↓Icon [ngx.components.UIDynamicElement-1667816357554]: 
+              beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''ellipsis-vertical''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+              tagName: ion-icon
+    ↓Style [ngx.components.UIStyle-1667818543518]: 
+      styleContent: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '	border-bottom: 1px solid #E3E3E3;
+              '
+  ↓rowDate [ngx.components.UIDynamicElement-1667816527119]: 
+    beanData: '{"ionBean":"GridRow","Height":"plain"}'
+    tagName: ion-row
+    ↓GridCol [ngx.components.UIDynamicElement-1667816527121]: 
+      beanData: '{"ionBean":"GridCol"}'
+      tagName: ion-col
+      ↓Label [ngx.components.UIDynamicElement-1667816527123]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓Icon [ngx.components.UIDynamicElement-1667816554836]: 
+          beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"''calendar''\",\"useCustom\":true}}"}'
+          tagName: ion-icon
+          ↓Style [ngx.components.UIStyle-1668517990923]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '	color: rgb(25, 97, 153)
+                    '
+        ↓Text [ngx.components.UIText-1667816527125]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.date
+  ↓Directive [ngx.components.UIControlDirective-1668518041273]: 
+    directiveExpression: '(this.pageOwner.listen([String(this.sequenceToCall)])?.total != undefined && this.pageOwner.listen([String(this.sequenceToCall)])?.total.length > 0) ? this.pageOwner.listen([String(this.sequenceToCall)])?.total : '''''
+    directiveName: If
+    ↓rowTotal [ngx.components.UIDynamicElement-1668518082493]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1668518082495]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1668518082497]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1668518082499]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Total
+      ↓GridCol1 [ngx.components.UIDynamicElement-1668518082501]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1668518082503]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1668518082505]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.total + ' MWh'
+  ↓rowChart [ngx.components.UIDynamicElement-1667816769428]: 
+    beanData: '{"ionBean":"GridRow","Height":"plain"}'
+    tagName: ion-row
+    ↓colChart [ngx.components.UIDynamicElement-1667816769430]: 
+      beanData: '{"ionBean":"GridCol"}'
+      tagName: ion-col
+      ↓Chart [ngx.components.UIDynamicElement-1667816799531]: 
+        beanData: |
+          '{
+           "ionBean": "Charts",
+           "data": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.data != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.data : {}",
+           "datasets": "plain",
+           "labels": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.labels != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.labels : []",
+           "Options": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions : {}",
+           "ChartType": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartType != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartType : ''''"
+          }'
+        tagName: canvas
+  ↓Style [ngx.components.UIStyle-1668517919878]: 
+    styleContent: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '/**
+             * Custom properties (sometimes referred to as CSS variables or cascading variables)
+             * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+             * They are set using custom property notation, e.g.: --main-color: black;
+             * and are accessed using the var() function, e.g.: color: var(--main-color);
+             * You can find below your component''s properties you can customize within the page.
+             * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+             * For more informations see https://ionicframework.com/docs/theming.
+            **/
+            //--ion-grid-padding	//Padding for the Grid
+            //--ion-grid-padding-lg	//Padding for the Grid on lg screens
+            //--ion-grid-padding-md	//Padding for the Grid on md screens
+            //--ion-grid-padding-sm	//Padding for the Grid on sm screens
+            //--ion-grid-padding-xl	//Padding for the Grid on xl screens
+            //--ion-grid-padding-xs	//Padding for the Grid on xs screens
+            //--ion-grid-width	//Width of the fixed Grid
+            //--ion-grid-width-lg	//Width of the fixed Grid on lg screens
+            //--ion-grid-width-md	//Width of the fixed Grid on md screens
+            //--ion-grid-width-sm	//Width of the fixed Grid on sm screens
+            //--ion-grid-width-xl	//Width of the fixed Grid on xl screens
+            //--ion-grid-width-xs	//Width of the fixed Grid on xs screens
+            background-color: #fff;
+            '
+↓title [ngx.components.UICompVariable-1667815971456]: 
+↓sequenceToCall [ngx.components.UICompVariable-1668519653965]: 
+↓SharedComponent_Event [ngx.components.UISharedComponentEvent-1668519671952]: 
+  ↓callSequence [ngx.components.UICustomAction-1668519697892]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		var sequenceToCall = vars.sequenceToCall;
+            		var sequenceParams = vars.sequenceParams;
+            		console.log(page)
+            		this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
+            				page.local[''response''] = resp
+            				console.log(page.local[''response''])
+            			})
+            			
+            			
+            		resolve();
+            '
+    ↓sequenceToCall [ngx.components.UIControlVariable-1668520342218]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceToCall","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓sequenceParams [ngx.components.UIControlVariable-1668612687661]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
+↓sequenceParams [ngx.components.UICompVariable-1668612583513]: 

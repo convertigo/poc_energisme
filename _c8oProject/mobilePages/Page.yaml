@@ -9,6 +9,8 @@ scriptContent:
         /*Begin_c8o_PageImport*/
         /*End_c8o_PageImport*/
         /*Begin_c8o_PageDeclaration*/
+        	public date_start = "2022-11-01";
+        	public date_end = "2022-12-01"
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
         		/*End_c8o_PageConstructor*/
@@ -60,32 +62,150 @@ title: First page
   beanData: '{"ionBean":"Content"}'
   comment: Page content
   tagName: ion-content
-↓Footer [ngx.components.UIDynamicElement-1491634242460]: 
-  beanData: '{"ionBean":"Footer"}'
-  comment: Page footer
-  tagName: ion-footer
-  ↓ToolBar [ngx.components.UIDynamicElement-1491634317538]: 
-    beanData: '{"ionBean":"ToolBar"}'
-    tagName: ion-toolbar
-    ↓ButtonSet [ngx.components.UIDynamicElement-1588170246138]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
-      tagName: ion-buttons
-      ↓Button1 [ngx.components.UIDynamicElement-1491634332730]: 
-        beanData: '{"ionBean":"Button"}'
-        tagName: ion-button
-        ↓Text [ngx.components.UIText-1491634340354]: 
-          textValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-              - MobileSmartSourceType: plain:Action 1
-    ↓ButtonSet1 [ngx.components.UIDynamicElement-1588170269871]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
-      tagName: ion-buttons
-      ↓Button2 [ngx.components.UIDynamicElement-1491634376874]: 
-        beanData: '{"ionBean":"Button"}'
-        tagName: ion-button
-        ↓Text [ngx.components.UIText-1491634383107]: 
-          textValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-              - MobileSmartSourceType: plain:Action 2
+  ↓Grid [ngx.components.UIDynamicElement-1667818587533]: 
+    beanData: '{"ionBean":"Grid"}'
+    tagName: ion-grid
+    ↓GridRow1 [ngx.components.UIDynamicElement-1668692254990]: 
+      beanData: '{"ionBean":"GridRow"}'
+      tagName: ion-row
+      ↓colCharts [ngx.components.UIDynamicElement-1668692254992]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Grid [ngx.components.UIDynamicElement-1668692318184]: 
+          beanData: '{"ionBean":"Grid"}'
+          tagName: ion-grid
+          ↓rowCharts [ngx.components.UIDynamicElement-1667818587535]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            tagName: ion-row
+            ↓GridCol [ngx.components.UIDynamicElement-1667818587537]: 
+              beanData: '{"ionBean":"GridCol","Size":"plain:3"}'
+              tagName: ion-col
+            ↓colChartMesConsommationsTotales [ngx.components.UIDynamicElement-1667818587543]: 
+              beanData: '{"ionBean":"GridCol","SizeLg":"plain:3"}'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1667818636075]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1667818636078]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'Mes consommations totales'
+                ↓sequenceToCall [ngx.components.UIUseVariable-1668519738805]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.multisite_conso_total_between'
+                ↓sequenceParams [ngx.components.UIUseVariable-1668612597894]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: |
+                          'script:{
+                          	date_start: this.date_start,
+                          	date_end: this.date_end
+                          }'
+            ↓colChartEvolutionDeMesConsommations [ngx.components.UIDynamicElement-1667818609564]: 
+              beanData: '{"ionBean":"GridCol","SizeLg":"plain:6"}'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1668681549063]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1668681558074]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Evolution de mes consommations
+                ↓sequenceToCall [ngx.components.UIUseVariable-1668681558090]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.multisite_conso_month'
+                ↓sequenceParams [ngx.components.UIUseVariable-1668681558092]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: |
+                          'script:{
+                          	date_start: ''2021-01-01'',
+                          	date_end: ''2023-01-01''
+                          }'
+          ↓rowMapsAndSitesEnergivore [ngx.components.UIDynamicElement-1668691043090]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            tagName: ion-row
+            ↓colMaps [ngx.components.UIDynamicElement-1668691043092]: 
+              beanData: |
+                '{
+                 "ionBean": "GridCol",
+                 "SizeLg": "plain:3",
+                 "SizeMd": "plain:3"
+                }'
+              tagName: ion-col
+              ↓GoogleMap [ngx.components.UIDynamicElement-1668691077158]: 
+                beanData: '{"ionBean":"GoogleMap"}'
+                tagName: agm-map
+                ↓MapCircle [ngx.components.UIDynamicElement-1668691077160]: 
+                  beanData: '{"ionBean":"MapCircle"}'
+                  tagName: agm-circle
+                ↓MapMarker [ngx.components.UIDynamicElement-1668691077162]: 
+                  beanData: '{"ionBean":"MapMarker"}'
+                  tagName: agm-marker
+            ↓colChartSiteEnergivore [ngx.components.UIDynamicElement-1668691043098]: 
+              beanData: |
+                '{
+                 "ionBean": "GridCol",
+                 "SizeLg": "plain:9",
+                 "SizeMd": "plain:9"
+                }'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1668691089715]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1668691110898]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Classement des sites les plus énergivores
+                ↓sequenceToCall [ngx.components.UIUseVariable-1668691110914]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.multisite_sites_energivore'
+                ↓sequenceParams [ngx.components.UIUseVariable-1668691110916]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: |
+                          'script:{
+                          	limit: ''20''
+                          }'
+      ↓colNotes [ngx.components.UIDynamicElement-1668692254998]: 
+        beanData: |
+          '{
+           "ionBean": "GridCol",
+           "SizeLg": "plain:2",
+           "SizeMd": "plain:2"
+          }'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1668692255000]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1668692255002]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Notes
+↓PageEvent [ngx.components.UIPageEvent-1668506810625]: 
+  viewEvent: onWillEnter
+  ↓CallSequence [ngx.components.UIDynamicAction-1668506819495]: 
+    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.multisite_conso_total_between"}'
+    isEnabled: false
+    ↓date_start [ngx.components.UIControlVariable-1668506830704]: 
+      comment: new variable
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:2022-11-01
+    ↓date_end [ngx.components.UIControlVariable-1668506830706]: 
+      comment: new variable
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:2022-12-01
