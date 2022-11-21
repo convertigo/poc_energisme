@@ -1,44 +1,44 @@
-↓Input_variables [steps.InputVariablesStep-1668683576062]: 
-↓Call_Transaction [steps.TransactionStep-1668690416848]: 
-  sourceTransaction: poc_energisme.postgreSQL.multisite_sites_energivore
-  ↓limit [variables.StepVariable-1668690452007]: 
+↓Input_variables [steps.InputVariablesStep-1669044343521]: 
+↓Call_Transaction [steps.TransactionStep-1669044343524]: 
+  sourceTransaction: poc_energisme.postgreSQL.multisite_sites_energivore_gaz
+  ↓limit [variables.StepVariable-1669044343527]: 
     description: limit
     sourceDefinition: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
         - com.twinsoft.convertigo.beans.common.XMLVector: 
           - java.lang.String: 
-            - ↑value: 1668683576062
+            - ↑value: 1669044343521
           - java.lang.String: 
             - ↑value: ./limit/text()
     value: 
-↓Element [steps.XMLElementStep-1668690577436]: 
+↓Element [steps.XMLElementStep-1669044343530]: 
   nodeName: chartType
   nodeText: bar
-↓Object [steps.JsonObjectStep-1668690631000]: 
+↓Object [steps.JsonObjectStep-1669044343533]: 
   key: 
     - xmlizable: 
       - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
       - SmartType: 
         - ↑mode: PLAIN
         - →→: data
-  ↓Array [steps.JsonArrayStep-1668690658404]: 
+  ↓Array [steps.JsonArrayStep-1669044343536]: 
     key: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
         - SmartType: 
           - ↑mode: PLAIN
           - →→: labels
-    ↓Iterator [steps.IteratorStep-1668690681918]: 
+    ↓Iterator [steps.IteratorStep-1669044343539]: 
       sourceDefinition: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
           - com.twinsoft.convertigo.beans.common.XMLVector: 
             - java.lang.String: 
-              - ↑value: 1668690416848
+              - ↑value: 1669044343524
             - java.lang.String: 
               - ↑value: ./document/sql_output/row
-      ↓Field [steps.JsonFieldStep-1668690718873]: 
+      ↓Field [steps.JsonFieldStep-1669044343542]: 
         value: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -46,41 +46,41 @@
               - ↑mode: SOURCE
               - com.twinsoft.convertigo.beans.common.XMLVector: 
                 - java.lang.String: 
-                  - ↑value: 1668690681918
+                  - ↑value: 1669044343539
                 - java.lang.String: 
                   - ↑value: ./nom/text()
-  ↓Array_1 [steps.JsonArrayStep-1668690672264]: 
+  ↓Array_1 [steps.JsonArrayStep-1669044343545]: 
     key: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
         - SmartType: 
           - ↑mode: PLAIN
           - →→: datasets
-    ↓Object [steps.JsonObjectStep-1668690777147]: 
-      ↓Field [steps.JsonFieldStep-1668690851909]: 
+    ↓Object [steps.JsonObjectStep-1669044343548]: 
+      ↓Field [steps.JsonFieldStep-1669044343551]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
               - →→: label
-      ↓Array [steps.JsonArrayStep-1668690869062]: 
+      ↓Array [steps.JsonArrayStep-1669044343554]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
               - →→: data
-        ↓Iterator [steps.IteratorStep-1668690878660]: 
+        ↓Iterator [steps.IteratorStep-1669044343557]: 
           sourceDefinition: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
               - com.twinsoft.convertigo.beans.common.XMLVector: 
                 - java.lang.String: 
-                  - ↑value: 1668690416848
+                  - ↑value: 1669044343524
                 - java.lang.String: 
                   - ↑value: ./document/sql_output/row
-          ↓Field [steps.JsonFieldStep-1668690894716]: 
+          ↓Field [steps.JsonFieldStep-1669044343560]: 
             value: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -88,10 +88,10 @@
                   - ↑mode: SOURCE
                   - com.twinsoft.convertigo.beans.common.XMLVector: 
                     - java.lang.String: 
-                      - ↑value: 1668690878660
+                      - ↑value: 1669044343557
                     - java.lang.String: 
                       - ↑value: ./avg_conso_gaz/text()
-      ↓Field_2 [steps.JsonFieldStep-1668690960808]: 
+      ↓Field_2 [steps.JsonFieldStep-1669044343563]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -103,8 +103,8 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
-              - →→: rgb(0, 68, 94)
-      ↓Field_3 [steps.JsonFieldStep-1668690975130]: 
+              - →→: rgb(250, 150, 12)
+      ↓Field_3 [steps.JsonFieldStep-1669044343566]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -116,8 +116,8 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
-              - →→: rgb(0, 68, 94)
-      ↓Field_4 [steps.JsonFieldStep-1668690975133]: 
+              - →→: rgb(250, 150, 12)
+      ↓Field_4 [steps.JsonFieldStep-1669044343569]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -129,8 +129,8 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
-              - →→: rgb(0, 68, 94)
-      ↓Field_5 [steps.JsonFieldStep-1668690975136]: 
+              - →→: rgb(250, 150, 12)
+      ↓Field_5 [steps.JsonFieldStep-1669044343572]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -142,29 +142,29 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
-              - →→: rgb(0, 68, 94)
-↓Object_1 [steps.JsonObjectStep-1668691497227]: 
+              - →→: rgb(250, 150, 12)
+↓Object_1 [steps.JsonObjectStep-1669044343575]: 
   key: 
     - xmlizable: 
       - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
       - SmartType: 
         - ↑mode: PLAIN
         - →→: chartOptions
-  ↓Object [steps.JsonObjectStep-1668691559220]: 
+  ↓Object [steps.JsonObjectStep-1669044343578]: 
     key: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
         - SmartType: 
           - ↑mode: PLAIN
           - →→: plugins
-    ↓Object [steps.JsonObjectStep-1668691559223]: 
+    ↓Object [steps.JsonObjectStep-1669044343581]: 
       key: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
           - SmartType: 
             - ↑mode: PLAIN
             - →→: legend
-      ↓Field [steps.JsonFieldStep-1668691570709]: 
+      ↓Field [steps.JsonFieldStep-1669044343584]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -177,15 +177,9 @@
             - SmartType: 
               - ↑mode: JS
               - →→: Boolean(false)
-↓limit [variables.RequestableVariable-1668683586935]: 
-↓label [variables.RequestableVariable-1669042626380]: 
+↓limit [variables.RequestableVariable-1669044343587]: 
+↓label [variables.RequestableVariable-1669044343590]: 
   description: label
-↓consoElec [core.TestCase]: 
-  ↓limit [variables.TestCaseVariable-1669042652868]: 
-    value: 20
-  ↓label [variables.TestCaseVariable-1669042652870]: 
-    description: label
-    value: conso_elec
 ↓consoGaz [core.TestCase]: 
-  ↓limit [variables.TestCaseVariable-1668690469882]: 
+  ↓limit [variables.TestCaseVariable-1669044343601]: 
     value: 20

@@ -84,31 +84,34 @@ scriptContent:
             →: |
               '	border-bottom: 1px solid #E3E3E3;
               '
-  ↓rowDate [ngx.components.UIDynamicElement-1667816527119]: 
-    beanData: '{"ionBean":"GridRow","Height":"plain"}'
-    tagName: ion-row
-    ↓GridCol [ngx.components.UIDynamicElement-1667816527121]: 
-      beanData: '{"ionBean":"GridCol"}'
-      tagName: ion-col
-      ↓Label [ngx.components.UIDynamicElement-1667816527123]: 
-        beanData: '{"ionBean":"Label"}'
-        tagName: ion-label
-        ↓Icon [ngx.components.UIDynamicElement-1667816554836]: 
-          beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"''calendar''\",\"useCustom\":true}}"}'
-          tagName: ion-icon
-          ↓Style [ngx.components.UIStyle-1668517990923]: 
-            styleContent: 
+  ↓Directive1 [ngx.components.UIControlDirective-1669045411285]: 
+    directiveExpression: this.isGoogleMap == "false"
+    directiveName: If
+    ↓rowDate [ngx.components.UIDynamicElement-1667816527119]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1667816527121]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1667816527123]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Icon [ngx.components.UIDynamicElement-1667816554836]: 
+            beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"''calendar''\",\"useCustom\":true}}"}'
+            tagName: ion-icon
+            ↓Style [ngx.components.UIStyle-1668517990923]: 
+              styleContent: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                    →: |
+                      '	color: rgb(25, 97, 153)
+                      '
+          ↓Text [ngx.components.UIText-1667816527125]: 
+            textValue: 
               - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                  →: |
-                    '	color: rgb(25, 97, 153)
-                    '
-        ↓Text [ngx.components.UIText-1667816527125]: 
-          textValue: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-              - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.date
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.date
   ↓Directive [ngx.components.UIControlDirective-1668518041273]: 
     directiveExpression: '(this.pageOwner.listen([String(this.sequenceToCall)])?.total != undefined && this.pageOwner.listen([String(this.sequenceToCall)])?.total.length > 0) ? this.pageOwner.listen([String(this.sequenceToCall)])?.total : '''''
     directiveName: If
@@ -137,23 +140,6 @@ scriptContent:
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                 - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.total + ' MWh'
-  ↓rowChart [ngx.components.UIDynamicElement-1667816769428]: 
-    beanData: '{"ionBean":"GridRow","Height":"plain"}'
-    tagName: ion-row
-    ↓colChart [ngx.components.UIDynamicElement-1667816769430]: 
-      beanData: '{"ionBean":"GridCol"}'
-      tagName: ion-col
-      ↓Chart [ngx.components.UIDynamicElement-1667816799531]: 
-        beanData: |
-          '{
-           "ionBean": "Charts",
-           "data": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.data != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.data : {}",
-           "datasets": "plain",
-           "labels": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.labels != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.labels : []",
-           "Options": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions : {}",
-           "ChartType": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartType != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartType : ''''"
-          }'
-        tagName: canvas
   ↓Style [ngx.components.UIStyle-1668517919878]: 
     styleContent: 
       - xmlizable: 
@@ -183,6 +169,62 @@ scriptContent:
             //--ion-grid-width-xs	//Width of the fixed Grid on xs screens
             background-color: #fff;
             '
+  ↓Directive2 [ngx.components.UIControlDirective-1669045451994]: 
+    directiveExpression: this.isGoogleMap == "false"
+    directiveName: If
+    ↓rowChart [ngx.components.UIDynamicElement-1667816769428]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓colChart [ngx.components.UIDynamicElement-1667816769430]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Chart [ngx.components.UIDynamicElement-1667816799531]: 
+          beanData: |
+            '{
+             "ionBean": "Charts",
+             "data": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.data != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.data : {}",
+             "datasets": "plain",
+             "labels": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.labels != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.labels : []",
+             "Options": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions : {}",
+             "ChartType": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartType != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartType : ''''"
+            }'
+          tagName: canvas
+  ↓Directive3 [ngx.components.UIControlDirective-1669045553494]: 
+    directiveExpression: this.isGoogleMap == "true"
+    directiveName: If
+    ↓rowGoogleMaps [ngx.components.UIDynamicElement-1669048244161]: 
+      beanData: '{"ionBean":"GridRow"}'
+      tagName: ion-row
+      ↓colGoogleMaps [ngx.components.UIDynamicElement-1669048244163]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓GoogleMap [ngx.components.UIDynamicElement-1669045580544]: 
+          beanData: '{"ionBean":"GoogleMap","Zoom":"script:5"}'
+          tagName: agm-map
+          ↓Directive [ngx.components.UIControlDirective-1669045679734]: 
+            directiveItemName: marker
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.markers != undefined && this.pageOwner.listen([String(this.sequenceToCall)])?.markers.length > 0) ? this.pageOwner.listen([String(this.sequenceToCall)])?.markers : [] '
+            ↓MapMarker [ngx.components.UIDynamicElement-1669045580548]: 
+              beanData: |
+                '{
+                 "ionBean": "MapMarker",
+                 "Latitude": "script:marker.latitude",
+                 "Longitude": "script:marker.longitude",
+                 "Title": "script:marker.name"
+                }'
+              tagName: agm-marker
+          ↓MapMarker1 [ngx.components.UIDynamicElement-1669047242132]: 
+            beanData: |
+              '{
+               "ionBean": "MapMarker",
+               "Latitude": "script:47.0951",
+               "Longitude": "script:2.039973"
+              }'
+            isEnabled: false
+            tagName: agm-marker
 ↓title [ngx.components.UICompVariable-1667815971456]: 
 ↓sequenceToCall [ngx.components.UICompVariable-1668519653965]: 
 ↓SharedComponent_Event [ngx.components.UISharedComponentEvent-1668519671952]: 
@@ -215,3 +257,4 @@ scriptContent:
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓sequenceParams [ngx.components.UICompVariable-1668612583513]: 
+↓isGoogleMap [ngx.components.UICompVariable-1669045379585]: 

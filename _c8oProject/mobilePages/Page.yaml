@@ -104,6 +104,11 @@ title: First page
                           	date_start: this.date_start,
                           	date_end: this.date_end
                           }'
+                ↓isGoogleMap [ngx.components.UIUseVariable-1669045508433]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
             ↓colChartEvolutionDeMesConsommations [ngx.components.UIDynamicElement-1667818609564]: 
               beanData: '{"ionBean":"GridCol","SizeLg":"plain:6"}'
               tagName: ion-col
@@ -128,6 +133,11 @@ title: First page
                           	date_start: ''2021-01-01'',
                           	date_end: ''2023-01-01''
                           }'
+                ↓isGoogleMap [ngx.components.UIUseVariable-1669045505787]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
           ↓rowMapsAndSitesEnergivore [ngx.components.UIDynamicElement-1668691043090]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -141,13 +151,40 @@ title: First page
               tagName: ion-col
               ↓GoogleMap [ngx.components.UIDynamicElement-1668691077158]: 
                 beanData: '{"ionBean":"GoogleMap"}'
+                isEnabled: false
                 tagName: agm-map
                 ↓MapCircle [ngx.components.UIDynamicElement-1668691077160]: 
                   beanData: '{"ionBean":"MapCircle"}'
+                  isEnabled: false
                   tagName: agm-circle
                 ↓MapMarker [ngx.components.UIDynamicElement-1668691077162]: 
                   beanData: '{"ionBean":"MapMarker"}'
                   tagName: agm-marker
+              ↓UseSharedComponent [ngx.components.UIUseShared-1669045595835]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1669045607704]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'Mes sites'
+                ↓sequenceToCall [ngx.components.UIUseVariable-1669045607706]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.multisite_maps'
+                ↓sequenceParams [ngx.components.UIUseVariable-1669045607708]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: |
+                          'script:{
+                          	limit: ''20''
+                          }'
+                ↓isGoogleMap [ngx.components.UIUseVariable-1669045607710]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
             ↓colChartSiteEnergivore [ngx.components.UIDynamicElement-1668691043098]: 
               beanData: |
                 '{
@@ -176,6 +213,73 @@ title: First page
                           'script:{
                           	limit: ''20''
                           }'
+                ↓isGoogleMap [ngx.components.UIUseVariable-1669045497660]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+          ↓rowSitesLesPlusConsoDelec [ngx.components.UIDynamicElement-1669042791602]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            tagName: ion-row
+            ↓GridCol [ngx.components.UIDynamicElement-1669042791604]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1669042815761]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1669042830397]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Sites les plus consommateurs d'électricité
+                ↓sequenceToCall [ngx.components.UIUseVariable-1669042830399]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.multisite_sites_energivore_elec'
+                ↓sequenceParams [ngx.components.UIUseVariable-1669042830401]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: |
+                          'script:{
+                          	limit: ''20''
+                          }'
+                ↓isGoogleMap [ngx.components.UIUseVariable-1669045481698]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+          ↓rowSitesLesPlusConsoDeGaz [ngx.components.UIDynamicElement-1669044469823]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            tagName: ion-row
+            ↓GridCol [ngx.components.UIDynamicElement-1669044469826]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1669044469829]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1669044469832]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Sites les plus consommateurs de gaz naturel
+                ↓sequenceToCall [ngx.components.UIUseVariable-1669044469835]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.multisite_sites_energivore_gaz'
+                ↓sequenceParams [ngx.components.UIUseVariable-1669044469838]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: |
+                          'script:{
+                          	limit: ''20''
+                          }'
+                ↓isGoogleMap [ngx.components.UIUseVariable-1669045472319]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
       ↓colNotes [ngx.components.UIDynamicElement-1668692254998]: 
         beanData: |
           '{

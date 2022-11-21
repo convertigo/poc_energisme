@@ -2,12 +2,15 @@
 ↓poc_energisme [core.Project]: 
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
-  version: 0.1.2
+  version: 0.1.3
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓multisite_conso_month [sequences.GenericSequence]: 🗏 sequences/multisite_conso_month.yaml
   ↓multisite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/multisite_conso_total_between.yaml
+  ↓multisite_maps [sequences.GenericSequence]: 🗏 sequences/multisite_maps.yaml
   ↓multisite_sites_energivore [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore.yaml
+  ↓multisite_sites_energivore_elec [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_elec.yaml
+  ↓multisite_sites_energivore_gaz [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_gaz.yaml
   ↓Project_reference [references.ProjectSchemaReference]: 
     comment: ngx builder template
     projectName: mobilebuilder_tpl_8_1_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_1_0_ngx.zip
