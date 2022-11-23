@@ -18,7 +18,7 @@ scriptContent:
         	/*End_c8o_PageFunction*/
         
 segment: path-to-xfirst
-title: First page
+title: Multisite
 ↓Header [ngx.components.UIDynamicElement-1491634212350]: 
   beanData: '{"ionBean":"Header"}'
   comment: Page header
@@ -69,7 +69,12 @@ title: First page
       beanData: '{"ionBean":"GridRow"}'
       tagName: ion-row
       ↓colCharts [ngx.components.UIDynamicElement-1668692254992]: 
-        beanData: '{"ionBean":"GridCol"}'
+        beanData: |
+          '{
+           "ionBean": "GridCol",
+           "SizeLg": "plain:10",
+           "SizeMd": "plain:10"
+          }'
         tagName: ion-col
         ↓Grid [ngx.components.UIDynamicElement-1668692318184]: 
           beanData: '{"ionBean":"Grid"}'
@@ -296,20 +301,3 @@ title: First page
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                 - MobileSmartSourceType: plain:Notes
-↓PageEvent [ngx.components.UIPageEvent-1668506810625]: 
-  viewEvent: onWillEnter
-  ↓CallSequence [ngx.components.UIDynamicAction-1668506819495]: 
-    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.multisite_conso_total_between"}'
-    isEnabled: false
-    ↓date_start [ngx.components.UIControlVariable-1668506830704]: 
-      comment: new variable
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: plain:2022-11-01
-    ↓date_end [ngx.components.UIControlVariable-1668506830706]: 
-      comment: new variable
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: plain:2022-12-01

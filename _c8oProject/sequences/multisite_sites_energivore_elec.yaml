@@ -1,3 +1,4 @@
+responseExpiryDate: daily,23:00:00
 ↓Input_variables [steps.InputVariablesStep-1669043858339]: 
 ↓Call_Transaction [steps.TransactionStep-1669043858342]: 
   sourceTransaction: poc_energisme.postgreSQL.multisite_sites_energivore_elec
@@ -38,7 +39,71 @@
               - ↑value: 1669043858342
             - java.lang.String: 
               - ↑value: ./document/sql_output/row
+      ↓jSimpleSource [steps.SimpleSourceStep-1669198400495]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1669043858360
+              - java.lang.String: 
+                - ↑value: ./nom/text()
+        variableName: currentLabel
+      ↓jIf [steps.IfStep-1669198435335]: 
+        condition: currentLabel.length > 15
+        ↓Split [steps.XMLSplitStep-1669198497029]: 
+          output: false
+          regexp:  
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1669043858360
+                - java.lang.String: 
+                  - ↑value: ./nom/text()
+        ↓Iterator [steps.IteratorStep-1669198738360]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1669198497029
+                - java.lang.String: 
+                  - ↑value: .
+          ↓Array [steps.JsonArrayStep-1669198694452]: 
+            ↓Iterator [steps.IteratorStep-1669198925987]: 
+              sourceDefinition: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                  - com.twinsoft.convertigo.beans.common.XMLVector: 
+                    - java.lang.String: 
+                      - ↑value: 1669198738360
+                    - java.lang.String: 
+                      - ↑value: ./split
+              ↓Field [steps.JsonFieldStep-1669198699712]: 
+                value: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: SOURCE
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1669198925987
+                        - java.lang.String: 
+                          - ↑value: ./text()
+          ↓Copy [steps.XMLCopyStep-1669198840746]: 
+            isEnabled: false
+            sourceDefinition: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1669198738360
+                  - java.lang.String: 
+                    - ↑value: ./split/text()
       ↓Field [steps.JsonFieldStep-1669043858363]: 
+        isEnabled: false
         value: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -171,12 +236,76 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: display
+        type: bool
         value: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
-              - ↑mode: JS
-              - →→: Boolean(false)
+              - ↑mode: PLAIN
+              - →→: false
+  ↓Object_1 [steps.JsonObjectStep-1669199151732]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: scales
+    ↓Array [steps.JsonObjectStep-1669199330613]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: x
+      ↓Object [steps.JsonObjectStep-1669199185344]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: ticks
+        ↓Field [steps.JsonFieldStep-1669199198616]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: autoSkip
+          type: bool
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: false
+        ↓Field_1 [steps.JsonFieldStep-1669199238381]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: maxRotation
+          type: number
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: 0
+        ↓Field_2 [steps.JsonFieldStep-1669199257607]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: minRotation
+          type: number
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: 0
 ↓limit [variables.RequestableVariable-1669043858408]: 
 ↓label [variables.RequestableVariable-1669043858411]: 
   description: label

@@ -5,6 +5,8 @@
   version: 0.1.3
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
+  ↓monosite_conso_month [sequences.GenericSequence]: 🗏 sequences/monosite_conso_month.yaml
+  ↓monosite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/monosite_conso_total_between.yaml
   ↓multisite_conso_month [sequences.GenericSequence]: 🗏 sequences/multisite_conso_month.yaml
   ↓multisite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/multisite_conso_total_between.yaml
   ↓multisite_maps [sequences.GenericSequence]: 🗏 sequences/multisite_maps.yaml

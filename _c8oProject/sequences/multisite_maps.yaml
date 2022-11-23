@@ -1,3 +1,4 @@
+responseExpiryDate: daily,23:00:00
 ↓Input_variables [steps.InputVariablesStep-1669045100946]: 
 ↓Call_Transaction [steps.TransactionStep-1669045073603]: 
   sourceTransaction: poc_energisme.postgreSQL.multisite_sites_energivore

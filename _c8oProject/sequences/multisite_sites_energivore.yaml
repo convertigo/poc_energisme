@@ -1,3 +1,4 @@
+responseExpiryDate: daily,23:00:00
 ↓Input_variables [steps.InputVariablesStep-1668683576062]: 
 ↓Call_Transaction [steps.TransactionStep-1668690416848]: 
   sourceTransaction: poc_energisme.postgreSQL.multisite_sites_energivore
@@ -171,12 +172,13 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: display
+        type: bool
         value: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
-              - ↑mode: JS
-              - →→: Boolean(false)
+              - ↑mode: PLAIN
+              - →→: false
 ↓limit [variables.RequestableVariable-1668683586935]: 
 ↓label [variables.RequestableVariable-1669042626380]: 
   description: label

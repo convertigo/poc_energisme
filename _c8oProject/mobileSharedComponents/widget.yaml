@@ -85,7 +85,7 @@ scriptContent:
               '	border-bottom: 1px solid #E3E3E3;
               '
   ↓Directive1 [ngx.components.UIControlDirective-1669045411285]: 
-    directiveExpression: this.isGoogleMap == "false"
+    directiveExpression: this.isGoogleMap == "false" && this.pageOwner.listen([String(this.sequenceToCall)])?.total != undefined && this.pageOwner.listen([String(this.sequenceToCall)])?.date != undefined
     directiveName: If
     ↓rowDate [ngx.components.UIDynamicElement-1667816527119]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
@@ -216,15 +216,11 @@ scriptContent:
                  "Title": "script:marker.name"
                 }'
               tagName: agm-marker
-          ↓MapMarker1 [ngx.components.UIDynamicElement-1669047242132]: 
-            beanData: |
-              '{
-               "ionBean": "MapMarker",
-               "Latitude": "script:47.0951",
-               "Longitude": "script:2.039973"
-              }'
-            isEnabled: false
-            tagName: agm-marker
+              ↓Fragment [ngx.components.UICustom-1669197702998]: 
+                htmlTemplate: |
+                  <agm-info-window [disableAutoPan]="true">
+                    <p><strong>{{ marker.name }}</strong></p>
+                  </agm-info-window>
 ↓title [ngx.components.UICompVariable-1667815971456]: 
 ↓sequenceToCall [ngx.components.UICompVariable-1668519653965]: 
 ↓SharedComponent_Event [ngx.components.UISharedComponentEvent-1668519671952]: 
