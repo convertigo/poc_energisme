@@ -264,6 +264,34 @@ responseExpiryDate: daily,23:00:00
             - SmartType: 
               - ↑mode: PLAIN
               - →→: start
+  ↓Field [steps.JsonFieldStep-1669287700678]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: maintainAspectRatio
+    type: bool
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: false
+  ↓responsive [steps.JsonFieldStep-1669287987570]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: responsive
+    type: bool
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: true
 ↓jSimpleSource [steps.SimpleSourceStep-1669196168275]: 
   sourceDefinition: 
     - xmlizable: 

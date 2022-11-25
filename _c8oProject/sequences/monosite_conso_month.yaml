@@ -593,6 +593,42 @@ responseExpiryDate: daily,23:00:00
             - SmartType: 
               - ↑mode: PLAIN
               - →→: rgb(254, 169, 62)
+↓Object [steps.JsonObjectStep-1669294943909]: 
+  isEnabled: false
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: chartOptions
+  ↓Field [steps.JsonFieldStep-1669294952196]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: maintainAspectRatio
+    type: bool
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: false
+  ↓responsive [steps.JsonFieldStep-1669294952199]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: responsive
+    type: bool
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: true
 ↓site_id [variables.RequestableVariable-1669193163040]: 
   description: site_id
 ↓date_start [variables.RequestableVariable-1669193163042]: 

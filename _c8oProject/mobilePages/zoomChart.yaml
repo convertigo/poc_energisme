@@ -1,0 +1,71 @@
+inAutoMenu: false
+preloadPriority: off
+segment: path-to-zoomchart
+title: Title for zoomChart
+↓Content [ngx.components.UIDynamicElement-1669286297368]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓Style [ngx.components.UIStyle-1669369468951]: 
+    styleContent: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '/**
+             * Custom properties (sometimes referred to as CSS variables or cascading variables)
+             * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+             * They are set using custom property notation, e.g.: --main-color: black;
+             * and are accessed using the var() function, e.g.: color: var(--main-color);
+             * You can find below your component''s properties you can customize within the page.
+             * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+             * For more informations see https://ionicframework.com/docs/theming.
+            **/
+            //--background	//Background of the content
+            //--color	//Color of the content
+            //--keyboard-offset	//Keyboard offset of the content
+            //--offset-bottom	//Offset bottom of the content
+            //--offset-top	//Offset top of the content
+            //--padding-bottom	//Bottom padding of the content
+            //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the content
+            //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the content
+            //--padding-top	//Top padding of the content
+            
+            --padding: unset !important;
+            '
+  ↓UseSharedComponent [ngx.components.UIUseShared-1669286304977]: 
+    sharedcomponent: poc_energisme.Application.NgxApp.widget
+    ↓title [ngx.components.UIUseVariable-1669286318616]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.title != undefined) ? this.navParams.data.title : '''''
+    ↓sequenceToCall [ngx.components.UIUseVariable-1669286318618]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.sequenceToCall != undefined) ? this.navParams.data.sequenceToCall : '''''
+    ↓sequenceParams [ngx.components.UIUseVariable-1669286318620]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.sequenceParams != undefined) ? this.navParams.data.sequenceParams : '''''
+    ↓isGoogleMap [ngx.components.UIUseVariable-1669286318622]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.isGoogleMap != undefined) ? this.navParams.data.isGoogleMap : '''''
+    ↓isGauge [ngx.components.UIUseVariable-1669286318624]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.isGauge != undefined) ? this.navParams.data.isGauge : '''''
+    ↓isInModal [ngx.components.UIUseVariable-1669297753446]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.isInModal != undefined) ? this.navParams.data.isInModal : '''''
+    ↓isHeatmap [ngx.components.UIUseVariable-1669391420586]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.isHeatmap != undefined) ? this.navParams.data.isHeatmap : '''''

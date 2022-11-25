@@ -65,8 +65,11 @@ componentScriptContent:
 tplProjectName: mobilebuilder_tpl_8_1_0_ngx
 ↓Menu [ngx.components.UIDynamicMenu-1500890597895]: 🗏 mobileMenus/Menu.yaml
 ↓widget [ngx.components.UISharedRegularComponent-1667815060213]: 🗏 mobileSharedComponents/widget.yaml
+↓gauge_chart [ngx.components.UISharedRegularComponent-1669283868833]: 🗏 mobileSharedComponents/gauge_chart.yaml
+↓heatmap [ngx.components.UISharedRegularComponent-1669388832446]: 🗏 mobileSharedComponents/heatmap.yaml
 ↓Multisite [ngx.components.PageComponent-1500538678074]: 🗏 mobilePages/Multisite.yaml
 ↓Monosite [ngx.components.PageComponent-1669196356243]: 🗏 mobilePages/Monosite.yaml
+↓zoomChart [ngx.components.PageComponent-1669286135548]: 🗏 mobilePages/zoomChart.yaml
 ↓Style [ngx.components.UIStyle-1491635462437]: 
   comment: You can add some global application styles here
   styleContent: 
@@ -452,3 +455,17 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           /** Ionic CSS Variables **/
           
           
+↓modal50 [ngx.components.UIStyle-1669286641345]: 
+  styleContent: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+        →: |
+          'ion-modal.modal50 {
+          	  align-items: center;
+            justify-content: center;
+            --min-height: 80%; 
+            --min-width: 50%;
+            --max-height: 80%; 
+            --max-width: 50%;
+          }'

@@ -1,0 +1,107 @@
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        /*Begin_c8o_CompImport*/
+        /*End_c8o_CompImport*/
+        /*Begin_c8o_CompDeclaration*/
+        	/*End_c8o_CompDeclaration*/
+        /*Begin_c8o_CompConstructor*/
+        		/*End_c8o_CompConstructor*/
+        /*Begin_c8o_CompInitialization*/
+        		/*End_c8o_CompInitialization*/
+        /*Begin_c8o_CompFinalization*/
+        		/*End_c8o_CompFinalization*/
+        /*Begin_c8o_CompChanges*/
+        		/*End_c8o_CompChanges*/
+        /*Begin_c8o_CompDoCheck*/
+        		/*End_c8o_CompDoCheck*/
+        /*Begin_c8o_CompAfterContentInit*/
+        		/*End_c8o_CompAfterContentInit*/
+        /*Begin_c8o_CompAfterContentChecked*/
+        		/*End_c8o_CompAfterContentChecked*/
+        /*Begin_c8o_CompAfterViewInit*/
+        		/*End_c8o_CompAfterViewInit*/
+        /*Begin_c8o_CompAfterViewChecked*/
+        		/*End_c8o_CompAfterViewChecked*/
+        /*Begin_c8o_CompFunction*/
+        	/*End_c8o_CompFunction*/
+        
+↓SharedComponent_Event [ngx.components.UISharedComponentEvent-1669283868865]: 
+  ↓importAngularGaugeChart [ngx.components.UICustomAction-1669283868868]: 
+    module_ng_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: GaugeChartModule
+    module_ts_imports: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: GaugeChartModule
+              - java.lang.String: 
+                - ↑value: angular-gauge-chart
+    package_dependencies: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: angular-gauge-chart
+              - java.lang.String: 
+                - ↑value: 0.7.2
+↓Tag [ngx.components.UIElement-1669283868871]: 
+  tagName: rg-gauge-chart
+  ↓Attr [ngx.components.UIAttribute-1669283868874]: 
+    attrName: '[canvasWidth]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.canvasWidth","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr1 [ngx.components.UIAttribute-1669283868877]: 
+    attrName: '[needleValue]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.needleValue","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr2 [ngx.components.UIAttribute-1669283868880]: 
+    attrName: '[centralLabel]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.centralLabel","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr3 [ngx.components.UIAttribute-1669283868883]: 
+    attrName: '[options]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.options","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr4 [ngx.components.UIAttribute-1669283868886]: 
+    attrName: '[name]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.name","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓Attr5 [ngx.components.UIAttribute-1669283868889]: 
+    attrName: '[bottomLabel]'
+    attrValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.bottomLabel","prefix":"","suffix":"","custom":"","useCustom":false}}
+↓canvasWidth [ngx.components.UICompVariable-1669283868892]: 
+↓needleValue [ngx.components.UICompVariable-1669283868895]: 
+↓centralLabel [ngx.components.UICompVariable-1669283868898]: 
+↓options [ngx.components.UICompVariable-1669283868901]: 
+↓name [ngx.components.UICompVariable-1669283868904]: 
+↓bottomLabel [ngx.components.UICompVariable-1669283868907]: 

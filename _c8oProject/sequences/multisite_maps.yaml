@@ -107,6 +107,23 @@ responseExpiryDate: daily,23:00:00
       ↓jElement1 [steps.ElementStep-1669047043583]: 
         expression: long
         nodeName: longitude
+      ↓Field_3 [steps.JsonFieldStep-1669385569865]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: site_id
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1669045143877
+                - java.lang.String: 
+                  - ↑value: ./site_id/text()
 ↓limit [variables.RequestableVariable-1669045089746]: 
   description: limit
 ↓Test_Case [core.TestCase]: 

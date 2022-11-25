@@ -51,12 +51,20 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_row_site_idType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute default="string" name="type" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
     <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_rowType">
         <xsd:sequence>
             <xsd:element minOccurs="0" name="avg_conso_gaz" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_avg_conso_gazType"/>
             <xsd:element minOccurs="0" name="nom" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_nomType"/>
             <xsd:element minOccurs="0" name="latitude" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_latitudeType"/>
             <xsd:element minOccurs="0" name="longitude" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_longitudeType"/>
+            <xsd:element minOccurs="0" name="site_id" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_site_idType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>

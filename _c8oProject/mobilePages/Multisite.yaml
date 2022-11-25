@@ -1,5 +1,7 @@
 ↑isRoot: true
 comment: My First Page as root page
+icon: bar-chart
+iconPosition: start
 preloadPriority: high
 scriptContent: 
   - xmlizable: 
@@ -42,7 +44,7 @@ title: Multisite
         textValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:Page
+            - MobileSmartSourceType: plain:Multisite
     ↓ButtonSet2 [ngx.components.UIDynamicElement-1588170811054]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
       tagName: ion-buttons
@@ -82,9 +84,46 @@ title: Multisite
           ↓rowCharts [ngx.components.UIDynamicElement-1667818587535]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
-            ↓GridCol [ngx.components.UIDynamicElement-1667818587537]: 
+            ↓colMesEconomiesDenergies [ngx.components.UIDynamicElement-1667818587537]: 
               beanData: '{"ionBean":"GridCol","Size":"plain:3"}'
               tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1669284214451]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1669284224399]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Mes économies d'énergies
+                ↓sequenceToCall [ngx.components.UIUseVariable-1669284224401]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓sequenceParams [ngx.components.UIUseVariable-1669284224403]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓isGoogleMap [ngx.components.UIUseVariable-1669284224405]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1669284224407]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
+                ↓isInModal [ngx.components.UIUseVariable-1669295933914]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1669391093638]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
             ↓colChartMesConsommationsTotales [ngx.components.UIDynamicElement-1667818587543]: 
               beanData: '{"ionBean":"GridCol","SizeLg":"plain:3"}'
               tagName: ion-col
@@ -114,6 +153,21 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1669284620711]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1669295942992]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1669391099741]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
             ↓colChartEvolutionDeMesConsommations [ngx.components.UIDynamicElement-1667818609564]: 
               beanData: '{"ionBean":"GridCol","SizeLg":"plain:6"}'
               tagName: ion-col
@@ -139,6 +193,21 @@ title: Multisite
                           	date_end: ''2023-01-01''
                           }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045505787]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1669284672797]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1669295951608]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1669391111006]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
@@ -190,6 +259,21 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'true'
+                ↓isGauge [ngx.components.UIUseVariable-1669284685133]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1669295961718]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1669391120690]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
             ↓colChartSiteEnergivore [ngx.components.UIDynamicElement-1668691043098]: 
               beanData: |
                 '{
@@ -219,6 +303,21 @@ title: Multisite
                           	limit: ''20''
                           }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045497660]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1669284692254]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1669295969984]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1669391132623]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
@@ -254,6 +353,21 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1669284698712]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1669295979161]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1669391144300]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
           ↓rowSitesLesPlusConsoDeGaz [ngx.components.UIDynamicElement-1669044469823]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -281,6 +395,21 @@ title: Multisite
                           	limit: ''20''
                           }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045472319]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1669284706700]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1669295993017]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1669391150568]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
