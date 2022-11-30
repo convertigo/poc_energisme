@@ -1,4 +1,3 @@
-↑isRoot: true
 comment: My First Page as root page
 icon: bar-chart
 iconPosition: start
@@ -21,45 +20,13 @@ scriptContent:
         
 segment: path-to-xfirst
 title: Multisite
-↓Header [ngx.components.UIDynamicElement-1491634212350]: 
-  beanData: '{"ionBean":"Header"}'
-  comment: Page header
-  tagName: ion-header
-  ↓ToolBar [ngx.components.UIDynamicElement-1491634231108]: 
-    beanData: '{"ionBean":"ToolBar"}'
-    tagName: ion-toolbar
-    ↓ButtonSet1 [ngx.components.UIDynamicElement-1588171103814]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
-      tagName: ion-buttons
-      ↓BackButton [ngx.components.UIDynamicElement-1643993281257]: 
-        beanData: '{"ionBean":"BackButton"}'
-        tagName: ion-back-button
-      ↓MenuButton [ngx.components.UIDynamicElement-1588172846908]: 
-        beanData: '{"ionBean":"MenuButton"}'
-        tagName: ion-menu-button
-    ↓BarTitle [ngx.components.UIDynamicElement-1491634265317]: 
-      beanData: '{"ionBean":"BarTitle"}'
-      tagName: ion-title
-      ↓Text [ngx.components.UIText-1491634275121]: 
-        textValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:Multisite
-    ↓ButtonSet2 [ngx.components.UIDynamicElement-1588170811054]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
-      tagName: ion-buttons
-      ↓Button [ngx.components.UIDynamicElement-1588170817806]: 
-        beanData: '{"ionBean":"Button"}'
-        tagName: ion-button
-        ↓Icon [ngx.components.UIDynamicElement-1588170831166]: 
-          beanData: |
-            '{
-             "ionBean": "Icon",
-             "IconName": "plain:ellipsis-vertical",
-             "IconMdName": "plain",
-             "IconIosName": "plain"
-            }'
-          tagName: ion-icon
+↓UseSharedComponent [ngx.components.UIUseShared-1669821788815]: 
+  sharedcomponent: poc_energisme.Application.NgxApp.header
+  ↓username [ngx.components.UIUseVariable-1669821844264]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓Content [ngx.components.UIDynamicElement-1489674805352]: 
   beanData: '{"ionBean":"Content"}'
   comment: Page content

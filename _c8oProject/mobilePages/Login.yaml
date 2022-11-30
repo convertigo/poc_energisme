@@ -1,0 +1,120 @@
+↑isRoot: true
+inAutoMenu: false
+segment: path-to-login
+title: Title for Login
+↓PageEvent [ngx.components.UIPageEvent-1669741316045]: 
+↓Content [ngx.components.UIDynamicElement-1669819334516]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓Grid [ngx.components.UIDynamicElement-1669819342476]: 
+    beanData: '{"ionBean":"Grid"}'
+    tagName: ion-grid
+    ↓GridRow [ngx.components.UIDynamicElement-1669819342478]: 
+      beanData: |
+        '{
+         "ionBean": "GridRow",
+         "FlexJustifyContent": "plain:ion-justify-content-center",
+         "FlexAlignement": "plain:ion-align-items-center"
+        }'
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1669819342480]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+      ↓GridCol1 [ngx.components.UIDynamicElement-1669819342486]: 
+        beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+        tagName: ion-col
+        ↓CardContainer [ngx.components.UIDynamicElement-1669819616546]: 
+          beanData: '{"ionBean":"Card"}'
+          tagName: ion-card
+          ↓LazyImage [ngx.components.UIDynamicElement-1669819616548]: 
+            beanData: '{"ionBean":"LazyImage","Src":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/logo-energisme.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+            tagName: ion-img
+          ↓CardHeader [ngx.components.UIDynamicElement-1669819616550]: 
+            beanData: '{"ionBean":"CardHeader"}'
+            tagName: ion-card-header
+            ↓CardTitle [ngx.components.UIDynamicElement-1669819616552]: 
+              beanData: '{"ionBean":"CardTitle"}'
+              tagName: ion-card-title
+              ↓TextItem [ngx.components.UIDynamicElement-1669819616554]: 
+                beanData: '{"ionBean":"TextItem"}'
+                tagName: ion-text
+                ↓Text [ngx.components.UIText-1669819616556]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Connexion avec Active Directory
+          ↓CardContent [ngx.components.UIDynamicElement-1669819616564]: 
+            beanData: '{"ionBean":"CardContent"}'
+            tagName: ion-card-content
+            ↓Button [ngx.components.UIDynamicElement-1669818578024]: 
+              beanData: '{"ionBean":"Button"}'
+              tagName: ion-button
+              ↓Label [ngx.components.UIDynamicElement-1669818578026]: 
+                beanData: '{"ionBean":"Label"}'
+                tagName: ion-label
+                ↓Text [ngx.components.UIText-1669818578028]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Connexion
+              ↓Event [ngx.components.UIControlEvent-1669818578030]: 
+                ↓CallSequence [ngx.components.UIDynamicAction-1669741325742]: 
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_OAuth.GetOAuthCredentials"}'
+                  ↓OAuthAzure [ngx.components.UIDynamicAction-1669741374931]: 
+                    beanData: |
+                      '{
+                       "ionBean": "OAuthLoginAction",
+                       "clientid": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.GetOAuthCredentials\",\"marker\":\"\"}],\"path\":\"?.AzureAdClientID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                       "tenantid": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.GetOAuthCredentials\",\"marker\":\"\"}],\"path\":\"?.AzureAdTenantID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                       "callbackurl": "plain:https:\/\/c8ocloud.convertigo.net\/convertigo\/projects\/lib_OAuth\/getToken.html"
+                      }'
+                    ↓If [ngx.components.UIDynamicAction-1669821882104]: 
+                      beanData: '{"ionBean":"IfAction","condition":"script:parent.out.login == \"ok\""}'
+                      ↓SetGlobal [ngx.components.UIDynamicAction-1669821916931]: 
+                        beanData: |
+                          '{
+                           "ionBean": "SetGlobalAction",
+                           "Property": "plain:username",
+                           "Value": "script:stack[''OAuthAzure''].out.object.displayName"
+                          }'
+                        ↓RootPage [ngx.components.UIDynamicAction-1669818433137]: 
+                          beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                    ↓CustomAction [ngx.components.UICustomAction-1669818136577]: 
+                      actionValue: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                            →: |
+                              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                              		console.log(vars.data)
+                              		resolve();
+                              '
+                      isEnabled: false
+                      ↓data [ngx.components.UIControlVariable-1669818149554]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:parent.out
+          ↓Style [ngx.components.UIStyle-1669821719329]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '/**
+                     * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                     * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                     * They are set using custom property notation, e.g.: --main-color: black;
+                     * and are accessed using the var() function, e.g.: color: var(--main-color);
+                     * You can find below your component''s properties you can customize within the page.
+                     * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                     * For more informations see https://ionicframework.com/docs/theming.
+                    **/
+                    //--background	//Background of the card
+                    //--color	//Color of the card
+                    
+                    text-align: center;
+                    '
+      ↓GridCol2 [ngx.components.UIDynamicElement-1669819348346]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col

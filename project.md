@@ -3,6 +3,15 @@
 
 Convertigo NGX builder Project
 
+<details><summary><span style="color:DarkGoldenRod"><i>References</i></span></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_OAuth
+
+
+see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
+</p></blockquote></details>
+
 <details><summary><span style="color:DarkGoldenRod"><i>Connectors</i></span></summary><blockquote><p>
 
 
@@ -311,6 +320,14 @@ does nothing
 
 <details><summary><span style="color:DarkGoldenRod"><i>Sequences</i></span></summary><blockquote><p>
 
+
+<details><summary><b>getCurrentUser</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") getCurrentUser
+
+
+</p></blockquote></details>
 
 <details><summary><b>heatmap_sample</b></summary><blockquote><p>
 
@@ -643,6 +660,14 @@ Describes the mobile application global properties
 <details><summary><span style="color:DarkGoldenRod"><i>Pages</i></span></summary><blockquote><p>
 
 
+<details><summary><b>Login</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Login
+
+
+</p></blockquote></details>
+
 <details><summary><b>Monosite</b></summary><blockquote><p>
 
 
@@ -732,6 +757,36 @@ comment
 <tr>
 <td>
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;options
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
+
+<details><summary><b>header</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uisharedcomponent_16x16.png?raw=true "UISharedRegularComponent") header
+
+
+
+<span style="color:DarkGoldenRod">Variables</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;username
 </td>
 <td>
 

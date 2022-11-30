@@ -920,14 +920,15 @@ scriptContent:
             '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
             		var sequenceToCall = vars.sequenceToCall;
             		var sequenceParams = vars.sequenceParams;
-            		console.log("thiiis")
-            		console.log(this)
-            		this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
-            				page.local[''response''] = resp
-            			})
-            			
-            			
-            		resolve();
+            
+            		if(sequenceToCall != undefined && sequenceToCall.length > 0) {
+            					this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
+            						page.local[''response''] = resp
+            					})
+            			resolve();
+            		} else {
+            			resolve();
+            		}
             '
     ↓sequenceToCall [ngx.components.UIControlVariable-1668520342218]: 
       varValue: 

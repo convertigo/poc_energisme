@@ -1,45 +1,6 @@
 inAutoMenu: false
 segment: path-to-monosite
 title: Monosite
-↓Header [ngx.components.UIDynamicElement-1669196397640]: 
-  beanData: '{"ionBean":"Header"}'
-  comment: Page header
-  tagName: ion-header
-  ↓ToolBar [ngx.components.UIDynamicElement-1669196397643]: 
-    beanData: '{"ionBean":"ToolBar"}'
-    tagName: ion-toolbar
-    ↓ButtonSet1 [ngx.components.UIDynamicElement-1669196397646]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
-      tagName: ion-buttons
-      ↓BackButton [ngx.components.UIDynamicElement-1669196397649]: 
-        beanData: '{"ionBean":"BackButton"}'
-        tagName: ion-back-button
-      ↓MenuButton [ngx.components.UIDynamicElement-1669196397652]: 
-        beanData: '{"ionBean":"MenuButton"}'
-        tagName: ion-menu-button
-    ↓BarTitle [ngx.components.UIDynamicElement-1669196397655]: 
-      beanData: '{"ionBean":"BarTitle"}'
-      tagName: ion-title
-      ↓Text [ngx.components.UIText-1669196397658]: 
-        textValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:Monosite
-    ↓ButtonSet2 [ngx.components.UIDynamicElement-1669196397661]: 
-      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
-      tagName: ion-buttons
-      ↓Button [ngx.components.UIDynamicElement-1669196397664]: 
-        beanData: '{"ionBean":"Button"}'
-        tagName: ion-button
-        ↓Icon [ngx.components.UIDynamicElement-1669196397667]: 
-          beanData: |
-            '{
-             "ionBean": "Icon",
-             "IconName": "plain:ellipsis-vertical",
-             "IconMdName": "plain",
-             "IconIosName": "plain"
-            }'
-          tagName: ion-icon
 ↓PageEvent [ngx.components.UIPageEvent-1669387564134]: 
   ↓CustomAction [ngx.components.UICustomAction-1669387570864]: 
     actionValue: 
@@ -51,6 +12,13 @@ title: Monosite
             		console.log(this.navParams)
             		resolve();
             '
+↓UseSharedComponent [ngx.components.UIUseShared-1669822210295]: 
+  sharedcomponent: poc_energisme.Application.NgxApp.header
+  ↓username [ngx.components.UIUseVariable-1669822210298]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓Content [ngx.components.UIDynamicElement-1669196416014]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content

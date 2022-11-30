@@ -1,0 +1,45 @@
+↓Header [ngx.components.UIDynamicElement-1669821781348]: 
+  beanData: '{"ionBean":"Header"}'
+  comment: Page header
+  tagName: ion-header
+  ↓ToolBar [ngx.components.UIDynamicElement-1669821781351]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓ButtonSet1 [ngx.components.UIDynamicElement-1669821781354]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:start"}'
+      tagName: ion-buttons
+      ↓BackButton [ngx.components.UIDynamicElement-1669821781357]: 
+        beanData: '{"ionBean":"BackButton"}'
+        tagName: ion-back-button
+      ↓MenuButton [ngx.components.UIDynamicElement-1669821781360]: 
+        beanData: '{"ionBean":"MenuButton"}'
+        tagName: ion-menu-button
+    ↓BarTitle [ngx.components.UIDynamicElement-1669821781363]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [ngx.components.UIText-1669821781366]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Multisite
+    ↓ButtonSet2 [ngx.components.UIDynamicElement-1669821781369]: 
+      beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+      tagName: ion-buttons
+      ↓Icon [ngx.components.UIDynamicElement-1669821781375]: 
+        beanData: |
+          '{
+           "ionBean": "Icon",
+           "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''person''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+           "IconMdName": "plain",
+           "IconIosName": "plain"
+          }'
+        tagName: ion-icon
+      ↓Label [ngx.components.UIDynamicElement-1669822059801]: 
+        beanData: '{"ionBean":"Label"}'
+        tagName: ion-label
+        ↓Text [ngx.components.UIText-1669822059803]: 
+          textValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+↓username [ngx.components.UICompVariable-1669821807607]: 

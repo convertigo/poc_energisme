@@ -67,9 +67,11 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
 ↓widget [ngx.components.UISharedRegularComponent-1667815060213]: 🗏 mobileSharedComponents/widget.yaml
 ↓gauge_chart [ngx.components.UISharedRegularComponent-1669283868833]: 🗏 mobileSharedComponents/gauge_chart.yaml
 ↓heatmap [ngx.components.UISharedRegularComponent-1669388832446]: 🗏 mobileSharedComponents/heatmap.yaml
+↓header [ngx.components.UISharedRegularComponent-1669821769425]: 🗏 mobileSharedComponents/header.yaml
 ↓Multisite [ngx.components.PageComponent-1500538678074]: 🗏 mobilePages/Multisite.yaml
 ↓Monosite [ngx.components.PageComponent-1669196356243]: 🗏 mobilePages/Monosite.yaml
 ↓zoomChart [ngx.components.PageComponent-1669286135548]: 🗏 mobilePages/zoomChart.yaml
+↓Login [ngx.components.PageComponent-1669741293280]: 🗏 mobilePages/Login.yaml
 ↓Style [ngx.components.UIStyle-1491635462437]: 
   comment: You can add some global application styles here
   styleContent: 
@@ -455,17 +457,41 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           /** Ionic CSS Variables **/
           
           
-↓modal50 [ngx.components.UIStyle-1669286641345]: 
-  styleContent: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-      - com.twinsoft.convertigo.beans.common.FormatedContent: 
-        →: |
-          'ion-modal.modal50 {
-          	  align-items: center;
-            justify-content: center;
-            --min-height: 80%; 
-            --min-width: 50%;
-            --max-height: 80%; 
-            --max-width: 50%;
-          }'
+↓AppGuard [ngx.components.UIAppGuard-1669818212956]: 
+  ↓IfElse [ngx.components.UIDynamicIf-1669818632602]: 
+    beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.pageName != ''Login''"}'
+    ↓CallSequence [ngx.components.UIDynamicAction-1669818306905]: 
+      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+      ↓CustomAction [ngx.components.UICustomAction-1669818354661]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		if(vars.user.authenticatedUserID.length > 0) {
+                			resolve(true)
+                		} else {
+                			resolve(false)
+                		}
+                '
+        ↓user [ngx.components.UIControlVariable-1669818360697]: 
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:parent.out
+  ↓CustomAction [ngx.components.UICustomAction-1669818803736]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		console.log(vars.data)
+            		resolve();
+            '
+    ↓data [ngx.components.UIControlVariable-1669818811641]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:parent.out
