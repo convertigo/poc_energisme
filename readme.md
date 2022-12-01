@@ -179,25 +179,25 @@ My First Page as root page
 <th>name</th><th>comment</th>
 </tr>
 <tr>
-<td>isGauge</td><td></td>
+<td>isGauge</td><td>To determine if widget is a gauge widget. true or false (string)</td>
 </tr>
 <tr>
-<td>isGoogleMap</td><td></td>
+<td>isGoogleMap</td><td>To determine if widget is a map widget. true or false (string)</td>
 </tr>
 <tr>
-<td>isHeatmap</td><td></td>
+<td>isHeatmap</td><td>To determine if widget is a heatmap widget. true or false (string)</td>
 </tr>
 <tr>
-<td>isInModal</td><td></td>
+<td>isInModal</td><td>To determine if widget is zoomed. true or false (string)</td>
 </tr>
 <tr>
-<td>sequenceParams</td><td></td>
+<td>sequenceParams</td><td>Params of the sequence to call (object) ex: { myFirstParam: 'myValue', mySecondParam: 'myValue' }</td>
 </tr>
 <tr>
-<td>sequenceToCall</td><td></td>
+<td>sequenceToCall</td><td>Name of the sequence to call. </td>
 </tr>
 <tr>
-<td>title</td><td></td>
+<td>title</td><td>Widget title (string)</td>
 </tr>
 </table>
 

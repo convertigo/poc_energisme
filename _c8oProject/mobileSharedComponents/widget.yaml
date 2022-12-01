@@ -921,7 +921,9 @@ scriptContent:
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:JSON.parse(this.pageOwner.listen([String(this.sequenceToCall)])?.series)
 ↓title [ngx.components.UICompVariable-1667815971456]: 
+  comment: Widget title (string)
 ↓sequenceToCall [ngx.components.UICompVariable-1668519653965]: 
+  comment: Name of the sequence to call. 
 ↓SharedComponent_Event [ngx.components.UISharedComponentEvent-1668519671952]: 
   ↓callSequence [ngx.components.UICustomAction-1668519697892]: 
     actionValue: 
@@ -953,7 +955,12 @@ scriptContent:
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓sequenceParams [ngx.components.UICompVariable-1668612583513]: 
+  comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
 ↓isGoogleMap [ngx.components.UICompVariable-1669045379585]: 
+  comment: To determine if widget is a map widget. true or false (string)
 ↓isGauge [ngx.components.UICompVariable-1669283892917]: 
+  comment: To determine if widget is a gauge widget. true or false (string)
 ↓isInModal [ngx.components.UICompVariable-1669295637365]: 
+  comment: To determine if widget is zoomed. true or false (string)
 ↓isHeatmap [ngx.components.UICompVariable-1669388784767]: 
+  comment: To determine if widget is a heatmap widget. true or false (string)

@@ -993,7 +993,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;isGauge
 </td>
 <td>
-
+To determine if widget is a gauge widget. true or false (string)
 </td>
 </tr>
 <tr>
@@ -1001,7 +1001,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;isGoogleMap
 </td>
 <td>
-
+To determine if widget is a map widget. true or false (string)
 </td>
 </tr>
 <tr>
@@ -1009,7 +1009,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;isHeatmap
 </td>
 <td>
-
+To determine if widget is a heatmap widget. true or false (string)
 </td>
 </tr>
 <tr>
@@ -1017,7 +1017,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;isInModal
 </td>
 <td>
-
+To determine if widget is zoomed. true or false (string)
 </td>
 </tr>
 <tr>
@@ -1025,7 +1025,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;sequenceParams
 </td>
 <td>
-
+Params of the sequence to call (object) ex: { myFirstParam: 'myValue', mySecondParam: 'myValue' }
 </td>
 </tr>
 <tr>
@@ -1033,7 +1033,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;sequenceToCall
 </td>
 <td>
-
+Name of the sequence to call. 
 </td>
 </tr>
 <tr>
@@ -1041,7 +1041,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;title
 </td>
 <td>
-
+Widget title (string)
 </td>
 </tr>
 </table>
