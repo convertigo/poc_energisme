@@ -100,8 +100,14 @@ scriptContent:
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.bottomLabel","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓canvasWidth [ngx.components.UICompVariable-1669283868892]: 
+  comment: number
 ↓needleValue [ngx.components.UICompVariable-1669283868895]: 
+  comment: number
 ↓centralLabel [ngx.components.UICompVariable-1669283868898]: 
+  comment: string
 ↓options [ngx.components.UICompVariable-1669283868901]: 
+  comment: object
 ↓name [ngx.components.UICompVariable-1669283868904]: 
+  comment: string (will be shown above the gauge)
 ↓bottomLabel [ngx.components.UICompVariable-1669283868907]: 
+  comment: string (will be shown bellow the gauge)

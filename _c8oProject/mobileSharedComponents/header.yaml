@@ -43,3 +43,4 @@
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓username [ngx.components.UICompVariable-1669821807607]: 
+  comment: Username to display

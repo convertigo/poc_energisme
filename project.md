@@ -719,7 +719,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;bottomLabel
 </td>
 <td>
-
+string (will be shown bellow the gauge)
 </td>
 </tr>
 <tr>
@@ -727,7 +727,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;canvasWidth
 </td>
 <td>
-
+number
 </td>
 </tr>
 <tr>
@@ -735,7 +735,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;centralLabel
 </td>
 <td>
-
+string
 </td>
 </tr>
 <tr>
@@ -743,7 +743,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;name
 </td>
 <td>
-
+string (will be shown above the gauge)
 </td>
 </tr>
 <tr>
@@ -751,7 +751,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;needleValue
 </td>
 <td>
-
+number
 </td>
 </tr>
 <tr>
@@ -759,7 +759,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;options
 </td>
 <td>
-
+object
 </td>
 </tr>
 </table>
@@ -789,7 +789,7 @@ comment
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;username
 </td>
 <td>
-
+Username to display
 </td>
 </tr>
 </table>
@@ -1033,7 +1033,7 @@ Params of the sequence to call (object) ex: { myFirstParam: 'myValue', mySecondP
 <img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;sequenceToCall
 </td>
 <td>
-Name of the sequence to call. 
+Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it's in another project then : "myProjectName.mySequenceToCall" 
 </td>
 </tr>
 <tr>

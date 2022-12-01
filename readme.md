@@ -71,22 +71,22 @@ My First Page as root page
 <th>name</th><th>comment</th>
 </tr>
 <tr>
-<td>bottomLabel</td><td></td>
+<td>bottomLabel</td><td>string (will be shown bellow the gauge)</td>
 </tr>
 <tr>
-<td>canvasWidth</td><td></td>
+<td>canvasWidth</td><td>number</td>
 </tr>
 <tr>
-<td>centralLabel</td><td></td>
+<td>centralLabel</td><td>string</td>
 </tr>
 <tr>
-<td>name</td><td></td>
+<td>name</td><td>string (will be shown above the gauge)</td>
 </tr>
 <tr>
-<td>needleValue</td><td></td>
+<td>needleValue</td><td>number</td>
 </tr>
 <tr>
-<td>options</td><td></td>
+<td>options</td><td>object</td>
 </tr>
 </table>
 
@@ -99,7 +99,7 @@ My First Page as root page
 <th>name</th><th>comment</th>
 </tr>
 <tr>
-<td>username</td><td></td>
+<td>username</td><td>Username to display</td>
 </tr>
 </table>
 
@@ -194,7 +194,7 @@ My First Page as root page
 <td>sequenceParams</td><td>Params of the sequence to call (object) ex: { myFirstParam: 'myValue', mySecondParam: 'myValue' }</td>
 </tr>
 <tr>
-<td>sequenceToCall</td><td>Name of the sequence to call. </td>
+<td>sequenceToCall</td><td>Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it's in another project then : "myProjectName.mySequenceToCall" </td>
 </tr>
 <tr>
 <td>title</td><td>Widget title (string)</td>
