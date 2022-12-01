@@ -534,7 +534,13 @@ scriptContent:
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
       tagName: ion-row
       ↓colGaugeChart [ngx.components.UIDynamicElement-1669283965385]: 
-        beanData: '{"ionBean":"GridCol","Size":"plain:6"}'
+        beanData: |
+          '{
+           "ionBean": "GridCol",
+           "Size": "plain:6",
+           "SizeSm": "plain:12",
+           "SizeXs": "plain:12"
+          }'
         tagName: ion-col
         ↓UseSharedComponent [ngx.components.UIUseShared-1669299066340]: 
           sharedcomponent: poc_energisme.Application.NgxApp.gauge_chart
@@ -578,7 +584,13 @@ scriptContent:
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                 - MobileSmartSourceType: plain:-14 %
       ↓colInfos [ngx.components.UIDynamicElement-1669285145558]: 
-        beanData: '{"ionBean":"GridCol","Size":"plain:6"}'
+        beanData: |
+          '{
+           "ionBean": "GridCol",
+           "Size": "plain:6",
+           "SizeSm": "plain:12",
+           "SizeXs": "plain:12"
+          }'
         tagName: ion-col
         ↓Grid [ngx.components.UIDynamicElement-1669285227328]: 
           beanData: '{"ionBean":"Grid"}'

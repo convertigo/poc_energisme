@@ -52,7 +52,14 @@ title: Multisite
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
             ↓colMesEconomiesDenergies [ngx.components.UIDynamicElement-1667818587537]: 
-              beanData: '{"ionBean":"GridCol","Size":"plain:3"}'
+              beanData: |
+                '{
+                 "ionBean": "GridCol",
+                 "Size": "plain:3",
+                 "SizeLg": "plain:3",
+                 "SizeMd": "plain:3",
+                 "SizeXs": "plain:12"
+                }'
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1669284214451]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -92,7 +99,13 @@ title: Multisite
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
             ↓colChartMesConsommationsTotales [ngx.components.UIDynamicElement-1667818587543]: 
-              beanData: '{"ionBean":"GridCol","SizeLg":"plain:3"}'
+              beanData: |
+                '{
+                 "ionBean": "GridCol",
+                 "SizeLg": "plain:3",
+                 "SizeMd": "plain:3",
+                 "SizeXs": "plain:12"
+                }'
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1667818636075]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -136,7 +149,13 @@ title: Multisite
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
             ↓colChartEvolutionDeMesConsommations [ngx.components.UIDynamicElement-1667818609564]: 
-              beanData: '{"ionBean":"GridCol","SizeLg":"plain:6"}'
+              beanData: |
+                '{
+                 "ionBean": "GridCol",
+                 "SizeLg": "plain:6",
+                 "SizeMd": "plain:6",
+                 "SizeXs": "plain:12"
+                }'
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1668681549063]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -187,7 +206,8 @@ title: Multisite
                 '{
                  "ionBean": "GridCol",
                  "SizeLg": "plain:3",
-                 "SizeMd": "plain:3"
+                 "SizeMd": "plain:3",
+                 "SizeXs": "plain:12"
                 }'
               tagName: ion-col
               ↓GoogleMap [ngx.components.UIDynamicElement-1668691077158]: 
@@ -246,7 +266,8 @@ title: Multisite
                 '{
                  "ionBean": "GridCol",
                  "SizeLg": "plain:9",
-                 "SizeMd": "plain:9"
+                 "SizeMd": "plain:9",
+                 "SizeXs": "plain:12"
                 }'
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1668691089715]: 
@@ -292,8 +313,8 @@ title: Multisite
           ↓rowSitesLesPlusConsoDelec [ngx.components.UIDynamicElement-1669042791602]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
-            ↓GridCol [ngx.components.UIDynamicElement-1669042791604]: 
-              beanData: '{"ionBean":"GridCol"}'
+            ↓colSitesLesPlusConsoDelec [ngx.components.UIDynamicElement-1669042791604]: 
+              beanData: '{"ionBean":"GridCol","SizeXs":"plain:12"}'
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1669042815761]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -338,8 +359,8 @@ title: Multisite
           ↓rowSitesLesPlusConsoDeGaz [ngx.components.UIDynamicElement-1669044469823]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
-            ↓GridCol [ngx.components.UIDynamicElement-1669044469826]: 
-              beanData: '{"ionBean":"GridCol"}'
+            ↓colSitesLesPlusConsoDeGaz [ngx.components.UIDynamicElement-1669044469826]: 
+              beanData: '{"ionBean":"GridCol","SizeXs":"plain:12"}'
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1669044469829]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -386,7 +407,8 @@ title: Multisite
           '{
            "ionBean": "GridCol",
            "SizeLg": "plain:2",
-           "SizeMd": "plain:2"
+           "SizeMd": "plain:2",
+           "SizeXs": "plain:12"
           }'
         tagName: ion-col
         ↓Label [ngx.components.UIDynamicElement-1668692255000]: 

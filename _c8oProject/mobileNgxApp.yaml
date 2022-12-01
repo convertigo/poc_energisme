@@ -480,18 +480,36 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:parent.out
-  ↓CustomAction [ngx.components.UICustomAction-1669818803736]: 
-    actionValue: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-        - com.twinsoft.convertigo.beans.common.FormatedContent: 
-          →: |
-            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-            		console.log(vars.data)
-            		resolve();
-            '
-    ↓data [ngx.components.UIControlVariable-1669818811641]: 
-      varValue: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:parent.out
+    ↓Else_Handler [ngx.components.UIActionElseEvent-1669888442803]: 
+      ↓CustomAction [ngx.components.UICustomAction-1669888448253]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		resolve(true);
+                '
+  ↓If [ngx.components.UIDynamicAction-1669888383815]: 
+    beanData: '{"ionBean":"IfAction","condition":"script:parent.out.pageName != ''Login''"}'
+    isEnabled: false
+    ↓CallSequence [ngx.components.UIDynamicAction-1669888417731]: 
+      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+      ↓CustomAction [ngx.components.UICustomAction-1669888417734]: 
+        actionValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                		if(vars.user.authenticatedUserID.length > 0) {
+                			resolve(true)
+                		} else {
+                			resolve(false)
+                		}
+                '
+        ↓user [ngx.components.UIControlVariable-1669888417737]: 
+          varValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:parent.out
