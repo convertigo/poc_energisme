@@ -132,7 +132,7 @@ testOnBorrow: true
     description: date_end
 ↓multisite_sites_energivore [transactions.SqlTransaction]: 
   sqlQuery: |
-    select a.avg_conso_gaz, s.nom, s.latitude, s.longitude, site_id
+    select a.avg_conso_gaz, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
     from convertigo_poc.site s
     inner join
     (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, site_id
@@ -151,7 +151,7 @@ testOnBorrow: true
     description: limit
 ↓multisite_sites_energivore_elec [transactions.SqlTransaction]: 
   sqlQuery: |
-    select a.avg_conso_elec, s.nom, s.latitude, s.longitude
+    select a.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude
     from convertigo_poc.site s
     inner join
     (select avg (val) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
@@ -170,7 +170,7 @@ testOnBorrow: true
     description: limit
 ↓multisite_sites_energivore_gaz [transactions.SqlTransaction]: 
   sqlQuery: |
-    select a.avg_conso_gaz, s.nom, s.latitude, s.longitude
+    select a.avg_conso_gaz, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude
     from convertigo_poc.site s
     inner join
     (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, site_id
@@ -192,3 +192,15 @@ testOnBorrow: true
     SELECT uuid, avg(val) AS moy_val, label
     FROM raw_data
     GROUP BY uuid, label
+↓sites [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select ST_X(position) as longitude, ST_Y(position) as latitude, nom, id as site_id
+    from convertigo_poc.site s 
+    limit CAST({limit} AS BIGINT);
+    
+  ↓Test_Case [core.TestCase]: 
+    ↓limit [variables.TestCaseVariable-1671203508066]: 
+      description: limit
+      value: 20
+  ↓limit [variables.RequestableVariable-1671203508069]: 
+    description: limit
