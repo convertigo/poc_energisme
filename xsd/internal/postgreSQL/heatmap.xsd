@@ -1,68 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:poc_energisme_ns="http://www.convertigo.com/convertigo/projects/poc_energisme" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/poc_energisme">
-    <xsd:element name="postgreSQL__conso_total_between" type="poc_energisme_ns:postgreSQL__conso_total_betweenRequestData">
+    <xsd:element name="postgreSQL__heatmap" type="poc_energisme_ns:postgreSQL__heatmapRequestData">
         <xsd:annotation/>
     </xsd:element>
-    <xsd:element name="postgreSQL__conso_total_betweenResponse">
+    <xsd:element name="postgreSQL__heatmapResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__conso_total_betweenResponseData"/>
+                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__heatmapResponseData"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:complexType name="postgreSQL__conso_total_betweenResponseType">
+    <xsd:complexType name="postgreSQL__heatmapResponseType">
         <xsd:sequence>
-            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__conso_total_betweenResponseData"/>
+            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__heatmapResponseData"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__conso_total_betweenRequestData">
+    <xsd:complexType name="postgreSQL__heatmapRequestData">
         <xsd:sequence>
-            <xsd:element name="site_id" type="xsd:string">
+            <xsd:element name="label" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:appinfo>site_id</xsd:appinfo>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="date_start" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:appinfo>date_start</xsd:appinfo>
-                </xsd:annotation>
-            </xsd:element>
-            <xsd:element name="date_end" type="xsd:string">
-                <xsd:annotation>
-                    <xsd:appinfo>date_end</xsd:appinfo>
+                    <xsd:appinfo>new variable</xsd:appinfo>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_monosite_conso_total_between_document_sql_output_row_sum_conso_gazType">
+    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_row_sum_conso_elecType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute default="string" name="type" type="xsd:string"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_monosite_conso_total_between_document_sql_output_row_sum_conso_elecType">
+    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_row_weekType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute default="string" name="type" type="xsd:string"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_monosite_conso_total_between_document_sql_output_rowType">
+    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_row_hourType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute default="string" name="type" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_rowType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sum_conso_gaz" type="poc_energisme_ns:postgreSQL_monosite_conso_total_between_document_sql_output_row_sum_conso_gazType"/>
-            <xsd:element minOccurs="0" name="sum_conso_elec" type="poc_energisme_ns:postgreSQL_monosite_conso_total_between_document_sql_output_row_sum_conso_elecType"/>
+            <xsd:element minOccurs="0" name="sum_conso_elec" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_row_sum_conso_elecType"/>
+            <xsd:element minOccurs="0" name="week" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_row_weekType"/>
+            <xsd:element minOccurs="0" name="hour" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_row_hourType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_monosite_conso_total_between_document_sql_outputType">
+    <xsd:complexType name="postgreSQL_heatmap_document_sql_outputType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_monosite_conso_total_between_document_sql_output_rowType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_rowType"/>
         </xsd:sequence>
         <xsd:attribute default="array" name="type" type="xsd:string"/>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__conso_total_betweenResponseData">
+    <xsd:complexType name="postgreSQL__heatmapResponseData">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_monosite_conso_total_between_document_sql_outputType"/>
+            <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_outputType"/>
             <xsd:element minOccurs="0" name="error" type="poc_energisme_ns:ConvertigoError"/>
         </xsd:sequence>
         <xsd:attribute name="connector" type="xsd:string"/>

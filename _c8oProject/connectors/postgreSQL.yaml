@@ -3,47 +3,43 @@ jdbcURL: jdbc:postgresql://pgserver-labloamics-lab-lyeswlkhvptb6.postgres.databa
 jdbcUserName: convertigo@pgserver-labloamics-lab-lyeswlkhvptb6
 jdbcUserPassword: x312b14f3b735263363b9702517d0c3d6af87c7e0aa1ff80f7ba13bffc89c9adf
 testOnBorrow: true
-↓Default_transaction [transactions.SqlTransaction]: 
-  ↑default: true
-↓monosite_conso_month [transactions.SqlTransaction]: 
+↓conso_month [transactions.SqlTransaction]: 
   sqlQuery: |
-    select
-    
-    sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
-    
-    sum (rd.val) filter (where rd."label"='conso_elec') as sum_conso_elec,
-    
+    select 
+    sum (val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
+    sum (val) filter (where rd."label"='conso_elec') as sum_conso_elec,
     date_part('year', ts) || '_' || date_part('month', ts)  as month_conso
-    
     from convertigo_poc.raw_data rd
-    
     inner join convertigo_poc.sensor_info si
-    
-    on rd.uuid = si.sensor_id
-    
-    where si.site_id = CAST({site_id} AS BIGINT)
-    
-    and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    
+    on rd.uuid = si.sensor_id 
+    where si.site_id in (CAST({sites} AS BIGINT))
+    and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
-    group by date_part('year', rd.ts) || '_' || date_part('month', rd.ts)
+    group by date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+    
+    
   ↓Test_Case [core.TestCase]: 
-    ↓site_id [variables.TestCaseVariable-1669192720641]: 
-      description: site_id
-      value: 7626
     ↓date_start [variables.TestCaseVariable-1669192720643]: 
       description: date_start
       value: 2021-01-01
     ↓date_end [variables.TestCaseVariable-1669192720645]: 
       description: date_end
       value: 2022-12-01
-  ↓site_id [variables.RequestableVariable-1669136094447]: 
-    description: site_id
+    ↓sites [variables.TestCaseMultiValuedVariable-1671796046491]: 
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 14122
+            - java.lang.String: 
+              - ↑value: 7626
   ↓date_start [variables.RequestableVariable-1669136094449]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1669136094451]: 
     description: date_end
-↓monosite_conso_total_between [transactions.SqlTransaction]: 
+  ↓sites [variables.RequestableMultiValuedVariable-1671795964709]: 
+↓conso_total_between [transactions.SqlTransaction]: 
   sqlQuery: |
     select
     
@@ -76,6 +72,32 @@ testOnBorrow: true
     description: date_start
   ↓date_end [variables.RequestableVariable-1669195849728]: 
     description: date_end
+↓Default_transaction [transactions.SqlTransaction]: 
+  ↑default: true
+↓group_sites [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select site_id 
+    from convertigo_poc.group_site
+    where group_id in ('AAA','CCC')
+  ↓Test_Case [core.TestCase]: 
+↓heatmap [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select 
+    sum (val) filter (where rd."label"={label}) as sum_label,
+    date_part('week', ts) as week,
+    date_part('hour', ts) as hour
+    from convertigo_poc.raw_data rd
+    inner join convertigo_poc.sensor_info si
+    on rd.uuid = si.sensor_id 
+    where si.site_id in (14122,7626)
+    and rd.ts >= '2021-01-01'
+    and rd.ts <= '2022-12-31'
+    group by week , hour
+    order by week asc, hour asc
+  ↓Test_Case [core.TestCase]: 
+    ↓label [variables.TestCaseVariable-1671802819427]: 
+      value: conso_elec
+  ↓label [variables.RequestableVariable-1671802687550]: 
 ↓multisite_conso_month [transactions.SqlTransaction]: 
   sqlQuery: |
     select
