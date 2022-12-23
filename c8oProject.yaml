@@ -6,6 +6,7 @@
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓getCurrentUser [sequences.GenericSequence]: 🗏 sequences/getCurrentUser.yaml
+  ↓getUserGroups [sequences.GenericSequence]: 🗏 sequences/getUserGroups.yaml
   ↓heatmap_sample [sequences.GenericSequence]: 🗏 sequences/heatmap_sample.yaml
   ↓monosite_conso_month [sequences.GenericSequence]: 🗏 sequences/monosite_conso_month.yaml
   ↓monosite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/monosite_conso_total_between.yaml
@@ -15,8 +16,15 @@
   ↓multisite_sites_energivore [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore.yaml
   ↓multisite_sites_energivore_elec [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_elec.yaml
   ↓multisite_sites_energivore_gaz [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_gaz.yaml
+  ↓postBulkGroupsFromAuthenticatedUser [sequences.GenericSequence]: 🗏 sequences/postBulkGroupsFromAuthenticatedUser.yaml
+  ↓lib_ExtendedComponents_ui_ngx_reference [references.ProjectSchemaReference]: 
+    projectName: lib_ExtendedComponents_ui_ngx=https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx.git:branch=8.0.0
+  ↓lib_FullSyncGrp_reference [references.ProjectSchemaReference]: 
+    projectName: lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=e6674a8b08e21ac87e9c337b3d766ac1447188cc
   ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
     projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=334a638363d83d83bfed756b025f96226751e50e
+  ↓lib_UserManager_reference [references.ProjectSchemaReference]: 
+    projectName: lib_UserManager=https://github.com/convertigo/c8oprj-lib-user-manager.git:branch=f8941d93af0db63dc16c052daad77de2f6329747
   ↓Project_reference [references.ProjectSchemaReference]: 
     comment: ngx builder template
     projectName: mobilebuilder_tpl_8_1_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_1_0_ngx.zip

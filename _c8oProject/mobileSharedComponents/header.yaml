@@ -21,7 +21,7 @@
         textValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:Multisite
+            - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.title","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓ButtonSet2 [ngx.components.UIDynamicElement-1669821781369]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
       tagName: ion-buttons
@@ -44,3 +44,4 @@
               - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓username [ngx.components.UICompVariable-1669821807607]: 
   comment: Username to display
+↓title [ngx.components.UICompVariable-1671634363713]: 

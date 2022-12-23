@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><document connector="" context="studio_poc_energisme:S:multisite_maps" contextId="studio_poc_energisme:S:multisite_maps" expires="Mon Dec 05 23:00:00 CET 2022" fromStub="false" fromcache="false" generated="Mon Dec 05 12:12:09 CET 2022" project="poc_energisme" sequence="multisite_maps" signature="1670238729287" transaction="" version="8.1.0 (build 14680-8.1.0)">
+    <Array originalKeyName="markers" type="array">
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Centre Multi Services de Langevin</Field>
+            <latitude>-21.03803</latitude>
+            <longitude>55.06506</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7990</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">EMV CV Victor Dupouy</Field>
+            <latitude>48.09447</latitude>
+            <longitude>2.024012</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7986</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">CV/EMV - Bobigny</Field>
+            <latitude>48.09062</latitude>
+            <longitude>2.044454</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7982</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">MA - MAISON D'ARRET DE BOURGES / Maison d'Arrêt de Bourges</Field>
+            <latitude>47.0951</latitude>
+            <longitude>2.039973</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7998</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Vaccinobus du Vaucluse</Field>
+            <latitude>43.09348</latitude>
+            <longitude>4.08306</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7996</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Test_sauve_mon_vaccin2</Field>
+            <latitude>43.03684</latitude>
+            <longitude>5.035661</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7995</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Toury Salle polyvalente éphémère "grand public"</Field>
+            <latitude>48.01961</latitude>
+            <longitude>1.093684</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7975</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Brest - Haut Jaurès</Field>
+            <latitude>48.0401</latitude>
+            <longitude>-4.046947</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7993</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Grigny CVAE</Field>
+            <latitude>48.06569</latitude>
+            <longitude>2.038657</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7968</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Relai ambulatoire des 3 rivières Ruoms</Field>
+            <latitude>44.04527</latitude>
+            <longitude>4.034213</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7988</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">MA - Maison d'arrêt Laval / Maison d'Arrêt de Laval</Field>
+            <latitude>48.0662</latitude>
+            <longitude>-0.0783254</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7985</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">Centre vaccination LE CREUSOT - Maison des Associations Guynemer</Field>
+            <latitude>46.08019</latitude>
+            <longitude>4.044702</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7984</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">CH Gisors</Field>
+            <latitude>49.02796</latitude>
+            <longitude>1.076574</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7983</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">CP - US Centre Pénitentiaire d'Annoeullin / Centre Pénitentiaire de Lille-Loos-Sequedin</Field>
+            <latitude>50.06205</latitude>
+            <longitude>2.098381</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7999</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">MA - US Maison d'arrêt de DUNKERQUE / Maison d'Arrêt de Dunkerque</Field>
+            <latitude>51.0399</latitude>
+            <longitude>2.038074</longitude>
+            <Field_3 originalKeyName="site_id" type="string">8000</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">EMV-Montreuil</Field>
+            <latitude>48.08621</latitude>
+            <longitude>2.044139</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7979</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">vaccinobus</Field>
+            <latitude>47.02851</latitude>
+            <longitude>5.06124</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7957</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">MA - US / Maison d'Arrêt de Lons-le-Saunier</Field>
+            <latitude>46.06736</latitude>
+            <longitude>5.055799</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7976</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">EMV Domicile Joséphine</Field>
+            <latitude>48.09887</latitude>
+            <longitude>2.029268</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7955</Field_3>
+        </Object>
+        <Object originalKeyName="object" type="object">
+            <Field originalKeyName="nom" type="string">EMV Lagny</Field>
+            <latitude>48.08669</latitude>
+            <longitude>2.071248</longitude>
+            <Field_3 originalKeyName="site_id" type="string">7954</Field_3>
+        </Object>
+    </Array>
+</document><!--
+Generated by Convertigo Enterprise Mobility Server
+Requester: InternalRequester
+-->

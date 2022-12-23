@@ -6,10 +6,41 @@ Convertigo NGX builder Project
 <details><summary><span style="color:DarkGoldenRod"><i>References</i></span></summary><blockquote><p>
 
 
+<details><summary><b>lib_ExtendedComponents_ui_ngx</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_ExtendedComponents_ui_ngx
+
+
+see [readme](https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx/tree/8.1.0.0#readme)
+</p></blockquote></details>
+
+<details><summary><b>lib_FullSyncGrp</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_FullSyncGrp
+
+
+see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/e6674a8b08e21ac87e9c337b3d766ac1447188cc#readme)
+</p></blockquote></details>
+
+<details><summary><b>lib_OAuth</b></summary><blockquote><p>
+
+
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_OAuth
 
 
 see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
+</p></blockquote></details>
+
+<details><summary><b>lib_UserManager</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_UserManager
+
+
+see [readme](https://github.com/convertigo/c8oprj-lib-user-manager/tree/f8941d93af0db63dc16c052daad77de2f6329747#readme)
+</p></blockquote></details>
 </p></blockquote></details>
 
 <details><summary><span style="color:DarkGoldenRod"><i>Connectors</i></span></summary><blockquote><p>
@@ -326,6 +357,44 @@ does nothing
 
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") getCurrentUser
 
+
+</p></blockquote></details>
+
+<details><summary><b>getUserGroups</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") getUserGroups
+
+
+
+<span style="color:DarkGoldenRod">Variables</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;password
+</td>
+<td>
+Used only for test cases in Studio
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;user
+</td>
+<td>
+Used only for test cases in Studio
+</td>
+</tr>
+</table>
 
 </p></blockquote></details>
 
@@ -648,6 +717,36 @@ comment
 </table>
 
 </p></blockquote></details>
+
+<details><summary><b>postBulkGroupsFromAuthenticatedUser</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") postBulkGroupsFromAuthenticatedUser
+
+
+
+<span style="color:DarkGoldenRod">Variables</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/multivaluedvariable_color_16x16.png?raw=true "  alt="RequestableMultiValuedVariable" >&nbsp;groups
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
 </p></blockquote></details>
 
 <details><summary><span style="color:DarkGoldenRod"><i>Mobile Application</i></span></summary><blockquote><p>
@@ -682,6 +781,14 @@ Describes the mobile application global properties
 ### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Multisite
 
 My First Page as root page
+</p></blockquote></details>
+
+<details><summary><b>Parametres</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Parametres
+
+
 </p></blockquote></details>
 
 <details><summary><b>zoomChart</b></summary><blockquote><p>
@@ -783,6 +890,14 @@ name
 <th>
 comment
 </th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/uicompvariable_16x16.png?raw=true "  alt="UICompVariable" >&nbsp;title
+</td>
+<td>
+
+</td>
 </tr>
 <tr>
 <td>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><document connector="" context="studio_poc_energisme:S:multisite_sites_energivore" contextId="studio_poc_energisme:S:multisite_sites_energivore" expires="Mon Dec 05 23:00:00 CET 2022" fromStub="false" fromcache="false" generated="Mon Dec 05 12:13:01 CET 2022" project="poc_energisme" sequence="multisite_sites_energivore" signature="1670238781564" transaction="" version="8.1.0 (build 14680-8.1.0)">
+    <chartType>bar</chartType>
+    <Object originalKeyName="data" type="object">
+        <Array originalKeyName="labels" type="array">
+            <Field originalKeyName="field" type="string">Centre Multi Services de Langevin</Field>
+            <Field originalKeyName="field" type="string">EMV CV Victor Dupouy</Field>
+            <Field originalKeyName="field" type="string">CV/EMV - Bobigny</Field>
+            <Field originalKeyName="field" type="string">MA - MAISON D'ARRET DE BOURGES / Maison d'Arrêt de Bourges</Field>
+            <Field originalKeyName="field" type="string">Vaccinobus du Vaucluse</Field>
+            <Field originalKeyName="field" type="string">Test_sauve_mon_vaccin2</Field>
+            <Field originalKeyName="field" type="string">Toury Salle polyvalente éphémère "grand public"</Field>
+            <Field originalKeyName="field" type="string">Brest - Haut Jaurès</Field>
+            <Field originalKeyName="field" type="string">Grigny CVAE</Field>
+            <Field originalKeyName="field" type="string">Relai ambulatoire des 3 rivières Ruoms</Field>
+            <Field originalKeyName="field" type="string">MA - Maison d'arrêt Laval / Maison d'Arrêt de Laval</Field>
+            <Field originalKeyName="field" type="string">Centre vaccination LE CREUSOT - Maison des Associations Guynemer</Field>
+            <Field originalKeyName="field" type="string">CH Gisors</Field>
+            <Field originalKeyName="field" type="string">CP - US Centre Pénitentiaire d'Annoeullin / Centre Pénitentiaire de Lille-Loos-Sequedin</Field>
+            <Field originalKeyName="field" type="string">MA - US Maison d'arrêt de DUNKERQUE / Maison d'Arrêt de Dunkerque</Field>
+            <Field originalKeyName="field" type="string">EMV-Montreuil</Field>
+            <Field originalKeyName="field" type="string">vaccinobus</Field>
+            <Field originalKeyName="field" type="string">MA - US / Maison d'Arrêt de Lons-le-Saunier</Field>
+            <Field originalKeyName="field" type="string">EMV Domicile Joséphine</Field>
+            <Field originalKeyName="field" type="string">EMV Lagny</Field>
+        </Array>
+        <Array_1 originalKeyName="datasets" type="array">
+            <Object originalKeyName="object" type="object">
+                <Field originalKeyName="label" type="string"/>
+                <Array originalKeyName="data" type="array">
+                    <Field originalKeyName="field" type="string">11.067218849147501</Field>
+                    <Field originalKeyName="field" type="string">11.004269026521637</Field>
+                    <Field originalKeyName="field" type="string">10.866187864276919</Field>
+                    <Field originalKeyName="field" type="string">10.79168118146902</Field>
+                    <Field originalKeyName="field" type="string">10.753173150491195</Field>
+                    <Field originalKeyName="field" type="string">10.715788033906096</Field>
+                    <Field originalKeyName="field" type="string">10.691429912504397</Field>
+                    <Field originalKeyName="field" type="string">10.68414972478941</Field>
+                    <Field originalKeyName="field" type="string">10.554703846389055</Field>
+                    <Field originalKeyName="field" type="string">10.543026136213385</Field>
+                    <Field originalKeyName="field" type="string">10.474704145505859</Field>
+                    <Field originalKeyName="field" type="string">10.472087460649444</Field>
+                    <Field originalKeyName="field" type="string">10.428778811060377</Field>
+                    <Field originalKeyName="field" type="string">10.352316689950216</Field>
+                    <Field originalKeyName="field" type="string">10.341223235109368</Field>
+                    <Field originalKeyName="field" type="string">10.310274183888168</Field>
+                    <Field originalKeyName="field" type="string">10.307321463025245</Field>
+                    <Field originalKeyName="field" type="string">10.26849713235356</Field>
+                    <Field originalKeyName="field" type="string">10.265831906632267</Field>
+                    <Field originalKeyName="field" type="string">10.214391384076755</Field>
+                </Array>
+                <Field_2 originalKeyName="backgroundColor" type="string">rgb(0, 68, 94)</Field_2>
+                <Field_3 originalKeyName="hoverBackgroundColor" type="string">rgb(0, 68, 94)</Field_3>
+                <Field_4 originalKeyName="borderColor" type="string">rgb(0, 68, 94)</Field_4>
+                <Field_5 originalKeyName="hoverBorderColor" type="string">rgb(0, 68, 94)</Field_5>
+            </Object>
+        </Array_1>
+    </Object>
+    <Object_1 originalKeyName="chartOptions" type="object">
+        <Object originalKeyName="plugins" type="object">
+            <Object originalKeyName="legend" type="object">
+                <Field originalKeyName="display" type="boolean">false</Field>
+            </Object>
+        </Object>
+        <Field originalKeyName="maintainAspectRatio" type="boolean">false</Field>
+        <responsive originalKeyName="responsive" type="boolean">true</responsive>
+    </Object_1>
+</document><!--
+Generated by Convertigo Enterprise Mobility Server
+Requester: InternalRequester
+-->

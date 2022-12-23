@@ -1,0 +1,245 @@
+segment: path-to-parametres
+title: Title for Parametres
+↓UseSharedComponent [ngx.components.UIUseShared-1671633573137]: 
+  sharedcomponent: poc_energisme.Application.NgxApp.header
+  ↓username [ngx.components.UIUseVariable-1671633902509]: 
+    comment: Username to display
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓title [ngx.components.UIUseVariable-1671634389575]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:'Paramètres'
+↓Content [ngx.components.UIDynamicElement-1671633641938]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓Grid [ngx.components.UIDynamicElement-1671633655036]: 
+    beanData: '{"ionBean":"Grid"}'
+    tagName: ion-grid
+    ↓rowLabelAddNewUser [ngx.components.UIDynamicElement-1671633655038]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      isEnabled: false
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1671633655040]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1671633655042]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1671633655044]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Ajouter un nouvel utilisateur
+    ↓rowFormAddNewUser [ngx.components.UIDynamicElement-1671633753750]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      isEnabled: false
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1671633753752]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Form [ngx.components.UIForm-1671633784865]: 
+          identifier: addUser
+          ↓Email [ngx.components.UIDynamicElement-1671633784867]: 
+            beanData: '{"ionBean":"FormItem","Lines":"plain:inset"}'
+            tagName: ion-item
+            ↓Label [ngx.components.UIDynamicElement-1671633784869]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓Text [ngx.components.UIText-1671633784871]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Email
+            ↓TextInput [ngx.components.UIDynamicElement-1671633784873]: 
+              beanData: |
+                '{
+                 "ionBean": "Input",
+                 "ControlName": "plain:email",
+                 "Debounce": "plain:0"
+                }'
+              tagName: ion-input
+          ↓Password [ngx.components.UIDynamicElement-1671633784875]: 
+            beanData: '{"ionBean":"FormItem","Lines":"plain:inset"}'
+            tagName: ion-item
+            ↓Label [ngx.components.UIDynamicElement-1671633784877]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓Text [ngx.components.UIText-1671633784879]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Password
+            ↓TextInput [ngx.components.UIDynamicElement-1671633784881]: 
+              beanData: |
+                '{
+                 "ionBean": "Input",
+                 "ControlName": "plain:password",
+                 "Debounce": "plain:0"
+                }'
+              tagName: ion-input
+          ↓Administrateur [ngx.components.UIDynamicElement-1671634163294]: 
+            beanData: '{"ionBean":"FormItem"}'
+            tagName: ion-item
+            ↓Label [ngx.components.UIDynamicElement-1671634163296]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓Text [ngx.components.UIText-1671634163298]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Administrateur
+            ↓CheckBox [ngx.components.UIDynamicElement-1671634184887]: 
+              beanData: '{"ionBean":"CheckBox","ControlName":"plain:isAdmin"}'
+              tagName: ion-checkbox
+              ↓Event [ngx.components.UIControlEvent-1671639236710]: 
+                attrName: (ionChange)
+                eventName: ionChange
+                isEnabled: false
+                ↓CustomAction [ngx.components.UICustomAction-1671639251746]: 
+                  actionValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                        →: |
+                          '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                          		console.log(vars.data)
+                          		resolve();
+                          '
+                  ↓data [ngx.components.UIControlVariable-1671639276816]: 
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:addUser?.controls['isAdmin']?.value
+          ↓SubmitButton [ngx.components.UIDynamicElement-1671633784883]: 
+            beanData: '{"ionBean":"SubmitButton"}'
+            tagName: ion-button
+            ↓Text [ngx.components.UIText-1671633784885]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Créer
+          ↓ResetButton [ngx.components.UIDynamicElement-1671633784887]: 
+            beanData: '{"ionBean":"ResetButton"}'
+            tagName: ion-button
+            ↓Text [ngx.components.UIText-1671633784889]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Effacer
+          ↓Event [ngx.components.UIControlEvent-1671633784891]: 
+            attrName: (ngSubmit)
+            eventName: onSubmit
+            ↓CallSequence1 [ngx.components.UIDynamicAction-1671635134905]: 
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_UserManager.AddUser"}'
+              ↓user [ngx.components.UIControlVariable-1671635151165]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓password [ngx.components.UIControlVariable-1671635151167]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['password']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓IfElse [ngx.components.UIDynamicIf-1671635207148]: 
+                beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.AddUser\",\"marker\":\"\"}],\"path\":\"?.user\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                ↓CallSequence [ngx.components.UIDynamicAction-1671635060682]: 
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
+                  ↓user [ngx.components.UIControlVariable-1671635073576]: 
+                    comment: new variable
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓group [ngx.components.UIControlVariable-1671635073578]: 
+                    comment: new variable
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: 'script:(addUser?.controls[''isAdmin'']?.value) ? ''admin'' : ''user'''
+                  ↓IfElse [ngx.components.UIDynamicIf-1671639441392]: 
+                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                    ↓Toast [ngx.components.UIDynamicAction-1671639536961]: 
+                      beanData: |
+                        '{
+                         "ionBean": "ToastAction",
+                         "IonColor": "plain:success",
+                         "message": "plain:Utilisateur correctement créé"
+                        }'
+                    ↓Else_Handler [ngx.components.UIActionElseEvent-1671639546296]: 
+                      ↓Toast [ngx.components.UIDynamicAction-1671639602136]: 
+                        beanData: '{"ionBean":"ToastAction","message":"plain:Un problème lors de l''insertion dans le groupe"}'
+                ↓Else_Handler [ngx.components.UIActionElseEvent-1671635248361]: 
+                  ↓Toast [ngx.components.UIDynamicAction-1671635264113]: 
+                    beanData: |
+                      '{
+                       "ionBean": "ToastAction",
+                       "message": "plain:Une erreur s''est produite lors de la création de l''utilisateur",
+                       "position": "plain:top"
+                      }'
+    ↓rowLabelAddGroupSites [ngx.components.UIDynamicElement-1671808917554]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓colLabelAddGroupSites [ngx.components.UIDynamicElement-1671808917556]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1671808943111]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1671808943113]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Ajouter un groupe de sites
+    ↓rowFormAddGroupSites [ngx.components.UIDynamicElement-1671808970127]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓colForm [ngx.components.UIDynamicElement-1671808970129]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Form [ngx.components.UIForm-1671808998745]: 
+          identifier: formAddGroupSite
+          ↓FormItem [ngx.components.UIDynamicElement-1671808998747]: 
+            beanData: '{"ionBean":"FormItem"}'
+            tagName: ion-item
+            ↓Label [ngx.components.UIDynamicElement-1671809036945]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓Text [ngx.components.UIText-1671809036947]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Nom du groupe
+            ↓TextInput [ngx.components.UIDynamicElement-1671808998753]: 
+              beanData: |
+                '{
+                 "ionBean": "Input",
+                 "ControlName": "plain:groupName",
+                 "Debounce": "plain:0"
+                }'
+              tagName: ion-input
+          ↓SubmitButton [ngx.components.UIDynamicElement-1671808998763]: 
+            beanData: '{"ionBean":"SubmitButton"}'
+            tagName: ion-button
+            ↓Text [ngx.components.UIText-1671808998765]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Créer le groupe
+          ↓ResetButton [ngx.components.UIDynamicElement-1671808998767]: 
+            beanData: '{"ionBean":"ResetButton"}'
+            tagName: ion-button
+            ↓Text [ngx.components.UIText-1671808998769]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Effacer
+          ↓Event [ngx.components.UIControlEvent-1671808998771]: 
+            attrName: (ngSubmit)
+            eventName: onSubmit

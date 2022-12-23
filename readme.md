@@ -14,6 +14,7 @@ For more technical informations : [documentation](./project.md)
         - [Login](#login)
         - [Monosite](#monosite)
         - [Multisite](#multisite)
+        - [Parametres](#parametres)
         - [zoomChart](#zoomchart)
     - [Shared Components](#shared-components)
         - [gauge_chart](#gauge_chart)
@@ -58,6 +59,8 @@ Describes the mobile application global properties
 
 My First Page as root page
 
+#### Parametres
+
 #### zoomChart
 
 ### Shared Components
@@ -97,6 +100,9 @@ My First Page as root page
 <table>
 <tr>
 <th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>title</td><td></td>
 </tr>
 <tr>
 <td>username</td><td>Username to display</td>

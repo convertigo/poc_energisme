@@ -72,6 +72,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
 ↓Monosite [ngx.components.PageComponent-1669196356243]: 🗏 mobilePages/Monosite.yaml
 ↓zoomChart [ngx.components.PageComponent-1669286135548]: 🗏 mobilePages/zoomChart.yaml
 ↓Login [ngx.components.PageComponent-1669741293280]: 🗏 mobilePages/Login.yaml
+↓Parametres [ngx.components.PageComponent-1671633557209]: 🗏 mobilePages/Parametres.yaml
 ↓Style [ngx.components.UIStyle-1491635462437]: 
   comment: You can add some global application styles here
   styleContent: 
@@ -458,6 +459,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           
           
 ↓AppGuard [ngx.components.UIAppGuard-1669818212956]: 
+  isEnabled: false
   ↓IfElse [ngx.components.UIDynamicIf-1669818632602]: 
     beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.pageName != ''Login''"}'
     ↓CallSequence [ngx.components.UIDynamicAction-1669818306905]: 
@@ -513,3 +515,117 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:parent.out
+↓tinyMCE [ngx.components.UIStyle-1671701831286]: 
+  styleContent: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+        →: |
+          '#grid-theme-wrapper.blue-theme .ag-cell-value{
+          	width:100% !important;
+          }
+          /*.ag-row .ag-cell {
+            display: flex;
+            justify-content: center; /* align horizontal */
+            /*align-items: center;
+          }//
+          
+          .custom-header-weel {
+          	background-image: url(data:image/gif;base64,R0lGODlhEAAQAMQAAORHHOVSKudfOulrSOp3WOyDZu6QdvCchPGolfO0o/XBs/fNwfjZ0frl3/zy7////wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkAABAALAAAAAAQABAAAAVVICSOZGlCQAosJ6mu7fiyZeKqNKToQGDsM8hBADgUXoGAiqhSvp5QAnQKGIgUhwFUYLCVDFCrKUE1lBavAViFIDlTImbKC5Gm2hB0SlBCBMQiB0UjIQA7);
+          	background-repeat: no-repeat;
+          	background-position: center;
+          }
+          
+          
+          .ag-cell-focus {
+          	background-color: rgba(0, 123, 255, 0.3);border: 1px solid #4B74FF !important;border-radius: 2px !important;
+          	@media (pointer:none), (pointer:coarse) {
+          		overflow: hidden;
+          	}
+          }
+          
+          /* ROW SELECTION */
+          #grid-theme-wrapper.blue-theme .ag-theme-material .ag-row-selected {
+            background-color: rgba(0, 123, 255, 0.3);border: 1px solid #4B74FF !important;border-radius: 2px !important;
+          	@media (pointer:none), (pointer:coarse) {
+          		overflow: hidden;
+          	}
+          }
+          
+          
+          /* RANGE SELECTION */
+          #grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-cell-range-selected:not(.ag-cell-focus),
+          #grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-body-viewport:not(.ag-has-focus)
+            .ag-cell-range-single-cell:not(.ag-cell-inline-editing) {
+            background-color: rgba(0, 123, 255, 0.2);
+          }
+          
+          /* RANGE SELECTION ITERSECTION LEVELS */
+          
+          
+            .ag-theme-material
+            .ag-body-viewport:not(.ag-has-focus)
+            .ag-cell-range-selected-1:not(.ag-cell-inline-editing) {
+            background-color: rgba(0, 123, 255, 0.2);
+          }
+          
+          #grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-cell-range-selected-1:not(.ag-cell-focus),
+          grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-body-viewport:not(.ag-has-focus)
+            .ag-cell-range-selected-1 {
+            background-color: rgba(0, 123, 255, 0.2);
+          }
+          
+          #grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-cell-range-selected-2:not(.ag-cell-focus),
+          grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-body-viewport:not(.ag-has-focus)
+            .ag-cell-range-selected-2 {
+            background-color: rgba(0, 123, 255, 0.36);
+          }
+          
+          #grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-cell-range-selected-3:not(.ag-cell-focus),
+          grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-body-viewport:not(.ag-has-focus)
+            .ag-cell-range-selected-3 {
+            background-color: rgba(0, 123, 255, 0.488);
+          }
+          
+          #grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-cell-range-selected-4:not(.ag-cell-focus),
+          grid-theme-wrapper.blue-theme
+            .ag-theme-material
+            .ag-body-viewport:not(.ag-has-focus)
+            .ag-cell-range-selected-4 {
+            background-color: rgba(0, 123, 255, 0.5904);
+          }
+          '
+↓AppEvent [ngx.components.UIAppEvent-1671704865293]: 
+  appEvent: onAppInit
+  ↓SetGlobal [ngx.components.UIDynamicAction-1671704879959]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_start",
+       "Value": "script:''2022-11-01''"
+      }'
+  ↓SetGlobal1 [ngx.components.UIDynamicAction-1671704896609]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_end",
+       "Value": "script:''2022-11-30''"
+      }'

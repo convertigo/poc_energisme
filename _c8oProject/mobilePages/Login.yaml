@@ -46,7 +46,95 @@ title: Title for Login
           ↓CardContent [ngx.components.UIDynamicElement-1669819616564]: 
             beanData: '{"ionBean":"CardContent"}'
             tagName: ion-card-content
-            ↓Button [ngx.components.UIDynamicElement-1669818578024]: 
+            ↓Form [ngx.components.UIForm-1671719229598]: 
+              identifier: loginForm
+              ↓FormItem [ngx.components.UIDynamicElement-1671719229600]: 
+                beanData: '{"ionBean":"FormItem"}'
+                tagName: ion-item
+                ↓Label [ngx.components.UIDynamicElement-1671719229602]: 
+                  beanData: '{"ionBean":"Label"}'
+                  tagName: ion-label
+                  ↓Text [ngx.components.UIText-1671719229604]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: plain:Email
+                ↓TextInput [ngx.components.UIDynamicElement-1671719229606]: 
+                  beanData: |
+                    '{
+                     "ionBean": "Input",
+                     "ControlName": "plain:email",
+                     "Debounce": "plain:0"
+                    }'
+                  tagName: ion-input
+              ↓FormItem1 [ngx.components.UIDynamicElement-1671719229608]: 
+                beanData: '{"ionBean":"FormItem"}'
+                tagName: ion-item
+                ↓Label [ngx.components.UIDynamicElement-1671719229610]: 
+                  beanData: '{"ionBean":"Label"}'
+                  tagName: ion-label
+                  ↓Text [ngx.components.UIText-1671719229612]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: plain:Mot de passe
+                ↓TextInput [ngx.components.UIDynamicElement-1671719229614]: 
+                  beanData: |
+                    '{
+                     "ionBean": "Input",
+                     "ControlName": "plain:password",
+                     "Debounce": "plain:0",
+                     "Type": "plain:password"
+                    }'
+                  tagName: ion-input
+              ↓SubmitButton [ngx.components.UIDynamicElement-1671719229616]: 
+                beanData: '{"ionBean":"SubmitButton"}'
+                tagName: ion-button
+                ↓Text [ngx.components.UIText-1671719229618]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Connexion
+              ↓ResetButton [ngx.components.UIDynamicElement-1671719229620]: 
+                beanData: '{"ionBean":"ResetButton"}'
+                tagName: ion-button
+                ↓Text [ngx.components.UIText-1671719229622]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Reset
+              ↓Event [ngx.components.UIControlEvent-1671719229624]: 
+                attrName: (ngSubmit)
+                eventName: onSubmit
+                ↓CallSequence [ngx.components.UIDynamicAction-1671719254752]: 
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_UserManager.SignIn"}'
+                  ↓user [ngx.components.UIControlVariable-1671719267997]: 
+                    comment: new variable
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671719229598,"identifier":"loginForm"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓password [ngx.components.UIControlVariable-1671719267999]: 
+                    comment: new variable
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671719229598,"identifier":"loginForm"}],"path":"?.controls['password']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓IfElse [ngx.components.UIDynamicIf-1671790589542]: 
+                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.SignIn\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                    ↓Toast [ngx.components.UIDynamicAction-1671790613312]: 
+                      beanData: |
+                        '{
+                         "ionBean": "ToastAction",
+                         "message": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.SignIn\",\"marker\":\"\"}],\"path\":\"?.error[0]?.message\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                         "position": "plain:top"
+                        }'
+                    ↓Else_Handler [ngx.components.UIActionElseEvent-1671790701304]: 
+                      ↓CallSequence [ngx.components.UIDynamicAction-1671790709609]: 
+                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                        ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
+                          beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+            ↓azureButton [ngx.components.UIDynamicElement-1669818578024]: 
               beanData: '{"ionBean":"Button"}'
               tagName: ion-button
               ↓Label [ngx.components.UIDynamicElement-1669818578026]: 
@@ -56,7 +144,7 @@ title: Title for Login
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:Connexion
+                      - MobileSmartSourceType: plain:Connexion avec Azure
               ↓Event [ngx.components.UIControlEvent-1669818578030]: 
                 ↓CallSequence [ngx.components.UIDynamicAction-1669741325742]: 
                   beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_OAuth.GetOAuthCredentials"}'
@@ -77,8 +165,44 @@ title: Title for Login
                            "Property": "plain:username",
                            "Value": "script:stack[''OAuthAzure''].out.object.displayName"
                           }'
-                        ↓RootPage [ngx.components.UIDynamicAction-1669818433137]: 
-                          beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                        ↓CallSequence [ngx.components.UIDynamicAction-1671532415549]: 
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_OAuth.listGroupsAzureAd"}'
+                          ↓SetGlobal [ngx.components.UIDynamicAction-1671532473348]: 
+                            beanData: |
+                              '{
+                               "ionBean": "SetGlobalAction",
+                               "Property": "plain:groups",
+                               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.listGroupsAzureAd\",\"marker\":\"\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                              }'
+                            ↓IterateAction [ngx.components.UIDynamicIterate-1671807880485]: 
+                              beanData: '{"ionBean":"IterateAction","items":"source:{\"filter\":\"Global\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sharedObject\":\"router.sharedObject\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                              isEnabled: false
+                              ↓Loop_Handler [ngx.components.UIActionLoopEvent-1671807910742]: 
+                                varItemName: group
+                                ↓CallSequence [ngx.components.UIDynamicAction-1671807928223]: 
+                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
+                                  ↓user [ngx.components.UIControlVariable-1671807957571]: 
+                                    comment: new variable
+                                    varValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                        - MobileSmartSourceType: script:stack['OAuthAzure'].out.authUser
+                                  ↓group [ngx.components.UIControlVariable-1671807957573]: 
+                                    comment: new variable
+                                    varValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                        - MobileSmartSourceType: script:group.displayName
+                              ↓RootPage [ngx.components.UIDynamicAction-1669818433137]: 
+                                beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                            ↓CallSequence [ngx.components.UIDynamicAction-1671810183120]: 
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
+                              ↓groups [ngx.components.UIControlVariable-1671810264078]: 
+                                comment: new variable
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                     ↓CustomAction [ngx.components.UICustomAction-1669818136577]: 
                       actionValue: 
                         - xmlizable: 
