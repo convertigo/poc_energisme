@@ -12,7 +12,7 @@ testOnBorrow: true
     from convertigo_poc.raw_data rd
     inner join convertigo_poc.sensor_info si
     on rd.uuid = si.sensor_id 
-    where si.site_id in (CAST({sites} AS BIGINT))
+    where si.site_id in ({{sites}})
     and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     group by date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
@@ -25,20 +25,13 @@ testOnBorrow: true
     ↓date_end [variables.TestCaseVariable-1669192720645]: 
       description: date_end
       value: 2022-12-01
-    ↓sites [variables.TestCaseMultiValuedVariable-1671796046491]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-          - com.twinsoft.convertigo.beans.common.XMLVector: 
-            - java.lang.String: 
-              - ↑value: 14122
-            - java.lang.String: 
-              - ↑value: 7626
+    ↓sites [variables.TestCaseVariable-1671811007457]: 
+      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
   ↓date_start [variables.RequestableVariable-1669136094449]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1669136094451]: 
     description: date_end
-  ↓sites [variables.RequestableMultiValuedVariable-1671795964709]: 
+  ↓sites [variables.RequestableVariable-1671811002225]: 
 ↓conso_total_between [transactions.SqlTransaction]: 
   sqlQuery: |
     select
