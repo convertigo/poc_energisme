@@ -167,6 +167,7 @@ title: Title for Login
                           }'
                         ↓CallSequence [ngx.components.UIDynamicAction-1671532415549]: 
                           beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_OAuth.listGroupsAzureAd"}'
+                          isEnabled: false
                           ↓SetGlobal [ngx.components.UIDynamicAction-1671532473348]: 
                             beanData: |
                               '{
@@ -174,35 +175,8 @@ title: Title for Login
                                "Property": "plain:groups",
                                "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.listGroupsAzureAd\",\"marker\":\"\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                               }'
-                            ↓IterateAction [ngx.components.UIDynamicIterate-1671807880485]: 
-                              beanData: '{"ionBean":"IterateAction","items":"source:{\"filter\":\"Global\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sharedObject\":\"router.sharedObject\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
-                              isEnabled: false
-                              ↓Loop_Handler [ngx.components.UIActionLoopEvent-1671807910742]: 
-                                varItemName: group
-                                ↓CallSequence [ngx.components.UIDynamicAction-1671807928223]: 
-                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
-                                  ↓user [ngx.components.UIControlVariable-1671807957571]: 
-                                    comment: new variable
-                                    varValue: 
-                                      - xmlizable: 
-                                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: script:stack['OAuthAzure'].out.authUser
-                                  ↓group [ngx.components.UIControlVariable-1671807957573]: 
-                                    comment: new variable
-                                    varValue: 
-                                      - xmlizable: 
-                                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: script:group.displayName
-                              ↓RootPage [ngx.components.UIDynamicAction-1669818433137]: 
-                                beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
-                            ↓CallSequence [ngx.components.UIDynamicAction-1671810183120]: 
-                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
-                              ↓groups [ngx.components.UIControlVariable-1671810264078]: 
-                                comment: new variable
-                                varValue: 
-                                  - xmlizable: 
-                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        ↓CallSequence1 [ngx.components.UIDynamicAction-1671810183120]: 
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
                     ↓CustomAction [ngx.components.UICustomAction-1669818136577]: 
                       actionValue: 
                         - xmlizable: 
