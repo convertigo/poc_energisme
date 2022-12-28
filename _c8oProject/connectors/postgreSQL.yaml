@@ -5,6 +5,14 @@ jdbcUserPassword: x312b14f3b735263363b9702517d0c3d6af87c7e0aa1ff80f7ba13bffc89c9
 testOnBorrow: true
 ↓Default_transaction [transactions.SqlTransaction]: 
   ↑default: true
+↓getSite [transactions.SqlTransaction]: 
+  sqlQuery: SELECT * FROM convertigo_poc.site s WHERE s.id = CAST({site_id} AS BIGINT)
+  ↓Test_Case [core.TestCase]: 
+    ↓site_id [variables.TestCaseVariable-1672148194989]: 
+      value: 7731
+  ↓site_id [variables.RequestableVariable-1672148077216]: 
+↓getSitesList [transactions.SqlTransaction]: 
+  sqlQuery: select * from convertigo_poc.site s
 ↓monosite_conso_month [transactions.SqlTransaction]: 
   sqlQuery: |
     select

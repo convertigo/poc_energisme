@@ -1,0 +1,56 @@
+databaseName: groups_sites
+↓getGroupNameBySiteId [transactions.couchdb.GetViewTransaction]: 
+  q_reduce: false
+  viewname: Design_document/get_group_name_by_site_id
+  ↓Test_Case [core.TestCase]: 
+    ↓_use_key [variables.TestCaseVariable-1672233995765]: 
+      description: (string) – Return only documents that match the specified key. Optional
+      value: 
+  ↓_use_key [variables.RequestableVariable-1672233995768]: 
+    description: (string) – Return only documents that match the specified key. Optional
+↓GetServerInfo [transactions.couchdb.GetServerInfoTransaction]: 
+  ↑default: true
+↓getSitesByGroupName [transactions.couchdb.GetViewTransaction]: 
+  q_reduce: false
+  viewname: Design_document/get_sites_by_group_name
+  ↓Test_Case [core.TestCase]: 
+    ↓_use_key [variables.TestCaseVariable-1672147331708]: 
+      description: (string) – Return only documents that match the specified key. Optional
+  ↓_use_key [variables.RequestableVariable-1672146945230]: 
+    description: (string) – Return only documents that match the specified key. Optional
+↓insertGroupsSitesPostBulk [transactions.couchdb.PostBulkDocumentsTransaction]: 
+  ↓_use_json_base [variables.RequestableVariable-1672223514434]: 
+    description: (string) – JSON use as a base for the array of documents (js array), or for individual documents (js object). Optional
+↓Design_document [couchdb.DesignDocument]: 
+  docdata: 
+    →: |
+      '{
+        "_id": "_design\/Design_document",
+        "filters": {},
+        "updates": {},
+        "views": {
+          "get_sites_by_group_name": {
+            "map": "function (doc) {\r\n
+          try {\r\n
+              if(doc.group_name) {\r\n
+                  emit(doc.group_name, doc.site_id);\r\n
+              }\r\n
+              \r\n
+          } catch (err) {\r\n
+              log(err.message);\r\n
+          }\r\n
+      }"
+          },
+          "get_group_name_by_site_id": {
+            "map": "function (doc) {\r\n
+          try {\r\n
+              if(doc.site_id) {\r\n
+                  emit(doc.site_id, doc.group_name);\r\n
+              }\r\n
+          } catch (err) {\r\n
+              log(err.message);\r\n
+          }\r\n
+      }"
+          }
+        }
+      }'

@@ -2,7 +2,6 @@
 inAutoMenu: false
 segment: path-to-login
 title: Title for Login
-↓PageEvent [ngx.components.UIPageEvent-1669741316045]: 
 ↓Content [ngx.components.UIDynamicElement-1669819334516]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
@@ -130,10 +129,17 @@ title: Title for Login
                          "position": "plain:top"
                         }'
                     ↓Else_Handler [ngx.components.UIActionElseEvent-1671790701304]: 
-                      ↓CallSequence [ngx.components.UIDynamicAction-1671790709609]: 
-                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
-                        ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
-                          beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                      ↓SetGlobal [ngx.components.UIDynamicAction-1672060942364]: 
+                        beanData: |
+                          '{
+                           "ionBean": "SetGlobalAction",
+                           "Property": "plain:authUser",
+                           "Value": "source:{\"filter\":\"Form\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1671719229598,\"identifier\":\"loginForm\"}],\"path\":\"?.controls[''email'']?.value\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                          }'
+                        ↓CallSequence [ngx.components.UIDynamicAction-1671790709609]: 
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                          ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
+                            beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
             ↓azureButton [ngx.components.UIDynamicElement-1669818578024]: 
               beanData: '{"ionBean":"Button"}'
               tagName: ion-button
@@ -158,25 +164,34 @@ title: Title for Login
                       }'
                     ↓If [ngx.components.UIDynamicAction-1669821882104]: 
                       beanData: '{"ionBean":"IfAction","condition":"script:parent.out.login == \"ok\""}'
-                      ↓SetGlobal [ngx.components.UIDynamicAction-1669821916931]: 
+                      ↓SetGlobal1 [ngx.components.UIDynamicAction-1672060784007]: 
                         beanData: |
                           '{
                            "ionBean": "SetGlobalAction",
-                           "Property": "plain:username",
-                           "Value": "script:stack[''OAuthAzure''].out.object.displayName"
+                           "Property": "plain:authUser",
+                           "Value": "script:stack[''OAuthAzure''].out.object.authUser"
                           }'
-                        ↓CallSequence [ngx.components.UIDynamicAction-1671532415549]: 
-                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_OAuth.listGroupsAzureAd"}'
-                          isEnabled: false
-                          ↓SetGlobal [ngx.components.UIDynamicAction-1671532473348]: 
-                            beanData: |
-                              '{
-                               "ionBean": "SetGlobalAction",
-                               "Property": "plain:groups",
-                               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.listGroupsAzureAd\",\"marker\":\"\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                              }'
-                        ↓CallSequence1 [ngx.components.UIDynamicAction-1671810183120]: 
-                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
+                        ↓SetGlobal [ngx.components.UIDynamicAction-1669821916931]: 
+                          beanData: |
+                            '{
+                             "ionBean": "SetGlobalAction",
+                             "Property": "plain:username",
+                             "Value": "script:stack[''OAuthAzure''].out.object.displayName"
+                            }'
+                          ↓CallSequence [ngx.components.UIDynamicAction-1671532415549]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_OAuth.listGroupsAzureAd"}'
+                            isEnabled: false
+                            ↓SetGlobal [ngx.components.UIDynamicAction-1671532473348]: 
+                              beanData: |
+                                '{
+                                 "ionBean": "SetGlobalAction",
+                                 "Property": "plain:groups",
+                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.listGroupsAzureAd\",\"marker\":\"\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                }'
+                          ↓CallSequence1 [ngx.components.UIDynamicAction-1671810183120]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
+                            ↓RootPage [ngx.components.UIDynamicAction-1672060823859]: 
+                              beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
                     ↓CustomAction [ngx.components.UICustomAction-1669818136577]: 
                       actionValue: 
                         - xmlizable: 

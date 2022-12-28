@@ -105,6 +105,119 @@
             - ↑value: 1671811263527
           - java.lang.String: 
             - ↑value: .
+↓Complex2 [steps.XMLComplexStep-1672052037451]: 
+  isEnabled: false
+  nodeName: groups
+  ↓Attribute [steps.XMLAttributeStep-1672052037454]: 
+    nodeName: type
+    nodeText: array
+  ↓Iterator [steps.IteratorStep-1672052037457]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672049452379
+          - java.lang.String: 
+            - ↑value: ./document/groups/object
+    ↓JSON_to_XML [steps.JsonToXmlStep-1672052037460]: 
+      isEnabled: false
+      jsonObject: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: SOURCE
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1672052037457
+              - java.lang.String: 
+                - ↑value: .
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: group
+      output: false
+    ↓Element [steps.XMLElementStep-1672052037463]: 
+      nodeName: displayName
+      output: false
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672052037457
+            - java.lang.String: 
+              - ↑value: ./displayName/text()
+    ↓Complex [steps.XMLComplexStep-1672052037466]: 
+      ↓Attribute [steps.XMLAttributeStep-1672052037469]: 
+        nodeName: type
+        nodeText: object
+      ↓Element1 [steps.XMLElementStep-1672052037472]: 
+        nodeName: user
+        nodeText: admin
+        ↓Attribute [steps.XMLAttributeStep-1672052037475]: 
+          nodeName: type
+          nodeText: string
+      ↓Concat [steps.XMLConcatStep-1672052037478]: 
+        nodeName: group
+        separator: ':'
+        sourcesDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: description
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: ad
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: description
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672052037463
+                      - java.lang.String: 
+                        - ↑value: ./text()
+                  - java.lang.String: 
+                    - ↑value: ''
+↓Call_Sequence_4 [steps.SequenceStep-1672052097258]: 
+  isEnabled: false
+  sourceSequence: lib_FullSyncGrp.SetUserInGroupBulk
+  ↓bulkOBj [variables.StepMultiValuedVariable-1672052097261]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672052037451
+          - java.lang.String: 
+            - ↑value: .
+↓Call_Sequence_3 [steps.SequenceStep-1672051575577]: 
+  isEnabled: false
+  sourceSequence: lib_FullSyncGrp.SetUserInGroup
+  ↓user [variables.StepVariable-1672051589740]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1671811292056
+          - java.lang.String: 
+            - ↑value: ./document/authenticatedUserID/text()
+    value: 
+  ↓group [variables.StepVariable-1672051589742]: 
+    value: role-admin
 ↓Test_Case [core.TestCase]: 
   ↓groups [variables.TestCaseMultiValuedVariable-1671814202739]: 
     bSoapArray: false

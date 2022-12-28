@@ -1,5 +1,6 @@
 ↓Call_Sequence_2 [steps.SequenceStep-1671789503580]: 
   comment: Enbale only for test cases in Studio
+  isEnabled: false
   sourceSequence: lib_UserManager.SignIn
   ↓user [variables.StepVariable-1671789514992]: 
     comment: The userID (user's email)

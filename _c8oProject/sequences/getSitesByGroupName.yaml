@@ -1,0 +1,82 @@
+↓jIf [steps.IfStep-1672147499807]: 
+  condition: (_use_key = group_name) == undefined || group_name.length < 1
+  ↓Error_structure [steps.XMLErrorStep-1672147499810]: 
+    message: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: The "group_name" parameter must be defined and not empty
+  ↓Return [steps.ReturnStep-1672147499813]: 
+↓Call_Transaction [steps.TransactionStep-1672147022385]: 
+  sourceTransaction: poc_energisme.groups_sites.getSitesByGroupName
+  ↓_use_key [variables.StepVariable-1672147031745]: 
+    description: (string) – Return only documents that match the specified key. Optional
+↓sites [steps.JsonArrayStep-1672147910442]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: sites
+  ↓Iterator [steps.IteratorStep-1672147895787]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672147022385
+          - java.lang.String: 
+            - ↑value: ./document/couchdb_output/rows/item
+    ↓Call_Sequence [steps.SequenceStep-1672148502786]: 
+      isEnabled: false
+      sourceSequence: poc_energisme.getSite
+      ↓site_id [variables.StepVariable-1672148516556]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1672147895787
+              - java.lang.String: 
+                - ↑value: ./value/text()
+    ↓Object [steps.JsonObjectStep-1672148546760]: 
+      isEnabled: false
+      ↓nom [steps.JsonFieldStep-1672148556752]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: nom
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672148502786
+                - java.lang.String: 
+                  - ↑value: ./document/row/nom/text()
+    ↓Field [steps.JsonFieldStep-1672147978230]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: id
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: SOURCE
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1672147895787
+              - java.lang.String: 
+                - ↑value: ./value/text()
+↓group_name [variables.RequestableVariable-1672146998511]: 
+↓Test_Case [core.TestCase]: 
+  ↓group_name [variables.TestCaseVariable-1672147051849]: 
+    value: ad:Claranet Admins

@@ -1,0 +1,184 @@
+↓Input_variables [steps.InputVariablesStep-1672223545704]: 
+↓Array [steps.JsonArrayStep-1672223913973]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: docs
+  output: false
+  ↓Iterator [steps.IteratorStep-1672223533241]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672223545704
+          - java.lang.String: 
+            - ↑value: ./groups
+    ↓Object [steps.JsonObjectStep-1672224001796]: 
+      output: false
+      ↓Concat [steps.XMLConcatStep-1672223596122]: 
+        nodeName: _id
+        output: false
+        separator: _
+        sourcesDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: group_name
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672223533241
+                      - java.lang.String: 
+                        - ↑value: ./text()
+                  - java.lang.String: 
+                    - ↑value: ''
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: site_id
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672223545704
+                      - java.lang.String: 
+                        - ↑value: ./site_id/text()
+                  - java.lang.String: 
+                    - ↑value: ''
+      ↓Field [steps.JsonFieldStep-1672224032443]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: group_name
+        output: false
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672223533241
+                - java.lang.String: 
+                  - ↑value: ./text()
+      ↓Field1 [steps.JsonFieldStep-1672224090922]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: site_id
+        output: false
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672223545704
+                - java.lang.String: 
+                  - ↑value: ./site_id/text()
+    ↓Iterator [steps.IteratorStep-1672223577961]: 
+      isEnabled: false
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672223545704
+            - java.lang.String: 
+              - ↑value: ./sites
+↓JsonSource [steps.JsonSourceStep-1672224254761]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1672223913973
+        - java.lang.String: 
+          - ↑value: .
+  variableName: docs
+↓stringifyDocs [steps.SimpleStep-1672224140469]: 
+  expression: |
+    var _use_json_base = JSON.stringify(docs)
+    log.warn("#### docs stringify")
+    log.warn(_use_json_base)
+↓Call_Transaction [steps.TransactionStep-1672224437827]: 
+  sourceTransaction: poc_energisme.groups_sites.insertGroupsSitesPostBulk
+  ↓_use_json_base [variables.StepVariable-1672224450383]: 
+    description: (string) – JSON use as a base for the array of documents (js array), or for individual documents (js object). Optional
+↓IfExistThenElse [steps.IfExistThenElseStep-1672224778014]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1672224437827
+        - java.lang.String: 
+          - ↑value: ./document/error
+  ↓jThen [steps.ThenStep-1672224778479]: 
+    ↓Field [steps.JsonFieldStep-1672224798742]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: status
+      type: bool
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: false
+  ↓jElse [steps.ElseStep-1672224778481]: 
+    ↓Field [steps.JsonFieldStep-1672224817097]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: status
+      type: bool
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: true
+↓groups [variables.RequestableMultiValuedVariable-1672223559499]: 
+↓site_id [variables.RequestableVariable-1672224326726]: 
+↓multipleGroups [core.TestCase]: 
+  ↓groups [variables.TestCaseMultiValuedVariable-1672223667391]: 
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: ad:hdisparkvdc1Adm_pprod
+          - java.lang.String: 
+            - ↑value: ad:Datalake-DataScience
+  ↓site_id [variables.TestCaseVariable-1672224339948]: 
+    value: 7731
+↓oneGroup [core.TestCase]: 
+  ↓groups [variables.TestCaseMultiValuedVariable-1672224556226]: 
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: ad:hdisparkvdc1Adm_pprod
+  ↓site_id [variables.TestCaseVariable-1672224556228]: 
+    value: 72181

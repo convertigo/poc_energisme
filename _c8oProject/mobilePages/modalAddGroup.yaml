@@ -1,0 +1,82 @@
+segment: path-to-modaladdgroup
+title: Title for modalAddGroup
+↓Content [ngx.components.UIDynamicElement-1672221025338]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓Grid [ngx.components.UIDynamicElement-1672221033710]: 
+    beanData: '{"ionBean":"Grid"}'
+    tagName: ion-grid
+    ↓rowLabelAddGroupSites [ngx.components.UIDynamicElement-1672221047113]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓colLabelAddGroupSites [ngx.components.UIDynamicElement-1672221047116]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1672221047119]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1672221047122]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Ajouter un groupe de sites
+    ↓rowFormAddGroupSites [ngx.components.UIDynamicElement-1672221047125]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓colForm [ngx.components.UIDynamicElement-1672221047128]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Form [ngx.components.UIForm-1672221047131]: 
+          identifier: formAddGroupSite
+          ↓FormItem [ngx.components.UIDynamicElement-1672221047134]: 
+            beanData: '{"ionBean":"FormItem"}'
+            tagName: ion-item
+            ↓Label [ngx.components.UIDynamicElement-1672221047137]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓Text [ngx.components.UIText-1672221047140]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Nom du groupe
+            ↓TextInput [ngx.components.UIDynamicElement-1672221047143]: 
+              beanData: |
+                '{
+                 "ionBean": "Input",
+                 "ControlName": "plain:groupName",
+                 "Debounce": "plain:0"
+                }'
+              tagName: ion-input
+          ↓SubmitButton [ngx.components.UIDynamicElement-1672221047146]: 
+            beanData: '{"ionBean":"SubmitButton"}'
+            tagName: ion-button
+            ↓Text [ngx.components.UIText-1672221047149]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Créer le groupe
+          ↓ResetButton [ngx.components.UIDynamicElement-1672221047152]: 
+            beanData: '{"ionBean":"ResetButton"}'
+            tagName: ion-button
+            ↓Text [ngx.components.UIText-1672221047155]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Effacer
+          ↓Event [ngx.components.UIControlEvent-1672221047158]: 
+            attrName: (ngSubmit)
+            eventName: onSubmit
+            ↓CallSequence [ngx.components.UIDynamicAction-1672221047161]: 
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
+              ↓user [ngx.components.UIControlVariable-1672221047164]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓group [ngx.components.UIControlVariable-1672221047167]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672221047131,"identifier":"formAddGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
