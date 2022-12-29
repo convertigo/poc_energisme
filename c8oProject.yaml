@@ -23,12 +23,13 @@
   ↓multisite_sites_energivore_elec [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_elec.yaml
   ↓multisite_sites_energivore_gaz [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_gaz.yaml
   ↓postBulkGroupsFromAuthenticatedUser [sequences.GenericSequence]: 🗏 sequences/postBulkGroupsFromAuthenticatedUser.yaml
+  ↓removeAllSitesOfGroup [sequences.GenericSequence]: 🗏 sequences/removeAllSitesOfGroup.yaml
   ↓CouchDb_schema [references.ImportXsdSchemaReference]: 
     urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
   ↓lib_ExtendedComponents_ui_ngx_reference [references.ProjectSchemaReference]: 
     projectName: lib_ExtendedComponents_ui_ngx=https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx.git:branch=8.0.0
   ↓lib_FullSyncGrp_reference [references.ProjectSchemaReference]: 
-    projectName: lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=e6674a8b08e21ac87e9c337b3d766ac1447188cc
+    projectName: lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=8.0.0
   ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
     projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=334a638363d83d83bfed756b025f96226751e50e
   ↓lib_UserManager_reference [references.ProjectSchemaReference]: 

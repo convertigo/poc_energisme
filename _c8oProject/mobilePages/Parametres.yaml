@@ -208,7 +208,25 @@ title: Title for Parametres
               tagName: ion-icon
               ↓Event [ngx.components.UIControlEvent-1672220969779]: 
                 ↓ModalPage [ngx.components.UIDynamicAction-1672220987105]: 
-                  beanData: '{"ionBean":"ModalAction","page":"plain:poc_energisme.Application.NgxApp.modalAddGroup"}'
+                  beanData: |
+                    '{
+                     "ionBean": "ModalAction",
+                     "page": "plain:poc_energisme.Application.NgxApp.modalAddGroup",
+                     "blockWhileDisplayed": "plain:true"
+                    }'
+                  ↓IfElse [ngx.components.UIDynamicIf-1672314508071]: 
+                    beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.data.add == \"true\""}'
+                    ↓CallSequence [ngx.components.UIDynamicAction-1672314518993]: 
+                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
+                      ↓user [ngx.components.UIControlVariable-1672314518996]: 
+                        comment: new variable
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    ↓Else_Handler [ngx.components.UIActionElseEvent-1672314521923]: 
+                      ↓Toast [ngx.components.UIDynamicAction-1672314527951]: 
+                        beanData: '{"ionBean":"ToastAction","message":"script:JSON.stringify(stack[''1672220987105''].out)"}'
               ↓Style [ngx.components.UIStyle-1672244711129]: 
                 styleContent: 
                   - xmlizable: 
@@ -574,14 +592,35 @@ title: Title for Parametres
                     ↓ButtonSet1 [ngx.components.UIDynamicElement-1672062975159]: 
                       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
                       tagName: ion-buttons
-                      ↓Button [ngx.components.UIDynamicElement-1672062975161]: 
+                      ↓buttonUpdate [ngx.components.UIDynamicElement-1672062975161]: 
                         beanData: '{"ionBean":"Button"}'
                         tagName: ion-button
                         ↓Event [ngx.components.UIControlEvent-1672062975165]: 
+                          ↓ModalPage [ngx.components.UIDynamicAction-1672310894483]: 
+                            beanData: |
+                              '{
+                               "ionBean": "ModalAction",
+                               "page": "plain:poc_energisme.Application.NgxApp.modalUpdateGroup",
+                               "data": "script:{ name: group }",
+                               "blockWhileDisplayed": "plain:true"
+                              }'
+                            ↓If [ngx.components.UIDynamicAction-1672314172372]: 
+                              beanData: '{"ionBean":"IfAction","condition":"script:parent.out.data.update == \"true\""}'
+                              ↓CallSequence [ngx.components.UIDynamicAction-1672314197105]: 
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
+                                ↓user [ngx.components.UIControlVariable-1672314209152]: 
+                                  comment: new variable
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                          ↓Toast [ngx.components.UIDynamicAction-1672311438736]: 
+                            beanData: '{"ionBean":"ToastAction","message":"script:group"}'
+                            isEnabled: false
                         ↓Icon [ngx.components.UIDynamicElement-1672063006680]: 
                           beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                           tagName: ion-icon
-                      ↓Button1 [ngx.components.UIDynamicElement-1672063036369]: 
+                      ↓buttonDelete [ngx.components.UIDynamicElement-1672063036369]: 
                         beanData: '{"ionBean":"Button"}'
                         tagName: ion-button
                         ↓Event [ngx.components.UIControlEvent-1672063036372]: 
@@ -595,14 +634,45 @@ title: Title for Parametres
                                   - MobileSmartSourceType: script:group
                             ↓IfElse [ngx.components.UIDynamicIf-1672247811229]: 
                               beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.success == \"true\""}'
-                              ↓CallSequence [ngx.components.UIDynamicAction-1672248398634]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
-                                ↓user [ngx.components.UIControlVariable-1672248417596]: 
+                              ↓CallSequence1 [ngx.components.UIDynamicAction-1672320516296]: 
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeAllSitesOfGroup"}'
+                                ↓CallSequence [ngx.components.UIDynamicAction-1672248398634]: 
+                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
+                                  ↓user [ngx.components.UIControlVariable-1672248417596]: 
+                                    comment: new variable
+                                    varValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  ↓removeSitesFromGroups [ngx.components.UICustomAction-1672320723691]: 
+                                    actionValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                          →: |
+                                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                            		var sites = vars.sites;
+                                            		console.log(sites)
+                                            		console.log(page.local["sitesFromGroup"])
+                                            		
+                                            		for(var i = 0; i < sites.length; i++) {
+                                            			if(page.local["sitesFromGroup"].includes(sites[i])) {
+                                            				page.local["sitesFromGroup"].splice(page.local["sitesFromGroup"].indexOf(sites[i]), 1)
+                                            			}
+                                            		}
+                                            		resolve();
+                                            '
+                                    ↓sites [ngx.components.UIControlVariable-1672320723694]: 
+                                      varValue: 
+                                        - xmlizable: 
+                                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                ↓group [ngx.components.UIControlVariable-1672320542199]: 
                                   comment: new variable
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                      - MobileSmartSourceType: script:group
                               ↓Toast [ngx.components.UIDynamicAction-1672247832202]: 
                                 beanData: '{"ionBean":"ToastAction","message":"plain:Le groupe a été supprimé."}'
                               ↓Else_Handler [ngx.components.UIActionElseEvent-1672247849861]: 

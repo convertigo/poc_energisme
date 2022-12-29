@@ -1,4 +1,7 @@
 databaseName: groups_sites
+↓deleteSitesFromGroup [transactions.couchdb.DeleteDocumentTransaction]: 
+  ↓_use_docid [variables.RequestableVariable-1672320142142]: 
+    description: Document ID
 ↓getGroupNameBySiteId [transactions.couchdb.GetViewTransaction]: 
   q_reduce: false
   viewname: Design_document/get_group_name_by_site_id

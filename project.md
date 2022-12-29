@@ -30,7 +30,7 @@ see [readme](https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_FullSyncGrp
 
 
-see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/e6674a8b08e21ac87e9c337b3d766ac1447188cc#readme)
+see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/8.0.0#readme)
 </p></blockquote></details>
 
 <details><summary><b>lib_OAuth</b></summary><blockquote><p>
@@ -64,6 +64,36 @@ see [readme](https://github.com/convertigo/c8oprj-lib-user-manager/tree/f8941d93
 
 <details><summary><span style="color:DarkGoldenRod"><i>Transactions</i></span></summary><blockquote><p>
 
+
+<details><summary><b>deleteSitesFromGroup</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/couchdb/images/deletedocument_color_16x16.png?raw=true "DeleteDocumentTransaction") deleteSitesFromGroup
+
+
+
+<span style="color:DarkGoldenRod">Variables</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;_use_docid
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
 
 <details><summary><b>getGroupNameBySiteId</b></summary><blockquote><p>
 
@@ -1040,6 +1070,36 @@ comment
 
 
 </p></blockquote></details>
+
+<details><summary><b>removeAllSitesOfGroup</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") removeAllSitesOfGroup
+
+
+
+<span style="color:DarkGoldenRod">Variables</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;group
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
 </p></blockquote></details>
 
 <details><summary><span style="color:DarkGoldenRod"><i>Mobile Application</i></span></summary><blockquote><p>
@@ -1064,6 +1124,14 @@ Describes the mobile application global properties
 
 
 ### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") modalAddGroup
+
+
+</p></blockquote></details>
+
+<details><summary><b>modalUpdateGroup</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") modalUpdateGroup
 
 
 </p></blockquote></details>

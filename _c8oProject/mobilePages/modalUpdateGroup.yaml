@@ -1,20 +1,20 @@
-segment: path-to-modaladdgroup
-title: Title for modalAddGroup
-↓Header [ngx.components.UIDynamicElement-1672307891205]: 
+segment: path-to-modalupdategroup
+title: Title for modalUpdateGroup
+↓Header [ngx.components.UIDynamicElement-1672310695452]: 
   beanData: '{"ionBean":"Header"}'
   tagName: ion-header
-  ↓ToolBar [ngx.components.UIDynamicElement-1672307891207]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1672310695455]: 
     beanData: '{"ionBean":"ToolBar"}'
     tagName: ion-toolbar
-    ↓BarTitle [ngx.components.UIDynamicElement-1672307891223]: 
+    ↓BarTitle [ngx.components.UIDynamicElement-1672310695458]: 
       beanData: '{"ionBean":"BarTitle"}'
       tagName: ion-title
-      ↓Text [ngx.components.UIText-1672307891225]: 
+      ↓Text [ngx.components.UIText-1672310695461]: 
         textValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:Ajouter un groupe de site
-    ↓Style [ngx.components.UIStyle-1672309080474]: 
+            - MobileSmartSourceType: plain:Modifier un groupe de site
+    ↓Style [ngx.components.UIStyle-1672310695464]: 
       styleContent: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -23,47 +23,47 @@ title: Title for modalAddGroup
               '	--color: white;
               	--background: #175aa2;
               '
-↓Content [ngx.components.UIDynamicElement-1672221025338]: 
+↓Content [ngx.components.UIDynamicElement-1672310695467]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
-  ↓Grid [ngx.components.UIDynamicElement-1672221033710]: 
+  ↓Grid [ngx.components.UIDynamicElement-1672310695470]: 
     beanData: '{"ionBean":"Grid"}'
     tagName: ion-grid
-    ↓rowLabelAddGroupSites [ngx.components.UIDynamicElement-1672221047113]: 
+    ↓rowLabelAddGroupSites [ngx.components.UIDynamicElement-1672310695473]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
       isEnabled: false
       tagName: ion-row
-      ↓colLabelAddGroupSites [ngx.components.UIDynamicElement-1672221047116]: 
+      ↓colLabelAddGroupSites [ngx.components.UIDynamicElement-1672310695476]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
-        ↓Label [ngx.components.UIDynamicElement-1672221047119]: 
+        ↓Label [ngx.components.UIDynamicElement-1672310695479]: 
           beanData: '{"ionBean":"Label"}'
           tagName: ion-label
-          ↓Text [ngx.components.UIText-1672221047122]: 
+          ↓Text [ngx.components.UIText-1672310695482]: 
             textValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                 - MobileSmartSourceType: plain:Ajouter un groupe de sites
-    ↓rowFormAddGroupSites [ngx.components.UIDynamicElement-1672221047125]: 
+    ↓rowFormAddGroupSites [ngx.components.UIDynamicElement-1672310695485]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
       tagName: ion-row
-      ↓colForm [ngx.components.UIDynamicElement-1672221047128]: 
+      ↓colForm [ngx.components.UIDynamicElement-1672310695488]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
-        ↓Form [ngx.components.UIForm-1672221047131]: 
-          identifier: formAddGroupSite
-          ↓FormItem [ngx.components.UIDynamicElement-1672221047134]: 
+        ↓Form [ngx.components.UIForm-1672310695491]: 
+          identifier: formUpdateGroupSite
+          ↓FormItem [ngx.components.UIDynamicElement-1672310695494]: 
             beanData: '{"ionBean":"FormItem"}'
             tagName: ion-item
-            ↓Label [ngx.components.UIDynamicElement-1672221047137]: 
+            ↓Label [ngx.components.UIDynamicElement-1672310695497]: 
               beanData: '{"ionBean":"Label"}'
               tagName: ion-label
-              ↓Text [ngx.components.UIText-1672221047140]: 
+              ↓Text [ngx.components.UIText-1672310695500]: 
                 textValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                     - MobileSmartSourceType: plain:Nom du groupe
-            ↓TextInput [ngx.components.UIDynamicElement-1672221047143]: 
+            ↓TextInput [ngx.components.UIDynamicElement-1672310695503]: 
               beanData: |
                 '{
                  "ionBean": "Input",
@@ -71,43 +71,13 @@ title: Title for modalAddGroup
                  "Debounce": "plain:0"
                 }'
               tagName: ion-input
-          ↓SubmitButton [ngx.components.UIDynamicElement-1672221047146]: 
-            beanData: '{"ionBean":"SubmitButton"}'
-            isEnabled: false
-            tagName: ion-button
-            ↓Text [ngx.components.UIText-1672221047149]: 
-              textValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: plain:Créer le groupe
-          ↓ResetButton [ngx.components.UIDynamicElement-1672221047152]: 
-            beanData: '{"ionBean":"ResetButton"}'
-            isEnabled: false
-            tagName: ion-button
-            ↓Text [ngx.components.UIText-1672221047155]: 
-              textValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: plain:Effacer
-          ↓Event [ngx.components.UIControlEvent-1672221047158]: 
-            attrName: (ngSubmit)
-            eventName: onSubmit
-            isEnabled: false
-            ↓CallSequence [ngx.components.UIDynamicAction-1672221047161]: 
-              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
-              ↓user [ngx.components.UIControlVariable-1672221047164]: 
-                comment: new variable
-                varValue: 
+              ↓Attr [ngx.components.UIAttribute-1672311581231]: 
+                attrName: '[(ngModel)]'
+                attrValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
-              ↓group [ngx.components.UIControlVariable-1672221047167]: 
-                comment: new variable
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672221047131,"identifier":"formAddGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
-    ↓rowButtons [ngx.components.UIDynamicElement-1672307925221]: 
+                    - MobileSmartSourceType: script:this.local['group']
+    ↓rowButtons [ngx.components.UIDynamicElement-1672310695530]: 
       beanData: |
         '{
          "ionBean": "GridRow",
@@ -116,10 +86,10 @@ title: Title for modalAddGroup
         }'
       isEnabled: false
       tagName: ion-row
-      ↓GridCol [ngx.components.UIDynamicElement-1672307925223]: 
+      ↓GridCol [ngx.components.UIDynamicElement-1672310695533]: 
         beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
         tagName: ion-col
-        ↓iconClose [ngx.components.UIDynamicElement-1672307970995]: 
+        ↓iconClose [ngx.components.UIDynamicElement-1672310695536]: 
           beanData: |
             '{
              "ionBean": "Icon",
@@ -127,10 +97,10 @@ title: Title for modalAddGroup
              "IonSize": "plain:large"
             }'
           tagName: ion-icon
-          ↓Event [ngx.components.UIControlEvent-1672308058147]: 
-            ↓CloseModal [ngx.components.UIDynamicAction-1672308070128]: 
+          ↓Event [ngx.components.UIControlEvent-1672310695539]: 
+            ↓CloseModal [ngx.components.UIDynamicAction-1672310695542]: 
               beanData: '{"ionBean":"CloseModalAction"}'
-          ↓Style [ngx.components.UIStyle-1672308081554]: 
+          ↓Style [ngx.components.UIStyle-1672310695545]: 
             styleContent: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -138,7 +108,7 @@ title: Title for modalAddGroup
                   →: |
                     '	color: #f04429;
                     '
-        ↓iconOK [ngx.components.UIDynamicElement-1672307944996]: 
+        ↓iconOK [ngx.components.UIDynamicElement-1672310695548]: 
           beanData: |
             '{
              "ionBean": "Icon",
@@ -146,32 +116,32 @@ title: Title for modalAddGroup
              "IonSize": "plain:large"
             }'
           tagName: ion-icon
-          ↓Event [ngx.components.UIControlEvent-1672308015953]: 
-            ↓CallSequence [ngx.components.UIDynamicAction-1672308015956]: 
+          ↓Event [ngx.components.UIControlEvent-1672310695551]: 
+            ↓CallSequence [ngx.components.UIDynamicAction-1672310695554]: 
               beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
-              ↓user [ngx.components.UIControlVariable-1672308015959]: 
+              ↓user [ngx.components.UIControlVariable-1672310695557]: 
                 comment: new variable
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                     - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
-              ↓group [ngx.components.UIControlVariable-1672308015962]: 
+              ↓group [ngx.components.UIControlVariable-1672310695560]: 
                 comment: new variable
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672221047131,"identifier":"formAddGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
-              ↓IfElse [ngx.components.UIDynamicIf-1672308283864]: 
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓IfElse [ngx.components.UIDynamicIf-1672310695563]: 
                 beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
-                ↓Toast [ngx.components.UIDynamicAction-1672308309193]: 
+                ↓Toast [ngx.components.UIDynamicAction-1672310695566]: 
                   beanData: |
                     '{
                      "ionBean": "ToastAction",
                      "message": "plain:Une erreur est survenue lors de la création du groupe.",
                      "position": "plain:top"
                     }'
-                ↓Else_Handler [ngx.components.UIActionElseEvent-1672308303283]: 
-                  ↓Toast [ngx.components.UIDynamicAction-1672308334430]: 
+                ↓Else_Handler [ngx.components.UIActionElseEvent-1672310695569]: 
+                  ↓Toast [ngx.components.UIDynamicAction-1672310695572]: 
                     beanData: |
                       '{
                        "ionBean": "ToastAction",
@@ -179,9 +149,9 @@ title: Title for modalAddGroup
                        "duration": "plain:2000",
                        "position": "plain:top"
                       }'
-                    ↓CloseModal [ngx.components.UIDynamicAction-1672308208881]: 
+                    ↓CloseModal [ngx.components.UIDynamicAction-1672310695575]: 
                       beanData: '{"ionBean":"CloseModalAction"}'
-          ↓Style [ngx.components.UIStyle-1672308970262]: 
+          ↓Style [ngx.components.UIStyle-1672310695578]: 
             styleContent: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -189,7 +159,7 @@ title: Title for modalAddGroup
                   →: |
                     '	color: #00885b;
                     '
-  ↓Style [ngx.components.UIStyle-1672309507335]: 
+  ↓Style [ngx.components.UIStyle-1672310695581]: 
     styleContent: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -215,13 +185,13 @@ title: Title for modalAddGroup
             //--padding-top	//Top padding of the content
             --background: white;
             '
-↓Footer [ngx.components.UIDynamicElement-1672309400486]: 
+↓Footer [ngx.components.UIDynamicElement-1672310695584]: 
   beanData: '{"ionBean":"Footer"}'
   tagName: ion-footer
-  ↓ToolBar [ngx.components.UIDynamicElement-1672309400488]: 
+  ↓ToolBar [ngx.components.UIDynamicElement-1672310695587]: 
     beanData: '{"ionBean":"ToolBar"}'
     tagName: ion-toolbar
-    ↓iconClose [ngx.components.UIDynamicElement-1672309428353]: 
+    ↓iconClose [ngx.components.UIDynamicElement-1672310695590]: 
       beanData: |
         '{
          "ionBean": "Icon",
@@ -229,10 +199,10 @@ title: Title for modalAddGroup
          "IonSize": "plain:large"
         }'
       tagName: ion-icon
-      ↓Event [ngx.components.UIControlEvent-1672309428356]: 
-        ↓CloseModal [ngx.components.UIDynamicAction-1672309428359]: 
-          beanData: '{"ionBean":"CloseModalAction","data":"script:{ add: \"false\" }"}'
-      ↓Style [ngx.components.UIStyle-1672309428362]: 
+      ↓Event [ngx.components.UIControlEvent-1672310695593]: 
+        ↓CloseModal [ngx.components.UIDynamicAction-1672310695596]: 
+          beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"false\" }"}'
+      ↓Style [ngx.components.UIStyle-1672310695599]: 
         styleContent: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -240,7 +210,7 @@ title: Title for modalAddGroup
               →: |
                 '	color: #f04429;
                 '
-    ↓iconOK [ngx.components.UIDynamicElement-1672309428365]: 
+    ↓iconOK [ngx.components.UIDynamicElement-1672310695602]: 
       beanData: |
         '{
          "ionBean": "Icon",
@@ -248,42 +218,31 @@ title: Title for modalAddGroup
          "IonSize": "plain:large"
         }'
       tagName: ion-icon
-      ↓Event [ngx.components.UIControlEvent-1672309428368]: 
-        ↓CallSequence [ngx.components.UIDynamicAction-1672309428371]: 
-          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
-          ↓user [ngx.components.UIControlVariable-1672309428374]: 
+      ↓Event [ngx.components.UIControlEvent-1672310695605]: 
+        ↓CallSequence [ngx.components.UIDynamicAction-1672310695608]: 
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.UpdateGroup"}'
+          ↓old_group_name [ngx.components.UIControlVariable-1672313886000]: 
             comment: new variable
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
-          ↓group [ngx.components.UIControlVariable-1672309428377]: 
+                - MobileSmartSourceType: script:this.local['old_group_name']
+          ↓new_group_name [ngx.components.UIControlVariable-1672313886002]: 
             comment: new variable
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672221047131,"identifier":"formAddGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
-          ↓IfElse [ngx.components.UIDynamicIf-1672309428380]: 
-            beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
-            ↓Toast [ngx.components.UIDynamicAction-1672309428383]: 
-              beanData: |
-                '{
-                 "ionBean": "ToastAction",
-                 "message": "plain:Une erreur est survenue lors de la création du groupe.",
-                 "position": "plain:top"
-                }'
-            ↓Else_Handler [ngx.components.UIActionElseEvent-1672309428386]: 
-              ↓Toast [ngx.components.UIDynamicAction-1672309428389]: 
-                beanData: |
-                  '{
-                   "ionBean": "ToastAction",
-                   "message": "plain:Le groupe a correctement été créé.",
-                   "duration": "plain:2000",
-                   "position": "plain:top"
-                  }'
-                ↓CloseModal [ngx.components.UIDynamicAction-1672309428392]: 
-                  beanData: '{"ionBean":"CloseModalAction","data":"script:{ add: \"true\" }"}'
-      ↓Style [ngx.components.UIStyle-1672309428395]: 
+                - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+          ↓Toast [ngx.components.UIDynamicAction-1672313968865]: 
+            beanData: |
+              '{
+               "ionBean": "ToastAction",
+               "message": "plain:Le groupe a été correctement modifié.",
+               "position": "plain:top"
+              }'
+          ↓CloseModal [ngx.components.UIDynamicAction-1672314090202]: 
+            beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"true\" }"}'
+      ↓Style [ngx.components.UIStyle-1672310695632]: 
         styleContent: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -291,7 +250,7 @@ title: Title for modalAddGroup
               →: |
                 '	color: #00885b;
                 '
-    ↓Style [ngx.components.UIStyle-1672309277129]: 
+    ↓Style [ngx.components.UIStyle-1672310695635]: 
       styleContent: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -319,3 +278,18 @@ title: Title for modalAddGroup
               	text-align: center;
               	--background: #eeeeee;
               '
+↓PageEvent [ngx.components.UIPageEvent-1672310809960]: 
+  ↓SetLocal [ngx.components.UIDynamicAction-1672310818133]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:group",
+       "Value": "script:this.navParams.data.name"
+      }'
+  ↓SetLocal1 [ngx.components.UIDynamicAction-1672311768730]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:old_group_name",
+       "Value": "script:this.navParams.data.name"
+      }'

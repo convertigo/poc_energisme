@@ -1,0 +1,74 @@
+↓Input_variables [steps.InputVariablesStep-1672320216539]: 
+↓Call_Sequence [steps.SequenceStep-1672320187449]: 
+  output: true
+  sourceSequence: poc_energisme.getSitesByGroupName
+  ↓group_name [variables.StepVariable-1672320200891]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672320216539
+          - java.lang.String: 
+            - ↑value: ./group/text()
+↓Iterator [steps.IteratorStep-1672320291429]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1672320187449
+        - java.lang.String: 
+          - ↑value: ./document/sites
+  ↓Concat [steps.XMLConcatStep-1672320314543]: 
+    nodeName: _use_docid
+    separator: _
+    sourcesDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: group_name
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672320216539
+                  - java.lang.String: 
+                    - ↑value: ./group/text()
+              - java.lang.String: 
+                - ↑value: ''
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: site_id
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672320291429
+                  - java.lang.String: 
+                    - ↑value: ./Field/text()
+              - java.lang.String: 
+                - ↑value: ''
+  ↓Call_Transaction [steps.TransactionStep-1672320389396]: 
+    output: true
+    sourceTransaction: poc_energisme.groups_sites.deleteSitesFromGroup
+    ↓_use_docid [variables.StepVariable-1672320411433]: 
+      description: Document ID
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672320314543
+            - java.lang.String: 
+              - ↑value: ./text()
+↓group [variables.RequestableVariable-1672320167769]: 
+↓Test_Case [core.TestCase]: 
+  ↓group [variables.TestCaseVariable-1672320257907]: 
+    value: aa

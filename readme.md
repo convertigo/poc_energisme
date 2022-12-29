@@ -13,6 +13,7 @@ For more technical informations : [documentation](./project.md)
     - [Pages](#pages)
         - [Login](#login)
         - [modalAddGroup](#modaladdgroup)
+        - [modalUpdateGroup](#modalupdategroup)
         - [Monosite](#monosite)
         - [Multisite](#multisite)
         - [Parametres](#parametres)
@@ -55,6 +56,8 @@ Describes the mobile application global properties
 #### Login
 
 #### modalAddGroup
+
+#### modalUpdateGroup
 
 #### Monosite
 
