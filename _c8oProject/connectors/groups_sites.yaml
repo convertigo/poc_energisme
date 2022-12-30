@@ -24,6 +24,11 @@ databaseName: groups_sites
 ↓insertGroupsSitesPostBulk [transactions.couchdb.PostBulkDocumentsTransaction]: 
   ↓_use_json_base [variables.RequestableVariable-1672223514434]: 
     description: (string) – JSON use as a base for the array of documents (js array), or for individual documents (js object). Optional
+↓PostUpdateGroupsSites [transactions.couchdb.PostUpdateTransaction]: 
+  ↓_id [variables.RequestableVariable-1672397885613]: 
+    description: Document id
+  ↓data [variables.RequestableVariable-1672397885615]: 
+    description: Document content
 ↓Design_document [couchdb.DesignDocument]: 
   docdata: 
     →: |

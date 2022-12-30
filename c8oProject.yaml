@@ -24,6 +24,8 @@
   ↓multisite_sites_energivore_gaz [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_gaz.yaml
   ↓postBulkGroupsFromAuthenticatedUser [sequences.GenericSequence]: 🗏 sequences/postBulkGroupsFromAuthenticatedUser.yaml
   ↓removeAllSitesOfGroup [sequences.GenericSequence]: 🗏 sequences/removeAllSitesOfGroup.yaml
+  ↓removeSiteFromGroup [sequences.GenericSequence]: 🗏 sequences/removeSiteFromGroup.yaml
+  ↓updateGroupAndAffiliations [sequences.GenericSequence]: 🗏 sequences/updateGroupAndAffiliations.yaml
   ↓CouchDb_schema [references.ImportXsdSchemaReference]: 
     urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
   ↓lib_ExtendedComponents_ui_ngx_reference [references.ProjectSchemaReference]: 

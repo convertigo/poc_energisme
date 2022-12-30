@@ -221,6 +221,7 @@ title: Title for modalUpdateGroup
       ↓Event [ngx.components.UIControlEvent-1672310695605]: 
         ↓CallSequence [ngx.components.UIDynamicAction-1672310695608]: 
           beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.UpdateGroup"}'
+          isEnabled: false
           ↓old_group_name [ngx.components.UIControlVariable-1672313886000]: 
             comment: new variable
             varValue: 
@@ -241,6 +242,29 @@ title: Title for modalUpdateGroup
                "position": "plain:top"
               }'
           ↓CloseModal [ngx.components.UIDynamicAction-1672314090202]: 
+            beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"true\" }"}'
+        ↓CallSequence1 [ngx.components.UIDynamicAction-1672398618109]: 
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.updateGroupAndAffiliations"}'
+          ↓old_group_name [ngx.components.UIControlVariable-1672398629374]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.local['old_group_name']
+          ↓new_group_name [ngx.components.UIControlVariable-1672398629376]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+          ↓Toast [ngx.components.UIDynamicAction-1672398657749]: 
+            beanData: |
+              '{
+               "ionBean": "ToastAction",
+               "message": "plain:Le groupe a été correctement modifié.",
+               "position": "plain:top"
+              }'
+          ↓CloseModal [ngx.components.UIDynamicAction-1672398657752]: 
             beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"true\" }"}'
       ↓Style [ngx.components.UIStyle-1672310695632]: 
         styleContent: 
