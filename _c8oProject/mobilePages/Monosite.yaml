@@ -1,5 +1,6 @@
+comment: Monosite view
 inAutoMenu: false
-segment: path-to-monosite
+segment: monosite
 title: Monosite
 ↓PageEvent [ngx.components.UIPageEvent-1669387564134]: 
   ↓CustomAction [ngx.components.UICustomAction-1669387570864]: 

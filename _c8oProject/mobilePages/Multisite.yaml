@@ -1,4 +1,4 @@
-comment: My First Page as root page
+comment: Multisite view
 icon: bar-chart
 iconPosition: start
 preloadPriority: high
@@ -18,7 +18,7 @@ scriptContent:
         /*Begin_c8o_PageFunction*/
         	/*End_c8o_PageFunction*/
         
-segment: path-to-xfirst
+segment: multisite
 title: Multisite
 ↓UseSharedComponent [ngx.components.UIUseShared-1669821788815]: 
   sharedcomponent: poc_energisme.Application.NgxApp.header
