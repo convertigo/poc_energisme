@@ -42,14 +42,6 @@ see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/8.0.0#re
 see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
 </p></blockquote></details>
 
-<details><summary><b>lib_safran_fullsync</b></summary><blockquote><p>
-
-
-## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_safran_fullsync
-
-
-</p></blockquote></details>
-
 <details><summary><b>lib_UserManager</b></summary><blockquote><p>
 
 
