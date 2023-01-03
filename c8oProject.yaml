@@ -2,7 +2,7 @@
 ↓poc_energisme [core.Project]: 
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
-  version: 0.1.9
+  version: 0.1.11
   ↓groups_sites [connectors.FullSyncConnector]: 🗏 connectors/groups_sites.yaml
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
@@ -27,6 +27,7 @@
   ↓removeAllSitesOfGroup [sequences.GenericSequence]: 🗏 sequences/removeAllSitesOfGroup.yaml
   ↓removeSiteFromGroup [sequences.GenericSequence]: 🗏 sequences/removeSiteFromGroup.yaml
   ↓searchGroup [sequences.GenericSequence]: 🗏 sequences/searchGroup.yaml
+  ↓searchSite [sequences.GenericSequence]: 🗏 sequences/searchSite.yaml
   ↓updateGroupAndAffiliations [sequences.GenericSequence]: 🗏 sequences/updateGroupAndAffiliations.yaml
   ↓CouchDb_schema [references.ImportXsdSchemaReference]: 
     urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd

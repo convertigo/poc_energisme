@@ -1626,13 +1626,105 @@ title: Title for Parametres
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: plain:Sites
+          ↓Form1 [ngx.components.UIForm-1672761261190]: 
+            identifier: formSearchSites
+            ↓FormItem [ngx.components.UIDynamicElement-1672761261193]: 
+              beanData: '{"ionBean":"FormItem"}'
+              tagName: ion-item
+              ↓SearchBar [ngx.components.UIDynamicElement-1672761261196]: 
+                beanData: '{"ionBean":"Searchbar"}'
+                tagName: ion-searchbar
+                ↓Event [ngx.components.UIControlEvent-1672761261199]: 
+                  attrName: (ionChange)
+                  eventName: ionChange
+                  ↓If [ngx.components.UIDynamicAction-1672761261202]: 
+                    beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length >= 3"}'
+                    isEnabled: false
+                    ↓CallSequence [ngx.components.UIDynamicAction-1672761261205]: 
+                      beanData: |
+                        '{
+                         "ionBean": "CallSequenceAction",
+                         "requestable": "plain:poc_energisme.searchGroup",
+                         "noLoading": "plain:true"
+                        }'
+                      ↓label [ngx.components.UIControlVariable-1672761261208]: 
+                        comment: new variable
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:event.detail.value
+                      ↓type [ngx.components.UIControlVariable-1672761261211]: 
+                        comment: new variable
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: plain:
+                      ↓user [ngx.components.UIControlVariable-1672761261214]: 
+                        comment: new variable
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    ↓If [ngx.components.UIDynamicAction-1672761261217]: 
+                      beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
+                      ↓CallSequence [ngx.components.UIDynamicAction-1672761261220]: 
+                        beanData: |
+                          '{
+                           "ionBean": "CallSequenceAction",
+                           "requestable": "plain:poc_energisme.searchGroup",
+                           "noLoading": "plain:true"
+                          }'
+                        ↓label [ngx.components.UIControlVariable-1672761261223]: 
+                          comment: new variable
+                          varValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:
+                        ↓type [ngx.components.UIControlVariable-1672761261226]: 
+                          comment: new variable
+                          varValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:
+                        ↓user [ngx.components.UIControlVariable-1672761261229]: 
+                          comment: new variable
+                          varValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓IfElse [ngx.components.UIDynamicIf-1672761261232]: 
+                    beanData: '{"ionBean":"IfElseAction","condition":"script:event.detail.value.length >= 3"}'
+                    ↓CallSequence [ngx.components.UIDynamicAction-1672761261235]: 
+                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchSite"}'
+                      ↓label [ngx.components.UIControlVariable-1672761261238]: 
+                        comment: new variable
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:event.detail.value
+                    ↓Else_Handler [ngx.components.UIActionElseEvent-1672761261247]: 
+                      ↓If [ngx.components.UIDynamicAction-1672761261250]: 
+                        beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
+                        ↓CallSequence [ngx.components.UIDynamicAction-1672761261253]: 
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchSite"}'
+                          ↓label [ngx.components.UIControlVariable-1672761261256]: 
+                            comment: new variable
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: plain:
+            ↓Event [ngx.components.UIControlEvent-1672761261265]: 
+              attrName: (ngSubmit)
+              eventName: onSubmit
+              ↓Alert [ngx.components.UIDynamicAction-1672761261268]: 
+                beanData: '{"ionBean":"AlertAction","message":"script:''formSample value is\\\\n'' + JSON.stringify(this?.formSample.value)"}'
           ↓Directive [ngx.components.UIControlDirective-1672061906108]: 
             directiveIndexName: idx
             directiveItemName: site
             directiveSource: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesList","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchSite","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓GridRow [ngx.components.UIDynamicElement-1672221082964]: 
               beanData: '{"ionBean":"GridRow","Height":"plain"}'
               tagName: ion-row
@@ -1936,8 +2028,17 @@ title: Title for Parametres
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓CallSequence3 [ngx.components.UIDynamicAction-1672761295224]: 
+    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchSite"}'
+    ↓label [ngx.components.UIControlVariable-1672761313699]: 
+      comment: new variable
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: plain:
   ↓CallSequence1 [ngx.components.UIDynamicAction-1672061856428]: 
     beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesList"}'
+    isEnabled: false
     ↓SetGlobal [ngx.components.UIDynamicAction-1672237737761]: 
       beanData: |
         '{

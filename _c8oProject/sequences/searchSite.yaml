@@ -1,0 +1,51 @@
+↓Input_variables [steps.InputVariablesStep-1672760623854]: 
+↓jIfThenElse [steps.IfThenElseStep-1672760691695]: 
+  condition: label != null && label.length > 0
+  ↓jThen [steps.ThenStep-1672760692064]: 
+    ↓Call_Transaction [steps.TransactionStep-1672760722072]: 
+      sourceTransaction: poc_energisme.postgreSQL.searchSite
+      ↓label [variables.StepVariable-1672760731478]: 
+        description: label
+    ↓sites [steps.JsonArrayStep-1672760792000]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: sites
+      ↓Iterator [steps.IteratorStep-1672760755857]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1672760722072
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row
+        ↓Copy [steps.XMLCopyStep-1672760906867]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672760755857
+                - java.lang.String: 
+                  - ↑value: .
+  ↓jElse [steps.ElseStep-1672760692066]: 
+    ↓Call_Sequence [steps.SequenceStep-1672760971864]: 
+      sourceSequence: poc_energisme.getSitesList
+    ↓Copy [steps.XMLCopyStep-1672761023256]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672760971864
+            - java.lang.String: 
+              - ↑value: ./document/Array
+↓label [variables.RequestableVariable-1672760940147]: 
+↓label [core.TestCase]: 
+  ↓label [variables.TestCaseVariable-1672760946417]: 
+    value: Bar
+↓noLabel [core.TestCase]: 
+  ↓label [variables.TestCaseVariable-1672760999238]: 

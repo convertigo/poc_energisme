@@ -195,6 +195,14 @@ testOnBorrow: true
       value: 20
   ↓limit [variables.RequestableVariable-1669044244105]: 
     description: limit
+↓searchSite [transactions.SqlTransaction]: 
+  sqlQuery: SELECT * FROM convertigo_poc.site WHERE nom LIKE '%{{label}}%'
+  ↓Test_Case [core.TestCase]: 
+    ↓label [variables.TestCaseVariable-1672757661610]: 
+      description: label
+      value: Bar
+  ↓label [variables.RequestableVariable-1672757643644]: 
+    description: label
 ↓SelectUUID [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT uuid, avg(val) AS moy_val, label
