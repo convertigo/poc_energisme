@@ -61,9 +61,11 @@ Describes the mobile application global properties
 
 #### Monosite
 
+Monosite view
+
 #### Multisite
 
-My First Page as root page
+Multisite view
 
 #### Parametres
 

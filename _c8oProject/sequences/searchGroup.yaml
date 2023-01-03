@@ -1,0 +1,202 @@
+↓Input_variables [steps.InputVariablesStep-1672750961667]: 
+↓jSimpleSource [steps.SimpleSourceStep-1672750932597]: 
+  isEnabled: false
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1672750961667
+        - java.lang.String: 
+          - ↑value: ./label/text()
+  variableName: labelLength
+↓jIfThenElse [steps.IfThenElseStep-1672751046771]: 
+  condition: label != null && label.length > 0
+  ↓jThen [steps.ThenStep-1672751046773]: 
+    ↓buildSelector [steps.SimpleStep-1672750840002]: 
+      expression: |
+        '//build selector object
+        var selector = {
+        	"$and" : [ {
+        		"group" : {
+        			"$regex" : label
+        		}
+        	} ]
+        }
+        
+        if(user != undefined){
+        	selector["$and"].push({
+        		"user":user
+        	})
+        }
+        
+        var _use_selector = JSON.stringify(selector);
+        log.warn(_use_selector)'
+    ↓Call_Transaction [steps.TransactionStep-1672750840005]: 
+      sourceTransaction: lib_FullSyncGrp.c8ofullsyncgrp.PostFind
+      ↓_use_selector [variables.StepVariable-1672750840008]: 
+        description: (json) – JSON object, evaluated from a JavaScript expression, describing criteria used to select documents. More information provided in the section on <a target="_blank" href="https://docs.couchdb.org/en/latest/api/database/find.html#find-selectors">selector syntax</a>.<br/>Transaction variables are added to the scope for the JavaScript expression evaluation.
+      ↓_use_limit [variables.StepVariable-1672750840011]: 
+        value: 100
+    ↓IfExistThenElse [steps.IfExistThenElseStep-1672750840014]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672750840005
+            - java.lang.String: 
+              - ↑value: ./document/error
+      ↓jThen [steps.ThenStep-1672750840017]: 
+        ↓Copy [steps.XMLCopyStep-1672750840020]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672750840005
+                - java.lang.String: 
+                  - ↑value: ./document/error
+      ↓jElse [steps.ElseStep-1672750840023]: 
+        ↓Complex [steps.XMLComplexStep-1672750840026]: 
+          isEnabled: false
+          nodeName: referentiels
+          ↓Attribute [steps.XMLAttributeStep-1672750840029]: 
+            nodeName: type
+            nodeText: array
+          ↓Iterator [steps.IteratorStep-1672750840032]: 
+            sourceDefinition: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672750840005
+                  - java.lang.String: 
+                    - ↑value: ./document/couchdb_output/docs/item
+            ↓Complex [steps.XMLComplexStep-1672750840035]: 
+              nodeName: item
+              ↓Copy [steps.XMLCopyStep-1672750840038]: 
+                isEnabled: false
+                sourceDefinition: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672750840005
+                      - java.lang.String: 
+                        - ↑value: ./document/couchdb_output/docs/item
+              ↓Element [steps.XMLElementStep-1672750840041]: 
+                nodeName: display
+                sourceDefinition: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672750840032
+                      - java.lang.String: 
+                        - ↑value: ./label/text()
+              ↓value [steps.XMLElementStep-1672750840044]: 
+                nodeName: value
+                sourceDefinition: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672750840032
+                      - java.lang.String: 
+                        - ↑value: ./label/text()
+              ↓Element2 [steps.XMLElementStep-1672750840047]: 
+                nodeName: type
+                sourceDefinition: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672750840032
+                      - java.lang.String: 
+                        - ↑value: ./type/text()
+              ↓Attribute [steps.XMLAttributeStep-1672750840050]: 
+                nodeName: type
+                nodeText: object
+        ↓groups [steps.JsonArrayStep-1672751268255]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: groups
+          ↓Iterator [steps.IteratorStep-1672751314313]: 
+            sourceDefinition: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672750840005
+                  - java.lang.String: 
+                    - ↑value: ./document/couchdb_output/docs/item
+            ↓Object [steps.JsonObjectStep-1672751340970]: 
+              ↓Field [steps.JsonFieldStep-1672751347194]: 
+                key: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: PLAIN
+                      - →→: name
+                value: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: SOURCE
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1672751314313
+                        - java.lang.String: 
+                          - ↑value: ./group/text()
+              ↓Call_Sequence [steps.SequenceStep-1672752751268]: 
+                sourceSequence: poc_energisme.getSitesByGroupName
+                ↓group_name [variables.StepVariable-1672752760108]: 
+                  sourceDefinition: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1672751314313
+                        - java.lang.String: 
+                          - ↑value: ./group/text()
+              ↓Count [steps.XMLCountStep-1672752823324]: 
+                nodeName: count
+                sourceDefinition: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672752751268
+                      - java.lang.String: 
+                        - ↑value: ./document/sites/Field
+  ↓jElse [steps.ElseStep-1672751046775]: 
+    ↓Call_Sequence [steps.SequenceStep-1672751065495]: 
+      sourceSequence: poc_energisme.getGroupsOf
+      ↓user [variables.StepVariable-1672751077354]: 
+    ↓Copy [steps.XMLCopyStep-1672751146556]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672751065495
+            - java.lang.String: 
+              - ↑value: ./document/Array
+↓label [variables.RequestableVariable-1672750840053]: 
+↓type [variables.RequestableVariable-1672750840056]: 
+↓user [variables.RequestableVariable-1672751087877]: 
+↓label [core.TestCase]: 
+  ↓label [variables.TestCaseVariable-1672751105780]: 
+    value: Claranet
+  ↓type [variables.TestCaseVariable-1672751105782]: 
+  ↓user [variables.TestCaseVariable-1672751105784]: 
+    value: admin
+↓noLabel [core.TestCase]: 
+  ↓label [variables.TestCaseVariable-1672750840060]: 
+  ↓type [variables.TestCaseVariable-1672750840063]: 
+  ↓user [variables.TestCaseVariable-1672751090188]: 
+    value: admin

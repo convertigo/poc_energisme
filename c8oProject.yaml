@@ -26,6 +26,7 @@
   ↓postBulkGroupsFromAuthenticatedUser [sequences.GenericSequence]: 🗏 sequences/postBulkGroupsFromAuthenticatedUser.yaml
   ↓removeAllSitesOfGroup [sequences.GenericSequence]: 🗏 sequences/removeAllSitesOfGroup.yaml
   ↓removeSiteFromGroup [sequences.GenericSequence]: 🗏 sequences/removeSiteFromGroup.yaml
+  ↓searchGroup [sequences.GenericSequence]: 🗏 sequences/searchGroup.yaml
   ↓updateGroupAndAffiliations [sequences.GenericSequence]: 🗏 sequences/updateGroupAndAffiliations.yaml
   ↓CouchDb_schema [references.ImportXsdSchemaReference]: 
     urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
@@ -35,6 +36,8 @@
     projectName: lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=8.0.0
   ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
     projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=334a638363d83d83bfed756b025f96226751e50e
+  ↓lib_safran_fullsync_reference [references.ProjectSchemaReference]: 
+    projectName: lib_safran_fullsync
   ↓lib_UserManager_reference [references.ProjectSchemaReference]: 
     projectName: lib_UserManager=https://github.com/convertigo/c8oprj-lib-user-manager.git:branch=f8941d93af0db63dc16c052daad77de2f6329747
   ↓Project_reference [references.ProjectSchemaReference]: 
