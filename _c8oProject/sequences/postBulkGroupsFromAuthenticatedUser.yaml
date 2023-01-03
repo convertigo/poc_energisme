@@ -1,0 +1,299 @@
+↓Call_Sequence [steps.SequenceStep-1671811292056]: 
+  sourceSequence: poc_energisme.getCurrentUser
+↓Call_Sequence_2 [steps.SequenceStep-1672049452379]: 
+  sourceSequence: lib_OAuth.listGroupsAzureAd
+↓Complex1 [steps.XMLComplexStep-1671811263527]: 
+  nodeName: groups
+  ↓Attribute [steps.XMLAttributeStep-1671811263530]: 
+    nodeName: type
+    nodeText: array
+  ↓Iterator [steps.IteratorStep-1671811201022]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672049452379
+          - java.lang.String: 
+            - ↑value: ./document/groups/object
+    ↓JSON_to_XML [steps.JsonToXmlStep-1672046252669]: 
+      isEnabled: false
+      jsonObject: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: SOURCE
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1671811201022
+              - java.lang.String: 
+                - ↑value: .
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: group
+      output: false
+    ↓Element [steps.XMLElementStep-1672046189717]: 
+      nodeName: displayName
+      output: false
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1671811201022
+            - java.lang.String: 
+              - ↑value: ./displayName/text()
+    ↓Complex [steps.XMLComplexStep-1671811263536]: 
+      ↓Attribute [steps.XMLAttributeStep-1671811263539]: 
+        nodeName: type
+        nodeText: object
+      ↓Element1 [steps.XMLElementStep-1671811263542]: 
+        nodeName: user
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1671811292056
+              - java.lang.String: 
+                - ↑value: ./document/authenticatedUserID/text()
+        ↓Attribute [steps.XMLAttributeStep-1671811263545]: 
+          nodeName: type
+          nodeText: string
+      ↓Concat [steps.XMLConcatStep-1671811263548]: 
+        nodeName: group
+        separator: ':'
+        sourcesDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: description
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: ad
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: description
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672046189717
+                      - java.lang.String: 
+                        - ↑value: ./text()
+                  - java.lang.String: 
+                    - ↑value: ''
+↓Call_Sequence_1 [steps.SequenceStep-1672046865087]: 
+  sourceSequence: lib_FullSyncGrp.SetUserInGroupBulk
+  ↓bulkOBj [variables.StepMultiValuedVariable-1672046882977]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1671811263527
+          - java.lang.String: 
+            - ↑value: .
+↓Complex2 [steps.XMLComplexStep-1672052037451]: 
+  isEnabled: false
+  nodeName: groups
+  ↓Attribute [steps.XMLAttributeStep-1672052037454]: 
+    nodeName: type
+    nodeText: array
+  ↓Iterator [steps.IteratorStep-1672052037457]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672049452379
+          - java.lang.String: 
+            - ↑value: ./document/groups/object
+    ↓JSON_to_XML [steps.JsonToXmlStep-1672052037460]: 
+      isEnabled: false
+      jsonObject: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: SOURCE
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1672052037457
+              - java.lang.String: 
+                - ↑value: .
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: group
+      output: false
+    ↓Element [steps.XMLElementStep-1672052037463]: 
+      nodeName: displayName
+      output: false
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672052037457
+            - java.lang.String: 
+              - ↑value: ./displayName/text()
+    ↓Complex [steps.XMLComplexStep-1672052037466]: 
+      ↓Attribute [steps.XMLAttributeStep-1672052037469]: 
+        nodeName: type
+        nodeText: object
+      ↓Element1 [steps.XMLElementStep-1672052037472]: 
+        nodeName: user
+        nodeText: admin
+        ↓Attribute [steps.XMLAttributeStep-1672052037475]: 
+          nodeName: type
+          nodeText: string
+      ↓Concat [steps.XMLConcatStep-1672052037478]: 
+        nodeName: group
+        separator: ':'
+        sourcesDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: description
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: ad
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: description
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672052037463
+                      - java.lang.String: 
+                        - ↑value: ./text()
+                  - java.lang.String: 
+                    - ↑value: ''
+↓Call_Sequence_4 [steps.SequenceStep-1672052097258]: 
+  isEnabled: false
+  sourceSequence: lib_FullSyncGrp.SetUserInGroupBulk
+  ↓bulkOBj [variables.StepMultiValuedVariable-1672052097261]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672052037451
+          - java.lang.String: 
+            - ↑value: .
+↓Call_Sequence_3 [steps.SequenceStep-1672051575577]: 
+  isEnabled: false
+  sourceSequence: lib_FullSyncGrp.SetUserInGroup
+  ↓user [variables.StepVariable-1672051589740]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1671811292056
+          - java.lang.String: 
+            - ↑value: ./document/authenticatedUserID/text()
+    value: 
+  ↓group [variables.StepVariable-1672051589742]: 
+    value: role-admin
+↓Test_Case [core.TestCase]: 
+  ↓groups [variables.TestCaseMultiValuedVariable-1671814202739]: 
+    bSoapArray: false
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: |
+              '{
+                 "id": "0141c352-75aa-4fcc-8490-6347c8215c80",
+                 "deletedDateTime": null,
+                 "classification": null,
+                 "createdDateTime": "2022-08-09T09:55:47Z",
+                 "creationOptions": [],
+                 "description": "QA Technical",
+                 "displayName": "QA-Technical",
+                 "expirationDateTime": null,
+                 "groupTypes": [],
+                 "isAssignableToRole": null,
+                 "mail": null,
+                 "mailEnabled": false,
+                 "mailNickname": "781cd42f-b",
+                 "membershipRule": null,
+                 "membershipRuleProcessingState": null,
+                 "onPremisesDomainName": null,
+                 "onPremisesLastSyncDateTime": null,
+                 "onPremisesNetBiosName": null,
+                 "onPremisesSamAccountName": null,
+                 "onPremisesSecurityIdentifier": null,
+                 "onPremisesSyncEnabled": null,
+                 "preferredDataLocation": null,
+                 "preferredLanguage": null,
+                 "proxyAddresses": [],
+                 "renewedDateTime": "2022-08-09T09:55:47Z",
+                 "resourceBehaviorOptions": [],
+                 "resourceProvisioningOptions": [],
+                 "securityEnabled": true,
+                 "securityIdentifier": "S-1-12-1-21087058-1338799530-1197707396-2153521608",
+                 "theme": null,
+                 "visibility": null,
+                 "onPremisesProvisioningErrors": []
+                }'
+          - java.lang.String: 
+            - ↑value: |
+              '{
+                 "id": "01c2d14b-f561-40e1-ae36-885b5948b527",
+                 "deletedDateTime": null,
+                 "classification": null,
+                 "createdDateTime": "2021-05-25T09:29:44Z",
+                 "creationOptions": [],
+                 "description": null,
+                 "displayName": "aks-sls-ai-int-vdc1-admin-group",
+                 "expirationDateTime": null,
+                 "groupTypes": [],
+                 "isAssignableToRole": null,
+                 "mail": null,
+                 "mailEnabled": false,
+                 "mailNickname": "65327fce-ecad-cd15-d836-79ce8d691a97",
+                 "membershipRule": null,
+                 "membershipRuleProcessingState": null,
+                 "onPremisesDomainName": null,
+                 "onPremisesLastSyncDateTime": null,
+                 "onPremisesNetBiosName": null,
+                 "onPremisesSamAccountName": null,
+                 "onPremisesSecurityIdentifier": null,
+                 "onPremisesSyncEnabled": null,
+                 "preferredDataLocation": null,
+                 "preferredLanguage": null,
+                 "proxyAddresses": [],
+                 "renewedDateTime": "2021-05-25T09:29:44Z",
+                 "resourceBehaviorOptions": [],
+                 "resourceProvisioningOptions": [],
+                 "securityEnabled": true,
+                 "securityIdentifier": "S-1-12-1-29544779-1088550241-1535653550-666191961",
+                 "theme": null,
+                 "visibility": null,
+                 "onPremisesProvisioningErrors": []
+                }'

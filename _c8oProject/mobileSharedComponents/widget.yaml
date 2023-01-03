@@ -3,7 +3,7 @@ scriptContent:
     - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
     - com.twinsoft.convertigo.beans.common.FormatedContent: 
       →: |
-        /*Begin_c8o_CompImport*/
+        '/*Begin_c8o_CompImport*/
         /*End_c8o_CompImport*/
         /*Begin_c8o_CompDeclaration*/
         	public showDatePicker = false;
@@ -16,6 +16,23 @@ scriptContent:
         /*Begin_c8o_CompFinalization*/
         		/*End_c8o_CompFinalization*/
         /*Begin_c8o_CompChanges*/
+        		console.log("changeeees")
+        		console.log(changes)
+        		Object.keys(changes).forEach( (key) => {
+        			switch(key) {
+        				case "sequenceParams": {
+        					if(!changes[key].firstChange) {
+        						console.log("not first changes")
+        						console.log(changes[key])
+        						this.call(this.sequenceToCall, changes[key].currentValue, null, 500, false).then( (resp) => {
+        //					 		page.local[''response''] = resp
+        						})
+        					}
+        					
+        					break;
+        				} // end case sequenceParams
+        			} // end switch
+        		}) // end object.keys
         		/*End_c8o_CompChanges*/
         /*Begin_c8o_CompDoCheck*/
         		/*End_c8o_CompDoCheck*/
@@ -32,7 +49,7 @@ scriptContent:
         		return new String(string)
         	}
         	/*End_c8o_CompFunction*/
-        
+        '
 ↓Grid [ngx.components.UIDynamicElement-1667815940116]: 
   beanData: '{"ionBean":"Grid"}'
   tagName: ion-grid
@@ -249,11 +266,17 @@ scriptContent:
                               			console.log(sequenceParams)
                               			//debugger;
                               		}
-                              		this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
+                              		
+                              		if(this.global[''linkDates''] == true) {
+                              			console.log("linkDates true")
+                              			this.global[''date_start''] = sequenceParams.date_start;
+                              			this.global[''date_end''] = sequenceParams.date_end;
+                              		} else {
+                              			this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
                               		 		page.local[''response''] = resp
-                              		 		this.date = [];
-                              		 		
-                              		})
+                              			})
+                              		}
+                              
                               		resolve();
                               '
                       ↓sequenceToCall [ngx.components.UIControlVariable-1669374444544]: 
@@ -936,7 +959,7 @@ scriptContent:
             		var sequenceParams = vars.sequenceParams;
             
             		if(sequenceToCall != undefined && sequenceToCall.length > 0) {
-            					this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
+            					this.call(sequenceToCall, sequenceParams, null, 500, true).then( (resp) => {
             						page.local[''response''] = resp
             					})
             			resolve();

@@ -12,8 +12,11 @@ For more technical informations : [documentation](./project.md)
 - [Mobile Application](#mobile-application)
     - [Pages](#pages)
         - [Login](#login)
+        - [modalAddGroup](#modaladdgroup)
+        - [modalUpdateGroup](#modalupdategroup)
         - [Monosite](#monosite)
         - [Multisite](#multisite)
+        - [Parametres](#parametres)
         - [zoomChart](#zoomchart)
     - [Shared Components](#shared-components)
         - [gauge_chart](#gauge_chart)
@@ -52,11 +55,17 @@ Describes the mobile application global properties
 
 #### Login
 
+#### modalAddGroup
+
+#### modalUpdateGroup
+
 #### Monosite
 
 #### Multisite
 
 My First Page as root page
+
+#### Parametres
 
 #### zoomChart
 
@@ -97,6 +106,9 @@ My First Page as root page
 <table>
 <tr>
 <th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>title</td><td></td>
 </tr>
 <tr>
 <td>username</td><td>Username to display</td>

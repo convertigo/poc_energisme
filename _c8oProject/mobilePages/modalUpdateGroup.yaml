@@ -1,0 +1,319 @@
+segment: path-to-modalupdategroup
+title: Title for modalUpdateGroup
+↓Header [ngx.components.UIDynamicElement-1672310695452]: 
+  beanData: '{"ionBean":"Header"}'
+  tagName: ion-header
+  ↓ToolBar [ngx.components.UIDynamicElement-1672310695455]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓BarTitle [ngx.components.UIDynamicElement-1672310695458]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [ngx.components.UIText-1672310695461]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Modifier un groupe de site
+    ↓Style [ngx.components.UIStyle-1672310695464]: 
+      styleContent: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '	--color: white;
+              	--background: #175aa2;
+              '
+↓Content [ngx.components.UIDynamicElement-1672310695467]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓Grid [ngx.components.UIDynamicElement-1672310695470]: 
+    beanData: '{"ionBean":"Grid"}'
+    tagName: ion-grid
+    ↓rowLabelAddGroupSites [ngx.components.UIDynamicElement-1672310695473]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      isEnabled: false
+      tagName: ion-row
+      ↓colLabelAddGroupSites [ngx.components.UIDynamicElement-1672310695476]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1672310695479]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1672310695482]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Ajouter un groupe de sites
+    ↓rowFormAddGroupSites [ngx.components.UIDynamicElement-1672310695485]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓colForm [ngx.components.UIDynamicElement-1672310695488]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Form [ngx.components.UIForm-1672310695491]: 
+          identifier: formUpdateGroupSite
+          ↓FormItem [ngx.components.UIDynamicElement-1672310695494]: 
+            beanData: '{"ionBean":"FormItem"}'
+            tagName: ion-item
+            ↓Label [ngx.components.UIDynamicElement-1672310695497]: 
+              beanData: '{"ionBean":"Label"}'
+              tagName: ion-label
+              ↓Text [ngx.components.UIText-1672310695500]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Nom du groupe
+            ↓TextInput [ngx.components.UIDynamicElement-1672310695503]: 
+              beanData: |
+                '{
+                 "ionBean": "Input",
+                 "ControlName": "plain:groupName",
+                 "Debounce": "plain:0"
+                }'
+              tagName: ion-input
+              ↓Attr [ngx.components.UIAttribute-1672311581231]: 
+                attrName: '[(ngModel)]'
+                attrValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:this.local['group']
+    ↓rowButtons [ngx.components.UIDynamicElement-1672310695530]: 
+      beanData: |
+        '{
+         "ionBean": "GridRow",
+         "Height": "plain",
+         "FlexJustifyContent": "plain:ion-justify-content-center"
+        }'
+      isEnabled: false
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1672310695533]: 
+        beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+        tagName: ion-col
+        ↓iconClose [ngx.components.UIDynamicElement-1672310695536]: 
+          beanData: |
+            '{
+             "ionBean": "Icon",
+             "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+             "IonSize": "plain:large"
+            }'
+          tagName: ion-icon
+          ↓Event [ngx.components.UIControlEvent-1672310695539]: 
+            ↓CloseModal [ngx.components.UIDynamicAction-1672310695542]: 
+              beanData: '{"ionBean":"CloseModalAction"}'
+          ↓Style [ngx.components.UIStyle-1672310695545]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '	color: #f04429;
+                    '
+        ↓iconOK [ngx.components.UIDynamicElement-1672310695548]: 
+          beanData: |
+            '{
+             "ionBean": "Icon",
+             "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''checkmark-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+             "IonSize": "plain:large"
+            }'
+          tagName: ion-icon
+          ↓Event [ngx.components.UIControlEvent-1672310695551]: 
+            ↓CallSequence [ngx.components.UIDynamicAction-1672310695554]: 
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
+              ↓user [ngx.components.UIControlVariable-1672310695557]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓group [ngx.components.UIControlVariable-1672310695560]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓IfElse [ngx.components.UIDynamicIf-1672310695563]: 
+                beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                ↓Toast [ngx.components.UIDynamicAction-1672310695566]: 
+                  beanData: |
+                    '{
+                     "ionBean": "ToastAction",
+                     "message": "plain:Une erreur est survenue lors de la création du groupe.",
+                     "position": "plain:top"
+                    }'
+                ↓Else_Handler [ngx.components.UIActionElseEvent-1672310695569]: 
+                  ↓Toast [ngx.components.UIDynamicAction-1672310695572]: 
+                    beanData: |
+                      '{
+                       "ionBean": "ToastAction",
+                       "message": "plain:Le groupe a correctement été créé.",
+                       "duration": "plain:2000",
+                       "position": "plain:top"
+                      }'
+                    ↓CloseModal [ngx.components.UIDynamicAction-1672310695575]: 
+                      beanData: '{"ionBean":"CloseModalAction"}'
+          ↓Style [ngx.components.UIStyle-1672310695578]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '	color: #00885b;
+                    '
+  ↓Style [ngx.components.UIStyle-1672310695581]: 
+    styleContent: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '/**
+             * Custom properties (sometimes referred to as CSS variables or cascading variables)
+             * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+             * They are set using custom property notation, e.g.: --main-color: black;
+             * and are accessed using the var() function, e.g.: color: var(--main-color);
+             * You can find below your component''s properties you can customize within the page.
+             * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+             * For more informations see https://ionicframework.com/docs/theming.
+            **/
+            //--background	//Background of the content
+            //--color	//Color of the content
+            //--keyboard-offset	//Keyboard offset of the content
+            //--offset-bottom	//Offset bottom of the content
+            //--offset-top	//Offset top of the content
+            //--padding-bottom	//Bottom padding of the content
+            //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the content
+            //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the content
+            //--padding-top	//Top padding of the content
+            --background: white;
+            '
+↓Footer [ngx.components.UIDynamicElement-1672310695584]: 
+  beanData: '{"ionBean":"Footer"}'
+  tagName: ion-footer
+  ↓ToolBar [ngx.components.UIDynamicElement-1672310695587]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓iconClose [ngx.components.UIDynamicElement-1672310695590]: 
+      beanData: |
+        '{
+         "ionBean": "Icon",
+         "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+         "IonSize": "plain:large"
+        }'
+      tagName: ion-icon
+      ↓Event [ngx.components.UIControlEvent-1672310695593]: 
+        ↓CloseModal [ngx.components.UIDynamicAction-1672310695596]: 
+          beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"false\" }"}'
+      ↓Style [ngx.components.UIStyle-1672310695599]: 
+        styleContent: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '	color: #f04429;
+                '
+    ↓iconOK [ngx.components.UIDynamicElement-1672310695602]: 
+      beanData: |
+        '{
+         "ionBean": "Icon",
+         "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''checkmark-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+         "IonSize": "plain:large"
+        }'
+      tagName: ion-icon
+      ↓Event [ngx.components.UIControlEvent-1672310695605]: 
+        ↓CallSequence [ngx.components.UIDynamicAction-1672310695608]: 
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.UpdateGroup"}'
+          isEnabled: false
+          ↓old_group_name [ngx.components.UIControlVariable-1672313886000]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.local['old_group_name']
+          ↓new_group_name [ngx.components.UIControlVariable-1672313886002]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+          ↓Toast [ngx.components.UIDynamicAction-1672313968865]: 
+            beanData: |
+              '{
+               "ionBean": "ToastAction",
+               "message": "plain:Le groupe a été correctement modifié.",
+               "position": "plain:top"
+              }'
+          ↓CloseModal [ngx.components.UIDynamicAction-1672314090202]: 
+            beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"true\" }"}'
+        ↓CallSequence1 [ngx.components.UIDynamicAction-1672398618109]: 
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.updateGroupAndAffiliations"}'
+          ↓old_group_name [ngx.components.UIControlVariable-1672398629374]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.local['old_group_name']
+          ↓new_group_name [ngx.components.UIControlVariable-1672398629376]: 
+            comment: new variable
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+          ↓Toast [ngx.components.UIDynamicAction-1672398657749]: 
+            beanData: |
+              '{
+               "ionBean": "ToastAction",
+               "message": "plain:Le groupe a été correctement modifié.",
+               "position": "plain:top"
+              }'
+          ↓CloseModal [ngx.components.UIDynamicAction-1672398657752]: 
+            beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"true\" }"}'
+      ↓Style [ngx.components.UIStyle-1672310695632]: 
+        styleContent: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+              →: |
+                '	color: #00885b;
+                '
+    ↓Style [ngx.components.UIStyle-1672310695635]: 
+      styleContent: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+            →: |
+              '/**
+               * Custom properties (sometimes referred to as CSS variables or cascading variables)
+               * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+               * They are set using custom property notation, e.g.: --main-color: black;
+               * and are accessed using the var() function, e.g.: color: var(--main-color);
+               * You can find below your component''s properties you can customize within the page.
+               * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+               * For more informations see https://ionicframework.com/docs/theming.
+              **/
+              //--ion-grid-column-padding	//Padding for the Column
+              //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+              //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+              //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+              //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+              //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+              //--ion-grid-columns	//The number of total Columns in the Grid
+              	ion-icon:hover {
+              		cursor: pointer;
+              	}
+              	text-align: center;
+              	--background: #eeeeee;
+              '
+↓PageEvent [ngx.components.UIPageEvent-1672310809960]: 
+  ↓SetLocal [ngx.components.UIDynamicAction-1672310818133]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:group",
+       "Value": "script:this.navParams.data.name"
+      }'
+  ↓SetLocal1 [ngx.components.UIDynamicAction-1672311768730]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:old_group_name",
+       "Value": "script:this.navParams.data.name"
+      }'

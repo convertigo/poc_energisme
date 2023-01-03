@@ -3,10 +3,17 @@
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
   version: 0.1.8
+  ↓groups_sites [connectors.FullSyncConnector]: 🗏 connectors/groups_sites.yaml
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓getCurrentUser [sequences.GenericSequence]: 🗏 sequences/getCurrentUser.yaml
+  ↓getGroupNameBySiteId [sequences.GenericSequence]: 🗏 sequences/getGroupNameBySiteId.yaml
+  ↓getSite [sequences.GenericSequence]: 🗏 sequences/getSite.yaml
+  ↓getSitesByGroupName [sequences.GenericSequence]: 🗏 sequences/getSitesByGroupName.yaml
+  ↓getSitesList [sequences.GenericSequence]: 🗏 sequences/getSitesList.yaml
+  ↓getUserGroups [sequences.GenericSequence]: 🗏 sequences/getUserGroups.yaml
   ↓heatmap_sample [sequences.GenericSequence]: 🗏 sequences/heatmap_sample.yaml
+  ↓insertGroupSites [sequences.GenericSequence]: 🗏 sequences/insertGroupSites.yaml
   ↓monosite_conso_month [sequences.GenericSequence]: 🗏 sequences/monosite_conso_month.yaml
   ↓monosite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/monosite_conso_total_between.yaml
   ↓multisite_conso_month [sequences.GenericSequence]: 🗏 sequences/multisite_conso_month.yaml
@@ -15,8 +22,20 @@
   ↓multisite_sites_energivore [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore.yaml
   ↓multisite_sites_energivore_elec [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_elec.yaml
   ↓multisite_sites_energivore_gaz [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_gaz.yaml
+  ↓postBulkGroupsFromAuthenticatedUser [sequences.GenericSequence]: 🗏 sequences/postBulkGroupsFromAuthenticatedUser.yaml
+  ↓removeAllSitesOfGroup [sequences.GenericSequence]: 🗏 sequences/removeAllSitesOfGroup.yaml
+  ↓removeSiteFromGroup [sequences.GenericSequence]: 🗏 sequences/removeSiteFromGroup.yaml
+  ↓updateGroupAndAffiliations [sequences.GenericSequence]: 🗏 sequences/updateGroupAndAffiliations.yaml
+  ↓CouchDb_schema [references.ImportXsdSchemaReference]: 
+    urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
+  ↓lib_ExtendedComponents_ui_ngx_reference [references.ProjectSchemaReference]: 
+    projectName: lib_ExtendedComponents_ui_ngx=https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx.git:branch=8.0.0
+  ↓lib_FullSyncGrp_reference [references.ProjectSchemaReference]: 
+    projectName: lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=8.0.0
   ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
     projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=334a638363d83d83bfed756b025f96226751e50e
+  ↓lib_UserManager_reference [references.ProjectSchemaReference]: 
+    projectName: lib_UserManager=https://github.com/convertigo/c8oprj-lib-user-manager.git:branch=f8941d93af0db63dc16c052daad77de2f6329747
   ↓Project_reference [references.ProjectSchemaReference]: 
     comment: ngx builder template
     projectName: mobilebuilder_tpl_8_1_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_1_0_ngx.zip

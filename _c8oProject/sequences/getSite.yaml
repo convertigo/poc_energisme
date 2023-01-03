@@ -1,0 +1,25 @@
+↓Call_Transaction [steps.TransactionStep-1672148393340]: 
+  sourceTransaction: poc_energisme.postgreSQL.getSite
+  ↓site_id [variables.StepVariable-1672148401832]: 
+↓Iterator [steps.IteratorStep-1672148427535]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1672148393340
+        - java.lang.String: 
+          - ↑value: ./document/sql_output/row
+  ↓Copy [steps.XMLCopyStep-1672148441792]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672148427535
+          - java.lang.String: 
+            - ↑value: .
+↓site_id [variables.RequestableVariable-1672148407305]: 
+↓Test_Case [core.TestCase]: 
+  ↓site_id [variables.TestCaseVariable-1672148457595]: 
+    value: 7731

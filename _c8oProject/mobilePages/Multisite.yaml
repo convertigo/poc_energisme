@@ -1,4 +1,4 @@
-comment: My First Page as root page
+comment: Multisite view
 icon: bar-chart
 iconPosition: start
 preloadPriority: high
@@ -18,7 +18,7 @@ scriptContent:
         /*Begin_c8o_PageFunction*/
         	/*End_c8o_PageFunction*/
         
-segment: path-to-xfirst
+segment: multisite
 title: Multisite
 ↓UseSharedComponent [ngx.components.UIUseShared-1669821788815]: 
   sharedcomponent: poc_energisme.Application.NgxApp.header
@@ -26,7 +26,12 @@ title: Multisite
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓title [ngx.components.UIUseVariable-1672319882006]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:'Vision Multisite'
 ↓Content [ngx.components.UIDynamicElement-1489674805352]: 
   beanData: '{"ionBean":"Content"}'
   comment: Page content
@@ -34,9 +39,95 @@ title: Multisite
   ↓Grid [ngx.components.UIDynamicElement-1667818587533]: 
     beanData: '{"ionBean":"Grid"}'
     tagName: ion-grid
+    ↓GridRow [ngx.components.UIDynamicElement-1671704051285]: 
+      beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1671704051287]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Label [ngx.components.UIDynamicElement-1671704051289]: 
+          beanData: '{"ionBean":"Label"}'
+          tagName: ion-label
+          ↓Text [ngx.components.UIText-1671704051291]: 
+            textValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: plain:Lier les périodes de widgets
+        ↓ToggleButton [ngx.components.UIDynamicElement-1671704079900]: 
+          beanData: '{"ionBean":"Toggle","ControlName":"plain:toggleLinkDate"}'
+          tagName: ion-toggle
+          ↓Event [ngx.components.UIControlEvent-1671704104311]: 
+            attrName: (ionChange)
+            eventName: ionChange
+            ↓SetGlobal [ngx.components.UIDynamicAction-1671704534864]: 
+              beanData: |
+                '{
+                 "ionBean": "SetGlobalAction",
+                 "Property": "plain:linkDates",
+                 "Value": "script:parent.out.detail.checked"
+                }'
+              ↓CustomAction [ngx.components.UICustomAction-1671704637809]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                        		console.log(event)
+                        		console.log(this.global[''linkDates''])
+                        		this.global[''date_start''] = ''2022-12-01''
+                        		this.global[''date_end''] = ''2022-12-31''
+                        		resolve();
+                        '
     ↓GridRow1 [ngx.components.UIDynamicElement-1668692254990]: 
       beanData: '{"ionBean":"GridRow"}'
       tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1671532769020]: 
+        beanData: '{"ionBean":"GridCol"}'
+        isEnabled: false
+        tagName: ion-col
+        ↓Directive [ngx.components.UIControlDirective-1671532808708]: 
+          directiveName: If
+          directiveSource: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:this.global['groups'] != undefined
+          ↓Directive [ngx.components.UIControlDirective-1671532851420]: 
+            directiveItemName: group
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.global['groups']
+            ↓GenericItem [ngx.components.UIDynamicElement-1671532899643]: 
+              beanData: '{"ionBean":"GenericItem"}'
+              tagName: ion-item
+              ↓CheckBox [ngx.components.UIDynamicElement-1671532909462]: 
+                beanData: |
+                  '{
+                   "ionBean": "CheckBox",
+                   "ControlName": "plain:name1671532909462",
+                   "Value": "script:group.id"
+                  }'
+                tagName: ion-checkbox
+                ↓Text [ngx.components.UIText-1671532914565]: 
+                  isEnabled: false
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:this.props.root.scope.group.displayName
+                ↓Event [ngx.components.UIControlEvent-1671533513058]: 
+                  attrName: (ionChange)
+                  eventName: ionChange
+                  ↓CustomAction [ngx.components.UICustomAction-1671533533703]: 
+                    actionValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                            		console.log(props)
+                            		resolve();
+                            '
       ↓colCharts [ngx.components.UIDynamicElement-1668692254992]: 
         beanData: |
           '{
@@ -125,8 +216,8 @@ title: Multisite
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: |
                           'script:{
-                          	date_start: this.date_start,
-                          	date_end: this.date_end
+                          	date_start: this.global[''date_start''],
+                          	date_end: this.global[''date_end'']
                           }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045508433]: 
                   varValue: 
@@ -419,3 +510,88 @@ title: Multisite
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                 - MobileSmartSourceType: plain:Notes
+        ↓UseSharedComponent [ngx.components.UIUseShared-1671700435640]: 
+          sharedcomponent: lib_ExtendedComponents_ui_ngx.MobileApplication.Application.tinyMce
+          ↓model [ngx.components.UIUseVariable-1671700683937]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:
+          ↓init [ngx.components.UIUseVariable-1671700683939]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: |
+                    'script:{
+                        placeholder: ''My placeholder'',
+                            plugins: ''noneditable print preview paste importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media template codesample table charmap hr pagebreak nonbreaking anchor toc insertdatetime advlist lists wordcount imagetools textpattern noneditable help charmap quickbars emoticons'',
+                            imagetools_cors_hosts: [''picsum.photos''],
+                            menubar: ''file edit view insert format tools table help'',
+                            toolbar: ''undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist | forecolor backcolor removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media template link anchor codesample | ltr rtl'',
+                            toolbar_sticky: true,
+                            autosave_ask_before_unload: true,
+                            autosave_interval: ''30s'',
+                            autosave_prefix: ''{path}{query}-{id}-'',
+                            autosave_restore_when_empty: false,
+                            autosave_retention: ''2m'',
+                            image_advtab: true,
+                            importcss_append: true,
+                            template_cdate_format: ''[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]'',
+                            template_mdate_format: ''[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]'',
+                            height: 600,
+                            image_caption: true,
+                            quickbars_selection_toolbar: ''bold italic | quicklink h2 h3 blockquote quickimage quicktable'',
+                            noneditable_noneditable_class: ''mceNonEditable'',
+                            toolbar_mode: ''sliding'',
+                            contextmenu: ''link image imagetools table'',
+                            allow_html_in_named_anchor: true,
+                            branding: false,
+                    	 valid_elements : ''*[*]'',
+                    	 apply_source_formatting : false,                
+                            verify_html : false
+                        }'
+          ↓disabled [ngx.components.UIUseVariable-1671700683941]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:''
+          ↓apiKey [ngx.components.UIUseVariable-1671700683943]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:
+          ↓cloudChannel [ngx.components.UIUseVariable-1671700683945]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'5-dev'
+          ↓id [ngx.components.UIUseVariable-1671700683947]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:''
+          ↓initialValue [ngx.components.UIUseVariable-1671700683949]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:''
+          ↓inline [ngx.components.UIUseVariable-1671700683951]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:false
+          ↓tagName [ngx.components.UIUseVariable-1671700683953]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'div'
+          ↓plugins [ngx.components.UIUseVariable-1671700683955]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:['advlist autolink lists link image charmap print preview anchor','searchreplace visualblocks code fullscreen','insertdatetime media table paste code imagetools help wordcount']
+          ↓toolbar [ngx.components.UIUseVariable-1671700683957]: 
+            varValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | \bullist numlist outdent indent | removeformat | link image | help'

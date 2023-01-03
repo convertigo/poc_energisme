@@ -68,8 +68,8 @@
     	
     }
     
-    //log.warn("serie")
-    //log.warn(JSON.stringify(serie))
+    log.warn("serie")
+    log.warn(JSON.stringify(serie))
     
     serie = JSON.stringify(serie)'
 ↓series [steps.ElementStep-1669388995853]: 

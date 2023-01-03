@@ -23,5 +23,27 @@ tagName: ion-menu
     tagName: ion-list
     ↓MenuAutoItems [ngx.components.UIDynamicMenuItems-1500890605250]: 
       beanData: '{"ionBean":"MenuAutoItems"}'
+      isEnabled: false
       itemtitle: 
       tagName: button
+    ↓MenuItem [ngx.components.UIDynamicMenuItem-1671789214646]: 
+      beanData: '{"ionBean":"MenuItem"}'
+      itempage: poc_energisme.Application.NgxApp.Multisite
+      itemtitle: '''Multisite'''
+      tagName: ion-menu-toggle
+    ↓MenuItem1 [ngx.components.UIDynamicMenuItem-1671789227907]: 
+      beanData: '{"ionBean":"MenuItem"}'
+      itempage: poc_energisme.Application.NgxApp.Monosite
+      itemtitle: '''Monosite'''
+      tagName: ion-menu-toggle
+    ↓Directive [ngx.components.UIControlDirective-1671790467693]: 
+      directiveName: If
+      directiveSource: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:(listen(['poc_energisme.getUserGroups'])?.isAdmin != undefined && listen(['poc_energisme.getUserGroups'])?.isAdmin)
+      ↓MenuItem [ngx.components.UIDynamicMenuItem-1671790508996]: 
+        beanData: '{"ionBean":"MenuItem"}'
+        itempage: poc_energisme.Application.NgxApp.Parametres
+        itemtitle: '''Paramètres'''
+        tagName: ion-menu-toggle

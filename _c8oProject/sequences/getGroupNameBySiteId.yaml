@@ -1,0 +1,47 @@
+↓jIf [steps.IfStep-1672234078563]: 
+  condition: (_use_key = site_id) == undefined || site_id.length < 1
+  ↓Error_structure [steps.XMLErrorStep-1672234078566]: 
+    message: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: The "site_id" parameter must be defined and not empty
+  ↓Return [steps.ReturnStep-1672234078569]: 
+↓Sequence_JS [steps.SimpleStep-1672235454628]: 
+  expression: _use_key = '"' + _use_key + '"';
+↓Call_Transaction [steps.TransactionStep-1672234132476]: 
+  sourceTransaction: poc_energisme.groups_sites.getGroupNameBySiteId
+  ↓_use_key [variables.StepVariable-1672234155898]: 
+    description: (string) – Return only documents that match the specified key. Optional
+↓groups [steps.JsonArrayStep-1672234175132]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: groups
+  ↓Iterator [steps.IteratorStep-1672234188376]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672234132476
+          - java.lang.String: 
+            - ↑value: ./document/couchdb_output/rows/item
+    ↓Field [steps.JsonFieldStep-1672234205942]: 
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: SOURCE
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1672234188376
+              - java.lang.String: 
+                - ↑value: ./value/text()
+↓site_id [variables.RequestableVariable-1672234107331]: 
+↓Test_Case [core.TestCase]: 
+  ↓site_id [variables.TestCaseVariable-1672234274080]: 
+    value: 7731

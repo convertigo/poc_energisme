@@ -1,5 +1,6 @@
+comment: Monosite view
 inAutoMenu: false
-segment: path-to-monosite
+segment: monosite
 title: Monosite
 ↓PageEvent [ngx.components.UIPageEvent-1669387564134]: 
   ↓CustomAction [ngx.components.UICustomAction-1669387570864]: 
@@ -18,7 +19,12 @@ title: Monosite
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓title [ngx.components.UIUseVariable-1672319906005]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:'Vision monosite'
 ↓Content [ngx.components.UIDynamicElement-1669196416014]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content

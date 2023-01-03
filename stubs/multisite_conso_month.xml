@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><document connector="" context="studio_poc_energisme:S:multisite_conso_month" contextId="studio_poc_energisme:S:multisite_conso_month" expires="Mon Dec 05 23:00:00 CET 2022" fromStub="false" fromcache="false" generated="Mon Dec 05 12:11:06 CET 2022" project="poc_energisme" sequence="multisite_conso_month" signature="1670238666992" transaction="" version="8.1.0 (build 14680-8.1.0)">
+    <chartType>bar</chartType>
+    <Object originalKeyName="data" type="object">
+        <Array1 originalKeyName="labels" type="array">
+            <Field originalKeyName="field" type="string">2021_1</Field>
+            <Field originalKeyName="field" type="string">2021_10</Field>
+            <Field originalKeyName="field" type="string">2021_11</Field>
+            <Field originalKeyName="field" type="string">2021_12</Field>
+            <Field originalKeyName="field" type="string">2021_2</Field>
+            <Field originalKeyName="field" type="string">2021_3</Field>
+            <Field originalKeyName="field" type="string">2021_4</Field>
+            <Field originalKeyName="field" type="string">2021_5</Field>
+            <Field originalKeyName="field" type="string">2021_6</Field>
+            <Field originalKeyName="field" type="string">2021_7</Field>
+            <Field originalKeyName="field" type="string">2021_8</Field>
+            <Field originalKeyName="field" type="string">2021_9</Field>
+        </Array1>
+        <Array originalKeyName="datasets" type="array">
+            <Object originalKeyName="object" type="object">
+                <Field originalKeyName="label" type="string">Electricité (année précédente)</Field>
+                <Array originalKeyName="data" type="array">
+                    <Field originalKeyName="field" type="string">2243254.321458925</Field>
+                    <Field originalKeyName="field" type="string">2244592.201816753</Field>
+                    <Field originalKeyName="field" type="string">2173160.4389590914</Field>
+                    <Field originalKeyName="field" type="string">2247531.9957841514</Field>
+                    <Field originalKeyName="field" type="string">2027751.3670240901</Field>
+                    <Field originalKeyName="field" type="string">2243752.0219661975</Field>
+                    <Field originalKeyName="field" type="string">2170791.272068147</Field>
+                    <Field originalKeyName="field" type="string">2243663.3078365726</Field>
+                    <Field originalKeyName="field" type="string">2174423.0680781207</Field>
+                    <Field originalKeyName="field" type="string">2245809.220360342</Field>
+                    <Field originalKeyName="field" type="string">2247412.048030354</Field>
+                    <Field originalKeyName="field" type="string">2172590.4316097535</Field>
+                </Array>
+                <Field_1 originalKeyName="stack" type="string">Stack 0</Field_1>
+                <Field_2 originalKeyName="backgroundColor" type="string">rgba(50, 193, 113, 0.5)</Field_2>
+                <Field_3 originalKeyName="hoverBackgroundColor" type="string">rgba(50, 193, 113, 0.5)</Field_3>
+                <Field_4 originalKeyName="borderColor" type="string">rgba(50, 193, 113, 0.5)</Field_4>
+                <Field_5 originalKeyName="hoverBorderColor" type="string">rgba(50, 193, 113, 0.5)</Field_5>
+            </Object>
+            <Object1 originalKeyName="object" type="object">
+                <Field originalKeyName="label" type="string">Gaz (année précédente)</Field>
+                <Array originalKeyName="data" type="array">
+                    <Field originalKeyName="field" type="string">1715108.6505715689</Field>
+                    <Field originalKeyName="field" type="string">1716778.3131550122</Field>
+                    <Field originalKeyName="field" type="string">1662329.7015033625</Field>
+                    <Field originalKeyName="field" type="string">1717609.9984049613</Field>
+                    <Field originalKeyName="field" type="string">1550351.0477992746</Field>
+                    <Field originalKeyName="field" type="string">1717341.4533480383</Field>
+                    <Field originalKeyName="field" type="string">1661052.3418612024</Field>
+                    <Field originalKeyName="field" type="string">1714905.798905781</Field>
+                    <Field originalKeyName="field" type="string">1660793.005232978</Field>
+                    <Field originalKeyName="field" type="string">1716687.9400664354</Field>
+                    <Field originalKeyName="field" type="string">1717386.5557346109</Field>
+                    <Field originalKeyName="field" type="string">1661204.8206589564</Field>
+                </Array>
+                <Field_1 originalKeyName="stack" type="string">Stack 0</Field_1>
+                <Field_2 originalKeyName="backgroundColor" type="string">rgba(254, 169, 62, 0.5)</Field_2>
+                <Field_3 originalKeyName="hoverBackgroundColor" type="string">rgba(254, 169, 62, 0.5)</Field_3>
+                <Field_4 originalKeyName="borderColor" type="string">rgba(254, 169, 62, 0.5)</Field_4>
+                <Field_5 originalKeyName="hoverBorderColor" type="string">rgba(254, 169, 62, 0.5)</Field_5>
+            </Object1>
+            <Object_1 originalKeyName="object" type="object">
+                <Field originalKeyName="label" type="string">Electricité</Field>
+                <Array originalKeyName="data" type="array">
+                    <Field originalKeyName="field" type="string">2248159.6808863515</Field>
+                    <Field originalKeyName="field" type="string">2247114.801720877</Field>
+                    <Field originalKeyName="field" type="string">472496.7596554966</Field>
+                    <Field originalKeyName="field" type="string">2027182.1425559467</Field>
+                    <Field originalKeyName="field" type="string">2244903.4756286563</Field>
+                    <Field originalKeyName="field" type="string">2172154.2046521795</Field>
+                    <Field originalKeyName="field" type="string">2245259.4275958575</Field>
+                    <Field originalKeyName="field" type="string">2173662.0661444617</Field>
+                    <Field originalKeyName="field" type="string">2246492.427574749</Field>
+                    <Field originalKeyName="field" type="string">2246262.2793838778</Field>
+                    <Field originalKeyName="field" type="string">2172475.1348817023</Field>
+                </Array>
+                <Field_1 originalKeyName="stack" type="string">Stack 1</Field_1>
+                <Field_2 originalKeyName="backgroundColor" type="string">rgb(50, 193, 113)</Field_2>
+                <Field_3 originalKeyName="hoverBackgroundColor" type="string">rgb(50, 193, 113)</Field_3>
+                <Field_4 originalKeyName="borderColor" type="string">rgb(50, 193, 113)</Field_4>
+                <Field_5 originalKeyName="hoverBorderColor" type="string">rgb(50, 193, 113)</Field_5>
+            </Object_1>
+            <Object_2 originalKeyName="object" type="object">
+                <Field originalKeyName="label" type="string">Gaz</Field>
+                <Array originalKeyName="data" type="array">
+                    <Field originalKeyName="field" type="string">1717454.1467767614</Field>
+                    <Field originalKeyName="field" type="string">1717549.8103182768</Field>
+                    <Field originalKeyName="field" type="string">362618.7041676258</Field>
+                    <Field originalKeyName="field" type="string">1550614.007302851</Field>
+                    <Field originalKeyName="field" type="string">1717840.6094434604</Field>
+                    <Field originalKeyName="field" type="string">1660822.4039317889</Field>
+                    <Field originalKeyName="field" type="string">1719154.459926451</Field>
+                    <Field originalKeyName="field" type="string">1661645.4807718217</Field>
+                    <Field originalKeyName="field" type="string">1718375.1131408038</Field>
+                    <Field originalKeyName="field" type="string">1715004.9037861922</Field>
+                    <Field originalKeyName="field" type="string">1661709.97750505</Field>
+                </Array>
+                <Field_1 originalKeyName="stack" type="string">Stack 1</Field_1>
+                <Field_2 originalKeyName="backgroundColor" type="string">rgb(254, 169, 62)</Field_2>
+                <Field_3 originalKeyName="hoverBackgroundColor" type="string">rgb(254, 169, 62)</Field_3>
+                <Field_4 originalKeyName="borderColor" type="string">rgb(254, 169, 62)</Field_4>
+                <Field_5 originalKeyName="hoverBorderColor" type="string">rgb(254, 169, 62)</Field_5>
+            </Object_2>
+        </Array>
+    </Object>
+    <Object_1 originalKeyName="chartOptions" type="object">
+        <Object originalKeyName="plugins" type="object">
+            <Object originalKeyName="legend" type="object">
+                <Field originalKeyName="position" type="string">bottom</Field>
+                <Field_1 originalKeyName="align" type="string">center</Field_1>
+            </Object>
+        </Object>
+        <Object_1 originalKeyName="scales" type="object">
+            <Object originalKeyName="x" type="object">
+                <Field originalKeyName="stacked" type="string">true</Field>
+            </Object>
+            <Object1 originalKeyName="y" type="object">
+                <Field originalKeyName="stacked" type="string">true</Field>
+                <Field_1 originalKeyName="title" type="string">MWh</Field_1>
+            </Object1>
+        </Object_1>
+        <Field originalKeyName="maintainAspectRatio" type="boolean">false</Field>
+        <responsive originalKeyName="responsive" type="boolean">true</responsive>
+    </Object_1>
+    <date>2021/01/01 - 2023/01/01</date>
+</document><!--
+Generated by Convertigo Enterprise Mobility Server
+Requester: InternalRequester
+-->

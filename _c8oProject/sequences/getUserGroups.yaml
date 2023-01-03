@@ -1,0 +1,72 @@
+↓Call_Sequence_2 [steps.SequenceStep-1671789503580]: 
+  comment: Enbale only for test cases in Studio
+  isEnabled: false
+  sourceSequence: lib_UserManager.SignIn
+  ↓user [variables.StepVariable-1671789514992]: 
+    comment: The userID (user's email)
+  ↓password [variables.StepVariable-1671789514994]: 
+    comment: The user's password
+↓initIsAdmin [steps.SimpleStep-1671807013009]: 
+  expression: var isAdmin = false;
+↓Call_Sequence_1 [steps.SequenceStep-1671789340453]: 
+  sourceSequence: poc_energisme.getCurrentUser
+↓Call_Sequence [steps.SequenceStep-1671789272348]: 
+  sourceSequence: lib_FullSyncGrp.GroupsOf
+  ↓user [variables.StepVariable-1671789317997]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1671789340453
+          - java.lang.String: 
+            - ↑value: ./document/authenticatedUserID/text()
+↓Copy [steps.XMLCopyStep-1671789601969]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1671789272348
+        - java.lang.String: 
+          - ↑value: ./document/group
+↓Iterator [steps.IteratorStep-1671789377040]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1671789272348
+        - java.lang.String: 
+          - ↑value: ./document/group
+  ↓jSimpleSource [steps.SimpleSourceStep-1671789400206]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1671789377040
+          - java.lang.String: 
+            - ↑value: ./text()
+    variableName: group
+  ↓jIf [steps.IfStep-1671806982754]: 
+    condition: group == 'role-admin'
+    ↓setIsAdmin [steps.SimpleStep-1671807046443]: 
+      expression: isAdmin = true;
+↓jElement [steps.ElementStep-1671807077862]: 
+  expression: isAdmin
+  nodeName: isAdmin
+↓user [variables.RequestableVariable-1671789321288]: 
+  comment: Used only for test cases in Studio
+↓password [variables.RequestableVariable-1671789520786]: 
+  comment: Used only for test cases in Studio
+↓admin [core.TestCase]: 
+  ↓user [variables.TestCaseVariable-1671789525956]: 
+    value: admin
+  ↓password [variables.TestCaseVariable-1671789525958]: 
+    value: admin
+↓user [core.TestCase]: 
+  ↓user [variables.TestCaseVariable-1671804113738]: 
+    value: user
+  ↓password [variables.TestCaseVariable-1671804113740]: 
+    value: user

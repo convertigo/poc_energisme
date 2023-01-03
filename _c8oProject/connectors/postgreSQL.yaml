@@ -3,11 +3,24 @@ jdbcURL: jdbc:postgresql://pgserver-labloamics-lab-lyeswlkhvptb6.postgres.databa
 jdbcUserName: convertigo@pgserver-labloamics-lab-lyeswlkhvptb6
 jdbcUserPassword: x312b14f3b735263363b9702517d0c3d6af87c7e0aa1ff80f7ba13bffc89c9adf
 testOnBorrow: true
+↓Default_transaction [transactions.SqlTransaction]: 
+  ↑default: true
+↓getSite [transactions.SqlTransaction]: 
+  sqlQuery: SELECT * FROM convertigo_poc.site s WHERE s.id = CAST({site_id} AS BIGINT)
+  ↓Test_Case [core.TestCase]: 
+    ↓site_id [variables.TestCaseVariable-1672148194989]: 
+      value: 7731
+  ↓site_id [variables.RequestableVariable-1672148077216]: 
+↓getSitesList [transactions.SqlTransaction]: 
+  sqlQuery: select * from convertigo_poc.site s
 ↓conso_month [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
-    sum (val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
-    sum (val) filter (where rd."label"='conso_elec') as sum_conso_elec,
+    
+    sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
+    
+    sum (rd.val) filter (where rd."label"='conso_elec') as sum_conso_elec,
+    
     date_part('year', ts) || '_' || date_part('month', ts)  as month_conso
     from convertigo_poc.raw_data rd
     inner join convertigo_poc.sensor_info si
@@ -16,8 +29,6 @@ testOnBorrow: true
     and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     group by date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
-    
-    
   ↓Test_Case [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1669192720643]: 
       description: date_start
