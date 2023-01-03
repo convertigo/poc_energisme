@@ -1,0 +1,62 @@
+↓Call_Sequence [steps.SequenceStep-1672736918157]: 
+  sourceSequence: lib_FullSyncGrp.GroupsOf
+  ↓user [variables.StepVariable-1672736952527]: 
+↓Array [steps.JsonArrayStep-1672737093720]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: groups
+  ↓Iterator [steps.IteratorStep-1672736966819]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672736918157
+          - java.lang.String: 
+            - ↑value: ./document/group
+    ↓Object [steps.JsonObjectStep-1672737116874]: 
+      ↓Call_Sequence [steps.SequenceStep-1672737048629]: 
+        sourceSequence: poc_energisme.getSitesByGroupName
+        ↓group_name [variables.StepVariable-1672737056528]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672736966819
+                - java.lang.String: 
+                  - ↑value: ./text()
+      ↓Field [steps.JsonFieldStep-1672742191583]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: name
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672736966819
+                - java.lang.String: 
+                  - ↑value: ./text()
+      ↓Count [steps.XMLCountStep-1672744530476]: 
+        nodeName: count
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1672737048629
+              - java.lang.String: 
+                - ↑value: ./document/sites/Field
+↓user [variables.RequestableVariable-1672736954062]: 
+↓Test_Case [core.TestCase]: 
+  ↓user [variables.TestCaseVariable-1672736993984]: 
+    value: admin

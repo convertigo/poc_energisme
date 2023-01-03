@@ -2,12 +2,13 @@
 ↓poc_energisme [core.Project]: 
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
-  version: 0.1.8
+  version: 0.1.9
   ↓groups_sites [connectors.FullSyncConnector]: 🗏 connectors/groups_sites.yaml
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓getCurrentUser [sequences.GenericSequence]: 🗏 sequences/getCurrentUser.yaml
   ↓getGroupNameBySiteId [sequences.GenericSequence]: 🗏 sequences/getGroupNameBySiteId.yaml
+  ↓getGroupsOf [sequences.GenericSequence]: 🗏 sequences/getGroupsOf.yaml
   ↓getSite [sequences.GenericSequence]: 🗏 sequences/getSite.yaml
   ↓getSitesByGroupName [sequences.GenericSequence]: 🗏 sequences/getSitesByGroupName.yaml
   ↓getSitesList [sequences.GenericSequence]: 🗏 sequences/getSitesList.yaml

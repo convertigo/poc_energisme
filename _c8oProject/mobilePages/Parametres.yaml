@@ -378,7 +378,7 @@ title: Title for Parametres
                 directiveSource: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"lib_FullSyncGrp.GroupsOf","marker":""}],"path":"?.group","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                 ↓ListItem [ngx.components.UIDynamicElement-1672393397080]: 
                   beanData: '{"ionBean":"ListItem"}'
                   isEnabled: false
@@ -608,7 +608,7 @@ title: Title for Parametres
                                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                             - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                       ↓RadioButton [ngx.components.UIDynamicElement-1672393431180]: 
-                        beanData: '{"ionBean":"RadioButton","Value":"script:group"}'
+                        beanData: '{"ionBean":"RadioButton","Value":"script:group.name"}'
                         tagName: ion-radio
                         ↓Event [ngx.components.UIControlEvent-1672393449358]: 
                           attrName: (ionChange)
@@ -758,7 +758,7 @@ title: Title for Parametres
                         directiveSource: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: script:group.includes('ad:')
+                            - MobileSmartSourceType: script:group.name.includes('ad:')
                         ↓Icon [ngx.components.UIDynamicElement-1672393397152]: 
                           beanData: |
                             '{
@@ -781,7 +781,7 @@ title: Title for Parametres
                         directiveSource: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: script:!group.includes('ad:')
+                            - MobileSmartSourceType: script:!group.name.includes('ad:')
                         ↓Icon [ngx.components.UIDynamicElement-1672393397161]: 
                           beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                           isEnabled: false
@@ -790,13 +790,13 @@ title: Title for Parametres
                         textValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: 'script:(group.includes(''ad:'')) ? group.slice(3, group.length) : group'
+                            - MobileSmartSourceType: 'script:(group.name.includes(''ad:'')) ? group.name.slice(3, group.length) + '' (''+ group.count + '')'' : group.name + '' (''+ group.count + '')'''
                       ↓Directive [ngx.components.UIControlDirective-1672393397167]: 
                         directiveName: If
                         directiveSource: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: script:group.includes("ad:") == false
+                            - MobileSmartSourceType: script:group.name.includes("ad:") == false
                         ↓ButtonSet1 [ngx.components.UIDynamicElement-1672393397170]: 
                           beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
                           tagName: ion-buttons
@@ -809,7 +809,7 @@ title: Title for Parametres
                                   '{
                                    "ionBean": "ModalAction",
                                    "page": "plain:poc_energisme.Application.NgxApp.modalUpdateGroup",
-                                   "data": "script:{ name: group }",
+                                   "data": "script:{ name: group.name }",
                                    "blockWhileDisplayed": "plain:true"
                                   }'
                                 ↓If [ngx.components.UIDynamicAction-1672393397182]: 
@@ -846,7 +846,7 @@ title: Title for Parametres
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: script:group
+                                      - MobileSmartSourceType: script:group.name
                                 ↓IfElse [ngx.components.UIDynamicIf-1672393397209]: 
                                   beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.success == \"true\""}'
                                   ↓CallSequence1 [ngx.components.UIDynamicAction-1672393397212]: 
@@ -895,7 +895,7 @@ title: Title for Parametres
                                       varValue: 
                                         - xmlizable: 
                                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                          - MobileSmartSourceType: script:group
+                                          - MobileSmartSourceType: script:group.name
                                   ↓Toast [ngx.components.UIDynamicAction-1672393397230]: 
                                     beanData: '{"ionBean":"ToastAction","message":"plain:Le groupe a été supprimé."}'
                                   ↓Else_Handler [ngx.components.UIActionElseEvent-1672393397233]: 
@@ -1787,7 +1787,7 @@ title: Title for Parametres
               '
 ↓PageEvent [ngx.components.UIPageEvent-1672060069180]: 
   ↓CallSequence [ngx.components.UIDynamicAction-1672060346412]: 
-    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
+    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getGroupsOf"}'
     ↓user [ngx.components.UIControlVariable-1672060355712]: 
       comment: new variable
       varValue: 

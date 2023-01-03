@@ -76,6 +76,16 @@
                 - ↑value: 1672147895787
               - java.lang.String: 
                 - ↑value: ./value/text()
+↓Count [steps.XMLCountStep-1672736590367]: 
+  nodeName: count
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1672147910442
+        - java.lang.String: 
+          - ↑value: ./Field
 ↓group_name [variables.RequestableVariable-1672146998511]: 
 ↓Test_Case [core.TestCase]: 
   ↓group_name [variables.TestCaseVariable-1672147051849]: 
