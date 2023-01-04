@@ -1,66 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:poc_energisme_ns="http://www.convertigo.com/convertigo/projects/poc_energisme" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/poc_energisme">
-    <xsd:element name="postgreSQL__heatmap" type="poc_energisme_ns:postgreSQL__heatmapRequestData">
+    <xsd:element name="postgreSQL__widget_conso" type="poc_energisme_ns:postgreSQL__widget_consoRequestData">
         <xsd:annotation/>
     </xsd:element>
-    <xsd:element name="postgreSQL__heatmapResponse">
+    <xsd:element name="postgreSQL__widget_consoResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__heatmapResponseData"/>
+                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__widget_consoResponseData"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:complexType name="postgreSQL__heatmapResponseType">
+    <xsd:complexType name="postgreSQL__widget_consoResponseType">
         <xsd:sequence>
-            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__heatmapResponseData"/>
+            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__widget_consoResponseData"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__heatmapRequestData">
+    <xsd:complexType name="postgreSQL__widget_consoRequestData">
         <xsd:sequence>
-            <xsd:element name="label" type="xsd:string">
+            <xsd:element name="date_start" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>date_start</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="date_end" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>date_end</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sites">
                 <xsd:annotation>
                     <xsd:appinfo>new variable</xsd:appinfo>
                 </xsd:annotation>
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_row_sum_conso_elecType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute default="string" name="type" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_row_weekType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute default="string" name="type" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_row_hourType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute default="string" name="type" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="postgreSQL_heatmap_document_sql_output_rowType">
+    <xsd:complexType name="postgreSQL_conso_month_document_errorType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sum_conso_elec" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_row_sum_conso_elecType"/>
-            <xsd:element minOccurs="0" name="week" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_row_weekType"/>
-            <xsd:element minOccurs="0" name="hour" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_row_hourType"/>
+            <xsd:element minOccurs="0" name="code" type="xsd:byte"/>
+            <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="details" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="context" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="exception" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="stacktrace" type="xsd:string"/>
         </xsd:sequence>
-        <xsd:attribute default="object" name="type" type="xsd:string"/>
+        <xsd:attribute name="connector" type="xsd:string"/>
+        <xsd:attribute name="project" type="xsd:string"/>
+        <xsd:attribute name="transaction" type="xsd:string"/>
+        <xsd:attribute default="string" name="type" type="xsd:string"/>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_heatmap_document_sql_outputType">
-        <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_output_rowType"/>
-        </xsd:sequence>
-        <xsd:attribute default="array" name="type" type="xsd:string"/>
+    <xsd:complexType name="postgreSQL_conso_month_document_sql_outputType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute default="array" name="type" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__heatmapResponseData">
+    <xsd:complexType name="postgreSQL__widget_consoResponseData">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_heatmap_document_sql_outputType"/>
+            <xsd:element minOccurs="0" name="error" type="poc_energisme_ns:postgreSQL_conso_month_document_errorType"/>
+            <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_conso_month_document_sql_outputType"/>
             <xsd:element minOccurs="0" name="error" type="poc_energisme_ns:ConvertigoError"/>
         </xsd:sequence>
         <xsd:attribute name="connector" type="xsd:string"/>

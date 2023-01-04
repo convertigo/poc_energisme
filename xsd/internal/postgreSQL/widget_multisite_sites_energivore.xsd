@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:poc_energisme_ns="http://www.convertigo.com/convertigo/projects/poc_energisme" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/poc_energisme">
-    <xsd:element name="postgreSQL__multisite_sites_energivore_elec" type="poc_energisme_ns:postgreSQL__multisite_sites_energivore_elecRequestData">
+    <xsd:element name="postgreSQL__widget_multisite_sites_energivore" type="poc_energisme_ns:postgreSQL__widget_multisite_sites_energivoreRequestData">
         <xsd:annotation/>
     </xsd:element>
-    <xsd:element name="postgreSQL__multisite_sites_energivore_elecResponse">
+    <xsd:element name="postgreSQL__widget_multisite_sites_energivoreResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__multisite_sites_energivore_elecResponseData"/>
+                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__widget_multisite_sites_energivoreResponseData"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:complexType name="postgreSQL__multisite_sites_energivore_elecResponseType">
+    <xsd:complexType name="postgreSQL__widget_multisite_sites_energivoreResponseType">
         <xsd:sequence>
-            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__multisite_sites_energivore_elecResponseData"/>
+            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__widget_multisite_sites_energivoreResponseData"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__multisite_sites_energivore_elecRequestData">
+    <xsd:complexType name="postgreSQL__widget_multisite_sites_energivoreRequestData">
         <xsd:sequence>
             <xsd:element name="limit" type="xsd:string">
                 <xsd:annotation>
@@ -23,52 +23,60 @@
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_avg_conso_elecType">
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_row_avg_conso_gazType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute default="string" name="type" type="xsd:string"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_nomType">
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_row_nomType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute default="string" name="type" type="xsd:string"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_latitudeType">
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_row_latitudeType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute default="string" name="type" type="xsd:string"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_longitudeType">
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_row_longitudeType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute default="string" name="type" type="xsd:string"/>
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_multisite_sites_energivore_elec_document_sql_output_rowType">
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_row_site_idType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute default="string" name="type" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_output_rowType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="avg_conso_elec" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_avg_conso_elecType"/>
-            <xsd:element minOccurs="0" name="nom" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_nomType"/>
-            <xsd:element minOccurs="0" name="latitude" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_latitudeType"/>
-            <xsd:element minOccurs="0" name="longitude" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_elec_document_sql_output_row_longitudeType"/>
+            <xsd:element minOccurs="0" name="avg_conso_gaz" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_avg_conso_gazType"/>
+            <xsd:element minOccurs="0" name="nom" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_nomType"/>
+            <xsd:element minOccurs="0" name="latitude" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_latitudeType"/>
+            <xsd:element minOccurs="0" name="longitude" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_longitudeType"/>
+            <xsd:element minOccurs="0" name="site_id" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_row_site_idType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_multisite_sites_energivore_elec_document_sql_outputType">
+    <xsd:complexType name="postgreSQL_multisite_sites_energivore_document_sql_outputType">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_elec_document_sql_output_rowType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_output_rowType"/>
         </xsd:sequence>
         <xsd:attribute default="array" name="type" type="xsd:string"/>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__multisite_sites_energivore_elecResponseData">
+    <xsd:complexType name="postgreSQL__widget_multisite_sites_energivoreResponseData">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_elec_document_sql_outputType"/>
+            <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_multisite_sites_energivore_document_sql_outputType"/>
             <xsd:element minOccurs="0" name="error" type="poc_energisme_ns:ConvertigoError"/>
         </xsd:sequence>
         <xsd:attribute name="connector" type="xsd:string"/>

@@ -1,7 +1,7 @@
 responseExpiryDate: daily,23:00:00
 ↓Input_variables [steps.InputVariablesStep-1669195972005]: 
 ↓Call_Transaction [steps.TransactionStep-1669196081629]: 
-  sourceTransaction: poc_energisme.postgreSQL.conso_total_between
+  sourceTransaction: poc_energisme.postgreSQL.widget_conso_total_between
   ↓site_id [variables.StepVariable-1669196081631]: 
     description: site_id
     sourceDefinition: 

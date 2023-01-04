@@ -3,7 +3,7 @@ jdbcURL: jdbc:postgresql://pgserver-labloamics-lab-lyeswlkhvptb6.postgres.databa
 jdbcUserName: convertigo@pgserver-labloamics-lab-lyeswlkhvptb6
 jdbcUserPassword: x312b14f3b735263363b9702517d0c3d6af87c7e0aa1ff80f7ba13bffc89c9adf
 testOnBorrow: true
-↓Default_transaction [transactions.SqlTransaction]: 
+↓Default_transaction1 [transactions.SqlTransaction]: 
   ↑default: true
 ↓getSite [transactions.SqlTransaction]: 
   sqlQuery: SELECT * FROM convertigo_poc.site s WHERE s.id = CAST({site_id} AS BIGINT)
@@ -13,206 +13,12 @@ testOnBorrow: true
   ↓site_id [variables.RequestableVariable-1672148077216]: 
 ↓getSitesList [transactions.SqlTransaction]: 
   sqlQuery: select * from convertigo_poc.site s
-↓conso_month [transactions.SqlTransaction]: 
-  sqlQuery: |
-    select 
-    
-    sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
-    
-    sum (rd.val) filter (where rd."label"='conso_elec') as sum_conso_elec,
-    
-    date_part('year', ts) || '_' || date_part('month', ts)  as month_conso
-    from convertigo_poc.raw_data rd
-    inner join convertigo_poc.sensor_info si
-    on rd.uuid = si.sensor_id 
-    where si.site_id in ({{sites}})
-    and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
-    group by date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
-  ↓Test_Case [core.TestCase]: 
-    ↓date_start [variables.TestCaseVariable-1669192720643]: 
-      description: date_start
-      value: 2021-01-01
-    ↓date_end [variables.TestCaseVariable-1669192720645]: 
-      description: date_end
-      value: 2022-12-01
-    ↓sites [variables.TestCaseVariable-1671811007457]: 
-      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
-  ↓date_start [variables.RequestableVariable-1669136094449]: 
-    description: date_start
-  ↓date_end [variables.RequestableVariable-1669136094451]: 
-    description: date_end
-  ↓sites [variables.RequestableVariable-1671811002225]: 
-↓conso_total_between [transactions.SqlTransaction]: 
-  sqlQuery: |
-    select
-    
-    sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
-    
-    sum (rd.val) filter (where rd."label"='conso_elec') as sum_conso_elec
-    
-    from convertigo_poc.raw_data rd
-    
-    inner join convertigo_poc.sensor_info si
-    
-    on rd.uuid = si.sensor_id
-    
-    where si.site_id = CAST({site_id} AS BIGINT)
-    and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
-  ↓Test_Case [core.TestCase]: 
-    ↓site_id [variables.TestCaseVariable-1669195856825]: 
-      description: site_id
-      value: 7626
-    ↓date_start [variables.TestCaseVariable-1669195856827]: 
-      description: date_start
-      value: 2021-01-01
-    ↓date_end [variables.TestCaseVariable-1669195856829]: 
-      description: date_end
-      value: 2022-12-01
-  ↓site_id [variables.RequestableVariable-1669195849724]: 
-    description: site_id
-  ↓date_start [variables.RequestableVariable-1669195849726]: 
-    description: date_start
-  ↓date_end [variables.RequestableVariable-1669195849728]: 
-    description: date_end
-↓Default_transaction [transactions.SqlTransaction]: 
-  ↑default: true
 ↓group_sites [transactions.SqlTransaction]: 
   sqlQuery: |
     select site_id 
     from convertigo_poc.group_site
     where group_id in ('AAA','CCC')
   ↓Test_Case [core.TestCase]: 
-↓heatmap [transactions.SqlTransaction]: 
-  sqlQuery: |
-    select 
-    sum (val) filter (where rd."label"={label}) as sum_label,
-    date_part('week', ts) as week,
-    date_part('hour', ts) as hour
-    from convertigo_poc.raw_data rd
-    inner join convertigo_poc.sensor_info si
-    on rd.uuid = si.sensor_id 
-    where si.site_id in (14122,7626)
-    and rd.ts >= '2021-01-01'
-    and rd.ts <= '2022-12-31'
-    group by week , hour
-    order by week asc, hour asc
-  ↓Test_Case [core.TestCase]: 
-    ↓label [variables.TestCaseVariable-1671802819427]: 
-      value: conso_elec
-  ↓label [variables.RequestableVariable-1671802687550]: 
-↓multisite_conso_month [transactions.SqlTransaction]: 
-  sqlQuery: |
-    select
-    
-    sum (val) filter (where raw_data."label"='conso_gaz') as sum_conso_gaz,
-    
-    sum (val) filter (where raw_data."label"='conso_elec') as sum_conso_elec,
-    
-    date_part('year', ts) || '_' || date_part('month', ts)  as month_conso
-    
-    from convertigo_poc.raw_data
-    
-    where ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    
-    and ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
-    
-    group by date_part('year', ts) || '_' || date_part('month', ts)
-  ↓Test_Case [core.TestCase]: 
-    ↓date_start [variables.TestCaseVariable-1667833871202]: 
-      description: date_start
-      value: 2021-01-01
-    ↓date_end [variables.TestCaseVariable-1667833871204]: 
-      description: date_end
-      value: 2022-12-01
-  ↓date_start [variables.RequestableVariable-1667833837163]: 
-    description: date_start
-  ↓date_end [variables.RequestableVariable-1667833837165]: 
-    description: date_end
-↓multisite_conso_total_between [transactions.SqlTransaction]: 
-  clientCachable: true
-  sqlQuery: |
-    select sum(val) filter (where raw_data."label"='conso_gaz') as sum_conso_gaz,
-    sum (val) filter (where raw_data."label"='conso_elec') as sum_conso_elec
-    from convertigo_poc.raw_data
-    where ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    and ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
-  ↓Novembre [core.TestCase]: 
-    ↓date_start [variables.TestCaseVariable-1667833024654]: 
-      description: date_start
-      value: 2022-11-01
-    ↓date_end [variables.TestCaseVariable-1667833024657]: 
-      description: date_end
-      value: 2022-12-01
-  ↓Octobre [core.TestCase]: 
-    ↓date_start [variables.TestCaseVariable-1667832278236]: 
-      description: date_start
-      value: 2022-10-01
-    ↓date_end [variables.TestCaseVariable-1667832278238]: 
-      description: date_end
-      value: 2022-11-01
-  ↓date_start [variables.RequestableVariable-1667832973741]: 
-    description: date_start
-  ↓date_end [variables.RequestableVariable-1667832973743]: 
-    description: date_end
-↓multisite_sites_energivore [transactions.SqlTransaction]: 
-  sqlQuery: |
-    select a.avg_conso_gaz, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
-    from convertigo_poc.site s
-    inner join
-    (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, site_id
-    from convertigo_poc.raw_data
-    inner join convertigo_poc.sensor_info
-    on raw_data.uuid = sensor_info.sensor_id
-    and raw_data."label" = sensor_info."label"
-    group by site_id) a on a.site_id = s.id
-    order by avg_conso_gaz desc
-    limit CAST({limit} AS BIGINT);
-  ↓Test_Case [core.TestCase]: 
-    ↓limit [variables.TestCaseVariable-1669040607299]: 
-      description: limit
-      value: 20
-  ↓limit [variables.RequestableVariable-1667833569348]: 
-    description: limit
-↓multisite_sites_energivore_elec [transactions.SqlTransaction]: 
-  sqlQuery: |
-    select a.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude
-    from convertigo_poc.site s
-    inner join
-    (select avg (val) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
-    from convertigo_poc.raw_data
-    inner join convertigo_poc.sensor_info
-    on raw_data.uuid = sensor_info.sensor_id
-    and raw_data."label" = sensor_info."label"
-    group by site_id) a on a.site_id = s.id
-    order by avg_conso_elec desc
-    limit CAST({limit} AS BIGINT);
-  ↓Elec [core.TestCase]: 
-    ↓limit [variables.TestCaseVariable-1669043633106]: 
-      description: limit
-      value: 20
-  ↓limit [variables.RequestableVariable-1669043633113]: 
-    description: limit
-↓multisite_sites_energivore_gaz [transactions.SqlTransaction]: 
-  sqlQuery: |
-    select a.avg_conso_gaz, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude
-    from convertigo_poc.site s
-    inner join
-    (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, site_id
-    from convertigo_poc.raw_data
-    inner join convertigo_poc.sensor_info
-    on raw_data.uuid = sensor_info.sensor_id
-    and raw_data."label" = sensor_info."label"
-    group by site_id) a on a.site_id = s.id
-    order by avg_conso_gaz desc
-    limit CAST({limit} AS BIGINT);
-  ↓Test_Case [core.TestCase]: 
-    ↓limit [variables.TestCaseVariable-1669044244098]: 
-      description: limit
-      value: 20
-  ↓limit [variables.RequestableVariable-1669044244105]: 
-    description: limit
 ↓SelectUUID [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT uuid, avg(val) AS moy_val, label
@@ -230,3 +36,108 @@ testOnBorrow: true
       value: 20
   ↓limit [variables.RequestableVariable-1671203508069]: 
     description: limit
+↓widget_conso [transactions.SqlTransaction]: 
+  sqlQuery: |
+    'select 
+    
+    sum (rd.val) filter (where rd."label"=''conso_gaz'') as sum_conso_gaz,
+    sum (rd.val) filter (where rd."label"=''conso_elec'') as sum_conso_elec,
+    {{agg_function}}  as agg_period
+    from convertigo_poc.raw_data rd
+    inner join convertigo_poc.sensor_info si
+    on rd.uuid = si.sensor_id 
+    where si.site_id in ({{sites}})
+    and rd.ts > TO_TIMESTAMP({date_start}, ''YYYY-MM-DD'')
+    and rd.ts < TO_TIMESTAMP({date_end}, ''YYYY-MM-DD'')
+    group by {{agg_function}}'
+  ↓Test_Case [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1669192720643]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1669192720645]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1671811007457]: 
+      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1672851373255]: 
+      value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+  ↓date_start [variables.RequestableVariable-1669136094449]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1669136094451]: 
+    description: date_end
+  ↓sites [variables.RequestableVariable-1671811002225]: 
+  ↓agg_function [variables.RequestableVariable-1672851360895]: 
+↓widget_conso_total_between [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select
+    sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
+    sum (rd.val) filter (where rd."label"='conso_elec') as sum_conso_elec
+    from convertigo_poc.raw_data rd
+    inner join convertigo_poc.sensor_info si
+    on rd.uuid = si.sensor_id
+    where si.site_id IN ({{sites}}) 
+    and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+  ↓Test_Case [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1669195856827]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1669195856829]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1672844400343]: 
+      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+  ↓date_start [variables.RequestableVariable-1669195849726]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1669195849728]: 
+    description: date_end
+  ↓sites [variables.RequestableVariable-1672844375261]: 
+↓widget_heatmap [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select 
+    sum (val) filter (where rd."label"={label}) as sum_label,
+    date_part('week', ts) as week,
+    date_part('hour', ts) as hour
+    from convertigo_poc.raw_data rd
+    inner join convertigo_poc.sensor_info si
+    on rd.uuid = si.sensor_id 
+    where si.site_id IN ({{sites}}) 
+    and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+    group by week , hour
+    order by week asc, hour asc
+  ↓Test_Case [core.TestCase]: 
+    ↓label [variables.TestCaseVariable-1671802819427]: 
+      value: conso_elec
+    ↓date_start [variables.TestCaseVariable-1672851043740]: 
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1672851043742]: 
+      value: 2022-12-31
+    ↓sites [variables.TestCaseVariable-1672851043744]: 
+      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+  ↓label [variables.RequestableVariable-1671802687550]: 
+  ↓date_start [variables.RequestableVariable-1672850938376]: 
+  ↓date_end [variables.RequestableVariable-1672850950616]: 
+  ↓sites [variables.RequestableVariable-1672850968353]: 
+↓widget_multisite_sites_energivore [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select a.avg_conso_gaz, a.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
+    from convertigo_poc.site s
+    inner join
+    (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz,  avg (val) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
+    from convertigo_poc.raw_data
+    inner join convertigo_poc.sensor_info
+    on raw_data.uuid = sensor_info.sensor_id
+    and raw_data."label" = sensor_info."label"
+    group by site_id) a on a.site_id = s.id
+    order by avg_conso_gaz desc
+    limit CAST({limit} AS BIGINT);
+  ↓Test_Case [core.TestCase]: 
+    ↓limit [variables.TestCaseVariable-1669040607299]: 
+      description: limit
+      value: 20
+    ↓sites [variables.TestCaseVariable-1672851019919]: 
+      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+  ↓limit [variables.RequestableVariable-1667833569348]: 
+    description: limit
+  ↓sites [variables.RequestableVariable-1672850989880]: 
