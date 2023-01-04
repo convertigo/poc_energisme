@@ -187,7 +187,6 @@
             - java.lang.String: 
               - ↑value: ./document/Array
 ↓label [variables.RequestableVariable-1672750840053]: 
-↓type [variables.RequestableVariable-1672750840056]: 
 ↓user [variables.RequestableVariable-1672751087877]: 
 ↓label [core.TestCase]: 
   ↓label [variables.TestCaseVariable-1672751105780]: 

@@ -41,7 +41,7 @@ tagName: ion-menu
       directiveSource: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: script:(listen(['poc_energisme.getUserGroups'])?.isAdmin != undefined && listen(['poc_energisme.getUserGroups'])?.isAdmin)
+          - MobileSmartSourceType: script:this.global['isAdmin'] != undefined && this.global['isAdmin'] == 'true'
       ↓MenuItem [ngx.components.UIDynamicMenuItem-1671790508996]: 
         beanData: '{"ionBean":"MenuItem"}'
         itempage: poc_energisme.Application.NgxApp.Parametres

@@ -1,0 +1,36 @@
+↓Call_Sequence [steps.SequenceStep-1672765485487]: 
+  sourceSequence: lib_FullSyncGrp.Groups
+↓groups [steps.JsonArrayStep-1672765549588]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: groups
+  ↓Iterator [steps.IteratorStep-1672765532515]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672765485487
+          - java.lang.String: 
+            - ↑value: ./document/group
+    ↓Object [steps.JsonObjectStep-1672765666031]: 
+      ↓Field [steps.JsonFieldStep-1672765671712]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: name
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672765532515
+                - java.lang.String: 
+                  - ↑value: ./text()

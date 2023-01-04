@@ -138,8 +138,15 @@ title: Title for Login
                           }'
                         ↓CallSequence [ngx.components.UIDynamicAction-1671790709609]: 
                           beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
-                          ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
-                            beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                          ↓SetGlobal [ngx.components.UIDynamicAction-1672837965924]: 
+                            beanData: |
+                              '{
+                               "ionBean": "SetGlobalAction",
+                               "Property": "plain:isAdmin",
+                               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                              }'
+                            ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
+                              beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
             ↓azureButton [ngx.components.UIDynamicElement-1669818578024]: 
               beanData: '{"ionBean":"Button"}'
               tagName: ion-button

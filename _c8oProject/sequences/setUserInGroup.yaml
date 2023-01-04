@@ -1,0 +1,50 @@
+↓Call_Sequence [steps.SequenceStep-1672826959837]: 
+  sourceSequence: lib_FullSyncGrp.SetUserInGroup
+  ↓user [variables.StepVariable-1672826975297]: 
+  ↓group [variables.StepVariable-1672826975299]: 
+↓IfExistThenElse [steps.IfExistThenElseStep-1672827012153]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1672826959837
+        - java.lang.String: 
+          - ↑value: ./document/success
+  ↓jThen [steps.ThenStep-1672827012577]: 
+    ↓Field [steps.JsonFieldStep-1672827032418]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: status
+      type: bool
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: true
+  ↓jElse [steps.ElseStep-1672827012579]: 
+    ↓Field [steps.JsonFieldStep-1672827033443]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: status
+      type: bool
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: false
+↓user [variables.RequestableVariable-1672826980537]: 
+↓group [variables.RequestableVariable-1672826980539]: 
+↓Test_Case [core.TestCase]: 
+  ↓user [variables.TestCaseVariable-1672826986894]: 
+    value: user
+  ↓group [variables.TestCaseVariable-1672826986896]: 
+    value: bb

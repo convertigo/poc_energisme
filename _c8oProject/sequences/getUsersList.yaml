@@ -1,0 +1,54 @@
+↓Call_Sequence [steps.SequenceStep-1672765089028]: 
+  sourceSequence: lib_FullSyncGrp.Users
+↓users [steps.JsonArrayStep-1672765118109]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: users
+  ↓Iterator [steps.IteratorStep-1672765111334]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1672765089028
+          - java.lang.String: 
+            - ↑value: ./document/user
+    ↓Object [steps.JsonObjectStep-1672765147789]: 
+      ↓name [steps.JsonFieldStep-1672765155413]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: name
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672765111334
+                - java.lang.String: 
+                  - ↑value: ./text()
+      ↓nbOfGroups [steps.JsonFieldStep-1672765172750]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: nbOfGroups
+        type: number
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1672765111334
+                - java.lang.String: 
+                  - ↑value: ./@groups

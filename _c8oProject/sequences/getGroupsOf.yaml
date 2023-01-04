@@ -1,3 +1,4 @@
+responseExpiryDate: daily,23:00:00
 ↓Call_Sequence [steps.SequenceStep-1672736918157]: 
   sourceSequence: lib_FullSyncGrp.GroupsOf
   ↓user [variables.StepVariable-1672736952527]: 
