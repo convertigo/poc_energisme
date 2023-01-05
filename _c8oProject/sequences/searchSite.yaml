@@ -3,7 +3,7 @@
   condition: label != null && label.length > 0
   ↓jThen [steps.ThenStep-1672760692064]: 
     ↓Call_Transaction [steps.TransactionStep-1672760722072]: 
-      sourceTransaction: poc_energisme.postgreSQL.searchSite
+      sourceTransaction: poc_energisme.postgreSQL.search_site
       ↓label [variables.StepVariable-1672760731478]: 
         description: label
     ↓sites [steps.JsonArrayStep-1672760792000]: 

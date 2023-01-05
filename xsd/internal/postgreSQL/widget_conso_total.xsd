@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:poc_energisme_ns="http://www.convertigo.com/convertigo/projects/poc_energisme" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/poc_energisme">
-    <xsd:element name="postgreSQL__widget_conso_total_between" type="poc_energisme_ns:postgreSQL__widget_conso_total_betweenRequestData">
+    <xsd:element name="postgreSQL__widget_conso_total" type="poc_energisme_ns:postgreSQL__widget_conso_totalRequestData">
         <xsd:annotation/>
     </xsd:element>
-    <xsd:element name="postgreSQL__widget_conso_total_betweenResponse">
+    <xsd:element name="postgreSQL__widget_conso_totalResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__widget_conso_total_betweenResponseData"/>
+                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__widget_conso_totalResponseData"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:complexType name="postgreSQL__widget_conso_total_betweenResponseType">
+    <xsd:complexType name="postgreSQL__widget_conso_totalResponseType">
         <xsd:sequence>
-            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__widget_conso_total_betweenResponseData"/>
+            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__widget_conso_totalResponseData"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__widget_conso_total_betweenRequestData">
+    <xsd:complexType name="postgreSQL__widget_conso_totalRequestData">
         <xsd:sequence>
             <xsd:element name="date_start" type="xsd:string">
                 <xsd:annotation>
@@ -60,7 +60,7 @@
         </xsd:sequence>
         <xsd:attribute default="array" name="type" type="xsd:string"/>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__widget_conso_total_betweenResponseData">
+    <xsd:complexType name="postgreSQL__widget_conso_totalResponseData">
         <xsd:sequence>
             <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_widget_conso_total_between_document_sql_outputType"/>
             <xsd:element minOccurs="0" name="error" type="poc_energisme_ns:ConvertigoError"/>

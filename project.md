@@ -21,7 +21,7 @@ see [documentation](http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd)
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_ExtendedComponents_ui_ngx
 
 
-see [readme](https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx/tree/8.1.0.0#readme)
+see [readme](https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx/tree/8.0.0#readme)
 </p></blockquote></details>
 
 <details><summary><b>lib_FullSyncGrp</b></summary><blockquote><p>
@@ -39,7 +39,6 @@ see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/8.0.0#re
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_OAuth
 
 
-see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
 </p></blockquote></details>
 
 <details><summary><b>lib_UserManager</b></summary><blockquote><p>
@@ -48,7 +47,6 @@ see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_UserManager
 
 
-see [readme](https://github.com/convertigo/c8oprj-lib-user-manager/tree/f8941d93af0db63dc16c052daad77de2f6329747#readme)
 </p></blockquote></details>
 </p></blockquote></details>
 
@@ -251,10 +249,10 @@ comment
 
 </p></blockquote></details>
 
-<details><summary><b>getSite</b></summary><blockquote><p>
+<details><summary><b>get_site</b></summary><blockquote><p>
 
 
-### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") getSite
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") get_site
 
 
 
@@ -281,18 +279,18 @@ comment
 
 </p></blockquote></details>
 
-<details><summary><b>getSitesList</b></summary><blockquote><p>
+<details><summary><b>get_sites_list</b></summary><blockquote><p>
 
 
-### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") getSitesList
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") get_sites_list
 
 
 </p></blockquote></details>
 
-<details><summary><b>searchSite</b></summary><blockquote><p>
+<details><summary><b>search_site</b></summary><blockquote><p>
 
 
-### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") searchSite
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") search_site
 
 
 
@@ -319,10 +317,10 @@ comment
 
 </p></blockquote></details>
 
-<details><summary><b>SelectUUID</b></summary><blockquote><p>
+<details><summary><b>select_UUID</b></summary><blockquote><p>
 
 
-### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") SelectUUID
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") select_UUID
 
 
 </p></blockquote></details>
@@ -381,10 +379,10 @@ comment
 
 </p></blockquote></details>
 
-<details><summary><b>widget_conso_total_between</b></summary><blockquote><p>
+<details><summary><b>widget_conso_total</b></summary><blockquote><p>
 
 
-### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") widget_conso_total_between
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") widget_conso_total
 
 
 

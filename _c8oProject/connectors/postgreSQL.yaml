@@ -5,23 +5,35 @@ jdbcUserPassword: x312b14f3b735263363b9702517d0c3d6af87c7e0aa1ff80f7ba13bffc89c9
 testOnBorrow: true
 ↓Default_transaction [transactions.SqlTransaction]: 
   ↑default: true
-↓getSite [transactions.SqlTransaction]: 
-  sqlQuery: SELECT * FROM convertigo_poc.site s WHERE s.id = CAST({site_id} AS BIGINT)
+↓get_site [transactions.SqlTransaction]: 
+  sqlQuery: |
+    SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
+    FROM convertigo_poc.site s 
+    WHERE s.id = CAST({site_id} AS BIGINT)
+    AND s.typology is not null;
+    
   ↓Test_Case [core.TestCase]: 
     ↓site_id [variables.TestCaseVariable-1672148194989]: 
-      value: 7731
+      value: 14069
   ↓site_id [variables.RequestableVariable-1672148077216]: 
-↓getSitesList [transactions.SqlTransaction]: 
-  sqlQuery: select * from convertigo_poc.site s
-↓searchSite [transactions.SqlTransaction]: 
-  sqlQuery: SELECT * FROM convertigo_poc.site WHERE nom LIKE '%{{label}}%'
+↓get_sites_list [transactions.SqlTransaction]: 
+  sqlQuery: |
+    SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
+    FROM convertigo_poc.site s 
+    WHERE s.typology is not null;
+↓search_site [transactions.SqlTransaction]: 
+  sqlQuery: |
+    SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
+    FROM convertigo_poc.site s 
+    WHERE LOWER(nom) LIKE '%{{label}}%'
+    AND s.typology is not null;
   ↓Test_Case [core.TestCase]: 
     ↓label [variables.TestCaseVariable-1672757661610]: 
       description: label
-      value: Bar
+      value: bar
   ↓label [variables.RequestableVariable-1672757643644]: 
     description: label
-↓SelectUUID [transactions.SqlTransaction]: 
+↓select_UUID [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT uuid, avg(val) AS moy_val, label
     FROM raw_data
@@ -32,6 +44,7 @@ testOnBorrow: true
     
     sum (rd.val) filter (where rd."label"=''conso_gaz'') as sum_conso_gaz,
     sum (rd.val) filter (where rd."label"=''conso_elec'') as sum_conso_elec,
+    sum (rd.val) filter (where rd."label"=''dju'') as sum_dju,
     {{agg_function}}  as agg_period
     from convertigo_poc.raw_data rd
     inner join convertigo_poc.sensor_info si
@@ -40,7 +53,51 @@ testOnBorrow: true
     and rd.ts > TO_TIMESTAMP({date_start}, ''YYYY-MM-DD'')
     and rd.ts < TO_TIMESTAMP({date_end}, ''YYYY-MM-DD'')
     group by {{agg_function}}'
-  ↓Test_Case [core.TestCase]: 
+  ↓Test_Case_Monosite_evolution_conso_agg_annee [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1672928023866]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1672928023869]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1672928023872]: 
+      value: CAST('7991' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1672928023875]: 
+      value: date_part('year', rd.ts)
+  ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1672928243853]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1672928243856]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1672928243859]: 
+      value: CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1672928243862]: 
+      value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+  ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1672928700573]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1672928700576]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1672928700579]: 
+      value: CAST('7991' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1672928700582]: 
+      value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
+  ↓Test_Case_Multisite_evolution_conso_agg_annee [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1672927932946]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1672927932949]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1672927932952]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1672927932955]: 
+      value: date_part('year', rd.ts)
+  ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672914161723]: 
       description: date_start
       value: 2021-01-01
@@ -48,16 +105,27 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672914161729]: 
-      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672914161732]: 
       value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+  ↓Test_Case_Multisite_evolution_conso_agg_semaine [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1672927548928]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1672927548931]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1672927548934]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1672927548937]: 
+      value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
   ↓date_start [variables.RequestableVariable-1672914161735]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161738]: 
     description: date_end
   ↓sites [variables.RequestableVariable-1672914161741]: 
   ↓agg_function [variables.RequestableVariable-1672914161744]: 
-↓widget_conso_total_between [transactions.SqlTransaction]: 
+↓widget_conso_total [transactions.SqlTransaction]: 
   sqlQuery: |
     select
     sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
@@ -68,7 +136,7 @@ testOnBorrow: true
     where si.site_id IN ({{sites}}) 
     and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
-  ↓Test_Case [core.TestCase]: 
+  ↓Test_Case_Multisite [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672914161749]: 
       description: date_start
       value: 2021-01-01

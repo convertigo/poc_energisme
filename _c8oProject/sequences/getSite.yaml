@@ -1,5 +1,5 @@
 ↓Call_Transaction [steps.TransactionStep-1672148393340]: 
-  sourceTransaction: poc_energisme.postgreSQL.getSite
+  sourceTransaction: poc_energisme.postgreSQL.get_site
   ↓site_id [variables.StepVariable-1672148401832]: 
 ↓Iterator [steps.IteratorStep-1672148427535]: 
   sourceDefinition: 
