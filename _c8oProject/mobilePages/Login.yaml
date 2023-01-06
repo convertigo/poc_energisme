@@ -199,6 +199,18 @@ title: Title for Login
                             beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
                             ↓RootPage [ngx.components.UIDynamicAction-1672060823859]: 
                               beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                              isEnabled: false
+                            ↓CallSequence [ngx.components.UIDynamicAction-1673000066453]: 
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                              ↓SetGlobal [ngx.components.UIDynamicAction-1673000052722]: 
+                                beanData: |
+                                  '{
+                                   "ionBean": "SetGlobalAction",
+                                   "Property": "plain:isAdmin",
+                                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                  }'
+                                ↓RootPage [ngx.components.UIDynamicAction-1673000052725]: 
+                                  beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
                     ↓CustomAction [ngx.components.UICustomAction-1669818136577]: 
                       actionValue: 
                         - xmlizable: 
