@@ -1,0 +1,36 @@
+↓Input_variables [steps.InputVariablesStep-1673013038503]: 
+↓buildCastStrings [steps.SimpleStep-1673013061619]: 
+  expression: |
+    'sites = JSON.parse(sites)
+    var string = "";
+    for(var i = 0; i < sites.length; i++) {
+    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    }
+    
+    log.warn(string)'
+↓jElement [steps.ElementStep-1673013564546]: 
+  expression: string
+  nodeName: sites
+↓Call_Transaction [steps.TransactionStep-1673012654154]: 
+  isEnabled: false
+  sourceTransaction: poc_energisme.postgreSQL.widget_conso
+  ↓date_start [variables.StepVariable-1673012725914]: 
+    description: date_start
+  ↓date_end [variables.StepVariable-1673012725916]: 
+    description: date_end
+  ↓sites [variables.StepVariable-1673012725918]: 
+  ↓agg_function [variables.StepVariable-1673012725920]: 
+↓date_start [variables.RequestableVariable-1673012727418]: 
+  description: date_start
+↓date_end [variables.RequestableVariable-1673012727420]: 
+  description: date_end
+↓sites [variables.RequestableVariable-1673012727422]: 
+↓agg_function [variables.RequestableVariable-1673012727424]: 
+↓Test_Case [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1673012731999]: 
+    description: date_start
+  ↓date_end [variables.TestCaseVariable-1673012732001]: 
+    description: date_end
+  ↓sites [variables.TestCaseVariable-1673012732003]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1673012732005]: 

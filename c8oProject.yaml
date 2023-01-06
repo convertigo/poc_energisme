@@ -33,6 +33,7 @@
   ↓searchSite [sequences.GenericSequence]: 🗏 sequences/searchSite.yaml
   ↓setUserInGroup [sequences.GenericSequence]: 🗏 sequences/setUserInGroup.yaml
   ↓updateGroupAndAffiliations [sequences.GenericSequence]: 🗏 sequences/updateGroupAndAffiliations.yaml
+  ↓widget_conso [sequences.GenericSequence]: 🗏 sequences/widget_conso.yaml
   ↓CouchDb_schema [references.ImportXsdSchemaReference]: 
     urlpath: http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd
   ↓lib_ExtendedComponents_ui_ngx_reference [references.ProjectSchemaReference]: 
@@ -40,7 +41,7 @@
   ↓lib_FullSyncGrp_reference [references.ProjectSchemaReference]: 
     projectName: lib_FullSyncGrp=https://github.com/convertigo/c8oprj-lib-fullsync-grp.git:branch=8.0.0
   ↓lib_OAuth_reference [references.ProjectSchemaReference]: 
-    projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=334a638363d83d83bfed756b025f96226751e50e
+    projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=8.0.0
   ↓lib_UserManager_reference [references.ProjectSchemaReference]: 
     projectName: lib_UserManager=https://github.com/convertigo/c8oprj-lib-user-manager.git:branch=f8941d93af0db63dc16c052daad77de2f6329747
   ↓Project_reference [references.ProjectSchemaReference]: 
