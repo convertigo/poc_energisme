@@ -60,12 +60,6 @@ title: Title for Parametres
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: plain:
-                  ↓type [ngx.components.UIControlVariable-1672764408573]: 
-                    comment: new variable
-                    varValue: 
-                      - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: plain:
                   ↓user [ngx.components.UIControlVariable-1672764408576]: 
                     comment: new variable
                     varValue: 

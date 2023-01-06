@@ -176,7 +176,7 @@ title: Title for Login
                           '{
                            "ionBean": "SetGlobalAction",
                            "Property": "plain:authUser",
-                           "Value": "script:stack[''OAuthAzure''].out.object.authUser"
+                           "Value": "script:stack[''OAuthAzure''].out.authUser"
                           }'
                         ↓SetGlobal [ngx.components.UIDynamicAction-1669821916931]: 
                           beanData: |
@@ -211,6 +211,18 @@ title: Title for Login
                                   }'
                                 ↓RootPage [ngx.components.UIDynamicAction-1673000052725]: 
                                   beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                                ↓CustomAction [ngx.components.UICustomAction-1673002437075]: 
+                                  actionValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                        →: |
+                                          '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                          		console.log(this.global[''authUser''])
+                                          		debugger;
+                                          		resolve();
+                                          '
+                                  isEnabled: false
                     ↓CustomAction [ngx.components.UICustomAction-1669818136577]: 
                       actionValue: 
                         - xmlizable: 
