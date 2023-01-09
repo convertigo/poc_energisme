@@ -433,7 +433,7 @@ scriptContent:
                  "ionBean": "Charts",
                  "data": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.data != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.data : {}",
                  "datasets": "plain",
-                 "labels": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.labels != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.labels : []",
+                 "labels": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.labels != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.labels: []",
                  "Options": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions : {}",
                  "ChartType": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartType != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartType : ''''"
                 }'
@@ -576,7 +576,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: plain:14
+                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.needleValue != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.needleValue : '''''
           ↓centralLabel [ngx.components.UIUseVariable-1669299066349]: 
             varValue: 
               - xmlizable: 
@@ -586,16 +586,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: |
-                    'script:{
-                    	    hasNeedle: true,
-                    	    needleColor: ''lightgrey'',
-                    	    needleUpdateSpeed: 1000,
-                    	    arcColors: [''rgb(6, 89, 55)'', ''rgb(15, 170, 108)'', ''rgb(139, 207, 39)'', ''rgb(248, 199, 0)'',''rgb(235, 65, 70)''],
-                    	    arcDelimiters: [20, 40, 60, 80],
-                    	    rangeLabel: [''-20'', ''5''],
-                    	    needleStartValue: 20
-                    	}'
+                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.options != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.options : {}'
           ↓name [ngx.components.UIUseVariable-1669299066355]: 
             varValue: 
               - xmlizable: 
@@ -605,7 +596,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: plain:-14 %
+                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.bottomLabel != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.bottomLabel : '''''
       ↓colInfos [ngx.components.UIDynamicElement-1669285145558]: 
         beanData: |
           '{
@@ -645,7 +636,7 @@ scriptContent:
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:102,7
+                      - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.currentTotal != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.currentTotal : '''''
           ↓rowMWh [ngx.components.UIDynamicElement-1669285742415]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -687,7 +678,7 @@ scriptContent:
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:119,6
+                      - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.lastTotal != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.lastTotal : '''''
           ↓rowMWh1 [ngx.components.UIDynamicElement-1669285833504]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -959,7 +950,7 @@ scriptContent:
             		var sequenceParams = vars.sequenceParams;
             
             		if(sequenceToCall != undefined && sequenceToCall.length > 0) {
-            					this.call(sequenceToCall, sequenceParams, null, 500, true).then( (resp) => {
+            					this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
             						page.local[''response''] = resp
             					})
             			resolve();

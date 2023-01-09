@@ -2103,7 +2103,7 @@ title: Title for Parametres
                             		console.log(page.local["selectedUsers"])
                             		
                             		if(page.local["selectedUsers"] != undefined && page.local["selectedUsers"].length > 0) {
-                            			page.local["selectedGroups"] = []
+                            			page.local["selectedUsers"] = []
                             			page.local["groupsOfUser"] = [];
                             			page.local["selectedUsers"].push(value)
                             			

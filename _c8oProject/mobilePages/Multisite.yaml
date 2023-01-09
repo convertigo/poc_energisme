@@ -315,12 +315,19 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:''
+                      - MobileSmartSourceType: script:'.widget_conso_gauge'
                 ↓sequenceParams [ngx.components.UIUseVariable-1669284224403]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:''
+                      - MobileSmartSourceType: |
+                          'script:{
+                          	date_start: ''2021-01-01'',
+                          	date_end: ''2022-12-01'',
+                          	sites: [7991, 7626],
+                          	agg_function: ''month'',
+                          	chartType: ''gauge''
+                          }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669284224405]: 
                   varValue: 
                     - xmlizable: 
@@ -349,6 +356,7 @@ title: Multisite
                  "SizeMd": "plain:3",
                  "SizeXs": "plain:12"
                 }'
+              isEnabled: false
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1667818636075]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -411,7 +419,7 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:'.multisite_conso_month'
+                      - MobileSmartSourceType: script:'.widget_conso'
                 ↓sequenceParams [ngx.components.UIUseVariable-1668681558092]: 
                   varValue: 
                     - xmlizable: 
@@ -419,7 +427,10 @@ title: Multisite
                       - MobileSmartSourceType: |
                           'script:{
                           	date_start: ''2021-01-01'',
-                          	date_end: ''2023-01-01''
+                          	date_end: ''2022-12-01'',
+                          	sites: [7991, 7626],
+                          	agg_function: ''month'',
+                          	chartType: ''bar''
                           }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045505787]: 
                   varValue: 
@@ -443,6 +454,7 @@ title: Multisite
                       - MobileSmartSourceType: script:'false'
           ↓rowMapsAndSitesEnergivore [ngx.components.UIDynamicElement-1668691043090]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            isEnabled: false
             tagName: ion-row
             ↓colMaps [ngx.components.UIDynamicElement-1668691043092]: 
               beanData: |
@@ -555,6 +567,7 @@ title: Multisite
                       - MobileSmartSourceType: script:'false'
           ↓rowSitesLesPlusConsoDelec [ngx.components.UIDynamicElement-1669042791602]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            isEnabled: false
             tagName: ion-row
             ↓colSitesLesPlusConsoDelec [ngx.components.UIDynamicElement-1669042791604]: 
               beanData: '{"ionBean":"GridCol","SizeXs":"plain:12"}'
@@ -601,6 +614,7 @@ title: Multisite
                       - MobileSmartSourceType: script:'false'
           ↓rowSitesLesPlusConsoDeGaz [ngx.components.UIDynamicElement-1669044469823]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            isEnabled: false
             tagName: ion-row
             ↓colSitesLesPlusConsoDeGaz [ngx.components.UIDynamicElement-1669044469826]: 
               beanData: '{"ionBean":"GridCol","SizeXs":"plain:12"}'
