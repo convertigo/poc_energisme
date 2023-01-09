@@ -1,4 +1,5 @@
 ↓Call_Sequence [steps.SequenceStep-1672826428211]: 
+  output: true
   sourceSequence: lib_FullSyncGrp.RemoveUserFromGroup
   ↓user [variables.StepVariable-1672826438095]: 
   ↓group [variables.StepVariable-1672826438097]: 
@@ -10,7 +11,7 @@
         - java.lang.String: 
           - ↑value: 1672826428211
         - java.lang.String: 
-          - ↑value: ./document/success
+          - ↑value: ./document/removed[.="true"]
   ↓jThen [steps.ThenStep-1672826539713]: 
     ↓Field [steps.JsonFieldStep-1672826554019]: 
       key: 

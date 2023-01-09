@@ -2924,6 +2924,8 @@ title: Title for Parametres
                                             - xmlizable: 
                                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                               - MobileSmartSourceType: script:stack.root.scope.group.name
+                                        ↓CallSequence [ngx.components.UIDynamicAction-1673279622438]: 
+                                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUsersList"}'
                                       ↓Else_Handler [ngx.components.UIActionElseEvent-1672826268185]: 
                                         ↓Toast [ngx.components.UIDynamicAction-1672826268188]: 
                                           beanData: |
@@ -3043,6 +3045,8 @@ title: Title for Parametres
                                                   - xmlizable: 
                                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                                     - MobileSmartSourceType: script:stack.root.scope.group.name
+                                              ↓CallSequence [ngx.components.UIDynamicAction-1673280481902]: 
+                                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUsersList"}'
                                             ↓Else_Handler [ngx.components.UIActionElseEvent-1672827138874]: 
                                               ↓Toast [ngx.components.UIDynamicAction-1672827138877]: 
                                                 beanData: |
@@ -3376,12 +3380,6 @@ title: Title for Parametres
     ↓CallSequence2 [ngx.components.UIDynamicAction-1672752976318]: 
       beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
       ↓label [ngx.components.UIControlVariable-1672752994111]: 
-        comment: new variable
-        varValue: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: plain:
-      ↓type [ngx.components.UIControlVariable-1672752994113]: 
         comment: new variable
         varValue: 
           - xmlizable: 

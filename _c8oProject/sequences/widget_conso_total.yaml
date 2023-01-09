@@ -1,0 +1,385 @@
+↓Input_variables [steps.InputVariablesStep-1673276340023]: 
+↓buildCastStrings [steps.SimpleStep-1673276451923]: 
+  expression: |
+    'sites = JSON.parse(sites)
+    var string = "";
+    for(var i = 0; i < sites.length; i++) {
+    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    }
+    
+    log.warn(string)'
+↓jElement [steps.ElementStep-1673276477923]: 
+  expression: string
+  nodeName: sites
+  output: false
+↓Call_Transaction [steps.TransactionStep-1673276348359]: 
+  sourceTransaction: poc_energisme.postgreSQL.widget_conso_total
+  ↓date_start [variables.StepVariable-1673276356560]: 
+    description: date_start
+  ↓date_end [variables.StepVariable-1673276356562]: 
+    description: date_end
+  ↓sites [variables.StepVariable-1673276356564]: 
+↓Element [steps.XMLElementStep-1673276546338]: 
+  nodeName: chartType
+  nodeText: pie
+↓Object [steps.JsonObjectStep-1673276558194]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: data
+  ↓Array [steps.JsonArrayStep-1673276558197]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: labels
+    ↓Field [steps.JsonFieldStep-1673276558200]: 
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: Gaz naturel
+    ↓Field1 [steps.JsonFieldStep-1673276558203]: 
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: Electricité
+  ↓Array_1 [steps.JsonArrayStep-1673276558206]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: datasets
+    ↓Object [steps.JsonObjectStep-1673276558209]: 
+      ↓Array [steps.JsonArrayStep-1673276558212]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: data
+        ↓Field [steps.JsonFieldStep-1673276558215]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1673276348359
+                  - java.lang.String: 
+                    - ↑value: ./document/sql_output/row/sum_conso_gaz/text()
+        ↓Field1 [steps.JsonFieldStep-1673276558218]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1673276348359
+                  - java.lang.String: 
+                    - ↑value: ./document/sql_output/row/sum_conso_elec/text()
+      ↓backgroundColor [steps.JsonArrayStep-1673276558221]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: backgroundColor
+        ↓Field [steps.JsonFieldStep-1673276558224]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(254, 169, 62)
+        ↓Field1 [steps.JsonFieldStep-1673276558227]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(50, 193, 113)
+      ↓Array_1 [steps.JsonArrayStep-1673276558230]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: hoverBackgroundColor
+        ↓Field [steps.JsonFieldStep-1673276558233]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(254, 169, 62)
+        ↓Field1 [steps.JsonFieldStep-1673276558236]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(50, 193, 113)
+      ↓Array_2 [steps.JsonArrayStep-1673276558239]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: borderColor
+        ↓Field [steps.JsonFieldStep-1673276558242]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(254, 169, 62)
+        ↓Field1 [steps.JsonFieldStep-1673276558245]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(50, 193, 113)
+      ↓Array_3 [steps.JsonArrayStep-1673276558248]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: hoverBorderColor
+        ↓Field [steps.JsonFieldStep-1673276558251]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(254, 169, 62)
+        ↓Field1 [steps.JsonFieldStep-1673276558254]: 
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: rgb(50, 193, 113)
+↓Object_1 [steps.JsonObjectStep-1673276558257]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: chartOptions
+  ↓Object [steps.JsonObjectStep-1673276558260]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: plugins
+    ↓Object [steps.JsonObjectStep-1673276558263]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: legend
+      ↓Field [steps.JsonFieldStep-1673276558266]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: position
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: right
+      ↓Object [steps.JsonObjectStep-1673276558269]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: labels
+        ↓Field_2 [steps.JsonFieldStep-1673276558272]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: pointStyle
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: circle
+        ↓Field_1 [steps.JsonFieldStep-1673276558275]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: usePointStyle
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: true
+        ↓Field [steps.JsonFieldStep-1673276558278]: 
+          isEnabled: false
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: generateLabels
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: JS
+                - →→: |
+                  'function (chart) => {
+                              const datasets = chart.data.datasets;
+                              const {
+                                labels: {
+                                  usePointStyle,
+                                  pointStyle,
+                                  textAlign,
+                                  color
+                                }
+                              } = chart.legend.options;
+                  
+                              return chart._getSortedDatasetMetas().map((meta, i) => {
+                                const style = meta.controller.getStyle(usePointStyle ? 0 : undefined);
+                                const borderWidth = Chart.helpers.toPadding(style.borderWidth);
+                  
+                                return {
+                                  text: datasets[meta.index].label,
+                                  fillStyle: style.backgroundColor,
+                                  fontColor: "blue",
+                                  hidden: !meta.visible,
+                                  lineCap: style.borderCapStyle,
+                                  lineDash: style.borderDash,
+                                  lineDashOffset: style.borderDashOffset,
+                                  lineJoin: style.borderJoinStyle,
+                                  lineWidth: (borderWidth.width + borderWidth.height) / 4,
+                                  strokeStyle: style.borderColor,
+                                  pointStyle: pointStyle || style.pointStyle,
+                                  rotation: style.rotation,
+                                  textAlign: textAlign || style.textAlign,
+                                  borderRadius: 0, // TODO: v4, default to style.borderRadius
+                  
+                                  // Below is extra data used for toggling the datasets
+                                  datasetIndex: meta.index
+                                };
+                              }, this);
+                            }'
+      ↓Field_1 [steps.JsonFieldStep-1673276558281]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: align
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: start
+  ↓Field1 [steps.JsonFieldStep-1673276558284]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: maintainAspectRatio
+    type: bool
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: false
+  ↓responsive1 [steps.JsonFieldStep-1673276558287]: 
+    key: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: responsive
+    type: bool
+    value: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+        - SmartType: 
+          - ↑mode: PLAIN
+          - →→: true
+↓jSimpleSource [steps.SimpleSourceStep-1673276558290]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1673276348359
+        - java.lang.String: 
+          - ↑value: ./document/sql_output/row/sum_conso_gaz/text()
+  variableName: gaz
+↓elec [steps.SimpleSourceStep-1673276558293]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1673276348359
+        - java.lang.String: 
+          - ↑value: ./document/sql_output/row/sum_conso_elec/text()
+  variableName: elec
+↓calculTotalAndComputeDate [steps.SimpleStep-1673276558296]: 
+  expression: |
+    '//var total  = Math.round( (Number(gaz) + Number(elec)) * 100) / 100;
+    var total  = Number(gaz) + Number(elec)
+    total = String(total)
+    
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.replace(new RegExp(search, ''g''), replacement);
+    };
+    
+    date_start = date_start.replaceAll(''-'', ''/'')
+    date_end = date_end.replaceAll(''-'', ''/'')
+    var date = date_start + '' - '' + date_end;'
+↓jElement1 [steps.ElementStep-1673276558299]: 
+  expression: total
+  nodeName: total
+↓jElement_1 [steps.ElementStep-1673276558302]: 
+  expression: date
+  nodeName: date
+↓date_start [variables.RequestableVariable-1673276361370]: 
+  description: date_start
+↓date_end [variables.RequestableVariable-1673276361372]: 
+  description: date_end
+↓sites [variables.RequestableVariable-1673276361374]: 
+↓Test_Case [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1673276404568]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1673276404570]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1673276404572]: 
+    value: '[7991, 7626]'

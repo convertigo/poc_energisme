@@ -356,7 +356,6 @@ title: Multisite
                  "SizeMd": "plain:3",
                  "SizeXs": "plain:12"
                 }'
-              isEnabled: false
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1667818636075]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -369,7 +368,7 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:'.multisite_conso_total_between'
+                      - MobileSmartSourceType: script:'.widget_conso_total'
                 ↓sequenceParams [ngx.components.UIUseVariable-1668612597894]: 
                   varValue: 
                     - xmlizable: 
@@ -377,7 +376,8 @@ title: Multisite
                       - MobileSmartSourceType: |
                           'script:{
                           	date_start: this.global[''date_start''],
-                          	date_end: this.global[''date_end'']
+                          	date_end: this.global[''date_end''],
+                          	sites: [7991, 7626]
                           }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045508433]: 
                   varValue: 
@@ -454,7 +454,6 @@ title: Multisite
                       - MobileSmartSourceType: script:'false'
           ↓rowMapsAndSitesEnergivore [ngx.components.UIDynamicElement-1668691043090]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
-            isEnabled: false
             tagName: ion-row
             ↓colMaps [ngx.components.UIDynamicElement-1668691043092]: 
               beanData: |
@@ -487,14 +486,14 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:'.multisite_maps'
+                      - MobileSmartSourceType: script:'.widget_maps'
                 ↓sequenceParams [ngx.components.UIUseVariable-1669045607708]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: |
                           'script:{
-                          	limit: ''20''
+                          	limit: ''''
                           }'
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045607710]: 
                   varValue: 
@@ -524,6 +523,7 @@ title: Multisite
                  "SizeMd": "plain:9",
                  "SizeXs": "plain:12"
                 }'
+              isEnabled: false
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1668691089715]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget

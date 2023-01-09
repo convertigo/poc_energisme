@@ -1,0 +1,117 @@
+responseExpiryDate: daily,23:00:00
+↓Call_Transaction [steps.TransactionStep-1673278139286]: 
+  sourceTransaction: poc_energisme.postgreSQL.get_sites_list
+↓Array [steps.JsonArrayStep-1673278121474]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: markers
+  ↓Iterator [steps.IteratorStep-1673278121477]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1673278139286
+          - java.lang.String: 
+            - ↑value: ./document/sql_output/row
+    ↓jSimpleSource [steps.SimpleSourceStep-1673278121480]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1673278121477
+            - java.lang.String: 
+              - ↑value: ./latitude/text()
+      variableName: lat
+    ↓jSimpleSource1 [steps.SimpleSourceStep-1673278121483]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1673278121477
+            - java.lang.String: 
+              - ↑value: ./longitude/text()
+      variableName: long
+    ↓removeParenthesis [steps.SimpleStep-1673278121486]: 
+      expression: |
+        lat = lat.replace('(', '').replace(')', '').replace(',', '').slice(0, -2)
+        long = long.replace('(', '').replace(')', '').replace(',', '').slice(0, -2)
+      isEnabled: false
+    ↓Object [steps.JsonObjectStep-1673278121489]: 
+      ↓Field [steps.JsonFieldStep-1673278121492]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: nom
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1673278121477
+                - java.lang.String: 
+                  - ↑value: ./nom/text()
+      ↓Field_1 [steps.JsonFieldStep-1673278121495]: 
+        isEnabled: false
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: latitude
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+      ↓Field_2 [steps.JsonFieldStep-1673278121498]: 
+        isEnabled: false
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: longitude
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1669045143877
+                - java.lang.String: 
+                  - ↑value: ./longitude/text()
+      ↓jElement [steps.ElementStep-1673278121501]: 
+        expression: lat
+        nodeName: latitude
+      ↓jElement1 [steps.ElementStep-1673278121504]: 
+        expression: long
+        nodeName: longitude
+      ↓Field_3 [steps.JsonFieldStep-1673278121507]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: site_id
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1673278121477
+                - java.lang.String: 
+                  - ↑value: ./id/text()
+↓Test_Case [core.TestCase]: 
