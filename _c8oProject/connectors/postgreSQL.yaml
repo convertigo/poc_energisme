@@ -18,7 +18,7 @@ testOnBorrow: true
   ↓site_id [variables.RequestableVariable-1672148077216]: 
 ↓get_sites_list [transactions.SqlTransaction]: 
   sqlQuery: |
-    SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
+    SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
     FROM convertigo_poc.site s 
     WHERE s.typology is not null;
 ↓search_site [transactions.SqlTransaction]: 
