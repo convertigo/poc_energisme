@@ -41,15 +41,14 @@ testOnBorrow: true
 ↓widget_conso [transactions.SqlTransaction]: 
   sqlQuery: |
     'select 
-    
     sum (rd.val) filter (where rd."label"=''conso_gaz'') as sum_conso_gaz,
-    sum (rd.val) filter (where rd."label"=''conso_elec'') as sum_conso_elec,
-    sum (rd.val) filter (where rd."label"=''dju'') as sum_dju,
+    sum (rd.val) filter (where rd."label"=''conso_elec'')  as sum_conso_elec,
+    sum (rd.val) filter (where rd."label"=''dju'')  as sum_dju,
     {{agg_function}}  as agg_period
     from convertigo_poc.raw_data rd
-    inner join convertigo_poc.sensor_info si
-    on rd.uuid = si.sensor_id 
-    where si.site_id in ({{sites}})
+    inner join convertigo_poc.sensor_mapping sm
+    on rd.uuid = sm.sensor_id 
+    where sm.site_id in ({{sites}})
     and rd.ts > TO_TIMESTAMP({date_start}, ''YYYY-MM-DD'')
     and rd.ts < TO_TIMESTAMP({date_end}, ''YYYY-MM-DD'')
     group by {{agg_function}}'
@@ -131,9 +130,9 @@ testOnBorrow: true
     sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
     sum (rd.val) filter (where rd."label"='conso_elec') as sum_conso_elec
     from convertigo_poc.raw_data rd
-    inner join convertigo_poc.sensor_info si
-    on rd.uuid = si.sensor_id
-    where si.site_id IN ({{sites}}) 
+    inner join convertigo_poc.sensor_mapping sm
+    on rd.uuid = sm.sensor_id
+    where sm.site_id IN ({{sites}}) 
     and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
   ↓Test_Case_Multisite [core.TestCase]: 
@@ -157,9 +156,9 @@ testOnBorrow: true
     date_part('week', ts) as week,
     date_part('hour', ts) as hour
     from convertigo_poc.raw_data rd
-    inner join convertigo_poc.sensor_info si
-    on rd.uuid = si.sensor_id 
-    where si.site_id IN ({{sites}}) 
+    inner join convertigo_poc.sensor_mapping sm
+    on rd.uuid = sm.sensor_id 
+    where sm.site_id IN ({{sites}}) 
     and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     group by week , hour
@@ -182,11 +181,12 @@ testOnBorrow: true
     select a.avg_conso_gaz, a.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
     from convertigo_poc.site s
     inner join
-    (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz,  avg (val) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
+    (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, 
+    avg (val) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
     from convertigo_poc.raw_data
-    inner join convertigo_poc.sensor_info
-    on raw_data.uuid = sensor_info.sensor_id
-    and raw_data."label" = sensor_info."label"
+    inner join convertigo_poc.sensor_mapping
+    on raw_data.uuid = sensor_mapping.sensor_id
+    and raw_data."label" = sensor_mapping."label"
     group by site_id) a on a.site_id = s.id
     order by avg_conso_gaz desc
     limit CAST({limit} AS BIGINT);
