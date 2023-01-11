@@ -41,9 +41,9 @@ testOnBorrow: true
 ↓widget_conso [transactions.SqlTransaction]: 
   sqlQuery: |
     'select 
-    sum (rd.val) filter (where rd."label"=''conso_gaz'') as sum_conso_gaz,
-    sum (rd.val) filter (where rd."label"=''conso_elec'')  as sum_conso_elec,
-    sum (rd.val) filter (where rd."label"=''dju'')  as sum_dju,
+    sum (rd.val * sm.unit_coeff) filter (where rd."label"=''conso_gaz'') as sum_conso_gaz,
+    sum (rd.val * sm.unit_coeff) filter (where rd."label"=''conso_elec'')  as sum_conso_elec,
+    sum (rd.val * sm.unit_coeff) filter (where rd."label"=''dju'')  as sum_dju,
     {{agg_function}}  as agg_period
     from convertigo_poc.raw_data rd
     inner join convertigo_poc.sensor_mapping sm
@@ -127,8 +127,8 @@ testOnBorrow: true
 ↓widget_conso_total [transactions.SqlTransaction]: 
   sqlQuery: |
     select
-    sum (rd.val) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
-    sum (rd.val) filter (where rd."label"='conso_elec') as sum_conso_elec
+    sum (rd.val * sm.unit_coeff) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
+    sum (rd.val * sm.unit_coeff) filter (where rd."label"='conso_elec') as sum_conso_elec
     from convertigo_poc.raw_data rd
     inner join convertigo_poc.sensor_mapping sm
     on rd.uuid = sm.sensor_id
@@ -152,7 +152,7 @@ testOnBorrow: true
 ↓widget_heatmap [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
-    sum (val) filter (where rd."label"={label}) as sum_label,
+    sum (val * sm.unit_coeff) filter (where rd."label"={label}) as sum_label,
     date_part('week', ts) as week,
     date_part('hour', ts) as hour
     from convertigo_poc.raw_data rd
@@ -181,8 +181,8 @@ testOnBorrow: true
     select a.avg_conso_gaz, a.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
     from convertigo_poc.site s
     inner join
-    (select avg (val) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, 
-    avg (val) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
+    (select avg (val * sensor_mapping.sensor_id.unit_coeff) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, 
+    avg (val * sensor_mapping.sensor_id.unit_coeff) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
     from convertigo_poc.raw_data
     inner join convertigo_poc.sensor_mapping
     on raw_data.uuid = sensor_mapping.sensor_id
