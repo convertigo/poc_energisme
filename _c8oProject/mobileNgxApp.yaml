@@ -75,6 +75,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
 ↓Parametres [ngx.components.PageComponent-1671633557209]: 🗏 mobilePages/Parametres.yaml
 ↓modalAddGroup [ngx.components.PageComponent-1672220885546]: 🗏 mobilePages/modalAddGroup.yaml
 ↓modalUpdateGroup [ngx.components.PageComponent-1672310681928]: 🗏 mobilePages/modalUpdateGroup.yaml
+↓Sensors [ngx.components.PageComponent-1673451830694]: 🗏 mobilePages/Sensors.yaml
 ↓Style [ngx.components.UIStyle-1491635462437]: 
   comment: You can add some global application styles here
   styleContent: 

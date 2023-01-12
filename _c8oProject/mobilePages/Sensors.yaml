@@ -1,0 +1,76 @@
+segment: path-to-sensors
+title: Title for Sensors
+↓use [ngx.components.UIUseShared-1673451888094]: 
+  sharedcomponent: poc_energisme.Application.NgxApp.header
+  ↓username [ngx.components.UIUseVariable-1673458359197]: 
+    comment: Username to display
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓title [ngx.components.UIUseVariable-1673458359199]: 
+    varValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+        - MobileSmartSourceType: script:'Sensors'
+↓Content [ngx.components.UIDynamicElement-1673451865005]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓Grid [ngx.components.UIDynamicElement-1673451984261]: 
+    beanData: '{"ionBean":"Grid"}'
+    tagName: ion-grid
+    ↓Directive [ngx.components.UIControlDirective-1673455669350]: 
+      directiveSource: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSensors","marker":""}],"path":"?.sensors","prefix":"","suffix":"","custom":"","useCustom":false}}
+      ↓GridRow [ngx.components.UIDynamicElement-1673451984263]: 
+        beanData: '{"ionBean":"GridRow","Height":"plain:"}'
+        tagName: ion-row
+        ↓Dataset [ngx.components.UIDynamicElement-1673451984265]: 
+          beanData: '{"ionBean":"GridCol","Size":"plain:3"}'
+          tagName: ion-col
+          ↓Label [ngx.components.UIDynamicElement-1673451984267]: 
+            beanData: '{"ionBean":"Label"}'
+            tagName: ion-label
+            ↓Text [ngx.components.UIText-1673451984269]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1673455669350}],"path":"?.dataset","prefix":"","suffix":"","custom":"","useCustom":false}}
+        ↓Uuid [ngx.components.UIDynamicElement-1673451984271]: 
+          beanData: '{"ionBean":"GridCol","Size":"plain:1"}'
+          tagName: ion-col
+          ↓Label [ngx.components.UIDynamicElement-1673451984273]: 
+            beanData: '{"ionBean":"Label"}'
+            tagName: ion-label
+            ↓Text [ngx.components.UIText-1673451984275]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1673455669350}],"path":"?.uuid","prefix":"","suffix":"","custom":"","useCustom":false}}
+        ↓Label [ngx.components.UIDynamicElement-1673457276046]: 
+          beanData: '{"ionBean":"GridCol","Size":"plain:2"}'
+          tagName: ion-col
+          ↓Label [ngx.components.UIDynamicElement-1673457276049]: 
+            beanData: '{"ionBean":"Label"}'
+            tagName: ion-label
+            ↓Text [ngx.components.UIText-1673457276052]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1673455669350}],"path":"?.label","prefix":"","suffix":"","custom":"","useCustom":false}}
+        ↓Counter [ngx.components.UIDynamicElement-1673457336597]: 
+          beanData: '{"ionBean":"GridCol","Size":"plain:1"}'
+          tagName: ion-col
+          ↓Label [ngx.components.UIDynamicElement-1673457336600]: 
+            beanData: '{"ionBean":"Label"}'
+            tagName: ion-label
+            ↓Text [ngx.components.UIText-1673457336603]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1673455669350}],"path":"?.count","prefix":"","suffix":"","custom":"","useCustom":false}}
+↓PageEvent [ngx.components.UIPageEvent-1673457160150]: 
+  ↓CallSequence [ngx.components.UIDynamicAction-1673457187687]: 
+    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSensors"}'

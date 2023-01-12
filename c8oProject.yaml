@@ -10,6 +10,7 @@
   ↓getGroupNameBySiteId [sequences.GenericSequence]: 🗏 sequences/getGroupNameBySiteId.yaml
   ↓getGroupsList [sequences.GenericSequence]: 🗏 sequences/getGroupsList.yaml
   ↓getGroupsOf [sequences.GenericSequence]: 🗏 sequences/getGroupsOf.yaml
+  ↓getSensors [sequences.GenericSequence]: 🗏 sequences/getSensors.yaml
   ↓getSite [sequences.GenericSequence]: 🗏 sequences/getSite.yaml
   ↓getSitesByGroupName [sequences.GenericSequence]: 🗏 sequences/getSitesByGroupName.yaml
   ↓getSitesList [sequences.GenericSequence]: 🗏 sequences/getSitesList.yaml

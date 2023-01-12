@@ -249,6 +249,14 @@ comment
 
 </p></blockquote></details>
 
+<details><summary><b>get_sensors</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/transactions/images/sqltransaction_color_16x16.png?raw=true "SqlTransaction") get_sensors
+
+
+</p></blockquote></details>
+
 <details><summary><b>get_site</b></summary><blockquote><p>
 
 
@@ -612,6 +620,14 @@ comment
 </td>
 </tr>
 </table>
+
+</p></blockquote></details>
+
+<details><summary><b>getSensors</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") getSensors
+
 
 </p></blockquote></details>
 
@@ -1600,6 +1616,14 @@ Multisite view
 
 
 ### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Parametres
+
+
+</p></blockquote></details>
+
+<details><summary><b>Sensors</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Sensors
 
 
 </p></blockquote></details>

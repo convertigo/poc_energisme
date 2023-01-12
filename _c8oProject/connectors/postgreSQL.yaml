@@ -5,6 +5,15 @@ jdbcUserPassword: x312b14f3b735263363b9702517d0c3d6af87c7e0aa1ff80f7ba13bffc89c9
 testOnBorrow: true
 ↓Default_transaction [transactions.SqlTransaction]: 
   ↑default: true
+↓get_sensors [transactions.SqlTransaction]: 
+  sqlQuery: |
+    SELECT dataset , uuid, "label", count(*) as row_count
+    FROM convertigo_poc.raw_data2
+    where dataset is not null
+    and dataset != ''
+    group by dataset, uuid, label
+    order by dataset asc, uuid asc, label asc;
+  ↓Test_Case [core.TestCase]: 
 ↓get_site [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction

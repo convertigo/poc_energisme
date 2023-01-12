@@ -36,6 +36,11 @@ tagName: ion-menu
       itempage: poc_energisme.Application.NgxApp.Monosite
       itemtitle: '''Monosite'''
       tagName: ion-menu-toggle
+    ↓Sensors [ngx.components.UIDynamicMenuItem-1673455450767]: 
+      beanData: '{"ionBean":"MenuItem"}'
+      itempage: poc_energisme.Application.NgxApp.Sensors
+      itemtitle: '''Sensors'''
+      tagName: ion-menu-toggle
     ↓Directive [ngx.components.UIControlDirective-1671790467693]: 
       directiveName: If
       directiveSource: 
