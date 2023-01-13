@@ -143,7 +143,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672914161755]: 
-      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+      value: CAST('7731' AS BIGINT)
   ↓date_start [variables.RequestableVariable-1672914161758]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161761]: 

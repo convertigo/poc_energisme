@@ -21,6 +21,8 @@ databaseName: groups_sites
       description: (string) – Return only documents that match the specified key. Optional
   ↓_use_key [variables.RequestableVariable-1672146945230]: 
     description: (string) – Return only documents that match the specified key. Optional
+↓GetSitesId [transactions.couchdb.GetViewTransaction]: 
+  viewname: Design_document/get_sites_id
 ↓insertGroupsSitesPostBulk [transactions.couchdb.PostBulkDocumentsTransaction]: 
   ↓_use_json_base [variables.RequestableVariable-1672223514434]: 
     description: (string) – JSON use as a base for the array of documents (js array), or for individual documents (js object). Optional
@@ -54,6 +56,17 @@ databaseName: groups_sites
           try {\r\n
               if(doc.site_id) {\r\n
                   emit(doc.site_id, doc.group_name);\r\n
+              }\r\n
+          } catch (err) {\r\n
+              log(err.message);\r\n
+          }\r\n
+      }"
+          },
+          "get_sites_id": {
+            "map": "function (doc) {\r\n
+          try {\r\n
+              if(doc.site_id) {\r\n
+                  emit(doc.site_id)\r\n
               }\r\n
           } catch (err) {\r\n
               log(err.message);\r\n

@@ -1,0 +1,29 @@
+↓Call_Transaction [steps.TransactionStep-1673606776908]: 
+  sourceTransaction: poc_energisme.groups_sites.GetSitesId
+↓sites [steps.JsonArrayStep-1673606995685]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: sites
+  ↓Iterator [steps.IteratorStep-1673606989182]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1673606776908
+          - java.lang.String: 
+            - ↑value: ./document/couchdb_output/rows/item
+    ↓Field [steps.JsonFieldStep-1673607022455]: 
+      value: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: SOURCE
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673606989182
+              - java.lang.String: 
+                - ↑value: ./key/text()

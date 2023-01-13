@@ -52,6 +52,13 @@
             </xsd:extension>
         </xsd:simpleContent>
     </xsd:complexType>
+    <xsd:complexType name="postgreSQL_widget_conso_document_sql_output_row_sum_djuType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute default="string" name="type" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
     <xsd:complexType name="postgreSQL_widget_conso_document_sql_output_row_agg_periodType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
@@ -63,6 +70,7 @@
         <xsd:sequence>
             <xsd:element minOccurs="0" name="sum_conso_gaz" type="poc_energisme_ns:postgreSQL_widget_conso_document_sql_output_row_sum_conso_gazType"/>
             <xsd:element minOccurs="0" name="sum_conso_elec" type="poc_energisme_ns:postgreSQL_widget_conso_document_sql_output_row_sum_conso_elecType"/>
+            <xsd:element minOccurs="0" name="sum_dju" type="poc_energisme_ns:postgreSQL_widget_conso_document_sql_output_row_sum_djuType"/>
             <xsd:element minOccurs="0" name="agg_period" type="poc_energisme_ns:postgreSQL_widget_conso_document_sql_output_row_agg_periodType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>

@@ -205,6 +205,12 @@ Multisite view
 <td>isInModal</td><td>To determine if widget is zoomed. true or false (string)</td>
 </tr>
 <tr>
+<td>refresh</td><td></td>
+</tr>
+<tr>
+<td>sequenceMarker</td><td></td>
+</tr>
+<tr>
 <td>sequenceParams</td><td>Params of the sequence to call (object) ex: { myFirstParam: 'myValue', mySecondParam: 'myValue' }</td>
 </tr>
 <tr>

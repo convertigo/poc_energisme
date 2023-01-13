@@ -1,7 +1,8 @@
 ↓Input_variables [steps.InputVariablesStep-1673276340023]: 
 ↓buildCastStrings [steps.SimpleStep-1673276451923]: 
   expression: |
-    'sites = JSON.parse(sites)
+    'log.warn(sites)
+    sites = JSON.parse(sites)
     var string = "";
     for(var i = 0; i < sites.length; i++) {
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
@@ -19,6 +20,14 @@
   ↓date_end [variables.StepVariable-1673276356562]: 
     description: date_end
   ↓sites [variables.StepVariable-1673276356564]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1673276477923
+          - java.lang.String: 
+            - ↑value: ./text()
 ↓Element [steps.XMLElementStep-1673276546338]: 
   nodeName: chartType
   nodeText: pie
@@ -383,3 +392,21 @@
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673276404572]: 
     value: '[7991, 7626]'
+↓Test_Case1 [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1673454551000]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1673454551003]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1673454551006]: 
+    value: '[7632, 7634, 7635, 7636, 7637, 7638, 7731]'
+↓Test_Case2 [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1673454701849]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1673454701852]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1673454701855]: 
+    value: '[7731]'

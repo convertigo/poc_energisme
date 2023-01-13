@@ -16,23 +16,36 @@ scriptContent:
         /*Begin_c8o_CompFinalization*/
         		/*End_c8o_CompFinalization*/
         /*Begin_c8o_CompChanges*/
-        		console.log("changeeees")
-        		console.log(changes)
-        		Object.keys(changes).forEach( (key) => {
+        //		console.log("changeeees")
+        //		console.log(changes)
+        		setTimeout( () => {
+        			Object.keys(changes).forEach( (key) => {
         			switch(key) {
         				case "sequenceParams": {
-        					if(!changes[key].firstChange) {
-        						console.log("not first changes")
-        						console.log(changes[key])
-        						this.call(this.sequenceToCall, changes[key].currentValue, null, 500, false).then( (resp) => {
-        //					 		page.local[''response''] = resp
-        						})
+        					if(changes[key].previousValue != undefined) {
+        //						console.log("not first changes")
+        //						console.log(changes[key])
+        						var sequenceToCall = this.sequenceToCall + ''#'' + this.sequenceMarker
+        						console.log(sequenceToCall)
+        						if(changes[key].previousValue.__sequence != sequenceToCall) {
+        						setTimeout( () => {
+        							this.call(sequenceToCall, changes[key].currentValue, null, 500, false).then( (resp) => {
+        						    console.log(resp)
+        							this.local[''response''] = resp;
+        							
+        							})
+        						}, 100)
+        						}
+        
+        
         					}
         					
         					break;
         				} // end case sequenceParams
         			} // end switch
         		}) // end object.keys
+        		}, 1000)
+        		
         		/*End_c8o_CompChanges*/
         /*Begin_c8o_CompDoCheck*/
         		/*End_c8o_CompDoCheck*/
@@ -431,12 +444,13 @@ scriptContent:
               beanData: |
                 '{
                  "ionBean": "Charts",
-                 "data": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.data != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.data : {}",
+                 "data": "script:(this.pageOwner.listen([String(this.sequenceToCall  + ''#'' + this.sequenceMarker)])?.data != undefined) ? this.pageOwner.listen([String(this.sequenceToCall  + ''#'' + this.sequenceMarker)])?.data : {}",
                  "datasets": "plain",
-                 "labels": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.labels != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.labels: []",
-                 "Options": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartOptions : {}",
-                 "ChartType": "script:(this.pageOwner.listen([String(this.sequenceToCall)])?.chartType != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.chartType : ''''"
+                 "labels": "script:(this.pageOwner.listen([String(this.sequenceToCall  + ''#'' + this.sequenceMarker)])?.labels != undefined) ? this.pageOwner.listen([String(this.sequenceToCall  + ''#'' + this.sequenceMarker)])?.labels: []",
+                 "Options": "script:(this.pageOwner.listen([String(this.sequenceToCall + ''#'' + this.sequenceMarker)])?.chartOptions != undefined) ? this.pageOwner.listen([String(this.sequenceToCall  + ''#'' + this.sequenceMarker)])?.chartOptions : {}",
+                 "ChartType": "script:(this.pageOwner.listen([String(this.sequenceToCall + ''#'' + this.sequenceMarker)])?.chartType != undefined) ? this.pageOwner.listen([String(this.sequenceToCall  + ''#'' + this.sequenceMarker)])?.chartType : ''''"
                 }'
+              isEnabled: false
               tagName: canvas
             ↓Style [ngx.components.UIStyle-1669370552961]: 
               styleContent: 
@@ -450,6 +464,17 @@ scriptContent:
                       	min-height: 300px;
                       	max-height: 100%;
                       '
+            ↓Chart1 [ngx.components.UIDynamicElement-1673605849683]: 
+              beanData: |
+                '{
+                 "ionBean": "Charts",
+                 "data": "script:(this.local[''response'']?.data != undefined) ? this.local[''response'']?.data : {}",
+                 "datasets": "plain",
+                 "labels": "script:(this.local[''response'']?.labels != undefined) ? this.local[''response'']?.label : []",
+                 "Options": "script:(this.local[''response'']?.chartOptions != undefined) ? this.local[''response'']?.chartOptions : {}",
+                 "ChartType": "script:(this.local[''response'']?.chartType != undefined) ? this.local[''response'']?.chartType : ''''"
+                }'
+              tagName: canvas
           ↓Style [ngx.components.UIStyle-1669372291655]: 
             styleContent: 
               - xmlizable: 
@@ -576,7 +601,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.needleValue != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.needleValue : '''''
+                - MobileSmartSourceType: 'script:(this.local[''response'']?.needleValue != undefined) ? this.local[''response'']?.needleValue : '''''
           ↓centralLabel [ngx.components.UIUseVariable-1669299066349]: 
             varValue: 
               - xmlizable: 
@@ -586,7 +611,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.options != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.options : {}'
+                - MobileSmartSourceType: 'script:(this.local[''response'']?.options != undefined) ? this.local[''response'']?.options : {}'
           ↓name [ngx.components.UIUseVariable-1669299066355]: 
             varValue: 
               - xmlizable: 
@@ -596,7 +621,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.bottomLabel != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.bottomLabel : '''''
+                - MobileSmartSourceType: 'script:(this.local[''response'']?.bottomLabel != undefined) ? this.local[''response'']?.bottomLabel : '''''
       ↓colInfos [ngx.components.UIDynamicElement-1669285145558]: 
         beanData: |
           '{
@@ -948,7 +973,9 @@ scriptContent:
             '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
             		var sequenceToCall = vars.sequenceToCall;
             		var sequenceParams = vars.sequenceParams;
-            
+            		var sequenceMarker = vars.sequenceMarker;
+            		
+            		sequenceToCall = sequenceToCall + "#" + sequenceMarker;
             		if(sequenceToCall != undefined && sequenceToCall.length > 0) {
             					this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
             						page.local[''response''] = resp
@@ -968,6 +995,11 @@ scriptContent:
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓sequenceMarker [ngx.components.UIControlVariable-1673517375949]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceMarker","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓sequenceParams [ngx.components.UICompVariable-1668612583513]: 
   comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
 ↓isGoogleMap [ngx.components.UICompVariable-1669045379585]: 
@@ -978,3 +1010,6 @@ scriptContent:
   comment: To determine if widget is zoomed. true or false (string)
 ↓isHeatmap [ngx.components.UICompVariable-1669388784767]: 
   comment: To determine if widget is a heatmap widget. true or false (string)
+↓refresh [ngx.components.UICompVariable-1673453862634]: 
+  value: false
+↓sequenceMarker [ngx.components.UICompVariable-1673517282405]: 
