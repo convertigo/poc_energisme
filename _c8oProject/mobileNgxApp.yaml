@@ -639,4 +639,8 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
         →: |
           '.green {
           	background-color: green;
+          }
+          
+          .bold {
+          	font-weight: bold;
           }'

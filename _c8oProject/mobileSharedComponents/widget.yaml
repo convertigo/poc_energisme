@@ -185,7 +185,7 @@ scriptContent:
               '	border-bottom: 1px solid #E3E3E3;
               '
   ↓Directive1 [ngx.components.UIControlDirective-1669045411285]: 
-    directiveExpression: this.isGoogleMap == "false" && this.pageOwner.listen([String(this.sequenceToCall)])?.total != undefined && this.pageOwner.listen([String(this.sequenceToCall)])?.date != undefined
+    directiveExpression: this.isGoogleMap == "false" && this.local['response']?.total != undefined && this.local['response']?.date != undefined
     directiveName: If
     ↓rowDate [ngx.components.UIDynamicElement-1667816527119]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
@@ -368,7 +368,7 @@ scriptContent:
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                 - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.date
   ↓Directive [ngx.components.UIControlDirective-1668518041273]: 
-    directiveExpression: '(this.pageOwner.listen([String(this.sequenceToCall)])?.total != undefined && this.pageOwner.listen([String(this.sequenceToCall)])?.total.length > 0) ? this.pageOwner.listen([String(this.sequenceToCall)])?.total : '''''
+    directiveExpression: '(this.local[''response'']?.total != undefined && this.local[''response'']?.total.length > 0) ? this.local[''response'']?.total : '''''
     directiveName: If
     ↓rowTotal [ngx.components.UIDynamicElement-1668518082493]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
@@ -525,7 +525,7 @@ scriptContent:
             directiveSource: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.markers != undefined && this.pageOwner.listen([String(this.sequenceToCall)])?.markers.length > 0) ? this.pageOwner.listen([String(this.sequenceToCall)])?.markers : [] '
+                - MobileSmartSourceType: 'script:(this.local[''response'']?.markers != undefined && this.local[''response'']?.markers.length > 0) ? this.local[''response'']?.markers : [] '
             ↓MapMarker [ngx.components.UIDynamicElement-1669045580548]: 
               beanData: |
                 '{
@@ -626,7 +626,7 @@ scriptContent:
         beanData: |
           '{
            "ionBean": "GridCol",
-           "Size": "plain:6",
+           "Size": "plain:12",
            "SizeSm": "plain:12",
            "SizeXs": "plain:12"
           }'
@@ -647,7 +647,7 @@ scriptContent:
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:Période actu...
+                      - MobileSmartSourceType: plain:Période actuelle
           ↓rowValuePeriodeActuelle [ngx.components.UIDynamicElement-1669285273781]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -661,9 +661,16 @@ scriptContent:
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.currentTotal != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.currentTotal : '''''
+                      - MobileSmartSourceType: 'script:(this.local[''response'']?.currentTotal != undefined) ? this.local[''response'']?.currentTotal + '' MWh'' : '''''
+                ↓Attr [ngx.components.UIAttribute-1673877219962]: 
+                  attrName: class
+                  attrValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:bold
           ↓rowMWh [ngx.components.UIDynamicElement-1669285742415]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            isEnabled: false
             tagName: ion-row
             ↓colMWh [ngx.components.UIDynamicElement-1669285742417]: 
               beanData: '{"ionBean":"GridCol"}'
@@ -689,7 +696,7 @@ scriptContent:
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:Période précé...
+                      - MobileSmartSourceType: plain:Période précédente
           ↓rowValuePeriodePrecedente [ngx.components.UIDynamicElement-1669285833492]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -703,9 +710,16 @@ scriptContent:
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: 'script:(this.pageOwner.listen([String(this.sequenceToCall)])?.lastTotal != undefined) ? this.pageOwner.listen([String(this.sequenceToCall)])?.lastTotal : '''''
+                      - MobileSmartSourceType: 'script:(this.local[''response'']?.lastTotal != undefined) ? this.local[''response'']?.lastTotal + '' MWh'' : '''''
+                ↓Attr [ngx.components.UIAttribute-1673877258951]: 
+                  attrName: class
+                  attrValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:bold
           ↓rowMWh1 [ngx.components.UIDynamicElement-1669285833504]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            isEnabled: false
             tagName: ion-row
             ↓colMWh [ngx.components.UIDynamicElement-1669285833507]: 
               beanData: '{"ionBean":"GridCol"}'
@@ -719,6 +733,7 @@ scriptContent:
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: plain:MWh
         ↓Style [ngx.components.UIStyle-1669286035579]: 
+          isEnabled: false
           styleContent: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent

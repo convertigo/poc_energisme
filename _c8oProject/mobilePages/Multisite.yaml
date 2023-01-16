@@ -13,6 +13,7 @@ scriptContent:
         	public date_start = "2022-11-01";
         	public date_end = "2022-12-01"
         	public selectAll = false;
+        	public syntheseSelected = 'global';
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
         		
@@ -90,7 +91,79 @@ title: Multisite
     ↓rowTogglerPeriodeLiee [ngx.components.UIDynamicElement-1671704051285]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
       tagName: ion-row
-      ↓GridCol [ngx.components.UIDynamicElement-1671704051287]: 
+      ↓colSelect [ngx.components.UIDynamicElement-1673862177647]: 
+        beanData: '{"ionBean":"GridCol","Size":"plain:2"}'
+        tagName: ion-col
+        ↓SelectContainer [ngx.components.UIDynamicElement-1673862194355]: 
+          beanData: |
+            '{
+             "ionBean": "Select",
+             "ControlName": "plain:name1673862194355",
+             "Interface": "plain:popover"
+            }'
+          tagName: ion-select
+          ↓SyntheseGlobale [ngx.components.UIDynamicElement-1673862308403]: 
+            beanData: '{"ionBean":"SelectOption","Value":"plain:global"}'
+            tagName: ion-select-option
+            ↓Text [ngx.components.UIText-1673862250883]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Synthèse globale
+          ↓Electricite [ngx.components.UIDynamicElement-1673862344654]: 
+            beanData: '{"ionBean":"SelectOption","Value":"plain:elec"}'
+            tagName: ion-select-option
+            ↓Text [ngx.components.UIText-1673862344657]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Electricité
+          ↓GazNaturel [ngx.components.UIDynamicElement-1673862367999]: 
+            beanData: '{"ionBean":"SelectOption","Value":"plain:gaz"}'
+            tagName: ion-select-option
+            ↓Text [ngx.components.UIText-1673862368002]: 
+              textValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:Gaz naturel
+          ↓Attr [ngx.components.UIAttribute-1673862461674]: 
+            attrName: '[(ngModel)]'
+            attrValue: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.syntheseSelected
+          ↓Event [ngx.components.UIControlEvent-1673874550937]: 
+            attrName: (ionChange)
+            eventName: ionChange
+            ↓IfElse [ngx.components.UIDynamicIf-1673874692203]: 
+              beanData: '{"ionBean":"IfElseAction","condition":"script:this.local[''sitesToCall''].length != 0"}'
+              ↓updateParams [ngx.components.UICustomAction-1673874579718]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                        		console.log("update params")
+                        		page.local[''sequenceParams''] = {
+                        			date_start: ''2021-01-01'',
+                        			date_end: ''2022-12-01'',
+                        			sites: JSON.stringify(page.local[''sitesToCall'']),
+                        			agg_function: ''month'',
+                        			label: '''',
+                        			synthese: page.syntheseSelected
+                        		}
+                        		resolve();
+                        '
+              ↓Else_Handler [ngx.components.UIActionElseEvent-1673874721616]: 
+                ↓Toast [ngx.components.UIDynamicAction-1673874733269]: 
+                  beanData: |
+                    '{
+                     "ionBean": "ToastAction",
+                     "message": "plain:Veuillez sélectionner au moins un groupe",
+                     "position": "plain:top"
+                    }'
+      ↓colToggleButton [ngx.components.UIDynamicElement-1671704051287]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
         ↓Label [ngx.components.UIDynamicElement-1671704051289]: 
@@ -395,7 +468,8 @@ title: Multisite
                               			date_end: ''2022-12-01'',
                               			sites: JSON.stringify(page.local[''sitesToCall'']),
                               			agg_function: ''month'',
-                              			label: ''''
+                              			label: '''',
+                              			synthese: page.syntheseSelected
                               		}
                               		console.log(page.local["sitesToCall"])
                               		
@@ -503,7 +577,8 @@ title: Multisite
                                   			date_end: ''2022-12-01'',
                                   			sites: JSON.stringify(page.local[''sitesToCall'']),
                                   			agg_function: ''month'',
-                                  			label: ''''
+                                  			label: '''',
+                                  			synthese: this.syntheseSelected
                                   		}
                                   		
                                   		resolve();
@@ -776,6 +851,31 @@ title: Multisite
                   ↓Icon [ngx.components.UIDynamicElement-1672837739364]: 
                     beanData: '{"ionBean":"Icon","IconName":"plain:trash"}'
                     tagName: ion-icon
+        ↓Style [ngx.components.UIStyle-1673876021109]: 
+          styleContent: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '/**
+                   * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                   * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                   * They are set using custom property notation, e.g.: --main-color: black;
+                   * and are accessed using the var() function, e.g.: color: var(--main-color);
+                   * You can find below your component''s properties you can customize within the page.
+                   * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                   * For more informations see https://ionicframework.com/docs/theming.
+                  **/
+                  //--ion-grid-column-padding	//Padding for the Column
+                  //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                  //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                  //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                  //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                  //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                  //--ion-grid-columns	//The number of total Columns in the Grid
+                  max-height: 70% !important;
+                  overflow-y: scroll;
+                  '
       ↓colCharts [ngx.components.UIDynamicElement-1668692254992]: 
         beanData: |
           '{
@@ -1034,7 +1134,6 @@ title: Multisite
                  "SizeMd": "plain:9",
                  "SizeXs": "plain:12"
                 }'
-              isEnabled: false
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1668691089715]: 
                 sharedcomponent: poc_energisme.Application.NgxApp.widget
@@ -1047,15 +1146,12 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:'.multisite_sites_energivore'
+                      - MobileSmartSourceType: script:'.widget_multisite_sites_energivore'
                 ↓sequenceParams [ngx.components.UIUseVariable-1668691110916]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: |
-                          'script:{
-                          	limit: ''20''
-                          }'
+                      - MobileSmartSourceType: script:this.local['sequenceParams']
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045497660]: 
                   varValue: 
                     - xmlizable: 
@@ -1076,6 +1172,16 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
+                ↓refresh [ngx.components.UIUseVariable-1673861229040]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:false
+                ↓sequenceMarker [ngx.components.UIUseVariable-1673861229042]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
           ↓rowSitesLesPlusConsoDelec [ngx.components.UIDynamicElement-1669042791602]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             isEnabled: false
