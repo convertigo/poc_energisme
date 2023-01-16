@@ -18,9 +18,30 @@ testOnBorrow: true
   ↓site_id [variables.RequestableVariable-1672148077216]: 
 ↓get_sites_list [transactions.SqlTransaction]: 
   sqlQuery: |
-    SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
+    'SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
     FROM convertigo_poc.site s 
-    WHERE s.typology is not null;
+    WHERE s.typology is not null
+    {{filter_condition}};'
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''integer'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
+  ↓Test_Case_all_sites [core.TestCase]: 
+    ↓filter_condition [variables.TestCaseVariable-1673885180239]: 
+      description: filter_condition
+  ↓Test_Case_sites_subset [core.TestCase]: 
+    ↓filter_condition [variables.TestCaseVariable-1673885138036]: 
+      description: filter_condition
+      value: AND s.id IN (CAST('14122' AS BIGINT), CAST('13858' AS BIGINT))
+  ↓filter_condition [variables.RequestableVariable-1673885109667]: 
+    description: filter_condition
 ↓search_site [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
