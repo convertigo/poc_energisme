@@ -239,18 +239,23 @@ testOnBorrow: true
     value: ${poc_energisme.raw_data_table}
 ↓widget_multisite_sites_energivore [transactions.SqlTransaction]: 
   sqlQuery: |
-    select a.avg_conso_gaz, a.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
+    with conso_by_site as (
+    	select avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='gaz') as avg_conso_gaz, 
+    	avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='elec') as avg_conso_elec, site_id
+    	from convertigo_poc.{{raw_data_table}}
+    	inner join convertigo_poc.sensor_mapping
+    	on {{raw_data_table}}.uuid = sensor_mapping.sensor_id
+    	and {{raw_data_table}}."label" = sensor_mapping."label"
+    	{{filter_condition}}
+    	group by site_id)
+    select conso_by_site.avg_conso_gaz, conso_by_site.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
     from convertigo_poc.site s
-    inner join
-    (select avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='gaz') as avg_conso_gaz, 
-    avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='elec') as avg_conso_elec, site_id
-    from convertigo_poc.{{raw_data_table}}
-    inner join convertigo_poc.sensor_mapping
-    on {{raw_data_table}}.uuid = sensor_mapping.sensor_id
-    and {{raw_data_table}}."label" = sensor_mapping."label"
-    group by site_id) a on a.site_id = s.id
+    inner join conso_by_site 
+    on conso_by_site.site_id = s.id
     order by avg_conso_gaz desc
     limit CAST({limit} AS BIGINT);
+    
+    
   handlers: 
     →: |
       '// Handles the XML generated event.
@@ -262,14 +267,26 @@ testOnBorrow: true
       		el.setAttribute("type", "null");
       	}
       }'
-  ↓Test_Case [core.TestCase]: 
+  ↓Test_Case_all [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1672914161795]: 
       description: limit
       value: 20
-    ↓sites [variables.TestCaseVariable-1672914161798]: 
-      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓raw_data_table [variables.TestCaseVariable-1673887820774]: 
+      value: raw_data
+    ↓filter_condition [variables.TestCaseVariable-1673887820776]: 
+      description: filter_condition
+  ↓Test_Case_subset [core.TestCase]: 
+    ↓limit [variables.TestCaseVariable-1673888105771]: 
+      description: limit
+      value: 20
+    ↓raw_data_table [variables.TestCaseVariable-1673888105774]: 
+      value: raw_data
+    ↓filter_condition [variables.TestCaseVariable-1673888105777]: 
+      description: filter_condition
+      value: AND sensor_mapping.site_id IN (CAST('7626' AS BIGINT))
   ↓limit [variables.RequestableVariable-1672914161801]: 
     description: limit
-  ↓sites [variables.RequestableVariable-1672914161804]: 
   ↓raw_data_table [variables.RequestableVariable-1673535887851]: 
     value: ${poc_energisme.raw_data_table}
+  ↓filter_condition [variables.RequestableVariable-1673887813493]: 
+    description: filter_condition
