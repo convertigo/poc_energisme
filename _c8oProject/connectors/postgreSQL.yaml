@@ -41,17 +41,28 @@ testOnBorrow: true
 ↓widget_conso [transactions.SqlTransaction]: 
   sqlQuery: |
     'select 
-    sum (rd.val * sm.unit_coeff) filter (where rd."label"=''conso_gaz'') as sum_conso_gaz,
-    sum (rd.val * sm.unit_coeff) filter (where rd."label"=''conso_elec'')  as sum_conso_elec,
-    sum (rd.val * sm.unit_coeff) filter (where rd."label"=''dju'')  as sum_dju,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''gaz'') as sum_conso_gaz,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''elec'')  as sum_conso_elec,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''weather'')  as sum_dju,
     {{agg_function}}  as agg_period
-    from convertigo_poc.raw_data rd
+    from convertigo_poc.{{raw_data_table}} rd
     inner join convertigo_poc.sensor_mapping sm
     on rd.uuid = sm.sensor_id 
     where sm.site_id in ({{sites}})
     and rd.ts > TO_TIMESTAMP({date_start}, ''YYYY-MM-DD'')
     and rd.ts < TO_TIMESTAMP({date_end}, ''YYYY-MM-DD'')
     group by {{agg_function}}'
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
   ↓Test_Case_Monosite_evolution_conso_agg_annee [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928023866]: 
       description: date_start
@@ -66,7 +77,7 @@ testOnBorrow: true
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928243853]: 
       description: date_start
-      value: 2021-01-01
+      value: 2020-01-01
     ↓date_end [variables.TestCaseVariable-1672928243856]: 
       description: date_end
       value: 2022-12-01
@@ -124,17 +135,31 @@ testOnBorrow: true
     description: date_end
   ↓sites [variables.RequestableVariable-1672914161741]: 
   ↓agg_function [variables.RequestableVariable-1672914161744]: 
+  ↓raw_data_table [variables.RequestableVariable-1673534902509]: 
+    value: ${poc_energisme.raw_data_table}
 ↓widget_conso_total [transactions.SqlTransaction]: 
   sqlQuery: |
     select
-    sum (rd.val * sm.unit_coeff) filter (where rd."label"='conso_gaz') as sum_conso_gaz,
-    sum (rd.val * sm.unit_coeff) filter (where rd."label"='conso_elec') as sum_conso_elec
-    from convertigo_poc.raw_data rd
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='gaz') as sum_conso_gaz,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='elec') as sum_conso_elec,
+    sum (rd.val * sm.unit_coeff) filter (where sm."label"='weather') as sum_dju
+    from convertigo_poc.{{raw_data_table}} rd
     inner join convertigo_poc.sensor_mapping sm
     on rd.uuid = sm.sensor_id
     where sm.site_id IN ({{sites}}) 
     and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
   ↓Test_Case_Multisite [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672914161749]: 
       description: date_start
@@ -149,13 +174,15 @@ testOnBorrow: true
   ↓date_end [variables.RequestableVariable-1672914161761]: 
     description: date_end
   ↓sites [variables.RequestableVariable-1672914161764]: 
+  ↓raw_data_table [variables.RequestableVariable-1673535861667]: 
+    value: ${poc_energisme.raw_data_table}
 ↓widget_heatmap [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
-    sum (val * sm.unit_coeff) filter (where rd."label"={label}) as sum_label,
+    sum (val * sm.unit_coeff) filter (where sm."type"={label}) as sum_label,
     date_part('week', ts) as week,
     date_part('hour', ts) as hour
-    from convertigo_poc.raw_data rd
+    from convertigo_poc.{{raw_data_table}} rd
     inner join convertigo_poc.sensor_mapping sm
     on rd.uuid = sm.sensor_id 
     where sm.site_id IN ({{sites}}) 
@@ -163,9 +190,20 @@ testOnBorrow: true
     and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     group by week , hour
     order by week asc, hour asc
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
   ↓Test_Case [core.TestCase]: 
     ↓label [variables.TestCaseVariable-1672914161769]: 
-      value: conso_elec
+      value: elec
     ↓date_start [variables.TestCaseVariable-1672914161772]: 
       value: 2021-01-01
     ↓date_end [variables.TestCaseVariable-1672914161775]: 
@@ -176,20 +214,33 @@ testOnBorrow: true
   ↓date_start [variables.RequestableVariable-1672914161784]: 
   ↓date_end [variables.RequestableVariable-1672914161787]: 
   ↓sites [variables.RequestableVariable-1672914161790]: 
+  ↓raw_data_table [variables.RequestableVariable-1673535879411]: 
+    value: ${poc_energisme.raw_data_table}
 ↓widget_multisite_sites_energivore [transactions.SqlTransaction]: 
   sqlQuery: |
     select a.avg_conso_gaz, a.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
     from convertigo_poc.site s
     inner join
-    (select avg (val * sensor_mapping.sensor_id.unit_coeff) filter (where raw_data."label"='conso_gaz') as avg_conso_gaz, 
-    avg (val * sensor_mapping.sensor_id.unit_coeff) filter (where raw_data."label"='conso_elec') as avg_conso_elec, site_id
-    from convertigo_poc.raw_data
+    (select avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='gaz') as avg_conso_gaz, 
+    avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='elec') as avg_conso_elec, site_id
+    from convertigo_poc.{{raw_data_table}}
     inner join convertigo_poc.sensor_mapping
-    on raw_data.uuid = sensor_mapping.sensor_id
-    and raw_data."label" = sensor_mapping."label"
+    on {{raw_data_table}}.uuid = sensor_mapping.sensor_id
+    and {{raw_data_table}}."label" = sensor_mapping."label"
     group by site_id) a on a.site_id = s.id
     order by avg_conso_gaz desc
     limit CAST({limit} AS BIGINT);
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
   ↓Test_Case [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1672914161795]: 
       description: limit
@@ -199,3 +250,5 @@ testOnBorrow: true
   ↓limit [variables.RequestableVariable-1672914161801]: 
     description: limit
   ↓sites [variables.RequestableVariable-1672914161804]: 
+  ↓raw_data_table [variables.RequestableVariable-1673535887851]: 
+    value: ${poc_energisme.raw_data_table}
