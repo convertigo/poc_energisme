@@ -1053,16 +1053,16 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
-                ↓refresh [ngx.components.UIUseVariable-1673517320329]: 
-                  varValue: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:false
                 ↓sequenceMarker [ngx.components.UIUseVariable-1673517320331]: 
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'consoEvol'
+                ↓aggregation [ngx.components.UIUseVariable-1673883378185]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
           ↓rowMapsAndSitesEnergivore [ngx.components.UIDynamicElement-1668691043090]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row

@@ -193,6 +193,9 @@ Multisite view
 <th>name</th><th>comment</th>
 </tr>
 <tr>
+<td>aggregation</td><td></td>
+</tr>
+<tr>
 <td>isGauge</td><td>To determine if widget is a gauge widget. true or false (string)</td>
 </tr>
 <tr>
@@ -203,9 +206,6 @@ Multisite view
 </tr>
 <tr>
 <td>isInModal</td><td>To determine if widget is zoomed. true or false (string)</td>
-</tr>
-<tr>
-<td>refresh</td><td></td>
 </tr>
 <tr>
 <td>sequenceMarker</td><td></td>

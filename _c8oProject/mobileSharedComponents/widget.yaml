@@ -7,7 +7,8 @@ scriptContent:
         /*End_c8o_CompImport*/
         /*Begin_c8o_CompDeclaration*/
         	public showDatePicker = false;
-        	public date = []
+        	public date = [];
+        	public selectAggregation = ''week'';
         	/*End_c8o_CompDeclaration*/
         /*Begin_c8o_CompConstructor*/
         		/*End_c8o_CompConstructor*/
@@ -190,7 +191,7 @@ scriptContent:
     ↓rowDate [ngx.components.UIDynamicElement-1667816527119]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
       tagName: ion-row
-      ↓GridCol [ngx.components.UIDynamicElement-1667816527121]: 
+      ↓colDate [ngx.components.UIDynamicElement-1667816527121]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
         ↓Label [ngx.components.UIDynamicElement-1667816527123]: 
@@ -366,7 +367,106 @@ scriptContent:
             textValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.date
+                - MobileSmartSourceType: script:this.local['response']?.date
+      ↓Directive [ngx.components.UIControlDirective-1673882736885]: 
+        directiveName: If
+        directiveSource: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: script:this.aggregation == 'true'
+        ↓GridCol [ngx.components.UIDynamicElement-1673882754670]: 
+          beanData: '{"ionBean":"GridCol"}'
+          tagName: ion-col
+          ↓SelectContainer [ngx.components.UIDynamicElement-1673882784724]: 
+            beanData: |
+              '{
+               "ionBean": "Select",
+               "ControlName": "plain:name1673882784724",
+               "Interface": "plain:popover"
+              }'
+            tagName: ion-select
+            ↓selectWeek [ngx.components.UIDynamicElement-1673882787951]: 
+              beanData: '{"ionBean":"SelectOption","Value":"plain:week"}'
+              tagName: ion-select-option
+              ↓Text [ngx.components.UIText-1673882804566]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Agrégation par semaine
+            ↓selectMonth [ngx.components.UIDynamicElement-1673882926780]: 
+              beanData: '{"ionBean":"SelectOption","Value":"plain:month"}'
+              tagName: ion-select-option
+              ↓Text [ngx.components.UIText-1673882926783]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Agrégation par mois
+            ↓selectYear [ngx.components.UIDynamicElement-1673882928098]: 
+              beanData: '{"ionBean":"SelectOption","Value":"plain:year"}'
+              tagName: ion-select-option
+              ↓Text [ngx.components.UIText-1673882928101]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:Agrégation par année
+            ↓Attr [ngx.components.UIAttribute-1673883157812]: 
+              attrName: '[(ngModel)]'
+              attrValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.selectAggregation
+            ↓Event [ngx.components.UIControlEvent-1673883266961]: 
+              attrName: (ionChange)
+              eventName: ionChange
+              ↓updateParams [ngx.components.UICustomAction-1673883310521]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                        		console.log("update params")
+                        		var synthese = page[''sequenceParams''][''synthese''];
+                        		var sites = JSON.parse(page[''sequenceParams''][''sites'']);
+                        		console.log("synth")
+                        		console.log(synthese)
+                        		console.log("sites")
+                        		console.log(sites)
+                        		/* page[''sequenceParams''] = {
+                        			date_start: ''2021-01-01'',
+                        			date_end: ''2022-12-01'',
+                        			sites: sites,
+                        			agg_function: page.selectAggregation,
+                        			label: '''',
+                        			synthese: synthese
+                        		} */
+                        		
+                        		var sequenceParams = {
+                        			date_start: ''2021-01-01'',
+                        			date_end: ''2022-12-01'',
+                        			sites: JSON.stringify(sites),
+                        			agg_function: page.selectAggregation,
+                        			label: '''',
+                        			synthese: synthese
+                        		}
+                        		this.call(page.sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
+                        			page.local[''response''] = resp
+                        		})
+                        		// console.log("sequenceParams update")
+                        		// console.log(page[''sequenceParams''])
+                        		resolve();
+                        '
+              ↓IfElse [ngx.components.UIDynamicIf-1673883310518]: 
+                beanData: '{"ionBean":"IfElseAction","condition":"script:this.local[''sitesToCall''].length != 0"}'
+                isEnabled: false
+                ↓Else_Handler [ngx.components.UIActionElseEvent-1673883310524]: 
+                  ↓Toast [ngx.components.UIDynamicAction-1673883310527]: 
+                    beanData: |
+                      '{
+                       "ionBean": "ToastAction",
+                       "message": "plain:Veuillez sélectionner au moins un groupe",
+                       "position": "plain:top"
+                      }'
   ↓Directive [ngx.components.UIControlDirective-1668518041273]: 
     directiveExpression: '(this.local[''response'']?.total != undefined && this.local[''response'']?.total.length > 0) ? this.local[''response'']?.total : '''''
     directiveName: If
@@ -394,7 +494,7 @@ scriptContent:
             textValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.total + ' MWh'
+                - MobileSmartSourceType: script:this.local['response']?.total + ' MWh'
   ↓Style [ngx.components.UIStyle-1668517919878]: 
     styleContent: 
       - xmlizable: 
@@ -1025,6 +1125,5 @@ scriptContent:
   comment: To determine if widget is zoomed. true or false (string)
 ↓isHeatmap [ngx.components.UICompVariable-1669388784767]: 
   comment: To determine if widget is a heatmap widget. true or false (string)
-↓refresh [ngx.components.UICompVariable-1673453862634]: 
-  value: false
 ↓sequenceMarker [ngx.components.UICompVariable-1673517282405]: 
+↓aggregation [ngx.components.UICompVariable-1673882707110]: 
