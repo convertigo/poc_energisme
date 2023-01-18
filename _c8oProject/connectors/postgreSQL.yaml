@@ -1,7 +1,7 @@
 jdbcDriverClassName: org.postgresql.Driver
-jdbcURL: jdbc:postgresql://pgserver-labloamics-lab-lyeswlkhvptb6.postgres.database.azure.com/pgdb-labloamics-lab-lyeswlkhvptb6
-jdbcUserName: convertigo@pgserver-labloamics-lab-lyeswlkhvptb6
-jdbcUserPassword: x312b14f3b735263363b9702517d0c3d6af87c7e0aa1ff80f7ba13bffc89c9adf
+jdbcURL: ${poc_energisme.database_url}
+jdbcUserName: ${poc_energisme.database_user_name}
+jdbcUserPassword: x48135d279776b75496c5b78e1e302274c353ff159ff159687ac79d415e987751e9b028a8a1f73f96182e3095469b863b
 testOnBorrow: true
 ↓Default_transaction [transactions.SqlTransaction]: 
   ↑default: true
@@ -128,6 +128,17 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927932955]: 
       value: date_part('year', rd.ts)
+  ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1673943744634]: 
+      description: date_start
+      value: 2022-10-01
+    ↓date_end [variables.TestCaseVariable-1673943744637]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1673943744640]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1673943744643]: 
+      value: rd.ts::date
   ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672914161723]: 
       description: date_start
