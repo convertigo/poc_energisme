@@ -8,7 +8,7 @@ testOnBorrow: true
 ↓get_site [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
-    FROM convertigo_poc.site s 
+    FROM {{site_table}} s 
     WHERE s.id = CAST({site_id} AS BIGINT)
     AND s.typology is not null;
     
@@ -16,10 +16,12 @@ testOnBorrow: true
     ↓site_id [variables.TestCaseVariable-1672148194989]: 
       value: 14069
   ↓site_id [variables.RequestableVariable-1672148077216]: 
+  ↓site_table [variables.RequestableVariable-1674048853473]: 
+    value: ${poc_energisme.sites_table}
 ↓get_sites_list [transactions.SqlTransaction]: 
   sqlQuery: |
     'SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
-    FROM convertigo_poc.site s 
+    FROM {{site_table}} s 
     WHERE s.typology is not null
     {{filter_condition}};'
   handlers: 
@@ -42,10 +44,12 @@ testOnBorrow: true
       value: AND s.id IN (CAST('14122' AS BIGINT), CAST('13858' AS BIGINT))
   ↓filter_condition [variables.RequestableVariable-1673885109667]: 
     description: filter_condition
+  ↓site_table [variables.RequestableVariable-1674049074082]: 
+    value: ${poc_energisme.sites_table}
 ↓search_site [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
-    FROM convertigo_poc.site s 
+    FROM {{site_table}} s 
     WHERE LOWER(nom) LIKE '%{{label}}%'
     AND s.typology is not null;
   ↓Test_Case [core.TestCase]: 
@@ -54,11 +58,16 @@ testOnBorrow: true
       value: bar
   ↓label [variables.RequestableVariable-1672757643644]: 
     description: label
+  ↓site_table [variables.RequestableVariable-1674049236006]: 
+    description: site_table
 ↓select_UUID [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT uuid, avg(val) AS moy_val, label
-    FROM raw_data
+    FROM {{raw_data_table}}
     GROUP BY uuid, label
+  ↓raw_data_table [variables.RequestableVariable-1674049259761]: 
+    description: raw_data_table
+    value: ${poc_energisme.raw_data_table}
 ↓widget_conso [transactions.SqlTransaction]: 
   sqlQuery: |
     'select 
@@ -66,8 +75,8 @@ testOnBorrow: true
     sum (rd.val * sm.unit_coeff) filter (where sm."type"=''elec'')  as sum_conso_elec,
     sum (rd.val * sm.unit_coeff) filter (where sm."type"=''weather'')  as sum_dju,
     {{agg_function}}  as agg_period
-    from convertigo_poc.{{raw_data_table}} rd
-    inner join convertigo_poc.sensor_mapping sm
+    from {{raw_data_table}} rd
+    inner join {{sensor_mapping_table}} sm
     on rd.uuid = sm.sensor_id 
     where sm.site_id in ({{sites}})
     and rd.ts > TO_TIMESTAMP({date_start}, ''YYYY-MM-DD'')
@@ -95,6 +104,11 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928023875]: 
       value: date_part('year', rd.ts)
+    ↓raw_data_table [variables.TestCaseVariable-1674049378755]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049378757]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928243853]: 
       description: date_start
@@ -106,6 +120,11 @@ testOnBorrow: true
       value: CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928243862]: 
       value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+    ↓raw_data_table [variables.TestCaseVariable-1674049384484]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049384486]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928700573]: 
       description: date_start
@@ -117,6 +136,11 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928700582]: 
       value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
+    ↓raw_data_table [variables.TestCaseVariable-1674049386382]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049386384]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_annee [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672927932946]: 
       description: date_start
@@ -128,6 +152,11 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927932955]: 
       value: date_part('year', rd.ts)
+    ↓raw_data_table [variables.TestCaseVariable-1674049388136]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049388138]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1673943744634]: 
       description: date_start
@@ -139,6 +168,11 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1673943744643]: 
       value: rd.ts::date
+    ↓raw_data_table [variables.TestCaseVariable-1674049389659]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049389661]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672914161723]: 
       description: date_start
@@ -150,6 +184,11 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672914161732]: 
       value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+    ↓raw_data_table [variables.TestCaseVariable-1674049391682]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049391684]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_semaine [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672927548928]: 
       description: date_start
@@ -161,6 +200,11 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927548937]: 
       value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
+    ↓raw_data_table [variables.TestCaseVariable-1674049393530]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049393532]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓date_start [variables.RequestableVariable-1672914161735]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161738]: 
@@ -169,14 +213,17 @@ testOnBorrow: true
   ↓agg_function [variables.RequestableVariable-1672914161744]: 
   ↓raw_data_table [variables.RequestableVariable-1673534902509]: 
     value: ${poc_energisme.raw_data_table}
+  ↓sensor_mapping_table [variables.RequestableVariable-1674049340461]: 
+    description: sensor_mapping_table
+    value: ${poc_energisme.sensor_mapping_table}
 ↓widget_conso_total [transactions.SqlTransaction]: 
   sqlQuery: |
     select
     sum (rd.val * sm.unit_coeff) filter (where sm."type"='gaz') as sum_conso_gaz,
     sum (rd.val * sm.unit_coeff) filter (where sm."type"='elec') as sum_conso_elec,
     sum (rd.val * sm.unit_coeff) filter (where sm."label"='weather') as sum_dju
-    from convertigo_poc.{{raw_data_table}} rd
-    inner join convertigo_poc.sensor_mapping sm
+    from {{raw_data_table}} rd
+    inner join {{sensor_mapping_table}} sm
     on rd.uuid = sm.sensor_id
     where sm.site_id IN ({{sites}}) 
     and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
@@ -201,6 +248,11 @@ testOnBorrow: true
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672914161755]: 
       value: CAST('7731' AS BIGINT)
+    ↓raw_data_table [variables.TestCaseVariable-1674049636101]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049636103]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓date_start [variables.RequestableVariable-1672914161758]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161761]: 
@@ -208,14 +260,17 @@ testOnBorrow: true
   ↓sites [variables.RequestableVariable-1672914161764]: 
   ↓raw_data_table [variables.RequestableVariable-1673535861667]: 
     value: ${poc_energisme.raw_data_table}
+  ↓sensor_mapping_table [variables.RequestableVariable-1674049606383]: 
+    description: sensor_mapping_table
+    value: ${poc_energisme.sensor_mapping_table}
 ↓widget_heatmap [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
     sum (val * sm.unit_coeff) filter (where sm."type"={label}) as sum_label,
     date_part('week', ts) as week,
     date_part('hour', ts) as hour
-    from convertigo_poc.{{raw_data_table}} rd
-    inner join convertigo_poc.sensor_mapping sm
+    from {{raw_data_table}} rd
+    inner join {{sensor_mapping_table}} sm
     on rd.uuid = sm.sensor_id 
     where sm.site_id IN ({{sites}}) 
     and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
@@ -242,25 +297,33 @@ testOnBorrow: true
       value: 2022-12-31
     ↓sites [variables.TestCaseVariable-1672914161778]: 
       value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓raw_data_table [variables.TestCaseVariable-1674049761402]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674049761404]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓label [variables.RequestableVariable-1672914161781]: 
   ↓date_start [variables.RequestableVariable-1672914161784]: 
   ↓date_end [variables.RequestableVariable-1672914161787]: 
   ↓sites [variables.RequestableVariable-1672914161790]: 
   ↓raw_data_table [variables.RequestableVariable-1673535879411]: 
     value: ${poc_energisme.raw_data_table}
+  ↓sensor_mapping_table [variables.RequestableVariable-1674049714301]: 
+    description: sensor_mapping_table
+    value: ${poc_energisme.sensor_mapping_table}
 ↓widget_multisite_sites_energivore [transactions.SqlTransaction]: 
   sqlQuery: |
     with conso_by_site as (
-    	select avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='gaz') as avg_conso_gaz, 
-    	avg (val * sensor_mapping.unit_coeff) filter (where sensor_mapping."type"='elec') as avg_conso_elec, site_id
-    	from convertigo_poc.{{raw_data_table}}
-    	inner join convertigo_poc.sensor_mapping
-    	on {{raw_data_table}}.uuid = sensor_mapping.sensor_id
-    	and {{raw_data_table}}."label" = sensor_mapping."label"
+    	select avg (val * sm.unit_coeff) filter (where sm."type"='gaz') as avg_conso_gaz, 
+    	avg (val * sm.unit_coeff) filter (where sm."type"='elec') as avg_conso_elec, site_id
+    	from {{raw_data_table}} rd
+    	inner join {{sensor_mapping_table}} sm
+    	on rd.uuid = sm.sensor_id
+    	and rd."label" = sm."label"
     	{{filter_condition}}
     	group by site_id)
     select conso_by_site.avg_conso_gaz, conso_by_site.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
-    from convertigo_poc.site s
+    from {{site_table}} s
     inner join conso_by_site 
     on conso_by_site.site_id = s.id
     order by avg_conso_gaz desc
@@ -282,22 +345,40 @@ testOnBorrow: true
     ↓limit [variables.TestCaseVariable-1672914161795]: 
       description: limit
       value: 20
-    ↓raw_data_table [variables.TestCaseVariable-1673887820774]: 
-      value: raw_data
     ↓filter_condition [variables.TestCaseVariable-1673887820776]: 
       description: filter_condition
+    ↓raw_data_table [variables.TestCaseVariable-1674050248777]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674050248779]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
+    ↓site_table [variables.TestCaseVariable-1674050248781]: 
+      description: site_table
+      value: convertigo_poc.site
   ↓Test_Case_subset [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1673888105771]: 
       description: limit
       value: 20
-    ↓raw_data_table [variables.TestCaseVariable-1673888105774]: 
-      value: raw_data
     ↓filter_condition [variables.TestCaseVariable-1673888105777]: 
       description: filter_condition
-      value: AND sensor_mapping.site_id IN (CAST('7626' AS BIGINT))
+      value: AND sm.site_id IN (CAST('7626' AS BIGINT))
+    ↓raw_data_table [variables.TestCaseVariable-1674050266077]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674050266079]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
+    ↓site_table [variables.TestCaseVariable-1674050266081]: 
+      description: site_table
+      value: convertigo_poc.site
   ↓limit [variables.RequestableVariable-1672914161801]: 
     description: limit
   ↓raw_data_table [variables.RequestableVariable-1673535887851]: 
     value: ${poc_energisme.raw_data_table}
   ↓filter_condition [variables.RequestableVariable-1673887813493]: 
     description: filter_condition
+  ↓sensor_mapping_table [variables.RequestableVariable-1674050025106]: 
+    description: sensor_mapping_table
+    value: ${poc_energisme.sensor_mapping_table}
+  ↓site_table [variables.RequestableVariable-1674050025108]: 
+    description: site_table
+    value: ${poc_energisme.sites_table}
