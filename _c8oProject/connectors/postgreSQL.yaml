@@ -104,11 +104,6 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928023875]: 
       value: date_part('year', rd.ts)
-    ↓raw_data_table [variables.TestCaseVariable-1674049378755]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049378757]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928243853]: 
       description: date_start
@@ -120,11 +115,6 @@ testOnBorrow: true
       value: CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928243862]: 
       value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
-    ↓raw_data_table [variables.TestCaseVariable-1674049384484]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049384486]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928700573]: 
       description: date_start
@@ -136,11 +126,6 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928700582]: 
       value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
-    ↓raw_data_table [variables.TestCaseVariable-1674049386382]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049386384]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_annee [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672927932946]: 
       description: date_start
@@ -152,11 +137,6 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927932955]: 
       value: date_part('year', rd.ts)
-    ↓raw_data_table [variables.TestCaseVariable-1674049388136]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049388138]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1673943744634]: 
       description: date_start
@@ -168,11 +148,6 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1673943744643]: 
       value: rd.ts::date
-    ↓raw_data_table [variables.TestCaseVariable-1674049389659]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049389661]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672914161723]: 
       description: date_start
@@ -184,11 +159,6 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672914161732]: 
       value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
-    ↓raw_data_table [variables.TestCaseVariable-1674049391682]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049391684]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓Test_Case_Multisite_evolution_conso_agg_semaine [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672927548928]: 
       description: date_start
@@ -200,11 +170,6 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927548937]: 
       value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
-    ↓raw_data_table [variables.TestCaseVariable-1674049393530]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049393532]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓date_start [variables.RequestableVariable-1672914161735]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161738]: 
@@ -248,11 +213,6 @@ testOnBorrow: true
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672914161755]: 
       value: CAST('7731' AS BIGINT)
-    ↓raw_data_table [variables.TestCaseVariable-1674049636101]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049636103]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓date_start [variables.RequestableVariable-1672914161758]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161761]: 
@@ -297,11 +257,6 @@ testOnBorrow: true
       value: 2022-12-31
     ↓sites [variables.TestCaseVariable-1672914161778]: 
       value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
-    ↓raw_data_table [variables.TestCaseVariable-1674049761402]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674049761404]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
   ↓label [variables.RequestableVariable-1672914161781]: 
   ↓date_start [variables.RequestableVariable-1672914161784]: 
   ↓date_end [variables.RequestableVariable-1672914161787]: 
@@ -347,14 +302,6 @@ testOnBorrow: true
       value: 20
     ↓filter_condition [variables.TestCaseVariable-1673887820776]: 
       description: filter_condition
-    ↓raw_data_table [variables.TestCaseVariable-1674050248777]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674050248779]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
-    ↓site_table [variables.TestCaseVariable-1674050248781]: 
-      description: site_table
-      value: convertigo_poc.site
   ↓Test_Case_subset [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1673888105771]: 
       description: limit
@@ -362,14 +309,6 @@ testOnBorrow: true
     ↓filter_condition [variables.TestCaseVariable-1673888105777]: 
       description: filter_condition
       value: AND sm.site_id IN (CAST('7626' AS BIGINT))
-    ↓raw_data_table [variables.TestCaseVariable-1674050266077]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674050266079]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
-    ↓site_table [variables.TestCaseVariable-1674050266081]: 
-      description: site_table
-      value: convertigo_poc.site
   ↓limit [variables.RequestableVariable-1672914161801]: 
     description: limit
   ↓raw_data_table [variables.RequestableVariable-1673535887851]: 
