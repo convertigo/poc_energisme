@@ -33,6 +33,10 @@ testOnBorrow: true
       		el.setAttribute("type", "null");
       	}
       }'
+  ↓Test_Case [core.TestCase]: 
+    ↓filter_condition [variables.TestCaseVariable-1673962883661]: 
+      description: filter_condition
+      value: AND s.id IN (CAST('7632' AS BIGINT), CAST('7634' AS BIGINT), CAST('7635' AS BIGINT), CAST('7636' AS BIGINT), CAST('7637' AS BIGINT), CAST('7638' AS BIGINT), CAST('7731' AS BIGINT))
   ↓Test_Case_all_sites [core.TestCase]: 
     ↓filter_condition [variables.TestCaseVariable-1673885180239]: 
       description: filter_condition

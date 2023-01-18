@@ -1,3 +1,4 @@
+comment: Return sites id from a group searching by its name
 ↓jIf [steps.IfStep-1672147499807]: 
   condition: (_use_key = group_name) == undefined || group_name.length < 1
   ↓Error_structure [steps.XMLErrorStep-1672147499810]: 

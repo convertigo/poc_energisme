@@ -1,5 +1,48 @@
-responseExpiryDate: daily,23:00:00
+↓Input_variables [steps.InputVariablesStep-1673962676228]: 
+↓Call_Sequence [steps.SequenceStep-1673962464940]: 
+  isEnabled: false
+  sourceSequence: poc_energisme.getSitesByGroupName
+  ↓group_name [variables.StepVariable-1673962464943]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1673962676228
+          - java.lang.String: 
+            - ↑value: ./group_name/text()
+↓JsonSource [steps.JsonSourceStep-1673962464946]: 
+  isEnabled: false
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1673962464940
+        - java.lang.String: 
+          - ↑value: ./document/sites
+  variableName: sites
+↓buildCastStrings [steps.SimpleStep-1673962464949]: 
+  expression: |
+    'sites = JSON.parse(sites)
+    var string = "";
+    for(var i = 0; i < sites.length; i++) {
+    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    }
+    string = "AND s.id IN (" + string + ")"
+    var filter_condition = string;
+    log.warn(string)'
+↓jElement [steps.ElementStep-1674035029023]: 
+  expression: string
+  isEnabled: false
+  nodeName: sites
+  output: false
+↓Call_Transaction1 [steps.TransactionStep-1673962464952]: 
+  sourceTransaction: poc_energisme.postgreSQL.get_sites_list
+  ↓filter_condition [variables.StepVariable-1673962464955]: 
+    description: filter_condition
 ↓Call_Transaction [steps.TransactionStep-1673278139286]: 
+  isEnabled: false
   sourceTransaction: poc_energisme.postgreSQL.get_sites_list
 ↓Array [steps.JsonArrayStep-1673278121474]: 
   key: 
@@ -14,10 +57,11 @@ responseExpiryDate: daily,23:00:00
         - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
         - com.twinsoft.convertigo.beans.common.XMLVector: 
           - java.lang.String: 
-            - ↑value: 1673278139286
+            - ↑value: 1673962464952
           - java.lang.String: 
             - ↑value: ./document/sql_output/row
     ↓jSimpleSource [steps.SimpleSourceStep-1673278121480]: 
+      isEnabled: false
       sourceDefinition: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -28,6 +72,7 @@ responseExpiryDate: daily,23:00:00
               - ↑value: ./latitude/text()
       variableName: lat
     ↓jSimpleSource1 [steps.SimpleSourceStep-1673278121483]: 
+      isEnabled: false
       sourceDefinition: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -93,9 +138,11 @@ responseExpiryDate: daily,23:00:00
                   - ↑value: ./longitude/text()
       ↓jElement [steps.ElementStep-1673278121501]: 
         expression: lat
+        isEnabled: false
         nodeName: latitude
       ↓jElement1 [steps.ElementStep-1673278121504]: 
         expression: long
+        isEnabled: false
         nodeName: longitude
       ↓Field_3 [steps.JsonFieldStep-1673278121507]: 
         key: 
@@ -114,4 +161,42 @@ responseExpiryDate: daily,23:00:00
                   - ↑value: 1673278121477
                 - java.lang.String: 
                   - ↑value: ./id/text()
+      ↓Field_4 [steps.JsonFieldStep-1673962590593]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: latitude
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1673278121477
+                - java.lang.String: 
+                  - ↑value: ./latitude/text()
+      ↓Field_5 [steps.JsonFieldStep-1673962625071]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: longitude
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: SOURCE
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1673278121477
+                - java.lang.String: 
+                  - ↑value: ./longitude/text()
+↓group_name [variables.RequestableVariable-1673962490035]: 
+↓sites [variables.RequestableVariable-1674035053621]: 
 ↓Test_Case [core.TestCase]: 
+  ↓sites [variables.TestCaseVariable-1674035073469]: 
+    value: '[14122, 13858]'

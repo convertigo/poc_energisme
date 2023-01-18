@@ -21,7 +21,7 @@ see [documentation](http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd)
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_ExtendedComponents_ui_ngx
 
 
-see [readme](https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx/tree/8.0.0#readme)
+see [readme](https://github.com/convertigo/c8oprj-lib-extended-components-ui-ngx/tree/8.1.0.0#readme)
 </p></blockquote></details>
 
 <details><summary><b>lib_FullSyncGrp</b></summary><blockquote><p>
@@ -39,6 +39,7 @@ see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/8.0.0#re
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_OAuth
 
 
+see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
 </p></blockquote></details>
 
 <details><summary><b>lib_UserManager</b></summary><blockquote><p>
@@ -47,6 +48,7 @@ see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/8.0.0#re
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_UserManager
 
 
+see [readme](https://github.com/convertigo/c8oprj-lib-user-manager/tree/f8941d93af0db63dc16c052daad77de2f6329747#readme)
 </p></blockquote></details>
 </p></blockquote></details>
 
@@ -715,12 +717,12 @@ comment
 
 </p></blockquote></details>
 
-<details><summary><b>getSitesByGroupName</b></summary><blockquote><p>
+<details><summary><b>getSitesByGroupName</b> : Return sites id from a group searching by its name</summary><blockquote><p>
 
 
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") getSitesByGroupName
 
-
+Return sites id from a group searching by its name
 
 <span style="color:DarkGoldenRod">Variables</span>
 
@@ -1620,6 +1622,36 @@ comment
 
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/sequences/images/genericsequence_color_16x16.png?raw=true "GenericSequence") widget_maps
 
+
+
+<span style="color:DarkGoldenRod">Variables</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;group_name
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/variables/images/variable_color_16x16.png?raw=true "  alt="RequestableVariable" >&nbsp;sites
+</td>
+<td>
+
+</td>
+</tr>
+</table>
 
 </p></blockquote></details>
 

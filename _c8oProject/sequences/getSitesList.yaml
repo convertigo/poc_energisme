@@ -1,4 +1,3 @@
-responseExpiryDate: daily,23:00:00
 ↓Input_variables [steps.InputVariablesStep-1672061598710]: 
 ↓Call_Transaction [steps.TransactionStep-1672061559817]: 
   sourceTransaction: poc_energisme.postgreSQL.get_sites_list

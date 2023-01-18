@@ -7,21 +7,42 @@ scriptContent:
     - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
     - com.twinsoft.convertigo.beans.common.FormatedContent: 
       →: |
-        /*Begin_c8o_PageImport*/
+        '/*Begin_c8o_PageImport*/
         /*End_c8o_PageImport*/
         /*Begin_c8o_PageDeclaration*/
         	public date_start = "2022-11-01";
         	public date_end = "2022-12-01"
         	public selectAll = false;
-        	public syntheseSelected = 'global';
+        	public syntheseSelected = ''global'';
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
         		
-        		window['win'] = this;
+        		window[''win''] = this;
         		/*End_c8o_PageConstructor*/
         /*Begin_c8o_PageFunction*/
-        	/*End_c8o_PageFunction*/
+        	getWeekDate() {
+        		var today = new Date();
+        		var todayWeekMonth = today.getMonth() + 1;
+        		var todayWeekDay = today.getDate();
+        		var todayWeekYear = today.getFullYear();
+        		
+          		var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
+          		
+          		var lastWeekMonth = lastWeek.getMonth() + 1;
+        		var lastWeekDay = lastWeek.getDate();
+        		var lastWeekYear = lastWeek.getFullYear();
         
+        		var lastWeekDisplayPadded = ("0000" + lastWeekYear.toString()).slice(-4) + "-" + ("00" + lastWeekMonth.toString()).slice(-2) + "-" + ("00" + lastWeekDay.toString()).slice(-2);
+        		var todayWeekDisplayPadded = ("0000" + todayWeekYear.toString()).slice(-4) + "-" + ("00" + todayWeekMonth.toString()).slice(-2) + "-" + ("00" + todayWeekDay.toString()).slice(-2);
+        		var dates = {
+        			date_start: lastWeekDisplayPadded,
+        			date_end: todayWeekDisplayPadded
+        		}
+        		
+        		return dates;
+        	}
+        	/*End_c8o_PageFunction*/
+        '
 segment: multisite
 title: Multisite
 ↓UseSharedComponent [ngx.components.UIUseShared-1669821788815]: 
@@ -196,14 +217,14 @@ title: Multisite
                         '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                         		console.log(event)
                         		console.log(this.global[''linkDates''])
-                        		this.global[''date_start''] = ''2022-12-01''
-                        		this.global[''date_end''] = ''2022-12-31''
+                        		 // this.global[''date_start''] = ''2022-12-01''
+                        		// this.global[''date_end''] = ''2022-12-31''
                         		resolve();
                         '
     ↓rowGroupsAndCharts [ngx.components.UIDynamicElement-1668692254990]: 
       beanData: '{"ionBean":"GridRow"}'
       tagName: ion-row
-      ↓GridCol [ngx.components.UIDynamicElement-1671532769020]: 
+      ↓colGroups [ngx.components.UIDynamicElement-1671532769020]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
         ↓Directive [ngx.components.UIControlDirective-1671532808708]: 
@@ -463,9 +484,9 @@ title: Multisite
                               		}
                               		
                               		console.log("after loop")
-                              		page.local[''sequenceParams''] = {
-                              			date_start: ''2021-01-01'',
-                              			date_end: ''2022-12-01'',
+                              		page.global[''sequenceParams''] = {
+                              			date_start: page.global[''date_start''],
+                              			date_end: page.global[''date_end''],
                               			sites: JSON.stringify(page.local[''sitesToCall'']),
                               			agg_function: ''month'',
                               			label: '''',
@@ -572,9 +593,9 @@ title: Multisite
                                   		
                                   		console.log("after loop")
                                   		console.log(page.local["sitesToCall"])
-                                  		page.local[''sequenceParams''] = {
-                                  			date_start: ''2021-01-01'',
-                                  			date_end: ''2022-12-01'',
+                                  		page.global[''sequenceParams''] = {
+                                  			date_start: page.global[''date_start''],
+                                  			date_end: page.global[''date_end''],
                                   			sites: JSON.stringify(page.local[''sitesToCall'']),
                                   			agg_function: ''month'',
                                   			label: '''',
@@ -916,7 +937,7 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:this.local['sequenceParams']
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669284224405]: 
                   varValue: 
                     - xmlizable: 
@@ -972,7 +993,7 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:this.local['sequenceParams']
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045508433]: 
                   varValue: 
                     - xmlizable: 
@@ -1032,7 +1053,7 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:this.local['sequenceParams']
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045505787]: 
                   varValue: 
                     - xmlizable: 
@@ -1102,10 +1123,7 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: |
-                          'script:{
-                          	limit: ''''
-                          }'
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045607710]: 
                   varValue: 
                     - xmlizable: 
@@ -1151,7 +1169,7 @@ title: Multisite
                   varValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:this.local['sequenceParams']
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
                 ↓isGoogleMap [ngx.components.UIUseVariable-1669045497660]: 
                   varValue: 
                     - xmlizable: 
@@ -1423,3 +1441,69 @@ title: Multisite
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓SetLocal3 [ngx.components.UIDynamicAction-1674034858961]: 
+    beanData: '{"ionBean":"SetLocalAction","Property":"plain:groupSelected"}'
+  ↓initWeekDateByDefault [ngx.components.UICustomAction-1674036654013]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		console.log(page.getWeekDate()[''date_start''])
+            		resolve();
+            '
+    isEnabled: false
+  ↓SetLocal4 [ngx.components.UIDynamicAction-1674037126020]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:date_start",
+       "Value": "script:this.getWeekDate()[''date_start'']"
+      }'
+    isEnabled: false
+  ↓SetLocal5 [ngx.components.UIDynamicAction-1674037169758]: 
+    beanData: |
+      '{
+       "ionBean": "SetLocalAction",
+       "Property": "plain:date_end",
+       "Value": "script:this.getWeekDate()[''date_end'']"
+      }'
+    isEnabled: false
+  ↓SetGlobal [ngx.components.UIDynamicAction-1674037514302]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_start",
+       "Value": "script:this.getWeekDate()[''date_start'']"
+      }'
+  ↓SetGlobal1 [ngx.components.UIDynamicAction-1674037548935]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_end",
+       "Value": "script:this.getWeekDate()[''date_end'']"
+      }'
+  ↓SetGlobal2 [ngx.components.UIDynamicAction-1674038507624]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:sequenceParams",
+       "Value": "script:{}"
+      }'
+  ↓SetGlobal3 [ngx.components.UIDynamicAction-1674038872106]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_start",
+       "Value": "script:''2021-01-01''"
+      }'
+    isEnabled: false
+  ↓SetGlobal4 [ngx.components.UIDynamicAction-1674038872109]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_end",
+       "Value": "script:''2022-12-31''"
+      }'
+    isEnabled: false

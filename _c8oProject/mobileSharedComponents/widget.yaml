@@ -254,6 +254,10 @@ scriptContent:
                               		var sequenceToCall = vars.sequenceToCall;
                               		var sequenceParams = vars.sequenceParams;
                               		//debugger;
+                              		
+                              		if(event.detail.value.length > 2) {
+                              			event.detail.value.splice(0, 1)
+                              		}
                               		if(sequenceParams.date_start != undefined) {
                               			
                               			// compare timestamps to be sure to send dates in correct order
@@ -274,6 +278,13 @@ scriptContent:
                               				sequenceParams.date_start = event.detail.value[0]
                               				sequenceParams.date_end = event.detail.value[1]
                               			}
+                              			
+                              			if(sequenceParams.date_start.includes(''T'')) {
+                              				sequenceParams.date_start = sequenceParams.date_start.split(''T'')[0]
+                              			}
+                              			if(sequenceParams.date_end.includes(''T'')) {
+                              				sequenceParams.date_end = sequenceParams.date_end.split(''T'')[0]
+                              			}
                               			console.log(firstTs)
                               			console.log(secTs)
                               			// vars.sequenceParams.date_start 
@@ -283,8 +294,20 @@ scriptContent:
                               		
                               		if(this.global[''linkDates''] == true) {
                               			console.log("linkDates true")
-                              			this.global[''date_start''] = sequenceParams.date_start;
-                              			this.global[''date_end''] = sequenceParams.date_end;
+                              			// this.global[''date_start''] = sequenceParams.date_start;
+                              			// this.global[''date_end''] = sequenceParams.date_end;
+                              			// this.global[''sequenceParams''][''date_start''] = sequenceParams.date_start;
+                              			// this.global[''sequenceParams''][''date_end''] = sequenceParams.date_end;
+                              			this.global[''sequenceParams''] = {
+                              				date_start: sequenceParams.date_start,
+                              				date_end: sequenceParams.date_end,
+                              				sites: sequenceParams.sites,
+                              				agg_function: sequenceParams.agg_function,
+                              				label: '''',
+                              				synthese: sequenceParams.synthese
+                              			}
+                              			console.log(this.global[''sequenceParams'']) 
+                              			console.log(page)
                               		} else {
                               			this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
                               		 		page.local[''response''] = resp
