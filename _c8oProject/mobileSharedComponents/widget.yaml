@@ -8,7 +8,7 @@ scriptContent:
         /*Begin_c8o_CompDeclaration*/
         	public showDatePicker = false;
         	public date = [];
-        	public selectAggregation = ''week'';
+        	public selectAggregation = ''month'';
         	/*End_c8o_CompDeclaration*/
         /*Begin_c8o_CompConstructor*/
         		/*End_c8o_CompConstructor*/
