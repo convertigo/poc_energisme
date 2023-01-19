@@ -261,6 +261,11 @@ testOnBorrow: true
       value: 2022-12-31
     ↓sites [variables.TestCaseVariable-1672914161778]: 
       value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓raw_data_table [variables.TestCaseVariable-1674138912934]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674138912936]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
   ↓label [variables.RequestableVariable-1672914161781]: 
   ↓date_start [variables.RequestableVariable-1672914161784]: 
   ↓date_end [variables.RequestableVariable-1672914161787]: 
