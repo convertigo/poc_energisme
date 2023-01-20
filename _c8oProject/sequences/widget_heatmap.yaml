@@ -1,0 +1,138 @@
+↓buildCastStrings [steps.SimpleStep-1674135718506]: 
+  expression: |
+    'sites = JSON.parse(sites)
+    var string = "";
+    for(var i = 0; i < sites.length; i++) {
+    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    }
+    
+    log.warn(string)'
+↓jElement [steps.ElementStep-1674135718509]: 
+  expression: string
+  nodeName: sites
+  output: false
+↓Call_Transaction [steps.TransactionStep-1674135570556]: 
+  sourceTransaction: poc_energisme.postgreSQL.widget_heatmap
+  ↓label [variables.StepVariable-1674135581672]: 
+  ↓date_start [variables.StepVariable-1674135581674]: 
+  ↓date_end [variables.StepVariable-1674135581676]: 
+  ↓sites [variables.StepVariable-1674135581678]: 
+↓JsonSource [steps.JsonSourceStep-1674136334174]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1674135570556
+        - java.lang.String: 
+          - ↑value: ./document/sql_output
+  variableName: lines
+↓computeData [steps.SimpleStep-1674136360575]: 
+  expression: |
+    '//log.warn("json")
+    //log.warn(JSON.stringify(json))
+    //log.warn(json.length)
+    log.warn(JSON.stringify(lines))
+    var serie = [];
+    var previousWeek = 0;
+    for(var i = 0; i < lines.length; i++) {
+    	var currentWeek = lines[i][''week''];
+    	if(currentWeek != previousWeek) {
+    		previousWeek = lines[i][''week''];
+    		serie.push({
+    			name: lines[i][''week''],
+    			data: []
+    		})
+    	} else {
+    		if(currentWeek == previousWeek) {
+    			for(var j = 0; j < serie.length; j++) {
+    				if(serie[j][''name''] == lines[i][''week'']) {
+    					serie[j][''data''].push({
+    						x: lines[i][''hour''],
+    						y: lines[i][''sum_label'']
+    					})
+    				}
+    			}
+    		}
+    		/*
+    		if(serie[i-1] != undefined) {
+    			log.warn("in if serie to push data")
+    			log.warn(serie[i-1])
+    			serie[i-1][''data''].push({
+    				x: lines[i-1][''hour''],
+    				y: lines[i-1][''sum_label'']
+    			})
+    		}
+    		*/
+    	}
+    }
+    
+    serie = JSON.stringify(serie)
+    
+    log.warn(JSON.stringify(serie))
+    /*
+    var xAxisLabels = json[0].lines.col;
+    xAxisLabels.splice(0, 1)
+    log.warn("xAxisLabels ")
+    log.warn(xAxisLabels)
+    var serie = [];
+    for(var i = 1; i < json.length; i++) {
+    	serie.push({
+    		name: json[i].lines.col[0],
+    		// name: i,
+    		data: []
+    	})
+    //	
+    	for(var j = 1; j < json[i].lines.col.length; j++) {
+    //		log.warn(xAxisLabels[j - 1])
+    //		log.warn(json[i].lines.col[j])
+    		if(serie[i-1] != undefined) {
+    			serie[i-1].data.push({
+    				// x: xAxisLabels[j-1],
+    				// x: i,
+    				x: xAxisLabels[j - 1],
+    				y: json[i].lines.col[j].replace(",", ".")
+    			})
+    			
+    		} else {
+    			log.warn("else")
+    		}
+    	}
+    	
+    	x = 
+    	y = valeur
+    	
+    }
+    
+    log.warn("serie")
+    log.warn(JSON.stringify(serie))
+    
+    serie = JSON.stringify(serie)
+    
+    */'
+↓Iterator [steps.IteratorStep-1674136153798]: 
+  isEnabled: false
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1674135570556
+        - java.lang.String: 
+          - ↑value: ./document/sql_output/row
+↓series [steps.ElementStep-1674206476041]: 
+  expression: serie
+  nodeName: series
+↓label [variables.RequestableVariable-1674135592085]: 
+↓date_start [variables.RequestableVariable-1674135592087]: 
+↓date_end [variables.RequestableVariable-1674135592089]: 
+↓sites [variables.RequestableVariable-1674135592091]: 
+↓elec [core.TestCase]: 
+  ↓label [variables.TestCaseVariable-1674135611568]: 
+    value: elec
+  ↓date_start [variables.TestCaseVariable-1674135611570]: 
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1674135611572]: 
+    value: 2022-12-31
+  ↓sites [variables.TestCaseVariable-1674135611574]: 
+    value: '[14122, 7626]'
