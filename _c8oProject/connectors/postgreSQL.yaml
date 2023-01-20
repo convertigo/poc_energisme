@@ -305,13 +305,13 @@ testOnBorrow: true
       		el.setAttribute("type", "null");
       	}
       }'
-  ↓Test_Case_all [core.TestCase]: 
+  ↓Test_Case_all_sites [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1672914161795]: 
       description: limit
       value: 20
     ↓filter_condition [variables.TestCaseVariable-1673887820776]: 
       description: filter_condition
-  ↓Test_Case_subset [core.TestCase]: 
+  ↓Test_Case_sites_subset [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1673888105771]: 
       description: limit
       value: 20
