@@ -71,6 +71,13 @@
     ↓jElement_1 [steps.ElementStep-1674228765392]: 
       expression: date
       nodeName: date
+    ↓Field [steps.JsonFieldStep-1674229727241]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: total
   ↓jElse [steps.ElseStep-1674227287529]: 
     ↓Element [steps.XMLElementStep-1673276546338]: 
       nodeName: chartType

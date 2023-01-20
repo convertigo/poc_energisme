@@ -83,6 +83,13 @@
     ↓jElement_1 [steps.ElementStep-1674228736522]: 
       expression: date
       nodeName: date
+    ↓Field [steps.JsonFieldStep-1674229705200]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: total
   ↓jElse [steps.ElseStep-1674225997403]: 
     ↓jSimpleSource [steps.SimpleSourceStep-1673020236601]: 
       sourceDefinition: 

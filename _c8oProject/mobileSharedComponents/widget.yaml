@@ -682,21 +682,9 @@ scriptContent:
                       	min-height: 300px;
                       	max-height: 100%;
                       '
-            ↓Chart1 [ngx.components.UIDynamicElement-1673605849683]: 
-              beanData: |
-                '{
-                 "ionBean": "Charts",
-                 "data": "script:(this.local[''response'']?.data != undefined) ? this.local[''response'']?.data : {}",
-                 "datasets": "plain",
-                 "labels": "script:(this.local[''response'']?.labels != undefined) ? this.local[''response'']?.label : []",
-                 "Options": "script:(this.local[''response'']?.chartOptions != undefined) ? this.local[''response'']?.chartOptions : {}",
-                 "ChartType": "script:(this.local[''response'']?.chartType != undefined) ? this.local[''response'']?.chartType : ''''"
-                }'
-              tagName: canvas
             ↓Directive [ngx.components.UIControlDirective-1674133916532]: 
-              directiveExpression: this.local['response'] == undefined || this.local['response'].length == 0
+              directiveExpression: this.local['response'] == undefined || this.local['response'].length == 0 else elseBlock
               directiveName: If
-              isEnabled: false
               ↓Spinner [ngx.components.UIDynamicElement-1674133971273]: 
                 beanData: '{"ionBean":"Spinner"}'
                 tagName: ion-spinner
@@ -705,6 +693,20 @@ scriptContent:
               identifier: elseBlock
               isEnabled: false
               tagName: div
+            ↓Tag [ngx.components.UIElement-1674230377720]: 
+              identifier: elseBlock
+              tagName: ng-template
+              ↓Chart1 [ngx.components.UIDynamicElement-1673605849683]: 
+                beanData: |
+                  '{
+                   "ionBean": "Charts",
+                   "data": "script:(this.local[''response'']?.data != undefined) ? this.local[''response'']?.data : {}",
+                   "datasets": "plain",
+                   "labels": "script:(this.local[''response'']?.labels != undefined) ? this.local[''response'']?.label : []",
+                   "Options": "script:(this.local[''response'']?.chartOptions != undefined) ? this.local[''response'']?.chartOptions : {}",
+                   "ChartType": "script:(this.local[''response'']?.chartType != undefined) ? this.local[''response'']?.chartType : ''''"
+                  }'
+                tagName: canvas
           ↓Style [ngx.components.UIStyle-1669372291655]: 
             styleContent: 
               - xmlizable: 

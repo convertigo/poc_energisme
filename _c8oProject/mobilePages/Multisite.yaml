@@ -490,7 +490,8 @@ title: Multisite
                               			sites: JSON.stringify(page.local[''sitesToCall'']),
                               			agg_function: ''month'',
                               			label: '''',
-                              			synthese: page.syntheseSelected
+                              			synthese: page.syntheseSelected,
+                              			limit: 20
                               		}
                               		console.log(page.local["sitesToCall"])
                               		
@@ -599,7 +600,8 @@ title: Multisite
                                   			sites: JSON.stringify(page.local[''sitesToCall'']),
                                   			agg_function: ''month'',
                                   			label: '''',
-                                  			synthese: this.syntheseSelected
+                                  			synthese: this.syntheseSelected,
+                                  			limit: 20
                                   		}
                                   		
                                   		resolve();
@@ -963,6 +965,11 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:''
+                ↓aggregation [ngx.components.UIUseVariable-1674229560312]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
             ↓colChartMesConsommationsTotales [ngx.components.UIDynamicElement-1667818587543]: 
               beanData: |
                 '{

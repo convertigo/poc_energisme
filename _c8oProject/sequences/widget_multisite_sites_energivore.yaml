@@ -80,6 +80,13 @@
     ↓jElement_1 [steps.ElementStep-1674228775996]: 
       expression: date
       nodeName: date
+    ↓Field [steps.JsonFieldStep-1674229750976]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: total
   ↓jElse [steps.ElseStep-1674228152662]: 
     ↓Element [steps.XMLElementStep-1673860326495]: 
       nodeName: chartType
@@ -295,6 +302,26 @@
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: true
+      ↓Field [steps.JsonFieldStep-1674229754880]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: total
+      ↓calculTotalAndComputeDate [steps.SimpleStep-1674230147587]: 
+        expression: |
+          'String.prototype.replaceAll = function(search, replacement) {
+              var target = this;
+              return target.replace(new RegExp(search, ''g''), replacement);
+          };
+          
+          date_start = date_start.replaceAll(''-'', ''/'')
+          date_end = date_end.replaceAll(''-'', ''/'')
+          var date = date_start + '' - '' + date_end;'
+      ↓jElement_1 [steps.ElementStep-1674230147590]: 
+        expression: date
+        nodeName: date
     ↓jIf_2 [steps.IfStep-1673874245082]: 
       condition: synthese == 'elec'
       ↓Object [steps.JsonObjectStep-1673874245085]: 
@@ -521,6 +548,26 @@
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: true
+      ↓Field [steps.JsonFieldStep-1674229757476]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: total
+      ↓calculTotalAndComputeDate [steps.SimpleStep-1674230150174]: 
+        expression: |
+          'String.prototype.replaceAll = function(search, replacement) {
+              var target = this;
+              return target.replace(new RegExp(search, ''g''), replacement);
+          };
+          
+          date_start = date_start.replaceAll(''-'', ''/'')
+          date_end = date_end.replaceAll(''-'', ''/'')
+          var date = date_start + '' - '' + date_end;'
+      ↓jElement_1 [steps.ElementStep-1674230150177]: 
+        expression: date
+        nodeName: date
     ↓jIf_3 [steps.IfStep-1673874426254]: 
       condition: synthese == 'gaz'
       ↓Object [steps.JsonObjectStep-1673874426257]: 
@@ -747,6 +794,26 @@
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: true
+      ↓Field [steps.JsonFieldStep-1674229759148]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: total
+      ↓calculTotalAndComputeDate [steps.SimpleStep-1674230152895]: 
+        expression: |
+          'String.prototype.replaceAll = function(search, replacement) {
+              var target = this;
+              return target.replace(new RegExp(search, ''g''), replacement);
+          };
+          
+          date_start = date_start.replaceAll(''-'', ''/'')
+          date_end = date_end.replaceAll(''-'', ''/'')
+          var date = date_start + '' - '' + date_end;'
+      ↓jElement_1 [steps.ElementStep-1674230152898]: 
+        expression: date
+        nodeName: date
 ↓Object [steps.JsonObjectStep-1673860644285]: 
   isEnabled: false
   key: 
