@@ -43,6 +43,9 @@ scriptContent:
         							} else if(this.sequenceToCall == ".widget_conso" && this.isGauge == "false") {
         								date_start = this.getLastYear()[''date_start'']
         								date_end = this.getLastYear()[''date_end'']
+        							} else if(this.sequenceToCall == ''.widget_multisite_sites_energivore'') {
+        								date_start = this.getLastYear()[''date_start'']
+        								date_end = this.getLastYear()[''date_end'']
         							}
         							
         						} else {

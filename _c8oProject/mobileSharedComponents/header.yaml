@@ -34,6 +34,24 @@
            "IconIosName": "plain"
           }'
         tagName: ion-icon
+        ↓Style [ngx.components.UIStyle-1674228891697]: 
+          styleContent: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '	.class1669821781375:hover {
+                  		cursor: pointer;
+                  	}
+                  '
+        ↓Event [ngx.components.UIControlEvent-1674228950021]: 
+          ↓CallSequence [ngx.components.UIDynamicAction-1674228957878]: 
+            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.logout"}'
+            ↓RootPage [ngx.components.UIDynamicAction-1674228973574]: 
+              beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Login"}'
+            ↓PushPage [ngx.components.UIDynamicAction-1674229136796]: 
+              beanData: '{"ionBean":"PushPageAction","page":"plain:poc_energisme.Application.NgxApp.Login"}'
+              isEnabled: false
       ↓Label [ngx.components.UIDynamicElement-1669822059801]: 
         beanData: '{"ionBean":"Label"}'
         tagName: ion-label

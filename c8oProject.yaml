@@ -2,7 +2,7 @@
 ↓poc_energisme [core.Project]: 
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
-  version: 0.1.23
+  version: 0.1.24
   ↓groups_sites [connectors.FullSyncConnector]: 🗏 connectors/groups_sites.yaml
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
@@ -18,6 +18,7 @@
   ↓getUsersList [sequences.GenericSequence]: 🗏 sequences/getUsersList.yaml
   ↓heatmap_sample [sequences.GenericSequence]: 🗏 sequences/heatmap_sample.yaml
   ↓insertGroupSites [sequences.GenericSequence]: 🗏 sequences/insertGroupSites.yaml
+  ↓logout [sequences.GenericSequence]: 🗏 sequences/logout.yaml
   ↓monosite_conso_month [sequences.GenericSequence]: 🗏 sequences/monosite_conso_month.yaml
   ↓monosite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/monosite_conso_total_between.yaml
   ↓multisite_conso_month [sequences.GenericSequence]: 🗏 sequences/multisite_conso_month.yaml

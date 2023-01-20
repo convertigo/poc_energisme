@@ -70,6 +70,19 @@
           - SmartType: 
             - ↑mode: PLAIN
             - →→: Manque de donnée
+    ↓calculTotalAndComputeDate [steps.SimpleStep-1674228736519]: 
+      expression: |
+        'String.prototype.replaceAll = function(search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, ''g''), replacement);
+        };
+        
+        date_start = date_start.replaceAll(''-'', ''/'')
+        date_end = date_end.replaceAll(''-'', ''/'')
+        var date = date_start + '' - '' + date_end;'
+    ↓jElement_1 [steps.ElementStep-1674228736522]: 
+      expression: date
+      nodeName: date
   ↓jElse [steps.ElseStep-1674225997403]: 
     ↓jSimpleSource [steps.SimpleSourceStep-1673020236601]: 
       sourceDefinition: 

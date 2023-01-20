@@ -617,6 +617,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           '
 ↓AppEvent [ngx.components.UIAppEvent-1671704865293]: 
   appEvent: onAppInit
+  isEnabled: false
   ↓SetGlobal [ngx.components.UIDynamicAction-1671704879959]: 
     beanData: |
       '{
