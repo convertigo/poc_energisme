@@ -404,12 +404,14 @@ title: Multisite
                             		
                             		console.log("selectall")
                             		console.log(page.selectAll)
-                            		page.local[''sequenceParams''] = {
-                            			date_start: ''2021-01-01'',
-                            			date_end: ''2022-12-01'',
+                            		page.global[''sequenceParams''] = {
+                            			date_start: page.global[''date_start''],
+                            			date_end: page.global[''date_end''],
                             			sites: JSON.stringify(page.local[''sitesToCall'']),
                             			agg_function: ''month'',
-                            			label: ''''
+                            			label: '''',
+                            			synthese: page.syntheseSelected,
+                            			limit: 20
                             		}
                             		console.log(page.local["sitesToCall"])
                             		resolve();
