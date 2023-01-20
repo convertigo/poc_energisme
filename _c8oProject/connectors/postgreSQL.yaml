@@ -22,7 +22,7 @@ testOnBorrow: true
   sqlQuery: |
     'SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
-    WHERE s.typology is not null
+    WHERE s.typology is null
     {{filter_condition}};'
   handlers: 
     →: |
@@ -279,6 +279,8 @@ testOnBorrow: true
     	inner join {{sensor_mapping_table}} sm
     	on rd.uuid = sm.sensor_id
     	and rd."label" = sm."label"
+    	and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    	and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     	{{filter_condition}}
     	group by site_id)
     select conso_by_site.avg_conso_gaz, conso_by_site.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
@@ -306,6 +308,20 @@ testOnBorrow: true
       value: 20
     ↓filter_condition [variables.TestCaseVariable-1673887820776]: 
       description: filter_condition
+    ↓raw_data_table [variables.TestCaseVariable-1674226342256]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674226342258]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
+    ↓site_table [variables.TestCaseVariable-1674226342260]: 
+      description: site_table
+      value: convertigo_poc.site
+    ↓date_start [variables.TestCaseVariable-1674226342262]: 
+      description: date_start
+      value: 2021-06-01
+    ↓date_end [variables.TestCaseVariable-1674226342264]: 
+      description: date_end
+      value: 2022-12-31
   ↓Test_Case_subset [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1673888105771]: 
       description: limit
@@ -313,6 +329,20 @@ testOnBorrow: true
     ↓filter_condition [variables.TestCaseVariable-1673888105777]: 
       description: filter_condition
       value: AND sm.site_id IN (CAST('7626' AS BIGINT))
+    ↓raw_data_table [variables.TestCaseVariable-1674226345346]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1674226345348]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
+    ↓site_table [variables.TestCaseVariable-1674226345350]: 
+      description: site_table
+      value: convertigo_poc.site
+    ↓date_start [variables.TestCaseVariable-1674226345352]: 
+      description: date_start
+      value: 2021-06-01
+    ↓date_end [variables.TestCaseVariable-1674226345354]: 
+      description: date_end
+      value: 2022-12-31
   ↓limit [variables.RequestableVariable-1672914161801]: 
     description: limit
   ↓raw_data_table [variables.RequestableVariable-1673535887851]: 
@@ -325,3 +355,7 @@ testOnBorrow: true
   ↓site_table [variables.RequestableVariable-1674050025108]: 
     description: site_table
     value: ${poc_energisme.sites_table}
+  ↓date_start [variables.RequestableVariable-1674226333164]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1674226333166]: 
+    description: date_end
