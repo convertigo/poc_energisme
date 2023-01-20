@@ -279,7 +279,7 @@ testOnBorrow: true
     	inner join {{sensor_mapping_table}} sm
     	on rd.uuid = sm.sensor_id
     	and rd."label" = sm."label"
-    	and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    	where rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     	and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     	{{filter_condition}}
     	group by site_id)
