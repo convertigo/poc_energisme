@@ -958,11 +958,6 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
-                ↓refresh [ngx.components.UIUseVariable-1673604021228]: 
-                  varValue: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:false
                 ↓sequenceMarker [ngx.components.UIUseVariable-1673604021230]: 
                   varValue: 
                     - xmlizable: 
@@ -1014,11 +1009,6 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
-                ↓refresh [ngx.components.UIUseVariable-1673517316345]: 
-                  varValue: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:false
                 ↓sequenceMarker [ngx.components.UIUseVariable-1673517316347]: 
                   varValue: 
                     - xmlizable: 
@@ -1190,11 +1180,6 @@ title: Multisite
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                       - MobileSmartSourceType: script:'false'
-                ↓refresh [ngx.components.UIUseVariable-1673861229040]: 
-                  varValue: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: script:false
                 ↓sequenceMarker [ngx.components.UIUseVariable-1673861229042]: 
                   varValue: 
                     - xmlizable: 
