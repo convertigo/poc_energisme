@@ -196,6 +196,9 @@ Multisite view
 <td>aggregation</td><td></td>
 </tr>
 <tr>
+<td>displayTotalOnly</td><td></td>
+</tr>
+<tr>
 <td>isGauge</td><td>To determine if widget is a gauge widget. true or false (string)</td>
 </tr>
 <tr>

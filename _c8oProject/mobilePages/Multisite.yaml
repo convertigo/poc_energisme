@@ -166,9 +166,9 @@ title: Multisite
                       →: |
                         '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                         		console.log("update params")
-                        		page.local[''sequenceParams''] = {
-                        			date_start: ''2021-01-01'',
-                        			date_end: ''2022-12-01'',
+                        		page.global[''sequenceParams''] = {
+                        			date_start: page.global[''date_start''],
+                        			date_end: page.global[''date_end''],
                         			sites: JSON.stringify(page.local[''sitesToCall'']),
                         			agg_function: ''month'',
                         			label: '''',
@@ -1469,14 +1469,14 @@ title: Multisite
       '{
        "ionBean": "SetGlobalAction",
        "Property": "plain:date_start",
-       "Value": "script:this.getWeekDate()[''date_start'']"
+       "Value": "script:''''"
       }'
   ↓SetGlobal1 [ngx.components.UIDynamicAction-1674037548935]: 
     beanData: |
       '{
        "ionBean": "SetGlobalAction",
        "Property": "plain:date_end",
-       "Value": "script:this.getWeekDate()[''date_end'']"
+       "Value": "script:''''"
       }'
   ↓SetGlobal2 [ngx.components.UIDynamicAction-1674038507624]: 
     beanData: |

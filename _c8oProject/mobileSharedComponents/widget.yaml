@@ -9,6 +9,7 @@ scriptContent:
         	public showDatePicker = false;
         	public date = [];
         	public selectAggregation = ''month'';
+        	public showSpinner = "false";
         	/*End_c8o_CompDeclaration*/
         /*Begin_c8o_CompConstructor*/
         		/*End_c8o_CompConstructor*/
@@ -46,29 +47,120 @@ scriptContent:
         							} else if(this.sequenceToCall == ''.widget_multisite_sites_energivore'') {
         								date_start = this.getLastYear()[''date_start'']
         								date_end = this.getLastYear()[''date_end'']
+        							} else if(this.isHeatmap == "true") {
+        								date_start = "2021-01-01"
+        								date_end = "2022-12-31"
+        								// date_start = this.getLastMonth()[''date_start'']
+        								// date_end = this.getLastMonth()[''date_end'']
         							}
         							
         						} else {
-        							date_start = changes[key].currentValue[''date_start''];
-        							date_end = changes[key].currentValue[''date_end'']
+        							if(changes[key].previousValue[''date_start''].length == 0 && changes[key].previousValue[''date_end''] == 0) {
+        								if(this.sequenceToCall == ".widget_conso_total") {
+        									date_start = this.getLastTwoYears()[''date_start''];
+        									date_end = this.getLastTwoYears()[''date_end'']
+        									// changes[key].currentValue[''date_start''] = this.getLastYear()[''date_start'']
+        									// changes[key].currentValue[''date_end''] = this.getLastYear()[''date_end'']
+        								console.log(changes[key].currentValue)
+        								} else if (this.isGauge == "true") {
+        									date_start = this.getLastTwoMonths()[''date_start'']
+        									date_end = this.getLastTwoMonths()[''date_end'']
+        									// changes[key].currentValue[''date_start''] = this.getLastTwoYears()[''date_start'']
+        									// changes[key].currentValue[''date_end''] = this.getLastTwoYears()[''date_end'']
+        								} else if(this.sequenceToCall == ".widget_conso" && this.isGauge == "false") {
+        									date_start = this.getLastYear()[''date_start'']
+        									date_end = this.getLastYear()[''date_end'']
+        								} else if(this.sequenceToCall == ''.widget_multisite_sites_energivore'') {
+        									date_start = this.getLastYear()[''date_start'']
+        									date_end = this.getLastYear()[''date_end'']
+        								} else if(this.isHeatmap == "true") {
+        									date_start = "2021-01-01"
+        									date_end = "2022-12-31"
+        									//date_start = this.getLastMonth()[''date_start'']
+        									//date_end = this.getLastMonth()[''date_end'']
+        								}
+        							
+        								
+        							} else {
+        								if(changes[key].currentValue[''date_start''].length > 0 && changes[key].currentValue[''date_end''].length > 0) {
+        									date_start = changes[key].currentValue[''date_start''];
+        									date_end = changes[key].currentValue[''date_end'']
+        								} else {
+        									date_start = changes[key].previousValue[''date_start'']
+        									date_end = changes[key].previousValue[''date_end'']
+        								}
+        								
+        							}
+        							
         						}
         //						console.log("not first changes")
         //						console.log(changes[key])
         						var sequenceToCall = this.sequenceToCall + ''#'' + this.sequenceMarker
         						console.log(sequenceToCall)
         						if(changes[key].previousValue.__sequence != sequenceToCall) {
-        						setTimeout( () => {
         							changes[key].currentValue[''date_start''] = date_start;
         							changes[key].currentValue[''date_end''] = date_end;
+        						setTimeout( () => {
+        							
+        							this.showSpinner = "true";
         							this.call(sequenceToCall, changes[key].currentValue, null, 500, true).then( (resp) => {
         						    console.log(resp)
         							this.local[''response''] = resp;
+        							this.showSpinner = "false";
         							
         							})
         						}, 100)
         						}
         
         
+        					} else {
+        						if(changes[key].currentValue[''date_start''].length == 0 && changes[key].currentValue[''date_end''].length == 0) {
+        							
+        							var date_start;
+        							var date_end;
+        							
+        							if(this.sequenceToCall == ".widget_conso_total") {
+        								date_start = this.getLastTwoYears()[''date_start''];
+        								date_end = this.getLastTwoYears()[''date_end'']
+        								// changes[key].currentValue[''date_start''] = this.getLastYear()[''date_start'']
+        								// changes[key].currentValue[''date_end''] = this.getLastYear()[''date_end'']
+        								console.log(changes[key].currentValue)
+        							} else if (this.isGauge == "true") {
+        								date_start = this.getLastTwoMonths()[''date_start'']
+        								date_end = this.getLastTwoMonths()[''date_end'']
+        								// changes[key].currentValue[''date_start''] = this.getLastTwoYears()[''date_start'']
+        								// changes[key].currentValue[''date_end''] = this.getLastTwoYears()[''date_end'']
+        							} else if(this.sequenceToCall == ".widget_conso" && this.isGauge == "false") {
+        								date_start = this.getLastYear()[''date_start'']
+        								date_end = this.getLastYear()[''date_end'']
+        							} else if(this.sequenceToCall == ''.widget_multisite_sites_energivore'') {
+        								date_start = this.getLastYear()[''date_start'']
+        								date_end = this.getLastYear()[''date_end'']
+        							} else if(this.isHeatmap == "true") {
+        								date_start = "2021-01-01"
+        								date_end = "2022-12-31"
+        								//date_start = this.getLastMonth()[''date_start'']
+        								//date_end = this.getLastMonth()[''date_end'']
+        							}
+        							
+        						} else {
+        							date_start = changes[key].currentValue[''date_start''];
+        							date_end = changes[key].currentValue[''date_end'']
+        						}
+        						var sequenceToCall = this.sequenceToCall + ''#'' + this.sequenceMarker
+        						setTimeout( () => {
+        							changes[key].currentValue[''date_start''] = date_start;
+        							changes[key].currentValue[''date_end''] = date_end;
+        							this.showSpinner = "true";
+        							this.call(sequenceToCall, changes[key].currentValue, null, 500, true).then( (resp) => {
+        							    console.log(resp)
+        								this.local[''response''] = resp;
+        								this.showSpinner = "false";
+        								
+        							})
+        						}, 100)
+        						
+        						
         					}
         					
         					break;
@@ -91,6 +183,28 @@ scriptContent:
         /*Begin_c8o_CompFunction*/
         	String(string) {
         		return new String(string)
+        	}
+        	
+        	getLastMonth() {
+        		var today = new Date();
+        		var todayWeekMonth = today.getMonth() + 1;
+        		var todayWeekDay = today.getDate();
+        		var todayWeekYear = today.getFullYear();
+        		
+          		var lastMonth = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+          		
+          		var lastMonthMonth = lastMonth.getMonth() + 1;
+        		var lastMonthDay = lastMonth.getDate();
+        		var lastMonthYear = lastMonth.getFullYear();
+        
+        		var lastMonthDisplayPadded = ("0000" + lastMonthYear.toString()).slice(-4) + "-" + ("00" + lastMonthMonth.toString()).slice(-2) + "-" + ("00" + lastMonthDay.toString()).slice(-2);
+        		var todayWeekDisplayPadded = ("0000" + todayWeekYear.toString()).slice(-4) + "-" + ("00" + todayWeekMonth.toString()).slice(-2) + "-" + ("00" + todayWeekDay.toString()).slice(-2);
+        		var dates = {
+        			date_start: lastMonthDisplayPadded,
+        			date_end: todayWeekDisplayPadded
+        		}
+        		
+        		return dates;
         	}
         	getLastTwoMonths() {
         		var today = new Date();
@@ -565,10 +679,13 @@ scriptContent:
                         			sites: JSON.stringify(sites),
                         			agg_function: page.selectAggregation,
                         			label: '''',
-                        			synthese: synthese
+                        			synthese: synthese, 
+                        			limit: 20
                         		}
-                        		this.call(page.sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
+                        		this.showSpinner = "true"
+                        		this.call(page.sequenceToCall, sequenceParams, null, 500, true).then( (resp) => {
                         			page.local[''response''] = resp
+                        			this.showSpinner = "false"
                         		})
                         		// console.log("sequenceParams update")
                         		// console.log(page[''sequenceParams''])
@@ -586,7 +703,7 @@ scriptContent:
                        "position": "plain:top"
                       }'
   ↓Directive [ngx.components.UIControlDirective-1668518041273]: 
-    directiveExpression: '(this.local[''response'']?.total != undefined && this.local[''response'']?.total.length > 0) ? this.local[''response'']?.total : '''''
+    directiveExpression: this.local['response']?.total != undefined && this.local['response']?.total.length > 0  && this.displayTotalOnly == 'false'
     directiveName: If
     ↓rowTotal [ngx.components.UIDynamicElement-1668518082493]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
@@ -683,11 +800,22 @@ scriptContent:
                       	max-height: 100%;
                       '
             ↓Directive [ngx.components.UIControlDirective-1674133916532]: 
-              directiveExpression: this.local['response'] == undefined || this.local['response'].length == 0 else elseBlock
+              directiveExpression: this.showSpinner == 'true' else elseBlock
               directiveName: If
-              ↓Spinner [ngx.components.UIDynamicElement-1674133971273]: 
-                beanData: '{"ionBean":"Spinner"}'
-                tagName: ion-spinner
+              ↓Div [ngx.components.UIDynamicElement-1674232846976]: 
+                beanData: '{"ionBean":"DivTag"}'
+                tagName: div
+                ↓Spinner [ngx.components.UIDynamicElement-1674133971273]: 
+                  beanData: '{"ionBean":"Spinner"}'
+                  tagName: ion-spinner
+                ↓Style [ngx.components.UIStyle-1674232861517]: 
+                  styleContent: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                        →: |
+                          '	text-align: center;
+                          '
             ↓Div [ngx.components.UIDynamicElement-1674133992348]: 
               beanData: '{"ionBean":"DivTag"}'
               identifier: elseBlock
@@ -696,17 +824,48 @@ scriptContent:
             ↓Tag [ngx.components.UIElement-1674230377720]: 
               identifier: elseBlock
               tagName: ng-template
-              ↓Chart1 [ngx.components.UIDynamicElement-1673605849683]: 
-                beanData: |
-                  '{
-                   "ionBean": "Charts",
-                   "data": "script:(this.local[''response'']?.data != undefined) ? this.local[''response'']?.data : {}",
-                   "datasets": "plain",
-                   "labels": "script:(this.local[''response'']?.labels != undefined) ? this.local[''response'']?.label : []",
-                   "Options": "script:(this.local[''response'']?.chartOptions != undefined) ? this.local[''response'']?.chartOptions : {}",
-                   "ChartType": "script:(this.local[''response'']?.chartType != undefined) ? this.local[''response'']?.chartType : ''''"
-                  }'
-                tagName: canvas
+              ↓Directive [ngx.components.UIControlDirective-1674554917357]: 
+                directiveExpression: this.displayTotalOnly == 'true' else chartBlock
+                directiveName: If
+                ↓TextItem [ngx.components.UIDynamicElement-1674555801682]: 
+                  beanData: '{"ionBean":"TextItem"}'
+                  tagName: ion-text
+                  ↓Text1 [ngx.components.UIText-1674554996286]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:this.local['response']?.total
+                  ↓Style [ngx.components.UIStyle-1674555845370]: 
+                    styleContent: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            '	font-size: 35px;
+                            	color: rgb(64, 165, 167)
+                            '
+                ↓TextItem1 [ngx.components.UIDynamicElement-1674555810172]: 
+                  beanData: '{"ionBean":"TextItem"}'
+                  tagName: ion-text
+                  ↓Text [ngx.components.UIText-1674555810174]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: plain:MWh
+              ↓Tag [ngx.components.UIElement-1674554968876]: 
+                identifier: chartBlock
+                tagName: ng-template
+                ↓Chart1 [ngx.components.UIDynamicElement-1673605849683]: 
+                  beanData: |
+                    '{
+                     "ionBean": "Charts",
+                     "data": "script:(this.local[''response'']?.data != undefined) ? this.local[''response'']?.data : {}",
+                     "datasets": "plain",
+                     "labels": "script:(this.local[''response'']?.labels != undefined) ? this.local[''response'']?.label : []",
+                     "Options": "script:(this.local[''response'']?.chartOptions != undefined) ? this.local[''response'']?.chartOptions : {}",
+                     "ChartType": "script:(this.local[''response'']?.chartType != undefined) ? this.local[''response'']?.chartType : ''''"
+                    }'
+                  tagName: canvas
           ↓Style [ngx.components.UIStyle-1669372291655]: 
             styleContent: 
               - xmlizable: 
@@ -822,38 +981,50 @@ scriptContent:
            "SizeXs": "plain:12"
           }'
         tagName: ion-col
-        ↓UseSharedComponent [ngx.components.UIUseShared-1669299066340]: 
-          sharedcomponent: poc_energisme.Application.NgxApp.gauge_chart
-          ↓canvasWidth [ngx.components.UIUseVariable-1669299066343]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: plain:250
-          ↓needleValue [ngx.components.UIUseVariable-1669299066346]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.local[''response'']?.needleValue != undefined) ? this.local[''response'']?.needleValue : '''''
-          ↓centralLabel [ngx.components.UIUseVariable-1669299066349]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓options [ngx.components.UIUseVariable-1669299066352]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.local[''response'']?.options != undefined) ? this.local[''response'']?.options : {}'
-          ↓name [ngx.components.UIUseVariable-1669299066355]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓bottomLabel [ngx.components.UIUseVariable-1669299066358]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.local[''response'']?.bottomLabel != undefined) ? this.local[''response'']?.bottomLabel : '''''
+        ↓Directive [ngx.components.UIControlDirective-1674233723647]: 
+          directiveName: If
+          directiveSource: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: script:this.showSpinner == 'true' else elseBlock
+          ↓Spinner [ngx.components.UIDynamicElement-1674233772026]: 
+            beanData: '{"ionBean":"Spinner"}'
+            tagName: ion-spinner
+        ↓Tag [ngx.components.UIElement-1674233783192]: 
+          identifier: elseBlock
+          tagName: ng-template
+          ↓UseSharedComponent [ngx.components.UIUseShared-1669299066340]: 
+            sharedcomponent: poc_energisme.Application.NgxApp.gauge_chart
+            ↓canvasWidth [ngx.components.UIUseVariable-1669299066343]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:250
+            ↓needleValue [ngx.components.UIUseVariable-1669299066346]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:(this.local[''response'']?.needleValue != undefined) ? this.local[''response'']?.needleValue : '''''
+            ↓centralLabel [ngx.components.UIUseVariable-1669299066349]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:''
+            ↓options [ngx.components.UIUseVariable-1669299066352]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:(this.local[''response'']?.options != undefined) ? this.local[''response'']?.options : {}'
+            ↓name [ngx.components.UIUseVariable-1669299066355]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:''
+            ↓bottomLabel [ngx.components.UIUseVariable-1669299066358]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:(this.local[''response'']?.bottomLabel != undefined) ? this.local[''response'']?.bottomLabel : '''''
       ↓colInfos [ngx.components.UIDynamicElement-1669285145558]: 
         beanData: |
           '{
@@ -990,7 +1161,7 @@ scriptContent:
                   text-align: right;
                   '
   ↓Directive5 [ngx.components.UIControlDirective-1669388895762]: 
-    directiveExpression: this.isHeatmap == "true" && this.pageOwner.listen([String(this.sequenceToCall)])?.series != undefined
+    directiveExpression: this.isHeatmap == "true" && this.local['response']?.series != undefined
     directiveName: If
     ↓rowHeatmap [ngx.components.UIDynamicElement-1669388938583]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
@@ -1150,7 +1321,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:this.pageOwner.listen([String(this.sequenceToCall)])?.series
+                - MobileSmartSourceType: script:this.local['response']?.series
           ↓states [ngx.components.UIUseVariable-1669389080699]: 
             comment: Object
             varValue: 
@@ -1260,3 +1431,4 @@ scriptContent:
   comment: To determine if widget is a heatmap widget. true or false (string)
 ↓sequenceMarker [ngx.components.UICompVariable-1673517282405]: 
 ↓aggregation [ngx.components.UICompVariable-1673882707110]: 
+↓displayTotalOnly [ngx.components.UICompVariable-1674554877702]: 

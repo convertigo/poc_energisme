@@ -13,7 +13,7 @@
   output: false
 ↓Call_Transaction [steps.TransactionStep-1674135570556]: 
   sourceTransaction: poc_energisme.postgreSQL.widget_heatmap
-  ↓label [variables.StepVariable-1674135581672]: 
+  ↓synthese [variables.StepVariable-1674135581672]: 
   ↓date_start [variables.StepVariable-1674135581674]: 
   ↓date_end [variables.StepVariable-1674135581676]: 
   ↓sites [variables.StepVariable-1674135581678]: 
@@ -47,6 +47,8 @@
     		if(currentWeek == previousWeek) {
     			for(var j = 0; j < serie.length; j++) {
     				if(serie[j][''name''] == lines[i][''week'']) {
+    					log.warn("sum label")
+    					log.warn(lines[i][''sum_label''])
     					serie[j][''data''].push({
     						x: lines[i][''hour''],
     						y: lines[i][''sum_label'']
@@ -123,16 +125,25 @@
 ↓series [steps.ElementStep-1674206476041]: 
   expression: serie
   nodeName: series
-↓label [variables.RequestableVariable-1674135592085]: 
+↓synthese [variables.RequestableVariable-1674135592085]: 
 ↓date_start [variables.RequestableVariable-1674135592087]: 
 ↓date_end [variables.RequestableVariable-1674135592089]: 
 ↓sites [variables.RequestableVariable-1674135592091]: 
 ↓elec [core.TestCase]: 
-  ↓label [variables.TestCaseVariable-1674135611568]: 
+  ↓synthese [variables.TestCaseVariable-1674135611568]: 
     value: elec
   ↓date_start [variables.TestCaseVariable-1674135611570]: 
     value: 2021-01-01
   ↓date_end [variables.TestCaseVariable-1674135611572]: 
     value: 2022-12-31
   ↓sites [variables.TestCaseVariable-1674135611574]: 
-    value: '[14122, 7626]'
+    value: '[7626]'
+↓elec1 [core.TestCase]: 
+  ↓synthese [variables.TestCaseVariable-1674480673272]: 
+    value: elec
+  ↓date_start [variables.TestCaseVariable-1674480673275]: 
+    value: 2022-12-24
+  ↓date_end [variables.TestCaseVariable-1674480673278]: 
+    value: 2023-01-24
+  ↓sites [variables.TestCaseVariable-1674480673281]: 
+    value: '[7626]'

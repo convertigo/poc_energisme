@@ -6,6 +6,9 @@
       sourceTransaction: poc_energisme.postgreSQL.search_site
       ↓label [variables.StepVariable-1672760731478]: 
         description: label
+      ↓site_table [variables.StepVariable-1674552105494]: 
+        description: site_table
+        value: convertigo_poc.site
     ↓sites [steps.JsonArrayStep-1672760792000]: 
       key: 
         - xmlizable: 
@@ -46,6 +49,6 @@
 ↓label [variables.RequestableVariable-1672760940147]: 
 ↓label [core.TestCase]: 
   ↓label [variables.TestCaseVariable-1672760946417]: 
-    value: Bar
+    value: bar
 ↓noLabel [core.TestCase]: 
   ↓label [variables.TestCaseVariable-1672760999238]: 

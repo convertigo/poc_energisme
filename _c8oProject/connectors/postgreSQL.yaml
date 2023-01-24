@@ -60,10 +60,14 @@ testOnBorrow: true
     ↓label [variables.TestCaseVariable-1672757661610]: 
       description: label
       value: bar
+    ↓site_table [variables.TestCaseVariable-1674552135802]: 
+      description: site_table
+      value: convertigo_poc.site
   ↓label [variables.RequestableVariable-1672757643644]: 
     description: label
   ↓site_table [variables.RequestableVariable-1674049236006]: 
     description: site_table
+    value: ${poc_energisme.sites_table}
 ↓select_UUID [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT uuid, avg(val) AS moy_val, label
@@ -230,7 +234,7 @@ testOnBorrow: true
 ↓widget_heatmap [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
-    sum (val * sm.unit_coeff) filter (where sm."type"={label}) as sum_label,
+    sum (val * sm.unit_coeff) filter (where sm."type"={synthese}) as sum_label,
     date_part('week', ts) as week,
     date_part('hour', ts) as hour
     from {{raw_data_table}} rd
@@ -253,7 +257,7 @@ testOnBorrow: true
       	}
       }'
   ↓Test_Case [core.TestCase]: 
-    ↓label [variables.TestCaseVariable-1672914161769]: 
+    ↓synthese [variables.TestCaseVariable-1672914161769]: 
       value: elec
     ↓date_start [variables.TestCaseVariable-1672914161772]: 
       value: 2021-01-01
@@ -261,7 +265,7 @@ testOnBorrow: true
       value: 2022-12-31
     ↓sites [variables.TestCaseVariable-1672914161778]: 
       value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
-  ↓label [variables.RequestableVariable-1672914161781]: 
+  ↓synthese [variables.RequestableVariable-1672914161781]: 
   ↓date_start [variables.RequestableVariable-1672914161784]: 
   ↓date_end [variables.RequestableVariable-1672914161787]: 
   ↓sites [variables.RequestableVariable-1672914161790]: 
