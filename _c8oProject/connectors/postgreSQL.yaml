@@ -12,6 +12,17 @@ testOnBorrow: true
     WHERE s.id = CAST({site_id} AS BIGINT)
     AND s.typology is not null;
     
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''integer'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
   ↓Test_Case [core.TestCase]: 
     ↓site_id [variables.TestCaseVariable-1672148194989]: 
       value: 14069
