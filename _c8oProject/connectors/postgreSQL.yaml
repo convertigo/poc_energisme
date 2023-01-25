@@ -81,7 +81,7 @@ testOnBorrow: true
     'select 
     sum (rd.val * sm.unit_coeff) filter (where sm."type"=''gaz'') as sum_conso_gaz,
     sum (rd.val * sm.unit_coeff) filter (where sm."type"=''elec'')  as sum_conso_elec,
-    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''weather'')  as sum_dju,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''jdu'')  as sum_dju,
     {{agg_function}}  as agg_period
     from {{raw_data_table}} rd
     inner join {{sensor_mapping_table}} sm
@@ -194,7 +194,7 @@ testOnBorrow: true
     select
     sum (rd.val * sm.unit_coeff) filter (where sm."type"='gaz') as sum_conso_gaz,
     sum (rd.val * sm.unit_coeff) filter (where sm."type"='elec') as sum_conso_elec,
-    sum (rd.val * sm.unit_coeff) filter (where sm."label"='weather') as sum_dju
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='jdu') as sum_dju
     from {{raw_data_table}} rd
     inner join {{sensor_mapping_table}} sm
     on rd.uuid = sm.sensor_id
