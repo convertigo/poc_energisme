@@ -60,6 +60,43 @@ title: Monosite
                       		console.log(page.local[''sitesToCall''])
                       		resolve();
                       '
+              isEnabled: false
+            ↓CallSequence [ngx.components.UIDynamicAction-1674744903333]: 
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
+              ↓user [ngx.components.UIControlVariable-1674745056659]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓computeSitesList [ngx.components.UICustomAction-1674747382687]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                        		var sites = vars.sites;
+                        		console.log(sites)
+                        		var hash = Object.create(null);
+                        		sites.forEach(function (a, index) {
+                        		    var key = JSON.stringify(a);
+                        		    hash[key] = (hash[key] || 0) + 1;
+                        		    if (hash[key] >= 2) {
+                        		      sites.splice(index, 1)
+                        		        console.log(''count of 2 or more of '' + key);
+                        		        console.log(index)
+                        		    }
+                        		});
+                        		
+                        		console.log(sites)
+                        		resolve();
+                        '
+                ↓sites [ngx.components.UIControlVariable-1674747396312]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓Else_Handler [ngx.components.UIActionElseEvent-1674465681092]: 
       ↓SetLocal [ngx.components.UIDynamicAction-1674465687597]: 
         beanData: |
@@ -441,7 +478,73 @@ title: Monosite
       ↓rowEconomiesEnergiesAndConsoTotal [ngx.components.UIDynamicElement-1674465878599]: 
         beanData: '{"ionBean":"GridRow","Height":"plain"}'
         tagName: ion-row
-        ↓GridCol [ngx.components.UIDynamicElement-1674465878601]: 
+        ↓colSitesList [ngx.components.UIDynamicElement-1674744828522]: 
+          beanData: '{"ionBean":"GridCol"}'
+          tagName: ion-col
+          ↓Grid [ngx.components.UIDynamicElement-1674745437431]: 
+            beanData: '{"ionBean":"Grid"}'
+            tagName: ion-grid
+            ↓Form [ngx.components.UIForm-1674745462016]: 
+              identifier: formListSites
+              ↓RadioGroup [ngx.components.UIDynamicElement-1674745160564]: 
+                beanData: |
+                  '{
+                   "ionBean": "RadioGroup",
+                   "ControlName": "plain:name1674745160564",
+                   "Value": "script:(this.navParams.data.site_id != undefined) ? this.navParams.data.site_id : ''''"
+                  }'
+                tagName: ion-radio-group
+                ↓Directive [ngx.components.UIControlDirective-1674745088048]: 
+                  directiveItemName: site
+                  directiveSource: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓GridRow [ngx.components.UIDynamicElement-1674745545064]: 
+                    beanData: '{"ionBean":"GridRow"}'
+                    tagName: ion-row
+                    ↓GridCol [ngx.components.UIDynamicElement-1674745545066]: 
+                      beanData: '{"ionBean":"GridCol"}'
+                      tagName: ion-col
+                      ↓FormItem [ngx.components.UIDynamicElement-1674745572007]: 
+                        beanData: '{"ionBean":"FormItem"}'
+                        tagName: ion-item
+                        ↓RadioButton [ngx.components.UIDynamicElement-1674745167763]: 
+                          beanData: '{"ionBean":"RadioButton","Value":"script:site.id"}'
+                          tagName: ion-radio
+                        ↓Text [ngx.components.UIText-1674745221033]: 
+                          textValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: script:site.name
+                ↓Event [ngx.components.UIControlEvent-1674746355552]: 
+                  attrName: (ionChange)
+                  eventName: ionChange
+                  ↓pushSitesToCall [ngx.components.UICustomAction-1674746431746]: 
+                    actionValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                            		var value = event.detail.value;
+                            		console.log(value)
+                            		page.local[''sitesToCall''] = [];
+                            		page.local[''sitesToCall''].push(value)
+                            		page.global[''sequenceParams''] = {
+                            			date_start: page.global[''date_start''],
+                            			date_end: page.global[''date_end''],
+                            			sites: JSON.stringify(page.local[''sitesToCall'']),
+                            			agg_function: ''month'',
+                            			label: '''',
+                            			synthese: page.syntheseSelected,
+                            			limit: 20
+                            		}
+                            		resolve();
+                            '
+                    ↓site [ngx.components.UIControlVariable-1674746452661]: 
+                      isEnabled: false
+        ↓colChartMesEconomiesDenergiesAndConsoTotales [ngx.components.UIDynamicElement-1674465878601]: 
           beanData: '{"ionBean":"GridCol"}'
           tagName: ion-col
           ↓Grid [ngx.components.UIDynamicElement-1674466052976]: 
@@ -552,7 +655,7 @@ title: Monosite
                   directiveExpression: this.local['refresh'] != true
                   directiveName: If
                   isEnabled: false
-        ↓GridCol1 [ngx.components.UIDynamicElement-1674465878607]: 
+        ↓colChart [ngx.components.UIDynamicElement-1674465878607]: 
           beanData: '{"ionBean":"GridCol"}'
           tagName: ion-col
           ↓Grid [ngx.components.UIDynamicElement-1674468251984]: 
@@ -620,6 +723,72 @@ title: Monosite
       ↓rowEconomiesElecAndConsoElec [ngx.components.UIDynamicElement-1674468891313]: 
         beanData: '{"ionBean":"GridRow","Height":"plain"}'
         tagName: ion-row
+        ↓colSitesList [ngx.components.UIDynamicElement-1674750720754]: 
+          beanData: '{"ionBean":"GridCol"}'
+          tagName: ion-col
+          ↓Grid [ngx.components.UIDynamicElement-1674750720757]: 
+            beanData: '{"ionBean":"Grid"}'
+            tagName: ion-grid
+            ↓Form [ngx.components.UIForm-1674750720760]: 
+              identifier: formListSites
+              ↓RadioGroup [ngx.components.UIDynamicElement-1674750720763]: 
+                beanData: |
+                  '{
+                   "ionBean": "RadioGroup",
+                   "ControlName": "plain:name1674745160564",
+                   "Value": "script:(this.navParams.data.site_id != undefined) ? this.navParams.data.site_id : ''''"
+                  }'
+                tagName: ion-radio-group
+                ↓Directive [ngx.components.UIControlDirective-1674750720766]: 
+                  directiveItemName: site
+                  directiveSource: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓GridRow [ngx.components.UIDynamicElement-1674750720769]: 
+                    beanData: '{"ionBean":"GridRow"}'
+                    tagName: ion-row
+                    ↓GridCol [ngx.components.UIDynamicElement-1674750720772]: 
+                      beanData: '{"ionBean":"GridCol"}'
+                      tagName: ion-col
+                      ↓FormItem [ngx.components.UIDynamicElement-1674750720775]: 
+                        beanData: '{"ionBean":"FormItem"}'
+                        tagName: ion-item
+                        ↓RadioButton [ngx.components.UIDynamicElement-1674750720778]: 
+                          beanData: '{"ionBean":"RadioButton","Value":"script:site.id"}'
+                          tagName: ion-radio
+                        ↓Text [ngx.components.UIText-1674750720781]: 
+                          textValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: script:site.name
+                ↓Event [ngx.components.UIControlEvent-1674750720784]: 
+                  attrName: (ionChange)
+                  eventName: ionChange
+                  ↓pushSitesToCall [ngx.components.UICustomAction-1674750720787]: 
+                    actionValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                            		var value = event.detail.value;
+                            		console.log(value)
+                            		page.local[''sitesToCall''] = [];
+                            		page.local[''sitesToCall''].push(value)
+                            		page.global[''sequenceParams''] = {
+                            			date_start: page.global[''date_start''],
+                            			date_end: page.global[''date_end''],
+                            			sites: JSON.stringify(page.local[''sitesToCall'']),
+                            			agg_function: ''month'',
+                            			label: '''',
+                            			synthese: page.syntheseSelected,
+                            			limit: 20
+                            		}
+                            		resolve();
+                            '
+                    ↓site [ngx.components.UIControlVariable-1674750720790]: 
+                      isEnabled: false
         ↓colEconomiesElecAndConsoElec [ngx.components.UIDynamicElement-1674468891315]: 
           beanData: '{"ionBean":"GridCol"}'
           tagName: ion-col
@@ -975,6 +1144,72 @@ title: Monosite
       ↓rowMesEconomiesDeGazAndDJU [ngx.components.UIDynamicElement-1674557215555]: 
         beanData: '{"ionBean":"GridRow"}'
         tagName: ion-row
+        ↓colSitesList [ngx.components.UIDynamicElement-1674750726702]: 
+          beanData: '{"ionBean":"GridCol"}'
+          tagName: ion-col
+          ↓Grid [ngx.components.UIDynamicElement-1674750726705]: 
+            beanData: '{"ionBean":"Grid"}'
+            tagName: ion-grid
+            ↓Form [ngx.components.UIForm-1674750726708]: 
+              identifier: formListSites
+              ↓RadioGroup [ngx.components.UIDynamicElement-1674750726711]: 
+                beanData: |
+                  '{
+                   "ionBean": "RadioGroup",
+                   "ControlName": "plain:name1674745160564",
+                   "Value": "script:(this.navParams.data.site_id != undefined) ? this.navParams.data.site_id : ''''"
+                  }'
+                tagName: ion-radio-group
+                ↓Directive [ngx.components.UIControlDirective-1674750726714]: 
+                  directiveItemName: site
+                  directiveSource: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓GridRow [ngx.components.UIDynamicElement-1674750726717]: 
+                    beanData: '{"ionBean":"GridRow"}'
+                    tagName: ion-row
+                    ↓GridCol [ngx.components.UIDynamicElement-1674750726720]: 
+                      beanData: '{"ionBean":"GridCol"}'
+                      tagName: ion-col
+                      ↓FormItem [ngx.components.UIDynamicElement-1674750726723]: 
+                        beanData: '{"ionBean":"FormItem"}'
+                        tagName: ion-item
+                        ↓RadioButton [ngx.components.UIDynamicElement-1674750726726]: 
+                          beanData: '{"ionBean":"RadioButton","Value":"script:site.id"}'
+                          tagName: ion-radio
+                        ↓Text [ngx.components.UIText-1674750726729]: 
+                          textValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: script:site.name
+                ↓Event [ngx.components.UIControlEvent-1674750726732]: 
+                  attrName: (ionChange)
+                  eventName: ionChange
+                  ↓pushSitesToCall [ngx.components.UICustomAction-1674750726735]: 
+                    actionValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                            		var value = event.detail.value;
+                            		console.log(value)
+                            		page.local[''sitesToCall''] = [];
+                            		page.local[''sitesToCall''].push(value)
+                            		page.global[''sequenceParams''] = {
+                            			date_start: page.global[''date_start''],
+                            			date_end: page.global[''date_end''],
+                            			sites: JSON.stringify(page.local[''sitesToCall'']),
+                            			agg_function: ''month'',
+                            			label: '''',
+                            			synthese: page.syntheseSelected,
+                            			limit: 20
+                            		}
+                            		resolve();
+                            '
+                    ↓site [ngx.components.UIControlVariable-1674750726738]: 
+                      isEnabled: false
         ↓colChartMesEconomiesDeGaz [ngx.components.UIDynamicElement-1674557215557]: 
           beanData: '{"ionBean":"GridCol"}'
           tagName: ion-col
