@@ -1,0 +1,67 @@
+↓Call_Sequence [steps.SequenceStep-1674741470849]: 
+  sourceSequence: poc_energisme.getGroupsOf
+  ↓user [variables.StepVariable-1674741478011]: 
+↓sites [steps.JsonArrayStep-1674741578830]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: sites
+  ↓Iterator [steps.IteratorStep-1674741527382]: 
+    sourceDefinition: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1674741470849
+          - java.lang.String: 
+            - ↑value: ./document/Array/Object
+    ↓Iterator [steps.IteratorStep-1674741555052]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1674741527382
+            - java.lang.String: 
+              - ↑value: ./Array/Object
+      ↓Object [steps.JsonObjectStep-1674741595432]: 
+        ↓id [steps.JsonFieldStep-1674741603510]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: id
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1674741555052
+                  - java.lang.String: 
+                    - ↑value: ./Field/text()
+        ↓id1 [steps.JsonFieldStep-1674741614635]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: name
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1674741555052
+                  - java.lang.String: 
+                    - ↑value: ./Field1/text()
+↓user [variables.RequestableVariable-1674741480608]: 
+↓Test_Case [core.TestCase]: 
+  ↓user [variables.TestCaseVariable-1674741485159]: 
+    value: admin

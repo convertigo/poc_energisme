@@ -387,6 +387,8 @@ title: Multisite
                 beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.detail.checked"}'
                 ↓CallSequence [ngx.components.UIDynamicAction-1673607199164]: 
                   beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllSitesId"}'
+                  comment: before accordion update
+                  isEnabled: false
                   ↓updateParams [ngx.components.UICustomAction-1673607159791]: 
                     actionValue: 
                       - xmlizable: 
@@ -426,6 +428,53 @@ title: Multisite
                         - xmlizable: 
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                           - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllSitesId","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                ↓CallSequence1 [ngx.components.UIDynamicAction-1674743425644]: 
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
+                  ↓user [ngx.components.UIControlVariable-1674743436289]: 
+                    comment: new variable
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓updateParams [ngx.components.UICustomAction-1674743453991]: 
+                    actionValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                            		var sites = vars.sites;
+                            		/*
+                            		for(var i = 0; i < sites.length; i++) {
+                            			if(page.local["sitesToCall"].indexOf(sites[i]) == "-1") {
+                            				page.local["sitesToCall"].push(sites[i])
+                            			}
+                            		}
+                            		*/
+                            		
+                            		for(var i = 0; i < sites.length; i++) {
+                            			page.local["sitesToCall"].push(sites[i][''id''])
+                            		}
+                            		
+                            		console.log("selectall")
+                            		console.log(page.selectAll)
+                            		page.global[''sequenceParams''] = {
+                            			date_start: page.global[''date_start''],
+                            			date_end: page.global[''date_end''],
+                            			sites: JSON.stringify(page.local[''sitesToCall'']),
+                            			agg_function: ''month'',
+                            			label: '''',
+                            			synthese: page.syntheseSelected,
+                            			limit: 20
+                            		}
+                            		console.log(page.local["sitesToCall"])
+                            		resolve();
+                            '
+                    ↓sites [ngx.components.UIControlVariable-1674743453994]: 
+                      varValue: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                 ↓Else_Handler [ngx.components.UIActionElseEvent-1673624113356]: 
                   ↓SetLocal [ngx.components.UIDynamicAction-1673624121518]: 
                     beanData: |
