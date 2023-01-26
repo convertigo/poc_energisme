@@ -10,11 +10,24 @@ testOnBorrow: true
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
     WHERE s.id = CAST({site_id} AS BIGINT)
-    AND s.typology is not null;
+    AND s.typology is null;
     
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''integer'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
   ↓Test_Case [core.TestCase]: 
     ↓site_id [variables.TestCaseVariable-1672148194989]: 
-      value: 14069
+      value: 7731
+    ↓site_table [variables.TestCaseVariable-1674652186354]: 
+      value: convertigo_poc.site
   ↓site_id [variables.RequestableVariable-1672148077216]: 
   ↓site_table [variables.RequestableVariable-1674048853473]: 
     value: ${poc_energisme.sites_table}

@@ -8,8 +8,9 @@
     	agg_function = agg_function_str + " || ''_'' || date_part(''month'', rd.ts)"
     } else if(agg_function == "week") {
     	agg_function = agg_function_str + " || ''_'' || date_part(''week'', rd.ts)"
+    } else if(agg_function == "day") {
+    	agg_function = "rd.ts::date"
     }
-    
     log.warn(agg_function)'
 ↓buildCastStrings [steps.SimpleStep-1673013061619]: 
   expression: |
@@ -121,6 +122,10 @@
             - →→: bar
     ↓jIf [steps.IfStep-1673864434286]: 
       condition: synthese == 'global'
+      ↓initTotals [steps.SimpleStep-1674566226344]: 
+        expression: |
+          var totalGaz = 0;
+          var totalElec = 0;
       ↓data [steps.JsonObjectStep-1673864462070]: 
         key: 
           - xmlizable: 
@@ -477,6 +482,18 @@
                               - ↑value: 1673864462181
                             - java.lang.String: 
                               - ↑value: ./sum_conso_elec/text()
+                  ↓jSimpleSource [steps.SimpleSourceStep-1674566372841]: 
+                    sourceDefinition: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                        - com.twinsoft.convertigo.beans.common.XMLVector: 
+                          - java.lang.String: 
+                            - ↑value: 1673864462181
+                          - java.lang.String: 
+                            - ↑value: ./sum_conso_elec/text()
+                    variableName: elec
+                  ↓addTotal [steps.SimpleStep-1674566395872]: 
+                    expression: totalElec = totalElec + Number(elec);
             ↓Field_1 [steps.JsonFieldStep-1673864462196]: 
               key: 
                 - xmlizable: 
@@ -598,6 +615,18 @@
                               - ↑value: 1673864462220
                             - java.lang.String: 
                               - ↑value: ./sum_conso_gaz/text()
+                  ↓jSimpleSource [steps.SimpleSourceStep-1674566283499]: 
+                    sourceDefinition: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                        - com.twinsoft.convertigo.beans.common.XMLVector: 
+                          - java.lang.String: 
+                            - ↑value: 1673864462220
+                          - java.lang.String: 
+                            - ↑value: ./sum_conso_gaz/text()
+                    variableName: gaz
+                  ↓addTotal [steps.SimpleStep-1674566308882]: 
+                    expression: totalGaz = totalGaz + Number(gaz);
             ↓Field_1 [steps.JsonFieldStep-1673864462235]: 
               key: 
                 - xmlizable: 
@@ -807,7 +836,9 @@
           
           date_start = date_start.replaceAll(''-'', ''/'')
           date_end = date_end.replaceAll(''-'', ''/'')
-          var date = date_start + '' - '' + date_end;'
+          var date = date_start + '' - '' + date_end;
+          
+          var total = totalElec + totalGaz'
       ↓jElement_1 [steps.ElementStep-1673864462292]: 
         expression: date
         nodeName: date
@@ -818,8 +849,18 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: total
     ↓jIf_1 [steps.IfStep-1673864662604]: 
       condition: synthese == 'elec'
+      ↓initTotals [steps.SimpleStep-1674566004576]: 
+        expression: |
+          var totalGaz = 0;
+          var totalElec = 0;
       ↓data [steps.JsonObjectStep-1673864681023]: 
         key: 
           - xmlizable: 
@@ -1177,6 +1218,18 @@
                               - ↑value: 1673864681134
                             - java.lang.String: 
                               - ↑value: ./sum_conso_elec/text()
+                  ↓jSimpleSource [steps.SimpleSourceStep-1674565973876]: 
+                    sourceDefinition: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                        - com.twinsoft.convertigo.beans.common.XMLVector: 
+                          - java.lang.String: 
+                            - ↑value: 1673864681134
+                          - java.lang.String: 
+                            - ↑value: ./sum_conso_elec/text()
+                    variableName: elec
+                  ↓addTotal [steps.SimpleStep-1674566034478]: 
+                    expression: totalElec = totalElec + Number(elec);
             ↓Field_1 [steps.JsonFieldStep-1673864681149]: 
               key: 
                 - xmlizable: 
@@ -1519,8 +1572,18 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: totalElec
     ↓jIf_2 [steps.IfStep-1673864825857]: 
       condition: synthese == 'gaz'
+      ↓initTotals [steps.SimpleStep-1674565665259]: 
+        expression: |
+          var totalGaz = 0;
+          var totalElec = 0;
       ↓data [steps.JsonObjectStep-1673864825860]: 
         key: 
           - xmlizable: 
@@ -2000,6 +2063,18 @@
                               - ↑value: 1673864826010
                             - java.lang.String: 
                               - ↑value: ./sum_conso_gaz/text()
+                  ↓jSimpleSource [steps.SimpleSourceStep-1674565741923]: 
+                    sourceDefinition: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                        - com.twinsoft.convertigo.beans.common.XMLVector: 
+                          - java.lang.String: 
+                            - ↑value: 1673864826010
+                          - java.lang.String: 
+                            - ↑value: ./sum_conso_gaz/text()
+                    variableName: gaz
+                  ↓addTotal [steps.SimpleStep-1674565764114]: 
+                    expression: totalGaz = totalGaz + Number(gaz);
             ↓Field_1 [steps.JsonFieldStep-1673864826025]: 
               key: 
                 - xmlizable: 
@@ -2220,6 +2295,12 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: totalGaz
 ↓data [steps.JsonObjectStep-1673271580179]: 
   isEnabled: false
   key: 
@@ -2933,6 +3014,32 @@
   ↓agg_function [variables.TestCaseVariable-1674224092518]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1674224092520]: 
+    value: global
+↓monositeGaz [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1674566660313]: 
+    description: date_start
+    value: 2022-01-24
+  ↓date_end [variables.TestCaseVariable-1674566660315]: 
+    description: date_end
+    value: 2023-01-24
+  ↓sites [variables.TestCaseVariable-1674566660317]: 
+    value: '[7626]'
+  ↓agg_function [variables.TestCaseVariable-1674566660319]: 
+    value: month
+  ↓synthese [variables.TestCaseVariable-1674566660321]: 
+    value: gaz
+↓monositeGlobalDaily [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1674573271406]: 
+    description: date_start
+    value: 2022-01-24
+  ↓date_end [variables.TestCaseVariable-1674573271409]: 
+    description: date_end
+    value: 2023-01-24
+  ↓sites [variables.TestCaseVariable-1674573271412]: 
+    value: '[7626]'
+  ↓agg_function [variables.TestCaseVariable-1674573271415]: 
+    value: day
+  ↓synthese [variables.TestCaseVariable-1674573271418]: 
     value: global
 ↓multisiteElec [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673864691345]: 

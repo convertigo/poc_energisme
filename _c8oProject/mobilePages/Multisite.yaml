@@ -225,7 +225,12 @@ title: Multisite
       beanData: '{"ionBean":"GridRow"}'
       tagName: ion-row
       ↓colGroups [ngx.components.UIDynamicElement-1671532769020]: 
-        beanData: '{"ionBean":"GridCol"}'
+        beanData: |
+          '{
+           "ionBean": "GridCol",
+           "SizeLg": "plain:2",
+           "SizeMd": "plain:2"
+          }'
         tagName: ion-col
         ↓Directive [ngx.components.UIControlDirective-1671532808708]: 
           directiveName: If
@@ -438,6 +443,7 @@ title: Multisite
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+          isEnabled: false
           ↓GenericItem [ngx.components.UIDynamicElement-1671532899643]: 
             beanData: '{"ionBean":"GenericItem"}'
             tagName: ion-item
@@ -877,6 +883,7 @@ title: Multisite
                     beanData: '{"ionBean":"Icon","IconName":"plain:trash"}'
                     tagName: ion-icon
         ↓Style [ngx.components.UIStyle-1673876021109]: 
+          isEnabled: false
           styleContent: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -901,6 +908,920 @@ title: Multisite
                   max-height: 70% !important;
                   overflow-y: scroll;
                   '
+        ↓AccordionGroup [ngx.components.UIDynamicElement-1674729096452]: 
+          beanData: '{"ionBean":"AccordionGroup"}'
+          tagName: ion-accordion-group
+          ↓Directive [ngx.components.UIControlDirective-1674729096455]: 
+            directiveItemName: group
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+            ↓Accordion [ngx.components.UIDynamicElement-1674729096458]: 
+              beanData: '{"ionBean":"Accordion","Value":"script:group.name"}'
+              tagName: ion-accordion
+              ↓GenericItem [ngx.components.UIDynamicElement-1674729096461]: 
+                beanData: '{"ionBean":"GenericItem","IonSlot":"plain:header"}'
+                tagName: ion-item
+                ↓Label [ngx.components.UIDynamicElement-1674729096464]: 
+                  beanData: '{"ionBean":"Label"}'
+                  isEnabled: false
+                  tagName: ion-label
+                  ↓Text [ngx.components.UIText-1674729096467]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:group.name
+                ↓CheckBox [ngx.components.UIDynamicElement-1674729633478]: 
+                  beanData: |
+                    '{
+                     "ionBean": "CheckBox",
+                     "ControlName": "plain:name1671532909462",
+                     "Checked": "script:this.selectAll",
+                     "Value": "script:group.name"
+                    }'
+                  tagName: ion-checkbox
+                  ↓selectAllOnChange [ngx.components.UIControlEvent-1674729633481]: 
+                    attrName: (ionChange)
+                    eventName: ionChange
+                    ↓IfElse [ngx.components.UIDynamicIf-1674729633484]: 
+                      beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && parent.out.detail.checked"}'
+                      ↓CallSequence [ngx.components.UIDynamicAction-1674729633487]: 
+                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                        comment: works before accordion update
+                        isEnabled: false
+                        ↓group_name [ngx.components.UIControlVariable-1674729633490]: 
+                          comment: new variable
+                          varValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: script:stack.root.out.detail.value
+                        ↓pushSitesToLocal [ngx.components.UICustomAction-1674729633493]: 
+                          actionValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                  		console.log(props)
+                                  		console.log(event)
+                                  		var sites = vars.sites;
+                                  		/*
+                                  		for(var i = 0; i < sites.length; i++) {
+                                  			if(page.local["sitesToCall"].indexOf(sites[i]) == "-1") {
+                                  				page.local["sitesToCall"].push(sites[i])
+                                  			}
+                                  		}
+                                  		*/
+                                  		
+                                  		for(var i = 0; i < sites.length; i++) {
+                                  			page.local["sitesToCall"].push(sites[i])
+                                  		}
+                                  		
+                                  		console.log("after loop")
+                                  		page.global[''sequenceParams''] = {
+                                  			date_start: page.global[''date_start''],
+                                  			date_end: page.global[''date_end''],
+                                  			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                  			agg_function: ''month'',
+                                  			label: '''',
+                                  			synthese: page.syntheseSelected,
+                                  			limit: 20
+                                  		}
+                                  		console.log(page.local["sitesToCall"])
+                                  		
+                                  		resolve();
+                                  '
+                          ↓sites [ngx.components.UIControlVariable-1674729633496]: 
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                          ↓CallSequence [ngx.components.UIDynamicAction-1674729633499]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                            isEnabled: false
+                            ↓date_start [ngx.components.UIControlVariable-1674729633502]: 
+                              comment: date_start
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:2021-01-01
+                            ↓date_end [ngx.components.UIControlVariable-1674729633505]: 
+                              comment: date_end
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:2022-01-01
+                            ↓sites [ngx.components.UIControlVariable-1674729633508]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:JSON.stringify(this.local['sitesToCall'])
+                            ↓agg_function [ngx.components.UIControlVariable-1674729633511]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:week
+                            ↓chartType [ngx.components.UIControlVariable-1674729633514]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:bar
+                            ↓CustomAction [ngx.components.UICustomAction-1674729633517]: 
+                              actionValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                      		/*console.log("native")
+                                      		console.log(page.all_poc_energisme_widget)
+                                      		//@ts-ignore
+                                      		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                      		//@ts-ignore
+                                      		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                      		//@ts-ignore
+                                      		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                      		page.all_poc_energisme_widget.forEach( (x) => {
+                                      			console.log("x")
+                                      			console.log(x)
+                                      		})*/
+                                      		page.ref.detectChanges();
+                                      		page.local[''refresh''] = true;
+                                      		setTimeout( () => {
+                                      			page.local[''refresh''] = false
+                                      			page.ref.detectChanges();
+                                      		})
+                                      		resolve();
+                                      '
+                      ↓pushSitesToLocal [ngx.components.UICustomAction-1674730560717]: 
+                        actionValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                		console.log(props)
+                                		console.log(event)
+                                		var sites = vars.sites;
+                                		/*
+                                		for(var i = 0; i < sites.length; i++) {
+                                			if(page.local["sitesToCall"].indexOf(sites[i]) == "-1") {
+                                				page.local["sitesToCall"].push(sites[i])
+                                			}
+                                		}
+                                		*/
+                                		
+                                		for(var i = 0; i < sites.length; i++) {
+                                			page.local["sitesToCall"].push(sites[i][''id''])
+                                		}
+                                		
+                                		console.log("after loop")
+                                		page.global[''sequenceParams''] = {
+                                			date_start: page.global[''date_start''],
+                                			date_end: page.global[''date_end''],
+                                			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                			agg_function: ''month'',
+                                			label: '''',
+                                			synthese: page.syntheseSelected,
+                                			limit: 20
+                                		}
+                                		console.log(page.local["sitesToCall"])
+                                		
+                                		resolve();
+                                '
+                        comment: from accordion update
+                        ↓sites [ngx.components.UIControlVariable-1674730560720]: 
+                          varValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: script:stack.root.scope.group.sites
+                        ↓CallSequence [ngx.components.UIDynamicAction-1674730560723]: 
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                          isEnabled: false
+                          ↓date_start [ngx.components.UIControlVariable-1674730560726]: 
+                            comment: date_start
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: plain:2021-01-01
+                          ↓date_end [ngx.components.UIControlVariable-1674730560729]: 
+                            comment: date_end
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: plain:2022-01-01
+                          ↓sites [ngx.components.UIControlVariable-1674730560732]: 
+                            comment: new variable
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: script:JSON.stringify(this.local['sitesToCall'])
+                          ↓agg_function [ngx.components.UIControlVariable-1674730560735]: 
+                            comment: new variable
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: plain:week
+                          ↓chartType [ngx.components.UIControlVariable-1674730560738]: 
+                            comment: new variable
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: plain:bar
+                          ↓CustomAction [ngx.components.UICustomAction-1674730560741]: 
+                            actionValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                  →: |
+                                    '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                    		/*console.log("native")
+                                    		console.log(page.all_poc_energisme_widget)
+                                    		//@ts-ignore
+                                    		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                    		//@ts-ignore
+                                    		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                    		//@ts-ignore
+                                    		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                    		page.all_poc_energisme_widget.forEach( (x) => {
+                                    			console.log("x")
+                                    			console.log(x)
+                                    		})*/
+                                    		page.ref.detectChanges();
+                                    		page.local[''refresh''] = true;
+                                    		setTimeout( () => {
+                                    			page.local[''refresh''] = false
+                                    			page.ref.detectChanges();
+                                    		})
+                                    		resolve();
+                                    '
+                      ↓Else_Handler [ngx.components.UIActionElseEvent-1674729633520]: 
+                        ↓Toast [ngx.components.UIDynamicAction-1674729633523]: 
+                          beanData: '{"ionBean":"ToastAction","message":"script:JSON.stringify(stack[''selectAllOnChange''].out.detail.checked)"}'
+                          isEnabled: false
+                        ↓IfElse [ngx.components.UIDynamicIf-1674729633526]: 
+                          beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll && !stack.root.out.detail.checked"}'
+                          ↓CallSequence [ngx.components.UIDynamicAction-1674729633529]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                            comment: before accordion update
+                            isEnabled: false
+                            ↓group_name [ngx.components.UIControlVariable-1674729633532]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:stack.root.out.detail.value
+                            ↓removeSitesToLocal [ngx.components.UICustomAction-1674729633535]: 
+                              actionValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                      		console.log(props)
+                                      		console.log(event)
+                                      		var sites = vars.sites;
+                                      		for(var i = 0; i < sites.length; i++) {
+                                      			if(page.local["sitesToCall"].indexOf(sites[i]) != "-1") {
+                                      				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i]), 1)
+                                      			}
+                                      		}
+                                      		
+                                      		console.log("after loop")
+                                      		console.log(page.local["sitesToCall"])
+                                      		page.global[''sequenceParams''] = {
+                                      			date_start: page.global[''date_start''],
+                                      			date_end: page.global[''date_end''],
+                                      			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                      			agg_function: ''month'',
+                                      			label: '''',
+                                      			synthese: this.syntheseSelected,
+                                      			limit: 20
+                                      		}
+                                      		
+                                      		resolve();
+                                      '
+                              ↓sites [ngx.components.UIControlVariable-1674729633538]: 
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                          ↓removeSitesToLocal [ngx.components.UICustomAction-1674738005790]: 
+                            actionValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                  →: |
+                                    '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                    		console.log(props)
+                                    		console.log(event)
+                                    		var sites = vars.sites;
+                                    		for(var i = 0; i < sites.length; i++) {
+                                    			if(page.local["sitesToCall"].indexOf(sites[i][''id'']) != "-1") {
+                                    				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i][''id'']), 1)
+                                    			}
+                                    		}
+                                    		
+                                    		console.log("after loop")
+                                    		console.log(page.local["sitesToCall"])
+                                    		page.global[''sequenceParams''] = {
+                                    			date_start: page.global[''date_start''],
+                                    			date_end: page.global[''date_end''],
+                                    			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                    			agg_function: ''month'',
+                                    			label: '''',
+                                    			synthese: this.syntheseSelected,
+                                    			limit: 20
+                                    		}
+                                    		
+                                    		resolve();
+                                    '
+                            ↓sites [ngx.components.UIControlVariable-1674738005793]: 
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:stack.root.scope.group.sites
+                          ↓Else_Handler [ngx.components.UIActionElseEvent-1674729633544]: 
+                            ↓If [ngx.components.UIDynamicAction-1674729633547]: 
+                              beanData: '{"ionBean":"IfAction","condition":"script:!this.selectAll && !stack.root.out.detail.checked"}'
+                              isEnabled: false
+                              ↓removeSitesToLocal [ngx.components.UICustomAction-1674729633550]: 
+                                actionValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                      →: |
+                                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                        		console.log(props)
+                                        		console.log(event)
+                                        		var sites = vars.sites;
+                                        		for(var i = 0; i < sites.length; i++) {
+                                        			if(page.local["sitesToCall"].indexOf(sites[i]) != "-1") {
+                                        				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i]), 1)
+                                        			}
+                                        		}
+                                        		
+                                        		console.log("after loop")
+                                        		console.log(page.local["sitesToCall"])
+                                        		/*
+                                        		page.local[''sequenceParams''] = {
+                                        			date_start: ''2021-01-01'',
+                                        			date_end: ''2022-12-01'',
+                                        			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                        			agg_function: ''month'',
+                                        			label: ''''
+                                        		}
+                                        		*/
+                                        		resolve();
+                                        '
+                                ↓sites [ngx.components.UIControlVariable-1674729633553]: 
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            ↓SetLocal [ngx.components.UIDynamicAction-1674729633556]: 
+                              beanData: |
+                                '{
+                                 "ionBean": "SetLocalAction",
+                                 "Property": "plain:sitesToCall",
+                                 "Value": "script:[]"
+                                }'
+                        ↓CallSequence [ngx.components.UIDynamicAction-1674729633559]: 
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                          isEnabled: false
+                          ↓group_name [ngx.components.UIControlVariable-1674729633562]: 
+                            comment: new variable
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: script:stack.root.out.detail.value
+                          ↓removeSitesToLocal [ngx.components.UICustomAction-1674729633565]: 
+                            actionValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                  →: |
+                                    '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                    		console.log(props)
+                                    		console.log(event)
+                                    		var sites = vars.sites;
+                                    		for(var i = 0; i < sites.length; i++) {
+                                    			if(page.local["sitesToCall"].indexOf(sites[i]) != "-1") {
+                                    				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i]), 1)
+                                    			}
+                                    		}
+                                    		
+                                    		console.log("after loop")
+                                    		console.log(page.local["sitesToCall"])
+                                    		page.local[''sequenceParams''] = {
+                                    			date_start: ''2021-01-01'',
+                                    			date_end: ''2022-12-01'',
+                                    			sites: page.local[''sitesToCall''],
+                                    			agg_function: ''month'',
+                                    			label: ''''
+                                    		}
+                                    		
+                                    		resolve();
+                                    '
+                            ↓sites [ngx.components.UIControlVariable-1674729633568]: 
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        ↓IfElse1 [ngx.components.UIDynamicIf-1674729633571]: 
+                          beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll"}'
+                          isEnabled: false
+                        ↓CustomAction [ngx.components.UICustomAction-1674729633574]: 
+                          actionValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                  		console.log("props")
+                                  		console.log(props)
+                                  		resolve();
+                                  '
+                          isEnabled: false
+                ↓Directive1 [ngx.components.UIControlDirective-1674729674760]: 
+                  directiveName: If
+                  directiveSource: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:group.name.includes('ad:')
+                  ↓Icon [ngx.components.UIDynamicElement-1674729674763]: 
+                    beanData: |
+                      '{
+                       "ionBean": "Icon",
+                       "IconName": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                       "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                      }'
+                    tagName: ion-icon
+                    ↓Style [ngx.components.UIStyle-1674729674766]: 
+                      styleContent: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                            →: |
+                              '	margin-left: 1.0416666666666667vw !important;
+                              	margin-right: 1.0416666666666667vw !important;
+                              '
+                ↓Directive2 [ngx.components.UIControlDirective-1674729709422]: 
+                  directiveName: If
+                  directiveSource: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:!group.name.includes('ad:')
+                  ↓Icon [ngx.components.UIDynamicElement-1674729709425]: 
+                    beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                    isEnabled: false
+                    tagName: ion-icon
+                ↓Text1 [ngx.components.UIText-1674729782410]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: 'script:(group.name.includes(''ad:'')) ? group.name.slice(3, group.length) + '' (''+ group.count + '')'' : group.name + '' (''+ group.count + '')'''
+              ↓ListContainer [ngx.components.UIDynamicElement-1674729096470]: 
+                beanData: '{"ionBean":"List","IonSlot":"plain:content"}'
+                tagName: ion-list
+                ↓Directive1 [ngx.components.UIControlDirective-1674729249601]: 
+                  directiveItemName: site
+                  directiveSource: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1674729096455}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  ↓ListItem [ngx.components.UIDynamicElement-1674729249607]: 
+                    beanData: '{"ionBean":"ListItem"}'
+                    tagName: ion-item
+                    ↓CheckBox [ngx.components.UIDynamicElement-1674729371481]: 
+                      beanData: |
+                        '{
+                         "ionBean": "CheckBox",
+                         "ControlName": "plain:name1671532909462",
+                         "Checked": "script:this.selectAll",
+                         "Value": "script:group.name"
+                        }'
+                      tagName: ion-checkbox
+                      ↓selectAllOnChange [ngx.components.UIControlEvent-1674729371484]: 
+                        attrName: (ionChange)
+                        eventName: ionChange
+                        ↓IfElse [ngx.components.UIDynamicIf-1674729371487]: 
+                          beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && parent.out.detail.checked"}'
+                          ↓CallSequence [ngx.components.UIDynamicAction-1674729371490]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                            comment: before accordion update
+                            isEnabled: false
+                            ↓group_name [ngx.components.UIControlVariable-1674729371493]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:stack.root.out.detail.value
+                            ↓pushSitesToLocal [ngx.components.UICustomAction-1674729371496]: 
+                              actionValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                      		console.log(props)
+                                      		console.log(event)
+                                      		var sites = vars.sites;
+                                      		/*
+                                      		for(var i = 0; i < sites.length; i++) {
+                                      			if(page.local["sitesToCall"].indexOf(sites[i]) == "-1") {
+                                      				page.local["sitesToCall"].push(sites[i])
+                                      			}
+                                      		}
+                                      		*/
+                                      		
+                                      		for(var i = 0; i < sites.length; i++) {
+                                      			page.local["sitesToCall"].push(sites[i])
+                                      		}
+                                      		
+                                      		console.log("after loop")
+                                      		page.global[''sequenceParams''] = {
+                                      			date_start: page.global[''date_start''],
+                                      			date_end: page.global[''date_end''],
+                                      			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                      			agg_function: ''month'',
+                                      			label: '''',
+                                      			synthese: page.syntheseSelected,
+                                      			limit: 20
+                                      		}
+                                      		console.log(page.local["sitesToCall"])
+                                      		
+                                      		resolve();
+                                      '
+                              ↓sites [ngx.components.UIControlVariable-1674729371499]: 
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                              ↓CallSequence [ngx.components.UIDynamicAction-1674729371502]: 
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                                isEnabled: false
+                                ↓date_start [ngx.components.UIControlVariable-1674729371505]: 
+                                  comment: date_start
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: plain:2021-01-01
+                                ↓date_end [ngx.components.UIControlVariable-1674729371508]: 
+                                  comment: date_end
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: plain:2022-01-01
+                                ↓sites [ngx.components.UIControlVariable-1674729371511]: 
+                                  comment: new variable
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: script:JSON.stringify(this.local['sitesToCall'])
+                                ↓agg_function [ngx.components.UIControlVariable-1674729371514]: 
+                                  comment: new variable
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: plain:week
+                                ↓chartType [ngx.components.UIControlVariable-1674729371517]: 
+                                  comment: new variable
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: plain:bar
+                                ↓CustomAction [ngx.components.UICustomAction-1674729371520]: 
+                                  actionValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                        →: |
+                                          '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                          		/*console.log("native")
+                                          		console.log(page.all_poc_energisme_widget)
+                                          		//@ts-ignore
+                                          		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                          		//@ts-ignore
+                                          		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                          		//@ts-ignore
+                                          		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                          		page.all_poc_energisme_widget.forEach( (x) => {
+                                          			console.log("x")
+                                          			console.log(x)
+                                          		})*/
+                                          		page.ref.detectChanges();
+                                          		page.local[''refresh''] = true;
+                                          		setTimeout( () => {
+                                          			page.local[''refresh''] = false
+                                          			page.ref.detectChanges();
+                                          		})
+                                          		resolve();
+                                          '
+                          ↓pushSitesToLocal [ngx.components.UICustomAction-1674738608219]: 
+                            actionValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                  →: |
+                                    '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                    		console.log(props)
+                                    		console.log(event)
+                                    		var sites = vars.sites;
+                                    		/*
+                                    		for(var i = 0; i < sites.length; i++) {
+                                    			if(page.local["sitesToCall"].indexOf(sites[i]) == "-1") {
+                                    				page.local["sitesToCall"].push(sites[i])
+                                    			}
+                                    		}
+                                    		*/
+                                    		
+                                    		for(var i = 0; i < sites.length; i++) {
+                                    			page.local["sitesToCall"].push(sites[i])
+                                    		}
+                                    		
+                                    		console.log("after loop")
+                                    		page.global[''sequenceParams''] = {
+                                    			date_start: page.global[''date_start''],
+                                    			date_end: page.global[''date_end''],
+                                    			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                    			agg_function: ''month'',
+                                    			label: '''',
+                                    			synthese: page.syntheseSelected,
+                                    			limit: 20
+                                    		}
+                                    		console.log(page.local["sitesToCall"])
+                                    		
+                                    		resolve();
+                                    '
+                            ↓sites [ngx.components.UIControlVariable-1674738608222]: 
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:[stack.root.scope.site.id]
+                            ↓CallSequence [ngx.components.UIDynamicAction-1674738608225]: 
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                              isEnabled: false
+                              ↓date_start [ngx.components.UIControlVariable-1674738608228]: 
+                                comment: date_start
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:2021-01-01
+                              ↓date_end [ngx.components.UIControlVariable-1674738608231]: 
+                                comment: date_end
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:2022-01-01
+                              ↓sites [ngx.components.UIControlVariable-1674738608234]: 
+                                comment: new variable
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: script:JSON.stringify(this.local['sitesToCall'])
+                              ↓agg_function [ngx.components.UIControlVariable-1674738608237]: 
+                                comment: new variable
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:week
+                              ↓chartType [ngx.components.UIControlVariable-1674738608240]: 
+                                comment: new variable
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:bar
+                              ↓CustomAction [ngx.components.UICustomAction-1674738608243]: 
+                                actionValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                      →: |
+                                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                        		/*console.log("native")
+                                        		console.log(page.all_poc_energisme_widget)
+                                        		//@ts-ignore
+                                        		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                        		//@ts-ignore
+                                        		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                        		//@ts-ignore
+                                        		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                        		page.all_poc_energisme_widget.forEach( (x) => {
+                                        			console.log("x")
+                                        			console.log(x)
+                                        		})*/
+                                        		page.ref.detectChanges();
+                                        		page.local[''refresh''] = true;
+                                        		setTimeout( () => {
+                                        			page.local[''refresh''] = false
+                                        			page.ref.detectChanges();
+                                        		})
+                                        		resolve();
+                                        '
+                          ↓Else_Handler [ngx.components.UIActionElseEvent-1674729371523]: 
+                            ↓Toast [ngx.components.UIDynamicAction-1674729371526]: 
+                              beanData: '{"ionBean":"ToastAction","message":"script:JSON.stringify(stack[''selectAllOnChange''].out.detail.checked)"}'
+                              isEnabled: false
+                            ↓IfElse [ngx.components.UIDynamicIf-1674729371529]: 
+                              beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll && !stack.root.out.detail.checked"}'
+                              ↓CallSequence [ngx.components.UIDynamicAction-1674729371532]: 
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                comment: before accordion update
+                                isEnabled: false
+                                ↓group_name [ngx.components.UIControlVariable-1674729371535]: 
+                                  comment: new variable
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: script:stack.root.out.detail.value
+                                ↓removeSitesToLocal [ngx.components.UICustomAction-1674729371538]: 
+                                  actionValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                        →: |
+                                          '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                          		console.log(props)
+                                          		console.log(event)
+                                          		var sites = vars.sites;
+                                          		for(var i = 0; i < sites.length; i++) {
+                                          			if(page.local["sitesToCall"].indexOf(sites[i]) != "-1") {
+                                          				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i]), 1)
+                                          			}
+                                          		}
+                                          		
+                                          		console.log("after loop")
+                                          		console.log(page.local["sitesToCall"])
+                                          		page.global[''sequenceParams''] = {
+                                          			date_start: page.global[''date_start''],
+                                          			date_end: page.global[''date_end''],
+                                          			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                          			agg_function: ''month'',
+                                          			label: '''',
+                                          			synthese: this.syntheseSelected,
+                                          			limit: 20
+                                          		}
+                                          		
+                                          		resolve();
+                                          '
+                                  ↓sites [ngx.components.UIControlVariable-1674729371541]: 
+                                    varValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                              ↓Toast [ngx.components.UIDynamicAction-1674729371544]: 
+                                beanData: '{"ionBean":"ToastAction","message":"plain:this.selectAll == true && !this.stack.root.out.detail.checked"}'
+                                isEnabled: false
+                              ↓removeSitesToLocal [ngx.components.UICustomAction-1674739232061]: 
+                                actionValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                      →: |
+                                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                        		console.log(props)
+                                        		console.log(event)
+                                        		var sites = vars.sites;
+                                        		for(var i = 0; i < sites.length; i++) {
+                                        			if(page.local["sitesToCall"].indexOf(sites[i][''id'']) != "-1") {
+                                        				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i][''id'']), 1)
+                                        			}
+                                        		}
+                                        		
+                                        		console.log("after loop")
+                                        		console.log(page.local["sitesToCall"])
+                                        		page.global[''sequenceParams''] = {
+                                        			date_start: page.global[''date_start''],
+                                        			date_end: page.global[''date_end''],
+                                        			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                        			agg_function: ''month'',
+                                        			label: '''',
+                                        			synthese: this.syntheseSelected,
+                                        			limit: 20
+                                        		}
+                                        		
+                                        		resolve();
+                                        '
+                                ↓sites [ngx.components.UIControlVariable-1674739232064]: 
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: script:stack.root.scope.group.sites
+                              ↓Else_Handler [ngx.components.UIActionElseEvent-1674729371547]: 
+                                ↓If [ngx.components.UIDynamicAction-1674729371550]: 
+                                  beanData: '{"ionBean":"IfAction","condition":"script:!this.selectAll && !stack.root.out.detail.checked"}'
+                                  isEnabled: false
+                                  ↓removeSitesToLocal [ngx.components.UICustomAction-1674729371553]: 
+                                    actionValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                          →: |
+                                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                            		console.log(props)
+                                            		console.log(event)
+                                            		var sites = vars.sites;
+                                            		for(var i = 0; i < sites.length; i++) {
+                                            			if(page.local["sitesToCall"].indexOf(sites[i]) != "-1") {
+                                            				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i]), 1)
+                                            			}
+                                            		}
+                                            		
+                                            		console.log("after loop")
+                                            		console.log(page.local["sitesToCall"])
+                                            		/*
+                                            		page.local[''sequenceParams''] = {
+                                            			date_start: ''2021-01-01'',
+                                            			date_end: ''2022-12-01'',
+                                            			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                            			agg_function: ''month'',
+                                            			label: ''''
+                                            		}
+                                            		*/
+                                            		resolve();
+                                            '
+                                    ↓sites [ngx.components.UIControlVariable-1674729371556]: 
+                                      varValue: 
+                                        - xmlizable: 
+                                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                ↓SetLocal [ngx.components.UIDynamicAction-1674729371559]: 
+                                  beanData: |
+                                    '{
+                                     "ionBean": "SetLocalAction",
+                                     "Property": "plain:sitesToCall",
+                                     "Value": "script:[]"
+                                    }'
+                            ↓CallSequence [ngx.components.UIDynamicAction-1674729371562]: 
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                              isEnabled: false
+                              ↓group_name [ngx.components.UIControlVariable-1674729371565]: 
+                                comment: new variable
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: script:stack.root.out.detail.value
+                              ↓removeSitesToLocal [ngx.components.UICustomAction-1674729371568]: 
+                                actionValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                      →: |
+                                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                        		console.log(props)
+                                        		console.log(event)
+                                        		var sites = vars.sites;
+                                        		for(var i = 0; i < sites.length; i++) {
+                                        			if(page.local["sitesToCall"].indexOf(sites[i]) != "-1") {
+                                        				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i]), 1)
+                                        			}
+                                        		}
+                                        		
+                                        		console.log("after loop")
+                                        		console.log(page.local["sitesToCall"])
+                                        		page.local[''sequenceParams''] = {
+                                        			date_start: ''2021-01-01'',
+                                        			date_end: ''2022-12-01'',
+                                        			sites: page.local[''sitesToCall''],
+                                        			agg_function: ''month'',
+                                        			label: ''''
+                                        		}
+                                        		
+                                        		resolve();
+                                        '
+                                ↓sites [ngx.components.UIControlVariable-1674729371571]: 
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            ↓IfElse1 [ngx.components.UIDynamicIf-1674729371574]: 
+                              beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll"}'
+                              isEnabled: false
+                            ↓CustomAction [ngx.components.UICustomAction-1674729371577]: 
+                              actionValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                      		console.log("props")
+                                      		console.log(props)
+                                      		resolve();
+                                      '
+                              isEnabled: false
+                    ↓Label [ngx.components.UIDynamicElement-1674729249610]: 
+                      beanData: '{"ionBean":"Label"}'
+                      tagName: ion-label
+                      ↓Text [ngx.components.UIText-1674729249613]: 
+                        textValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1674729249601},{"priority":1674729096455}],"path":"?.name","prefix":"","suffix":"","custom":"","useCustom":false}}
       ↓colCharts [ngx.components.UIDynamicElement-1668692254992]: 
         beanData: |
           '{

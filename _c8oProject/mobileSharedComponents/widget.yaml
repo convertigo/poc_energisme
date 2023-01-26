@@ -28,6 +28,7 @@ scriptContent:
         						
         						var date_start;
         						var date_end;
+        						var agg_function;
         						// case its first time we select a group with sites, calculate the good range date for depending on the widget type
         						if(changes[key].previousValue[''date_start''] == undefined) {
         							if(this.sequenceToCall == ".widget_conso_total") {
@@ -52,7 +53,16 @@ scriptContent:
         								date_end = "2022-12-31"
         								// date_start = this.getLastMonth()[''date_start'']
         								// date_end = this.getLastMonth()[''date_end'']
+        							} 
+        							
+        							/*
+        							if(this.sequenceMarker == "consoHebdo") {
+        								agg_function = "day"
+        							} else {
+        								agg_function = changes[key].previousValue[''agg_function'']
         							}
+        							*/
+        							
         							
         						} else {
         							if(changes[key].previousValue[''date_start''].length == 0 && changes[key].previousValue[''date_end''] == 0) {
@@ -79,6 +89,14 @@ scriptContent:
         									//date_start = this.getLastMonth()[''date_start'']
         									//date_end = this.getLastMonth()[''date_end'']
         								}
+        								
+        								/*
+        								if(this.sequenceMarker == "consoHebdo") {
+        									agg_function = "day"
+        								} else {
+        									agg_function = changes[key].previousValue[''agg_function'']
+        								}
+        								*/
         							
         								
         							} else {
@@ -90,6 +108,15 @@ scriptContent:
         									date_end = changes[key].previousValue[''date_end'']
         								}
         								
+        								/*
+        								if(this.sequenceMarker == "consoHebdo") {
+        									agg_function = "day"
+        								} else {
+        									agg_function = changes[key].previousValue[''agg_function'']
+        								}
+        								*/
+        								
+        								
         							}
         							
         						}
@@ -100,6 +127,7 @@ scriptContent:
         						if(changes[key].previousValue.__sequence != sequenceToCall) {
         							changes[key].currentValue[''date_start''] = date_start;
         							changes[key].currentValue[''date_end''] = date_end;
+        							//changes[key].currentValue[''agg_function''] = agg_function;
         						setTimeout( () => {
         							
         							this.showSpinner = "true";
@@ -142,15 +170,31 @@ scriptContent:
         								//date_start = this.getLastMonth()[''date_start'']
         								//date_end = this.getLastMonth()[''date_end'']
         							}
-        							
+        							/*
+        							if(this.sequenceMarker == "consoHebdo") {
+        								agg_function = "day"
+        							} else {
+        								agg_function = changes[key].previousValue[''agg_function'']
+        							} 
+        							*/
         						} else {
         							date_start = changes[key].currentValue[''date_start''];
         							date_end = changes[key].currentValue[''date_end'']
+        							
+        							/*
+        							if(this.sequenceMarker == "consoHebdo") {
+        								agg_function = "day"
+        							} else {
+        								agg_function = changes[key].currentValue[''agg_function'']
+        							}
+        							*/
+        							
         						}
         						var sequenceToCall = this.sequenceToCall + ''#'' + this.sequenceMarker
         						setTimeout( () => {
         							changes[key].currentValue[''date_start''] = date_start;
         							changes[key].currentValue[''date_end''] = date_end;
+        							// changes[key].currentValue[''agg_function''] = agg_function;
         							this.showSpinner = "true";
         							this.call(sequenceToCall, changes[key].currentValue, null, 500, true).then( (resp) => {
         							    console.log(resp)
@@ -1227,89 +1271,7 @@ scriptContent:
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: |
-                    'script:{
-                        heatmap: {
-                                shadeIntensity: 0,
-                                radius: 0,
-                                useFillColorAsStroke: true,
-                                colorScale: {
-                                  ranges: [{
-                                      from: 0,
-                                      to: 0.2,
-                                      name: ''low'',
-                                      color: ''#01FD2E''
-                                    },
-                                    {
-                                      from: 0.2,
-                                      to: 0.3,
-                                      name: ''medium 1'',
-                                      color: ''#01E529''
-                                    },
-                                    {
-                                      from: 0.3,
-                                      to: 0.4,
-                                      name: ''medium 2'',
-                                      color: ''#2ED000''
-                                    },
-                                    {
-                                      from: 0.4,
-                                      to: 0.5,
-                                      name: ''medium 3'',
-                                      color: ''#45BA00''
-                                    },
-                                    {
-                                        from: 0.5,
-                                        to: 0.6,
-                                        name: ''mediuem 4'',
-                                        color: ''#5CA200''
-                                    },
-                                    {
-                                        from: 0.6,
-                                        to: 0.7,
-                                        name: ''extreme'',
-                                        color: ''#738A00''
-                                    },
-                                    {
-                                        from: 0.7,
-                                        to: 0.8,
-                                        name: ''extreme 2'',
-                                        color: ''#8B7300''
-                                    },
-                                    {
-                                        from: 0.8,
-                                        to: 0.9,
-                                        name: ''extreme 3'',
-                                        color: ''#A25C00''
-                                    },
-                                    {
-                                        from: 0.9,
-                                        to: 1.0,
-                                        name: ''extreme 4'',
-                                        color: ''#B94500''
-                                    },
-                                    {
-                                        from: 1.0,
-                                        to: 1.3,
-                                        name: ''extreme 5'',
-                                        color: ''#D02E00''
-                                    },
-                                    {
-                                        from: 1.3,
-                                        to: 1.5,
-                                        name: ''extreme 6'',
-                                        color: ''#E71600''
-                                    },
-                                    {
-                                        from: 1.5,
-                                        to: 3,
-                                        name: ''extreme 7'',
-                                        color: ''#FE0000''
-                                    },
-                                  ]
-                                }
-                              }
-                    }'
+                - MobileSmartSourceType: script:this.local['response']?.plotOptions
           ↓responsive [ngx.components.UIUseVariable-1669389080695]: 
             comment: Object
             varValue: 

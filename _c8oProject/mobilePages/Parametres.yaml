@@ -1118,7 +1118,7 @@ title: Title for Parametres
                                   		for(var i = 0; i < sites.length; i++) {
                                   			console.log("in loop")
                                   			console.log(sites[i])
-                                  			page.local["sitesFromGroup"].push(sites[i])	
+                                  			page.local["sitesFromGroup"].push(sites[i][''id''])	
                                   		}
                                   		
                                   		page.c8o.log.debug("### sitesFromGroups after selected one or multiple group")
@@ -1202,8 +1202,8 @@ title: Title for Parametres
                                       		console.log(page.local["sitesFromGroup"])
                                       		
                                       		for(var i = 0; i < sites.length; i++) {
-                                      			if(page.local["sitesFromGroup"].includes(sites[i])) {
-                                      				page.local["sitesFromGroup"].splice(page.local["sitesFromGroup"].indexOf(sites[i]), 1)
+                                      			if(page.local["sitesFromGroup"].includes(sites[i][''id''])) {
+                                      				page.local["sitesFromGroup"].splice(page.local["sitesFromGroup"].indexOf(sites[i][''id'']), 1)
                                       			}
                                       		}
                                       		resolve();

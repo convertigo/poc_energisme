@@ -1,3 +1,4 @@
+responseExpiryDate: daily,10:00:00
 ↓Input_variables [steps.InputVariablesStep-1672750961667]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1672750932597]: 
   isEnabled: false
@@ -135,6 +136,7 @@
                   - java.lang.String: 
                     - ↑value: ./document/couchdb_output/docs/item
             ↓Object [steps.JsonObjectStep-1672751340970]: 
+              isEnabled: false
               ↓Field [steps.JsonFieldStep-1672751347194]: 
                 key: 
                   - xmlizable: 
@@ -172,7 +174,61 @@
                       - java.lang.String: 
                         - ↑value: 1672752751268
                       - java.lang.String: 
-                        - ↑value: ./document/sites/Field
+                        - ↑value: ./document/sites/Field1
+            ↓Call_Sequence [steps.SequenceStep-1674724664510]: 
+              sourceSequence: poc_energisme.getSitesByGroupName
+              ↓group_name [variables.StepVariable-1674724664513]: 
+                sourceDefinition: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                    - com.twinsoft.convertigo.beans.common.XMLVector: 
+                      - java.lang.String: 
+                        - ↑value: 1672751314313
+                      - java.lang.String: 
+                        - ↑value: ./group/text()
+            ↓Object_1 [steps.JsonObjectStep-1674724767042]: 
+              ↓Field [steps.JsonFieldStep-1674724772725]: 
+                key: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: PLAIN
+                      - →→: name
+                value: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: SOURCE
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1672751314313
+                        - java.lang.String: 
+                          - ↑value: ./group/text()
+              ↓Array [steps.JsonArrayStep-1674724779167]: 
+                key: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: PLAIN
+                      - →→: sites
+                ↓Iterator [steps.IteratorStep-1674724790421]: 
+                  sourceDefinition: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1674724664510
+                        - java.lang.String: 
+                          - ↑value: ./document/sites
+                  ↓Copy [steps.XMLCopyStep-1674724805994]: 
+                    sourceDefinition: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                        - com.twinsoft.convertigo.beans.common.XMLVector: 
+                          - java.lang.String: 
+                            - ↑value: 1674724790421
+                          - java.lang.String: 
+                            - ↑value: ./Object_1
   ↓jElse [steps.ElseStep-1672751046775]: 
     ↓Call_Sequence [steps.SequenceStep-1672751065495]: 
       sourceSequence: poc_energisme.getGroupsOf
