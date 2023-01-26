@@ -67,6 +67,17 @@ testOnBorrow: true
     FROM {{site_table}} s 
     WHERE LOWER(nom) LIKE '%{{label}}%'
     AND s.typology is not null;
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      function onXmlGenerated() {
+      	xpath = context.getXpathApi();
+          root = dom.getDocumentElement();
+      	els = xpath.selectNodeIterator(root, "//*[@type=''integer'' and .='''']");
+      	while((el=els.nextNode()) != null){
+      		el.setAttribute("type", "null");
+      	}
+      }'
   ↓Test_Case [core.TestCase]: 
     ↓label [variables.TestCaseVariable-1672757661610]: 
       description: label
