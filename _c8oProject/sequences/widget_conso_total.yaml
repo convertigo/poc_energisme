@@ -3,6 +3,7 @@
   expression: |
     'log.warn(sites)
     sites = JSON.parse(sites)
+    var sitesLength = sites.length;
     var string = "";
     for(var i = 0; i < sites.length; i++) {
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
@@ -1112,11 +1113,23 @@
               - java.lang.String: 
                 - ↑value: ./document/sql_output/row/sum_conso_gaz/text()
         variableName: gaz
+      ↓dju [steps.SimpleSourceStep-1675075219480]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673276348359
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row/sum_dju/text()
+        variableName: dju
       ↓calculTotalAndComputeDate [steps.SimpleStep-1673864101266]: 
         expression: |
           '//var total  = Math.round( (Number(gaz) + Number(elec)) * 100) / 100;
           // var total  = Number(gaz) + Number(elec)
-          total = String(gaz)
+          log.warn(sitesLength)
+          log.warn("sites length")
+          total = (sitesLength.length > 1) ? String(gaz) : String(dju)
           
           String.prototype.replaceAll = function(search, replacement) {
               var target = this;
@@ -1182,6 +1195,17 @@
     value: '[7991, 7626]'
   ↓synthese [variables.TestCaseVariable-1673863588997]: 
     value: global
+↓monositeGaz [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675075291383]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675075291385]: 
+    description: date_end
+    value: 2023-12-01
+  ↓sites [variables.TestCaseVariable-1675075291387]: 
+    value: '[7731]'
+  ↓synthese [variables.TestCaseVariable-1675075291389]: 
+    value: gaz
 ↓Test_Case [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673276404568]: 
     description: date_start

@@ -139,10 +139,10 @@ testOnBorrow: true
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928243853]: 
       description: date_start
-      value: 2020-01-01
+      value: 2022-01-30
     ↓date_end [variables.TestCaseVariable-1672928243856]: 
       description: date_end
-      value: 2022-12-01
+      value: 2023-01-30
     ↓sites [variables.TestCaseVariable-1672928243859]: 
       value: CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928243862]: 

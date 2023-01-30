@@ -1288,7 +1288,7 @@ title: Monosite
             beanData: '{"ionBean":"Grid"}'
             tagName: ion-grid
             ↓rowConsoDeGaz [ngx.components.UIDynamicElement-1674557644682]: 
-              beanData: '{"ionBean":"GridRow"}'
+              beanData: '{"ionBean":"GridRow","Height":"plain"}'
               tagName: ion-row
               ↓colConsoGaz [ngx.components.UIDynamicElement-1674557644684]: 
                 beanData: '{"ionBean":"GridCol"}'
@@ -1353,27 +1353,129 @@ title: Monosite
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: script:'true'
             ↓rowDJU [ngx.components.UIDynamicElement-1674557676316]: 
-              beanData: '{"ionBean":"GridRow"}'
+              beanData: '{"ionBean":"GridRow","Height":"plain"}'
               tagName: ion-row
-              ↓GridCol [ngx.components.UIDynamicElement-1674557676318]: 
+              ↓colDJU [ngx.components.UIDynamicElement-1674557676318]: 
                 beanData: '{"ionBean":"GridCol"}'
                 tagName: ion-col
-                ↓Label [ngx.components.UIDynamicElement-1674557676320]: 
-                  beanData: '{"ionBean":"Label"}'
-                  tagName: ion-label
-                  ↓Text [ngx.components.UIText-1674557676322]: 
-                    textValue: 
+                ↓UseSharedComponent [ngx.components.UIUseShared-1675075367511]: 
+                  sharedcomponent: poc_energisme.Application.NgxApp.widget
+                  ↓title [ngx.components.UIUseVariable-1675075367514]: 
+                    comment: Widget title (string)
+                    varValue: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: plain:Column 1
-        ↓GridCol1 [ngx.components.UIDynamicElement-1674557582806]: 
+                        - MobileSmartSourceType: script:'Rigueur climatique (DJU)'
+                  ↓sequenceToCall [ngx.components.UIUseVariable-1675075367517]: 
+                    comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'.widget_conso_total'
+                  ↓sequenceParams [ngx.components.UIUseVariable-1675075367520]: 
+                    comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:this.global['sequenceParams']
+                  ↓isGoogleMap [ngx.components.UIUseVariable-1675075367523]: 
+                    comment: To determine if widget is a map widget. true or false (string)
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'false'
+                  ↓isGauge [ngx.components.UIUseVariable-1675075367526]: 
+                    comment: To determine if widget is a gauge widget. true or false (string)
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'false'
+                  ↓isInModal [ngx.components.UIUseVariable-1675075367529]: 
+                    comment: To determine if widget is zoomed. true or false (string)
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'false'
+                  ↓isHeatmap [ngx.components.UIUseVariable-1675075367532]: 
+                    comment: To determine if widget is a heatmap widget. true or false (string)
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'false'
+                  ↓sequenceMarker [ngx.components.UIUseVariable-1675075367535]: 
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'dju'
+                  ↓aggregation [ngx.components.UIUseVariable-1675075367538]: 
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'false'
+                  ↓displayTotalOnly [ngx.components.UIUseVariable-1675075367541]: 
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:'true'
+        ↓colConsoMensuelleGazAndDJU [ngx.components.UIDynamicElement-1674557582806]: 
           beanData: '{"ionBean":"GridCol"}'
           tagName: ion-col
-          ↓Label [ngx.components.UIDynamicElement-1674557582808]: 
-            beanData: '{"ionBean":"Label"}'
-            tagName: ion-label
-            ↓Text [ngx.components.UIText-1674557582810]: 
-              textValue: 
+          ↓UseSharedComponent [ngx.components.UIUseShared-1675081120808]: 
+            sharedcomponent: poc_energisme.Application.NgxApp.widget
+            ↓title [ngx.components.UIUseVariable-1675081137504]: 
+              comment: Widget title (string)
+              varValue: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: plain:Column 2
+                  - MobileSmartSourceType: script:'Consommation mensuelle de gaz naturel et rigueur climatique (DJU)'
+            ↓sequenceToCall [ngx.components.UIUseVariable-1675081137506]: 
+              comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'.widget_conso'
+            ↓sequenceParams [ngx.components.UIUseVariable-1675081137508]: 
+              comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.global['sequenceParams']
+            ↓isGoogleMap [ngx.components.UIUseVariable-1675081137510]: 
+              comment: To determine if widget is a map widget. true or false (string)
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'false'
+            ↓isGauge [ngx.components.UIUseVariable-1675081137512]: 
+              comment: To determine if widget is a gauge widget. true or false (string)
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'false'
+            ↓isInModal [ngx.components.UIUseVariable-1675081137514]: 
+              comment: To determine if widget is zoomed. true or false (string)
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'false'
+            ↓isHeatmap [ngx.components.UIUseVariable-1675081137516]: 
+              comment: To determine if widget is a heatmap widget. true or false (string)
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'false'
+            ↓sequenceMarker [ngx.components.UIUseVariable-1675081137518]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'mensuGazDJU'
+            ↓aggregation [ngx.components.UIUseVariable-1675081137520]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'true'
+            ↓displayTotalOnly [ngx.components.UIUseVariable-1675081137522]: 
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:'false'
