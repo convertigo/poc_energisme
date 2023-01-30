@@ -1,15 +1,14 @@
 ↓Input_variables [steps.InputVariablesStep-1673013038503]: 
 ↓buildAggFunction [steps.SimpleStep-1673016100745]: 
   expression: |
-    'var agg_function_str = "date_part(''year'', rd.ts)"
-    if(agg_function == "year") {
-    	agg_function = agg_function_str;
+    'if(agg_function == "year") {
+    	agg_function = "to_char(rd.ts,''YYYY'')"
     } else if(agg_function == "month") {
-    	agg_function = agg_function_str + " || ''_'' || date_part(''month'', rd.ts)"
+    	agg_function = "to_char(rd.ts,''YYYY-MM'')"
     } else if(agg_function == "week") {
-    	agg_function = agg_function_str + " || ''_'' || date_part(''week'', rd.ts)"
+    	agg_function = "to_char(rd.ts,''YYYY-WW'')"
     } else if(agg_function == "day") {
-    	agg_function = "rd.ts::date"
+    	agg_function = "to_char(rd.ts,''YYYY-MM-DD'')"
     }
     log.warn(agg_function)'
 ↓buildCastStrings [steps.SimpleStep-1673013061619]: 
@@ -96,6 +95,7 @@
             - →→: total
   ↓jElse [steps.ElseStep-1674225997403]: 
     ↓jSimpleSource [steps.SimpleSourceStep-1673020236601]: 
+      output: true
       sourceDefinition: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -107,12 +107,12 @@
       variableName: firstDate
     ↓getFirstYear [steps.SimpleStep-1673020265724]: 
       expression: |
+        log.warn(firstDate)
         var firstYear = firstDate.substring(0, 4)
         log.warn('firstYear')
         log.warn(firstYear)
     ↓jIfThenElse [steps.IfThenElseStep-1675080573643]: 
       condition: sitesLength > 1
-      isEnabled: false
       ↓jThen [steps.ThenStep-1675080573929]: 
         ↓Field [steps.JsonFieldStep-1675080592149]: 
           key: 
@@ -142,7 +142,6 @@
                 - ↑mode: PLAIN
                 - →→: line
     ↓Field [steps.JsonFieldStep-1673271596130]: 
-      isEnabled: false
       key: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -1647,9 +1646,7 @@
         expression: |
           var totalGaz = 0;
           var totalElec = 0;
-        isEnabled: false
       ↓data [steps.JsonObjectStep-1673864825860]: 
-        isEnabled: false
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -2206,7 +2203,6 @@
                     - ↑mode: PLAIN
                     - →→: rgb(254, 169, 62)
       ↓Object_1 [steps.JsonObjectStep-1673864826040]: 
-        isEnabled: false
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -2351,13 +2347,10 @@
           date_start = date_start.replaceAll(''-'', ''/'')
           date_end = date_end.replaceAll(''-'', ''/'')
           var date = date_start + '' - '' + date_end;'
-        isEnabled: false
       ↓jElement_1 [steps.ElementStep-1673883808001]: 
         expression: date
-        isEnabled: false
         nodeName: date
       ↓Field [steps.JsonFieldStep-1673883808004]: 
-        isEnabled: false
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -4571,6 +4564,19 @@
   ↓agg_function [variables.TestCaseVariable-1674224092518]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1674224092520]: 
+    value: global
+↓error2 [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675094407514]: 
+    description: date_start
+    value: 2022-01-30
+  ↓date_end [variables.TestCaseVariable-1675094407516]: 
+    description: date_end
+    value: 2023-01-30
+  ↓sites [variables.TestCaseVariable-1675094407518]: 
+    value: '["7639","7642","7632","7633","7634","7635","7636","7637","7731","7634","7639","7654","7655","7656"]'
+  ↓agg_function [variables.TestCaseVariable-1675094407520]: 
+    value: month
+  ↓synthese [variables.TestCaseVariable-1675094407522]: 
     value: global
 ↓monositeElecDaily [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1675073026040]: 

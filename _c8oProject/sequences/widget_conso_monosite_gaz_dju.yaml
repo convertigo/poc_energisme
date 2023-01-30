@@ -1,15 +1,14 @@
 ↓Input_variables [steps.InputVariablesStep-1675083394020]: 
 ↓buildAggFunction [steps.SimpleStep-1675083361578]: 
   expression: |
-    'var agg_function_str = "date_part(''year'', rd.ts)"
-    if(agg_function == "year") {
-    	agg_function = agg_function_str;
+    'if(agg_function == "year") {
+    	agg_function = "to_char(rd.ts,''YYYY'')"
     } else if(agg_function == "month") {
-    	agg_function = agg_function_str + " || ''_'' || date_part(''month'', rd.ts)"
+    	agg_function = "to_char(rd.ts,''YYYY-MM'')"
     } else if(agg_function == "week") {
-    	agg_function = agg_function_str + " || ''_'' || date_part(''week'', rd.ts)"
+    	agg_function = "to_char(rd.ts,''YYYY-WW'')"
     } else if(agg_function == "day") {
-    	agg_function = "rd.ts::date"
+    	agg_function = "to_char(rd.ts,''YYYY-MM-DD'')"
     }
     log.warn(agg_function)'
 ↓buildCastStrings [steps.SimpleStep-1675083361581]: 
