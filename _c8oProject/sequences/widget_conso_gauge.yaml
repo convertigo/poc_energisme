@@ -1428,6 +1428,10 @@
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: 20
+      ↓roundTotals [steps.SimpleStep-1675086411157]: 
+        expression: |
+          conso_total_last_year = Math.round( (conso_total_last_year + Number.EPSILON) * 100) / 100
+          conso_total_current_year = Math.round( (conso_total_current_year + Number.EPSILON) * 100) / 100
       ↓lastTotal [steps.JsonFieldStep-1673865555065]: 
         key: 
           - xmlizable: 
@@ -1748,6 +1752,10 @@
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: 20
+      ↓roundTotals [steps.SimpleStep-1675086498854]: 
+        expression: |
+          conso_total_last_year = Math.round( (conso_total_last_year + Number.EPSILON) * 100) / 100
+          conso_total_current_year = Math.round( (conso_total_current_year + Number.EPSILON) * 100) / 100
       ↓lastTotal [steps.JsonFieldStep-1673867319174]: 
         key: 
           - xmlizable: 
@@ -2068,6 +2076,10 @@
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: 20
+      ↓roundTotals [steps.SimpleStep-1675086505239]: 
+        expression: |
+          conso_total_last_year = Math.round( (conso_total_last_year + Number.EPSILON) * 100) / 100
+          conso_total_current_year = Math.round( (conso_total_current_year + Number.EPSILON) * 100) / 100
       ↓lastTotal [steps.JsonFieldStep-1673867751442]: 
         key: 
           - xmlizable: 
