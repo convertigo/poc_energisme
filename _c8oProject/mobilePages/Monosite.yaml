@@ -1226,7 +1226,7 @@ title: Monosite
               varValue: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: script:'.widget_conso'
+                  - MobileSmartSourceType: script:'.widget_conso_gauge*'
             ↓sequenceParams [ngx.components.UIUseVariable-1674557353751]: 
               comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
               varValue: 
