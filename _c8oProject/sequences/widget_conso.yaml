@@ -113,6 +113,7 @@
         log.warn(firstYear)
     ↓jIfThenElse [steps.IfThenElseStep-1675080573643]: 
       condition: sitesLength > 1
+      isEnabled: false
       ↓jThen [steps.ThenStep-1675080573929]: 
         ↓Field [steps.JsonFieldStep-1675080592149]: 
           key: 
@@ -142,6 +143,7 @@
                 - ↑mode: PLAIN
                 - →→: line
     ↓Field [steps.JsonFieldStep-1673271596130]: 
+      isEnabled: false
       key: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -1646,7 +1648,9 @@
         expression: |
           var totalGaz = 0;
           var totalElec = 0;
+        isEnabled: false
       ↓data [steps.JsonObjectStep-1673864825860]: 
+        isEnabled: false
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -2203,6 +2207,7 @@
                     - ↑mode: PLAIN
                     - →→: rgb(254, 169, 62)
       ↓Object_1 [steps.JsonObjectStep-1673864826040]: 
+        isEnabled: false
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -2347,10 +2352,13 @@
           date_start = date_start.replaceAll(''-'', ''/'')
           date_end = date_end.replaceAll(''-'', ''/'')
           var date = date_start + '' - '' + date_end;'
+        isEnabled: false
       ↓jElement_1 [steps.ElementStep-1673883808001]: 
         expression: date
+        isEnabled: false
         nodeName: date
       ↓Field [steps.JsonFieldStep-1673883808004]: 
+        isEnabled: false
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
