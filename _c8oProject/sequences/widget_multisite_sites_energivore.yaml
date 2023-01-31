@@ -39,6 +39,7 @@
   sourceTransaction: poc_energisme.postgreSQL.widget_multisite_sites_energivore
   ↓limit [variables.StepVariable-1673859606460]: 
     description: limit
+    value: 50
   ↓raw_data_table [variables.StepVariable-1673859606464]: 
     value: ${poc_energisme.raw_data_table}
   ↓filter_condition [variables.StepVariable-1674227806586]: 
