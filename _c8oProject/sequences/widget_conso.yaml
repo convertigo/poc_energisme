@@ -215,17 +215,30 @@
                 log.warn(currentYear)
             ↓jIf [steps.IfStep-1673864462085]: 
               condition: currentYear == firstYear
+              ↓computeDate [steps.SimpleStep-1675159014522]: 
+                expression: |
+                  'var months = {
+                  	"01": "Jan",
+                  	"02": "Fév",
+                  	"03": "Mars",
+                  	"04": "Avril",
+                  	"05": "Mai",
+                  	"06": "Juin",
+                  	"07": "Juillet",
+                  	"08": "Aout",
+                  	"09": "Sept",
+                  	"10": "Oct",
+                  	"11": "Nov",
+                  	"12": "Dec"
+                  }
+                  var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
               ↓Field [steps.JsonFieldStep-1673864462088]: 
                 value: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
                     - SmartType: 
-                      - ↑mode: SOURCE
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673864462076
-                        - java.lang.String: 
-                          - ↑value: ./agg_period/text()
+                      - ↑mode: JS
+                      - →→: label
         ↓Array [steps.JsonArrayStep-1673864462091]: 
           key: 
             - xmlizable: 
@@ -963,17 +976,30 @@
                 log.warn(currentYear)
             ↓jIf [steps.IfStep-1673864681038]: 
               condition: currentYear == firstYear
+              ↓computeDate [steps.SimpleStep-1675159524324]: 
+                expression: |
+                  'var months = {
+                  	"01": "Jan",
+                  	"02": "Fév",
+                  	"03": "Mars",
+                  	"04": "Avril",
+                  	"05": "Mai",
+                  	"06": "Juin",
+                  	"07": "Juillet",
+                  	"08": "Aout",
+                  	"09": "Sept",
+                  	"10": "Oct",
+                  	"11": "Nov",
+                  	"12": "Dec"
+                  }
+                  var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
               ↓Field [steps.JsonFieldStep-1673864681041]: 
                 value: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
                     - SmartType: 
-                      - ↑mode: SOURCE
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673864681029
-                        - java.lang.String: 
-                          - ↑value: ./agg_period/text()
+                      - ↑mode: JS
+                      - →→: label
         ↓Array [steps.JsonArrayStep-1673864681044]: 
           key: 
             - xmlizable: 
@@ -2453,17 +2479,30 @@
                     log.warn(currentYear)
                 ↓jIf [steps.IfStep-1675079415813]: 
                   condition: currentYear == firstYear
+                  ↓computeDate [steps.SimpleStep-1675159549639]: 
+                    expression: |
+                      'var months = {
+                      	"01": "Jan",
+                      	"02": "Fév",
+                      	"03": "Mars",
+                      	"04": "Avril",
+                      	"05": "Mai",
+                      	"06": "Juin",
+                      	"07": "Juillet",
+                      	"08": "Aout",
+                      	"09": "Sept",
+                      	"10": "Oct",
+                      	"11": "Nov",
+                      	"12": "Dec"
+                      }
+                      var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
                   ↓Field [steps.JsonFieldStep-1675079415816]: 
                     value: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
                         - SmartType: 
-                          - ↑mode: SOURCE
-                          - com.twinsoft.convertigo.beans.common.XMLVector: 
-                            - java.lang.String: 
-                              - ↑value: 1675079415804
-                            - java.lang.String: 
-                              - ↑value: ./agg_period/text()
+                          - ↑mode: JS
+                          - →→: label
             ↓Array [steps.JsonArrayStep-1675079415819]: 
               key: 
                 - xmlizable: 
@@ -3178,17 +3217,30 @@
                     log.warn(currentYear)
                 ↓jIf [steps.IfStep-1675079418626]: 
                   condition: currentYear == firstYear
+                  ↓computeDate [steps.SimpleStep-1675159617847]: 
+                    expression: |
+                      'var months = {
+                      	"01": "Jan",
+                      	"02": "Fév",
+                      	"03": "Mars",
+                      	"04": "Avril",
+                      	"05": "Mai",
+                      	"06": "Juin",
+                      	"07": "Juillet",
+                      	"08": "Aout",
+                      	"09": "Sept",
+                      	"10": "Oct",
+                      	"11": "Nov",
+                      	"12": "Dec"
+                      }
+                      var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
                   ↓Field [steps.JsonFieldStep-1675079418629]: 
                     value: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
                         - SmartType: 
-                          - ↑mode: SOURCE
-                          - com.twinsoft.convertigo.beans.common.XMLVector: 
-                            - java.lang.String: 
-                              - ↑value: 1675079418617
-                            - java.lang.String: 
-                              - ↑value: ./agg_period/text()
+                          - ↑mode: JS
+                          - →→: label
             ↓Array [steps.JsonArrayStep-1675079418632]: 
               key: 
                 - xmlizable: 

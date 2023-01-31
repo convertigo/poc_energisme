@@ -360,7 +360,7 @@ title: Multisite
             eventName: onSubmit
             ↓Alert [ngx.components.UIDynamicAction-1673623216082]: 
               beanData: '{"ionBean":"AlertAction","message":"script:''formSample value is\\\\n'' + JSON.stringify(this?.formSample.value)"}'
-        ↓GenericItem [ngx.components.UIDynamicElement-1673606455255]: 
+        ↓selectAll [ngx.components.UIDynamicElement-1673606455255]: 
           beanData: '{"ionBean":"GenericItem"}'
           tagName: ion-item
           ↓Label [ngx.components.UIDynamicElement-1673606455257]: 
@@ -1863,6 +1863,22 @@ title: Multisite
                                       		resolve();
                                       '
                               isEnabled: false
+                        ↓CustomAction [ngx.components.UICustomAction-1675157351501]: 
+                          actionValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                  		console.log(vars.stack)
+                                  		resolve();
+                                  '
+                          isEnabled: false
+                          ↓stack [ngx.components.UIControlVariable-1675157360253]: 
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: script:stack
                     ↓Label [ngx.components.UIDynamicElement-1674729249610]: 
                       beanData: '{"ionBean":"Label"}'
                       tagName: ion-label
