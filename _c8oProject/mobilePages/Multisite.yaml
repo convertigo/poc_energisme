@@ -14,6 +14,7 @@ scriptContent:
         	public date_end = "2022-12-01"
         	public selectAll = false;
         	public syntheseSelected = ''global'';
+        	public groupChecked = false;
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
         		
@@ -40,6 +41,17 @@ scriptContent:
         		}
         		
         		return dates;
+        	}
+        	
+        	getParentGroupStatus(groupName) {
+        		var el = document.getElementById(groupName)
+        		var shadow = el.shadowRoot
+        		var check = shadow.childNodes[2][''attributes''][1][''nodeValue'']
+        		if(check == "true") {
+        			return true
+        		} else {
+        			return false
+        		}
         	}
         	/*End_c8o_PageFunction*/
         '
@@ -960,7 +972,7 @@ title: Multisite
         ↓AccordionGroup [ngx.components.UIDynamicElement-1674729096452]: 
           beanData: '{"ionBean":"AccordionGroup"}'
           tagName: ion-accordion-group
-          ↓Directive [ngx.components.UIControlDirective-1674729096455]: 
+          ↓group [ngx.components.UIControlDirective-1674729096455]: 
             directiveItemName: group
             directiveSource: 
               - xmlizable: 
@@ -981,11 +993,11 @@ title: Multisite
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: script:group.name
-                ↓CheckBox [ngx.components.UIDynamicElement-1674729633478]: 
+                ↓parentCheckBox [ngx.components.UIDynamicElement-1674729633478]: 
                   beanData: |
                     '{
                      "ionBean": "CheckBox",
-                     "ControlName": "plain:name1671532909462",
+                     "ControlName": "plain:parentGroup",
                      "Checked": "script:this.selectAll",
                      "Value": "script:group.name"
                     }'
@@ -1208,6 +1220,13 @@ title: Multisite
                                     		})
                                     		resolve();
                                     '
+                      ↓SetLocal [ngx.components.UIDynamicAction-1675171795649]: 
+                        beanData: |
+                          '{
+                           "ionBean": "SetLocalAction",
+                           "Property": "plain:groupChecked",
+                           "Value": "script:group.name"
+                          }'
                       ↓Else_Handler [ngx.components.UIActionElseEvent-1674729633520]: 
                         ↓Toast [ngx.components.UIDynamicAction-1674729633523]: 
                           beanData: '{"ionBean":"ToastAction","message":"script:JSON.stringify(stack[''selectAllOnChange''].out.detail.checked)"}'
@@ -1396,6 +1415,28 @@ title: Multisite
                                   		resolve();
                                   '
                           isEnabled: false
+                    ↓CustomAction [ngx.components.UICustomAction-1675170592466]: 
+                      actionValue: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                            →: |
+                              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                              		console.log(vars.stack)
+                              		resolve();
+                              '
+                      isEnabled: false
+                      ↓stack [ngx.components.UIControlVariable-1675170600879]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:stack
+                  ↓Attr [ngx.components.UIAttribute-1675174348154]: 
+                    attrName: id
+                    attrValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: script:group.name
                 ↓Directive1 [ngx.components.UIControlDirective-1674729674760]: 
                   directiveName: If
                   directiveSource: 
@@ -1451,7 +1492,7 @@ title: Multisite
                         '{
                          "ionBean": "CheckBox",
                          "ControlName": "plain:name1671532909462",
-                         "Checked": "script:this.selectAll",
+                         "Checked": "script:this.selectAll || this.getParentGroupStatus(group.name)",
                          "Value": "script:group.name"
                         }'
                       tagName: ion-checkbox
@@ -1806,6 +1847,51 @@ title: Multisite
                                      "Property": "plain:sitesToCall",
                                      "Value": "script:[]"
                                     }'
+                                ↓IfElse [ngx.components.UIDynamicIf-1675177052307]: 
+                                  beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll && !stack.root.out.detail.checked"}'
+                                  isEnabled: false
+                                  ↓removeSitesToLocal [ngx.components.UICustomAction-1675177078198]: 
+                                    actionValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                          →: |
+                                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                            		console.log(props)
+                                            		console.log(event)
+                                            		var sites = vars.sites;
+                                            		for(var i = 0; i < sites.length; i++) {
+                                            			if(page.local["sitesToCall"].indexOf(sites[i]) != "-1") {
+                                            				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i]), 1)
+                                            			}
+                                            		}
+                                            		
+                                            		console.log("after loop")
+                                            		console.log(page.local["sitesToCall"])
+                                            		/*
+                                            		page.local[''sequenceParams''] = {
+                                            			date_start: ''2021-01-01'',
+                                            			date_end: ''2022-12-01'',
+                                            			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                            			agg_function: ''month'',
+                                            			label: ''''
+                                            		}
+                                            		*/
+                                            		resolve();
+                                            '
+                                    ↓sites [ngx.components.UIControlVariable-1675177078201]: 
+                                      varValue: 
+                                        - xmlizable: 
+                                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                          - MobileSmartSourceType: script:stack.root.scope.group.sites
+                                  ↓Else_Handler [ngx.components.UIActionElseEvent-1675177059607]: 
+                                    ↓SetLocal [ngx.components.UIDynamicAction-1675177080913]: 
+                                      beanData: |
+                                        '{
+                                         "ionBean": "SetLocalAction",
+                                         "Property": "plain:sitesToCall",
+                                         "Value": "script:[]"
+                                        }'
                             ↓CallSequence [ngx.components.UIDynamicAction-1674729371562]: 
                               beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
                               isEnabled: false
@@ -1871,6 +1957,14 @@ title: Multisite
                                 →: |
                                   '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                   		console.log(vars.stack)
+                                  		console.log(page.groupChecked)
+                                  		console.log(document.getElementById(vars.group))
+                                  		var el = document.getElementById(vars.group)
+                                  		var shadow = el.shadowRoot
+                                  		console.log(el.shadowRoot.childNodes)
+                                  		console.log(shadow)
+                                  		var check = shadow.childNodes[2]
+                                  		console.log(check[''attributes''][1][''nodeValue''])
                                   		resolve();
                                   '
                           isEnabled: false
@@ -1879,6 +1973,11 @@ title: Multisite
                               - xmlizable: 
                                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                 - MobileSmartSourceType: script:stack
+                          ↓group [ngx.components.UIControlVariable-1675174502556]: 
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: script:group.name
                     ↓Label [ngx.components.UIDynamicElement-1674729249610]: 
                       beanData: '{"ionBean":"Label"}'
                       tagName: ion-label

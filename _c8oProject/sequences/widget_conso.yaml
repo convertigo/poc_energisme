@@ -1,4 +1,14 @@
 ↓Input_variables [steps.InputVariablesStep-1673013038503]: 
+↓jSimpleSource [steps.SimpleSourceStep-1675178744595]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1673013038503
+        - java.lang.String: 
+          - ↑value: ./agg_function/text()
+  variableName: agg_function_old
 ↓buildAggFunction [steps.SimpleStep-1673016100745]: 
   expression: |
     'if(agg_function == "year") {
@@ -231,7 +241,16 @@
                   	"11": "Nov",
                   	"12": "Dec"
                   }
-                  var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
+                  
+                  var label;
+                  if(agg_function_old == "week") {
+                  	label = "S" + currentDate.split(''-'')[1] + " " + currentYear
+                  } else if(agg_function_old == "year") {
+                  	label = currentYear
+                  } else {
+                  	label = months[currentDate.split(''-'')[1]] + " " + currentYear
+                  }
+                  '
               ↓Field [steps.JsonFieldStep-1673864462088]: 
                 value: 
                   - xmlizable: 
@@ -976,7 +995,7 @@
                 log.warn(currentYear)
             ↓jIf [steps.IfStep-1673864681038]: 
               condition: currentYear == firstYear
-              ↓computeDate [steps.SimpleStep-1675159524324]: 
+              ↓computeDate [steps.SimpleStep-1675179261685]: 
                 expression: |
                   'var months = {
                   	"01": "Jan",
@@ -992,7 +1011,16 @@
                   	"11": "Nov",
                   	"12": "Dec"
                   }
-                  var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
+                  
+                  var label;
+                  if(agg_function_old == "week") {
+                  	label = "S" + currentDate.split(''-'')[1] + " " + currentYear
+                  } else if(agg_function_old == "year") {
+                  	label = currentYear
+                  } else {
+                  	label = months[currentDate.split(''-'')[1]] + " " + currentYear
+                  }
+                  '
               ↓Field [steps.JsonFieldStep-1673864681041]: 
                 value: 
                   - xmlizable: 
@@ -2479,7 +2507,7 @@
                     log.warn(currentYear)
                 ↓jIf [steps.IfStep-1675079415813]: 
                   condition: currentYear == firstYear
-                  ↓computeDate [steps.SimpleStep-1675159549639]: 
+                  ↓computeDate [steps.SimpleStep-1675179417222]: 
                     expression: |
                       'var months = {
                       	"01": "Jan",
@@ -2495,7 +2523,16 @@
                       	"11": "Nov",
                       	"12": "Dec"
                       }
-                      var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
+                      
+                      var label;
+                      if(agg_function_old == "week") {
+                      	label = "S" + currentDate.split(''-'')[1] + " " + currentYear
+                      } else if(agg_function_old == "year") {
+                      	label = currentYear
+                      } else {
+                      	label = months[currentDate.split(''-'')[1]] + " " + currentYear
+                      }
+                      '
                   ↓Field [steps.JsonFieldStep-1675079415816]: 
                     value: 
                       - xmlizable: 
@@ -3217,7 +3254,7 @@
                     log.warn(currentYear)
                 ↓jIf [steps.IfStep-1675079418626]: 
                   condition: currentYear == firstYear
-                  ↓computeDate [steps.SimpleStep-1675159617847]: 
+                  ↓computeDate [steps.SimpleStep-1675179280501]: 
                     expression: |
                       'var months = {
                       	"01": "Jan",
@@ -3233,7 +3270,16 @@
                       	"11": "Nov",
                       	"12": "Dec"
                       }
-                      var label = months[currentDate.split(''-'')[1]] + " " + currentYear'
+                      
+                      var label;
+                      if(agg_function_old == "week") {
+                      	label = "S" + currentDate.split(''-'')[1] + " " + currentYear
+                      } else if(agg_function_old == "year") {
+                      	label = currentYear
+                      } else {
+                      	label = months[currentDate.split(''-'')[1]] + " " + currentYear
+                      }
+                      '
                   ↓Field [steps.JsonFieldStep-1675079418629]: 
                     value: 
                       - xmlizable: 
@@ -4715,4 +4761,17 @@
   ↓agg_function [variables.TestCaseVariable-1673012732005]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1673864503643]: 
+    value: global
+↓multisiteGlobalWeek [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675178522670]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675178522673]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1675178522676]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1675178522679]: 
+    value: week
+  ↓synthese [variables.TestCaseVariable-1675178522682]: 
     value: global
