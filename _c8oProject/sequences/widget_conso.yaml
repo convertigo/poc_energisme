@@ -4620,7 +4620,7 @@
     description: date_end
     value: 2022-12-31
   ↓sites [variables.TestCaseVariable-1674224092516]: 
-    value: '[13850,14121,14122,14123]'
+    value: '[0]'
   ↓agg_function [variables.TestCaseVariable-1674224092518]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1674224092520]: 

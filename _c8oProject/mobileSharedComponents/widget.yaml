@@ -914,17 +914,31 @@ scriptContent:
               ↓Tag [ngx.components.UIElement-1674554968876]: 
                 identifier: chartBlock
                 tagName: ng-template
-                ↓Chart1 [ngx.components.UIDynamicElement-1673605849683]: 
-                  beanData: |
-                    '{
-                     "ionBean": "Charts",
-                     "data": "script:(this.local[''response'']?.data != undefined) ? this.local[''response'']?.data : {}",
-                     "datasets": "plain",
-                     "labels": "script:(this.local[''response'']?.labels != undefined) ? this.local[''response'']?.label : []",
-                     "Options": "script:(this.local[''response'']?.chartOptions != undefined) ? this.local[''response'']?.chartOptions : {}",
-                     "ChartType": "script:(this.local[''response'']?.chartType != undefined) ? this.local[''response'']?.chartType : ''''"
-                    }'
-                  tagName: canvas
+                ↓Directive [ngx.components.UIControlDirective-1675163198318]: 
+                  directiveExpression: this.local['response']?.error != undefined else chart
+                  directiveName: If
+                  ↓TextItem [ngx.components.UIDynamicElement-1675163247706]: 
+                    beanData: '{"ionBean":"TextItem"}'
+                    tagName: ion-text
+                    ↓Text [ngx.components.UIText-1675163247708]: 
+                      textValue: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                          - MobileSmartSourceType: script:this.local['response']?.error?.message
+                ↓Tag [ngx.components.UIElement-1675163304756]: 
+                  identifier: chart
+                  tagName: ng-template
+                  ↓Chart1 [ngx.components.UIDynamicElement-1673605849683]: 
+                    beanData: |
+                      '{
+                       "ionBean": "Charts",
+                       "data": "script:(this.local[''response'']?.data != undefined) ? this.local[''response'']?.data : {}",
+                       "datasets": "plain",
+                       "labels": "script:(this.local[''response'']?.labels != undefined) ? this.local[''response'']?.label : []",
+                       "Options": "script:(this.local[''response'']?.chartOptions != undefined) ? this.local[''response'']?.chartOptions : {}",
+                       "ChartType": "script:(this.local[''response'']?.chartType != undefined) ? this.local[''response'']?.chartType : ''''"
+                      }'
+                    tagName: canvas
           ↓Style [ngx.components.UIStyle-1669372291655]: 
             styleContent: 
               - xmlizable: 
@@ -1220,7 +1234,7 @@ scriptContent:
                   text-align: right;
                   '
   ↓Directive5 [ngx.components.UIControlDirective-1669388895762]: 
-    directiveExpression: this.isHeatmap == "true" && this.local['response']?.series != undefined
+    directiveExpression: this.isHeatmap == "true"
     directiveName: If
     ↓rowHeatmap [ngx.components.UIDynamicElement-1669388938583]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
@@ -1228,132 +1242,166 @@ scriptContent:
       ↓colHeatmap [ngx.components.UIDynamicElement-1669388938585]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
-        ↓UseSharedComponent [ngx.components.UIUseShared-1669388969270]: 
-          sharedcomponent: poc_energisme.Application.NgxApp.heatmap
-          ↓annotations [ngx.components.UIUseVariable-1669389080677]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓chart [ngx.components.UIUseVariable-1669389080679]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: |
-                    'script:{
-                              height: ''600px'',
-                              type: ''heatmap''
-                     }'
-          ↓colors [ngx.components.UIUseVariable-1669389080681]: 
-            comment: Array of hexadecimal string
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓dataLabels [ngx.components.UIUseVariable-1669389080683]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:{ enabled: false }'
-          ↓fill [ngx.components.UIUseVariable-1669389080685]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓grid [ngx.components.UIUseVariable-1669389080687]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓labels [ngx.components.UIUseVariable-1669389080689]: 
-            comment: Array of strings
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓legend [ngx.components.UIUseVariable-1669389080691]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓plotOptions [ngx.components.UIUseVariable-1669389080693]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:this.local['response']?.plotOptions
-          ↓responsive [ngx.components.UIUseVariable-1669389080695]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓series [ngx.components.UIUseVariable-1669389080697]: 
-            comment: Array of objects
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:this.local['response']?.series
-          ↓states [ngx.components.UIUseVariable-1669389080699]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓stroke [ngx.components.UIUseVariable-1669389080701]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓subtitle [ngx.components.UIUseVariable-1669389080703]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓theme [ngx.components.UIUseVariable-1669389080705]: 
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓title [ngx.components.UIUseVariable-1669389080707]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: |
-                    'script:{
-                              text: ''HeatMap Chart with Color Range Sample''
-                            }'
-          ↓tooltip [ngx.components.UIUseVariable-1669389080709]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓xaxis [ngx.components.UIUseVariable-1669389080711]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
-          ↓yaxis [ngx.components.UIUseVariable-1669389080713]: 
-            comment: Object
-            varValue: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: script:''
         ↓Text [ngx.components.UIText-1669390087394]: 
           isEnabled: false
           textValue: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: script:JSON.parse(this.pageOwner.listen([String(this.sequenceToCall)])?.series)
+        ↓Directive [ngx.components.UIControlDirective-1675163372597]: 
+          directiveExpression: this.showSpinner == 'true' else elseBlock
+          directiveName: If
+          ↓Div [ngx.components.UIDynamicElement-1675163411788]: 
+            beanData: '{"ionBean":"DivTag"}'
+            tagName: div
+            ↓Spinner [ngx.components.UIDynamicElement-1675163411791]: 
+              beanData: '{"ionBean":"Spinner"}'
+              tagName: ion-spinner
+            ↓Style [ngx.components.UIStyle-1675163411794]: 
+              styleContent: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                    →: |
+                      '	text-align: center;
+                      '
+        ↓Tag [ngx.components.UIElement-1675163421439]: 
+          identifier: elseBlock
+          tagName: ng-template
+          ↓Directive [ngx.components.UIControlDirective-1675169927519]: 
+            directiveExpression: this.local['response']?.error != undefined else heatmapBlock
+            directiveName: If
+            ↓TextItem [ngx.components.UIDynamicElement-1675169927522]: 
+              beanData: '{"ionBean":"TextItem"}'
+              tagName: ion-text
+              ↓Text [ngx.components.UIText-1675169927525]: 
+                textValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:this.local['response']?.error?.message
+          ↓Tag [ngx.components.UIElement-1675169950893]: 
+            identifier: heatmapBlock
+            tagName: ng-template
+            ↓UseSharedComponent [ngx.components.UIUseShared-1669388969270]: 
+              sharedcomponent: poc_energisme.Application.NgxApp.heatmap
+              ↓annotations [ngx.components.UIUseVariable-1669389080677]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓chart [ngx.components.UIUseVariable-1669389080679]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: |
+                        'script:{
+                                  height: ''600px'',
+                                  type: ''heatmap''
+                         }'
+              ↓colors [ngx.components.UIUseVariable-1669389080681]: 
+                comment: Array of hexadecimal string
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓dataLabels [ngx.components.UIUseVariable-1669389080683]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: 'script:{ enabled: false }'
+              ↓fill [ngx.components.UIUseVariable-1669389080685]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓grid [ngx.components.UIUseVariable-1669389080687]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓labels [ngx.components.UIUseVariable-1669389080689]: 
+                comment: Array of strings
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓legend [ngx.components.UIUseVariable-1669389080691]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓plotOptions [ngx.components.UIUseVariable-1669389080693]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:this.local['response']?.plotOptions
+              ↓responsive [ngx.components.UIUseVariable-1669389080695]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓series [ngx.components.UIUseVariable-1669389080697]: 
+                comment: Array of objects
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:this.local['response']?.series
+              ↓states [ngx.components.UIUseVariable-1669389080699]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓stroke [ngx.components.UIUseVariable-1669389080701]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓subtitle [ngx.components.UIUseVariable-1669389080703]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓theme [ngx.components.UIUseVariable-1669389080705]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓title [ngx.components.UIUseVariable-1669389080707]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: |
+                        'script:{
+                                  text: ''HeatMap Chart with Color Range Sample''
+                                }'
+              ↓tooltip [ngx.components.UIUseVariable-1669389080709]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓xaxis [ngx.components.UIUseVariable-1669389080711]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓yaxis [ngx.components.UIUseVariable-1669389080713]: 
+                comment: Object
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
 ↓title [ngx.components.UICompVariable-1667815971456]: 
   comment: Widget title (string)
 ↓sequenceToCall [ngx.components.UICompVariable-1668519653965]: 
