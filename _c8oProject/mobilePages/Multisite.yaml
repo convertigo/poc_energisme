@@ -1500,7 +1500,8 @@ title: Multisite
                         attrName: (ionChange)
                         eventName: ionChange
                         ↓IfElse [ngx.components.UIDynamicIf-1674729371487]: 
-                          beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && parent.out.detail.checked"}'
+                          beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && !this.getParentGroupStatus(stack.root.scope.group.name) && parent.out.detail.checked"}'
+                          comment: case not selectAll and group not checked, only site checked
                           ↓CallSequence [ngx.components.UIDynamicAction-1674729371490]: 
                             beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
                             comment: before accordion update
@@ -1719,6 +1720,8 @@ title: Multisite
                               isEnabled: false
                             ↓IfElse [ngx.components.UIDynamicIf-1674729371529]: 
                               beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll && !stack.root.out.detail.checked"}'
+                              comment: case all selected and sites unchecked
+                              isEnabled: false
                               ↓CallSequence [ngx.components.UIDynamicAction-1674729371532]: 
                                 beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
                                 comment: before accordion update
@@ -1949,6 +1952,95 @@ title: Multisite
                                       		resolve();
                                       '
                               isEnabled: false
+                            ↓IfElse2 [ngx.components.UIDynamicIf-1675183544541]: 
+                              beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && this.getParentGroupStatus(stack.root.scope.group.name) && !stack.root.out.detail.checked"}'
+                              ↓removeSitesToLocal [ngx.components.UICustomAction-1675183633509]: 
+                                actionValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                      →: |
+                                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                        		console.log(props)
+                                        		console.log(event)
+                                        		var site = vars.site;
+                                        		/*
+                                        		for(var i = 0; i < sites.length; i++) {
+                                        			if(page.local["sitesToCall"].indexOf(sites[i][''id'']) != "-1") {
+                                        				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i][''id'']), 1)
+                                        			}
+                                        		}
+                                        		*/
+                                        		for(var i = 0; i < page.local[''sitesToCall''].length; i++) {
+                                        			if(page.local[''sitesToCall''].indexOf(site) != -1) {
+                                        				page.local[''sitesToCall''].splice(page.local[''sitesToCall''].indexOf(site), 1)
+                                        			}
+                                        		}
+                                        		
+                                        		console.log("after loop")
+                                        		console.log(page.local["sitesToCall"])
+                                        		page.global[''sequenceParams''] = {
+                                        			date_start: page.global[''date_start''],
+                                        			date_end: page.global[''date_end''],
+                                        			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                        			agg_function: ''month'',
+                                        			label: '''',
+                                        			synthese: this.syntheseSelected,
+                                        			limit: 20
+                                        		}
+                                        		
+                                        		resolve();
+                                        '
+                                ↓site [ngx.components.UIControlVariable-1675183633512]: 
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: script:site.id
+                              ↓Else_Handler [ngx.components.UIActionElseEvent-1675183676898]: 
+                                ↓If [ngx.components.UIDynamicAction-1675183685274]: 
+                                  beanData: '{"ionBean":"IfAction","condition":"script:this.selectAll == true && !stack.root.out.detail.checked"}'
+                                  ↓removeSitesToLocal [ngx.components.UICustomAction-1675256922204]: 
+                                    actionValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                          →: |
+                                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                            		console.log(props)
+                                            		console.log(event)
+                                            		var site = ""+vars.site;
+                                            		/*
+                                            		for(var i = 0; i < sites.length; i++) {
+                                            			if(page.local["sitesToCall"].indexOf(sites[i][''id'']) != "-1") {
+                                            				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i][''id'']), 1)
+                                            			}
+                                            		}
+                                            		*/
+                                            		for(var i = 0; i < page.local[''sitesToCall''].length; i++) {
+                                            			if(page.local[''sitesToCall''].indexOf(site) != -1) {
+                                            				page.local[''sitesToCall''].splice(page.local[''sitesToCall''].indexOf(site), 1)
+                                            			}
+                                            		}
+                                            		
+                                            		console.log("after loop")
+                                            		console.log(page.local["sitesToCall"])
+                                            		page.global[''sequenceParams''] = {
+                                            			date_start: page.global[''date_start''],
+                                            			date_end: page.global[''date_end''],
+                                            			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                            			agg_function: ''month'',
+                                            			label: '''',
+                                            			synthese: this.syntheseSelected,
+                                            			limit: 20
+                                            		}
+                                            		
+                                            		resolve();
+                                            '
+                                    ↓site [ngx.components.UIControlVariable-1675256922207]: 
+                                      varValue: 
+                                        - xmlizable: 
+                                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                          - MobileSmartSourceType: script:site.id
                         ↓CustomAction [ngx.components.UICustomAction-1675157351501]: 
                           actionValue: 
                             - xmlizable: 
