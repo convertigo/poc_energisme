@@ -1351,13 +1351,60 @@ title: Multisite
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                       - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
-                            ↓SetLocal [ngx.components.UIDynamicAction-1674729633556]: 
-                              beanData: |
-                                '{
-                                 "ionBean": "SetLocalAction",
-                                 "Property": "plain:sitesToCall",
-                                 "Value": "script:[]"
-                                }'
+                            ↓IfElse [ngx.components.UIDynamicIf-1675266072076]: 
+                              beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll && !stack.root.out.detail.checked"}'
+                              ↓removeSitesToLocal [ngx.components.UICustomAction-1675266147353]: 
+                                actionValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                      →: |
+                                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                        		console.log(props)
+                                        		console.log(event)
+                                        		var sites = vars.sites;
+                                        		for(var i = 0; i < sites.length; i++) {
+                                        			if(page.local["sitesToCall"].indexOf(sites[i][''id'']) != "-1") {
+                                        				page.local["sitesToCall"].splice(page.local["sitesToCall"].indexOf(sites[i][''id'']), 1)
+                                        			}
+                                        		}
+                                        		
+                                        		console.log("after loop")
+                                        		console.log(page.local["sitesToCall"])
+                                        		
+                                        		page.global[''sequenceParams''] = {
+                                        			date_start: page.global[''date_start''],
+                                        			date_end: page.global[''date_end''],
+                                        			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                        			agg_function: ''month'',
+                                        			label: '''',
+                                        			synthese: this.syntheseSelected,
+                                        			limit: 20
+                                        		}
+                                        		/*
+                                        		page.local[''sequenceParams''] = {
+                                        			date_start: ''2021-01-01'',
+                                        			date_end: ''2022-12-01'',
+                                        			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                        			agg_function: ''month'',
+                                        			label: ''''
+                                        		}
+                                        		*/
+                                        		resolve();
+                                        '
+                                ↓sites [ngx.components.UIControlVariable-1675266147356]: 
+                                  varValue: 
+                                    - xmlizable: 
+                                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                      - MobileSmartSourceType: script:stack.root.scope.group.sites
+                              ↓Else_Handler [ngx.components.UIActionElseEvent-1675266168727]: 
+                                ↓SetLocal [ngx.components.UIDynamicAction-1674729633556]: 
+                                  beanData: |
+                                    '{
+                                     "ionBean": "SetLocalAction",
+                                     "Property": "plain:sitesToCall",
+                                     "Value": "script:[]"
+                                    }'
                         ↓CallSequence [ngx.components.UIDynamicAction-1674729633559]: 
                           beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
                           isEnabled: false
