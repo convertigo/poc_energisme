@@ -46,7 +46,12 @@
                   '
         ↓Event [ngx.components.UIControlEvent-1674228950021]: 
           ↓CallSequence [ngx.components.UIDynamicAction-1674228957878]: 
-            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.logout"}'
+            beanData: |
+              '{
+               "ionBean": "CallSequenceAction",
+               "requestable": "plain:lib_OAuth.SignOut",
+               "noAutoLogin": "plain:true"
+              }'
             ↓RootPage [ngx.components.UIDynamicAction-1674228973574]: 
               beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Login"}'
             ↓PushPage [ngx.components.UIDynamicAction-1674229136796]: 
