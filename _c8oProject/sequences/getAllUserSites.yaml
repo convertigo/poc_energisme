@@ -1,4 +1,5 @@
 comment: Used to list User Sites in monosite page and when selectionning all sites in multisite page
+responseExpiryDate: daily,10:00:00
 ↓Call_Sequence [steps.SequenceStep-1674741470849]: 
   sourceSequence: poc_energisme.getGroupsOf
   ↓user [variables.StepVariable-1674741478011]: 

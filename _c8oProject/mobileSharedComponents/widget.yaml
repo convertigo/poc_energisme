@@ -20,6 +20,9 @@ scriptContent:
         /*Begin_c8o_CompChanges*/
         //		console.log("changeeees")
         //		console.log(changes)
+        		if(changes[''sequenceParams''].firstChange == false) {
+        			
+        		
         		setTimeout( () => {
         			Object.keys(changes).forEach( (key) => {
         			switch(key) {
@@ -55,13 +58,13 @@ scriptContent:
         								// date_end = this.getLastMonth()[''date_end'']
         							} 
         							
-        							/*
+        							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
         							} else {
         								agg_function = changes[key].previousValue[''agg_function'']
         							}
-        							*/
+        							
         							
         							
         							
@@ -91,13 +94,13 @@ scriptContent:
         									//date_end = this.getLastMonth()[''date_end'']
         								}
         								
-        								/*
+        								
         								if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         									agg_function = "day"
         								} else {
         									agg_function = changes[key].previousValue[''agg_function'']
         								}
-        								*/
+        								
         							
         								
         							} else {
@@ -109,13 +112,13 @@ scriptContent:
         									date_end = changes[key].previousValue[''date_end'']
         								}
         								
-        								/*
+        								
         								if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         									agg_function = "day"
         								} else {
         									agg_function = changes[key].previousValue[''agg_function'']
         								}
-        								*/
+        								
         								
         								
         								
@@ -135,11 +138,11 @@ scriptContent:
         						setTimeout( () => {
         							
         							this.showSpinner = "true";
-        							/*
+        							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
-        							*/
+        							
         							this.call(sequenceToCall, changes[key].currentValue, null, 500, true).then( (resp) => {
         						    console.log(resp)
         							this.local[''response''] = resp;
@@ -151,7 +154,7 @@ scriptContent:
         
         
         					} else {
-        						if(changes[key].currentValue[''date_start''].length == 0 && changes[key].currentValue[''date_end''].length == 0) {
+        						if(changes[key].currentValue != undefined && changes[key].currentValue[''date_start''].length == 0 && changes[key].currentValue[''date_end''].length == 0) {
         							
         							var date_start;
         							var date_end;
@@ -179,25 +182,25 @@ scriptContent:
         								//date_start = this.getLastMonth()[''date_start'']
         								//date_end = this.getLastMonth()[''date_end'']
         							}
-        							/*
+        							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
         							} else {
         								agg_function = changes[key].previousValue[''agg_function'']
         							} 
-        							*/
+        							
         							
         						} else {
         							date_start = changes[key].currentValue[''date_start''];
         							date_end = changes[key].currentValue[''date_end'']
         							
-        							/*
+        							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
         							} else {
         								agg_function = changes[key].currentValue[''agg_function'']
         							}
-        							*/
+        							
         							
         							
         						}
@@ -207,10 +210,10 @@ scriptContent:
         							changes[key].currentValue[''date_end''] = date_end;
         							// changes[key].currentValue[''agg_function''] = agg_function;
         							this.showSpinner = "true";
-        							/* if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        							 if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
-        							*/
+        							
         							this.call(sequenceToCall, changes[key].currentValue, null, 500, true).then( (resp) => {
         							    console.log(resp)
         								this.local[''response''] = resp;
@@ -227,7 +230,7 @@ scriptContent:
         			} // end switch
         		}) // end object.keys
         		}, 1000)
-        		
+        		} // end if current and previous != undefined
         		/*End_c8o_CompChanges*/
         /*Begin_c8o_CompDoCheck*/
         		/*End_c8o_CompDoCheck*/

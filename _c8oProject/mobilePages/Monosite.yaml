@@ -19,8 +19,80 @@ scriptContent:
 segment: monosite
 title: Monosite
 ↓PageEvent [ngx.components.UIPageEvent-1669387564134]: 
+  viewEvent: onWillLoad
   ↓IfElse [ngx.components.UIDynamicIf-1674465616269]: 
     beanData: '{"ionBean":"IfElseAction","condition":"script:this.navParams.data.site_id != undefined && this.navParams.data.site_id.length > 0"}'
+    ↓SetLocal [ngx.components.UIDynamicAction-1674465653469]: 
+      beanData: |
+        '{
+         "ionBean": "SetLocalAction",
+         "Property": "plain:sitesToCall",
+         "Value": "script:[this.navParams.data.site_id]"
+        }'
+      ↓SetGlobal2 [ngx.components.UIDynamicAction-1674466920913]: 
+        beanData: |
+          '{
+           "ionBean": "SetGlobalAction",
+           "Property": "plain:sequenceParams",
+           "Value": "script:{\r\n\t\t\tdate_start: '''',\r\n\t\t\tdate_end: '''',\r\n\t\t\tsites: JSON.stringify(this.local[''sitesToCall'']),\r\n\t\t\tagg_function: ''month'',\r\n\t\t\tlabel: '''',\r\n\t\t\tsynthese: this.syntheseSelected,\r\n\t\t\tlimit: 20\r\n}"
+          }'
+        ↓CustomAction [ngx.components.UICustomAction-1669387570864]: 
+          actionValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                  		console.log(this.navParams)
+                  		console.log(page.local[''sitesToCall''])
+                  		resolve();
+                  '
+          isEnabled: false
+        ↓CallSequence1 [ngx.components.UIDynamicAction-1675329604200]: 
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+          ↓SetGlobal [ngx.components.UIDynamicAction-1675329618884]: 
+            beanData: |
+              '{
+               "ionBean": "SetGlobalAction",
+               "Property": "plain:authUser",
+               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+              }'
+            ↓CallSequence [ngx.components.UIDynamicAction-1674744903333]: 
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
+              ↓user [ngx.components.UIControlVariable-1674745056659]: 
+                comment: new variable
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+              ↓computeSitesList [ngx.components.UICustomAction-1674747382687]: 
+                actionValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                        		var sites = vars.sites;
+                        		console.log(sites)
+                        		var hash = Object.create(null);
+                        		sites.forEach(function (a, index) {
+                        		    var key = JSON.stringify(a);
+                        		    hash[key] = (hash[key] || 0) + 1;
+                        		    if (hash[key] >= 2) {
+                        		      sites.splice(index, 1)
+                        		        console.log(''count of 2 or more of '' + key);
+                        		        console.log(index)
+                        		    }
+                        		});
+                        		
+                        		console.log(sites)
+                        		resolve();
+                        '
+                ↓sites [ngx.components.UIControlVariable-1674747396312]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓SetGlobal [ngx.components.UIDynamicAction-1674469118591]: 
       beanData: |
         '{
@@ -28,6 +100,7 @@ title: Monosite
          "Property": "plain:date_start",
          "Value": "script:''''"
         }'
+      isEnabled: false
       ↓SetGlobal1 [ngx.components.UIDynamicAction-1674469133199]: 
         beanData: |
           '{
@@ -35,77 +108,6 @@ title: Monosite
            "Property": "plain:date_end",
            "Value": "script:''''"
           }'
-        ↓SetLocal [ngx.components.UIDynamicAction-1674465653469]: 
-          beanData: |
-            '{
-             "ionBean": "SetLocalAction",
-             "Property": "plain:sitesToCall",
-             "Value": "script:[this.navParams.data.site_id]"
-            }'
-          ↓SetGlobal2 [ngx.components.UIDynamicAction-1674466920913]: 
-            beanData: |
-              '{
-               "ionBean": "SetGlobalAction",
-               "Property": "plain:sequenceParams",
-               "Value": "script:{\r\n\t\t\tdate_start: this.global[''date_start''],\r\n\t\t\tdate_end: this.global[''date_end''],\r\n\t\t\tsites: JSON.stringify(this.local[''sitesToCall'']),\r\n\t\t\tagg_function: ''month'',\r\n\t\t\tlabel: '''',\r\n\t\t\tsynthese: this.syntheseSelected,\r\n\t\t\tlimit: 20\r\n}"
-              }'
-            ↓CustomAction [ngx.components.UICustomAction-1669387570864]: 
-              actionValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                    →: |
-                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                      		console.log(this.navParams)
-                      		console.log(page.local[''sitesToCall''])
-                      		resolve();
-                      '
-              isEnabled: false
-            ↓CallSequence1 [ngx.components.UIDynamicAction-1675329604200]: 
-              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
-              ↓SetGlobal [ngx.components.UIDynamicAction-1675329618884]: 
-                beanData: |
-                  '{
-                   "ionBean": "SetGlobalAction",
-                   "Property": "plain:authUser",
-                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                  }'
-                ↓CallSequence [ngx.components.UIDynamicAction-1674744903333]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
-                  ↓user [ngx.components.UIControlVariable-1674745056659]: 
-                    comment: new variable
-                    varValue: 
-                      - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
-                  ↓computeSitesList [ngx.components.UICustomAction-1674747382687]: 
-                    actionValue: 
-                      - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                          →: |
-                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                            		var sites = vars.sites;
-                            		console.log(sites)
-                            		var hash = Object.create(null);
-                            		sites.forEach(function (a, index) {
-                            		    var key = JSON.stringify(a);
-                            		    hash[key] = (hash[key] || 0) + 1;
-                            		    if (hash[key] >= 2) {
-                            		      sites.splice(index, 1)
-                            		        console.log(''count of 2 or more of '' + key);
-                            		        console.log(index)
-                            		    }
-                            		});
-                            		
-                            		console.log(sites)
-                            		resolve();
-                            '
-                    ↓sites [ngx.components.UIControlVariable-1674747396312]: 
-                      varValue: 
-                        - xmlizable: 
-                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓Else_Handler [ngx.components.UIActionElseEvent-1674465681092]: 
       ↓SetLocal [ngx.components.UIDynamicAction-1674465687597]: 
         beanData: |
