@@ -853,7 +853,6 @@ title: Monosite
             tagName: ion-grid
             ↓rowMesEconomiesDernergiesAndMesConsoElec [ngx.components.UIDynamicElement-1674468995846]: 
               beanData: '{"ionBean":"GridRow"}'
-              isEnabled: false
               tagName: ion-row
               ↓colChartMesEconomiesDenergies [ngx.components.UIDynamicElement-1674468995848]: 
                 beanData: '{"ionBean":"GridCol"}'
@@ -1089,7 +1088,6 @@ title: Monosite
                         - MobileSmartSourceType: script:'false'
         ↓colHeatmap [ngx.components.UIDynamicElement-1674468891321]: 
           beanData: '{"ionBean":"GridCol"}'
-          isEnabled: false
           tagName: ion-col
           ↓UseSharedComponent [ngx.components.UIUseShared-1674480284420]: 
             isEnabled: false

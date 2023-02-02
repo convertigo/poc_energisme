@@ -61,6 +61,9 @@ scriptContent:
         							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
+        							} else if (this.sequenceToCall == ".widget_conso" && this.sequenceMarker == "consoMensuelle") {
+        								agg_function = "month"
+        								
         							} else {
         								agg_function = changes[key].previousValue[''agg_function'']
         							}
@@ -97,6 +100,9 @@ scriptContent:
         								
         								if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         									agg_function = "day"
+        								} else if (this.sequenceToCall == ".widget_conso" && this.sequenceMarker == "consoMensuelle") {
+        									agg_function = "month"
+        									
         								} else {
         									agg_function = changes[key].previousValue[''agg_function'']
         								}
@@ -115,6 +121,9 @@ scriptContent:
         								
         								if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         									agg_function = "day"
+        								} else if (this.sequenceToCall == ".widget_conso" && this.sequenceMarker == "consoMensuelle") {
+        									agg_function = "month"
+        									
         								} else {
         									agg_function = changes[key].previousValue[''agg_function'']
         								}
@@ -139,7 +148,7 @@ scriptContent:
         							
         							this.showSpinner = "true";
         							
-        							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
         							
@@ -149,7 +158,7 @@ scriptContent:
         							this.showSpinner = "false";
         							
         							})
-        						}, 100)
+        						})
         						}
         
         
@@ -185,9 +194,12 @@ scriptContent:
         							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
+        							} else if (this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
+        								agg_function = "month"
+        								
         							} else {
         								agg_function = changes[key].previousValue[''agg_function'']
-        							} 
+        							}
         							
         							
         						} else {
@@ -197,6 +209,9 @@ scriptContent:
         							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
+        							} else if (this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
+        								agg_function = "month"
+        								
         							} else {
         								agg_function = changes[key].currentValue[''agg_function'']
         							}
@@ -210,7 +225,7 @@ scriptContent:
         							changes[key].currentValue[''date_end''] = date_end;
         							// changes[key].currentValue[''agg_function''] = agg_function;
         							this.showSpinner = "true";
-        							 if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        							 if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
         							
@@ -220,7 +235,7 @@ scriptContent:
         								this.showSpinner = "false";
         								
         							})
-        						}, 100)
+        						})
         						
         						
         					}
