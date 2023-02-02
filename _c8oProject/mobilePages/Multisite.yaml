@@ -46,12 +46,15 @@ scriptContent:
         	getParentGroupStatus(groupName) {
         		var el = document.getElementById(groupName)
         		var shadow = el.shadowRoot
-        		var check = shadow.childNodes[2][''attributes''][1][''nodeValue'']
-        		if(check == "true") {
-        			return true
-        		} else {
-        			return false
+        		if(shadow.childNodes[2] != undefined) {
+        			var check = shadow.childNodes[2][''attributes''][1][''nodeValue'']
+        			if(check == "true") {
+        				return true
+        			} else {
+        				return false
+        			}
         		}
+        		
         	}
         	/*End_c8o_PageFunction*/
         '
