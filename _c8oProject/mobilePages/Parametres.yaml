@@ -285,7 +285,22 @@ title: Title for Parametres
                           beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.data.add == \"true\""}'
                           ↓CallSequence [ngx.components.UIDynamicAction-1672764292266]: 
                             beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
+                            isEnabled: false
                             ↓user [ngx.components.UIControlVariable-1672764292269]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                          ↓CallSequence1 [ngx.components.UIDynamicAction-1675424449786]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                            ↓label [ngx.components.UIControlVariable-1675424459425]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:
+                            ↓user [ngx.components.UIControlVariable-1675424459427]: 
                               comment: new variable
                               varValue: 
                                 - xmlizable: 

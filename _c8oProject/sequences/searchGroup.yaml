@@ -1,4 +1,3 @@
-responseExpiryDate: daily,10:00:00
 ↓Input_variables [steps.InputVariablesStep-1672750961667]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1672750932597]: 
   isEnabled: false
