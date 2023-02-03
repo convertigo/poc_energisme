@@ -158,7 +158,7 @@ scriptContent:
         							this.showSpinner = "false";
         							
         							})
-        						})
+        						}, 100)
         						}
         
         
@@ -235,7 +235,7 @@ scriptContent:
         								this.showSpinner = "false";
         								
         							})
-        						})
+        						}, 100)
         						
         						
         					}
