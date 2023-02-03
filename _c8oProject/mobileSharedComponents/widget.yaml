@@ -588,16 +588,25 @@ scriptContent:
                               				date_start: sequenceParams.date_start,
                               				date_end: sequenceParams.date_end,
                               				sites: sequenceParams.sites,
-                              				agg_function: sequenceParams.agg_function,
+                              				agg_function: page.selectAggregation,
                               				label: '''',
                               				synthese: sequenceParams.synthese
                               			}
                               			console.log(this.global[''sequenceParams'']) 
                               			console.log(page)
                               		} else {
+                              			sequenceParams = {
+                              				date_start: sequenceParams.date_start,
+                              				date_end: sequenceParams.date_end,
+                              				sites: sequenceParams.sites,
+                              				agg_function: page.selectAggregation,
+                              				label: '''',
+                              				synthese: sequenceParams.synthese
+                              			}
                               			this.call(sequenceToCall, sequenceParams, null, 500, false).then( (resp) => {
                               		 		page.local[''response''] = resp
                               			})
+                              			
                               		}
                               
                               		resolve();
