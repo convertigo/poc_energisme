@@ -1,4 +1,14 @@
 ↓Input_variables [steps.InputVariablesStep-1673271074779]: 
+↓jSimpleSource [steps.SimpleSourceStep-1675417251700]: 
+  sourceDefinition: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+      - com.twinsoft.convertigo.beans.common.XMLVector: 
+        - java.lang.String: 
+          - ↑value: 1673271074779
+        - java.lang.String: 
+          - ↑value: ./agg_function/text()
+  variableName: agg_function_old
 ↓buildAggFunction [steps.SimpleStep-1673271074782]: 
   expression: |
     'if(agg_function == "year") {
@@ -52,1025 +62,6 @@
         - java.lang.String: 
           - ↑value: ./document/sql_output
   variableName: length
-↓jIfThenElse [steps.IfThenElseStep-1673271074812]: 
-  condition: chartType == "bar"
-  isEnabled: false
-  ↓jThen [steps.ThenStep-1673271074815]: 
-    ↓Field [steps.JsonFieldStep-1673271074818]: 
-      key: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: chartType
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: SOURCE
-            - com.twinsoft.convertigo.beans.common.XMLVector: 
-              - java.lang.String: 
-                - ↑value: 1673013038503
-              - java.lang.String: 
-                - ↑value: ./chartType/text()
-    ↓data [steps.JsonObjectStep-1673271074821]: 
-      key: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: data
-      ↓labels [steps.JsonArrayStep-1673271074824]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: labels
-        ↓Iterator [steps.IteratorStep-1673271074827]: 
-          sourceDefinition: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-              - com.twinsoft.convertigo.beans.common.XMLVector: 
-                - java.lang.String: 
-                  - ↑value: 1673271074791
-                - java.lang.String: 
-                  - ↑value: ./document/sql_output/row
-          ↓jSimpleSource [steps.SimpleSourceStep-1673271074830]: 
-            sourceDefinition: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                - com.twinsoft.convertigo.beans.common.XMLVector: 
-                  - java.lang.String: 
-                    - ↑value: 1673271074827
-                  - java.lang.String: 
-                    - ↑value: ./agg_period/text()
-            variableName: currentDate
-          ↓getCurrentYear [steps.SimpleStep-1673271074833]: 
-            expression: |
-              var currentYear = currentDate.substring(0, 4)
-              log.warn('labels')
-              log.warn(currentYear)
-          ↓jIf [steps.IfStep-1673271074836]: 
-            condition: currentYear == firstYear
-            ↓Field [steps.JsonFieldStep-1673271074839]: 
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: SOURCE
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1673020376655
-                      - java.lang.String: 
-                        - ↑value: ./agg_period/text()
-      ↓Array [steps.JsonArrayStep-1673271074842]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: datasets
-        ↓Object [steps.JsonObjectStep-1673271074845]: 
-          comment: Electricité année précédente
-          ↓Field [steps.JsonFieldStep-1673271074848]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: label
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Electricité (année précédente)
-          ↓Array [steps.JsonArrayStep-1673271074851]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: data
-            ↓Iterator [steps.IteratorStep-1673271074854]: 
-              sourceDefinition: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                  - com.twinsoft.convertigo.beans.common.XMLVector: 
-                    - java.lang.String: 
-                      - ↑value: 1673271074791
-                    - java.lang.String: 
-                      - ↑value: ./document/sql_output/row
-              ↓jSimpleSource [steps.SimpleSourceStep-1673271074857]: 
-                sourceDefinition: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1673271074854
-                      - java.lang.String: 
-                        - ↑value: ./agg_period/text()
-                variableName: currentDate
-              ↓getCurrentYear [steps.SimpleStep-1673271074860]: 
-                expression: var currentYear = currentDate.substring(0, 4)
-              ↓jIf [steps.IfStep-1673271074863]: 
-                condition: currentYear == firstYear
-                ↓Field [steps.JsonFieldStep-1673271074866]: 
-                  value: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: SOURCE
-                        - com.twinsoft.convertigo.beans.common.XMLVector: 
-                          - java.lang.String: 
-                            - ↑value: 1673020477582
-                          - java.lang.String: 
-                            - ↑value: ./sum_conso_elec/text()
-          ↓Field_1 [steps.JsonFieldStep-1673271074869]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: stack
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Stack 0
-          ↓Field_2 [steps.JsonFieldStep-1673271074872]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: backgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(50, 193, 113, 0.5)
-          ↓Field_3 [steps.JsonFieldStep-1673271074875]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBackgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(50, 193, 113, 0.5)
-          ↓Field_4 [steps.JsonFieldStep-1673271074878]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: borderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(50, 193, 113, 0.5)
-          ↓Field_5 [steps.JsonFieldStep-1673271074881]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBorderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(50, 193, 113, 0.5)
-        ↓Object1 [steps.JsonObjectStep-1673271074884]: 
-          comment: Gaz année précédente
-          ↓Field [steps.JsonFieldStep-1673271074887]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: label
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Gaz (année précédente)
-          ↓Array [steps.JsonArrayStep-1673271074890]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: data
-            ↓Iterator [steps.IteratorStep-1673271074893]: 
-              sourceDefinition: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                  - com.twinsoft.convertigo.beans.common.XMLVector: 
-                    - java.lang.String: 
-                      - ↑value: 1673271074791
-                    - java.lang.String: 
-                      - ↑value: ./document/sql_output/row
-              ↓jSimpleSource [steps.SimpleSourceStep-1673271074896]: 
-                sourceDefinition: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1673271074893
-                      - java.lang.String: 
-                        - ↑value: ./agg_period/text()
-                variableName: currentDate
-              ↓getCurrentYear [steps.SimpleStep-1673271074899]: 
-                expression: var currentYear = currentDate.substring(0, 4)
-              ↓jIf [steps.IfStep-1673271074902]: 
-                condition: currentYear == firstYear
-                ↓Field [steps.JsonFieldStep-1673271074905]: 
-                  value: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: SOURCE
-                        - com.twinsoft.convertigo.beans.common.XMLVector: 
-                          - java.lang.String: 
-                            - ↑value: 1673020477621
-                          - java.lang.String: 
-                            - ↑value: ./sum_conso_gaz/text()
-          ↓Field_1 [steps.JsonFieldStep-1673271074908]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: stack
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Stack 0
-          ↓Field_2 [steps.JsonFieldStep-1673271074911]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: backgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(254, 169, 62, 0.5)
-          ↓Field_3 [steps.JsonFieldStep-1673271074914]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBackgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(254, 169, 62, 0.5)
-          ↓Field_4 [steps.JsonFieldStep-1673271074917]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: borderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(254, 169, 62, 0.5)
-          ↓Field_5 [steps.JsonFieldStep-1673271074920]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBorderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgba(254, 169, 62, 0.5)
-        ↓Object_1 [steps.JsonObjectStep-1673271074923]: 
-          comment: Electricité
-          ↓Field [steps.JsonFieldStep-1673271074926]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: label
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Electricité
-          ↓Array [steps.JsonArrayStep-1673271074929]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: data
-            ↓Iterator [steps.IteratorStep-1673271074932]: 
-              sourceDefinition: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                  - com.twinsoft.convertigo.beans.common.XMLVector: 
-                    - java.lang.String: 
-                      - ↑value: 1673271074791
-                    - java.lang.String: 
-                      - ↑value: ./document/sql_output/row
-              ↓jSimpleSource [steps.SimpleSourceStep-1673271074935]: 
-                sourceDefinition: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1673271074932
-                      - java.lang.String: 
-                        - ↑value: ./agg_period/text()
-                variableName: currentDate
-              ↓getCurrentYear [steps.SimpleStep-1673271074938]: 
-                expression: var currentYear = currentDate.substring(0, 4)
-              ↓jIf [steps.IfStep-1673271074941]: 
-                condition: currentYear != firstYear
-                ↓Field [steps.JsonFieldStep-1673271074944]: 
-                  value: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: SOURCE
-                        - com.twinsoft.convertigo.beans.common.XMLVector: 
-                          - java.lang.String: 
-                            - ↑value: 1673020477660
-                          - java.lang.String: 
-                            - ↑value: ./sum_conso_elec/text()
-          ↓Field_1 [steps.JsonFieldStep-1673271074947]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: stack
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Stack 1
-          ↓Field_2 [steps.JsonFieldStep-1673271074950]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: backgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(50, 193, 113)
-          ↓Field_3 [steps.JsonFieldStep-1673271074953]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBackgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(50, 193, 113)
-          ↓Field_4 [steps.JsonFieldStep-1673271074956]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: borderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(50, 193, 113)
-          ↓Field_5 [steps.JsonFieldStep-1673271074959]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBorderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(50, 193, 113)
-        ↓Object_2 [steps.JsonObjectStep-1673271074962]: 
-          comment: Gaz
-          ↓Field [steps.JsonFieldStep-1673271074965]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: label
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Gaz
-          ↓Array [steps.JsonArrayStep-1673271074968]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: data
-            ↓Iterator [steps.IteratorStep-1673271074971]: 
-              sourceDefinition: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                  - com.twinsoft.convertigo.beans.common.XMLVector: 
-                    - java.lang.String: 
-                      - ↑value: 1673271074791
-                    - java.lang.String: 
-                      - ↑value: ./document/sql_output/row
-              ↓jSimpleSource [steps.SimpleSourceStep-1673271074974]: 
-                sourceDefinition: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1673271074971
-                      - java.lang.String: 
-                        - ↑value: ./agg_period/text()
-                variableName: currentDate
-              ↓getCurrentYear [steps.SimpleStep-1673271074977]: 
-                expression: var currentYear = currentDate.substring(0, 4)
-              ↓jIf [steps.IfStep-1673271074980]: 
-                condition: currentYear != firstYear
-                ↓Field [steps.JsonFieldStep-1673271074983]: 
-                  value: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: SOURCE
-                        - com.twinsoft.convertigo.beans.common.XMLVector: 
-                          - java.lang.String: 
-                            - ↑value: 1673020477699
-                          - java.lang.String: 
-                            - ↑value: ./sum_conso_gaz/text()
-          ↓Field_1 [steps.JsonFieldStep-1673271074986]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: stack
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: Stack 1
-          ↓Field_2 [steps.JsonFieldStep-1673271074989]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: backgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(254, 169, 62)
-          ↓Field_3 [steps.JsonFieldStep-1673271074992]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBackgroundColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(254, 169, 62)
-          ↓Field_4 [steps.JsonFieldStep-1673271074995]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: borderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(254, 169, 62)
-          ↓Field_5 [steps.JsonFieldStep-1673271074998]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: hoverBorderColor
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: rgb(254, 169, 62)
-    ↓Object_1 [steps.JsonObjectStep-1673271075001]: 
-      key: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: chartOptions
-      ↓Object [steps.JsonObjectStep-1673271075004]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: plugins
-        ↓Object [steps.JsonObjectStep-1673271075007]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: legend
-          ↓Field [steps.JsonFieldStep-1673271075010]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: position
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: bottom
-          ↓Field_1 [steps.JsonFieldStep-1673271075013]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: align
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: center
-      ↓Object_1 [steps.JsonObjectStep-1673271075016]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: scales
-        ↓Object [steps.JsonObjectStep-1673271075019]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: x
-          ↓Field [steps.JsonFieldStep-1673271075022]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: stacked
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: true
-        ↓Object1 [steps.JsonObjectStep-1673271075025]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: y
-          ↓Field [steps.JsonFieldStep-1673271075028]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: stacked
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: true
-          ↓Field_1 [steps.JsonFieldStep-1673271075031]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: title
-            value: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: MWh
-      ↓Field [steps.JsonFieldStep-1673271075034]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: maintainAspectRatio
-        type: bool
-        value: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: false
-      ↓responsive [steps.JsonFieldStep-1673271075037]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: responsive
-        type: bool
-        value: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: true
-    ↓calculTotalAndComputeDate [steps.SimpleStep-1673271075040]: 
-      expression: |
-        'String.prototype.replaceAll = function(search, replacement) {
-            var target = this;
-            return target.replace(new RegExp(search, ''g''), replacement);
-        };
-        
-        date_start = date_start.replaceAll(''-'', ''/'')
-        date_end = date_end.replaceAll(''-'', ''/'')
-        var date = date_start + '' - '' + date_end;'
-    ↓jElement_1 [steps.ElementStep-1673271075043]: 
-      expression: date
-      nodeName: date
-  ↓jElse [steps.ElseStep-1673271075046]: 
-↓initTotals [steps.SimpleStep-1673271075052]: 
-  expression: |
-    var conso_total_current_year = 0;
-    var conso_total_last_year = 0;
-  isEnabled: false
-↓Iterator [steps.IteratorStep-1673271075055]: 
-  isEnabled: false
-  sourceDefinition: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-      - com.twinsoft.convertigo.beans.common.XMLVector: 
-        - java.lang.String: 
-          - ↑value: 1673271074791
-        - java.lang.String: 
-          - ↑value: ./document/sql_output/row
-  ↓jSimpleSource [steps.SimpleSourceStep-1673271075058]: 
-    sourceDefinition: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-        - com.twinsoft.convertigo.beans.common.XMLVector: 
-          - java.lang.String: 
-            - ↑value: 1673271075055
-          - java.lang.String: 
-            - ↑value: ./agg_period/text()
-    variableName: currentDate
-  ↓getCurrentYear [steps.SimpleStep-1673271075061]: 
-    expression: |
-      var currentYear = currentDate.substring(0, 4)
-      log.warn('labels')
-      log.warn(currentYear)
-  ↓jIfThenElse [steps.IfThenElseStep-1673271075064]: 
-    condition: currentYear == firstYear
-    ↓jThen [steps.ThenStep-1673271075067]: 
-      ↓jSimpleSource [steps.SimpleSourceStep-1673271075070]: 
-        sourceDefinition: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-            - com.twinsoft.convertigo.beans.common.XMLVector: 
-              - java.lang.String: 
-                - ↑value: 1673271075055
-              - java.lang.String: 
-                - ↑value: ./sum_conso_elec/text()
-        variableName: conso
-      ↓addTotal [steps.SimpleStep-1673271075073]: 
-        expression: |
-          conso_total_current_year = conso_total_current_year + parseInt(conso);
-          log.warn(conso_total_current_year)
-    ↓jElse [steps.ElseStep-1673271075076]: 
-      ↓jSimpleSource [steps.SimpleSourceStep-1673271075079]: 
-        sourceDefinition: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-            - com.twinsoft.convertigo.beans.common.XMLVector: 
-              - java.lang.String: 
-                - ↑value: 1673271075055
-              - java.lang.String: 
-                - ↑value: ./sum_conso_elec/text()
-        variableName: conso
-      ↓addTotal [steps.SimpleStep-1673271075082]: 
-        expression: |
-          conso_total_last_year = conso_total_last_year + parseInt(conso);
-          log.warn("lastyear total")
-          log.warn(conso_total_last_year)
-↓calculAugmentation [steps.SimpleStep-1673271075085]: 
-  expression: |
-    var augmentation = Math.round( ((conso_total_current_year - conso_total_last_year) / conso_total_last_year * 100) * 100) / 100
-    log.warn("augmentation")
-    log.warn(augmentation)
-  isEnabled: false
-↓needleValue [steps.JsonFieldStep-1673271075088]: 
-  isEnabled: false
-  key: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: PLAIN
-        - →→: needleValue
-  value: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: JS
-        - →→: augmentation
-↓computeBottomLabel [steps.SimpleStep-1673271075091]: 
-  expression: |
-    'augmentation = ""+augmentation
-    log.warn(''aug'')
-    log.warn(augmentation)
-    if(augmentation.indexOf(''-'') != - 1 ) {
-    	var splt = augmentation.split(",");
-    	log.warn("splt")
-    	log.warn(splt)
-    	augmentation = "-" + splt[0] + "%"
-    } else {
-    	augmentation = "+ " + augmentation + "%"
-    }'
-  isEnabled: false
-↓bottomLabel [steps.JsonFieldStep-1673271075094]: 
-  isEnabled: false
-  key: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: PLAIN
-        - →→: bottomLabel
-  value: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: JS
-        - →→: augmentation
-↓options [steps.JsonObjectStep-1673271075097]: 
-  isEnabled: false
-  key: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: PLAIN
-        - →→: options
-  ↓hasNeeldle [steps.JsonFieldStep-1673271075100]: 
-    key: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: hasNeedle
-    type: bool
-    value: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: true
-  ↓needleColor [steps.JsonFieldStep-1673271075103]: 
-    key: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: needleColor
-    value: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: lightgrey
-  ↓hasNeeldle2 [steps.JsonFieldStep-1673271075106]: 
-    key: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: needleUpdateSpeed
-    type: number
-    value: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: 1000
-  ↓arcColors [steps.JsonArrayStep-1673271075109]: 
-    key: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: arcColors
-    ↓Field [steps.JsonFieldStep-1673271075112]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: rgb(6, 89, 55)
-    ↓Field1 [steps.JsonFieldStep-1673271075115]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: rgb(15, 170, 108)
-    ↓Field2 [steps.JsonFieldStep-1673271075118]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: rgb(139, 207, 39)
-    ↓Field3 [steps.JsonFieldStep-1673271075121]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: rgb(248, 199, 0)
-    ↓Field4 [steps.JsonFieldStep-1673271075124]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: rgb(235, 65, 70)
-  ↓arcDelimiters [steps.JsonArrayStep-1673271075127]: 
-    key: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: arcDelimiters
-    ↓Field4 [steps.JsonFieldStep-1673271075130]: 
-      type: number
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: 20
-    ↓Field5 [steps.JsonFieldStep-1673271075133]: 
-      type: number
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: 40
-    ↓Field6 [steps.JsonFieldStep-1673271075136]: 
-      type: number
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: 60
-    ↓Field7 [steps.JsonFieldStep-1673271075139]: 
-      type: number
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: 80
-  ↓rangeLabel [steps.JsonArrayStep-1673271075142]: 
-    key: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: rangeLabel
-    ↓Field4 [steps.JsonFieldStep-1673271075145]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: '-20'
-    ↓Field5 [steps.JsonFieldStep-1673271075148]: 
-      value: 
-        - xmlizable: 
-          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-          - SmartType: 
-            - ↑mode: PLAIN
-            - →→: 5
-  ↓needleStartValue [steps.JsonFieldStep-1673271075151]: 
-    isEnabled: false
-    key: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: needleStartValue
-    type: number
-    value: 
-      - xmlizable: 
-        - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-        - SmartType: 
-          - ↑mode: PLAIN
-          - →→: 20
-↓lastTotal [steps.JsonFieldStep-1673272237502]: 
-  isEnabled: false
-  key: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: PLAIN
-        - →→: lastTotal
-  type: number
-  value: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: JS
-        - →→: conso_total_last_year
-↓lastTotal1 [steps.JsonFieldStep-1673272278694]: 
-  isEnabled: false
-  key: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: PLAIN
-        - →→: currentTotal
-  type: number
-  value: 
-    - xmlizable: 
-      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-      - SmartType: 
-        - ↑mode: JS
-        - →→: conso_total_current_year
 ↓jIfThenElse_1 [steps.IfThenElseStep-1674227162995]: 
   condition: length.length == 0
   ↓jThen [steps.ThenStep-1674227163480]: 
@@ -1137,6 +128,8 @@
           var conso_total_current_year = 0;
           var conso_total_last_year = 0;
       ↓Iterator [steps.IteratorStep-1673865554966]: 
+        condition: 2
+        isEnabled: false
         sourceDefinition: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -1162,6 +155,7 @@
             log.warn(currentYear)
         ↓jIfThenElse [steps.IfThenElseStep-1673865554975]: 
           condition: currentYear == firstYear
+          isEnabled: false
           ↓jThen [steps.ThenStep-1673865554978]: 
             ↓jSimpleSource [steps.SimpleSourceStep-1673865554981]: 
               sourceDefinition: 
@@ -1219,9 +213,80 @@
                 log.warn("lasttYear gaz and Elec")
                 log.warn(consoGaz)
                 log.warn(consoElec)
+        ↓jSimpleSource1 [steps.SimpleSourceStep-1675416660907]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1673865554966
+                - java.lang.String: 
+                  - ↑value: ./sum_conso_elec/text()
+          variableName: consoElec
+        ↓jSimpleSource_1 [steps.SimpleSourceStep-1675416660910]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1673865554966
+                - java.lang.String: 
+                  - ↑value: ./sum_conso_gaz/text()
+          variableName: consoGaz
+        ↓addTotal [steps.SimpleStep-1675416660913]: 
+          expression: |
+            conso_total_current_year = conso_total_current_year + Number(consoElec) + Number(consoGaz);
+            log.warn(conso_total_current_year)
+            log.warn("currentYear gaz and Elec")
+            log.warn(consoGaz)
+            log.warn(consoElec)
+      ↓jSimpleSource [steps.SimpleSourceStep-1675416696715]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/sum_conso_elec/text()
+        variableName: firstConsoElec
+      ↓jSimpleSource_1 [steps.SimpleSourceStep-1675416696718]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/sum_conso_gaz/text()
+        variableName: firstConsoGaz
+      ↓sumFirstConso [steps.SimpleStep-1675416696721]: 
+        expression: var firstConso = Number(firstConsoElec) + Number(firstConsoGaz)
+      ↓jSimpleSource1 [steps.SimpleSourceStep-1675416857964]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/sum_conso_elec/text()
+        variableName: secondConsoElec
+      ↓jSimpleSource_2 [steps.SimpleSourceStep-1675416857967]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/sum_conso_gaz/text()
+        variableName: secondConsoGaz
+      ↓sumSecondConso [steps.SimpleStep-1675416857970]: 
+        expression: var secondConso = Number(secondConsoElec) + Number(secondConsoGaz)
       ↓calculAugmentation [steps.SimpleStep-1673865554996]: 
         expression: |
-          var augmentation = Math.round( ((conso_total_current_year - conso_total_last_year) / conso_total_last_year * 100) * 100) / 100
+          var augmentation = Math.round( ((secondConso - firstConso) / firstConso * 100) * 100) / 100
           log.warn("augmentation")
           log.warn(augmentation)
       ↓needleValue [steps.JsonFieldStep-1673865554999]: 
@@ -1242,6 +307,7 @@
           'augmentation = ""+augmentation
           log.warn(''aug'')
           log.warn(augmentation)
+          /*
           if(augmentation.indexOf(''-'') != - 1 ) {
           	var splt = augmentation.split(",");
           	log.warn("splt")
@@ -1249,6 +315,12 @@
           	augmentation = "-" + splt[0] + "%"
           } else {
           	augmentation = "+ " + augmentation + "%"
+          }
+          */
+          if(augmentation.indexOf(''-'') == -1) {
+          	augmentation = "+ " + augmentation + "%"
+          } else {
+          	augmentation = augmentation + "%"
           }'
       ↓bottomLabel [steps.JsonFieldStep-1673865555005]: 
         key: 
@@ -1430,8 +502,8 @@
                 - →→: 20
       ↓roundTotals [steps.SimpleStep-1675086411157]: 
         expression: |
-          conso_total_last_year = Math.round( (conso_total_last_year + Number.EPSILON) * 100) / 100
-          conso_total_current_year = Math.round( (conso_total_current_year + Number.EPSILON) * 100) / 100
+          firstConso = Math.round( (firstConso + Number.EPSILON) * 100) / 100
+          secondConso = Math.round( (secondConso + Number.EPSILON) * 100) / 100
       ↓lastTotal [steps.JsonFieldStep-1673865555065]: 
         key: 
           - xmlizable: 
@@ -1445,7 +517,7 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: JS
-              - →→: conso_total_last_year
+              - →→: firstConso
       ↓lastTotal1 [steps.JsonFieldStep-1673865555068]: 
         key: 
           - xmlizable: 
@@ -1459,8 +531,57 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: JS
-              - →→: conso_total_current_year
-      ↓calculTotalAndComputeDate [steps.SimpleStep-1674229586199]: 
+              - →→: secondConso
+      ↓jSimpleSource_3 [steps.SimpleSourceStep-1675417406124]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/agg_period/text()
+        variableName: firstPeriod
+      ↓jSimpleSource_4 [steps.SimpleSourceStep-1675417419671]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/agg_period/text()
+        variableName: secondPeriod
+      ↓computePeriodToDisplay [steps.SimpleStep-1675417663488]: 
+        expression: |
+          'var months = {
+          	"01": "Jan",
+          	"02": "Fév",
+          	"03": "Mars",
+          	"04": "Avril",
+          	"05": "Mai",
+          	"06": "Juin",
+          	"07": "Juillet",
+          	"08": "Aout",
+          	"09": "Sept",
+          	"10": "Oct",
+          	"11": "Nov",
+          	"12": "Dec"
+          }
+          
+          var firstPeriodToDisplay;
+          var secondPeriodToDisplay;
+          if(agg_function_old == "week") {
+          	firstPeriodToDisplay = "S" + firstPeriod.split("-")[1] + " " + firstPeriod.split("-")[0]
+          	secondPeriodToDisplay = "S" + secondPeriod.split("-")[1] + " " + secondPeriod.split("-")[0]
+          } else if(agg_function_old == "year") {
+          	firstPeriodToDisplay = firstPeriod.split(''-'')[0]
+          	secondPeriodToDisplay = secondPeriod.split("-")[0]
+          } else {
+          	firstPeriodToDisplay = months[firstPeriod.split(''-'')[1]] + " " + firstPeriod.split(''-'')[0]
+          	secondPeriodToDisplay = months[secondPeriod.split(''-'')[1]] + " " + secondPeriod.split(''-'')[0]
+          }'
+      ↓ComputeDate [steps.SimpleStep-1674229586199]: 
         expression: |
           'String.prototype.replaceAll = function(search, replacement) {
               var target = this;
@@ -1480,6 +601,32 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
+      ↓Field_1 [steps.JsonFieldStep-1675418035654]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: firstPeriodToDisplay
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: firstPeriodToDisplay
+      ↓Field_2 [steps.JsonFieldStep-1675418055990]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: secondPeriodToDisplay
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: secondPeriodToDisplay
     ↓jIf_1 [steps.IfStep-1673865659543]: 
       condition: synthese == 'elec'
       ↓initTotals [steps.SimpleStep-1673867682207]: 
@@ -1487,6 +634,7 @@
           var conso_total_current_year = 0;
           var conso_total_last_year = 0;
       ↓Iterator [steps.IteratorStep-1673866491372]: 
+        isEnabled: false
         sourceDefinition: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -1543,9 +691,57 @@
                 conso_total_last_year = conso_total_last_year + Number(conso);
                 log.warn("lastyear total")
                 log.warn(conso_total_last_year)
+      ↓jSimpleSource [steps.SimpleSourceStep-1675418305377]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/sum_conso_elec/text()
+        variableName: firstConsoElec
+      ↓jSimpleSource_1 [steps.SimpleSourceStep-1675418305380]: 
+        isEnabled: false
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/sum_conso_gaz/text()
+        variableName: firstConsoGaz
+      ↓sumFirstConso [steps.SimpleStep-1675418305383]: 
+        expression: var firstConso = Number(firstConsoElec) + Number(firstConsoGaz)
+        isEnabled: false
+      ↓jSimpleSource1 [steps.SimpleSourceStep-1675418305386]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/sum_conso_elec/text()
+        variableName: secondConsoElec
+      ↓jSimpleSource_2 [steps.SimpleSourceStep-1675418305389]: 
+        isEnabled: false
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/sum_conso_gaz/text()
+        variableName: secondConsoGaz
+      ↓sumSecondConso [steps.SimpleStep-1675418305392]: 
+        expression: var secondConso = Number(secondConsoElec) + Number(secondConsoGaz)
+        isEnabled: false
       ↓calculAugmentation [steps.SimpleStep-1673867319105]: 
         expression: |
-          var augmentation = Math.round( ((conso_total_current_year - conso_total_last_year) / conso_total_last_year * 100) * 100) / 100
+          var augmentation = Math.round( ((secondConsoElec - firstConsoElec) / firstConsoElec * 100) * 100) / 100
           log.warn("augmentation")
           log.warn(augmentation)
       ↓needleValue [steps.JsonFieldStep-1673867319108]: 
@@ -1566,6 +762,7 @@
           'augmentation = ""+augmentation
           log.warn(''aug'')
           log.warn(augmentation)
+          /*
           if(augmentation.indexOf(''-'') != - 1 ) {
           	var splt = augmentation.split(",");
           	log.warn("splt")
@@ -1573,6 +770,12 @@
           	augmentation = "-" + splt[0] + "%"
           } else {
           	augmentation = "+ " + augmentation + "%"
+          }
+          */
+          if(augmentation.indexOf(''-'') == -1) {
+          	augmentation = "+ " + augmentation + "%"
+          } else {
+          	augmentation = augmentation + "%"
           }'
       ↓bottomLabel [steps.JsonFieldStep-1673867319114]: 
         key: 
@@ -1754,8 +957,11 @@
                 - →→: 20
       ↓roundTotals [steps.SimpleStep-1675086498854]: 
         expression: |
-          conso_total_last_year = Math.round( (conso_total_last_year + Number.EPSILON) * 100) / 100
-          conso_total_current_year = Math.round( (conso_total_current_year + Number.EPSILON) * 100) / 100
+          var firstConso = Math.round( (Number(firstConsoElec) + Number.EPSILON) * 100) / 100
+          var secondConso = Math.round( (Number(secondConsoElec) + Number.EPSILON) * 100) / 100
+          log.warn('roundTotals')
+          log.warn(firstConso)
+          log.warn(secondConso)
       ↓lastTotal [steps.JsonFieldStep-1673867319174]: 
         key: 
           - xmlizable: 
@@ -1769,7 +975,7 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: JS
-              - →→: conso_total_last_year
+              - →→: firstConso
       ↓lastTotal1 [steps.JsonFieldStep-1673867319177]: 
         key: 
           - xmlizable: 
@@ -1783,8 +989,57 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: JS
-              - →→: conso_total_current_year
-      ↓calculTotalAndComputeDate [steps.SimpleStep-1674229589731]: 
+              - →→: secondConso
+      ↓jSimpleSource_3 [steps.SimpleSourceStep-1675418378287]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/agg_period/text()
+        variableName: firstPeriod
+      ↓jSimpleSource_4 [steps.SimpleSourceStep-1675418378290]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/agg_period/text()
+        variableName: secondPeriod
+      ↓computePeriodToDisplay [steps.SimpleStep-1675418378293]: 
+        expression: |
+          'var months = {
+          	"01": "Jan",
+          	"02": "Fév",
+          	"03": "Mars",
+          	"04": "Avril",
+          	"05": "Mai",
+          	"06": "Juin",
+          	"07": "Juillet",
+          	"08": "Aout",
+          	"09": "Sept",
+          	"10": "Oct",
+          	"11": "Nov",
+          	"12": "Dec"
+          }
+          
+          var firstPeriodToDisplay;
+          var secondPeriodToDisplay;
+          if(agg_function_old == "week") {
+          	firstPeriodToDisplay = "S" + firstPeriod.split("-")[1] + " " + firstPeriod.split("-")[0]
+          	secondPeriodToDisplay = "S" + secondPeriod.split("-")[1] + " " + secondPeriod.split("-")[0]
+          } else if(agg_function_old == "year") {
+          	firstPeriodToDisplay = firstPeriod.split(''-'')[0]
+          	secondPeriodToDisplay = secondPeriod.split("-")[0]
+          } else {
+          	firstPeriodToDisplay = months[firstPeriod.split(''-'')[1]] + " " + firstPeriod.split(''-'')[0]
+          	secondPeriodToDisplay = months[secondPeriod.split(''-'')[1]] + " " + secondPeriod.split(''-'')[0]
+          }'
+      ↓ComputeDate [steps.SimpleStep-1674229589731]: 
         expression: |
           'String.prototype.replaceAll = function(search, replacement) {
               var target = this;
@@ -1804,6 +1059,32 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
+      ↓Field_1 [steps.JsonFieldStep-1675418378296]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: firstPeriodToDisplay
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: firstPeriodToDisplay
+      ↓Field_2 [steps.JsonFieldStep-1675418378299]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: secondPeriodToDisplay
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: secondPeriodToDisplay
     ↓jIf_2 [steps.IfStep-1673867751337]: 
       condition: synthese == 'gaz'
       ↓initTotals [steps.SimpleStep-1673867751340]: 
@@ -1811,6 +1092,7 @@
           var conso_total_current_year = 0;
           var conso_total_last_year = 0;
       ↓Iterator [steps.IteratorStep-1673867751343]: 
+        isEnabled: false
         sourceDefinition: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -1867,9 +1149,29 @@
                 conso_total_last_year = conso_total_last_year + Number(conso);
                 log.warn("lastyear total")
                 log.warn(conso_total_last_year)
+      ↓jSimpleSource_1 [steps.SimpleSourceStep-1675419568492]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/sum_conso_gaz/text()
+        variableName: firstConsoGaz
+      ↓jSimpleSource_2 [steps.SimpleSourceStep-1675419568495]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/sum_conso_gaz/text()
+        variableName: secondConsoGaz
       ↓calculAugmentation [steps.SimpleStep-1673867751373]: 
         expression: |
-          var augmentation = Math.round( ((conso_total_current_year - conso_total_last_year) / conso_total_last_year * 100) * 100) / 100
+          var augmentation = Math.round( ((secondConsoGaz - firstConsoGaz) / firstConsoGaz * 100) * 100) / 100
           log.warn("augmentation")
           log.warn(augmentation)
       ↓needleValue [steps.JsonFieldStep-1673867751376]: 
@@ -1890,6 +1192,7 @@
           'augmentation = ""+augmentation
           log.warn(''aug'')
           log.warn(augmentation)
+          /*
           if(augmentation.indexOf(''-'') != - 1 ) {
           	var splt = augmentation.split(",");
           	log.warn("splt")
@@ -1897,6 +1200,12 @@
           	augmentation = "-" + splt[0] + "%"
           } else {
           	augmentation = "+ " + augmentation + "%"
+          }
+          */
+          if(augmentation.indexOf(''-'') == -1) {
+          	augmentation = "+ " + augmentation + "%"
+          } else {
+          	augmentation = augmentation + "%"
           }'
       ↓bottomLabel [steps.JsonFieldStep-1673867751382]: 
         key: 
@@ -2078,8 +1387,11 @@
                 - →→: 20
       ↓roundTotals [steps.SimpleStep-1675086505239]: 
         expression: |
-          conso_total_last_year = Math.round( (conso_total_last_year + Number.EPSILON) * 100) / 100
-          conso_total_current_year = Math.round( (conso_total_current_year + Number.EPSILON) * 100) / 100
+          var firstConso = Math.round( (Number(firstConsoGaz) + Number.EPSILON) * 100) / 100
+          var secondConso = Math.round( (Number(secondConsoGaz) + Number.EPSILON) * 100) / 100
+          log.warn('roundTotals')
+          log.warn(firstConso)
+          log.warn(secondConso)
       ↓lastTotal [steps.JsonFieldStep-1673867751442]: 
         key: 
           - xmlizable: 
@@ -2093,7 +1405,7 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: JS
-              - →→: conso_total_last_year
+              - →→: firstConso
       ↓lastTotal1 [steps.JsonFieldStep-1673867751445]: 
         key: 
           - xmlizable: 
@@ -2107,8 +1419,57 @@
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: JS
-              - →→: conso_total_current_year
-      ↓calculTotalAndComputeDate [steps.SimpleStep-1674229592268]: 
+              - →→: secondConso
+      ↓jSimpleSource_3 [steps.SimpleSourceStep-1675419674105]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[1]/agg_period/text()
+        variableName: firstPeriod
+      ↓jSimpleSource_4 [steps.SimpleSourceStep-1675419674108]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673271074791
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row[2]/agg_period/text()
+        variableName: secondPeriod
+      ↓computePeriodToDisplay [steps.SimpleStep-1675419702087]: 
+        expression: |
+          'var months = {
+          	"01": "Jan",
+          	"02": "Fév",
+          	"03": "Mars",
+          	"04": "Avril",
+          	"05": "Mai",
+          	"06": "Juin",
+          	"07": "Juillet",
+          	"08": "Aout",
+          	"09": "Sept",
+          	"10": "Oct",
+          	"11": "Nov",
+          	"12": "Dec"
+          }
+          
+          var firstPeriodToDisplay;
+          var secondPeriodToDisplay;
+          if(agg_function_old == "week") {
+          	firstPeriodToDisplay = "S" + firstPeriod.split("-")[1] + " " + firstPeriod.split("-")[0]
+          	secondPeriodToDisplay = "S" + secondPeriod.split("-")[1] + " " + secondPeriod.split("-")[0]
+          } else if(agg_function_old == "year") {
+          	firstPeriodToDisplay = firstPeriod.split(''-'')[0]
+          	secondPeriodToDisplay = secondPeriod.split("-")[0]
+          } else {
+          	firstPeriodToDisplay = months[firstPeriod.split(''-'')[1]] + " " + firstPeriod.split(''-'')[0]
+          	secondPeriodToDisplay = months[secondPeriod.split(''-'')[1]] + " " + secondPeriod.split(''-'')[0]
+          }'
+      ↓ComputeDate [steps.SimpleStep-1674229592268]: 
         expression: |
           'String.prototype.replaceAll = function(search, replacement) {
               var target = this;
@@ -2128,6 +1489,32 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
+      ↓Field_1 [steps.JsonFieldStep-1675420978009]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: firstPeriodToDisplay
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: firstPeriodToDisplay
+      ↓Field_2 [steps.JsonFieldStep-1675420978012]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: secondPeriodToDisplay
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: JS
+              - →→: secondPeriodToDisplay
 ↓date_start [variables.RequestableVariable-1673271075154]: 
   description: date_start
 ↓date_end [variables.RequestableVariable-1673271075157]: 
@@ -2148,7 +1535,7 @@
     value: month
   ↓synthese [variables.TestCaseVariable-1674226970909]: 
     value: global
-↓multisiteElec [core.TestCase]: 
+↓multisiteElecMonth [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673865672814]: 
     description: date_start
     value: 2021-01-01
@@ -2161,7 +1548,33 @@
     value: month
   ↓synthese [variables.TestCaseVariable-1673865672826]: 
     value: elec
-↓multisiteGaz [core.TestCase]: 
+↓multisiteElecWeek [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675419496694]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675419496697]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1675419496700]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1675419496703]: 
+    value: week
+  ↓synthese [variables.TestCaseVariable-1675419496706]: 
+    value: elec
+↓multisiteElecYear [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675419498822]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675419498825]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1675419498828]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1675419498831]: 
+    value: year
+  ↓synthese [variables.TestCaseVariable-1675419498834]: 
+    value: elec
+↓multisiteGazMonth [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673867796548]: 
     description: date_start
     value: 2021-01-01
@@ -2174,7 +1587,33 @@
     value: month
   ↓synthese [variables.TestCaseVariable-1673867796560]: 
     value: gaz
-↓multisiteGlobal [core.TestCase]: 
+↓multisiteGazWeek [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675421074870]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675421074873]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1675421074876]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1675421074879]: 
+    value: week
+  ↓synthese [variables.TestCaseVariable-1675421074882]: 
+    value: gaz
+↓multisiteGazYear [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675421115286]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675421115289]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1675421115292]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1675421115295]: 
+    value: year
+  ↓synthese [variables.TestCaseVariable-1675421115298]: 
+    value: gaz
+↓multisiteGlobalMonth [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673271075170]: 
     description: date_start
     value: 2021-01-01
@@ -2186,4 +1625,30 @@
   ↓agg_function [variables.TestCaseVariable-1673271075179]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1673865578130]: 
+    value: global
+↓multisiteGlobalWeek [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675418218136]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675418218139]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1675418218142]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1675418218145]: 
+    value: week
+  ↓synthese [variables.TestCaseVariable-1675418218148]: 
+    value: global
+↓multisiteGlobalYear [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675418257978]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1675418257981]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1675418257984]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1675418257987]: 
+    value: year
+  ↓synthese [variables.TestCaseVariable-1675418257990]: 
     value: global

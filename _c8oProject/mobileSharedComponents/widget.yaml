@@ -1136,12 +1136,21 @@ scriptContent:
               tagName: ion-col
               ↓Label [ngx.components.UIDynamicElement-1669285227334]: 
                 beanData: '{"ionBean":"Label"}'
+                isEnabled: false
                 tagName: ion-label
                 ↓Text [ngx.components.UIText-1669285227336]: 
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:Période actuelle
+                      - MobileSmartSourceType: 'script:(this.local[''response'']?.secondPeriodToDisplay != undefined) ? ''Période actuelle ('' + this.local[''response'']?.secondPeriodToDisplay + '') : '''''
+              ↓TextItem [ngx.components.UIDynamicElement-1675422699737]: 
+                beanData: '{"ionBean":"TextItem"}'
+                tagName: ion-text
+                ↓Text [ngx.components.UIText-1675422699739]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: 'script:(this.local[''response'']?.secondPeriodToDisplay != undefined) ? ''Période actuelle ('' + this.local[''response'']?.secondPeriodToDisplay + '')'' : '''''
           ↓rowValuePeriodeActuelle [ngx.components.UIDynamicElement-1669285273781]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -1190,7 +1199,7 @@ scriptContent:
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:Période précédente
+                      - MobileSmartSourceType: 'script:(this.local[''response'']?.firstPeriodToDisplay != undefined) ? ''Période précédente ('' + this.local[''response'']?.firstPeriodToDisplay + '')'' : '''''
           ↓rowValuePeriodePrecedente [ngx.components.UIDynamicElement-1669285833492]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
