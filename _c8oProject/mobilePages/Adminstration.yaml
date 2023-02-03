@@ -1,5 +1,5 @@
-segment: path-to-parametres
-title: Title for Parametres
+segment: admin
+title: Administration
 ↓UseSharedComponent [ngx.components.UIUseShared-1671633573137]: 
   sharedcomponent: poc_energisme.Application.NgxApp.header
   ↓username [ngx.components.UIUseVariable-1671633902509]: 
