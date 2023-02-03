@@ -762,7 +762,7 @@
           '//var total  = Math.round( (Number(gaz) + Number(elec)) * 100) / 100;
           // var total  = Number(gaz) + Number(elec)
           var total = Math.round( (Number(elec) + Number.EPSILON) * 100) / 100;
-          total = String(elec)
+          total = String(total)
           
           String.prototype.replaceAll = function(search, replacement) {
               var target = this;
@@ -1128,8 +1128,8 @@
         expression: |
           '//var total  = Math.round( (Number(gaz) + Number(elec)) * 100) / 100;
           // var total  = Number(gaz) + Number(elec)
-          log.warn(sitesLength)
-          log.warn("sites length")
+          //log.warn(sitesLength)
+          //log.warn("sites length")
           gaz = Math.round( (Number(gaz) + Number.EPSILON) * 100) / 100;
           dju = Math.round( (Number(dju) + Number.EPSILON) * 100) / 100;
           total = (sitesLength.length > 1) ? String(gaz) : String(dju)
