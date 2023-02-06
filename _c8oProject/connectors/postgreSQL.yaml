@@ -102,18 +102,20 @@ testOnBorrow: true
     value: ${poc_energisme.raw_data_table}
 ↓widget_conso [transactions.SqlTransaction]: 
   sqlQuery: |
-    'select 
-    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''gaz'') as sum_conso_gaz,
-    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''elec'')  as sum_conso_elec,
-    sum (rd.val * sm.unit_coeff) filter (where sm."type"=''jdu'')  as sum_dju,
-    {{agg_function}}  as agg_period
+    select 
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='gaz') as sum_conso_gaz,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='elec')  as sum_conso_elec,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='jdu')  as sum_dju,
+    to_char(rd.ts,'{{agg_function}}')  as agg_period
     from {{raw_data_table}} rd
     inner join {{sensor_mapping_table}} sm
     on rd.uuid = sm.sensor_id 
+    and rd.label = sm.label
     where sm.site_id in ({{sites}})
-    and rd.ts > TO_TIMESTAMP({date_start}, ''YYYY-MM-DD'')
-    and rd.ts < TO_TIMESTAMP({date_end}, ''YYYY-MM-DD'')
-    group by {{agg_function}}'
+    and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+    group by to_char(rd.ts,'{{agg_function}}')
+    order by to_char(rd.ts,'{{agg_function}}')
   handlers: 
     →: |
       '// Handles the XML generated event.
@@ -135,7 +137,7 @@ testOnBorrow: true
     ↓sites [variables.TestCaseVariable-1672928023872]: 
       value: CAST('7991' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928023875]: 
-      value: date_part('year', rd.ts)
+      value: YYYY
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928243853]: 
       description: date_start
@@ -146,7 +148,7 @@ testOnBorrow: true
     ↓sites [variables.TestCaseVariable-1672928243859]: 
       value: CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928243862]: 
-      value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+      value: YYYY-MM
   ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928700573]: 
       description: date_start
@@ -157,7 +159,7 @@ testOnBorrow: true
     ↓sites [variables.TestCaseVariable-1672928700579]: 
       value: CAST('7991' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928700582]: 
-      value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
+      value: YYYY-WW
   ↓Test_Case_Multisite_evolution_conso_agg_annee [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672927932946]: 
       description: date_start
@@ -168,7 +170,7 @@ testOnBorrow: true
     ↓sites [variables.TestCaseVariable-1672927932952]: 
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927932955]: 
-      value: date_part('year', rd.ts)
+      value: YYYY
   ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1673943744634]: 
       description: date_start
@@ -179,7 +181,7 @@ testOnBorrow: true
     ↓sites [variables.TestCaseVariable-1673943744640]: 
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1673943744643]: 
-      value: rd.ts::date
+      value: YYYY-MM-DD
   ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672914161723]: 
       description: date_start
@@ -190,7 +192,7 @@ testOnBorrow: true
     ↓sites [variables.TestCaseVariable-1672914161729]: 
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672914161732]: 
-      value: date_part('year', rd.ts) || '_' || date_part('month', rd.ts) 
+      value: YYYY-MM
   ↓Test_Case_Multisite_evolution_conso_agg_semaine [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672927548928]: 
       description: date_start
@@ -201,7 +203,7 @@ testOnBorrow: true
     ↓sites [variables.TestCaseVariable-1672927548934]: 
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927548937]: 
-      value: date_part('year', rd.ts) || '_' || date_part('week', rd.ts) 
+      value: YYYY-WW
   ↓date_start [variables.RequestableVariable-1672914161735]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161738]: 
@@ -222,6 +224,7 @@ testOnBorrow: true
     from {{raw_data_table}} rd
     inner join {{sensor_mapping_table}} sm
     on rd.uuid = sm.sensor_id
+    and rd.label = sm.label
     where sm.site_id IN ({{sites}}) 
     and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
@@ -264,6 +267,7 @@ testOnBorrow: true
     from {{raw_data_table}} rd
     inner join {{sensor_mapping_table}} sm
     on rd.uuid = sm.sensor_id 
+    and rd.label = sm.label
     where sm.site_id IN ({{sites}}) 
     and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
