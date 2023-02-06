@@ -12,15 +12,15 @@
 ↓buildAggFunction [steps.SimpleStep-1673271074782]: 
   expression: |
     'if(agg_function == "year") {
-    	agg_function = "to_char(rd.ts,''YYYY'')"
+    	agg_function = "YYYY"
     } else if(agg_function == "month") {
-    	agg_function = "to_char(rd.ts,''YYYY-MM'')"
+    	agg_function = "YYYY-MM"
     } else if(agg_function == "week") {
-    	agg_function = "to_char(rd.ts,''YYYY-WW'')"
+    	agg_function = "YYYY-WW"
     } else if(agg_function == "day") {
-    	agg_function = "to_char(rd.ts,''YYYY-MM-DD'')"
+    	agg_function = "YYYY-MM-DD"
     }
-    log.warn(agg_function)'
+    //log.warn(agg_function)'
 ↓buildCastStrings [steps.SimpleStep-1673271074785]: 
   expression: |
     'sites = JSON.parse(sites)
