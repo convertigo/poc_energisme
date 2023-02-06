@@ -48,6 +48,7 @@
           - ↑value: ./synthese/text()
   variableName: synthese
 ↓Call_Transaction [steps.TransactionStep-1673012654154]: 
+  output: true
   sourceTransaction: poc_energisme.postgreSQL.widget_conso
   ↓date_start [variables.StepVariable-1673012725914]: 
     description: date_start
@@ -4735,6 +4736,19 @@
   ↓agg_function [variables.TestCaseVariable-1673864691354]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1673864691357]: 
+    value: elec
+↓multisiteElecMonth [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1675680825160]: 
+    description: date_start
+    value: 2022-02-06
+  ↓date_end [variables.TestCaseVariable-1675680825163]: 
+    description: date_end
+    value: 2023-02-06
+  ↓sites [variables.TestCaseVariable-1675680825166]: 
+    value: '[7632,7634,7635,7636,7637,7638,7731]'
+  ↓agg_function [variables.TestCaseVariable-1675680825169]: 
+    value: month
+  ↓synthese [variables.TestCaseVariable-1675680825172]: 
     value: elec
 ↓multisiteGaz [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673864831973]: 

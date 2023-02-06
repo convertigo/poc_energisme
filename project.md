@@ -1984,6 +1984,14 @@ Describes the mobile application global properties
 <details><summary><span style="color:DarkGoldenRod"><i>Pages</i></span></summary><blockquote><p>
 
 
+<details><summary><b>Adminstration</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Adminstration
+
+
+</p></blockquote></details>
+
 <details><summary><b>Login</b></summary><blockquote><p>
 
 
@@ -2022,14 +2030,6 @@ Monosite view
 ### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Multisite
 
 Multisite view
-</p></blockquote></details>
-
-<details><summary><b>Parametres</b></summary><blockquote><p>
-
-
-### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/ngx/components/images/pagecomponent_color_16x16.png?raw=true "PageComponent") Parametres
-
-
 </p></blockquote></details>
 
 <details><summary><b>zoomChart</b></summary><blockquote><p>

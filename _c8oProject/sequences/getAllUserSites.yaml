@@ -1,5 +1,4 @@
 comment: Used to list User Sites in monosite page and when selectionning all sites in multisite page
-responseExpiryDate: daily,10:00:00
 ↓Call_Sequence [steps.SequenceStep-1674741470849]: 
   sourceSequence: poc_energisme.getGroupsOf
   ↓user [variables.StepVariable-1674741478011]: 
@@ -10,6 +9,7 @@ responseExpiryDate: daily,10:00:00
       - SmartType: 
         - ↑mode: PLAIN
         - →→: sites
+  output: false
   ↓Iterator [steps.IteratorStep-1674741527382]: 
     sourceDefinition: 
       - xmlizable: 
@@ -29,6 +29,7 @@ responseExpiryDate: daily,10:00:00
             - java.lang.String: 
               - ↑value: ./Array/Object
       ↓Object [steps.JsonObjectStep-1674741595432]: 
+        output: false
         ↓id [steps.JsonFieldStep-1674741603510]: 
           key: 
             - xmlizable: 
@@ -36,6 +37,7 @@ responseExpiryDate: daily,10:00:00
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: id
+          output: false
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -53,6 +55,7 @@ responseExpiryDate: daily,10:00:00
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: name
+          output: false
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -85,13 +88,15 @@ responseExpiryDate: daily,10:00:00
     		      sites.splice(index, 1)
     		        log.warn(''count of 2 or more of '' + key);
     		        log.warn(index)
-    		        index--
-    		        log.warn(index)
     		    }
     });
     
+    sites = JSON.stringify(sites)
     log.warn(JSON.stringify(sites))
     //log.warn(JSON.stringify(sites))'
+↓jElement [steps.ElementStep-1675679064039]: 
+  expression: sites
+  nodeName: sites
 ↓user [variables.RequestableVariable-1674741480608]: 
 ↓Test_Case [core.TestCase]: 
   ↓user [variables.TestCaseVariable-1674741485159]: 

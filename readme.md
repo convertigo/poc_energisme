@@ -11,12 +11,12 @@ For more technical informations : [documentation](./project.md)
 - [Installation](#installation)
 - [Mobile Application](#mobile-application)
     - [Pages](#pages)
+        - [Adminstration](#adminstration)
         - [Login](#login)
         - [modalAddGroup](#modaladdgroup)
         - [modalUpdateGroup](#modalupdategroup)
         - [Monosite](#monosite)
         - [Multisite](#multisite)
-        - [Parametres](#parametres)
         - [zoomChart](#zoomchart)
     - [Shared Components](#shared-components)
         - [gauge_chart](#gauge_chart)
@@ -53,6 +53,8 @@ Describes the mobile application global properties
 
 ### Pages
 
+#### Adminstration
+
 #### Login
 
 #### modalAddGroup
@@ -66,8 +68,6 @@ Monosite view
 #### Multisite
 
 Multisite view
-
-#### Parametres
 
 #### zoomChart
 
