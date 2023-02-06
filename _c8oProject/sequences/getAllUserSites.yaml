@@ -9,7 +9,6 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
       - SmartType: 
         - ↑mode: PLAIN
         - →→: sites
-  output: false
   ↓Iterator [steps.IteratorStep-1674741527382]: 
     sourceDefinition: 
       - xmlizable: 
@@ -29,7 +28,6 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
             - java.lang.String: 
               - ↑value: ./Array/Object
       ↓Object [steps.JsonObjectStep-1674741595432]: 
-        output: false
         ↓id [steps.JsonFieldStep-1674741603510]: 
           key: 
             - xmlizable: 
@@ -37,7 +35,6 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: id
-          output: false
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -55,7 +52,6 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: name
-          output: false
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -91,11 +87,14 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
     		    }
     });
     
-    sites = JSON.stringify(sites)
+    sites = JSON.parse(JSON.stringify(sites))
+    // sites = JSON.stringify(sites)
     log.warn(JSON.stringify(sites))
     //log.warn(JSON.stringify(sites))'
+  isEnabled: false
 ↓jElement [steps.ElementStep-1675679064039]: 
   expression: sites
+  isEnabled: false
   nodeName: sites
 ↓user [variables.RequestableVariable-1674741480608]: 
 ↓Test_Case [core.TestCase]: 
