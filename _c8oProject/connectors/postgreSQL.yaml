@@ -171,6 +171,17 @@ testOnBorrow: true
       value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672927932955]: 
       value: YYYY
+  ↓Test_Case_Multisite_evolution_conso_agg_heure [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1675692369448]: 
+      description: date_start
+      value: 2022-10-01
+    ↓date_end [variables.TestCaseVariable-1675692369451]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1675692369454]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1675692369457]: 
+      value: YYYY-MM-DD HH:00
   ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1673943744634]: 
       description: date_start
