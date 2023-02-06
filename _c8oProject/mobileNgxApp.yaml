@@ -72,7 +72,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
 ↓Monosite [ngx.components.PageComponent-1669196356243]: 🗏 mobilePages/Monosite.yaml
 ↓zoomChart [ngx.components.PageComponent-1669286135548]: 🗏 mobilePages/zoomChart.yaml
 ↓Login [ngx.components.PageComponent-1669741293280]: 🗏 mobilePages/Login.yaml
-↓Parametres [ngx.components.PageComponent-1671633557209]: 🗏 mobilePages/Parametres.yaml
+↓Adminstration [ngx.components.PageComponent-1671633557209]: 🗏 mobilePages/Adminstration.yaml
 ↓modalAddGroup [ngx.components.PageComponent-1672220885546]: 🗏 mobilePages/modalAddGroup.yaml
 ↓modalUpdateGroup [ngx.components.PageComponent-1672310681928]: 🗏 mobilePages/modalUpdateGroup.yaml
 ↓Style [ngx.components.UIStyle-1491635462437]: 

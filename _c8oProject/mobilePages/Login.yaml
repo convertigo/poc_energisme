@@ -1,7 +1,7 @@
 ↑isRoot: true
 inAutoMenu: false
 segment: login
-title: Title for Login
+title: Login
 ↓Content [ngx.components.UIDynamicElement-1669819334516]: 
   beanData: '{"ionBean":"Content"}'
   tagName: ion-content
