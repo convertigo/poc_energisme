@@ -148,10 +148,11 @@ scriptContent:
         							
         							this.showSpinner = "true";
         							
+        							
         							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
-        							
+        							this.selectAggregation = changes[key].currentValue[''agg_function'']
         							this.call(sequenceToCall, changes[key].currentValue, null, 500, true).then( (resp) => {
         						    console.log(resp)
         							this.local[''response''] = resp;
@@ -228,7 +229,7 @@ scriptContent:
         							 if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
-        							
+        							this.selectAggregation = changes[key].currentValue[''agg_function'']
         							this.call(sequenceToCall, changes[key].currentValue, null, 500, true).then( (resp) => {
         							    console.log(resp)
         								this.local[''response''] = resp;
@@ -1431,7 +1432,7 @@ scriptContent:
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: script:''
+                    - MobileSmartSourceType: script:this.local['response']?.xaxis
               ↓yaxis [ngx.components.UIUseVariable-1669389080713]: 
                 comment: Object
                 varValue: 
