@@ -231,8 +231,8 @@
     ↓calculAugmentation [steps.SimpleStep-1673865554996]: 
       expression: |
         var augmentation = Math.round( ((secondConso - firstConso) / firstConso * 100) * 100) / 100
-        log.warn("augmentation")
-        log.warn(augmentation)
+        //log.warn("augmentation")
+        //log.warn(augmentation)
     ↓needleValue [steps.JsonFieldStep-1673865554999]: 
       key: 
         - xmlizable: 
@@ -498,33 +498,50 @@
       variableName: secondPeriod
     ↓computePeriodToDisplay [steps.SimpleStep-1675417663488]: 
       expression: |
-        'var months = {
-        	"01": "Jan",
-        	"02": "Fév",
-        	"03": "Mars",
-        	"04": "Avril",
-        	"05": "Mai",
-        	"06": "Juin",
-        	"07": "Juillet",
-        	"08": "Aout",
-        	"09": "Sept",
-        	"10": "Oct",
-        	"11": "Nov",
-        	"12": "Dec"
+        '
+        var firstPeriodToDisplay = "";
+        var secondPeriodToDisplay = "";
+        
+        switch (agg_function_old) {
+        	case "week":
+        		firstPeriodToDisplay = "S" + firstPeriod.split("-")[1] + " " + firstPeriod.split("-")[0];
+        		
+        		if (secondPeriod != null) {
+        			secondPeriodToDisplay = "S" + secondPeriod.split("-")[1] + " " + secondPeriod.split("-")[0];
+        		}
+        		break;
+        	case "year":
+        		firstPeriodToDisplay = firstPeriod.split(''-'')[0];
+        		
+        		if (secondPeriod != null) {
+        			secondPeriodToDisplay = secondPeriod.split("-")[0];
+        		}
+        		break;
+        	case "month":
+        	
+        		var months = {
+        			"01": "Jan",
+        			"02": "Fév",
+        			"03": "Mars",
+        			"04": "Avril",
+        			"05": "Mai",
+        			"06": "Juin",
+        			"07": "Juillet",
+        			"08": "Aout",
+        			"09": "Sept",
+        			"10": "Oct",
+        			"11": "Nov",
+        			"12": "Dec"
+        		}
+        	
+        		firstPeriodToDisplay = months[firstPeriod.split(''-'')[1]] + " " + firstPeriod.split(''-'')[0]
+        		
+        		if (secondPeriod != null) {
+        			secondPeriodToDisplay = months[secondPeriod.split(''-'')[1]] + " " + secondPeriod.split(''-'')[0]
+        		}
         }
         
-        var firstPeriodToDisplay;
-        var secondPeriodToDisplay;
-        if(agg_function_old == "week") {
-        	firstPeriodToDisplay = "S" + firstPeriod.split("-")[1] + " " + firstPeriod.split("-")[0]
-        	secondPeriodToDisplay = "S" + secondPeriod.split("-")[1] + " " + secondPeriod.split("-")[0]
-        } else if(agg_function_old == "year") {
-        	firstPeriodToDisplay = firstPeriod.split(''-'')[0]
-        	secondPeriodToDisplay = secondPeriod.split("-")[0]
-        } else {
-        	firstPeriodToDisplay = months[firstPeriod.split(''-'')[1]] + " " + firstPeriod.split(''-'')[0]
-        	secondPeriodToDisplay = months[secondPeriod.split(''-'')[1]] + " " + secondPeriod.split(''-'')[0]
-        }'
+        '
     ↓ComputeDate [steps.SimpleStep-1674229586199]: 
       expression: |
         'String.prototype.replaceAll = function(search, replacement) {
