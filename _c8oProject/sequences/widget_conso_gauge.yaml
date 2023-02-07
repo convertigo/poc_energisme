@@ -230,9 +230,16 @@
           var secondConso = Number(secondConsoGaz)
     ↓calculAugmentation [steps.SimpleStep-1673865554996]: 
       expression: |
+        'function map(x, in_min, in_max, out_min, out_max) {
+          return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+        }
+        
         var augmentation = Math.round( ((secondConso - firstConso) / firstConso * 100) * 100) / 100
         //log.warn("augmentation")
         //log.warn(augmentation)
+        
+        var augmentation_corrected =  Math.round(map(augmentation, -50.0, 50.0, 0.0, 100.0))
+        '
     ↓needleValue [steps.JsonFieldStep-1673865554999]: 
       key: 
         - xmlizable: 
@@ -245,7 +252,7 @@
           - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
           - SmartType: 
             - ↑mode: JS
-            - →→: augmentation
+            - →→: augmentation_corrected
     ↓computeBottomLabel [steps.SimpleStep-1673865555002]: 
       expression: |
         'augmentation = ""+augmentation
@@ -421,14 +428,14 @@
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
               - SmartType: 
                 - ↑mode: PLAIN
-                - →→: '-20'
+                - →→: '-50'
         ↓Field5 [steps.JsonFieldStep-1673865555059]: 
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
               - SmartType: 
                 - ↑mode: PLAIN
-                - →→: 5
+                - →→: 50
       ↓needleStartValue [steps.JsonFieldStep-1673865555062]: 
         isEnabled: false
         key: 
