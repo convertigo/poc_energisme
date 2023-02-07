@@ -238,8 +238,14 @@
         //log.warn("augmentation")
         //log.warn(augmentation)
         
-        var augmentation_corrected =  Math.round(map(augmentation, -50.0, 50.0, 0.0, 100.0))
-        '
+        var augmentation_corrected =  Math.round(map(augmentation, -10.0, 10.0, 0.0, 100.0))
+        
+        if (augmentation_corrected > 100) {
+        	augmentation_corrected = 100
+        }
+        if (augmentation_corrected < 0) {
+        	augmentation_corrected = 0
+        }'
     ↓needleValue [steps.JsonFieldStep-1673865554999]: 
       key: 
         - xmlizable: 
@@ -428,14 +434,14 @@
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
               - SmartType: 
                 - ↑mode: PLAIN
-                - →→: '-50'
+                - →→: '-10'
         ↓Field5 [steps.JsonFieldStep-1673865555059]: 
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
               - SmartType: 
                 - ↑mode: PLAIN
-                - →→: 50
+                - →→: 10
       ↓needleStartValue [steps.JsonFieldStep-1673865555062]: 
         isEnabled: false
         key: 
