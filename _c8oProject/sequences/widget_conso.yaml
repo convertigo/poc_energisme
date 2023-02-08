@@ -48,7 +48,6 @@
           - ↑value: ./synthese/text()
   variableName: synthese
 ↓Call_Transaction [steps.TransactionStep-1673012654154]: 
-  output: true
   sourceTransaction: poc_energisme.postgreSQL.widget_conso
   ↓date_start [variables.StepVariable-1673012725914]: 
     description: date_start
