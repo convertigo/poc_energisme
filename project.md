@@ -2429,3 +2429,387 @@ Widget title (string)
 </p></blockquote></details>
 </p></blockquote></details>
 </p></blockquote></details>
+
+<details><summary><span style="color:DarkGoldenRod"><i>Rest Web Service</i></span></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/core/images/urlmapper_color_16x16.png?raw=true "UrlMapper") UrlMapper
+
+
+
+<details><summary><span style="color:DarkGoldenRod"><i>Mappings</i></span></summary><blockquote><p>
+
+
+<details><summary><b>/widget_conso</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/pathmapping_color_16x16.png?raw=true "PathMapping") /widget_conso
+
+
+
+<details><summary><span style="color:DarkGoldenRod"><i>Operations</i></span></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/getoperation_color_16x16.png?raw=true "GetOperation") GetOperation
+
+
+
+<span style="color:DarkGoldenRod">Parameters</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;agg_function
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_end
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_start
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;sites
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;synthese
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
+</p></blockquote></details>
+
+<details><summary><b>/widget_conso_gauge</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/pathmapping_color_16x16.png?raw=true "PathMapping") /widget_conso_gauge
+
+
+
+<details><summary><span style="color:DarkGoldenRod"><i>Operations</i></span></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/getoperation_color_16x16.png?raw=true "GetOperation") GetOperation
+
+
+
+<span style="color:DarkGoldenRod">Parameters</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;agg_function
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_end
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_start
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;sites
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;synthese
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
+</p></blockquote></details>
+
+<details><summary><b>/widget_conso_total</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/pathmapping_color_16x16.png?raw=true "PathMapping") /widget_conso_total
+
+
+
+<details><summary><span style="color:DarkGoldenRod"><i>Operations</i></span></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/getoperation_color_16x16.png?raw=true "GetOperation") GetOperation
+
+
+
+<span style="color:DarkGoldenRod">Parameters</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_end
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_start
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;sites
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;synthese
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
+</p></blockquote></details>
+
+<details><summary><b>/widget_heatmap</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/pathmapping_color_16x16.png?raw=true "PathMapping") /widget_heatmap
+
+
+
+<details><summary><span style="color:DarkGoldenRod"><i>Operations</i></span></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/getoperation_color_16x16.png?raw=true "GetOperation") GetOperation
+
+
+
+<span style="color:DarkGoldenRod">Parameters</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_end
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_start
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;sites
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;synthese
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
+</p></blockquote></details>
+
+<details><summary><b>/widget_maps</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/pathmapping_color_16x16.png?raw=true "PathMapping") /widget_maps
+
+
+
+<details><summary><span style="color:DarkGoldenRod"><i>Operations</i></span></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/getoperation_color_16x16.png?raw=true "GetOperation") GetOperation
+
+
+
+<span style="color:DarkGoldenRod">Parameters</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;sites
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
+</p></blockquote></details>
+
+<details><summary><b>/widget_multisite_sites_energivore</b></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/pathmapping_color_16x16.png?raw=true "PathMapping") /widget_multisite_sites_energivore
+
+
+
+<details><summary><span style="color:DarkGoldenRod"><i>Operations</i></span></summary><blockquote><p>
+
+
+### ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/getoperation_color_16x16.png?raw=true "GetOperation") GetOperation
+
+
+
+<span style="color:DarkGoldenRod">Parameters</span>
+
+<table>
+<tr>
+<th>
+name
+</th>
+<th>
+comment
+</th>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_end
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;date_start
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;limit
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;sites
+</td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td>
+<img src="https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/rest/images/queryparameter_color_16x16.png?raw=true "  alt="QueryParameter" >&nbsp;synthese
+</td>
+<td>
+
+</td>
+</tr>
+</table>
+
+</p></blockquote></details>
+</p></blockquote></details>
+</p></blockquote></details>
+</p></blockquote></details>

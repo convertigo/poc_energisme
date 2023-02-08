@@ -1,0 +1,18 @@
+path: /widget_conso_gauge
+↓GetOperation [rest.GetOperation]: 
+  targetRequestable: poc_energisme.widget_conso_gauge
+  ↓date_start [rest.QueryParameter-1675848395924]: 
+    mappedVariableName: date_start
+    value: 2022-02-06
+  ↓date_end [rest.QueryParameter-1675848395926]: 
+    mappedVariableName: date_end
+    value: 2023-02-06
+  ↓sites [rest.QueryParameter-1675848395928]: 
+    mappedVariableName: sites
+    value: '[7632,7634,7635,7636,7637,7638,7731]'
+  ↓agg_function [rest.QueryParameter-1675848395930]: 
+    mappedVariableName: agg_function
+    value: month
+  ↓synthese [rest.QueryParameter-1675848395932]: 
+    mappedVariableName: synthese
+    value: elec

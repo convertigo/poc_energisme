@@ -1,0 +1,6 @@
+↓PathMapping [rest.PathMapping]: 🗏 urlMapper/PathMapping.yaml
+↓widget_conso_gauge [rest.PathMapping]: 🗏 urlMapper/widget_conso_gauge.yaml
+↓widget_conso_total [rest.PathMapping]: 🗏 urlMapper/widget_conso_total.yaml
+↓widget_heatmap [rest.PathMapping]: 🗏 urlMapper/widget_heatmap.yaml
+↓widget_maps [rest.PathMapping]: 🗏 urlMapper/widget_maps.yaml
+↓widget_multisite_sites_energivore [rest.PathMapping]: 🗏 urlMapper/widget_multisite_sites_energivore.yaml
