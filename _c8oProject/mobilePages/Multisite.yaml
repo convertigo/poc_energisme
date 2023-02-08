@@ -1159,6 +1159,7 @@ title: Multisite
                                 		resolve();
                                 '
                         comment: from accordion update
+                        isEnabled: false
                         ↓sites [ngx.components.UIControlVariable-1674730560720]: 
                           varValue: 
                             - xmlizable: 

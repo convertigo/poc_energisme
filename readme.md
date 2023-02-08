@@ -9,6 +9,26 @@ Convertigo NGX builder Project
 For more technical informations : [documentation](./project.md)
 
 - [Installation](#installation)
+- [Rest Web Service](#rest-web-service)
+    - [Mappings](#mappings)
+        - [/widget_conso](#widget_conso)
+            - [Operations](#operations)
+                - [GetOperation](#getoperation)
+        - [/widget_conso_gauge](#widget_conso_gauge)
+            - [Operations](#operations-1)
+                - [GetOperation](#getoperation-1)
+        - [/widget_conso_total](#widget_conso_total)
+            - [Operations](#operations-2)
+                - [GetOperation](#getoperation-2)
+        - [/widget_heatmap](#widget_heatmap)
+            - [Operations](#operations-3)
+                - [GetOperation](#getoperation-3)
+        - [/widget_maps](#widget_maps)
+            - [Operations](#operations-4)
+                - [GetOperation](#getoperation-4)
+        - [/widget_multisite_sites_energivore](#widget_multisite_sites_energivore)
+            - [Operations](#operations-5)
+                - [GetOperation](#getoperation-5)
 - [Mobile Application](#mobile-application)
     - [Pages](#pages)
         - [Adminstration](#adminstration)
@@ -46,6 +66,166 @@ For more technical informations : [documentation](./project.md)
     </table>
 3. Click the `Finish` button. This will automatically import the __poc_energisme__ project
 
+
+## Rest Web Service
+
+### Mappings
+
+#### /widget_conso
+
+##### Operations
+
+###### GetOperation
+
+**Parameters**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>agg_function</td><td></td>
+</tr>
+<tr>
+<td>date_end</td><td></td>
+</tr>
+<tr>
+<td>date_start</td><td></td>
+</tr>
+<tr>
+<td>sites</td><td></td>
+</tr>
+<tr>
+<td>synthese</td><td></td>
+</tr>
+</table>
+
+#### /widget_conso_gauge
+
+##### Operations
+
+###### GetOperation
+
+**Parameters**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>agg_function</td><td></td>
+</tr>
+<tr>
+<td>date_end</td><td></td>
+</tr>
+<tr>
+<td>date_start</td><td></td>
+</tr>
+<tr>
+<td>sites</td><td></td>
+</tr>
+<tr>
+<td>synthese</td><td></td>
+</tr>
+</table>
+
+#### /widget_conso_total
+
+##### Operations
+
+###### GetOperation
+
+**Parameters**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>date_end</td><td></td>
+</tr>
+<tr>
+<td>date_start</td><td></td>
+</tr>
+<tr>
+<td>sites</td><td></td>
+</tr>
+<tr>
+<td>synthese</td><td></td>
+</tr>
+</table>
+
+#### /widget_heatmap
+
+##### Operations
+
+###### GetOperation
+
+**Parameters**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>date_end</td><td></td>
+</tr>
+<tr>
+<td>date_start</td><td></td>
+</tr>
+<tr>
+<td>sites</td><td></td>
+</tr>
+<tr>
+<td>synthese</td><td></td>
+</tr>
+</table>
+
+#### /widget_maps
+
+##### Operations
+
+###### GetOperation
+
+**Parameters**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>sites</td><td></td>
+</tr>
+</table>
+
+#### /widget_multisite_sites_energivore
+
+##### Operations
+
+###### GetOperation
+
+**Parameters**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>date_end</td><td></td>
+</tr>
+<tr>
+<td>date_start</td><td></td>
+</tr>
+<tr>
+<td>limit</td><td></td>
+</tr>
+<tr>
+<td>sites</td><td></td>
+</tr>
+<tr>
+<td>synthese</td><td></td>
+</tr>
+</table>
 
 ## Mobile Application
 
