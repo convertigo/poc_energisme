@@ -1,0 +1,18 @@
+path: /widget_conso
+↓GetOperation [rest.GetOperation]: 
+  targetRequestable: poc_energisme.widget_conso
+  ↓date_start [rest.QueryParameter-1675848338046]: 
+    mappedVariableName: date_start
+    value: 2021-01-01
+  ↓date_end [rest.QueryParameter-1675848338048]: 
+    mappedVariableName: date_end
+    value: 2022-12-01
+  ↓sites [rest.QueryParameter-1675848338050]: 
+    mappedVariableName: sites
+    value: '[7991, 7626]'
+  ↓agg_function [rest.QueryParameter-1675848338052]: 
+    mappedVariableName: agg_function
+    value: month
+  ↓synthese [rest.QueryParameter-1675848338054]: 
+    mappedVariableName: synthese
+    value: global
