@@ -644,4 +644,13 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           
           .bold {
           	font-weight: bold;
+          }
+          
+          .modal75 {
+            align-items: center;
+            justify-content: center; 
+            &::part(content){
+              width: 80%;
+              height: 80%; 
+            }
           }'

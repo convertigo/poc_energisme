@@ -69,3 +69,30 @@ title: Title for zoomChart
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: 'script:(this.navParams.data.isHeatmap != undefined) ? this.navParams.data.isHeatmap : '''''
+    ↓sequenceMarker [ngx.components.UIUseVariable-1675938893789]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.sequenceMarker != undefined) ? this.navParams.data.sequenceMarker : '''''
+    ↓aggregation [ngx.components.UIUseVariable-1675938893791]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.aggregation != undefined) ? this.navParams.data.aggregation : '''''
+    ↓displayTotalOnly [ngx.components.UIUseVariable-1675938893793]: 
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: 'script:(this.navParams.data.displayTotalOnly != undefined) ? this.navParams.data.displayTotalOnly : '''''
+↓PageEvent [ngx.components.UIPageEvent-1675853710331]: 
+  ↓CustomAction [ngx.components.UICustomAction-1675853718050]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		console.log(this.navParams)
+            		this.navParams.data.sequenceParams = JSON.parse(this.navParams.data.sequenceParams)
+            		resolve();
+            '

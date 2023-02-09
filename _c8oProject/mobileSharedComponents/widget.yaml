@@ -389,13 +389,33 @@ scriptContent:
               beanData: '{"ionBean":"Button"}'
               tagName: ion-button
               ↓Event [ngx.components.UIControlEvent-1667816245062]: 
-                ↓PushPage [ngx.components.UIDynamicAction-1669312502130]: 
-                  beanData: |
-                    '{
-                     "ionBean": "PushPageAction",
-                     "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
-                     "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: this.sequenceParams,\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap\r\n}"
-                    }'
+                ↓CustomAction [ngx.components.UICustomAction-1675864897906]: 
+                  actionValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                        →: |
+                          '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                          		console.log("sequenceParmas")
+                          		console.log(this.sequenceParams)
+                          		resolve();
+                          '
+                  ↓PushPage [ngx.components.UIDynamicAction-1669312502130]: 
+                    beanData: |
+                      '{
+                       "ionBean": "PushPageAction",
+                       "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
+                       "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap\r\n}"
+                      }'
+                    isEnabled: false
+                  ↓ModalPage [ngx.components.UIDynamicAction-1675938005947]: 
+                    beanData: |
+                      '{
+                       "ionBean": "ModalAction",
+                       "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
+                       "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap,\r\n\tsequenceMarker: this.sequenceMarker,\r\n\taggregation: this.aggregation,\r\n\tdisplayTotalOnly: this.displayTotalOnly\r\n}",
+                       "cssClass": "plain:modal75"
+                      }'
               ↓Icon [ngx.components.UIDynamicElement-1667816344210]: 
                 beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                 tagName: ion-icon
@@ -408,6 +428,9 @@ scriptContent:
               ↓Event [ngx.components.UIControlEvent-1669312766021]: 
                 ↓PopPage [ngx.components.UIDynamicAction-1669312799921]: 
                   beanData: '{"ionBean":"PopPageAction"}'
+                  isEnabled: false
+                ↓CloseModal [ngx.components.UIDynamicAction-1675938043811]: 
+                  beanData: '{"ionBean":"CloseModalAction"}'
               ↓Icon [ngx.components.UIDynamicElement-1669312766027]: 
                 beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                 tagName: ion-icon
