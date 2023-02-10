@@ -33,7 +33,7 @@ title: Title for zoomChart
             --padding: unset !important;
             '
   ↓UseSharedComponent [ngx.components.UIUseShared-1669286304977]: 
-    sharedcomponent: poc_energisme.Application.NgxApp.widget
+    sharedcomponent: poc_energisme.Application.NgxApp.widget_zoom
     ↓title [ngx.components.UIUseVariable-1669286318616]: 
       varValue: 
         - xmlizable: 
