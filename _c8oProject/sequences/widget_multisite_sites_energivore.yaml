@@ -159,35 +159,17 @@
                         - ↑value: 1673859493998
                       - java.lang.String: 
                         - ↑value: ./document/sql_output/row
-                ↓jSimpleSource [steps.SimpleSourceStep-1673874136872]: 
-                  sourceDefinition: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673874136869
-                        - java.lang.String: 
-                          - ↑value: ./avg_conso_gaz/text()
-                  variableName: gaz
-                ↓jSimpleSource_1 [steps.SimpleSourceStep-1673874136875]: 
-                  sourceDefinition: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673874136869
-                        - java.lang.String: 
-                          - ↑value: ./avg_conso_elec/text()
-                  variableName: elec
-                ↓sumGazElec [steps.SimpleStep-1673874136878]: 
-                  expression: var sum = Number(gaz) + Number(elec)
                 ↓Field [steps.JsonFieldStep-1673874136881]: 
                   value: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
                       - SmartType: 
-                        - ↑mode: JS
-                        - →→: sum
+                        - ↑mode: SOURCE
+                        - com.twinsoft.convertigo.beans.common.XMLVector: 
+                          - java.lang.String: 
+                            - ↑value: 1673874136869
+                          - java.lang.String: 
+                            - ↑value: ./avg_conso/text()
             ↓Field_2 [steps.JsonFieldStep-1673874136884]: 
               key: 
                 - xmlizable: 
@@ -310,7 +292,7 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
-      ↓calculTotalAndComputeDate [steps.SimpleStep-1674230147587]: 
+      ↓ComputeDate [steps.SimpleStep-1674230147587]: 
         expression: |
           'String.prototype.replaceAll = function(search, replacement) {
               var target = this;
@@ -390,39 +372,6 @@
                         - ↑value: 1673859493998
                       - java.lang.String: 
                         - ↑value: ./document/sql_output/row
-                ↓jSimpleSource [steps.SimpleSourceStep-1673874245112]: 
-                  isEnabled: false
-                  sourceDefinition: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673874245109
-                        - java.lang.String: 
-                          - ↑value: ./avg_conso_gaz/text()
-                  variableName: gaz
-                ↓jSimpleSource_1 [steps.SimpleSourceStep-1673874245115]: 
-                  isEnabled: false
-                  sourceDefinition: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673874245109
-                        - java.lang.String: 
-                          - ↑value: ./avg_conso_elec/text()
-                  variableName: elec
-                ↓sumGazElec [steps.SimpleStep-1673874245118]: 
-                  expression: var sum = Number(gaz) + Number(elec)
-                  isEnabled: false
-                ↓Field [steps.JsonFieldStep-1673874245121]: 
-                  isEnabled: false
-                  value: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: JS
-                        - →→: sum
                 ↓Field_1 [steps.JsonFieldStep-1673874314497]: 
                   value: 
                     - xmlizable: 
@@ -556,7 +505,7 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
-      ↓calculTotalAndComputeDate [steps.SimpleStep-1674230150174]: 
+      ↓ComputeDate [steps.SimpleStep-1674230150174]: 
         expression: |
           'String.prototype.replaceAll = function(search, replacement) {
               var target = this;
@@ -636,39 +585,6 @@
                         - ↑value: 1673859493998
                       - java.lang.String: 
                         - ↑value: ./document/sql_output/row
-                ↓jSimpleSource [steps.SimpleSourceStep-1673874426284]: 
-                  isEnabled: false
-                  sourceDefinition: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673874426281
-                        - java.lang.String: 
-                          - ↑value: ./avg_conso_gaz/text()
-                  variableName: gaz
-                ↓jSimpleSource_1 [steps.SimpleSourceStep-1673874426287]: 
-                  isEnabled: false
-                  sourceDefinition: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                      - com.twinsoft.convertigo.beans.common.XMLVector: 
-                        - java.lang.String: 
-                          - ↑value: 1673874426281
-                        - java.lang.String: 
-                          - ↑value: ./avg_conso_elec/text()
-                  variableName: elec
-                ↓sumGazElec [steps.SimpleStep-1673874426290]: 
-                  expression: var sum = Number(gaz) + Number(elec)
-                  isEnabled: false
-                ↓Field [steps.JsonFieldStep-1673874426293]: 
-                  isEnabled: false
-                  value: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: JS
-                        - →→: sum
                 ↓Field_1 [steps.JsonFieldStep-1673874426296]: 
                   value: 
                     - xmlizable: 
@@ -802,7 +718,7 @@
             - SmartType: 
               - ↑mode: PLAIN
               - →→: total
-      ↓calculTotalAndComputeDate [steps.SimpleStep-1674230152895]: 
+      ↓ComputeDate [steps.SimpleStep-1674230152895]: 
         expression: |
           'String.prototype.replaceAll = function(search, replacement) {
               var target = this;

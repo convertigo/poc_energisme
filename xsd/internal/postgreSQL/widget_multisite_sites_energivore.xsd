@@ -21,14 +21,34 @@
                     <xsd:appinfo>limit</xsd:appinfo>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="sites" type="xsd:string">
+            <xsd:element name="raw_data_table" type="xsd:string">
                 <xsd:annotation>
                     <xsd:appinfo>new variable</xsd:appinfo>
                 </xsd:annotation>
             </xsd:element>
-            <xsd:element name="raw_data_table" type="xsd:string">
+            <xsd:element name="filter_condition" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:appinfo>new variable</xsd:appinfo>
+                    <xsd:appinfo>filter_condition</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sensor_mapping_table" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>sensor_mapping_table</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="site_table" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>site_table</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="date_start" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>date_start</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="date_end" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>date_end</xsd:appinfo>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
@@ -41,6 +61,13 @@
         </xsd:simpleContent>
     </xsd:complexType>
     <xsd:complexType name="postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_avg_conso_elecType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute default="string" name="type" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_avg_consoType">
         <xsd:simpleContent>
             <xsd:extension base="xsd:string">
                 <xsd:attribute default="string" name="type" type="xsd:string"/>
@@ -79,6 +106,7 @@
         <xsd:sequence>
             <xsd:element minOccurs="0" name="avg_conso_gaz" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_avg_conso_gazType"/>
             <xsd:element minOccurs="0" name="avg_conso_elec" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_avg_conso_elecType"/>
+            <xsd:element minOccurs="0" name="avg_conso" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_avg_consoType"/>
             <xsd:element minOccurs="0" name="nom" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_nomType"/>
             <xsd:element minOccurs="0" name="latitude" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_latitudeType"/>
             <xsd:element minOccurs="0" name="longitude" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_row_longitudeType"/>
@@ -88,7 +116,7 @@
     </xsd:complexType>
     <xsd:complexType name="postgreSQL_widget_multisite_sites_energivore_document_sql_outputType">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_rowType"/>
+            <xsd:element minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_widget_multisite_sites_energivore_document_sql_output_rowType"/>
         </xsd:sequence>
         <xsd:attribute default="array" name="type" type="xsd:string"/>
     </xsd:complexType>

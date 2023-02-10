@@ -326,11 +326,17 @@ testOnBorrow: true
     	and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     	{{filter_condition}}
     	group by site_id)
-    select conso_by_site.avg_conso_gaz, conso_by_site.avg_conso_elec, s.nom, ST_Y(s.position) as latitude, ST_X(s.position) as longitude, site_id
+    select 
+    	conso_by_site.avg_conso_gaz, 
+    	conso_by_site.avg_conso_elec, 
+    	(conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz) /2 as avg_conso,
+    	s.nom, ST_Y(s.position) as latitude, 
+    	ST_X(s.position) as longitude, 
+    	site_id
     from {{site_table}} s
     inner join conso_by_site 
     on conso_by_site.site_id = s.id
-    order by avg_conso_gaz desc
+    order by avg_conso desc
     limit CAST({limit} AS BIGINT);
     
     
