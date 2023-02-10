@@ -43,6 +43,7 @@ For more technical informations : [documentation](./project.md)
         - [header](#header)
         - [heatmap](#heatmap)
         - [widget](#widget)
+        - [widget_zoom](#widget_zoom)
 
 
 ## Installation
@@ -365,6 +366,46 @@ Multisite view
 </table>
 
 #### widget
+
+**variables**
+
+<table>
+<tr>
+<th>name</th><th>comment</th>
+</tr>
+<tr>
+<td>aggregation</td><td></td>
+</tr>
+<tr>
+<td>displayTotalOnly</td><td></td>
+</tr>
+<tr>
+<td>isGauge</td><td>To determine if widget is a gauge widget. true or false (string)</td>
+</tr>
+<tr>
+<td>isGoogleMap</td><td>To determine if widget is a map widget. true or false (string)</td>
+</tr>
+<tr>
+<td>isHeatmap</td><td>To determine if widget is a heatmap widget. true or false (string)</td>
+</tr>
+<tr>
+<td>isInModal</td><td>To determine if widget is zoomed. true or false (string)</td>
+</tr>
+<tr>
+<td>sequenceMarker</td><td></td>
+</tr>
+<tr>
+<td>sequenceParams</td><td>Params of the sequence to call (object) ex: { myFirstParam: 'myValue', mySecondParam: 'myValue' }</td>
+</tr>
+<tr>
+<td>sequenceToCall</td><td>Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it's in another project then : "myProjectName.mySequenceToCall" </td>
+</tr>
+<tr>
+<td>title</td><td>Widget title (string)</td>
+</tr>
+</table>
+
+#### widget_zoom
 
 **variables**
 
