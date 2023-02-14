@@ -12,7 +12,7 @@
         beanData: '{"ionBean":"BackButton"}'
         tagName: ion-back-button
       ↓MenuButton [ngx.components.UIDynamicElement-1669821781360]: 
-        beanData: '{"ionBean":"MenuButton"}'
+        beanData: '{"ionBean":"MenuButton","MenuId":"plain:Menu"}'
         tagName: ion-menu-button
     ↓BarTitle [ngx.components.UIDynamicElement-1669821781363]: 
       beanData: '{"ionBean":"BarTitle"}'

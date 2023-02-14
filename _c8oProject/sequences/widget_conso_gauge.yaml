@@ -348,6 +348,12 @@
               - ↑mode: PLAIN
               - →→: arcColors
         ↓Field [steps.JsonFieldStep-1673865555023]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -355,6 +361,12 @@
                 - ↑mode: PLAIN
                 - →→: rgb(6, 89, 55)
         ↓Field1 [steps.JsonFieldStep-1673865555026]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field1
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -362,6 +374,12 @@
                 - ↑mode: PLAIN
                 - →→: rgb(15, 170, 108)
         ↓Field2 [steps.JsonFieldStep-1673865555029]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field2
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -369,6 +387,12 @@
                 - ↑mode: PLAIN
                 - →→: rgb(139, 207, 39)
         ↓Field3 [steps.JsonFieldStep-1673865555032]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field3
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -376,6 +400,12 @@
                 - ↑mode: PLAIN
                 - →→: rgb(248, 199, 0)
         ↓Field4 [steps.JsonFieldStep-1673865555035]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field4
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -390,6 +420,12 @@
               - ↑mode: PLAIN
               - →→: arcDelimiters
         ↓Field4 [steps.JsonFieldStep-1673865555041]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field4
           type: number
           value: 
             - xmlizable: 
@@ -398,6 +434,12 @@
                 - ↑mode: PLAIN
                 - →→: 20
         ↓Field5 [steps.JsonFieldStep-1673865555044]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field5
           type: number
           value: 
             - xmlizable: 
@@ -406,6 +448,12 @@
                 - ↑mode: PLAIN
                 - →→: 40
         ↓Field6 [steps.JsonFieldStep-1673865555047]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field6
           type: number
           value: 
             - xmlizable: 
@@ -414,6 +462,12 @@
                 - ↑mode: PLAIN
                 - →→: 60
         ↓Field7 [steps.JsonFieldStep-1673865555050]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field7
           type: number
           value: 
             - xmlizable: 
@@ -429,6 +483,12 @@
               - ↑mode: PLAIN
               - →→: rangeLabel
         ↓Field4 [steps.JsonFieldStep-1673865555056]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field4
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -436,6 +496,12 @@
                 - ↑mode: PLAIN
                 - →→: '-10'
         ↓Field5 [steps.JsonFieldStep-1673865555059]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field5
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType

@@ -17,6 +17,12 @@
           - java.lang.String: 
             - ↑value: ./document/couchdb_output/rows/item
     ↓Field [steps.JsonFieldStep-1673607022455]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: Field
       value: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType

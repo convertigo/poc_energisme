@@ -1013,64 +1013,75 @@ scriptContent:
       ↓colGoogleMaps [ngx.components.UIDynamicElement-1669048244163]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
-        ↓GoogleMap [ngx.components.UIDynamicElement-1669045580544]: 
-          beanData: '{"ionBean":"GoogleMap","Zoom":"script:5"}'
-          tagName: agm-map
-          ↓Directive [ngx.components.UIControlDirective-1669045679734]: 
-            directiveItemName: marker
-            directiveSource: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: 'script:(this.local[''response'']?.markers != undefined && this.local[''response'']?.markers.length > 0) ? this.local[''response'']?.markers : [] '
-            ↓MapMarker [ngx.components.UIDynamicElement-1669045580548]: 
-              beanData: |
-                '{
-                 "ionBean": "MapMarker",
-                 "Latitude": "script:marker.latitude",
-                 "Longitude": "script:marker.longitude",
-                 "Title": "script:marker.nom"
-                }'
-              tagName: agm-marker
-              ↓Fragment [ngx.components.UICustom-1669197702998]: 
-                htmlTemplate: |
-                  '<agm-info-window [disableAutoPan]="true">
-                    <p><strong>{{ marker.nom }}</strong></p>
-                    <p style="color: blue; text-decoration: underline; cursor: pointer" onClick="page.routerProvider.setRoot(''Monosite'', {}, null)">Voir le détail</p>
-                  </agm-info-window>'
-                isEnabled: false
-              ↓MapInfoWindow [ngx.components.UIDynamicElement-1669386848616]: 
-                beanData: '{"ionBean":"MapInfoWindow"}'
-                tagName: agm-info-window
-                ↓Label [ngx.components.UIDynamicElement-1669386896266]: 
-                  beanData: '{"ionBean":"Label"}'
-                  tagName: ion-label
-                  ↓Text [ngx.components.UIText-1669386896268]: 
-                    textValue: 
-                      - xmlizable: 
-                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: script:marker.nom
-                ↓Tag [ngx.components.UIElement-1669387004482]: 
-                  selfClose: true
-                  tagName: br
-                ↓Button [ngx.components.UIDynamicElement-1669386923161]: 
-                  beanData: '{"ionBean":"Button"}'
-                  tagName: ion-button
-                  ↓Label [ngx.components.UIDynamicElement-1669386923163]: 
+        ↓Div [ngx.components.UIDynamicElement-1676393472501]: 
+          beanData: '{"ionBean":"DivTag"}'
+          tagName: div
+          ↓GoogleMap [ngx.components.UIDynamicElement-1669045580544]: 
+            beanData: '{"ionBean":"GoogleMap","Zoom":"script:5"}'
+            tagName: agm-map
+            ↓Directive [ngx.components.UIControlDirective-1669045679734]: 
+              directiveItemName: marker
+              directiveSource: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:(this.local[''response'']?.markers != undefined && this.local[''response'']?.markers.length > 0) ? this.local[''response'']?.markers : [] '
+              ↓MapMarker [ngx.components.UIDynamicElement-1669045580548]: 
+                beanData: |
+                  '{
+                   "ionBean": "MapMarker",
+                   "Latitude": "script:marker.latitude",
+                   "Longitude": "script:marker.longitude",
+                   "Title": "script:marker.nom"
+                  }'
+                tagName: agm-marker
+                ↓Fragment [ngx.components.UICustom-1669197702998]: 
+                  htmlTemplate: |
+                    '<agm-info-window [disableAutoPan]="true">
+                      <p><strong>{{ marker.nom }}</strong></p>
+                      <p style="color: blue; text-decoration: underline; cursor: pointer" onClick="page.routerProvider.setRoot(''Monosite'', {}, null)">Voir le détail</p>
+                    </agm-info-window>'
+                  isEnabled: false
+                ↓MapInfoWindow [ngx.components.UIDynamicElement-1669386848616]: 
+                  beanData: '{"ionBean":"MapInfoWindow"}'
+                  tagName: agm-info-window
+                  ↓Label [ngx.components.UIDynamicElement-1669386896266]: 
                     beanData: '{"ionBean":"Label"}'
                     tagName: ion-label
-                    ↓Text [ngx.components.UIText-1669386923165]: 
+                    ↓Text [ngx.components.UIText-1669386896268]: 
                       textValue: 
                         - xmlizable: 
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                          - MobileSmartSourceType: plain:Voir
-                  ↓Event [ngx.components.UIControlEvent-1669386923167]: 
-                    ↓RootPage [ngx.components.UIDynamicAction-1669386933031]: 
-                      beanData: |
-                        '{
-                         "ionBean": "RootPageAction",
-                         "page": "plain:poc_energisme.Application.NgxApp.Monosite",
-                         "data": "script:{ site_id: marker.site_id }"
-                        }'
+                          - MobileSmartSourceType: script:marker.nom
+                  ↓Tag [ngx.components.UIElement-1669387004482]: 
+                    selfClose: true
+                    tagName: br
+                  ↓Button [ngx.components.UIDynamicElement-1669386923161]: 
+                    beanData: '{"ionBean":"Button"}'
+                    tagName: ion-button
+                    ↓Label [ngx.components.UIDynamicElement-1669386923163]: 
+                      beanData: '{"ionBean":"Label"}'
+                      tagName: ion-label
+                      ↓Text [ngx.components.UIText-1669386923165]: 
+                        textValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: plain:Voir
+                    ↓Event [ngx.components.UIControlEvent-1669386923167]: 
+                      ↓RootPage [ngx.components.UIDynamicAction-1669386933031]: 
+                        beanData: |
+                          '{
+                           "ionBean": "RootPageAction",
+                           "page": "plain:poc_energisme.Application.NgxApp.Monosite",
+                           "data": "script:{ site_id: marker.site_id }"
+                          }'
+          ↓Style [ngx.components.UIStyle-1676393518387]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '	height: 85%;
+                    '
   ↓Directive4 [ngx.components.UIControlDirective-1669283939146]: 
     directiveExpression: this.isGoogleMap == "false" && this.isGauge == "true"
     directiveName: If

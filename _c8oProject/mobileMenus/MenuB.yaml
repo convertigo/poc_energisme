@@ -1,0 +1,51 @@
+beanData: '{"ionBean":"Menu","MenuSide":"plain:end"}'
+comment: A menu with all pages added automatically
+identifier: MenuB
+isEnabled: false
+tagName: ion-menu
+↓Header [ngx.components.UIDynamicElement-1676298581433]: 
+  beanData: '{"ionBean":"Header"}'
+  tagName: ion-header
+  ↓ToolBar [ngx.components.UIDynamicElement-1676298581436]: 
+    beanData: '{"ionBean":"ToolBar"}'
+    tagName: ion-toolbar
+    ↓BarTitle [ngx.components.UIDynamicElement-1676298581439]: 
+      beanData: '{"ionBean":"BarTitle"}'
+      tagName: ion-title
+      ↓Text [ngx.components.UIText-1676298581442]: 
+        textValue: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+            - MobileSmartSourceType: plain:Energy Management
+↓Content [ngx.components.UIDynamicElement-1676298581445]: 
+  beanData: '{"ionBean":"Content"}'
+  tagName: ion-content
+  ↓List [ngx.components.UIDynamicElement-1676298581448]: 
+    beanData: '{"ionBean":"List","Inset":"plain:inset"}'
+    tagName: ion-list
+    ↓MenuAutoItems [ngx.components.UIDynamicMenuItems-1676298581451]: 
+      beanData: '{"ionBean":"MenuAutoItems"}'
+      isEnabled: false
+      itemtitle: 
+      tagName: button
+    ↓MenuItem [ngx.components.UIDynamicMenuItem-1676298581454]: 
+      beanData: '{"ionBean":"MenuItem"}'
+      itempage: poc_energisme.Application.NgxApp.Multisite
+      itemtitle: '''Multisite'''
+      tagName: ion-menu-toggle
+    ↓MenuItem1 [ngx.components.UIDynamicMenuItem-1676298581457]: 
+      beanData: '{"ionBean":"MenuItem"}'
+      itempage: poc_energisme.Application.NgxApp.Monosite
+      itemtitle: '''Monosite'''
+      tagName: ion-menu-toggle
+    ↓Directive [ngx.components.UIControlDirective-1676298581460]: 
+      directiveName: If
+      directiveSource: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:this.global['isAdmin'] != undefined && this.global['isAdmin'] == 'true'
+      ↓MenuItem [ngx.components.UIDynamicMenuItem-1676298581463]: 
+        beanData: '{"ionBean":"MenuItem"}'
+        itempage: poc_energisme.Application.NgxApp.Adminstration
+        itemtitle: '''Paramètres'''
+        tagName: ion-menu-toggle

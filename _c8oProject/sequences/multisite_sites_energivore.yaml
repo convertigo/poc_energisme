@@ -40,6 +40,12 @@ responseExpiryDate: daily,23:00:00
             - java.lang.String: 
               - ↑value: ./document/sql_output/row
       ↓Field [steps.JsonFieldStep-1668690718873]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Field
         value: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -82,6 +88,12 @@ responseExpiryDate: daily,23:00:00
                 - java.lang.String: 
                   - ↑value: ./document/sql_output/row
           ↓Field [steps.JsonFieldStep-1668690894716]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: Field
             value: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType

@@ -118,6 +118,12 @@
                   - java.lang.String: 
                     - ↑value: ./document/sql_output/row
             ↓Field [steps.JsonFieldStep-1673874136854]: 
+              key: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                  - SmartType: 
+                    - ↑mode: PLAIN
+                    - →→: Field
               value: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -160,6 +166,12 @@
                       - java.lang.String: 
                         - ↑value: ./document/sql_output/row
                 ↓Field [steps.JsonFieldStep-1673874136881]: 
+                  key: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                      - SmartType: 
+                        - ↑mode: PLAIN
+                        - →→: Field
                   value: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -331,6 +343,12 @@
                   - java.lang.String: 
                     - ↑value: ./document/sql_output/row
             ↓Field [steps.JsonFieldStep-1673874245094]: 
+              key: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                  - SmartType: 
+                    - ↑mode: PLAIN
+                    - →→: Field
               value: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -373,6 +391,12 @@
                       - java.lang.String: 
                         - ↑value: ./document/sql_output/row
                 ↓Field_1 [steps.JsonFieldStep-1673874314497]: 
+                  key: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                      - SmartType: 
+                        - ↑mode: PLAIN
+                        - →→: Field_1
                   value: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -544,6 +568,12 @@
                   - java.lang.String: 
                     - ↑value: ./document/sql_output/row
             ↓Field [steps.JsonFieldStep-1673874426266]: 
+              key: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                  - SmartType: 
+                    - ↑mode: PLAIN
+                    - →→: Field
               value: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -586,6 +616,12 @@
                       - java.lang.String: 
                         - ↑value: ./document/sql_output/row
                 ↓Field_1 [steps.JsonFieldStep-1673874426296]: 
+                  key: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                      - SmartType: 
+                        - ↑mode: PLAIN
+                        - →→: Field_1
                   value: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -756,6 +792,12 @@
             - java.lang.String: 
               - ↑value: ./document/sql_output/row
       ↓Field [steps.JsonFieldStep-1673860644294]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Field
         value: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -820,6 +862,12 @@
           ↓sumGazElec [steps.SimpleStep-1673860801546]: 
             expression: var sum = Number(gaz) + Number(elec)
           ↓Field [steps.JsonFieldStep-1673860644312]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: Field
             value: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType

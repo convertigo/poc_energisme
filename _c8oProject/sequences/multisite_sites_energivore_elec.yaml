@@ -82,6 +82,12 @@ responseExpiryDate: daily,23:00:00
                     - java.lang.String: 
                       - ↑value: ./split
               ↓Field [steps.JsonFieldStep-1669198699712]: 
+                key: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: PLAIN
+                      - →→: Field
                 value: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -104,6 +110,12 @@ responseExpiryDate: daily,23:00:00
                     - ↑value: ./split/text()
       ↓Field [steps.JsonFieldStep-1669043858363]: 
         isEnabled: false
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: Field
         value: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -146,6 +158,12 @@ responseExpiryDate: daily,23:00:00
                 - java.lang.String: 
                   - ↑value: ./document/sql_output/row
           ↓Field [steps.JsonFieldStep-1669043858381]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: Field
             value: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType

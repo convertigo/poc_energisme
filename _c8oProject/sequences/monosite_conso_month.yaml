@@ -92,6 +92,12 @@ responseExpiryDate: daily,23:00:00
       ↓jIf [steps.IfStep-1669193039032]: 
         condition: currentYear == firstYear
         ↓Field [steps.JsonFieldStep-1669193039035]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: Field
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -155,6 +161,12 @@ responseExpiryDate: daily,23:00:00
           ↓jIf [steps.IfStep-1669193256706]: 
             condition: currentYear == firstYear
             ↓Field [steps.JsonFieldStep-1669193256709]: 
+              key: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                  - SmartType: 
+                    - ↑mode: PLAIN
+                    - →→: Field
               value: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -276,6 +288,12 @@ responseExpiryDate: daily,23:00:00
           ↓jIf [steps.IfStep-1669193256745]: 
             condition: currentYear == firstYear
             ↓Field [steps.JsonFieldStep-1669193256748]: 
+              key: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                  - SmartType: 
+                    - ↑mode: PLAIN
+                    - →→: Field
               value: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -397,6 +415,12 @@ responseExpiryDate: daily,23:00:00
           ↓jIf [steps.IfStep-1669193256784]: 
             condition: currentYear != firstYear
             ↓Field [steps.JsonFieldStep-1669193256787]: 
+              key: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                  - SmartType: 
+                    - ↑mode: PLAIN
+                    - →→: Field
               value: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -518,6 +542,12 @@ responseExpiryDate: daily,23:00:00
           ↓jIf [steps.IfStep-1669193256823]: 
             condition: currentYear != firstYear
             ↓Field [steps.JsonFieldStep-1669193256826]: 
+              key: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                  - SmartType: 
+                    - ↑mode: PLAIN
+                    - →→: Field
               value: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType

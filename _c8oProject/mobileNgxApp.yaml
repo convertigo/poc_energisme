@@ -62,13 +62,17 @@ componentScriptContent:
         /*Begin_c8o_AppFunction*/
         	/*End_c8o_AppFunction*/
         '
+splitPaneLayout: md
 tplProjectName: mobilebuilder_tpl_8_1_0_ngx
 ↓Menu [ngx.components.UIDynamicMenu-1500890597895]: 🗏 mobileMenus/Menu.yaml
+↓menuGroup [ngx.components.UIDynamicMenu-1676294512556]: 🗏 mobileMenus/menuGroup.yaml
+↓MenuB [ngx.components.UIDynamicMenu-1676298581430]: 🗏 mobileMenus/MenuB.yaml
 ↓widget [ngx.components.UISharedRegularComponent-1667815060213]: 🗏 mobileSharedComponents/widget.yaml
 ↓gauge_chart [ngx.components.UISharedRegularComponent-1669283868833]: 🗏 mobileSharedComponents/gauge_chart.yaml
 ↓heatmap [ngx.components.UISharedRegularComponent-1669388832446]: 🗏 mobileSharedComponents/heatmap.yaml
 ↓header [ngx.components.UISharedRegularComponent-1669821769425]: 🗏 mobileSharedComponents/header.yaml
 ↓widget_zoom [ngx.components.UISharedRegularComponent-1676041233903]: 🗏 mobileSharedComponents/widget_zoom.yaml
+↓menuLeft [ngx.components.UISharedRegularComponent-1676293975976]: 🗏 mobileSharedComponents/menuLeft.yaml
 ↓Multisite [ngx.components.PageComponent-1500538678074]: 🗏 mobilePages/Multisite.yaml
 ↓Monosite [ngx.components.PageComponent-1669196356243]: 🗏 mobilePages/Monosite.yaml
 ↓zoomChart [ngx.components.PageComponent-1669286135548]: 🗏 mobilePages/zoomChart.yaml
@@ -654,4 +658,87 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
               width: 80%;
               height: 80%; 
             }
+          }
+          
+          .bg-grey {
+          	background-color: #CCCCCC;
+          }
+          
+          .bg-white {
+          	background-color: white;
+          }
+          
+          .text-vertically {
+          	writing-mode: vertical-lr;
+          	transform: rotate(-180deg);
+          	// text-orientation: use-glyph-orientation;
+          }
+          
+          .colMenuLeft {
+          	--ion-grid-column-padding: none !important;
+          }
+          
+          .colMenuLeftGroups {
+          	height: 100vh !important;
+          	overflow-y: scroll !important;
+          	white-space: nowrap;
+          	padding-left: 5px !important; 
+          	padding-right: 5px !important;
+          }
+          
+          ion-content.ion-padding  {
+          	// padding-left: none !important;
+          	--padding-start: unset !important;
+          	--padding-top: unset !important;
+          }
+          ion-split-pane ion-menu {
+          	min-width: 80px !important;
+          	max-width: 80px !important;
+          }
+          
+          ion-split-pane ion-menu ion-item:hover {
+          	cursor: pointer;
+          }
+          
+          ion-split-pane ion-menu ion-content {
+          	--background: #0C78E4 !important;
+          	--color: white !important;
+          }
+          
+          ion-accordion-group  {
+          	//--background: #CCCCCC !important;
+          	// padding-left: 5px !important;
+          	// padding-right: 5px !important;
+          }
+          
+          ion-accordion-group ion-accordion {
+          	--background: transparent !important;
+          }
+          
+          ion-accordion-group ion-accordion ion-item {
+          	--background: #E8E8E8 !important;
+          	--border-radius: 5px !important;
+          	--border-width: 1px !important;
+          	--border-color: #D3D3D3 !important;
+          	margin-top: 2.5px !important;
+          	margin-bottom: 2.5px !important;
+          	font-size: 12px !important;
+          	height: 60px !important;
+          }
+          
+          ion-accordion-group ion-accordion ion-list {
+          	padding-left: 15px !important;;
+          }
+          
+          //ion-accordion-group ion-accordion {
+          //	margin-left: 5px !important;
+          //	margin-right: 5px !important;
+          //}
+          
+          #gridMenuLeft {
+          	--ion-grid-padding: 0px !important;
+          }
+          
+          #gridMenuLeft ion-col {
+          	--ion-grid-column-padding: none !important;
           }'
