@@ -127,6 +127,17 @@ testOnBorrow: true
       		el.setAttribute("type", "null");
       	}
       }'
+  ↓Test_Case_KO [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1676454377908]: 
+      description: date_start
+      value: 2023-01-02
+    ↓date_end [variables.TestCaseVariable-1676454377911]: 
+      description: date_end
+      value: 2023-02-28
+    ↓sites [variables.TestCaseVariable-1676454377914]: 
+      value: CAST('7639' AS BIGINT),CAST('7642' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1676454377917]: 
+      value: YYYY-MM
   ↓Test_Case_Monosite_evolution_conso_agg_annee [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928023866]: 
       description: date_start
