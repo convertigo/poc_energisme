@@ -1,3 +1,5 @@
+clientCachable: true
+responseExpiryDate: absolute,36000
 ↓buildCastStrings [steps.SimpleStep-1674135718506]: 
   expression: |
     'sites = JSON.parse(sites)

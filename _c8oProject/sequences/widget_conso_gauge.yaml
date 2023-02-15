@@ -1,3 +1,5 @@
+clientCachable: true
+responseExpiryDate: absolute,36000
 ↓Input_variables [steps.InputVariablesStep-1673271074779]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1675417251700]: 
   sourceDefinition: 
