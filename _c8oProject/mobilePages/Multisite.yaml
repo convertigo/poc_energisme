@@ -4411,7 +4411,7 @@ title: Multisite
                                 '{
                                  "ionBean": "CheckBox",
                                  "ControlName": "plain:name1671532909462",
-                                 "Checked": "script:this.local.grps[group.name] === true",
+                                 "Checked": "script:this.selectAll || this.local.grps[group.name] === true",
                                  "Value": "script:group.name"
                                 }'
                               tagName: ion-checkbox

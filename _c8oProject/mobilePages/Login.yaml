@@ -1,5 +1,19 @@
 ↑isRoot: true
 inAutoMenu: false
+scriptContent: 
+  - xmlizable: 
+    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+      →: |
+        /*Begin_c8o_PageImport*/
+        /*End_c8o_PageImport*/
+        /*Begin_c8o_PageDeclaration*/
+        	/*End_c8o_PageDeclaration*/
+        /*Begin_c8o_PageConstructor*/
+        		/*End_c8o_PageConstructor*/
+        /*Begin_c8o_PageFunction*/
+        	/*End_c8o_PageFunction*/
+        
 segment: login
 title: Login
 ↓Content [ngx.components.UIDynamicElement-1669819334516]: 
@@ -269,3 +283,16 @@ title: Login
       ↓GridCol2 [ngx.components.UIDynamicElement-1669819348346]: 
         beanData: '{"ionBean":"GridCol"}'
         tagName: ion-col
+↓PageEvent [ngx.components.UIPageEvent-1676461227180]: 
+  viewEvent: onWillEnter
+  ↓CustomAction [ngx.components.UICustomAction-1676461249188]: 
+    actionValue: 
+      - xmlizable: 
+        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+          →: |
+            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+            		let menuCtrl = page.getInstance(MenuController)
+            		menuCtrl.enable(false, "Menu")
+            		resolve();
+            '

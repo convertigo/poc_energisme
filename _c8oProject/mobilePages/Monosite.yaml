@@ -109,6 +109,7 @@ title: Monosite
                               		console.log(sites)
                               		resolve();
                               '
+                      isEnabled: false
                       ↓sites [ngx.components.UIControlVariable-1674747396312]: 
                         varValue: 
                           - xmlizable: 
