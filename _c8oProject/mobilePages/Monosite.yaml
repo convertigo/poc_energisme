@@ -91,6 +91,11 @@ title: Monosite
                               		var sites = vars.sites;
                               		console.log(sites)
                               		var hash = Object.create(null);
+                              		let siteName = sites.map((x)=> {return x.name});
+                              		sites = sites.filter((el, index)=> {
+                              			return siteName.indexOf(el.name) === index;
+                              		})
+                              		/*
                               		sites.forEach(function (a, index) {
                               		    var key = JSON.stringify(a);
                               		    hash[key] = (hash[key] || 0) + 1;
@@ -99,7 +104,7 @@ title: Monosite
                               		        console.log(''count of 2 or more of '' + key);
                               		        console.log(index)
                               		    }
-                              		});
+                              		});*/
                               		
                               		console.log(sites)
                               		resolve();

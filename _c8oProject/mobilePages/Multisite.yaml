@@ -19,6 +19,7 @@ scriptContent:
         	public menuCtrl;
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
+        		this.local.grps = {};
         		this.menuCtrl = menuCtrl;
         		// this.menuCtrl.enable(true, ''Menu'')
         		// this.menuCtrl.enable(true, ''menuGroup'')
@@ -49,16 +50,22 @@ scriptContent:
         	}
         	
         	getParentGroupStatus(groupName) {
+        			console.log("getParentStatus")
         		var el = document.getElementById(groupName)
-        		var shadow = el.shadowRoot
-        		if(shadow.childNodes[2] != undefined) {
-        			var check = shadow.childNodes[2][''attributes''][1][''nodeValue'']
-        			if(check == "true") {
-        				return true
-        			} else {
-        				return false
-        			}
-        		}
+        		// var shadow = el.shadowRoot
+        //		if(shadow.childNodes[2] != undefined) {
+        //			var check = shadow.childNodes[2][''attributes''][1][''nodeValue'']
+        //			if(check == "true") {
+        //				return true
+        //			} else {
+        //				return false
+        //			}
+        //		}
+        		var checked = el.getAttribute("aria-checked");
+        		return checked;
+        
+        		
+        
         		
         	}
         	/*End_c8o_PageFunction*/
@@ -3835,6 +3842,7 @@ title: Multisite
                             '{
                              "ionBean": "CheckBox",
                              "ControlName": "plain:parentGroup",
+                             "DoubleBinding": "script:this.local.grps[group.name]",
                              "Checked": "script:this.selectAll",
                              "Value": "script:group.name"
                             }'
@@ -4308,28 +4316,30 @@ title: Multisite
                                           		resolve();
                                           '
                                   isEnabled: false
-                            ↓CustomAction [ngx.components.UICustomAction-1676296379044]: 
-                              actionValue: 
-                                - xmlizable: 
-                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                                    →: |
-                                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                                      		console.log(vars.stack)
-                                      		resolve();
-                                      '
-                              isEnabled: false
-                              ↓stack [ngx.components.UIControlVariable-1676296379047]: 
-                                varValue: 
-                                  - xmlizable: 
-                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: script:stack
                           ↓Attr [ngx.components.UIAttribute-1676296379050]: 
                             attrName: id
                             attrValue: 
                               - xmlizable: 
                                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                 - MobileSmartSourceType: script:group.name
+                          ↓Event [ngx.components.UIControlEvent-1676454386817]: 
+                            ↓CustomAction [ngx.components.UICustomAction-1676454392862]: 
+                              actionValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                      		event.stopPropagation()
+                                      		page.tick();
+                                      		// page.getParentGroupStatus(vars.groupName)
+                                      		resolve();
+                                      '
+                              ↓groupName [ngx.components.UIControlVariable-1676454867462]: 
+                                varValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: script:group.name
                         ↓Directive1 [ngx.components.UIControlDirective-1676296379053]: 
                           directiveName: If
                           directiveSource: 
@@ -4401,7 +4411,7 @@ title: Multisite
                                 '{
                                  "ionBean": "CheckBox",
                                  "ControlName": "plain:name1671532909462",
-                                 "Checked": "script:this.selectAll || this.getParentGroupStatus(group.name)",
+                                 "Checked": "script:this.local.grps[group.name] === true",
                                  "Value": "script:group.name"
                                 }'
                               tagName: ion-checkbox

@@ -9,6 +9,7 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
       - SmartType: 
         - ↑mode: PLAIN
         - →→: sites
+  output: false
   ↓Iterator [steps.IteratorStep-1674741527382]: 
     sourceDefinition: 
       - xmlizable: 
@@ -28,6 +29,7 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
             - java.lang.String: 
               - ↑value: ./Array/Object
       ↓Object [steps.JsonObjectStep-1674741595432]: 
+        output: false
         ↓id [steps.JsonFieldStep-1674741603510]: 
           key: 
             - xmlizable: 
@@ -35,6 +37,7 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: id
+          output: false
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -52,6 +55,7 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
               - SmartType: 
                 - ↑mode: PLAIN
                 - →→: name
+          output: false
           value: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
@@ -74,28 +78,45 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
   variableName: sites
 ↓Sequence_JS [steps.SimpleStep-1675267852547]: 
   expression: |
-    'var hash = Object.create(null);
+    //var hash = Object.create(null);
     log.warn("sites")
-    log.warn(sites)
-    		sites.forEach(function (a, index) {
-    		    var key = JSON.stringify(a);
-    		    hash[key] = (hash[key] || 0) + 1;
-    		    if (hash[key] >= 2) {
-    		      sites.splice(index, 1)
-    		        log.warn(''count of 2 or more of '' + key);
-    		        log.warn(index)
-    		    }
-    });
+    //log.warn(sites)
+    //		sites.forEach(function (a, index) {
+    //		    var key = JSON.stringify(a);
+    //		    hash[key] = (hash[key] || 0) + 1;
+    //		    if (hash[key] >= 2) {
+    //		      sites.splice(index, 1)
+    //		        log.warn('count of 2 or more of ' + key);
+    //		        log.warn(index)
+    //		    }
+    //});
     
-    sites = JSON.parse(JSON.stringify(sites))
+    let siteName = sites.map((x)=> {return x.name});
+    		sites = sites.filter((el, index)=> {
+    			return siteName.indexOf(el.name) === index;
+    		})
+    
+    // sites = JSON.stringify(sites)
     // sites = JSON.stringify(sites)
     log.warn(JSON.stringify(sites))
-    //log.warn(JSON.stringify(sites))'
-  isEnabled: false
+    //log.warn(JSON.stringify(sites))
 ↓jElement [steps.ElementStep-1675679064039]: 
   expression: sites
-  isEnabled: false
   nodeName: sites
+  output: false
+↓object [steps.JsonToXmlStep-1676457287401]: 
+  jsonObject: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: JS
+        - →→: sites
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: sites
 ↓user [variables.RequestableVariable-1674741480608]: 
 ↓Test_Case [core.TestCase]: 
   ↓user [variables.TestCaseVariable-1674741485159]: 
