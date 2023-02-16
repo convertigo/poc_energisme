@@ -112,8 +112,8 @@ testOnBorrow: true
     on rd.uuid = sm.sensor_id 
     and rd.label = sm.label
     where sm.site_id in ({{sites}})
-    and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+    and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     group by to_char(rd.ts,'{{agg_function}}')
     order by to_char(rd.ts,'{{agg_function}}')
   handlers: 
@@ -248,8 +248,8 @@ testOnBorrow: true
     on rd.uuid = sm.sensor_id
     and rd.label = sm.label
     where sm.site_id IN ({{sites}}) 
-    and  rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+    and  rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
   handlers: 
     →: |
       '// Handles the XML generated event.
@@ -295,8 +295,8 @@ testOnBorrow: true
     on rd.uuid = sm.sensor_id 
     and rd.label = sm.label
     where sm.site_id in ({{sites}}) 
-    and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
-    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+    and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
     group by to_char(rd.ts,'{{agg_function}}')
     order by to_char(rd.ts,'{{agg_function}}')
     
@@ -419,8 +419,8 @@ testOnBorrow: true
 ↓widget_multisite_sites_energivore [transactions.SqlTransaction]: 
   sqlQuery: |
     with conso_by_site as (
-    	select avg (val * sm.unit_coeff) filter (where sm."type"='gaz') as avg_conso_gaz, 
-    	avg (val * sm.unit_coeff) filter (where sm."type"='elec') as avg_conso_elec, site_id
+    	select sum(val * sm.unit_coeff) filter (where sm."type"='gaz') as avg_conso_gaz, 
+    	sum (val * sm.unit_coeff) filter (where sm."type"='elec') as avg_conso_elec, site_id
     	from {{raw_data_table}} rd
     	inner join {{sensor_mapping_table}} sm
     	on rd.uuid = sm.sensor_id
@@ -432,7 +432,7 @@ testOnBorrow: true
     select 
     	conso_by_site.avg_conso_gaz, 
     	conso_by_site.avg_conso_elec, 
-    	(conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz) /2 as avg_conso,
+    	(conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz  as avg_conso,
     	s.nom, ST_Y(s.position) as latitude, 
     	ST_X(s.position) as longitude, 
     	site_id
