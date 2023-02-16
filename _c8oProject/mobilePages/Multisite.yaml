@@ -7793,7 +7793,7 @@ title: Multisite
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: script:'.widget_conso'
+                            - MobileSmartSourceType: script:'.widget_evol_conso'
                       ↓sequenceParams [ngx.components.UIUseVariable-1676296304360]: 
                         varValue: 
                           - xmlizable: 
