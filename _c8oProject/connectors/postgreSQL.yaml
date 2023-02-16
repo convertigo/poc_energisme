@@ -130,14 +130,14 @@ testOnBorrow: true
   ↓Test_Case_KO [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1676454377908]: 
       description: date_start
-      value: 2023-01-02
+      value: 2022-11-01
     ↓date_end [variables.TestCaseVariable-1676454377911]: 
       description: date_end
       value: 2023-02-28
     ↓sites [variables.TestCaseVariable-1676454377914]: 
-      value: CAST('7639' AS BIGINT),CAST('7642' AS BIGINT)
+      value: CAST('7991' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1676454377917]: 
-      value: YYYY-MM
+      value: YYYY-WW
   ↓Test_Case_Monosite_evolution_conso_agg_annee [core.TestCase]: 
     ↓date_start [variables.TestCaseVariable-1672928023866]: 
       description: date_start
@@ -280,6 +280,98 @@ testOnBorrow: true
   ↓sensor_mapping_table [variables.RequestableVariable-1674049606383]: 
     description: sensor_mapping_table
     value: ${poc_energisme.sensor_mapping_table}
+↓widget_evol_conso [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select 
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='gaz' and to_char(rd.ts,'YYYY') = '{{last_year}}') as sum_conso_gaz,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='gaz' and to_char(rd.ts,'YYYY') = '{{first_year}}') as prec_sum_conso_gaz,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='elec' and to_char(rd.ts,'YYYY') = '{{last_year}}') as sum_conso_elec,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='elec' and to_char(rd.ts,'YYYY') = '{{first_year}}') as prec_sum_conso_elec,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='jdu' and to_char(rd.ts,'YYYY') = '{{last_year}}')  as sum_dju,
+    sum (rd.val * sm.unit_coeff) filter (where sm."type"='jdu' and to_char(rd.ts,'YYYY') = '{{first_year}}')  as prec_sum_dju,
+    to_char(rd.ts,'{{agg_function}}')  as agg_period
+    from {{raw_data_table}} rd
+    inner join {{sensor_mapping_table}} sm
+    on rd.uuid = sm.sensor_id 
+    and rd.label = sm.label
+    where sm.site_id in ({{sites}}) 
+    and rd.ts > TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
+    and rd.ts < TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
+    group by to_char(rd.ts,'{{agg_function}}')
+    order by to_char(rd.ts,'{{agg_function}}')
+    
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      
+      function onXmlGenerated() {
+      
+      	xpath = context.getXpathApi();
+      
+          root = dom.getDocumentElement();
+      
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      
+      	while((el=els.nextNode()) != null){
+      
+      		el.setAttribute("type", "null");
+      
+      	}
+      
+      }'
+  ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1676488532876]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1676488532879]: 
+      description: date_end
+      value: 2023-01-01
+    ↓sites [variables.TestCaseVariable-1676488532882]: 
+      value: CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1676488532885]: 
+      value: MM
+    ↓raw_data_table [variables.TestCaseVariable-1676489262177]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1676489262179]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
+    ↓first_year [variables.TestCaseVariable-1676489262181]: 
+      value: 2021
+    ↓last_year [variables.TestCaseVariable-1676489262183]: 
+      value: 2022
+  ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1676489382679]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1676489382682]: 
+      description: date_end
+      value: 2023-01-01
+    ↓sites [variables.TestCaseVariable-1676489382685]: 
+      value: CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1676489382688]: 
+      value: WW
+    ↓raw_data_table [variables.TestCaseVariable-1676489382691]: 
+      value: convertigo_poc.raw_data
+    ↓sensor_mapping_table [variables.TestCaseVariable-1676489382694]: 
+      description: sensor_mapping_table
+      value: convertigo_poc.sensor_mapping
+    ↓first_year [variables.TestCaseVariable-1676489382697]: 
+      value: 2021
+    ↓last_year [variables.TestCaseVariable-1676489382700]: 
+      value: 2022
+  ↓date_start [variables.RequestableVariable-1676488532966]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1676488532969]: 
+    description: date_end
+  ↓sites [variables.RequestableVariable-1676488532972]: 
+  ↓agg_function [variables.RequestableVariable-1676488532975]: 
+  ↓raw_data_table [variables.RequestableVariable-1676488532978]: 
+    value: ${poc_energisme.raw_data_table}
+  ↓sensor_mapping_table [variables.RequestableVariable-1676488532981]: 
+    description: sensor_mapping_table
+    value: ${poc_energisme.sensor_mapping_table}
+  ↓first_year [variables.RequestableVariable-1676488949013]: 
+  ↓last_year [variables.RequestableVariable-1676488960727]: 
 ↓widget_heatmap [transactions.SqlTransaction]: 
   sqlQuery: |
     select 

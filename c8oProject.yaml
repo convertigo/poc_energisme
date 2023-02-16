@@ -20,14 +20,6 @@
   ↓heatmap_sample [sequences.GenericSequence]: 🗏 sequences/heatmap_sample.yaml
   ↓insertGroupSites [sequences.GenericSequence]: 🗏 sequences/insertGroupSites.yaml
   ↓logout [sequences.GenericSequence]: 🗏 sequences/logout.yaml
-  ↓monosite_conso_month [sequences.GenericSequence]: 🗏 sequences/monosite_conso_month.yaml
-  ↓monosite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/monosite_conso_total_between.yaml
-  ↓multisite_conso_month [sequences.GenericSequence]: 🗏 sequences/multisite_conso_month.yaml
-  ↓multisite_conso_total_between [sequences.GenericSequence]: 🗏 sequences/multisite_conso_total_between.yaml
-  ↓multisite_maps [sequences.GenericSequence]: 🗏 sequences/multisite_maps.yaml
-  ↓multisite_sites_energivore [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore.yaml
-  ↓multisite_sites_energivore_elec [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_elec.yaml
-  ↓multisite_sites_energivore_gaz [sequences.GenericSequence]: 🗏 sequences/multisite_sites_energivore_gaz.yaml
   ↓postBulkGroupsFromAuthenticatedUser [sequences.GenericSequence]: 🗏 sequences/postBulkGroupsFromAuthenticatedUser.yaml
   ↓removeAllSitesOfGroup [sequences.GenericSequence]: 🗏 sequences/removeAllSitesOfGroup.yaml
   ↓removeSiteFromGroup [sequences.GenericSequence]: 🗏 sequences/removeSiteFromGroup.yaml
@@ -40,6 +32,7 @@
   ↓widget_conso_gauge [sequences.GenericSequence]: 🗏 sequences/widget_conso_gauge.yaml
   ↓widget_conso_monosite_gaz_dju [sequences.GenericSequence]: 🗏 sequences/widget_conso_monosite_gaz_dju.yaml
   ↓widget_conso_total [sequences.GenericSequence]: 🗏 sequences/widget_conso_total.yaml
+  ↓widget_evol_conso [sequences.GenericSequence]: 🗏 sequences/widget_evol_conso.yaml
   ↓widget_heatmap [sequences.GenericSequence]: 🗏 sequences/widget_heatmap.yaml
   ↓widget_maps [sequences.GenericSequence]: 🗏 sequences/widget_maps.yaml
   ↓widget_multisite_sites_energivore [sequences.GenericSequence]: 🗏 sequences/widget_multisite_sites_energivore.yaml
