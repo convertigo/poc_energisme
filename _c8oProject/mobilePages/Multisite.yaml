@@ -7651,12 +7651,12 @@ title: Multisite
               beanData: |
                 '{
                  "ionBean": "GridCol",
-                 "SizeLg": "plain:10",
-                 "SizeMd": "plain:10"
+                 "SizeLg": "plain:12",
+                 "SizeMd": "plain:12"
                 }'
               tagName: ion-col
               ↓Grid [ngx.components.UIDynamicElement-1676296304276]: 
-                beanData: '{"ionBean":"Grid"}'
+                beanData: '{"ionBean":"Grid","Height":"plain"}'
                 tagName: ion-grid
                 ↓rowCharts [ngx.components.UIDynamicElement-1676296304279]: 
                   beanData: '{"ionBean":"GridRow","Height":"plain"}'
@@ -7777,8 +7777,8 @@ title: Multisite
                     beanData: |
                       '{
                        "ionBean": "GridCol",
-                       "SizeLg": "plain:6",
-                       "SizeMd": "plain:6",
+                       "SizeLg": "plain:4",
+                       "SizeMd": "plain:4",
                        "SizeXs": "plain:12"
                       }'
                     tagName: ion-col
@@ -7829,8 +7829,178 @@ title: Multisite
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                             - MobileSmartSourceType: script:'true'
+                  ↓colNotesYellow [ngx.components.UIDynamicElement-1676552683960]: 
+                    beanData: '{"ionBean":"GridCol","Size":"plain:2"}'
+                    tagName: ion-col
+                    ↓Grid [ngx.components.UIDynamicElement-1676552683963]: 
+                      beanData: |
+                        '{
+                         "ionBean": "Grid",
+                         "Fixed": "plain:true",
+                         "Height": "plain:85%"
+                        }'
+                      tagName: ion-grid
+                      ↓rowHeader [ngx.components.UIDynamicElement-1676552683966]: 
+                        beanData: |
+                          '{
+                           "ionBean": "GridRow",
+                           "Height": "plain",
+                           "FlexAlignement": "plain:ion-align-items-center"
+                          }'
+                        tagName: ion-row
+                        ↓colTitle [ngx.components.UIDynamicElement-1676552683969]: 
+                          beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+                          isEnabled: false
+                          tagName: ion-col
+                        ↓colActionButtons [ngx.components.UIDynamicElement-1676552683972]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓GenericItem [ngx.components.UIDynamicElement-1676552683975]: 
+                            beanData: '{"ionBean":"GenericItem","Lines":"plain:none"}'
+                            tagName: ion-item
+                            ↓Label [ngx.components.UIDynamicElement-1676552683978]: 
+                              beanData: '{"ionBean":"Label"}'
+                              tagName: ion-label
+                              ↓Text [ngx.components.UIText-1676552683981]: 
+                                textValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:Besoin d'aide ?
+                            ↓ButtonSet [ngx.components.UIDynamicElement-1676552683984]: 
+                              beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+                              tagName: ion-buttons
+                              ↓buttonZoomChart [ngx.components.UIDynamicElement-1676552683987]: 
+                                beanData: '{"ionBean":"Button"}'
+                                tagName: ion-button
+                                ↓Event [ngx.components.UIControlEvent-1676552683990]: 
+                                  isEnabled: false
+                                  ↓ModalPage [ngx.components.UIDynamicAction-1676552683993]: 
+                                    beanData: |
+                                      '{
+                                       "ionBean": "ModalAction",
+                                       "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
+                                       "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap,\r\n\tsequenceMarker: this.sequenceMarker,\r\n\taggregation: this.aggregation,\r\n\tdisplayTotalOnly: this.displayTotalOnly\r\n}",
+                                       "cssClass": "plain:modal75"
+                                      }'
+                                ↓Icon [ngx.components.UIDynamicElement-1676552683996]: 
+                                  beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                  tagName: ion-icon
+                            ↓Style [ngx.components.UIStyle-1676552683999]: 
+                              styleContent: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '/**
+                                       * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                                       * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                                       * They are set using custom property notation, e.g.: --main-color: black;
+                                       * and are accessed using the var() function, e.g.: color: var(--main-color);
+                                       * You can find below your component''s properties you can customize within the page.
+                                       * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                                       * For more informations see https://ionicframework.com/docs/theming.
+                                      **/
+                                      //--background	//Background of the item
+                                      //--background-activated	//Background of the item when pressed. Note: setting this will interfere with the Material Design ripple
+                                      //--background-activated-opacity	//Opacity of the item background when pressed
+                                      //--background-focused	//Background of the item when focused with the tab key
+                                      //--background-focused-opacity	//Opacity of the item background when focused with the tab key
+                                      //--background-hover	//Background of the item on hover
+                                      //--background-hover-opacity	//Opacity of the background of the item on hover
+                                      //--border-color	//Color of the item border
+                                      //--border-radius	//Radius of the item border
+                                      //--border-style	//Style of the item border
+                                      //--border-width	//Width of the item border
+                                      //--color	//Color of the item
+                                      //--color-activated	//Color of the item when pressed
+                                      //--color-focused	//Color of the item when focused with the tab key
+                                      //--color-hover	//Color of the item on hover
+                                      //--detail-icon-color	//Color of the item detail icon
+                                      //--detail-icon-font-size	//Font size of the item detail icon
+                                      //--detail-icon-opacity	//Opacity of the item detail icon
+                                      //--highlight-color-focused	//The color of the highlight on the item when focused
+                                      //--highlight-color-invalid	//The color of the highlight on the item when invalid
+                                      //--highlight-color-valid	//The color of the highlight on the item when valid
+                                      //--highlight-height	//The height of the highlight on the item
+                                      //--inner-border-width	//Width of the item inner border
+                                      //--inner-box-shadow	//Box shadow of the item inner
+                                      //--inner-padding-bottom	//Bottom padding of the item inner
+                                      //--inner-padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner
+                                      //--inner-padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner
+                                      //--inner-padding-top	//Top padding of the item inner
+                                      //--min-height	//Minimum height of the item
+                                      //--padding-bottom	//Bottom padding of the item
+                                      //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item
+                                      //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item
+                                      //--padding-top	//Top padding of the item
+                                      //--ripple-color	//Color of the item ripple effect
+                                      //--transition	//Transition of the item
+                                      --background: #fdc100;
+                                      --inner-padding-end: unset !important;
+                                      '
+                        ↓Style [ngx.components.UIStyle-1676552684002]: 
+                          styleContent: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '	border-bottom: 1px solid #E3E3E3;
+                                  '
+                        ↓Attr [ngx.components.UIAttribute-1676552684005]: 
+                          attrName: class
+                          attrValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:yellow-dark
+                      ↓rowNoteContent [ngx.components.UIDynamicElement-1676552684008]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676552684011]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓Paragraph [ngx.components.UIDynamicElement-1676552684014]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676552684017]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: |
+                                      'plain:Une question, besoin d''information?
+                                      Vous pouvez nous contacter par mail un conseiller reviendra vers vous sous 24h pour répondre à votre question
+                                      Si vous étes une Entreprise : en écrivant à soace-entreprises@engie.com'
+                        ↓Attr [ngx.components.UIAttribute-1676552684020]: 
+                          attrName: class
+                          attrValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:yellow-light
+                      ↓Style [ngx.components.UIStyle-1676552684023]: 
+                        styleContent: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '/**
+                                 * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                                 * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                                 * They are set using custom property notation, e.g.: --main-color: black;
+                                 * and are accessed using the var() function, e.g.: color: var(--main-color);
+                                 * You can find below your component''s properties you can customize within the page.
+                                 * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                                 * For more informations see https://ionicframework.com/docs/theming.
+                                **/
+                                //--ion-grid-column-padding	//Padding for the Column
+                                //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                                //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                                //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                                //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                                //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                                //--ion-grid-columns	//The number of total Columns in the Grid
+                                padding: unset !important;	
+                                '
                 ↓rowMapsAndSitesEnergivore [ngx.components.UIDynamicElement-1676296304381]: 
-                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
+                  beanData: '{"ionBean":"GridRow"}'
                   tagName: ion-row
                   ↓colMaps [ngx.components.UIDynamicElement-1676296304384]: 
                     beanData: |
@@ -7893,8 +8063,8 @@ title: Multisite
                     beanData: |
                       '{
                        "ionBean": "GridCol",
-                       "SizeLg": "plain:9",
-                       "SizeMd": "plain:9",
+                       "SizeLg": "plain:7",
+                       "SizeMd": "plain:7",
                        "SizeXs": "plain:12"
                       }'
                     tagName: ion-col
@@ -7940,6 +8110,176 @@ title: Multisite
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                             - MobileSmartSourceType: script:''
+                  ↓colNotesBlue [ngx.components.UIDynamicElement-1676552874006]: 
+                    beanData: |
+                      '{
+                       "ionBean": "GridCol",
+                       "SizeLg": "plain:2",
+                       "SizeMd": "plain:2"
+                      }'
+                    tagName: ion-col
+                    ↓Grid [ngx.components.UIDynamicElement-1676552874009]: 
+                      beanData: '{"ionBean":"Grid","Height":"plain:88%"}'
+                      tagName: ion-grid
+                      ↓Style [ngx.components.UIStyle-1676552874069]: 
+                        styleContent: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '/**
+                                 * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                                 * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                                 * They are set using custom property notation, e.g.: --main-color: black;
+                                 * and are accessed using the var() function, e.g.: color: var(--main-color);
+                                 * You can find below your component''s properties you can customize within the page.
+                                 * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                                 * For more informations see https://ionicframework.com/docs/theming.
+                                **/
+                                //--ion-grid-column-padding	//Padding for the Column
+                                //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                                //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                                //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                                //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                                //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                                //--ion-grid-columns	//The number of total Columns in the Grid
+                                padding: unset !important;	
+                                '
+                      ↓rowHeader [ngx.components.UIDynamicElement-1676552874012]: 
+                        beanData: |
+                          '{
+                           "ionBean": "GridRow",
+                           "Height": "plain",
+                           "FlexAlignement": "plain:ion-align-items-center"
+                          }'
+                        tagName: ion-row
+                        ↓colTitle [ngx.components.UIDynamicElement-1676552874015]: 
+                          beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+                          isEnabled: false
+                          tagName: ion-col
+                        ↓colActionButtons [ngx.components.UIDynamicElement-1676552874018]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓GenericItem [ngx.components.UIDynamicElement-1676552874021]: 
+                            beanData: '{"ionBean":"GenericItem","Lines":"plain:none"}'
+                            tagName: ion-item
+                            ↓Label [ngx.components.UIDynamicElement-1676552874024]: 
+                              beanData: '{"ionBean":"Label"}'
+                              tagName: ion-label
+                              ↓Text [ngx.components.UIText-1676552874027]: 
+                                textValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:Besoin d'aide ?
+                            ↓ButtonSet [ngx.components.UIDynamicElement-1676552874030]: 
+                              beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+                              tagName: ion-buttons
+                              ↓buttonZoomChart [ngx.components.UIDynamicElement-1676552874033]: 
+                                beanData: '{"ionBean":"Button"}'
+                                tagName: ion-button
+                                ↓Event [ngx.components.UIControlEvent-1676552874036]: 
+                                  isEnabled: false
+                                  ↓ModalPage [ngx.components.UIDynamicAction-1676552874039]: 
+                                    beanData: |
+                                      '{
+                                       "ionBean": "ModalAction",
+                                       "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
+                                       "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap,\r\n\tsequenceMarker: this.sequenceMarker,\r\n\taggregation: this.aggregation,\r\n\tdisplayTotalOnly: this.displayTotalOnly\r\n}",
+                                       "cssClass": "plain:modal75"
+                                      }'
+                                ↓Icon [ngx.components.UIDynamicElement-1676552874042]: 
+                                  beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                  tagName: ion-icon
+                            ↓Style [ngx.components.UIStyle-1676552874045]: 
+                              styleContent: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '/**
+                                       * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                                       * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                                       * They are set using custom property notation, e.g.: --main-color: black;
+                                       * and are accessed using the var() function, e.g.: color: var(--main-color);
+                                       * You can find below your component''s properties you can customize within the page.
+                                       * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                                       * For more informations see https://ionicframework.com/docs/theming.
+                                      **/
+                                      //--background	//Background of the item
+                                      //--background-activated	//Background of the item when pressed. Note: setting this will interfere with the Material Design ripple
+                                      //--background-activated-opacity	//Opacity of the item background when pressed
+                                      //--background-focused	//Background of the item when focused with the tab key
+                                      //--background-focused-opacity	//Opacity of the item background when focused with the tab key
+                                      //--background-hover	//Background of the item on hover
+                                      //--background-hover-opacity	//Opacity of the background of the item on hover
+                                      //--border-color	//Color of the item border
+                                      //--border-radius	//Radius of the item border
+                                      //--border-style	//Style of the item border
+                                      //--border-width	//Width of the item border
+                                      //--color	//Color of the item
+                                      //--color-activated	//Color of the item when pressed
+                                      //--color-focused	//Color of the item when focused with the tab key
+                                      //--color-hover	//Color of the item on hover
+                                      //--detail-icon-color	//Color of the item detail icon
+                                      //--detail-icon-font-size	//Font size of the item detail icon
+                                      //--detail-icon-opacity	//Opacity of the item detail icon
+                                      //--highlight-color-focused	//The color of the highlight on the item when focused
+                                      //--highlight-color-invalid	//The color of the highlight on the item when invalid
+                                      //--highlight-color-valid	//The color of the highlight on the item when valid
+                                      //--highlight-height	//The height of the highlight on the item
+                                      //--inner-border-width	//Width of the item inner border
+                                      //--inner-box-shadow	//Box shadow of the item inner
+                                      //--inner-padding-bottom	//Bottom padding of the item inner
+                                      //--inner-padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner
+                                      //--inner-padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner
+                                      //--inner-padding-top	//Top padding of the item inner
+                                      //--min-height	//Minimum height of the item
+                                      //--padding-bottom	//Bottom padding of the item
+                                      //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item
+                                      //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item
+                                      //--padding-top	//Top padding of the item
+                                      //--ripple-color	//Color of the item ripple effect
+                                      //--transition	//Transition of the item
+                                      --background: #0F82DC;
+                                      --inner-padding-end: unset !important;
+                                      '
+                        ↓Style [ngx.components.UIStyle-1676552874048]: 
+                          styleContent: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '	border-bottom: 1px solid #E3E3E3;
+                                  '
+                        ↓Attr [ngx.components.UIAttribute-1676552874051]: 
+                          attrName: class
+                          attrValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:blue-dark
+                      ↓rowNoteContent [ngx.components.UIDynamicElement-1676552874054]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676552874057]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓Paragraph [ngx.components.UIDynamicElement-1676552874060]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676552874063]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: |
+                                      'plain:Une question, besoin d''information?
+                                      Vous pouvez nous contacter par mail un conseiller reviendra vers vous sous 24h pour répondre à votre question
+                                      Si vous étes une Entreprise : en écrivant à soace-entreprises@engie.com'
+                        ↓Attr [ngx.components.UIAttribute-1676552874066]: 
+                          attrName: class
+                          attrValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:blue-light
                 ↓rowSitesLesPlusConsoDelec [ngx.components.UIDynamicElement-1676296304450]: 
                   beanData: '{"ionBean":"GridRow","Height":"plain"}'
                   isEnabled: false
@@ -8090,6 +8430,7 @@ title: Multisite
                  "SizeMd": "plain:2",
                  "SizeXs": "plain:12"
                 }'
+              isEnabled: false
               tagName: ion-col
               ↓UseSharedComponent [ngx.components.UIUseShared-1676296304519]: 
                 isEnabled: false
@@ -8180,52 +8521,151 @@ title: Multisite
               ↓Grid [ngx.components.UIDynamicElement-1676469096734]: 
                 beanData: '{"ionBean":"Grid"}'
                 tagName: ion-grid
-                ↓rowHeader [ngx.components.UIDynamicElement-1676469111056]: 
-                  beanData: |
-                    '{
-                     "ionBean": "GridRow",
-                     "Height": "plain",
-                     "FlexAlignement": "plain:ion-align-items-center"
-                    }'
+                ↓rowNotesYellow [ngx.components.UIDynamicElement-1676551141283]: 
+                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
                   tagName: ion-row
-                  ↓colTitle [ngx.components.UIDynamicElement-1676469111059]: 
-                    beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
-                    isEnabled: false
-                    tagName: ion-col
-                  ↓colActionButtons [ngx.components.UIDynamicElement-1676469111068]: 
+                  ↓GridCol [ngx.components.UIDynamicElement-1676551141272]: 
                     beanData: '{"ionBean":"GridCol"}'
                     tagName: ion-col
-                    ↓GenericItem [ngx.components.UIDynamicElement-1676469111071]: 
-                      beanData: '{"ionBean":"GenericItem","Lines":"plain:none"}'
-                      tagName: ion-item
-                      ↓Label [ngx.components.UIDynamicElement-1676469111062]: 
-                        beanData: '{"ionBean":"Label"}'
-                        tagName: ion-label
-                        ↓Text [ngx.components.UIText-1676469111065]: 
-                          textValue: 
+                    ↓Grid [ngx.components.UIDynamicElement-1676551752326]: 
+                      beanData: '{"ionBean":"Grid"}'
+                      tagName: ion-grid
+                      ↓rowHeader [ngx.components.UIDynamicElement-1676469111056]: 
+                        beanData: |
+                          '{
+                           "ionBean": "GridRow",
+                           "Height": "plain",
+                           "FlexAlignement": "plain:ion-align-items-center"
+                          }'
+                        tagName: ion-row
+                        ↓colTitle [ngx.components.UIDynamicElement-1676469111059]: 
+                          beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+                          isEnabled: false
+                          tagName: ion-col
+                        ↓colActionButtons [ngx.components.UIDynamicElement-1676469111068]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓GenericItem [ngx.components.UIDynamicElement-1676469111071]: 
+                            beanData: '{"ionBean":"GenericItem","Lines":"plain:none"}'
+                            tagName: ion-item
+                            ↓Label [ngx.components.UIDynamicElement-1676469111062]: 
+                              beanData: '{"ionBean":"Label"}'
+                              tagName: ion-label
+                              ↓Text [ngx.components.UIText-1676469111065]: 
+                                textValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:Besoin d'aide ?
+                            ↓ButtonSet [ngx.components.UIDynamicElement-1676469111074]: 
+                              beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+                              tagName: ion-buttons
+                              ↓buttonZoomChart [ngx.components.UIDynamicElement-1676469111080]: 
+                                beanData: '{"ionBean":"Button"}'
+                                tagName: ion-button
+                                ↓Event [ngx.components.UIControlEvent-1676469111083]: 
+                                  isEnabled: false
+                                  ↓ModalPage [ngx.components.UIDynamicAction-1676469111086]: 
+                                    beanData: |
+                                      '{
+                                       "ionBean": "ModalAction",
+                                       "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
+                                       "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap,\r\n\tsequenceMarker: this.sequenceMarker,\r\n\taggregation: this.aggregation,\r\n\tdisplayTotalOnly: this.displayTotalOnly\r\n}",
+                                       "cssClass": "plain:modal75"
+                                      }'
+                                ↓Icon [ngx.components.UIDynamicElement-1676469111089]: 
+                                  beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                  tagName: ion-icon
+                            ↓Style [ngx.components.UIStyle-1676469111110]: 
+                              styleContent: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '/**
+                                       * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                                       * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                                       * They are set using custom property notation, e.g.: --main-color: black;
+                                       * and are accessed using the var() function, e.g.: color: var(--main-color);
+                                       * You can find below your component''s properties you can customize within the page.
+                                       * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                                       * For more informations see https://ionicframework.com/docs/theming.
+                                      **/
+                                      //--background	//Background of the item
+                                      //--background-activated	//Background of the item when pressed. Note: setting this will interfere with the Material Design ripple
+                                      //--background-activated-opacity	//Opacity of the item background when pressed
+                                      //--background-focused	//Background of the item when focused with the tab key
+                                      //--background-focused-opacity	//Opacity of the item background when focused with the tab key
+                                      //--background-hover	//Background of the item on hover
+                                      //--background-hover-opacity	//Opacity of the background of the item on hover
+                                      //--border-color	//Color of the item border
+                                      //--border-radius	//Radius of the item border
+                                      //--border-style	//Style of the item border
+                                      //--border-width	//Width of the item border
+                                      //--color	//Color of the item
+                                      //--color-activated	//Color of the item when pressed
+                                      //--color-focused	//Color of the item when focused with the tab key
+                                      //--color-hover	//Color of the item on hover
+                                      //--detail-icon-color	//Color of the item detail icon
+                                      //--detail-icon-font-size	//Font size of the item detail icon
+                                      //--detail-icon-opacity	//Opacity of the item detail icon
+                                      //--highlight-color-focused	//The color of the highlight on the item when focused
+                                      //--highlight-color-invalid	//The color of the highlight on the item when invalid
+                                      //--highlight-color-valid	//The color of the highlight on the item when valid
+                                      //--highlight-height	//The height of the highlight on the item
+                                      //--inner-border-width	//Width of the item inner border
+                                      //--inner-box-shadow	//Box shadow of the item inner
+                                      //--inner-padding-bottom	//Bottom padding of the item inner
+                                      //--inner-padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner
+                                      //--inner-padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner
+                                      //--inner-padding-top	//Top padding of the item inner
+                                      //--min-height	//Minimum height of the item
+                                      //--padding-bottom	//Bottom padding of the item
+                                      //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item
+                                      //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item
+                                      //--padding-top	//Top padding of the item
+                                      //--ripple-color	//Color of the item ripple effect
+                                      //--transition	//Transition of the item
+                                      --background: #fdc100;
+                                      --inner-padding-end: unset !important;
+                                      '
+                        ↓Style [ngx.components.UIStyle-1676469111113]: 
+                          styleContent: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '	border-bottom: 1px solid #E3E3E3;
+                                  '
+                        ↓Attr [ngx.components.UIAttribute-1676551388100]: 
+                          attrName: class
+                          attrValue: 
                             - xmlizable: 
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                              - MobileSmartSourceType: plain:Besoin d'aide ?
-                      ↓ButtonSet [ngx.components.UIDynamicElement-1676469111074]: 
-                        beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
-                        tagName: ion-buttons
-                        ↓buttonZoomChart [ngx.components.UIDynamicElement-1676469111080]: 
-                          beanData: '{"ionBean":"Button"}'
-                          tagName: ion-button
-                          ↓Event [ngx.components.UIControlEvent-1676469111083]: 
-                            isEnabled: false
-                            ↓ModalPage [ngx.components.UIDynamicAction-1676469111086]: 
-                              beanData: |
-                                '{
-                                 "ionBean": "ModalAction",
-                                 "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
-                                 "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap,\r\n\tsequenceMarker: this.sequenceMarker,\r\n\taggregation: this.aggregation,\r\n\tdisplayTotalOnly: this.displayTotalOnly\r\n}",
-                                 "cssClass": "plain:modal75"
-                                }'
-                          ↓Icon [ngx.components.UIDynamicElement-1676469111089]: 
-                            beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
-                            tagName: ion-icon
-                      ↓Style [ngx.components.UIStyle-1676469111110]: 
+                              - MobileSmartSourceType: plain:yellow-dark
+                      ↓rowNoteContent [ngx.components.UIDynamicElement-1676469367982]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676469367971]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓Paragraph [ngx.components.UIDynamicElement-1676469393860]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676469393859]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: |
+                                      'plain:Une question, besoin d''information?
+                                      Vous pouvez nous contacter par mail un conseiller reviendra vers vous sous 24h pour répondre à votre question
+                                      Si vous étes une Entreprise : en écrivant à soace-entreprises@engie.com'
+                        ↓Attr [ngx.components.UIAttribute-1676551370005]: 
+                          attrName: class
+                          attrValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:yellow-light
+                      ↓Style [ngx.components.UIStyle-1676551796561]: 
                         styleContent: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -8240,53 +8680,215 @@ title: Multisite
                                  * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
                                  * For more informations see https://ionicframework.com/docs/theming.
                                 **/
-                                //--background	//Background of the item
-                                //--background-activated	//Background of the item when pressed. Note: setting this will interfere with the Material Design ripple
-                                //--background-activated-opacity	//Opacity of the item background when pressed
-                                //--background-focused	//Background of the item when focused with the tab key
-                                //--background-focused-opacity	//Opacity of the item background when focused with the tab key
-                                //--background-hover	//Background of the item on hover
-                                //--background-hover-opacity	//Opacity of the background of the item on hover
-                                //--border-color	//Color of the item border
-                                //--border-radius	//Radius of the item border
-                                //--border-style	//Style of the item border
-                                //--border-width	//Width of the item border
-                                //--color	//Color of the item
-                                //--color-activated	//Color of the item when pressed
-                                //--color-focused	//Color of the item when focused with the tab key
-                                //--color-hover	//Color of the item on hover
-                                //--detail-icon-color	//Color of the item detail icon
-                                //--detail-icon-font-size	//Font size of the item detail icon
-                                //--detail-icon-opacity	//Opacity of the item detail icon
-                                //--highlight-color-focused	//The color of the highlight on the item when focused
-                                //--highlight-color-invalid	//The color of the highlight on the item when invalid
-                                //--highlight-color-valid	//The color of the highlight on the item when valid
-                                //--highlight-height	//The height of the highlight on the item
-                                //--inner-border-width	//Width of the item inner border
-                                //--inner-box-shadow	//Box shadow of the item inner
-                                //--inner-padding-bottom	//Bottom padding of the item inner
-                                //--inner-padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner
-                                //--inner-padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner
-                                //--inner-padding-top	//Top padding of the item inner
-                                //--min-height	//Minimum height of the item
-                                //--padding-bottom	//Bottom padding of the item
-                                //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item
-                                //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item
-                                //--padding-top	//Top padding of the item
-                                //--ripple-color	//Color of the item ripple effect
-                                //--transition	//Transition of the item
-                                --background: #fdc100;
-                                --inner-padding-end: unset !important;
+                                //--ion-grid-column-padding	//Padding for the Column
+                                //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                                //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                                //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                                //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                                //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                                //--ion-grid-columns	//The number of total Columns in the Grid
+                                padding: unset !important;	
                                 '
-                  ↓Style [ngx.components.UIStyle-1676469111113]: 
+                  ↓Style [ngx.components.UIStyle-1676469226558]: 
                     styleContent: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
                         - com.twinsoft.convertigo.beans.common.FormatedContent: 
                           →: |
-                            '	border-bottom: 1px solid #E3E3E3;
+                            '/**
+                             * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                             * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                             * They are set using custom property notation, e.g.: --main-color: black;
+                             * and are accessed using the var() function, e.g.: color: var(--main-color);
+                             * You can find below your component''s properties you can customize within the page.
+                             * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                             * For more informations see https://ionicframework.com/docs/theming.
+                            **/
+                            //--ion-grid-padding	//Padding for the Grid
+                            //--ion-grid-padding-lg	//Padding for the Grid on lg screens
+                            //--ion-grid-padding-md	//Padding for the Grid on md screens
+                            //--ion-grid-padding-sm	//Padding for the Grid on sm screens
+                            //--ion-grid-padding-xl	//Padding for the Grid on xl screens
+                            //--ion-grid-padding-xs	//Padding for the Grid on xs screens
+                            //--ion-grid-width	//Width of the fixed Grid
+                            //--ion-grid-width-lg	//Width of the fixed Grid on lg screens
+                            //--ion-grid-width-md	//Width of the fixed Grid on md screens
+                            //--ion-grid-width-sm	//Width of the fixed Grid on sm screens
+                            //--ion-grid-width-xl	//Width of the fixed Grid on xl screens
+                            //--ion-grid-width-xs	//Width of the fixed Grid on xs screens
+                            // background-color: #fdc100;
+                            // max-height: 100% !important;
+                            margin-bottom: 100px;
                             '
-                ↓Style [ngx.components.UIStyle-1676469226558]: 
+                ↓rowNotesBlue [ngx.components.UIDynamicElement-1676551175194]: 
+                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
+                  tagName: ion-row
+                  ↓GridCol [ngx.components.UIDynamicElement-1676551175183]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓Grid [ngx.components.UIDynamicElement-1676551771687]: 
+                      beanData: '{"ionBean":"Grid"}'
+                      tagName: ion-grid
+                      ↓rowHeader [ngx.components.UIDynamicElement-1676551202374]: 
+                        beanData: |
+                          '{
+                           "ionBean": "GridRow",
+                           "Height": "plain",
+                           "FlexAlignement": "plain:ion-align-items-center"
+                          }'
+                        tagName: ion-row
+                        ↓colTitle [ngx.components.UIDynamicElement-1676551202377]: 
+                          beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+                          isEnabled: false
+                          tagName: ion-col
+                        ↓colActionButtons [ngx.components.UIDynamicElement-1676551202380]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓GenericItem [ngx.components.UIDynamicElement-1676551202383]: 
+                            beanData: '{"ionBean":"GenericItem","Lines":"plain:none"}'
+                            tagName: ion-item
+                            ↓Label [ngx.components.UIDynamicElement-1676551202386]: 
+                              beanData: '{"ionBean":"Label"}'
+                              tagName: ion-label
+                              ↓Text [ngx.components.UIText-1676551202389]: 
+                                textValue: 
+                                  - xmlizable: 
+                                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                    - MobileSmartSourceType: plain:Besoin d'aide ?
+                            ↓ButtonSet [ngx.components.UIDynamicElement-1676551202392]: 
+                              beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
+                              tagName: ion-buttons
+                              ↓buttonZoomChart [ngx.components.UIDynamicElement-1676551202395]: 
+                                beanData: '{"ionBean":"Button"}'
+                                tagName: ion-button
+                                ↓Event [ngx.components.UIControlEvent-1676551202398]: 
+                                  isEnabled: false
+                                  ↓ModalPage [ngx.components.UIDynamicAction-1676551202401]: 
+                                    beanData: |
+                                      '{
+                                       "ionBean": "ModalAction",
+                                       "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
+                                       "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap,\r\n\tsequenceMarker: this.sequenceMarker,\r\n\taggregation: this.aggregation,\r\n\tdisplayTotalOnly: this.displayTotalOnly\r\n}",
+                                       "cssClass": "plain:modal75"
+                                      }'
+                                ↓Icon [ngx.components.UIDynamicElement-1676551202404]: 
+                                  beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                  tagName: ion-icon
+                            ↓Style [ngx.components.UIStyle-1676551202407]: 
+                              styleContent: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                  - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                    →: |
+                                      '/**
+                                       * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                                       * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                                       * They are set using custom property notation, e.g.: --main-color: black;
+                                       * and are accessed using the var() function, e.g.: color: var(--main-color);
+                                       * You can find below your component''s properties you can customize within the page.
+                                       * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                                       * For more informations see https://ionicframework.com/docs/theming.
+                                      **/
+                                      //--background	//Background of the item
+                                      //--background-activated	//Background of the item when pressed. Note: setting this will interfere with the Material Design ripple
+                                      //--background-activated-opacity	//Opacity of the item background when pressed
+                                      //--background-focused	//Background of the item when focused with the tab key
+                                      //--background-focused-opacity	//Opacity of the item background when focused with the tab key
+                                      //--background-hover	//Background of the item on hover
+                                      //--background-hover-opacity	//Opacity of the background of the item on hover
+                                      //--border-color	//Color of the item border
+                                      //--border-radius	//Radius of the item border
+                                      //--border-style	//Style of the item border
+                                      //--border-width	//Width of the item border
+                                      //--color	//Color of the item
+                                      //--color-activated	//Color of the item when pressed
+                                      //--color-focused	//Color of the item when focused with the tab key
+                                      //--color-hover	//Color of the item on hover
+                                      //--detail-icon-color	//Color of the item detail icon
+                                      //--detail-icon-font-size	//Font size of the item detail icon
+                                      //--detail-icon-opacity	//Opacity of the item detail icon
+                                      //--highlight-color-focused	//The color of the highlight on the item when focused
+                                      //--highlight-color-invalid	//The color of the highlight on the item when invalid
+                                      //--highlight-color-valid	//The color of the highlight on the item when valid
+                                      //--highlight-height	//The height of the highlight on the item
+                                      //--inner-border-width	//Width of the item inner border
+                                      //--inner-box-shadow	//Box shadow of the item inner
+                                      //--inner-padding-bottom	//Bottom padding of the item inner
+                                      //--inner-padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner
+                                      //--inner-padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner
+                                      //--inner-padding-top	//Top padding of the item inner
+                                      //--min-height	//Minimum height of the item
+                                      //--padding-bottom	//Bottom padding of the item
+                                      //--padding-end	//Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item
+                                      //--padding-start	//Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item
+                                      //--padding-top	//Top padding of the item
+                                      //--ripple-color	//Color of the item ripple effect
+                                      //--transition	//Transition of the item
+                                      --background: #0F82DC;
+                                      --inner-padding-end: unset !important;
+                                      '
+                        ↓Style [ngx.components.UIStyle-1676551202410]: 
+                          styleContent: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '	border-bottom: 1px solid #E3E3E3;
+                                  '
+                        ↓Attr [ngx.components.UIAttribute-1676551477606]: 
+                          attrName: class
+                          attrValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:blue-dark
+                      ↓rowNoteContent [ngx.components.UIDynamicElement-1676551202413]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676551202416]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓Paragraph [ngx.components.UIDynamicElement-1676551202419]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676551202422]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: |
+                                      'plain:Une question, besoin d''information?
+                                      Vous pouvez nous contacter par mail un conseiller reviendra vers vous sous 24h pour répondre à votre question
+                                      Si vous étes une Entreprise : en écrivant à soace-entreprises@engie.com'
+                        ↓Attr [ngx.components.UIAttribute-1676551489932]: 
+                          attrName: class
+                          attrValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: plain:blue-light
+                      ↓Style [ngx.components.UIStyle-1676551798377]: 
+                        styleContent: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '/**
+                                 * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                                 * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                                 * They are set using custom property notation, e.g.: --main-color: black;
+                                 * and are accessed using the var() function, e.g.: color: var(--main-color);
+                                 * You can find below your component''s properties you can customize within the page.
+                                 * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                                 * For more informations see https://ionicframework.com/docs/theming.
+                                **/
+                                //--ion-grid-column-padding	//Padding for the Column
+                                //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                                //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                                //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                                //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                                //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                                //--ion-grid-columns	//The number of total Columns in the Grid
+                                padding: unset !important;	
+                                '
+                ↓Style [ngx.components.UIStyle-1676551683744]: 
                   styleContent: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
@@ -8301,38 +8903,41 @@ title: Multisite
                            * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
                            * For more informations see https://ionicframework.com/docs/theming.
                           **/
-                          //--ion-grid-padding	//Padding for the Grid
-                          //--ion-grid-padding-lg	//Padding for the Grid on lg screens
-                          //--ion-grid-padding-md	//Padding for the Grid on md screens
-                          //--ion-grid-padding-sm	//Padding for the Grid on sm screens
-                          //--ion-grid-padding-xl	//Padding for the Grid on xl screens
-                          //--ion-grid-padding-xs	//Padding for the Grid on xs screens
-                          //--ion-grid-width	//Width of the fixed Grid
-                          //--ion-grid-width-lg	//Width of the fixed Grid on lg screens
-                          //--ion-grid-width-md	//Width of the fixed Grid on md screens
-                          //--ion-grid-width-sm	//Width of the fixed Grid on sm screens
-                          //--ion-grid-width-xl	//Width of the fixed Grid on xl screens
-                          //--ion-grid-width-xs	//Width of the fixed Grid on xs screens
-                          background-color: #fdc100;
-                          // max-height: 100% !important;
+                          //--ion-grid-column-padding	//Padding for the Column
+                          //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                          //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                          //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                          //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                          //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                          //--ion-grid-columns	//The number of total Columns in the Grid
+                          padding-top: unset !important;	
+                          padding-left: unset !important; 
+                          padding-right: unset !important;
                           '
-                ↓rowNoteContent [ngx.components.UIDynamicElement-1676469367982]: 
-                  beanData: '{"ionBean":"GridRow"}'
-                  tagName: ion-row
-                  ↓GridCol [ngx.components.UIDynamicElement-1676469367971]: 
-                    beanData: '{"ionBean":"GridCol"}'
-                    tagName: ion-col
-                    ↓Paragraph [ngx.components.UIDynamicElement-1676469393860]: 
-                      beanData: '{"ionBean":"Paragraph"}'
-                      tagName: p
-                      ↓Text [ngx.components.UIText-1676469393859]: 
-                        textValue: 
-                          - xmlizable: 
-                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: |
-                                'plain:Une question, besoin d''information?
-                                Vous pouvez nous contacter par mail un conseiller reviendra vers vous sous 24h pour répondre à votre question
-                                Si vous étes une Entreprise : en écrivant à soace-entreprises@engie.com'
+              ↓Style [ngx.components.UIStyle-1676551674233]: 
+                styleContent: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                    - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                      →: |
+                        '/**
+                         * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                         * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                         * They are set using custom property notation, e.g.: --main-color: black;
+                         * and are accessed using the var() function, e.g.: color: var(--main-color);
+                         * You can find below your component''s properties you can customize within the page.
+                         * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                         * For more informations see https://ionicframework.com/docs/theming.
+                        **/
+                        //--ion-grid-column-padding	//Padding for the Column
+                        //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                        //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                        //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                        //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                        //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                        //--ion-grid-columns	//The number of total Columns in the Grid
+                        padding: unset !important;	
+                        '
           ↓Style [ngx.components.UIStyle-1676537042369]: 
             styleContent: 
               - xmlizable: 

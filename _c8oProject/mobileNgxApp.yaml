@@ -668,6 +668,21 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           	background-color: white;
           }
           
+          .yellow-dark {
+          	background-color: #fdc100;
+          }
+          
+          .yellow-light {
+          	background-color: #FAE07D;
+          }
+          
+          .blue-dark {
+          	background-color: #0F82DC;
+          }
+          
+          .blue-light {
+          	background-color: #60B8E8;
+          }
           .text-vertically {
           	writing-mode: vertical-lr;
           	transform: rotate(-180deg);
