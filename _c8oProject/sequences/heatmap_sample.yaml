@@ -40,8 +40,8 @@
     
     var xAxisLabels = json[0].lines.col;
     xAxisLabels.splice(0, 1)
-    log.warn("xAxisLabels ")
-    log.warn(xAxisLabels)
+    //log.warn("xAxisLabels ")
+    //log.warn(xAxisLabels)
     var serie = [];
     for(var i = 1; i < json.length; i++) {
     	serie.push({

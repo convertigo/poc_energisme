@@ -432,7 +432,7 @@ testOnBorrow: true
     select 
     	conso_by_site.avg_conso_gaz, 
     	conso_by_site.avg_conso_elec, 
-    	(conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz  as avg_conso,
+    	conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz  as avg_conso,
     	s.nom, ST_Y(s.position) as latitude, 
     	ST_X(s.position) as longitude, 
     	site_id
@@ -454,26 +454,6 @@ testOnBorrow: true
       		el.setAttribute("type", "null");
       	}
       }'
-  ↓Test_Case_all [core.TestCase]: 
-    ↓limit [variables.TestCaseVariable-1672914161795]: 
-      description: limit
-      value: 20
-    ↓filter_condition [variables.TestCaseVariable-1673887820776]: 
-      description: filter_condition
-    ↓raw_data_table [variables.TestCaseVariable-1674226342256]: 
-      value: convertigo_poc.raw_data
-    ↓sensor_mapping_table [variables.TestCaseVariable-1674226342258]: 
-      description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
-    ↓site_table [variables.TestCaseVariable-1674226342260]: 
-      description: site_table
-      value: convertigo_poc.site
-    ↓date_start [variables.TestCaseVariable-1674226342262]: 
-      description: date_start
-      value: 2021-06-01
-    ↓date_end [variables.TestCaseVariable-1674226342264]: 
-      description: date_end
-      value: 2022-12-31
   ↓Test_Case_subset [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1673888105771]: 
       description: limit

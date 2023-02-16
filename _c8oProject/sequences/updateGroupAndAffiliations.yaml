@@ -124,7 +124,7 @@
       var groups = [new_group_name]
       
       //data = JSON.stringify(data)
-      log.warn(data)'
+      //log.warn(data)'
   ↓Call_Transaction [steps.TransactionStep-1672398364203]: 
     sourceTransaction: poc_energisme.groups_sites.deleteSitesFromGroup
     ↓_use_docid [variables.StepVariable-1672398377594]: 

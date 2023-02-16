@@ -1,5 +1,5 @@
 clientCachable: true
-responseExpiryDate: absolute,36000
+responseExpiryDate: absolute,3600
 ↓Input_variables [steps.InputVariablesStep-1673271074779]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1675417251700]: 
   sourceDefinition: 
@@ -31,7 +31,7 @@ responseExpiryDate: absolute,36000
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
     }
     
-    log.warn(string)
+    //log.warn(string)
     '
 ↓jElement [steps.ElementStep-1673271074788]: 
   expression: string
@@ -117,8 +117,8 @@ responseExpiryDate: absolute,36000
     ↓getFirstYear [steps.SimpleStep-1673271074809]: 
       expression: |
         var firstYear = firstDate.substring(0, 4)
-        log.warn('firstYear')
-        log.warn(firstYear)
+        //log.warn('firstYear')
+        //log.warn(firstYear)
     ↓Field [steps.JsonFieldStep-1673271075049]: 
       key: 
         - xmlizable: 
@@ -264,8 +264,8 @@ responseExpiryDate: absolute,36000
     ↓computeBottomLabel [steps.SimpleStep-1673865555002]: 
       expression: |
         'augmentation = ""+augmentation
-        log.warn(''aug'')
-        log.warn(augmentation)
+        //log.warn(''aug'')
+        //log.warn(augmentation)
         /*
         if(augmentation.indexOf(''-'') != - 1 ) {
         	var splt = augmentation.split(",");

@@ -79,7 +79,7 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
 ↓Sequence_JS [steps.SimpleStep-1675267852547]: 
   expression: |
     //var hash = Object.create(null);
-    log.warn("sites")
+    //log.warn("sites")
     //log.warn(sites)
     //		sites.forEach(function (a, index) {
     //		    var key = JSON.stringify(a);

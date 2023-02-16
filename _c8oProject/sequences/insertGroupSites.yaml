@@ -113,8 +113,8 @@
 ↓stringifyDocs [steps.SimpleStep-1672224140469]: 
   expression: |
     var _use_json_base = JSON.stringify(docs)
-    log.warn("#### docs stringify")
-    log.warn(_use_json_base)
+    //log.warn("#### docs stringify")
+    //log.warn(_use_json_base)
 ↓Call_Transaction [steps.TransactionStep-1672224437827]: 
   sourceTransaction: poc_energisme.groups_sites.insertGroupsSitesPostBulk
   ↓_use_json_base [variables.StepVariable-1672224450383]: 

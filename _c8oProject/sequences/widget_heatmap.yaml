@@ -8,7 +8,7 @@ responseExpiryDate: absolute,36000
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
     }
     
-    log.warn(string)'
+    //log.warn(string)'
 ↓jElement [steps.ElementStep-1674135718509]: 
   expression: string
   nodeName: sites
@@ -34,7 +34,7 @@ responseExpiryDate: absolute,36000
     '//log.warn("json")
     //log.warn(JSON.stringify(json))
     //log.warn(json.length)
-    log.warn(JSON.stringify(lines))
+    //log.warn(JSON.stringify(lines))
     var serie = [];
     var previousWeek = 0;
     for(var i = 0; i < lines.length; i++) {
@@ -73,7 +73,7 @@ responseExpiryDate: absolute,36000
     
     serie = JSON.stringify(serie)
     
-    log.warn(JSON.stringify(serie))
+    //log.warn(JSON.stringify(serie))
     /*
     var xAxisLabels = json[0].lines.col;
     xAxisLabels.splice(0, 1)
