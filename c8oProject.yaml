@@ -32,6 +32,7 @@
   ↓widget_conso_gauge [sequences.GenericSequence]: 🗏 sequences/widget_conso_gauge.yaml
   ↓widget_conso_monosite_gaz_dju [sequences.GenericSequence]: 🗏 sequences/widget_conso_monosite_gaz_dju.yaml
   ↓widget_conso_total [sequences.GenericSequence]: 🗏 sequences/widget_conso_total.yaml
+  ↓widget_evol_conso [sequences.GenericSequence]: 🗏 sequences/widget_evol_conso.yaml
   ↓widget_heatmap [sequences.GenericSequence]: 🗏 sequences/widget_heatmap.yaml
   ↓widget_maps [sequences.GenericSequence]: 🗏 sequences/widget_maps.yaml
   ↓widget_multisite_sites_energivore [sequences.GenericSequence]: 🗏 sequences/widget_multisite_sites_energivore.yaml
