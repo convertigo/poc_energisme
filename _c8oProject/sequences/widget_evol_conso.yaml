@@ -1,3 +1,4 @@
+clientCachable: true
 ↓Input_variables [steps.InputVariablesStep-1676489530511]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1676489530514]: 
   sourceDefinition: 
@@ -913,4 +914,17 @@
   ↓agg_function [variables.TestCaseVariable-1676489531223]: 
     value: week
   ↓synthese [variables.TestCaseVariable-1676489531226]: 
+    value: global
+↓testCompElec [core.TestCase]: 
+  ↓date_start [variables.TestCaseVariable-1676548984309]: 
+    description: date_start
+    value: 2021-01-01
+  ↓date_end [variables.TestCaseVariable-1676548984312]: 
+    description: date_end
+    value: 2022-12-01
+  ↓sites [variables.TestCaseVariable-1676548984315]: 
+    value: '[7991, 7626]'
+  ↓agg_function [variables.TestCaseVariable-1676548984318]: 
+    value: month
+  ↓synthese [variables.TestCaseVariable-1676548984321]: 
     value: global
