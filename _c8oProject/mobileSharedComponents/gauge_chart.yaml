@@ -61,6 +61,18 @@ scriptContent:
                 - ↑value: angular-gauge-chart
               - java.lang.String: 
                 - ↑value: 0.7.2
+↓canvasWidth [ngx.components.UICompVariable-1669283868892]: 
+  comment: number
+↓needleValue [ngx.components.UICompVariable-1669283868895]: 
+  comment: number
+↓centralLabel [ngx.components.UICompVariable-1669283868898]: 
+  comment: string
+↓options [ngx.components.UICompVariable-1669283868901]: 
+  comment: object
+↓name [ngx.components.UICompVariable-1669283868904]: 
+  comment: string (will be shown above the gauge)
+↓bottomLabel [ngx.components.UICompVariable-1669283868907]: 
+  comment: string (will be shown bellow the gauge)
 ↓Tag [ngx.components.UIElement-1669283868871]: 
   tagName: rg-gauge-chart
   ↓Attr [ngx.components.UIAttribute-1669283868874]: 
@@ -99,15 +111,3 @@ scriptContent:
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
         - MobileSmartSourceType: source:{"filter":"Shared","project":"lib_gauge_chart","input":"","model":{"data":[{"priority":1669283868833,"regular":true}],"path":"?.bottomLabel","prefix":"","suffix":"","custom":"","useCustom":false}}
-↓canvasWidth [ngx.components.UICompVariable-1669283868892]: 
-  comment: number
-↓needleValue [ngx.components.UICompVariable-1669283868895]: 
-  comment: number
-↓centralLabel [ngx.components.UICompVariable-1669283868898]: 
-  comment: string
-↓options [ngx.components.UICompVariable-1669283868901]: 
-  comment: object
-↓name [ngx.components.UICompVariable-1669283868904]: 
-  comment: string (will be shown above the gauge)
-↓bottomLabel [ngx.components.UICompVariable-1669283868907]: 
-  comment: string (will be shown bellow the gauge)

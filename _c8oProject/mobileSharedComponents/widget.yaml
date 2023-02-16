@@ -1109,38 +1109,51 @@ scriptContent:
         ↓Tag [ngx.components.UIElement-1674233783192]: 
           identifier: elseBlock
           tagName: ng-template
-          ↓UseSharedComponent [ngx.components.UIUseShared-1669299066340]: 
-            sharedcomponent: poc_energisme.Application.NgxApp.gauge_chart
-            ↓canvasWidth [ngx.components.UIUseVariable-1669299066343]: 
-              varValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: plain:250
-            ↓needleValue [ngx.components.UIUseVariable-1669299066346]: 
-              varValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: 'script:(this.local[''response'']?.needleValue != undefined) ? this.local[''response'']?.needleValue : '''''
-            ↓centralLabel [ngx.components.UIUseVariable-1669299066349]: 
-              varValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: script:''
-            ↓options [ngx.components.UIUseVariable-1669299066352]: 
-              varValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: 'script:(this.local[''response'']?.options != undefined) ? this.local[''response'']?.options : {}'
-            ↓name [ngx.components.UIUseVariable-1669299066355]: 
-              varValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: script:''
-            ↓bottomLabel [ngx.components.UIUseVariable-1669299066358]: 
-              varValue: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: 'script:(this.local[''response'']?.bottomLabel != undefined) ? this.local[''response'']?.bottomLabel : '''''
+          ↓Directive1 [ngx.components.UIControlDirective-1676539401349]: 
+            directiveName: If
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.local['response'] != undefined
+            ↓UseSharedComponent [ngx.components.UIUseShared-1669299066340]: 
+              sharedcomponent: poc_energisme.Application.NgxApp.gauge_chart
+              ↓canvasWidth [ngx.components.UIUseVariable-1669299066343]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:250
+              ↓needleValue [ngx.components.UIUseVariable-1669299066346]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: 'script:(this.local[''response'']?.needleValue != undefined) ? this.local[''response'']?.needleValue : '''''
+              ↓centralLabel [ngx.components.UIUseVariable-1669299066349]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓options [ngx.components.UIUseVariable-1669299066352]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: 'script:(this.local[''response'']?.options != undefined) ? this.local[''response'']?.options : {}'
+              ↓name [ngx.components.UIUseVariable-1669299066355]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:''
+              ↓bottomLabel [ngx.components.UIUseVariable-1669299066358]: 
+                varValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: 'script:(this.local[''response'']?.bottomLabel != undefined) ? this.local[''response'']?.bottomLabel : '''''
+          ↓Directive [ngx.components.UIControlDirective-1676537552097]: 
+            directiveName: If
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.local['local']?.response != undefined
+            isEnabled: false
       ↓colInfos [ngx.components.UIDynamicElement-1669285145558]: 
         beanData: |
           '{

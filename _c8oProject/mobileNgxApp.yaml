@@ -690,6 +690,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           	// padding-left: none !important;
           	--padding-start: unset !important;
           	--padding-top: unset !important;
+          	--padding-bottom: unset !important;
           }
           ion-split-pane ion-menu {
           	min-width: 80px !important;
@@ -703,6 +704,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           ion-split-pane ion-menu ion-content {
           	--background: #0C78E4 !important;
           	--color: white !important;
+          	--padding-start: 15px !important;
           }
           
           ion-accordion-group  {
@@ -727,7 +729,11 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           }
           
           ion-accordion-group ion-accordion ion-list {
-          	padding-left: 15px !important;;
+          	padding-left: 15px !important;
+          }
+          
+          ion-searchbar {
+          	width: 100% !important;
           }
           
           //ion-accordion-group ion-accordion {

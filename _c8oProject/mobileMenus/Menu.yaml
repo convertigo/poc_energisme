@@ -59,7 +59,12 @@ tagName: ion-menu
     beanData: '{"ionBean":"GenericItem"}'
     tagName: ion-item
     ↓Icon [ngx.components.UIDynamicElement-1676387523225]: 
-      beanData: '{"ionBean":"Icon","IconName":"plain:stats-chart-outline"}'
+      beanData: |
+        '{
+         "ionBean": "Icon",
+         "IconName": "plain:stats-chart-outline",
+         "IonSize": "plain:large"
+        }'
       tagName: ion-icon
     ↓Style [ngx.components.UIStyle-1676387647922]: 
       styleContent: 
@@ -128,11 +133,31 @@ tagName: ion-menu
          "Tooltip": "plain:Multisite"
         }'
       selfClose: false
+  ↓Grid [ngx.components.UIDynamicElement-1676462641519]: 
+    beanData: '{"ionBean":"Grid"}'
+    isEnabled: false
+    tagName: ion-grid
+    ↓GridRow [ngx.components.UIDynamicElement-1676462641506]: 
+      beanData: |
+        '{
+         "ionBean": "GridRow",
+         "Height": "plain",
+         "FlexAlignement": "plain:ion-align-items-center"
+        }'
+      tagName: ion-row
+      ↓GridCol [ngx.components.UIDynamicElement-1676462641508]: 
+        beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-center"}'
+        tagName: ion-col
   ↓Monosite [ngx.components.UIDynamicElement-1676388107576]: 
     beanData: '{"ionBean":"GenericItem"}'
     tagName: ion-item
     ↓Icon [ngx.components.UIDynamicElement-1676388107579]: 
-      beanData: '{"ionBean":"Icon","IconName":"plain:bar-chart"}'
+      beanData: |
+        '{
+         "ionBean": "Icon",
+         "IconName": "plain:bar-chart",
+         "IonSize": "plain:large"
+        }'
       tagName: ion-icon
     ↓Style [ngx.components.UIStyle-1676388107582]: 
       styleContent: 
@@ -205,7 +230,12 @@ tagName: ion-menu
     beanData: '{"ionBean":"GenericItem"}'
     tagName: ion-item
     ↓Icon [ngx.components.UIDynamicElement-1676388740373]: 
-      beanData: '{"ionBean":"Icon","IconName":"plain:settings-outline"}'
+      beanData: |
+        '{
+         "ionBean": "Icon",
+         "IconName": "plain:settings-outline",
+         "IonSize": "plain:large"
+        }'
       tagName: ion-icon
     ↓Style [ngx.components.UIStyle-1676388740376]: 
       styleContent: 
