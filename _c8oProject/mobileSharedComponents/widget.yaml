@@ -374,7 +374,7 @@ scriptContent:
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
               - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.title","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓colActionButtons [ngx.components.UIDynamicElement-1667815940126]: 
-      beanData: '{"ionBean":"GridCol"}'
+      beanData: '{"ionBean":"GridCol","Size":"plain:3"}'
       tagName: ion-col
       ↓GenericItem [ngx.components.UIDynamicElement-1667816245054]: 
         beanData: '{"ionBean":"GenericItem","Lines":"plain:none"}'
