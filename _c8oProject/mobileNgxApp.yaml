@@ -701,6 +701,18 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           	padding-right: 5px !important;
           }
           
+          .colNote {
+          	height: 50vh !important;
+          	// height: 100% !important;
+          	overflow-y: scroll !important;
+          	// white-space: nowrap;
+          	padding-left: 5px !important; 
+          	padding-right: 5px !important;
+           }
+          
+          ion-toggle {
+          	padding-bottom: 5px !important;
+          }
           ion-content.ion-padding  {
           	// padding-left: none !important;
           	--padding-start: unset !important;

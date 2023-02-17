@@ -1,0 +1,14 @@
+↓inputVars [steps.InputVariablesStep-1676627539604]: 
+↓Set_in_session [steps.SessionSetStep-1676627505344]: 
+  expression: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: SOURCE
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1676627539604
+          - java.lang.String: 
+            - ↑value: ./username/text()
+  key: ad_username
+↓username [variables.RequestableVariable-1676627528978]: 

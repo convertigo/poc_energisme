@@ -1,0 +1,20 @@
+↓Get_from_session [steps.SessionGetStep-1676627579729]: 
+  key: ad_username
+  output: false
+↓username [steps.JsonFieldStep-1676627594668]: 
+  key: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: PLAIN
+        - →→: username
+  value: 
+    - xmlizable: 
+      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+      - SmartType: 
+        - ↑mode: SOURCE
+        - com.twinsoft.convertigo.beans.common.XMLVector: 
+          - java.lang.String: 
+            - ↑value: 1676627579729
+          - java.lang.String: 
+            - ↑value: ./expression/text()

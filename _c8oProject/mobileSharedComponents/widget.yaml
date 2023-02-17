@@ -110,7 +110,7 @@ scriptContent:
         							
         								
         							} else {
-        								if(changes[key].currentValue[''date_start''].length > 0 && changes[key].currentValue[''date_end''].length > 0) {
+        								if(changes[key].currentValue[''date_start''] != undefined && changes[key].currentValue[''date_start''].length > 0 && changes[key].currentValue[''date_end''].length > 0) {
         									date_start = changes[key].currentValue[''date_start''];
         									date_end = changes[key].currentValue[''date_end'']
         								} else {
@@ -164,7 +164,7 @@ scriptContent:
         
         
         					} else {
-        						if(changes[key].currentValue != undefined && changes[key].currentValue[''date_start''].length == 0 && changes[key].currentValue[''date_end''].length == 0) {
+        						if(changes[key].currentValue != undefined && changes[key].currentValue[''date_start''] != undefined && changes[key].currentValue[''date_start''].length == 0 && changes[key].currentValue[''date_end''] != undefined && changes[key].currentValue[''date_end''].length == 0) {
         							
         							var date_start;
         							var date_end;

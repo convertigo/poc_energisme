@@ -10,6 +10,7 @@ scriptContent:
         /*Begin_c8o_PageDeclaration*/
         	public selectAll = false;
         	public syntheseSelected = 'global';
+        	public hideMenu = false;
         	/*End_c8o_PageDeclaration*/
         /*Begin_c8o_PageConstructor*/
         		/*End_c8o_PageConstructor*/
@@ -19,7 +20,6 @@ scriptContent:
 segment: monosite
 title: Monosite
 ↓PageEvent [ngx.components.UIPageEvent-1669387564134]: 
-  viewEvent: onWillLoad
   ↓IfElse [ngx.components.UIDynamicIf-1674465616269]: 
     beanData: '{"ionBean":"IfElseAction","condition":"script:this.navParams.data.site_id != undefined && this.navParams.data.site_id.length > 0"}'
     ↓SetLocal [ngx.components.UIDynamicAction-1674465653469]: 
@@ -57,64 +57,66 @@ title: Monosite
                "Property": "plain:authUser",
                "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
               }'
-            ↓SetGlobal [ngx.components.UIDynamicAction-1675354267943]: 
-              beanData: |
-                '{
-                 "ionBean": "SetGlobalAction",
-                 "Property": "plain:username",
-                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                }'
-              ↓CallSequence [ngx.components.UIDynamicAction-1675354315061]: 
-                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
-                ↓SetGlobal [ngx.components.UIDynamicAction-1675354398420]: 
-                  beanData: |
-                    '{
-                     "ionBean": "SetGlobalAction",
-                     "Property": "plain:isAdmin",
-                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                    }'
-                  ↓CallSequence [ngx.components.UIDynamicAction-1674744903333]: 
-                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
-                    ↓user [ngx.components.UIControlVariable-1674745056659]: 
-                      comment: new variable
-                      varValue: 
-                        - xmlizable: 
-                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                          - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
-                    ↓computeSitesList [ngx.components.UICustomAction-1674747382687]: 
-                      actionValue: 
-                        - xmlizable: 
-                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                            →: |
-                              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                              		var sites = vars.sites;
-                              		console.log(sites)
-                              		var hash = Object.create(null);
-                              		let siteName = sites.map((x)=> {return x.name});
-                              		sites = sites.filter((el, index)=> {
-                              			return siteName.indexOf(el.name) === index;
-                              		})
-                              		/*
-                              		sites.forEach(function (a, index) {
-                              		    var key = JSON.stringify(a);
-                              		    hash[key] = (hash[key] || 0) + 1;
-                              		    if (hash[key] >= 2) {
-                              		      sites.splice(index, 1)
-                              		        console.log(''count of 2 or more of '' + key);
-                              		        console.log(index)
-                              		    }
-                              		});*/
-                              		
-                              		console.log(sites)
-                              		resolve();
-                              '
-                      isEnabled: false
-                      ↓sites [ngx.components.UIControlVariable-1674747396312]: 
+            ↓CallSequence [ngx.components.UIDynamicAction-1676629889965]: 
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getFromSessionADusername"}'
+              ↓SetGlobal [ngx.components.UIDynamicAction-1675354267943]: 
+                beanData: |
+                  '{
+                   "ionBean": "SetGlobalAction",
+                   "Property": "plain:username",
+                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getFromSessionADusername\",\"marker\":\"\"}],\"path\":\"?.username\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                  }'
+                ↓CallSequence [ngx.components.UIDynamicAction-1675354315061]: 
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                  ↓SetGlobal [ngx.components.UIDynamicAction-1675354398420]: 
+                    beanData: |
+                      '{
+                       "ionBean": "SetGlobalAction",
+                       "Property": "plain:isAdmin",
+                       "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                      }'
+                    ↓CallSequence [ngx.components.UIDynamicAction-1674744903333]: 
+                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
+                      ↓user [ngx.components.UIControlVariable-1674745056659]: 
+                        comment: new variable
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                      ↓computeSitesList [ngx.components.UICustomAction-1674747382687]: 
+                        actionValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                		var sites = vars.sites;
+                                		console.log(sites)
+                                		var hash = Object.create(null);
+                                		let siteName = sites.map((x)=> {return x.name});
+                                		sites = sites.filter((el, index)=> {
+                                			return siteName.indexOf(el.name) === index;
+                                		})
+                                		/*
+                                		sites.forEach(function (a, index) {
+                                		    var key = JSON.stringify(a);
+                                		    hash[key] = (hash[key] || 0) + 1;
+                                		    if (hash[key] >= 2) {
+                                		      sites.splice(index, 1)
+                                		        console.log(''count of 2 or more of '' + key);
+                                		        console.log(index)
+                                		    }
+                                		});*/
+                                		
+                                		console.log(sites)
+                                		resolve();
+                                '
+                        isEnabled: false
+                        ↓sites [ngx.components.UIControlVariable-1674747396312]: 
+                          varValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓SetGlobal [ngx.components.UIDynamicAction-1674469118591]: 
       beanData: |
         '{
@@ -191,65 +193,81 @@ title: Monosite
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
-              ↓SetGlobal [ngx.components.UIDynamicAction-1675354607785]: 
-                beanData: |
-                  '{
-                   "ionBean": "SetGlobalAction",
-                   "Property": "plain:username",
-                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                  }'
-                ↓CallSequence [ngx.components.UIDynamicAction-1675354607788]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
-                  ↓SetGlobal [ngx.components.UIDynamicAction-1675354607791]: 
-                    beanData: |
-                      '{
-                       "ionBean": "SetGlobalAction",
-                       "Property": "plain:isAdmin",
-                       "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                      }'
-                    ↓CallSequence [ngx.components.UIDynamicAction-1675354607794]: 
-                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
-                      ↓user [ngx.components.UIControlVariable-1675354607797]: 
-                        comment: new variable
-                        varValue: 
-                          - xmlizable: 
-                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
-                      ↓computeSitesList [ngx.components.UICustomAction-1675354607800]: 
-                        actionValue: 
-                          - xmlizable: 
-                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                              →: |
-                                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                                		var sites = vars.sites;
-                                		console.log(sites)
-                                		var hash = Object.create(null);
-                                		sites.forEach(function (a, index) {
-                                		    var key = JSON.stringify(a);
-                                		    hash[key] = (hash[key] || 0) + 1;
-                                		    if (hash[key] >= 2) {
-                                		      sites.splice(index, 1)
-                                		        console.log(''count of 2 or more of '' + key);
-                                		        console.log(index)
-                                		    }
-                                		});
-                                		
-                                		console.log(sites)
-                                		resolve();
-                                '
-                        ↓sites [ngx.components.UIControlVariable-1675354607803]: 
+              ↓CallSequence1 [ngx.components.UIDynamicAction-1676629995767]: 
+                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getFromSessionADusername"}'
+                ↓SetGlobal [ngx.components.UIDynamicAction-1675354607785]: 
+                  beanData: |
+                    '{
+                     "ionBean": "SetGlobalAction",
+                     "Property": "plain:username",
+                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getFromSessionADusername\",\"marker\":\"\"}],\"path\":\"?.username\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                    }'
+                  ↓CallSequence [ngx.components.UIDynamicAction-1675354607788]: 
+                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                    ↓SetGlobal [ngx.components.UIDynamicAction-1675354607791]: 
+                      beanData: |
+                        '{
+                         "ionBean": "SetGlobalAction",
+                         "Property": "plain:isAdmin",
+                         "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                        }'
+                      ↓CallSequence [ngx.components.UIDynamicAction-1675354607794]: 
+                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
+                        ↓user [ngx.components.UIControlVariable-1675354607797]: 
+                          comment: new variable
                           varValue: 
                             - xmlizable: 
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                              - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        ↓computeSitesList [ngx.components.UICustomAction-1675354607800]: 
+                          actionValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                  		var sites = vars.sites;
+                                  		console.log(sites)
+                                  		var hash = Object.create(null);
+                                  		sites.forEach(function (a, index) {
+                                  		    var key = JSON.stringify(a);
+                                  		    hash[key] = (hash[key] || 0) + 1;
+                                  		    if (hash[key] >= 2) {
+                                  		      sites.splice(index, 1)
+                                  		        console.log(''count of 2 or more of '' + key);
+                                  		        console.log(index)
+                                  		    }
+                                  		});
+                                  		
+                                  		console.log(sites)
+                                  		resolve();
+                                  '
+                          ↓sites [ngx.components.UIControlVariable-1675354607803]: 
+                            varValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓SetGlobal [ngx.components.UIDynamicAction-1676640963992]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_start",
+       "Value": "script:''''"
+      }'
+  ↓SetGlobal1 [ngx.components.UIDynamicAction-1676640963995]: 
+    beanData: |
+      '{
+       "ionBean": "SetGlobalAction",
+       "Property": "plain:date_end",
+       "Value": "script:''''"
+      }'
 ↓UseSharedComponent [ngx.components.UIUseShared-1669822210295]: 
   sharedcomponent: poc_energisme.Application.NgxApp.header
   ↓username [ngx.components.UIUseVariable-1669822210298]: 
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
   ↓title [ngx.components.UIUseVariable-1672319906005]: 
     varValue: 
       - xmlizable: 
@@ -489,6 +507,7 @@ title: Monosite
     tagName: ion-grid
     ↓rowTogglerPeriodeLiee [ngx.components.UIDynamicElement-1674465813532]: 
       beanData: '{"ionBean":"GridRow","Height":"plain"}'
+      isEnabled: false
       tagName: ion-row
       ↓colSelect [ngx.components.UIDynamicElement-1674465813535]: 
         beanData: '{"ionBean":"GridCol","Size":"plain:2"}'
@@ -606,6 +625,7 @@ title: Monosite
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:this.syntheseSelected == 'global'
+      isEnabled: false
       ↓rowEconomiesEnergiesAndConsoTotal [ngx.components.UIDynamicElement-1674465878599]: 
         beanData: '{"ionBean":"GridRow","Height":"plain"}'
         tagName: ion-row
@@ -851,6 +871,7 @@ title: Monosite
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:this.syntheseSelected == 'elec'
+      isEnabled: false
       ↓rowEconomiesElecAndConsoElec [ngx.components.UIDynamicElement-1674468891313]: 
         beanData: '{"ionBean":"GridRow","Height":"plain"}'
         tagName: ion-row
@@ -1272,6 +1293,7 @@ title: Monosite
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
           - MobileSmartSourceType: script:this.syntheseSelected == 'gaz'
+      isEnabled: false
       ↓rowMesEconomiesDeGazAndDJU [ngx.components.UIDynamicElement-1674557215555]: 
         beanData: '{"ionBean":"GridRow"}'
         tagName: ion-row
@@ -1610,3 +1632,1434 @@ title: Monosite
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                   - MobileSmartSourceType: script:'false'
+    ↓GridRow [ngx.components.UIDynamicElement-1676630081316]: 
+      beanData: '{"ionBean":"GridRow"}'
+      tagName: ion-row
+      ↓colMenuLeft [ngx.components.UIDynamicElement-1676630081305]: 
+        beanData: '{"ionBean":"GridCol","Size":"script:(this.hideMenu) ? ''0.5'' : ''2''"}'
+        tagName: ion-col
+        ↓Grid [ngx.components.UIDynamicElement-1676630225392]: 
+          beanData: '{"ionBean":"Grid"}'
+          tagName: ion-grid
+          ↓rowShowHideMenu [ngx.components.UIDynamicElement-1676630302373]: 
+            beanData: '{"ionBean":"GridRow","Height":"script:(this.hideMenu) ? ''100%'' : ''''"}'
+            tagName: ion-row
+            ↓GridCol [ngx.components.UIDynamicElement-1676630302376]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓Attr [ngx.components.UIAttribute-1676630302379]: 
+                attrName: class
+                attrValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:bg-grey
+              ↓Grid [ngx.components.UIDynamicElement-1676630302382]: 
+                beanData: '{"ionBean":"Grid"}'
+                tagName: ion-grid
+                ↓GridRow [ngx.components.UIDynamicElement-1676630302385]: 
+                  beanData: |
+                    '{
+                     "ionBean": "GridRow",
+                     "Height": "script:(this.hideMenu) ? ''100%'' : ''''",
+                     "FlexJustifyContent": "plain:ion-justify-content-center",
+                     "FlexAlignement": "plain:ion-align-items-center"
+                    }'
+                  tagName: ion-row
+                  ↓colLabelPerimetres [ngx.components.UIDynamicElement-1676630302388]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓Label1 [ngx.components.UIDynamicElement-1676630302391]: 
+                      beanData: '{"ionBean":"Label"}'
+                      tagName: ion-label
+                      ↓Text [ngx.components.UIText-1676630302394]: 
+                        textValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: plain:Sites
+                    ↓Attr [ngx.components.UIAttribute-1676630302397]: 
+                      attrName: '[ngClass]'
+                      attrValue: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                          - MobileSmartSourceType: 'script:this.hideMenu == true ? ''text-vertically'' : '''''
+                  ↓colButton [ngx.components.UIDynamicElement-1676630302400]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓Button [ngx.components.UIDynamicElement-1676630302403]: 
+                      beanData: |
+                        '{
+                         "ionBean": "Button",
+                         "IonColor": "plain:light",
+                         "IonSize": "plain:small"
+                        }'
+                      tagName: ion-button
+                      ↓Event [ngx.components.UIControlEvent-1676630302406]: 
+                        ↓setShowHide [ngx.components.UICustomAction-1676630302409]: 
+                          actionValue: 
+                            - xmlizable: 
+                              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                →: |
+                                  '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                  		if(page.hideMenu) {
+                                  			page.hideMenu = false;
+                                  		} else {
+                                  			page.hideMenu = true;
+                                  		}
+                                  		 //resolve();
+                                  '
+                      ↓Icon [ngx.components.UIDynamicElement-1676630302412]: 
+                        beanData: '{"ionBean":"Icon","IconName":"script:(this.hideMenu) ? ''add'' : ''remove-outline''"}'
+                        tagName: ion-icon
+                    ↓Style [ngx.components.UIStyle-1676630302415]: 
+                      styleContent: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                            →: |
+                              '/**
+                               * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                               * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                               * They are set using custom property notation, e.g.: --main-color: black;
+                               * and are accessed using the var() function, e.g.: color: var(--main-color);
+                               * You can find below your component''s properties you can customize within the page.
+                               * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                               * For more informations see https://ionicframework.com/docs/theming.
+                              **/
+                              //--ion-grid-column-padding	//Padding for the Column
+                              //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                              //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                              //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                              //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                              //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                              //--ion-grid-columns	//The number of total Columns in the Gri
+                              text-align : right;
+                              '
+                  ↓Style [ngx.components.UIStyle-1676630302418]: 
+                    styleContent: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                          →: |
+                            ' padding: 5px !important;
+                            '
+          ↓rowSites [ngx.components.UIDynamicElement-1676630368400]: 
+            beanData: '{"ionBean":"GridRow"}'
+            tagName: ion-row
+            ↓colSites [ngx.components.UIDynamicElement-1676630368389]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓Directive [ngx.components.UIControlDirective-1676630418156]: 
+                directiveName: If
+                directiveSource: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: script:!this.hideMenu
+                ↓Form [ngx.components.UIForm-1676630225395]: 
+                  identifier: formListSites
+                  ↓RadioGroup [ngx.components.UIDynamicElement-1676630225398]: 
+                    beanData: |
+                      '{
+                       "ionBean": "RadioGroup",
+                       "ControlName": "plain:name1674745160564",
+                       "Value": "script:(this.navParams.data.site_id != undefined) ? this.navParams.data.site_id : ''''"
+                      }'
+                    tagName: ion-radio-group
+                    ↓Directive [ngx.components.UIControlDirective-1676630225401]: 
+                      directiveItemName: site
+                      directiveSource: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                      ↓GridRow [ngx.components.UIDynamicElement-1676630225404]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676630225407]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓FormItem [ngx.components.UIDynamicElement-1676630225410]: 
+                            beanData: '{"ionBean":"FormItem"}'
+                            tagName: ion-item
+                            ↓RadioButton [ngx.components.UIDynamicElement-1676630225413]: 
+                              beanData: '{"ionBean":"RadioButton","Value":"script:site.id"}'
+                              tagName: ion-radio
+                            ↓Text [ngx.components.UIText-1676630225416]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:site.name
+                    ↓Event [ngx.components.UIControlEvent-1676630225419]: 
+                      attrName: (ionChange)
+                      eventName: ionChange
+                      ↓pushSitesToCall [ngx.components.UICustomAction-1676630225422]: 
+                        actionValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                		var value = event.detail.value;
+                                		console.log(value)
+                                		page.local[''sitesToCall''] = [];
+                                		page.local[''sitesToCall''].push(value)
+                                		page.global[''sequenceParams''] = {
+                                			date_start: page.global[''date_start''],
+                                			date_end: page.global[''date_end''],
+                                			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                			agg_function: ''month'',
+                                			label: '''',
+                                			synthese: page.syntheseSelected,
+                                			limit: 20
+                                		}
+                                		
+                                		page.global[''date_start''] = page.global[''date_start'']
+                                		page.global[''date_end''] = page.global[''date_end'']
+                                		resolve();
+                                '
+                        ↓site [ngx.components.UIControlVariable-1676630225425]: 
+                          isEnabled: false
+              ↓Attr1 [ngx.components.UIAttribute-1676630461057]: 
+                attrName: class
+                attrValue: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                    - MobileSmartSourceType: plain:colMenuLeftGroups
+            ↓_hidden_ [ngx.components.UIAttribute-1676630397732]: 
+              attrName: '[hidden]'
+              attrValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: script:this.hideMenu
+        ↓Attr [ngx.components.UIAttribute-1676630276259]: 
+          attrName: '[ngClass]'
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: 'script:this.hideMenu == true ? ''bg-grey'' : ''bg-white'''
+        ↓Attr1 [ngx.components.UIAttribute-1676630276262]: 
+          attrName: class
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: plain:colMenuLeft
+        ↓Attr2 [ngx.components.UIAttribute-1676630276265]: 
+          attrName: '[ngStyle]'
+          attrValue: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+              - MobileSmartSourceType: 'script:{ ''max-width'' : this.hideMenu ? ''50px'' : '''' }'
+      ↓colContent [ngx.components.UIDynamicElement-1676630081311]: 
+        beanData: '{"ionBean":"GridCol"}'
+        tagName: ion-col
+        ↓Grid [ngx.components.UIDynamicElement-1676630128037]: 
+          beanData: '{"ionBean":"Grid"}'
+          tagName: ion-grid
+          ↓rowTogglerPeriodeLiee [ngx.components.UIDynamicElement-1676630141475]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            tagName: ion-row
+            ↓colSelect [ngx.components.UIDynamicElement-1676630141478]: 
+              beanData: '{"ionBean":"GridCol","Size":"plain:2"}'
+              tagName: ion-col
+              ↓SelectContainer [ngx.components.UIDynamicElement-1676630141481]: 
+                beanData: |
+                  '{
+                   "ionBean": "Select",
+                   "ControlName": "plain:name1673862194355",
+                   "Interface": "plain:popover"
+                  }'
+                tagName: ion-select
+                ↓SyntheseGlobale [ngx.components.UIDynamicElement-1676630141484]: 
+                  beanData: '{"ionBean":"SelectOption","Value":"plain:global"}'
+                  tagName: ion-select-option
+                  ↓Text [ngx.components.UIText-1676630141487]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: plain:Synthèse globale
+                ↓Electricite [ngx.components.UIDynamicElement-1676630141490]: 
+                  beanData: '{"ionBean":"SelectOption","Value":"plain:elec"}'
+                  tagName: ion-select-option
+                  ↓Text [ngx.components.UIText-1676630141493]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: plain:Electricité
+                ↓GazNaturel [ngx.components.UIDynamicElement-1676630141496]: 
+                  beanData: '{"ionBean":"SelectOption","Value":"plain:gaz"}'
+                  tagName: ion-select-option
+                  ↓Text [ngx.components.UIText-1676630141499]: 
+                    textValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: plain:Gaz naturel
+                ↓Attr [ngx.components.UIAttribute-1676630141502]: 
+                  attrName: '[(ngModel)]'
+                  attrValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:this.syntheseSelected
+                ↓Event [ngx.components.UIControlEvent-1676630141505]: 
+                  attrName: (ionChange)
+                  eventName: ionChange
+                  ↓IfElse [ngx.components.UIDynamicIf-1676630141508]: 
+                    beanData: '{"ionBean":"IfElseAction","condition":"script:this.local[''sitesToCall''] != undefined && this.local[''sitesToCall''].length != 0"}'
+                    ↓updateParams [ngx.components.UICustomAction-1676630141511]: 
+                      actionValue: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                            →: |
+                              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                              		console.log("update params")
+                              		console.log(page.syntheseSelected)
+                              		console.log("sitesToCall in updateParams")
+                              		console.log(page.local[''sitesToCall''])
+                              		page.global[''sequenceParams''] = {
+                              			date_start: page.global[''date_start''],
+                              			date_end: page.global[''date_end''],
+                              			sites: JSON.stringify(page.local[''sitesToCall'']),
+                              			agg_function: ''month'',
+                              			label: '''',
+                              			synthese: page.syntheseSelected
+                              		}
+                              		
+                              		console.log(page.global[''sequenceParams''])
+                              		resolve();
+                              '
+                    ↓Else_Handler [ngx.components.UIActionElseEvent-1676630141514]: 
+                      ↓Toast [ngx.components.UIDynamicAction-1676630141517]: 
+                        beanData: |
+                          '{
+                           "ionBean": "ToastAction",
+                           "message": "plain:Veuillez sélectionner au moins un groupe",
+                           "position": "plain:top"
+                          }'
+            ↓colToggleButton [ngx.components.UIDynamicElement-1676630141520]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓Label [ngx.components.UIDynamicElement-1676630141523]: 
+                beanData: '{"ionBean":"Label"}'
+                tagName: ion-label
+                ↓Text [ngx.components.UIText-1676630141526]: 
+                  textValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Lier les périodes de widgets
+              ↓ToggleButton [ngx.components.UIDynamicElement-1676630141529]: 
+                beanData: '{"ionBean":"Toggle","ControlName":"plain:toggleLinkDate"}'
+                tagName: ion-toggle
+                ↓Event [ngx.components.UIControlEvent-1676630141532]: 
+                  attrName: (ionChange)
+                  eventName: ionChange
+                  ↓SetGlobal [ngx.components.UIDynamicAction-1676630141535]: 
+                    beanData: |
+                      '{
+                       "ionBean": "SetGlobalAction",
+                       "Property": "plain:linkDates",
+                       "Value": "script:parent.out.detail.checked"
+                      }'
+                    ↓CustomAction [ngx.components.UICustomAction-1676630141538]: 
+                      actionValue: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                          - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                            →: |
+                              '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                              		console.log(event)
+                              		console.log(this.global[''linkDates''])
+                              		 // this.global[''date_start''] = ''2022-12-01''
+                              		// this.global[''date_end''] = ''2022-12-31''
+                              		resolve();
+                              '
+          ↓rowEconomiesEnergiesAndConsoTotal [ngx.components.UIDynamicElement-1676630141544]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            comment: global
+            tagName: ion-row
+            ↓colSitesList [ngx.components.UIDynamicElement-1676630141547]: 
+              beanData: '{"ionBean":"GridCol"}'
+              isEnabled: false
+              tagName: ion-col
+              ↓Grid [ngx.components.UIDynamicElement-1676630141550]: 
+                beanData: '{"ionBean":"Grid"}'
+                tagName: ion-grid
+                ↓Form [ngx.components.UIForm-1676630141553]: 
+                  identifier: formListSites
+                  ↓RadioGroup [ngx.components.UIDynamicElement-1676630141556]: 
+                    beanData: |
+                      '{
+                       "ionBean": "RadioGroup",
+                       "ControlName": "plain:name1674745160564",
+                       "Value": "script:(this.navParams.data.site_id != undefined) ? this.navParams.data.site_id : ''''"
+                      }'
+                    tagName: ion-radio-group
+                    ↓Directive [ngx.components.UIControlDirective-1676630141559]: 
+                      directiveItemName: site
+                      directiveSource: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                      ↓GridRow [ngx.components.UIDynamicElement-1676630141562]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676630141565]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓FormItem [ngx.components.UIDynamicElement-1676630141568]: 
+                            beanData: '{"ionBean":"FormItem"}'
+                            tagName: ion-item
+                            ↓RadioButton [ngx.components.UIDynamicElement-1676630141571]: 
+                              beanData: '{"ionBean":"RadioButton","Value":"script:site.id"}'
+                              tagName: ion-radio
+                            ↓Text [ngx.components.UIText-1676630141574]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:site.name
+                    ↓Event [ngx.components.UIControlEvent-1676630141577]: 
+                      attrName: (ionChange)
+                      eventName: ionChange
+                      ↓pushSitesToCall [ngx.components.UICustomAction-1676630141580]: 
+                        actionValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                		var value = event.detail.value;
+                                		console.log(value)
+                                		page.local[''sitesToCall''] = [];
+                                		page.local[''sitesToCall''].push(value)
+                                		page.global[''sequenceParams''] = {
+                                			date_start: page.global[''date_start''],
+                                			date_end: page.global[''date_end''],
+                                			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                			agg_function: ''month'',
+                                			label: '''',
+                                			synthese: page.syntheseSelected,
+                                			limit: 20
+                                		}
+                                		resolve();
+                                '
+                        ↓site [ngx.components.UIControlVariable-1676630141583]: 
+                          isEnabled: false
+            ↓colChartMesEconomiesDenergiesAndConsoTotales [ngx.components.UIDynamicElement-1676630141586]: 
+              beanData: '{"ionBean":"GridCol","Size":"plain:6"}'
+              tagName: ion-col
+              ↓Grid [ngx.components.UIDynamicElement-1676630141589]: 
+                beanData: '{"ionBean":"Grid"}'
+                tagName: ion-grid
+                ↓rowMesEconomiesDenergies [ngx.components.UIDynamicElement-1676630141592]: 
+                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
+                  tagName: ion-row
+                  ↓colMesEconomiesDenergies [ngx.components.UIDynamicElement-1676630141595]: 
+                    beanData: '{"ionBean":"GridCol","SizeXs":"plain:12"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630141598]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630141601]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: plain:Mes économies d'énergies
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630141604]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso_gauge'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630141607]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630141610]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630141613]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630141616]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630141619]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630141622]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:''
+                      ↓aggregation [ngx.components.UIUseVariable-1676630141625]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                ↓rowMesConsommationsTotales [ngx.components.UIDynamicElement-1676630141628]: 
+                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
+                  tagName: ion-row
+                  ↓colChartMesConsommationsTotales [ngx.components.UIDynamicElement-1676630141631]: 
+                    beanData: '{"ionBean":"GridCol","SizeXs":"plain:12"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630141634]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630141637]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'Mes consommations totales'
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630141640]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso_total'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630141643]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630141646]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630141649]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630141652]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630141655]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630141658]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'consoTotal'
+                    ↓Directive [ngx.components.UIControlDirective-1676630141661]: 
+                      directiveExpression: this.local['refresh'] != true
+                      directiveName: If
+                      isEnabled: false
+            ↓colChart [ngx.components.UIDynamicElement-1676630141664]: 
+              beanData: '{"ionBean":"GridCol","Size":"plain:6"}'
+              tagName: ion-col
+              ↓Grid [ngx.components.UIDynamicElement-1676630141667]: 
+                beanData: '{"ionBean":"Grid"}'
+                tagName: ion-grid
+                ↓GridRow [ngx.components.UIDynamicElement-1676630141670]: 
+                  beanData: '{"ionBean":"GridRow"}'
+                  tagName: ion-row
+                  ↓colChartConsommationEnergetique [ngx.components.UIDynamicElement-1676630141673]: 
+                    beanData: '{"ionBean":"GridCol","SizeXs":"plain:12"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630141676]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630141679]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: plain:Consommation énergétique
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630141682]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630141685]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630141688]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630141691]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630141694]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630141697]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630141700]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'consoEvol'
+                      ↓aggregation [ngx.components.UIUseVariable-1676630141703]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+            ↓Attr [ngx.components.UIAttribute-1676645727822]: 
+              attrName: '[hidden]'
+              attrValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:this.syntheseSelected == ''global'' ? false : true'
+          ↓rowEconomiesElecAndConsoElec [ngx.components.UIDynamicElement-1676630141709]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            comment: elec
+            tagName: ion-row
+            ↓colSitesList [ngx.components.UIDynamicElement-1676630141712]: 
+              beanData: '{"ionBean":"GridCol"}'
+              isEnabled: false
+              tagName: ion-col
+              ↓Grid [ngx.components.UIDynamicElement-1676630141715]: 
+                beanData: '{"ionBean":"Grid"}'
+                tagName: ion-grid
+                ↓Form [ngx.components.UIForm-1676630141718]: 
+                  identifier: formListSites
+                  ↓RadioGroup [ngx.components.UIDynamicElement-1676630141721]: 
+                    beanData: |
+                      '{
+                       "ionBean": "RadioGroup",
+                       "ControlName": "plain:name1674745160564",
+                       "Value": "script:(this.navParams.data.site_id != undefined) ? this.navParams.data.site_id : ''''"
+                      }'
+                    tagName: ion-radio-group
+                    ↓Directive [ngx.components.UIControlDirective-1676630141724]: 
+                      directiveItemName: site
+                      directiveSource: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                      ↓GridRow [ngx.components.UIDynamicElement-1676630141727]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676630141730]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓FormItem [ngx.components.UIDynamicElement-1676630141733]: 
+                            beanData: '{"ionBean":"FormItem"}'
+                            tagName: ion-item
+                            ↓RadioButton [ngx.components.UIDynamicElement-1676630141736]: 
+                              beanData: '{"ionBean":"RadioButton","Value":"script:site.id"}'
+                              tagName: ion-radio
+                            ↓Text [ngx.components.UIText-1676630141739]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:site.name
+                    ↓Event [ngx.components.UIControlEvent-1676630141742]: 
+                      attrName: (ionChange)
+                      eventName: ionChange
+                      ↓pushSitesToCall [ngx.components.UICustomAction-1676630141745]: 
+                        actionValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                		var value = event.detail.value;
+                                		console.log(value)
+                                		page.local[''sitesToCall''] = [];
+                                		page.local[''sitesToCall''].push(value)
+                                		page.global[''sequenceParams''] = {
+                                			date_start: page.global[''date_start''],
+                                			date_end: page.global[''date_end''],
+                                			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                			agg_function: ''month'',
+                                			label: '''',
+                                			synthese: page.syntheseSelected,
+                                			limit: 20
+                                		}
+                                		resolve();
+                                '
+                        ↓site [ngx.components.UIControlVariable-1676630141748]: 
+                          isEnabled: false
+            ↓colEconomiesElecAndConsoElec [ngx.components.UIDynamicElement-1676630141751]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓Grid [ngx.components.UIDynamicElement-1676630141754]: 
+                beanData: '{"ionBean":"Grid","Height":"plain"}'
+                tagName: ion-grid
+                ↓rowMesEconomiesDernergiesAndMesConsoElec [ngx.components.UIDynamicElement-1676630141757]: 
+                  beanData: '{"ionBean":"GridRow"}'
+                  tagName: ion-row
+                  ↓colChartMesEconomiesDenergies [ngx.components.UIDynamicElement-1676630141760]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630141763]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630141766]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: plain:Mes économies d'énergies
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630141769]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso_gauge'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630141772]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630141775]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630141778]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630141781]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630141784]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630141787]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:''
+                      ↓aggregation [ngx.components.UIUseVariable-1676630141790]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                  ↓colChartMesConsoElectricite [ngx.components.UIDynamicElement-1676630141793]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630141796]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630141799]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'Mes consommations d\'éléctricité'
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630141802]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso_total'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630141805]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630141808]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630141811]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630141814]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630141817]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630141820]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'consoTotal'
+                      ↓aggregation [ngx.components.UIUseVariable-1676630141823]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:''
+                      ↓displayTotalOnly [ngx.components.UIUseVariable-1676630141826]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                ↓rowConsoHebdoAndConsoMensuelle [ngx.components.UIDynamicElement-1676630141829]: 
+                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
+                  tagName: ion-row
+                  ↓colConsoHebdo [ngx.components.UIDynamicElement-1676630141832]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630141835]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630141838]: 
+                        comment: Widget title (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'Consommation hebdomadaire'
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630141841]: 
+                        comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630141844]: 
+                        comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630141847]: 
+                        comment: To determine if widget is a map widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630141850]: 
+                        comment: To determine if widget is a gauge widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630141853]: 
+                        comment: To determine if widget is zoomed. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630141856]: 
+                        comment: To determine if widget is a heatmap widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630141859]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'consoHebdo'
+                      ↓aggregation [ngx.components.UIUseVariable-1676630141862]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                      ↓displayTotalOnly [ngx.components.UIUseVariable-1676630141865]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                  ↓colChartConsoMensuelle [ngx.components.UIDynamicElement-1676630141868]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630141871]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630141874]: 
+                        comment: Widget title (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'Consommation mensuelle'
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630141877]: 
+                        comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630141880]: 
+                        comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630141883]: 
+                        comment: To determine if widget is a map widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630141886]: 
+                        comment: To determine if widget is a gauge widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630141889]: 
+                        comment: To determine if widget is zoomed. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630141892]: 
+                        comment: To determine if widget is a heatmap widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630141895]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'consoMensuelle'
+                      ↓aggregation [ngx.components.UIUseVariable-1676630141898]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                      ↓displayTotalOnly [ngx.components.UIUseVariable-1676630141901]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+            ↓colHeatmap [ngx.components.UIDynamicElement-1676630141904]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1676630141907]: 
+                isEnabled: false
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1676630141910]: 
+                  comment: Widget title (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓sequenceToCall [ngx.components.UIUseVariable-1676630141913]: 
+                  comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓sequenceParams [ngx.components.UIUseVariable-1676630141916]: 
+                  comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓isGoogleMap [ngx.components.UIUseVariable-1676630141919]: 
+                  comment: To determine if widget is a map widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓isGauge [ngx.components.UIUseVariable-1676630141922]: 
+                  comment: To determine if widget is a gauge widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓isInModal [ngx.components.UIUseVariable-1676630141925]: 
+                  comment: To determine if widget is zoomed. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓isHeatmap [ngx.components.UIUseVariable-1676630141928]: 
+                  comment: To determine if widget is a heatmap widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓sequenceMarker [ngx.components.UIUseVariable-1676630141931]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓aggregation [ngx.components.UIUseVariable-1676630141934]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+              ↓UseSharedComponent1 [ngx.components.UIUseShared-1676630141937]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1676630141940]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:Intensité des usages hebdomadaires d'usage d'éléctricité
+                ↓sequenceToCall [ngx.components.UIUseVariable-1676630141943]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.widget_heatmap'
+                ↓sequenceParams [ngx.components.UIUseVariable-1676630141946]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
+                ↓isGoogleMap [ngx.components.UIUseVariable-1676630141949]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1676630141952]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1676630141955]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1676630141958]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
+                ↓sequenceMarker [ngx.components.UIUseVariable-1676630141961]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:''
+                ↓aggregation [ngx.components.UIUseVariable-1676630141964]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
+            ↓Attr [ngx.components.UIAttribute-1676645619761]: 
+              attrName: '[hidden]'
+              attrValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:this.syntheseSelected == ''elec'' ? false : true'
+          ↓Directive [ngx.components.UIControlDirective-1676630141541]: 
+            directiveName: If
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.syntheseSelected == 'global'
+            isEnabled: false
+          ↓rowMesEconomiesDeGazAndDJU [ngx.components.UIDynamicElement-1676630141970]: 
+            beanData: '{"ionBean":"GridRow"}'
+            comment: gaz
+            tagName: ion-row
+            ↓colSitesList [ngx.components.UIDynamicElement-1676630141973]: 
+              beanData: '{"ionBean":"GridCol"}'
+              isEnabled: false
+              tagName: ion-col
+              ↓Grid [ngx.components.UIDynamicElement-1676630141976]: 
+                beanData: '{"ionBean":"Grid"}'
+                tagName: ion-grid
+                ↓Form [ngx.components.UIForm-1676630141979]: 
+                  identifier: formListSites
+                  ↓RadioGroup [ngx.components.UIDynamicElement-1676630141982]: 
+                    beanData: |
+                      '{
+                       "ionBean": "RadioGroup",
+                       "ControlName": "plain:name1674745160564",
+                       "Value": "script:(this.navParams.data.site_id != undefined) ? this.navParams.data.site_id : ''''"
+                      }'
+                    tagName: ion-radio-group
+                    ↓Directive [ngx.components.UIControlDirective-1676630141985]: 
+                      directiveItemName: site
+                      directiveSource: 
+                        - xmlizable: 
+                          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                      ↓GridRow [ngx.components.UIDynamicElement-1676630141988]: 
+                        beanData: '{"ionBean":"GridRow"}'
+                        tagName: ion-row
+                        ↓GridCol [ngx.components.UIDynamicElement-1676630141991]: 
+                          beanData: '{"ionBean":"GridCol"}'
+                          tagName: ion-col
+                          ↓FormItem [ngx.components.UIDynamicElement-1676630141994]: 
+                            beanData: '{"ionBean":"FormItem"}'
+                            tagName: ion-item
+                            ↓RadioButton [ngx.components.UIDynamicElement-1676630141997]: 
+                              beanData: '{"ionBean":"RadioButton","Value":"script:site.id"}'
+                              tagName: ion-radio
+                            ↓Text [ngx.components.UIText-1676630142000]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: script:site.name
+                    ↓Event [ngx.components.UIControlEvent-1676630142003]: 
+                      attrName: (ionChange)
+                      eventName: ionChange
+                      ↓pushSitesToCall [ngx.components.UICustomAction-1676630142006]: 
+                        actionValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                            - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                              →: |
+                                '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                		var value = event.detail.value;
+                                		console.log(value)
+                                		page.local[''sitesToCall''] = [];
+                                		page.local[''sitesToCall''].push(value)
+                                		page.global[''sequenceParams''] = {
+                                			date_start: page.global[''date_start''],
+                                			date_end: page.global[''date_end''],
+                                			sites: JSON.stringify(page.local[''sitesToCall'']),
+                                			agg_function: ''month'',
+                                			label: '''',
+                                			synthese: page.syntheseSelected,
+                                			limit: 20
+                                		}
+                                		resolve();
+                                '
+                        ↓site [ngx.components.UIControlVariable-1676630142009]: 
+                          isEnabled: false
+            ↓colChartMesEconomiesDeGaz [ngx.components.UIDynamicElement-1676630142012]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1676630142015]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1676630142018]: 
+                  comment: Widget title (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'Mes economies de gaz naturel'
+                ↓sequenceToCall [ngx.components.UIUseVariable-1676630142021]: 
+                  comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.widget_conso_gauge'
+                ↓sequenceParams [ngx.components.UIUseVariable-1676630142024]: 
+                  comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
+                ↓isGoogleMap [ngx.components.UIUseVariable-1676630142027]: 
+                  comment: To determine if widget is a map widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1676630142030]: 
+                  comment: To determine if widget is a gauge widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
+                ↓isInModal [ngx.components.UIUseVariable-1676630142033]: 
+                  comment: To determine if widget is zoomed. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1676630142036]: 
+                  comment: To determine if widget is a heatmap widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓sequenceMarker [ngx.components.UIUseVariable-1676630142039]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'ecoGaz'
+                ↓aggregation [ngx.components.UIUseVariable-1676630142042]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓displayTotalOnly [ngx.components.UIUseVariable-1676630142045]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+            ↓colChartMesEconomiesDeGazCorrigees [ngx.components.UIDynamicElement-1676630142048]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+            ↓colChartDependanceALaRigueurClimatique [ngx.components.UIDynamicElement-1676630142051]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+            ↓Attr [ngx.components.UIAttribute-1676645780939]: 
+              attrName: '[hidden]'
+              attrValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:this.syntheseSelected == ''gaz'' ? false : true'
+          ↓rowConsoDeGazAndDJU [ngx.components.UIDynamicElement-1676630142054]: 
+            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            comment: gaz
+            tagName: ion-row
+            ↓colConsoDeGaz [ngx.components.UIDynamicElement-1676630142057]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓Grid [ngx.components.UIDynamicElement-1676630142060]: 
+                beanData: '{"ionBean":"Grid"}'
+                tagName: ion-grid
+                ↓rowConsoDeGaz [ngx.components.UIDynamicElement-1676630142063]: 
+                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
+                  tagName: ion-row
+                  ↓colConsoGaz [ngx.components.UIDynamicElement-1676630142066]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630142069]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630142072]: 
+                        comment: Widget title (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'Mes consommations de gaz naturel'
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630142075]: 
+                        comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630142078]: 
+                        comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630142081]: 
+                        comment: To determine if widget is a map widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630142084]: 
+                        comment: To determine if widget is a gauge widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630142087]: 
+                        comment: To determine if widget is zoomed. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630142090]: 
+                        comment: To determine if widget is a heatmap widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630142093]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'consoGaz'
+                      ↓aggregation [ngx.components.UIUseVariable-1676630142096]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓displayTotalOnly [ngx.components.UIUseVariable-1676630142099]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+                ↓rowDJU [ngx.components.UIDynamicElement-1676630142102]: 
+                  beanData: '{"ionBean":"GridRow","Height":"plain"}'
+                  tagName: ion-row
+                  ↓colDJU [ngx.components.UIDynamicElement-1676630142105]: 
+                    beanData: '{"ionBean":"GridCol"}'
+                    tagName: ion-col
+                    ↓UseSharedComponent [ngx.components.UIUseShared-1676630142108]: 
+                      sharedcomponent: poc_energisme.Application.NgxApp.widget
+                      ↓title [ngx.components.UIUseVariable-1676630142111]: 
+                        comment: Widget title (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'Rigueur climatique (DJU)'
+                      ↓sequenceToCall [ngx.components.UIUseVariable-1676630142114]: 
+                        comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'.widget_conso_total'
+                      ↓sequenceParams [ngx.components.UIUseVariable-1676630142117]: 
+                        comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:this.global['sequenceParams']
+                      ↓isGoogleMap [ngx.components.UIUseVariable-1676630142120]: 
+                        comment: To determine if widget is a map widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isGauge [ngx.components.UIUseVariable-1676630142123]: 
+                        comment: To determine if widget is a gauge widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isInModal [ngx.components.UIUseVariable-1676630142126]: 
+                        comment: To determine if widget is zoomed. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓isHeatmap [ngx.components.UIUseVariable-1676630142129]: 
+                        comment: To determine if widget is a heatmap widget. true or false (string)
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓sequenceMarker [ngx.components.UIUseVariable-1676630142132]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'dju'
+                      ↓aggregation [ngx.components.UIUseVariable-1676630142135]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'false'
+                      ↓displayTotalOnly [ngx.components.UIUseVariable-1676630142138]: 
+                        varValue: 
+                          - xmlizable: 
+                            - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                            - MobileSmartSourceType: script:'true'
+            ↓colConsoMensuelleGazAndDJU [ngx.components.UIDynamicElement-1676630142141]: 
+              beanData: '{"ionBean":"GridCol"}'
+              tagName: ion-col
+              ↓UseSharedComponent [ngx.components.UIUseShared-1676630142144]: 
+                sharedcomponent: poc_energisme.Application.NgxApp.widget
+                ↓title [ngx.components.UIUseVariable-1676630142147]: 
+                  comment: Widget title (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'Consommation mensuelle de gaz naturel et rigueur climatique (DJU)'
+                ↓sequenceToCall [ngx.components.UIUseVariable-1676630142150]: 
+                  comment: 'Name of the sequence to call. If the sequence to call is in the same project then : ".mySequenceToCall" (do not forget the ".") if it''s in another project then : "myProjectName.mySequenceToCall" '
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'.widget_conso'
+                ↓sequenceParams [ngx.components.UIUseVariable-1676630142153]: 
+                  comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:this.global['sequenceParams']
+                ↓isGoogleMap [ngx.components.UIUseVariable-1676630142156]: 
+                  comment: To determine if widget is a map widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isGauge [ngx.components.UIUseVariable-1676630142159]: 
+                  comment: To determine if widget is a gauge widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isInModal [ngx.components.UIUseVariable-1676630142162]: 
+                  comment: To determine if widget is zoomed. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓isHeatmap [ngx.components.UIUseVariable-1676630142165]: 
+                  comment: To determine if widget is a heatmap widget. true or false (string)
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+                ↓sequenceMarker [ngx.components.UIUseVariable-1676630142168]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'mensuGazDJU'
+                ↓aggregation [ngx.components.UIUseVariable-1676630142171]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'true'
+                ↓displayTotalOnly [ngx.components.UIUseVariable-1676630142174]: 
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: script:'false'
+            ↓Attr [ngx.components.UIAttribute-1676645791141]: 
+              attrName: '[hidden]'
+              attrValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: 'script:this.syntheseSelected == ''gaz'' ? false : true'
+          ↓Directive2 [ngx.components.UIControlDirective-1676630141967]: 
+            directiveName: If
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.syntheseSelected == 'gaz'
+            isEnabled: false
+          ↓Directive1 [ngx.components.UIControlDirective-1676630141706]: 
+            directiveName: If
+            directiveSource: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                - MobileSmartSourceType: script:this.syntheseSelected == 'elec'
+            isEnabled: false
+          ↓Style [ngx.components.UIStyle-1676630576908]: 
+            styleContent: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                  →: |
+                    '/**
+                     * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                     * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                     * They are set using custom property notation, e.g.: --main-color: black;
+                     * and are accessed using the var() function, e.g.: color: var(--main-color);
+                     * You can find below your component''s properties you can customize within the page.
+                     * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                     * For more informations see https://ionicframework.com/docs/theming.
+                    **/
+                    //--ion-grid-column-padding	//Padding for the Column
+                    //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                    //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                    //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                    //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                    //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                    //--ion-grid-columns	//The number of total Columns in the Grid
+                    padding: unset !important;	
+                    '
+        ↓Style [ngx.components.UIStyle-1676630563005]: 
+          styleContent: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+              - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                →: |
+                  '/**
+                   * Custom properties (sometimes referred to as CSS variables or cascading variables)
+                   * are entities defined by CSS authors that contain specific values to be reused throughout a document.
+                   * They are set using custom property notation, e.g.: --main-color: black;
+                   * and are accessed using the var() function, e.g.: color: var(--main-color);
+                   * You can find below your component''s properties you can customize within the page.
+                   * If you''d like to make some customizations for whole app, please see your app Style & Theme components.
+                   * For more informations see https://ionicframework.com/docs/theming.
+                  **/
+                  //--ion-grid-column-padding	//Padding for the Column
+                  //--ion-grid-column-padding-lg	//Padding for the Column on lg screens and up
+                  //--ion-grid-column-padding-md	//Padding for the Column on md screens and up
+                  //--ion-grid-column-padding-sm	//Padding for the Column on sm screens and up
+                  //--ion-grid-column-padding-xl	//Padding for the Column on xl screens and up
+                  //--ion-grid-column-padding-xs	//Padding for the Column on xs screens and up
+                  //--ion-grid-columns	//The number of total Columns in the Grid
+                  padding: unset !important;	
+                  '

@@ -3007,7 +3007,7 @@ title: Multisite
                         - xmlizable: 
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                           - MobileSmartSourceType: 'script:this.hideMenu == true ? ''text-vertically'' : '''''
-                  ↓GridCol1 [ngx.components.UIDynamicElement-1676382767517]: 
+                  ↓colButton [ngx.components.UIDynamicElement-1676382767517]: 
                     beanData: '{"ionBean":"GridCol"}'
                     tagName: ion-col
                     ↓Button [ngx.components.UIDynamicElement-1676296409308]: 
@@ -5364,7 +5364,12 @@ title: Multisite
                             --background: #ffc409;
                             '
           ↓rowTogglerPeriodeLiee [ngx.components.UIDynamicElement-1676296299839]: 
-            beanData: '{"ionBean":"GridRow","Height":"plain"}'
+            beanData: |
+              '{
+               "ionBean": "GridRow",
+               "Height": "plain",
+               "FlexAlignement": "plain:ion-align-items-baseline"
+              }'
             tagName: ion-row
             ↓colSelect [ngx.components.UIDynamicElement-1676296299842]: 
               beanData: '{"ionBean":"GridCol","Size":"plain:2"}'
@@ -5439,7 +5444,7 @@ title: Multisite
                            "position": "plain:top"
                           }'
             ↓colToggleButton [ngx.components.UIDynamicElement-1676296299884]: 
-              beanData: '{"ionBean":"GridCol"}'
+              beanData: '{"ionBean":"GridCol","FlexAlignement":"plain:ion-align-self-baseline"}'
               tagName: ion-col
               ↓Label [ngx.components.UIDynamicElement-1676296299887]: 
                 beanData: '{"ionBean":"Label"}'
@@ -5475,6 +5480,7 @@ title: Multisite
                               		// this.global[''date_end''] = ''2022-12-31''
                               		resolve();
                               '
+                      isEnabled: false
           ↓rowGroupsAndCharts [ngx.components.UIDynamicElement-1676296303457]: 
             beanData: '{"ionBean":"GridRow","Height":"plain"}'
             tagName: ion-row
@@ -7953,7 +7959,7 @@ title: Multisite
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                               - MobileSmartSourceType: plain:yellow-dark
                       ↓rowNoteContent [ngx.components.UIDynamicElement-1676552684008]: 
-                        beanData: '{"ionBean":"GridRow"}'
+                        beanData: '{"ionBean":"GridRow","Height":"plain"}'
                         tagName: ion-row
                         ↓GridCol [ngx.components.UIDynamicElement-1676552684011]: 
                           beanData: '{"ionBean":"GridCol"}'
@@ -7969,6 +7975,12 @@ title: Multisite
                                       'plain:Une question, besoin d''information?
                                       Vous pouvez nous contacter par mail un conseiller reviendra vers vous sous 24h pour répondre à votre question
                                       Si vous étes une Entreprise : en écrivant à soace-entreprises@engie.com'
+                          ↓Attr1 [ngx.components.UIAttribute-1676628761634]: 
+                            attrName: class
+                            attrValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: plain:colNote
                         ↓Attr [ngx.components.UIAttribute-1676552684020]: 
                           attrName: class
                           attrValue: 
@@ -8119,7 +8131,7 @@ title: Multisite
                       }'
                     tagName: ion-col
                     ↓Grid [ngx.components.UIDynamicElement-1676552874009]: 
-                      beanData: '{"ionBean":"Grid","Height":"plain:88%"}'
+                      beanData: '{"ionBean":"Grid"}'
                       tagName: ion-grid
                       ↓Style [ngx.components.UIStyle-1676552874069]: 
                         styleContent: 
@@ -8170,7 +8182,7 @@ title: Multisite
                                 textValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: plain:Besoin d'aide ?
+                                    - MobileSmartSourceType: plain:Notes
                             ↓ButtonSet [ngx.components.UIDynamicElement-1676552874030]: 
                               beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
                               tagName: ion-buttons
@@ -8258,7 +8270,7 @@ title: Multisite
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                               - MobileSmartSourceType: plain:blue-dark
                       ↓rowNoteContent [ngx.components.UIDynamicElement-1676552874054]: 
-                        beanData: '{"ionBean":"GridRow"}'
+                        beanData: '{"ionBean":"GridRow","Height":"plain"}'
                         tagName: ion-row
                         ↓GridCol [ngx.components.UIDynamicElement-1676552874057]: 
                           beanData: '{"ionBean":"GridCol"}'
@@ -8270,10 +8282,60 @@ title: Multisite
                               textValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: |
-                                      'plain:Une question, besoin d''information?
-                                      Vous pouvez nous contacter par mail un conseiller reviendra vers vous sous 24h pour répondre à votre question
-                                      Si vous étes une Entreprise : en écrivant à soace-entreprises@engie.com'
+                                  - MobileSmartSourceType: plain:Ce tableau de bord vous permet de retrouver le bilan de vos consommations d'énergie et votre progression par rapport à l'année précédente.
+                            ↓Tag [ngx.components.UIElement-1676627973966]: 
+                              selfClose: true
+                              tagName: br
+                          ↓Paragraph1 [ngx.components.UIDynamicElement-1676627998007]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676627998006]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:"Mes économies d'énergie" compare votre consommation totale sur les douze derniers mois à votre consommation totale sur les mêmes mois de l'année précédente afin de calculer les économies d'énergie associées.
+                            ↓Tag [ngx.components.UIElement-1676628025112]: 
+                              selfClose: true
+                              tagName: br
+                          ↓Paragraph2 [ngx.components.UIDynamicElement-1676628028284]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676628028287]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:"Mes consommations totales" calcule votre consommation totale de gaz naturel et d'électricité sur les douze derniers mois.
+                            ↓Tag [ngx.components.UIElement-1676628028290]: 
+                              selfClose: true
+                              tagName: br
+                          ↓Paragraph3 [ngx.components.UIDynamicElement-1676628042019]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676628042022]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:"Evolution de mes consommations" permet de comparer l'évolution mensuelle da vos consommations de gaz naturel et d'électricité sur les douze derniers mois par rapport aux mêmes mois de l'année précédente.
+                            ↓Tag [ngx.components.UIElement-1676628042025]: 
+                              selfClose: true
+                              tagName: br
+                          ↓Paragraph4 [ngx.components.UIDynamicElement-1676628059405]: 
+                            beanData: '{"ionBean":"Paragraph"}'
+                            tagName: p
+                            ↓Text [ngx.components.UIText-1676628059408]: 
+                              textValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: plain:"Mes sites" permet de localiser vos sites afin de les retrouver ous taclement pour acceder a leurs
+                            ↓Tag [ngx.components.UIElement-1676628059411]: 
+                              selfClose: true
+                              tagName: br
+                          ↓Attr1 [ngx.components.UIAttribute-1676628311594]: 
+                            attrName: class
+                            attrValue: 
+                              - xmlizable: 
+                                - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                - MobileSmartSourceType: plain:colNote
                         ↓Attr [ngx.components.UIAttribute-1676552874066]: 
                           attrName: class
                           attrValue: 
@@ -9088,42 +9150,112 @@ title: Multisite
        "Value": "script:''2022-12-31''"
       }'
     isEnabled: false
-  ↓CallSequence1 [ngx.components.UIDynamicAction-1675329497089]: 
-    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
-    ↓SetGlobal [ngx.components.UIDynamicAction-1675329523189]: 
-      beanData: |
-        '{
-         "ionBean": "SetGlobalAction",
-         "Property": "plain:authUser",
-         "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-        }'
-      ↓SetGlobal [ngx.components.UIDynamicAction-1675354114149]: 
+  ↓If [ngx.components.UIDynamicAction-1676625094734]: 
+    beanData: '{"ionBean":"IfAction","condition":"script:this.global[''username''] == undefined || this.global[''username''].length == 0"}'
+    isEnabled: false
+    ↓CallSequence1 [ngx.components.UIDynamicAction-1675329497089]: 
+      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+      ↓SetGlobal [ngx.components.UIDynamicAction-1675329523189]: 
         beanData: |
           '{
            "ionBean": "SetGlobalAction",
-           "Property": "plain:username",
+           "Property": "plain:authUser",
            "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
           }'
-        ↓CallSequence [ngx.components.UIDynamicAction-1675354177550]: 
-          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
-          ↓SetGlobal1 [ngx.components.UIDynamicAction-1675354177559]: 
+        ↓SetGlobal [ngx.components.UIDynamicAction-1675354114149]: 
+          beanData: |
+            '{
+             "ionBean": "SetGlobalAction",
+             "Property": "plain:username",
+             "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+            }'
+          ↓CallSequence [ngx.components.UIDynamicAction-1675354177550]: 
+            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+            ↓SetGlobal1 [ngx.components.UIDynamicAction-1675354177559]: 
+              beanData: |
+                '{
+                 "ionBean": "SetGlobalAction",
+                 "Property": "plain:isAdmin",
+                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                }'
+              ↓CallSequence2 [ngx.components.UIDynamicAction-1673623116292]: 
+                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                ↓label [ngx.components.UIControlVariable-1673623116295]: 
+                  comment: new variable
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: plain:
+                ↓user [ngx.components.UIControlVariable-1673623116298]: 
+                  comment: new variable
+                  varValue: 
+                    - xmlizable: 
+                      - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                      - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+  ↓IfElse [ngx.components.UIDynamicIf-1676625733052]: 
+    beanData: '{"ionBean":"IfElseAction","condition":"script:this.global[''username''] == undefined || this.global[''username''].length == 0"}'
+    ↓CallSequence1 [ngx.components.UIDynamicAction-1676625747958]: 
+      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+      ↓SetGlobal [ngx.components.UIDynamicAction-1676625747961]: 
+        beanData: |
+          '{
+           "ionBean": "SetGlobalAction",
+           "Property": "plain:authUser",
+           "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+          }'
+        ↓CallSequence [ngx.components.UIDynamicAction-1676627671996]: 
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getFromSessionADusername"}'
+          ↓SetGlobal [ngx.components.UIDynamicAction-1676625747964]: 
             beanData: |
               '{
                "ionBean": "SetGlobalAction",
-               "Property": "plain:isAdmin",
-               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+               "Property": "plain:username",
+               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getFromSessionADusername\",\"marker\":\"\"}],\"path\":\"?.username\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
               }'
-            ↓CallSequence2 [ngx.components.UIDynamicAction-1673623116292]: 
-              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
-              ↓label [ngx.components.UIControlVariable-1673623116295]: 
-                comment: new variable
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: plain:
-              ↓user [ngx.components.UIControlVariable-1673623116298]: 
-                comment: new variable
-                varValue: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+            ↓CallSequence [ngx.components.UIDynamicAction-1676625747967]: 
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+              ↓SetGlobal1 [ngx.components.UIDynamicAction-1676625747970]: 
+                beanData: |
+                  '{
+                   "ionBean": "SetGlobalAction",
+                   "Property": "plain:isAdmin",
+                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                  }'
+                ↓CallSequence2 [ngx.components.UIDynamicAction-1676625747973]: 
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                  ↓label [ngx.components.UIControlVariable-1676625747976]: 
+                    comment: new variable
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: plain:
+                  ↓user [ngx.components.UIControlVariable-1676625747979]: 
+                    comment: new variable
+                    varValue: 
+                      - xmlizable: 
+                        - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+    ↓Else_Handler [ngx.components.UIActionElseEvent-1676625759035]: 
+      ↓CallSequence [ngx.components.UIDynamicAction-1676625770918]: 
+        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+        ↓SetGlobal1 [ngx.components.UIDynamicAction-1676625770921]: 
+          beanData: |
+            '{
+             "ionBean": "SetGlobalAction",
+             "Property": "plain:isAdmin",
+             "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+            }'
+          ↓CallSequence2 [ngx.components.UIDynamicAction-1676625770924]: 
+            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+            ↓label [ngx.components.UIControlVariable-1676625770927]: 
+              comment: new variable
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:
+            ↓user [ngx.components.UIControlVariable-1676625770930]: 
+              comment: new variable
+              varValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}

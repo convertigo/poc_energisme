@@ -216,34 +216,42 @@ title: Login
                                  "Property": "plain:groups",
                                  "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.listGroupsAzureAd\",\"marker\":\"\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                 }'
-                          ↓CallSequence1 [ngx.components.UIDynamicAction-1671810183120]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
-                            ↓RootPage [ngx.components.UIDynamicAction-1672060823859]: 
-                              beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
-                              isEnabled: false
-                            ↓CallSequence [ngx.components.UIDynamicAction-1673000066453]: 
-                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
-                              ↓SetGlobal [ngx.components.UIDynamicAction-1673000052722]: 
-                                beanData: |
-                                  '{
-                                   "ionBean": "SetGlobalAction",
-                                   "Property": "plain:isAdmin",
-                                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                                  }'
-                                ↓RootPage [ngx.components.UIDynamicAction-1673000052725]: 
-                                  beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
-                                ↓CustomAction [ngx.components.UICustomAction-1673002437075]: 
-                                  actionValue: 
-                                    - xmlizable: 
-                                      - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
-                                      - com.twinsoft.convertigo.beans.common.FormatedContent: 
-                                        →: |
-                                          '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
-                                          		console.log(this.global[''authUser''])
-                                          		debugger;
-                                          		resolve();
-                                          '
-                                  isEnabled: false
+                          ↓CallSequence2 [ngx.components.UIDynamicAction-1676627622641]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.setInSessionADusername"}'
+                            ↓username [ngx.components.UIControlVariable-1676627636055]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            ↓CallSequence1 [ngx.components.UIDynamicAction-1671810183120]: 
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
+                              ↓RootPage [ngx.components.UIDynamicAction-1672060823859]: 
+                                beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                                isEnabled: false
+                              ↓CallSequence [ngx.components.UIDynamicAction-1673000066453]: 
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                                ↓SetGlobal [ngx.components.UIDynamicAction-1673000052722]: 
+                                  beanData: |
+                                    '{
+                                     "ionBean": "SetGlobalAction",
+                                     "Property": "plain:isAdmin",
+                                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                    }'
+                                  ↓RootPage [ngx.components.UIDynamicAction-1673000052725]: 
+                                    beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                                  ↓CustomAction [ngx.components.UICustomAction-1673002437075]: 
+                                    actionValue: 
+                                      - xmlizable: 
+                                        - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
+                                        - com.twinsoft.convertigo.beans.common.FormatedContent: 
+                                          →: |
+                                            '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
+                                            		console.log(this.global[''authUser''])
+                                            		debugger;
+                                            		resolve();
+                                            '
+                                    isEnabled: false
                     ↓CustomAction [ngx.components.UICustomAction-1669818136577]: 
                       actionValue: 
                         - xmlizable: 
