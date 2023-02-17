@@ -157,17 +157,25 @@ title: Login
                              "Property": "plain:username",
                              "Value": "source:{\"filter\":\"Form\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1671719229598,\"identifier\":\"loginForm\"}],\"path\":\"?.controls[''email'']?.value\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                             }'
-                          ↓CallSequence [ngx.components.UIDynamicAction-1671790709609]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
-                            ↓SetGlobal [ngx.components.UIDynamicAction-1672837965924]: 
-                              beanData: |
-                                '{
-                                 "ionBean": "SetGlobalAction",
-                                 "Property": "plain:isAdmin",
-                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
-                                }'
-                              ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
-                                beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                          ↓CallSequence1 [ngx.components.UIDynamicAction-1676649766385]: 
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.setInSessionADusername"}'
+                            ↓CallSequence [ngx.components.UIDynamicAction-1671790709609]: 
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                              ↓SetGlobal [ngx.components.UIDynamicAction-1672837965924]: 
+                                beanData: |
+                                  '{
+                                   "ionBean": "SetGlobalAction",
+                                   "Property": "plain:isAdmin",
+                                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                  }'
+                                ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
+                                  beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                            ↓username [ngx.components.UIControlVariable-1676649791594]: 
+                              comment: new variable
+                              varValue: 
+                                - xmlizable: 
+                                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓azureButton [ngx.components.UIDynamicElement-1669818578024]: 
               beanData: '{"ionBean":"Button"}'
               tagName: ion-button

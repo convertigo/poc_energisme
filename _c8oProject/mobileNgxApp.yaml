@@ -763,6 +763,13 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
           	width: 100% !important;
           }
           
+          /* ion-radio-group ion-item {
+          	font-size: 12px !important;
+          	white-space: nowrap !important;
+            	overflow: hidden !important;
+            	text-overflow: ellipsis !important;
+          }
+          */
           //ion-accordion-group ion-accordion {
           //	margin-left: 5px !important;
           //	margin-right: 5px !important;
