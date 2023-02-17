@@ -49,6 +49,15 @@ see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
 
 
 </p></blockquote></details>
+
+<details><summary><b>poc_energisme</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") poc_energisme
+
+
+see [readme](https://github.com/convertigo/poc_energisme/tree/afe171054f6e4e7dc4d1bcb07cb2aee9ceade63e#readme)
+</p></blockquote></details>
 </p></blockquote></details>
 
 <details><summary><span style="color:DarkGoldenRod"><i>Connectors</i></span></summary><blockquote><p>

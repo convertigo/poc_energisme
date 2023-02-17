@@ -33,7 +33,7 @@ responseExpiryDate: absolute,36000
     }
     string = "AND s.id IN (" + string + ")"
     var filter_condition = string;
-    log.warn(string)'
+    //log.warn(string)'
 ↓jElement [steps.ElementStep-1674035029023]: 
   expression: string
   isEnabled: false

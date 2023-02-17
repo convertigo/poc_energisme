@@ -1,5 +1,5 @@
 clientCachable: true
-responseExpiryDate: absolute,36000
+responseExpiryDate: absolute,3600
 ↓Input_variables [steps.InputVariablesStep-1673013038503]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1675178744595]: 
   sourceDefinition: 
@@ -34,7 +34,7 @@ responseExpiryDate: absolute,36000
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
     }
     
-    log.warn(string)'
+    //log.warn(string)'
 ↓jElement [steps.ElementStep-1673013564546]: 
   expression: string
   nodeName: sites
@@ -130,10 +130,10 @@ responseExpiryDate: absolute,36000
           variableName: firstDate
         ↓getFirstYear [steps.SimpleStep-1673020265724]: 
           expression: |
-            log.warn(firstDate)
+            //log.warn(firstDate)
             var firstYear = firstDate.substring(0, 4)
-            log.warn('firstYear')
-            log.warn(firstYear)
+            //log.warn('firstYear')
+            //log.warn(firstYear)
         ↓jIfThenElse [steps.IfThenElseStep-1675080573643]: 
           condition: sitesLength > 1
           isEnabled: false
@@ -947,8 +947,8 @@ responseExpiryDate: absolute,36000
                 ↓getCurrentYear [steps.SimpleStep-1673864681035]: 
                   expression: |
                     var currentYear = currentDate.substring(0, 4)
-                    log.warn('labels')
-                    log.warn(currentYear)
+                    //log.warn('labels')
+                    //log.warn(currentYear)
                 ↓jIf [steps.IfStep-1673864681038]: 
                   condition: currentYear == firstYear
                   ↓computeLabel [steps.SimpleStep-1675179261685]: 
@@ -1289,8 +1289,8 @@ responseExpiryDate: absolute,36000
                 ↓getCurrentYear [steps.SimpleStep-1675079415810]: 
                   expression: |
                     var currentYear = currentDate.substring(0, 4)
-                    log.warn('labels')
-                    log.warn(currentYear)
+                    //log.warn('labels')
+                    //log.warn(currentYear)
                 ↓jIf [steps.IfStep-1675079415813]: 
                   condition: currentYear == firstYear
                   ↓computeLabel [steps.SimpleStep-1675179417222]: 

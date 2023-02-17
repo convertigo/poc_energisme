@@ -1,4 +1,5 @@
 clientCachable: true
+responseExpiryDate: absolute,3600
 ↓Input_variables [steps.InputVariablesStep-1676489530511]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1676489530514]: 
   sourceDefinition: 
@@ -879,16 +880,18 @@ clientCachable: true
 ↓error2 [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1676489531086]: 
     description: date_start
-    value: 2022-01-30
+    value: 2022-02-16
   ↓date_end [variables.TestCaseVariable-1676489531089]: 
     description: date_end
-    value: 2023-01-30
+    value: 2023-02-16
   ↓sites [variables.TestCaseVariable-1676489531092]: 
-    value: '["7639","7642","7632","7633","7634","7635","7636","7637","7731","7634","7639","7654","7655","7656"]'
+    value: '[7633,7634,7635,7636,7637,7638,7639,7640,7641,7642,7643,7644,7645,7639,7642,7645,7632,7633,7634,7635,7636,7637,7731,7632,7633,7634,7635,7636,7637,7638,7639,7640,7641,7642,7643,7644,7645,7646,7647,7648,7649,7650,7651,7652,7653,7654,7655,7656,7657,7658,7659,7660,7661,7662,7663,7664,7665,7666,7667,7668,7669,7670,7671,7672,7673,7674,7675,7676,7677,7678,7679,7680,7681,7682,7683,7684,7685,7686,7687,7688,7689,7690,7691,7692,7693,7694,7695,7696,7697,7698,7699,7700,7701,7702,7704,7705,7706,7707,7708,7709,7710,7711,7731,7636,7634,7639,7654,7655,7656,7635,7639]'
   ↓agg_function [variables.TestCaseVariable-1676489531095]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1676489531098]: 
     value: global
+  ↓limit [variables.TestCaseVariable-1676568054418]: 
+    value: 20
 ↓multisiteGlobal [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1676489531198]: 
     description: date_start

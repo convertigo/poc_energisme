@@ -1,5 +1,5 @@
 clientCachable: true
-responseExpiryDate: absolute,36000
+responseExpiryDate: absolute,3600
 ↓Input_variables [steps.InputVariablesStep-1673276340023]: 
 ↓buildCastStrings [steps.SimpleStep-1673276451923]: 
   expression: |
@@ -11,7 +11,7 @@ responseExpiryDate: absolute,36000
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
     }
     
-    log.warn(string)'
+    //log.warn(string)'
 ↓jElement [steps.ElementStep-1673276477923]: 
   expression: string
   nodeName: sites

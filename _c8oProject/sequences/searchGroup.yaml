@@ -31,7 +31,7 @@
         }
         
         var _use_selector = JSON.stringify(selector);
-        log.warn(_use_selector)'
+        //log.warn(_use_selector)'
     ↓Call_Transaction [steps.TransactionStep-1672750840005]: 
       sourceTransaction: lib_FullSyncGrp.c8ofullsyncgrp.PostFind
       ↓_use_selector [variables.StepVariable-1672750840008]: 

@@ -3,7 +3,7 @@ responseExpiryDate: absolute,36000
 ↓Input_variables [steps.InputVariablesStep-1673859488051]: 
 ↓buildCastStrings [steps.SimpleStep-1673860885424]: 
   expression: |
-    'log.warn(sites)
+    '//log.warn(sites)
     sites = JSON.parse(sites)
     var string = "";
     for(var i = 0; i < sites.length; i++) {
@@ -12,7 +12,7 @@ responseExpiryDate: absolute,36000
     
     string = "AND sm.site_id IN (" + string + ")"
     filter_condition = string
-    log.warn(string)'
+    //log.warn(string)'
 ↓jElement [steps.ElementStep-1673860885427]: 
   expression: string
   isEnabled: false

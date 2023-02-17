@@ -2,7 +2,7 @@
 ↓poc_energisme [core.Project]: 
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
-  version: 0.2.9
+  version: 0.2.11
   ↓groups_sites [connectors.FullSyncConnector]: 🗏 connectors/groups_sites.yaml
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
@@ -49,6 +49,8 @@
     projectName: lib_OAuth=https://github.com/convertigo/c8oprj-lib-oauth.git:branch=8.0.0
   ↓lib_UserManager_reference [references.ProjectSchemaReference]: 
     projectName: lib_UserManager=https://github.com/convertigo/c8oprj-lib-user-manager.git:branch=f8941d93af0db63dc16c052daad77de2f6329747
+  ↓poc_energisme_reference [references.ProjectSchemaReference]: 
+    projectName: poc_energisme
   ↓Project_reference [references.ProjectSchemaReference]: 
     comment: ngx builder template
     projectName: mobilebuilder_tpl_8_1_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl/archive/mobilebuilder_tpl_8_1_0_ngx.zip
