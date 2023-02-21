@@ -35,7 +35,6 @@ testOnBorrow: true
   sqlQuery: |
     'SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
-    WHERE s.typology is null
     {{filter_condition}};'
   handlers: 
     →: |
