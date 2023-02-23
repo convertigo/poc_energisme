@@ -31,7 +31,7 @@ responseExpiryDate: absolute,36000
     for(var i = 0; i < sites.length; i++) {
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
     }
-    string = "AND s.id IN (" + string + ")"
+    string = "WHERE s.id IN (" + string + ")"
     var filter_condition = string;
     //log.warn(string)'
 ↓jElement [steps.ElementStep-1674035029023]: 

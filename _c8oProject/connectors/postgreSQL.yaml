@@ -50,14 +50,14 @@ testOnBorrow: true
   ↓Test_Case [core.TestCase]: 
     ↓filter_condition [variables.TestCaseVariable-1673962883661]: 
       description: filter_condition
-      value: AND s.id IN (CAST('7632' AS BIGINT), CAST('7634' AS BIGINT), CAST('7635' AS BIGINT), CAST('7636' AS BIGINT), CAST('7637' AS BIGINT), CAST('7638' AS BIGINT), CAST('7731' AS BIGINT))
+      value: WHERE s.id IN (CAST('7632' AS BIGINT), CAST('7634' AS BIGINT), CAST('7635' AS BIGINT), CAST('7636' AS BIGINT), CAST('7637' AS BIGINT), CAST('7638' AS BIGINT), CAST('7731' AS BIGINT))
   ↓Test_Case_all_sites [core.TestCase]: 
     ↓filter_condition [variables.TestCaseVariable-1673885180239]: 
       description: filter_condition
   ↓Test_Case_sites_subset [core.TestCase]: 
     ↓filter_condition [variables.TestCaseVariable-1673885138036]: 
       description: filter_condition
-      value: AND s.id IN (CAST('14122' AS BIGINT), CAST('13858' AS BIGINT))
+      value: WHERE s.id IN (CAST('14122' AS BIGINT), CAST('13858' AS BIGINT))
   ↓filter_condition [variables.RequestableVariable-1673885109667]: 
     description: filter_condition
   ↓site_table [variables.RequestableVariable-1674049074082]: 
