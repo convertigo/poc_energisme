@@ -34,7 +34,7 @@ scriptContent:
         						var agg_function;
         						// case its first time we select a group with sites, calculate the good range date for depending on the widget type
         						if(changes[key].previousValue[''date_start''] == undefined) {
-        							if(this.sequenceToCall == ".widget_conso_total") {
+        							if(this.sequenceToCall == ".widget_evol_conso_total") {
         								date_start = this.getLastTwoYears()[''date_start''];
         								date_end = this.getLastTwoYears()[''date_end'']
         								// changes[key].currentValue[''date_start''] = this.getLastYear()[''date_start'']
@@ -45,7 +45,7 @@ scriptContent:
         								date_end = this.getLastTwoMonths()[''date_end'']
         								// changes[key].currentValue[''date_start''] = this.getLastTwoYears()[''date_start'']
         								// changes[key].currentValue[''date_end''] = this.getLastTwoYears()[''date_end'']
-        							} else if(this.sequenceToCall == ".widget_conso" && this.isGauge == "false" || this.sequenceToCall == ''.widget_conso_monosite_gaz_dju'') {
+        							} else if(this.sequenceToCall == ".widget_evol_conso" && this.isGauge == "false" || this.sequenceToCall == ''.widget_evol_conso_monosite_gaz_dju'') {
         								date_start = this.getLastYear()[''date_start'']
         								date_end = this.getLastYear()[''date_end'']
         							} else if(this.sequenceToCall == ''.widget_multisite_sites_energivore'') {
@@ -59,9 +59,9 @@ scriptContent:
         							} 
         							
         							
-        							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        							if(this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
-        							} else if (this.sequenceToCall == ".widget_conso" && this.sequenceMarker == "consoMensuelle") {
+        							} else if (this.sequenceToCall == ".widget_evol_conso" && this.sequenceMarker == "consoMensuelle") {
         								agg_function = "month"
         								
         							} else {
@@ -73,7 +73,7 @@ scriptContent:
         							
         						} else {
         							if(changes[key].previousValue[''date_start''].length == 0 && changes[key].previousValue[''date_end''] == 0) {
-        								if(this.sequenceToCall == ".widget_conso_total") {
+        								if(this.sequenceToCall == ".widget_evol_conso_total") {
         									date_start = this.getLastTwoYears()[''date_start''];
         									date_end = this.getLastTwoYears()[''date_end'']
         									// changes[key].currentValue[''date_start''] = this.getLastYear()[''date_start'']
@@ -84,7 +84,7 @@ scriptContent:
         									date_end = this.getLastTwoMonths()[''date_end'']
         									// changes[key].currentValue[''date_start''] = this.getLastTwoYears()[''date_start'']
         									// changes[key].currentValue[''date_end''] = this.getLastTwoYears()[''date_end'']
-        								} else if(this.sequenceToCall == ".widget_conso" && this.isGauge == "false" || this.sequenceToCall == ''.widget_conso_monosite_gaz_dju'') {
+        								} else if(this.sequenceToCall == ".widget_evol_conso" && this.isGauge == "false" || this.sequenceToCall == ''.widget_evol_conso_monosite_gaz_dju'') {
         									date_start = this.getLastYear()[''date_start'']
         									date_end = this.getLastYear()[''date_end'']
         								} else if(this.sequenceToCall == ''.widget_multisite_sites_energivore'') {
@@ -98,9 +98,9 @@ scriptContent:
         								}
         								
         								
-        								if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        								if(this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoHebdo") {
         									agg_function = "day"
-        								} else if (this.sequenceToCall == ".widget_conso" && this.sequenceMarker == "consoMensuelle") {
+        								} else if (this.sequenceToCall == ".widget_evol_conso" && this.sequenceMarker == "consoMensuelle") {
         									agg_function = "month"
         									
         								} else {
@@ -119,9 +119,9 @@ scriptContent:
         								}
         								
         								
-        								if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        								if(this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoHebdo") {
         									agg_function = "day"
-        								} else if (this.sequenceToCall == ".widget_conso" && this.sequenceMarker == "consoMensuelle") {
+        								} else if (this.sequenceToCall == ".widget_evol_conso" && this.sequenceMarker == "consoMensuelle") {
         									agg_function = "month"
         									
         								} else {
@@ -149,7 +149,7 @@ scriptContent:
         							this.showSpinner = "true";
         							
         							
-        							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
+        							if(this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoMensuelle") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
         							this.selectAggregation = changes[key].currentValue[''agg_function'']
@@ -169,7 +169,7 @@ scriptContent:
         							var date_start;
         							var date_end;
         							
-        							if(this.sequenceToCall == ".widget_conso_total") {
+        							if(this.sequenceToCall == ".widget_evol_conso_total") {
         								date_start = this.getLastTwoYears()[''date_start''];
         								date_end = this.getLastTwoYears()[''date_end'']
         								// changes[key].currentValue[''date_start''] = this.getLastYear()[''date_start'']
@@ -180,7 +180,7 @@ scriptContent:
         								date_end = this.getLastTwoMonths()[''date_end'']
         								// changes[key].currentValue[''date_start''] = this.getLastTwoYears()[''date_start'']
         								// changes[key].currentValue[''date_end''] = this.getLastTwoYears()[''date_end'']
-        							} else if(this.sequenceToCall == ".widget_conso" && this.isGauge == "false" || this.sequenceToCall == ''.widget_conso_monosite_gaz_dju'') {
+        							} else if(this.sequenceToCall == ".widget_evol_conso" && this.isGauge == "false" || this.sequenceToCall == ''.widget_evol_conso_monosite_gaz_dju'') {
         								date_start = this.getLastYear()[''date_start'']
         								date_end = this.getLastYear()[''date_end'']
         							} else if(this.sequenceToCall == ''.widget_multisite_sites_energivore'') {
@@ -193,9 +193,9 @@ scriptContent:
         								//date_end = this.getLastMonth()[''date_end'']
         							}
         							
-        							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        							if(this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
-        							} else if (this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
+        							} else if (this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoMensuelle") {
         								agg_function = "month"
         								
         							} else {
@@ -208,9 +208,9 @@ scriptContent:
         							date_end = changes[key].currentValue[''date_end'']
         							
         							
-        							if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo") {
+        							if(this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoHebdo") {
         								agg_function = "day"
-        							} else if (this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
+        							} else if (this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoMensuelle") {
         								agg_function = "month"
         								
         							} else {
@@ -226,7 +226,7 @@ scriptContent:
         							changes[key].currentValue[''date_end''] = date_end;
         							// changes[key].currentValue[''agg_function''] = agg_function;
         							this.showSpinner = "true";
-        							 if(this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_conso'' && this.sequenceMarker == "consoMensuelle") {
+        							 if(this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoHebdo" || this.sequenceToCall == ''.widget_evol_conso'' && this.sequenceMarker == "consoMensuelle") {
         								changes[key].currentValue[''agg_function''] = agg_function
         							}
         							this.selectAggregation = changes[key].currentValue[''agg_function'']
