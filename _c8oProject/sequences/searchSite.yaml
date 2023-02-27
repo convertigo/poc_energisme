@@ -8,7 +8,7 @@
         description: label
       ↓site_table [variables.StepVariable-1674552105494]: 
         description: site_table
-        value: convertigo_poc.site
+        value: ${poc_energisme.sites_table}
     ↓sites [steps.JsonArrayStep-1672760792000]: 
       key: 
         - xmlizable: 

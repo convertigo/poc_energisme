@@ -90,7 +90,7 @@ comment: Return sites id from a group searching by its name
               - java.lang.String: 
                 - ↑value: ./value/text()
       ↓site_table [variables.StepVariable-1674652024333]: 
-        value: convertigo_poc.site
+        value: ${poc_energisme.sites_table}
     ↓Iterator [steps.IteratorStep-1674652354489]: 
       sourceDefinition: 
         - xmlizable: 

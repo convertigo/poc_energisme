@@ -84,7 +84,7 @@
                     - java.lang.String: 
                       - ↑value: ./id/text()
             ↓site_table [variables.StepVariable-1674655973981]: 
-              value: convertigo_poc.site
+              value: ${poc_energisme.sites_table}
           ↓Object [steps.JsonObjectStep-1674656004878]: 
             ↓Field [steps.JsonFieldStep-1674656035932]: 
               key: 

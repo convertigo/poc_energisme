@@ -27,7 +27,7 @@ testOnBorrow: true
     ↓site_id [variables.TestCaseVariable-1672148194989]: 
       value: 7731
     ↓site_table [variables.TestCaseVariable-1674652186354]: 
-      value: convertigo_poc.site
+      value: ${poc_energisme.sites_table}
   ↓site_id [variables.RequestableVariable-1672148077216]: 
   ↓site_table [variables.RequestableVariable-1674048853473]: 
     value: ${poc_energisme.sites_table}
@@ -85,7 +85,7 @@ testOnBorrow: true
       value: bar
     ↓site_table [variables.TestCaseVariable-1674552135802]: 
       description: site_table
-      value: convertigo_poc.site
+      value: ${poc_energisme.sites_table}
   ↓label [variables.RequestableVariable-1672757643644]: 
     description: label
   ↓site_table [variables.RequestableVariable-1674049236006]: 
@@ -330,10 +330,10 @@ testOnBorrow: true
     ↓agg_function [variables.TestCaseVariable-1676488532885]: 
       value: MM
     ↓raw_data_table [variables.TestCaseVariable-1676489262177]: 
-      value: convertigo_poc.raw_data
+      value: ${poc_energisme.raw_data_table}
     ↓sensor_mapping_table [variables.TestCaseVariable-1676489262179]: 
       description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
+      value: ${poc_energisme.sensor_mapping_table}
     ↓first_year [variables.TestCaseVariable-1676489262181]: 
       value: 2021
     ↓last_year [variables.TestCaseVariable-1676489262183]: 
@@ -350,10 +350,10 @@ testOnBorrow: true
     ↓agg_function [variables.TestCaseVariable-1676489382688]: 
       value: WW
     ↓raw_data_table [variables.TestCaseVariable-1676489382691]: 
-      value: convertigo_poc.raw_data
+      value: ${poc_energisme.raw_data_table}
     ↓sensor_mapping_table [variables.TestCaseVariable-1676489382694]: 
       description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
+      value: ${poc_energisme.sensor_mapping_table}
     ↓first_year [variables.TestCaseVariable-1676489382697]: 
       value: 2021
     ↓last_year [variables.TestCaseVariable-1676489382700]: 
@@ -461,13 +461,13 @@ testOnBorrow: true
       description: filter_condition
       value: AND sm.site_id IN (CAST('7626' AS BIGINT))
     ↓raw_data_table [variables.TestCaseVariable-1674226345346]: 
-      value: convertigo_poc.raw_data
+      value: ${poc_energisme.raw_data_table}
     ↓sensor_mapping_table [variables.TestCaseVariable-1674226345348]: 
       description: sensor_mapping_table
-      value: convertigo_poc.sensor_mapping
+      value: ${poc_energisme.sensor_mapping_table}
     ↓site_table [variables.TestCaseVariable-1674226345350]: 
       description: site_table
-      value: convertigo_poc.site
+      value: ${poc_energisme.sites_table}
     ↓date_start [variables.TestCaseVariable-1674226345352]: 
       description: date_start
       value: 2021-06-01
