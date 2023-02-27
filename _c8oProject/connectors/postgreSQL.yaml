@@ -9,8 +9,7 @@ testOnBorrow: true
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
-    WHERE s.id = CAST({site_id} AS BIGINT)
-    AND s.typology is null;
+    WHERE s.id = CAST({site_id} AS BIGINT);
     
   handlers: 
     →: |
@@ -66,8 +65,7 @@ testOnBorrow: true
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
-    WHERE LOWER(nom) LIKE '%{{label}}%'
-    AND s.typology is not null;
+    WHERE LOWER(nom) LIKE '%{{label}}%';
   handlers: 
     →: |
       '// Handles the XML generated event.

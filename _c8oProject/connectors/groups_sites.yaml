@@ -14,7 +14,6 @@ databaseName: groups_sites
 ↓GetServerInfo [transactions.couchdb.GetServerInfoTransaction]: 
   ↑default: true
 ↓getSitesByGroupName [transactions.couchdb.GetViewTransaction]: 
-  accessibility: Public
   q_reduce: false
   viewname: Design_document/get_sites_by_group_name
   ↓Test_Case [core.TestCase]: 
