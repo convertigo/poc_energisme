@@ -18,7 +18,7 @@ comment: Used to list User Sites in monosite page and when selectionning all sit
           - java.lang.String: 
             - ↑value: 1674741470849
           - java.lang.String: 
-            - ↑value: ./document/Array/Object
+            - ↑value: ./document/Array/Object1
     ↓Iterator [steps.IteratorStep-1674741555052]: 
       sourceDefinition: 
         - xmlizable: 
