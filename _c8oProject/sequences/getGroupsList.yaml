@@ -16,22 +16,34 @@
             - ↑value: 1672765485487
           - java.lang.String: 
             - ↑value: ./document/group
-    ↓Object [steps.JsonObjectStep-1672765666031]: 
-      ↓Field [steps.JsonFieldStep-1672765671712]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: name
-        value: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: SOURCE
-              - com.twinsoft.convertigo.beans.common.XMLVector: 
-                - java.lang.String: 
-                  - ↑value: 1672765532515
-                - java.lang.String: 
-                  - ↑value: ./text()
+    ↓jSimpleSource [steps.SimpleSourceStep-1677500897791]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672765532515
+            - java.lang.String: 
+              - ↑value: ./text()
+      variableName: group
+    ↓jIf [steps.IfStep-1677500866287]: 
+      condition: group != 'role-admin' && group != 'app-poc-energisme' 
+      ↓Object [steps.JsonObjectStep-1672765666031]: 
+        ↓Field [steps.JsonFieldStep-1672765671712]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: name
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672765532515
+                  - java.lang.String: 
+                    - ↑value: ./text()
 ↓Test_Case [core.TestCase]: 

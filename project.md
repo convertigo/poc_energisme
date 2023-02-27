@@ -39,6 +39,7 @@ see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/8.0.0#re
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_OAuth
 
 
+see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
 </p></blockquote></details>
 
 <details><summary><b>lib_UserManager</b></summary><blockquote><p>
@@ -55,7 +56,7 @@ see [readme](https://github.com/convertigo/c8oprj-lib-fullsync-grp/tree/8.0.0#re
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") poc_energisme
 
 
-see [readme](https://github.com/convertigo/poc_energisme/tree/be260e93c44360aeeeb8d6c15c86761ef98b6b95#readme)
+see [readme](https://github.com/convertigo/poc_energisme/tree/ac7b593a28847d603de93f26116152d84a8072b4#readme)
 </p></blockquote></details>
 </p></blockquote></details>
 
