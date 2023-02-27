@@ -17,53 +17,49 @@
             - ↑value: 1672736918157
           - java.lang.String: 
             - ↑value: ./document/group
-    ↓Object [steps.JsonObjectStep-1672737116874]: 
-      ↓Call_Sequence [steps.SequenceStep-1672737048629]: 
-        sourceSequence: poc_energisme.getSitesByGroupName
-        ↓group_name [variables.StepVariable-1672737056528]: 
-          sourceDefinition: 
+    ↓jSimpleSource [steps.SimpleSourceStep-1677501459818]: 
+      sourceDefinition: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+          - com.twinsoft.convertigo.beans.common.XMLVector: 
+            - java.lang.String: 
+              - ↑value: 1672736966819
+            - java.lang.String: 
+              - ↑value: ./text()
+      variableName: group
+    ↓jIf [steps.IfStep-1677501459821]: 
+      condition: group != 'role-admin' && group != 'app-poc-energisme' 
+      ↓Object1 [steps.JsonObjectStep-1672737116874]: 
+        ↓Call_Sequence [steps.SequenceStep-1672737048629]: 
+          sourceSequence: poc_energisme.getSitesByGroupName
+          ↓group_name [variables.StepVariable-1672737056528]: 
+            sourceDefinition: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672736966819
+                  - java.lang.String: 
+                    - ↑value: ./text()
+        ↓Field [steps.JsonFieldStep-1672742191583]: 
+          key: 
             - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-              - com.twinsoft.convertigo.beans.common.XMLVector: 
-                - java.lang.String: 
-                  - ↑value: 1672736966819
-                - java.lang.String: 
-                  - ↑value: ./text()
-      ↓Field [steps.JsonFieldStep-1672742191583]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: name
-        value: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: SOURCE
-              - com.twinsoft.convertigo.beans.common.XMLVector: 
-                - java.lang.String: 
-                  - ↑value: 1672736966819
-                - java.lang.String: 
-                  - ↑value: ./text()
-      ↓Count [steps.XMLCountStep-1672744530476]: 
-        nodeName: count
-        sourceDefinition: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-            - com.twinsoft.convertigo.beans.common.XMLVector: 
-              - java.lang.String: 
-                - ↑value: 1672737048629
-              - java.lang.String: 
-                - ↑value: ./document/sites/Object_1
-      ↓Array [steps.JsonArrayStep-1674656018152]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: sites
-        ↓Iterator [steps.IteratorStep-1674655942047]: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: name
+          value: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: SOURCE
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672736966819
+                  - java.lang.String: 
+                    - ↑value: ./text()
+        ↓Count [steps.XMLCountStep-1672744530476]: 
+          nodeName: count
           sourceDefinition: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
@@ -72,55 +68,71 @@
                   - ↑value: 1672737048629
                 - java.lang.String: 
                   - ↑value: ./document/sites/Object_1
-          ↓Call_Transaction [steps.TransactionStep-1674655955902]: 
-            sourceTransaction: poc_energisme.postgreSQL.get_site
-            ↓site_id [variables.StepVariable-1674655973979]: 
-              sourceDefinition: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                  - com.twinsoft.convertigo.beans.common.XMLVector: 
-                    - java.lang.String: 
-                      - ↑value: 1674655942047
-                    - java.lang.String: 
-                      - ↑value: ./id/text()
-            ↓site_table [variables.StepVariable-1674655973981]: 
-              value: ${poc_energisme.sites_table}
-          ↓Object [steps.JsonObjectStep-1674656004878]: 
-            ↓Field [steps.JsonFieldStep-1674656035932]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: id
-              type: number
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: SOURCE
+        ↓Array [steps.JsonArrayStep-1674656018152]: 
+          key: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+              - SmartType: 
+                - ↑mode: PLAIN
+                - →→: sites
+          ↓Iterator [steps.IteratorStep-1674655942047]: 
+            sourceDefinition: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                - com.twinsoft.convertigo.beans.common.XMLVector: 
+                  - java.lang.String: 
+                    - ↑value: 1672737048629
+                  - java.lang.String: 
+                    - ↑value: ./document/sites/Object_1
+            ↓Call_Transaction [steps.TransactionStep-1674655955902]: 
+              sourceTransaction: poc_energisme.postgreSQL.get_site
+              ↓site_id [variables.StepVariable-1674655973979]: 
+                sourceDefinition: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
                     - com.twinsoft.convertigo.beans.common.XMLVector: 
                       - java.lang.String: 
                         - ↑value: 1674655942047
                       - java.lang.String: 
                         - ↑value: ./id/text()
-            ↓Field1 [steps.JsonFieldStep-1674656046175]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: name
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: SOURCE
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1674655955902
-                      - java.lang.String: 
-                        - ↑value: ./document/sql_output/row/nom/text()
+              ↓site_table [variables.StepVariable-1674655973981]: 
+                value: ${poc_energisme.sites_table}
+            ↓Object [steps.JsonObjectStep-1674656004878]: 
+              ↓Field [steps.JsonFieldStep-1674656035932]: 
+                key: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: PLAIN
+                      - →→: id
+                type: number
+                value: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: SOURCE
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1674655942047
+                        - java.lang.String: 
+                          - ↑value: ./id/text()
+              ↓Field1 [steps.JsonFieldStep-1674656046175]: 
+                key: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: PLAIN
+                      - →→: name
+                value: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: SOURCE
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1674655955902
+                        - java.lang.String: 
+                          - ↑value: ./document/sql_output/row/nom/text()
 ↓user [variables.RequestableVariable-1672736954062]: 
 ↓Test_Case [core.TestCase]: 
   ↓user [variables.TestCaseVariable-1672736993984]: 
