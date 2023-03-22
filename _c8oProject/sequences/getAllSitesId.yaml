@@ -1,5 +1,5 @@
 ↓Call_Transaction [steps.TransactionStep-1673606776908]: 
-  sourceTransaction: poc_energisme.groups_sites.GetSitesId
+  sourceTransaction: energy_management.groups_sites.GetSitesId
 ↓sites [steps.JsonArrayStep-1673606995685]: 
   key: 
     - xmlizable: 

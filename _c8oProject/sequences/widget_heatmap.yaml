@@ -14,7 +14,7 @@ responseExpiryDate: absolute,36000
   nodeName: sites
   output: false
 ↓Call_Transaction [steps.TransactionStep-1674135570556]: 
-  sourceTransaction: poc_energisme.postgreSQL.widget_heatmap
+  sourceTransaction: energy_management.postgreSQL.widget_heatmap
   ↓synthese [variables.StepVariable-1674135581672]: 
   ↓date_start [variables.StepVariable-1674135581674]: 
   ↓date_end [variables.StepVariable-1674135581676]: 

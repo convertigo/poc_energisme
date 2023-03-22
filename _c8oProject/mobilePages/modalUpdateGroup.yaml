@@ -93,7 +93,7 @@ title: Title for modalUpdateGroup
           beanData: |
             '{
              "ionBean": "Icon",
-             "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+             "IconName": "source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
              "IonSize": "plain:large"
             }'
           tagName: ion-icon
@@ -112,7 +112,7 @@ title: Title for modalUpdateGroup
           beanData: |
             '{
              "ionBean": "Icon",
-             "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''checkmark-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+             "IconName": "source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''checkmark-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
              "IonSize": "plain:large"
             }'
           tagName: ion-icon
@@ -124,15 +124,15 @@ title: Title for modalUpdateGroup
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
               ↓group [ngx.components.UIControlVariable-1672310695560]: 
                 comment: new variable
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
               ↓IfElse [ngx.components.UIDynamicIf-1672310695563]: 
-                beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                 ↓Toast [ngx.components.UIDynamicAction-1672310695566]: 
                   beanData: |
                     '{
@@ -195,7 +195,7 @@ title: Title for modalUpdateGroup
       beanData: |
         '{
          "ionBean": "Icon",
-         "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+         "IconName": "source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
          "IonSize": "plain:large"
         }'
       tagName: ion-icon
@@ -214,7 +214,7 @@ title: Title for modalUpdateGroup
       beanData: |
         '{
          "ionBean": "Icon",
-         "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''checkmark-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+         "IconName": "source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''checkmark-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
          "IonSize": "plain:large"
         }'
       tagName: ion-icon
@@ -233,7 +233,7 @@ title: Title for modalUpdateGroup
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
           ↓Toast [ngx.components.UIDynamicAction-1672313968865]: 
             beanData: |
               '{
@@ -244,7 +244,7 @@ title: Title for modalUpdateGroup
           ↓CloseModal [ngx.components.UIDynamicAction-1672314090202]: 
             beanData: '{"ionBean":"CloseModalAction","data":"script:{ update : \"true\" }"}'
         ↓CallSequence1 [ngx.components.UIDynamicAction-1672398618109]: 
-          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.updateGroupAndAffiliations"}'
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.updateGroupAndAffiliations"}'
           ↓old_group_name [ngx.components.UIControlVariable-1672398629374]: 
             comment: new variable
             varValue: 
@@ -256,7 +256,7 @@ title: Title for modalUpdateGroup
             varValue: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1672310695491,"identifier":"formUpdateGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
           ↓Toast [ngx.components.UIDynamicAction-1672398657749]: 
             beanData: |
               '{

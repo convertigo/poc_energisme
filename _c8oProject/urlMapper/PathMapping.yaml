@@ -1,6 +1,6 @@
 path: /widget_conso
 ↓GetOperation [rest.GetOperation]: 
-  targetRequestable: poc_energisme.widget_conso
+  targetRequestable: energy_management.widget_conso
   ↓date_start [rest.QueryParameter-1675848338046]: 
     mappedVariableName: date_start
     value: 2021-01-01

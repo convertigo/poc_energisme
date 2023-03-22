@@ -1,6 +1,6 @@
 path: /widget_heatmap
 ↓GetOperation [rest.GetOperation]: 
-  targetRequestable: poc_energisme.widget_heatmap
+  targetRequestable: energy_management.widget_heatmap
   ↓synthese [rest.QueryParameter-1675848435876]: 
     mappedVariableName: synthese
     value: elec

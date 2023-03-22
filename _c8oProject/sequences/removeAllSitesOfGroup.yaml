@@ -1,7 +1,7 @@
 ↓Input_variables [steps.InputVariablesStep-1672320216539]: 
 ↓Call_Sequence [steps.SequenceStep-1672320187449]: 
   output: true
-  sourceSequence: poc_energisme.getSitesByGroupName
+  sourceSequence: energy_management.getSitesByGroupName
   ↓group_name [variables.StepVariable-1672320200891]: 
     sourceDefinition: 
       - xmlizable: 
@@ -57,7 +57,7 @@
                 - ↑value: ''
   ↓Call_Transaction [steps.TransactionStep-1672320389396]: 
     output: true
-    sourceTransaction: poc_energisme.groups_sites.deleteSitesFromGroup
+    sourceTransaction: energy_management.groups_sites.deleteSitesFromGroup
     ↓_use_docid [variables.StepVariable-1672320411433]: 
       description: Document ID
       sourceDefinition: 

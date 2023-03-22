@@ -9,7 +9,7 @@
 ↓initIsAdmin [steps.SimpleStep-1671807013009]: 
   expression: var isAdmin = false;
 ↓Call_Sequence_1 [steps.SequenceStep-1671789340453]: 
-  sourceSequence: poc_energisme.getCurrentUser
+  sourceSequence: energy_management.getCurrentUser
 ↓Call_Sequence [steps.SequenceStep-1671789272348]: 
   sourceSequence: lib_FullSyncGrp.GroupsOf
   ↓user [variables.StepVariable-1671789317997]: 

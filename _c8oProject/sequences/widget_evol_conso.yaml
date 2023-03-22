@@ -78,7 +78,7 @@ responseExpiryDate: absolute,3600
             - →→: Aucun site sélectionné
   ↓jElse [steps.ElseStep-1676489530535]: 
     ↓Call_Transaction [steps.TransactionStep-1676489530541]: 
-      sourceTransaction: poc_energisme.postgreSQL.widget_evol_conso
+      sourceTransaction: energy_management.postgreSQL.widget_evol_conso
       ↓date_start [variables.StepVariable-1676489530544]: 
         description: date_start
       ↓date_end [variables.StepVariable-1676489530547]: 

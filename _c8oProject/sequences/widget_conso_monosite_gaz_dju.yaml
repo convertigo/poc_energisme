@@ -40,7 +40,7 @@ responseExpiryDate: absolute,3600
           - ↑value: ./synthese/text()
   variableName: synthese
 ↓Call_Transaction [steps.TransactionStep-1675083361590]: 
-  sourceTransaction: poc_energisme.postgreSQL.widget_conso
+  sourceTransaction: energy_management.postgreSQL.widget_conso
   ↓date_start [variables.StepVariable-1675083361593]: 
     description: date_start
   ↓date_end [variables.StepVariable-1675083361596]: 

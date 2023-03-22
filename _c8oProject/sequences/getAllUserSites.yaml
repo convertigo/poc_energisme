@@ -1,6 +1,6 @@
 comment: Used to list User Sites in monosite page and when selectionning all sites in multisite page
 ↓Call_Sequence [steps.SequenceStep-1674741470849]: 
-  sourceSequence: poc_energisme.getGroupsOf
+  sourceSequence: energy_management.getGroupsOf
   ↓user [variables.StepVariable-1674741478011]: 
 ↓sites [steps.JsonArrayStep-1674741578830]: 
   key: 

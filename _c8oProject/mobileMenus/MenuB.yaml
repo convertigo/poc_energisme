@@ -30,12 +30,12 @@ tagName: ion-menu
       tagName: button
     ↓MenuItem [ngx.components.UIDynamicMenuItem-1676298581454]: 
       beanData: '{"ionBean":"MenuItem"}'
-      itempage: poc_energisme.Application.NgxApp.Multisite
+      itempage: energy_management.Application.NgxApp.Multisite
       itemtitle: '''Multisite'''
       tagName: ion-menu-toggle
     ↓MenuItem1 [ngx.components.UIDynamicMenuItem-1676298581457]: 
       beanData: '{"ionBean":"MenuItem"}'
-      itempage: poc_energisme.Application.NgxApp.Monosite
+      itempage: energy_management.Application.NgxApp.Monosite
       itemtitle: '''Monosite'''
       tagName: ion-menu-toggle
     ↓Directive [ngx.components.UIControlDirective-1676298581460]: 
@@ -46,6 +46,6 @@ tagName: ion-menu
           - MobileSmartSourceType: script:this.global['isAdmin'] != undefined && this.global['isAdmin'] == 'true'
       ↓MenuItem [ngx.components.UIDynamicMenuItem-1676298581463]: 
         beanData: '{"ionBean":"MenuItem"}'
-        itempage: poc_energisme.Application.NgxApp.Adminstration
+        itempage: energy_management.Application.NgxApp.Adminstration
         itemtitle: '''Paramètres'''
         tagName: ion-menu-toggle

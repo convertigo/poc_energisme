@@ -27,7 +27,7 @@ responseExpiryDate: absolute,3600
           - ↑value: ./synthese/text()
   variableName: synthese
 ↓Call_Transaction [steps.TransactionStep-1673276348359]: 
-  sourceTransaction: poc_energisme.postgreSQL.widget_conso_total
+  sourceTransaction: energy_management.postgreSQL.widget_conso_total
   ↓date_start [variables.StepVariable-1673276356560]: 
     description: date_start
   ↓date_end [variables.StepVariable-1673276356562]: 
@@ -328,6 +328,16 @@ responseExpiryDate: absolute,3600
               - java.lang.String: 
                 - ↑value: ./document/sql_output/row/sum_conso_elec/text()
         variableName: elec
+      ↓dju [steps.SimpleSourceStep-1679412981393]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673276348359
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row/sum_dju/text()
+        variableName: dju
       ↓calculTotal [steps.SimpleStep-1673276558296]: 
         expression: |
           //var total  = Math.round( (Number(gaz) + Number(elec)) * 100) / 100;
@@ -560,6 +570,16 @@ responseExpiryDate: absolute,3600
               - java.lang.String: 
                 - ↑value: ./document/sql_output/row/sum_conso_elec/text()
         variableName: elec
+      ↓dju [steps.SimpleSourceStep-1679412975056]: 
+        sourceDefinition: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+            - com.twinsoft.convertigo.beans.common.XMLVector: 
+              - java.lang.String: 
+                - ↑value: 1673276348359
+              - java.lang.String: 
+                - ↑value: ./document/sql_output/row/sum_dju/text()
+        variableName: dju
       ↓calculTotal [steps.SimpleStep-1673864021012]: 
         expression: |
           //var total  = Math.round( (Number(gaz) + Number(elec)) * 100) / 100;
@@ -1013,11 +1033,11 @@ responseExpiryDate: absolute,3600
     value: 2021-01-01
   ↓date_end [variables.TestCaseVariable-1673863900702]: 
     description: date_end
-    value: 2022-12-01
+    value: 2023-06-01
   ↓sites [variables.TestCaseVariable-1673863900705]: 
-    value: '[7991, 7626]'
+    value: '[14123]'
   ↓synthese [variables.TestCaseVariable-1673863900708]: 
-    value: elec
+    value: gaz
 ↓error [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1674227220018]: 
     description: date_start

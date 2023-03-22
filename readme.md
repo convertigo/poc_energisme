@@ -1,7 +1,7 @@
 
 
 
-# poc_energisme
+# energy_management
 
 Convertigo NGX builder Project
 
@@ -55,17 +55,17 @@ For more technical informations : [documentation](./project.md)
      <tr><td>To contribute</td><td>
 
      ```
-     poc_energisme=https://github.com/convertigo/poc_energisme.git:branch=main
+     energy_management=https://github.com/convertigo/energy_management.git:branch=main
      ```
      </td></tr>
      <tr><td>To simply use</td><td>
 
      ```
-     poc_energisme=https://github.com/convertigo/poc_energisme/archive/main.zip
+     energy_management=https://github.com/convertigo/energy_management/archive/main.zip
      ```
      </td></tr>
     </table>
-3. Click the `Finish` button. This will automatically import the __poc_energisme__ project
+3. Click the `Finish` button. This will automatically import the __energy_management__ project
 
 
 ## Rest Web Service

@@ -1,13 +1,13 @@
 segment: admin
 title: Administration
 ↓UseSharedComponent [ngx.components.UIUseShared-1671633573137]: 
-  sharedcomponent: poc_energisme.Application.NgxApp.header
+  sharedcomponent: energy_management.Application.NgxApp.header
   ↓username [ngx.components.UIUseVariable-1671633902509]: 
     comment: Username to display
     varValue: 
       - xmlizable: 
         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+        - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
   ↓title [ngx.components.UIUseVariable-1671634389575]: 
     varValue: 
       - xmlizable: 
@@ -53,7 +53,7 @@ title: Administration
                    "Value": "plain:referentiels"
                   }'
                 ↓CallSequence2 [ngx.components.UIDynamicAction-1672764408567]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchGroup"}'
                   ↓label [ngx.components.UIControlVariable-1672764408570]: 
                     comment: new variable
                     varValue: 
@@ -65,9 +65,9 @@ title: Administration
                     varValue: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                 ↓CallSequence3 [ngx.components.UIDynamicAction-1672764408579]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchSite"}'
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchSite"}'
                   ↓label [ngx.components.UIControlVariable-1672764408582]: 
                     comment: new variable
                     varValue: 
@@ -108,9 +108,9 @@ title: Administration
                    "Value": "plain:users"
                   }'
                 ↓CallSequence [ngx.components.UIDynamicAction-1672764626982]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUsersList"}'
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getUsersList"}'
                 ↓CallSequence1 [ngx.components.UIDynamicAction-1672765737123]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getGroupsList"}'
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getGroupsList"}'
                   isEnabled: false
                 ↓groupsOfUser [ngx.components.UIDynamicAction-1672827481222]: 
                   beanData: |
@@ -127,7 +127,7 @@ title: Administration
                      "Value": "script:[]"
                     }'
                 ↓CallSequence2 [ngx.components.UIDynamicAction-1672827636746]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchGroup"}'
                   ↓label [ngx.components.UIControlVariable-1672827636749]: 
                     comment: new variable
                     varValue: 
@@ -139,7 +139,7 @@ title: Administration
                     varValue: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓Directive [ngx.components.UIControlDirective-1672763810952]: 
       directiveName: If
       directiveSource: 
@@ -166,7 +166,7 @@ title: Administration
                 beanData: |
                   '{
                    "ionBean": "Icon",
-                   "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                   "IconName": "source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
                    "IonSize": "plain:large"
                   }'
                 tagName: ion-icon
@@ -175,7 +175,7 @@ title: Administration
                     beanData: |
                       '{
                        "ionBean": "ModalAction",
-                       "page": "plain:poc_energisme.Application.NgxApp.modalAddGroup",
+                       "page": "plain:energy_management.Application.NgxApp.modalAddGroup",
                        "blockWhileDisplayed": "plain:true"
                       }'
                     ↓IfElse [ngx.components.UIDynamicIf-1672314508071]: 
@@ -187,7 +187,7 @@ title: Administration
                           varValue: 
                             - xmlizable: 
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                              - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                              - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                       ↓Else_Handler [ngx.components.UIActionElseEvent-1672314521923]: 
                         ↓Toast [ngx.components.UIDynamicAction-1672314527951]: 
                           beanData: '{"ionBean":"ToastAction","message":"script:JSON.stringify(stack[''1672220987105''].out)"}'
@@ -251,7 +251,7 @@ title: Administration
               directiveSource: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"lib_FullSyncGrp.GroupsOf","marker":""}],"path":"?.group","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"lib_FullSyncGrp.GroupsOf","marker":""}],"path":"?.group","prefix":"","suffix":"","custom":"","useCustom":false}}
               isEnabled: false
               ↓ListItem [ngx.components.UIDynamicElement-1672061304380]: 
                 beanData: '{"ionBean":"ListItem"}'
@@ -333,7 +333,7 @@ title: Administration
                           ↓IfElse [ngx.components.UIDynamicIf-1672237843286]: 
                             beanData: '{"ionBean":"IfElseAction"}'
                             ↓CallSequence [ngx.components.UIDynamicAction-1672233068307]: 
-                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                               ↓group_name [ngx.components.UIControlVariable-1672233082899]: 
                                 comment: new variable
                                 varValue: 
@@ -345,7 +345,7 @@ title: Administration
                                   '{
                                    "ionBean": "SetLocalAction",
                                    "Property": "plain:sitesFromGroup",
-                                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                   }'
                                 isEnabled: false
                               ↓pushSitesFromGroups [ngx.components.UICustomAction-1672238697429]: 
@@ -373,7 +373,7 @@ title: Administration
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓Else_Handler [ngx.components.UIActionElseEvent-1672237871757]: 
                               ↓If [ngx.components.UIDynamicAction-1672237880178]: 
                                 beanData: '{"ionBean":"IfAction","condition":"script:this.local[''sitesFromGroup''] != undefined"}'
@@ -386,7 +386,7 @@ title: Administration
                                     }'
                                   isEnabled: false
                                 ↓CallSequence [ngx.components.UIDynamicAction-1672240655879]: 
-                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                   ↓group_name [ngx.components.UIControlVariable-1672240655882]: 
                                     comment: new variable
                                     varValue: 
@@ -398,7 +398,7 @@ title: Administration
                                       '{
                                        "ionBean": "SetLocalAction",
                                        "Property": "plain:sitesFromGroup",
-                                       "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                       "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                       }'
                                     isEnabled: false
                                   ↓removeSitesFromGroups [ngx.components.UICustomAction-1672240655888]: 
@@ -423,7 +423,7 @@ title: Administration
                                       varValue: 
                                         - xmlizable: 
                                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                     ↓Directive1 [ngx.components.UIControlDirective-1672152612499]: 
                       directiveName: If
                       directiveSource: 
@@ -434,8 +434,8 @@ title: Administration
                         beanData: |
                           '{
                            "ionBean": "Icon",
-                           "IconName": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
-                           "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                           "IconName": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                           "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                           }'
                         tagName: ion-icon
                         ↓Style [ngx.components.UIStyle-1672246053199]: 
@@ -454,7 +454,7 @@ title: Administration
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                           - MobileSmartSourceType: script:!group.includes('ad:')
                       ↓Icon [ngx.components.UIDynamicElement-1672153457974]: 
-                        beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                        beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                         isEnabled: false
                         tagName: ion-icon
                     ↓Text [ngx.components.UIText-1672151677601]: 
@@ -479,7 +479,7 @@ title: Administration
                               beanData: |
                                 '{
                                  "ionBean": "ModalAction",
-                                 "page": "plain:poc_energisme.Application.NgxApp.modalUpdateGroup",
+                                 "page": "plain:energy_management.Application.NgxApp.modalUpdateGroup",
                                  "data": "script:{ name: group }",
                                  "blockWhileDisplayed": "plain:true"
                                 }'
@@ -492,12 +492,12 @@ title: Administration
                                     varValue: 
                                       - xmlizable: 
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                        - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓Toast [ngx.components.UIDynamicAction-1672311438736]: 
                               beanData: '{"ionBean":"ToastAction","message":"script:group"}'
                               isEnabled: false
                           ↓Icon [ngx.components.UIDynamicElement-1672063006680]: 
-                            beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                            beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                             tagName: ion-icon
                         ↓buttonDelete [ngx.components.UIDynamicElement-1672063036369]: 
                           beanData: '{"ionBean":"Button"}'
@@ -514,7 +514,7 @@ title: Administration
                               ↓IfElse [ngx.components.UIDynamicIf-1672247811229]: 
                                 beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.success == \"true\""}'
                                 ↓CallSequence1 [ngx.components.UIDynamicAction-1672320516296]: 
-                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeAllSitesOfGroup"}'
+                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.removeAllSitesOfGroup"}'
                                   ↓CallSequence [ngx.components.UIDynamicAction-1672248398634]: 
                                     beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
                                     ↓user [ngx.components.UIControlVariable-1672248417596]: 
@@ -522,7 +522,7 @@ title: Administration
                                       varValue: 
                                         - xmlizable: 
                                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                          - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                          - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                                     ↓removeSitesFromGroups [ngx.components.UICustomAction-1672320723691]: 
                                       actionValue: 
                                         - xmlizable: 
@@ -545,7 +545,7 @@ title: Administration
                                         varValue: 
                                           - xmlizable: 
                                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                   ↓group [ngx.components.UIControlVariable-1672320542199]: 
                                     comment: new variable
                                     varValue: 
@@ -650,7 +650,7 @@ title: Administration
                         beanData: |
                           '{
                            "ionBean": "Icon",
-                           "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                           "IconName": "source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add-circle''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
                            "IonSize": "plain:large"
                           }'
                         tagName: ion-icon
@@ -659,7 +659,7 @@ title: Administration
                             beanData: |
                               '{
                                "ionBean": "ModalAction",
-                               "page": "plain:poc_energisme.Application.NgxApp.modalAddGroup",
+                               "page": "plain:energy_management.Application.NgxApp.modalAddGroup",
                                "blockWhileDisplayed": "plain:true"
                               }'
                             ↓IfElse [ngx.components.UIDynamicIf-1672764292263]: 
@@ -672,9 +672,9 @@ title: Administration
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                      - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                               ↓CallSequence1 [ngx.components.UIDynamicAction-1675424449786]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchGroup"}'
                                 ↓label [ngx.components.UIControlVariable-1675424459425]: 
                                   comment: new variable
                                   varValue: 
@@ -686,7 +686,7 @@ title: Administration
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                      - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                               ↓Else_Handler [ngx.components.UIActionElseEvent-1672764292272]: 
                                 ↓Toast [ngx.components.UIDynamicAction-1672764292275]: 
                                   beanData: '{"ionBean":"ToastAction","message":"script:JSON.stringify(stack[''1672764292260''].out)"}'
@@ -773,7 +773,7 @@ title: Administration
                             beanData: |
                               '{
                                "ionBean": "CallSequenceAction",
-                               "requestable": "plain:poc_energisme.searchGroup",
+                               "requestable": "plain:energy_management.searchGroup",
                                "noLoading": "plain:true"
                               }'
                             ↓label [ngx.components.UIControlVariable-1672753399308]: 
@@ -793,14 +793,14 @@ title: Administration
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓If [ngx.components.UIDynamicAction-1672753799806]: 
                             beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
                             ↓CallSequence [ngx.components.UIDynamicAction-1672753816328]: 
                               beanData: |
                                 '{
                                  "ionBean": "CallSequenceAction",
-                                 "requestable": "plain:poc_energisme.searchGroup",
+                                 "requestable": "plain:energy_management.searchGroup",
                                  "noLoading": "plain:true"
                                 }'
                               ↓label [ngx.components.UIControlVariable-1672753816331]: 
@@ -820,11 +820,11 @@ title: Administration
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                         ↓IfElse [ngx.components.UIDynamicIf-1672753886345]: 
                           beanData: '{"ionBean":"IfElseAction","condition":"script:event.detail.value.length >= 3"}'
                           ↓CallSequence [ngx.components.UIDynamicAction-1672753899912]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchGroup"}'
                             ↓label [ngx.components.UIControlVariable-1672753899915]: 
                               comment: new variable
                               varValue: 
@@ -842,7 +842,7 @@ title: Administration
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓Else_Handler [ngx.components.UIActionElseEvent-1672753909047]: 
                             ↓If [ngx.components.UIDynamicAction-1672753918284]: 
                               beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
@@ -850,7 +850,7 @@ title: Administration
                                 beanData: |
                                   '{
                                    "ionBean": "CallSequenceAction",
-                                   "requestable": "plain:poc_energisme.searchGroup",
+                                   "requestable": "plain:energy_management.searchGroup",
                                    "noLoading": "plain:true"
                                   }'
                                 ↓label [ngx.components.UIControlVariable-1672753918290]: 
@@ -870,7 +870,7 @@ title: Administration
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                      - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓Event [ngx.components.UIControlEvent-1672753230502]: 
                     attrName: (ngSubmit)
                     eventName: onSubmit
@@ -887,7 +887,7 @@ title: Administration
                       directiveSource: 
                         - xmlizable: 
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                       ↓ListItem [ngx.components.UIDynamicElement-1672393397080]: 
                         beanData: '{"ionBean":"ListItem"}'
                         isEnabled: false
@@ -1025,7 +1025,7 @@ title: Administration
                                   ↓IfElse [ngx.components.UIDynamicIf-1672393397107]: 
                                     beanData: '{"ionBean":"IfElseAction"}'
                                     ↓CallSequence [ngx.components.UIDynamicAction-1672393397110]: 
-                                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                       ↓group_name [ngx.components.UIControlVariable-1672393397113]: 
                                         comment: new variable
                                         varValue: 
@@ -1037,7 +1037,7 @@ title: Administration
                                           '{
                                            "ionBean": "SetLocalAction",
                                            "Property": "plain:sitesFromGroup",
-                                           "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                           "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                           }'
                                         isEnabled: false
                                       ↓pushSitesFromGroups [ngx.components.UICustomAction-1672393397119]: 
@@ -1065,7 +1065,7 @@ title: Administration
                                           varValue: 
                                             - xmlizable: 
                                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                     ↓Else_Handler [ngx.components.UIActionElseEvent-1672393397125]: 
                                       ↓If [ngx.components.UIDynamicAction-1672393397128]: 
                                         beanData: '{"ionBean":"IfAction","condition":"script:this.local[''sitesFromGroup''] != undefined"}'
@@ -1078,7 +1078,7 @@ title: Administration
                                             }'
                                           isEnabled: false
                                         ↓CallSequence [ngx.components.UIDynamicAction-1672393397134]: 
-                                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                           ↓group_name [ngx.components.UIControlVariable-1672393397137]: 
                                             comment: new variable
                                             varValue: 
@@ -1090,7 +1090,7 @@ title: Administration
                                               '{
                                                "ionBean": "SetLocalAction",
                                                "Property": "plain:sitesFromGroup",
-                                               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                               }'
                                             isEnabled: false
                                           ↓removeSitesFromGroups [ngx.components.UICustomAction-1672393397143]: 
@@ -1115,7 +1115,7 @@ title: Administration
                                               varValue: 
                                                 - xmlizable: 
                                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓RadioButton [ngx.components.UIDynamicElement-1672393431180]: 
                               beanData: '{"ionBean":"RadioButton","Value":"script:group.name"}'
                               tagName: ion-radio
@@ -1171,7 +1171,7 @@ title: Administration
                                   ↓IfElse [ngx.components.UIDynamicIf-1672393449364]: 
                                     beanData: '{"ionBean":"IfElseAction"}'
                                     ↓CallSequence [ngx.components.UIDynamicAction-1672393449367]: 
-                                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                       ↓group_name [ngx.components.UIControlVariable-1672393449370]: 
                                         comment: new variable
                                         varValue: 
@@ -1183,7 +1183,7 @@ title: Administration
                                           '{
                                            "ionBean": "SetLocalAction",
                                            "Property": "plain:sitesFromGroup",
-                                           "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                           "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                           }'
                                         isEnabled: false
                                       ↓pushSitesFromGroups [ngx.components.UICustomAction-1672393449376]: 
@@ -1211,7 +1211,7 @@ title: Administration
                                           varValue: 
                                             - xmlizable: 
                                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                     ↓Else_Handler [ngx.components.UIActionElseEvent-1672393449382]: 
                                       ↓If [ngx.components.UIDynamicAction-1672393449385]: 
                                         beanData: '{"ionBean":"IfAction","condition":"script:this.local[''sitesFromGroup''] != undefined"}'
@@ -1224,7 +1224,7 @@ title: Administration
                                             }'
                                           isEnabled: false
                                         ↓CallSequence [ngx.components.UIDynamicAction-1672393449391]: 
-                                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                           ↓group_name [ngx.components.UIControlVariable-1672393449394]: 
                                             comment: new variable
                                             varValue: 
@@ -1236,7 +1236,7 @@ title: Administration
                                               '{
                                                "ionBean": "SetLocalAction",
                                                "Property": "plain:sitesFromGroup",
-                                               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                               }'
                                             isEnabled: false
                                           ↓removeSitesFromGroups [ngx.components.UICustomAction-1672393449400]: 
@@ -1261,7 +1261,7 @@ title: Administration
                                               varValue: 
                                                 - xmlizable: 
                                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓Directive1 [ngx.components.UIControlDirective-1672393397149]: 
                               directiveName: If
                               directiveSource: 
@@ -1272,8 +1272,8 @@ title: Administration
                                 beanData: |
                                   '{
                                    "ionBean": "Icon",
-                                   "IconName": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
-                                   "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                   "IconName": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                                   "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                   }'
                                 tagName: ion-icon
                                 ↓Style [ngx.components.UIStyle-1672393397155]: 
@@ -1292,7 +1292,7 @@ title: Administration
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                   - MobileSmartSourceType: script:!group.name.includes('ad:')
                               ↓Icon [ngx.components.UIDynamicElement-1672393397161]: 
-                                beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                 isEnabled: false
                                 tagName: ion-icon
                             ↓Text [ngx.components.UIText-1672393397164]: 
@@ -1317,7 +1317,7 @@ title: Administration
                                       beanData: |
                                         '{
                                          "ionBean": "ModalAction",
-                                         "page": "plain:poc_energisme.Application.NgxApp.modalUpdateGroup",
+                                         "page": "plain:energy_management.Application.NgxApp.modalUpdateGroup",
                                          "data": "script:{ name: group.name }",
                                          "blockWhileDisplayed": "plain:true"
                                         }'
@@ -1330,7 +1330,7 @@ title: Administration
                                             varValue: 
                                               - xmlizable: 
                                                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                                           ↓SetLocal1 [ngx.components.UIDynamicAction-1672398744220]: 
                                             beanData: |
                                               '{
@@ -1342,7 +1342,7 @@ title: Administration
                                       beanData: '{"ionBean":"ToastAction","message":"script:group"}'
                                       isEnabled: false
                                   ↓Icon [ngx.components.UIDynamicElement-1672393397194]: 
-                                    beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                    beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                     tagName: ion-icon
                                 ↓buttonDelete [ngx.components.UIDynamicElement-1672393397197]: 
                                   beanData: '{"ionBean":"Button"}'
@@ -1359,7 +1359,7 @@ title: Administration
                                       ↓IfElse [ngx.components.UIDynamicIf-1672393397209]: 
                                         beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.success == \"true\""}'
                                         ↓CallSequence1 [ngx.components.UIDynamicAction-1672393397212]: 
-                                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeAllSitesOfGroup"}'
+                                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.removeAllSitesOfGroup"}'
                                           ↓CallSequence [ngx.components.UIDynamicAction-1672393397215]: 
                                             beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
                                             ↓user [ngx.components.UIControlVariable-1672393397218]: 
@@ -1367,7 +1367,7 @@ title: Administration
                                               varValue: 
                                                 - xmlizable: 
                                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                                             ↓removeSitesFromGroups [ngx.components.UICustomAction-1672393397221]: 
                                               actionValue: 
                                                 - xmlizable: 
@@ -1391,7 +1391,7 @@ title: Administration
                                                 varValue: 
                                                   - xmlizable: 
                                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                             ↓SetLocal1 [ngx.components.UIDynamicAction-1672398823094]: 
                                               beanData: |
                                                 '{
@@ -1485,7 +1485,7 @@ title: Administration
                         ↓IfElse [ngx.components.UIDynamicIf-1672394173672]: 
                           beanData: '{"ionBean":"IfElseAction"}'
                           ↓CallSequence [ngx.components.UIDynamicAction-1672394173675]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                             ↓group_name [ngx.components.UIControlVariable-1672394173678]: 
                               comment: new variable
                               varValue: 
@@ -1497,7 +1497,7 @@ title: Administration
                                 '{
                                  "ionBean": "SetLocalAction",
                                  "Property": "plain:sitesFromGroup",
-                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                 }'
                               isEnabled: false
                             ↓pushSitesFromGroups [ngx.components.UICustomAction-1672394173684]: 
@@ -1525,9 +1525,9 @@ title: Administration
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓CallSequence1 [ngx.components.UIDynamicAction-1672766356339]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getGroupsOf"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getGroupsOf"}'
                             isEnabled: false
                             ↓user [ngx.components.UIControlVariable-1672766375035]: 
                               comment: new variable
@@ -1558,7 +1558,7 @@ title: Administration
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓Else_Handler [ngx.components.UIActionElseEvent-1672394173690]: 
                             ↓If [ngx.components.UIDynamicAction-1672394173693]: 
                               beanData: '{"ionBean":"IfAction","condition":"script:this.local[''sitesFromGroup''] != undefined"}'
@@ -1571,7 +1571,7 @@ title: Administration
                                   }'
                                 isEnabled: false
                               ↓CallSequence [ngx.components.UIDynamicAction-1672394173699]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                 ↓group_name [ngx.components.UIControlVariable-1672394173702]: 
                                   comment: new variable
                                   varValue: 
@@ -1583,7 +1583,7 @@ title: Administration
                                     '{
                                      "ionBean": "SetLocalAction",
                                      "Property": "plain:sitesFromGroup",
-                                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                     }'
                                   isEnabled: false
                                 ↓removeSitesFromGroups [ngx.components.UICustomAction-1672394173708]: 
@@ -1608,9 +1608,9 @@ title: Administration
                                     varValue: 
                                       - xmlizable: 
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                               ↓CallSequence1 [ngx.components.UIDynamicAction-1672766564893]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getGroupsOf"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getGroupsOf"}'
                                 isEnabled: false
                                 ↓user [ngx.components.UIControlVariable-1672766574657]: 
                                   comment: new variable
@@ -1640,7 +1640,7 @@ title: Administration
                                     varValue: 
                                       - xmlizable: 
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                 ↓Attr [ngx.components.UIAttribute-1676654207917]: 
                   attrName: class
                   attrValue: 
@@ -1715,7 +1715,7 @@ title: Administration
                             beanData: |
                               '{
                                "ionBean": "CallSequenceAction",
-                               "requestable": "plain:poc_energisme.searchGroup",
+                               "requestable": "plain:energy_management.searchGroup",
                                "noLoading": "plain:true"
                               }'
                             ↓label [ngx.components.UIControlVariable-1672761261208]: 
@@ -1735,14 +1735,14 @@ title: Administration
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓If [ngx.components.UIDynamicAction-1672761261217]: 
                             beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
                             ↓CallSequence [ngx.components.UIDynamicAction-1672761261220]: 
                               beanData: |
                                 '{
                                  "ionBean": "CallSequenceAction",
-                                 "requestable": "plain:poc_energisme.searchGroup",
+                                 "requestable": "plain:energy_management.searchGroup",
                                  "noLoading": "plain:true"
                                 }'
                               ↓label [ngx.components.UIControlVariable-1672761261223]: 
@@ -1762,11 +1762,11 @@ title: Administration
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                         ↓IfElse [ngx.components.UIDynamicIf-1672761261232]: 
                           beanData: '{"ionBean":"IfElseAction","condition":"script:event.detail.value.length >= 3"}'
                           ↓CallSequence [ngx.components.UIDynamicAction-1672761261235]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchSite"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchSite"}'
                             ↓label [ngx.components.UIControlVariable-1672761261238]: 
                               comment: new variable
                               varValue: 
@@ -1777,7 +1777,7 @@ title: Administration
                             ↓If [ngx.components.UIDynamicAction-1672761261250]: 
                               beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
                               ↓CallSequence [ngx.components.UIDynamicAction-1672761261253]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchSite"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchSite"}'
                                 ↓label [ngx.components.UIControlVariable-1672761261256]: 
                                   comment: new variable
                                   varValue: 
@@ -1790,7 +1790,7 @@ title: Administration
                   directiveSource: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchSite","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.searchSite","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓GridRow [ngx.components.UIDynamicElement-1672221082964]: 
                     beanData: '{"ionBean":"GridRow","Height":"plain"}'
                     tagName: ion-row
@@ -1891,7 +1891,7 @@ title: Administration
                                 beanData: '{"ionBean":"IfElseAction","condition":"script:this.local[''sitesFromGroup''].includes(''''+stack.root.scope.site.id)"}'
                                 comment: case where sites is selected in group so we want to remove
                                 ↓CallSequence [ngx.components.UIDynamicAction-1672396009889]: 
-                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeSiteFromGroup"}'
+                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.removeSiteFromGroup"}'
                                   ↓group [ngx.components.UIControlVariable-1672396023549]: 
                                     comment: new variable
                                     varValue: 
@@ -1905,7 +1905,7 @@ title: Administration
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                         - MobileSmartSourceType: script:site.id
                                   ↓IfElse [ngx.components.UIDynamicIf-1672396181510]: 
-                                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.removeSiteFromGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.removeSiteFromGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                     ↓Toast [ngx.components.UIDynamicAction-1672396768356]: 
                                       beanData: |
                                         '{
@@ -1941,7 +1941,7 @@ title: Administration
                                         varValue: 
                                           - xmlizable: 
                                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                       ↓site_id [ngx.components.UIControlVariable-1672825204098]: 
                                         varValue: 
                                           - xmlizable: 
@@ -1972,13 +1972,13 @@ title: Administration
                                     ↓IfElse [ngx.components.UIDynamicIf-1672223355451]: 
                                       beanData: '{"ionBean":"IfElseAction"}'
                                       ↓CallSequence [ngx.components.UIDynamicAction-1672224849928]: 
-                                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.insertGroupSites"}'
+                                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.insertGroupSites"}'
                                         ↓groups [ngx.components.UIControlVariable-1672224876098]: 
                                           comment: new variable
                                           varValue: 
                                             - xmlizable: 
                                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                              - MobileSmartSourceType: source:{"filter":"Local","project":"poc_energisme","input":"","model":{"data":[{"localObject":"local"}],"path":"?.selectedGroups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                              - MobileSmartSourceType: source:{"filter":"Local","project":"energy_management","input":"","model":{"data":[{"localObject":"local"}],"path":"?.selectedGroups","prefix":"","suffix":"","custom":"","useCustom":false}}
                                         ↓site_id [ngx.components.UIControlVariable-1672224876100]: 
                                           comment: new variable
                                           varValue: 
@@ -2096,13 +2096,13 @@ title: Administration
                       directiveSource: 
                         - xmlizable: 
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                          - MobileSmartSourceType: script:listen(['poc_energisme.getUsersList'])?.users != undefined
+                          - MobileSmartSourceType: script:listen(['energy_management.getUsersList'])?.users != undefined
                       ↓Directive [ngx.components.UIControlDirective-1672764796041]: 
                         directiveItemName: user
                         directiveSource: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getUsersList","marker":""}],"path":"?.users","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getUsersList","marker":""}],"path":"?.users","prefix":"","suffix":"","custom":"","useCustom":false}}
                         ↓GridRow [ngx.components.UIDynamicElement-1672764814526]: 
                           beanData: '{"ionBean":"GridRow"}'
                           tagName: ion-row
@@ -2192,7 +2192,7 @@ title: Administration
                         ↓IfElse [ngx.components.UIDynamicIf-1672766173448]: 
                           beanData: '{"ionBean":"IfElseAction"}'
                           ↓CallSequence [ngx.components.UIDynamicAction-1672766173451]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                             isEnabled: false
                             ↓group_name [ngx.components.UIControlVariable-1672766173454]: 
                               comment: new variable
@@ -2205,7 +2205,7 @@ title: Administration
                                 '{
                                  "ionBean": "SetLocalAction",
                                  "Property": "plain:sitesFromGroup",
-                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                 }'
                               isEnabled: false
                             ↓pushSitesFromGroups [ngx.components.UICustomAction-1672766173460]: 
@@ -2233,9 +2233,9 @@ title: Administration
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓CallSequence1 [ngx.components.UIDynamicAction-1672824198206]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getGroupsOf"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getGroupsOf"}'
                             ↓user [ngx.components.UIControlVariable-1672824198209]: 
                               comment: new variable
                               varValue: 
@@ -2265,7 +2265,7 @@ title: Administration
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓Else_Handler [ngx.components.UIActionElseEvent-1672766173466]: 
                             ↓If [ngx.components.UIDynamicAction-1672766173469]: 
                               beanData: '{"ionBean":"IfAction","condition":"script:this.local[''groupsOfUser''] != undefined"}'
@@ -2278,7 +2278,7 @@ title: Administration
                                   }'
                                 isEnabled: false
                               ↓CallSequence [ngx.components.UIDynamicAction-1672766173475]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                 isEnabled: false
                                 ↓group_name [ngx.components.UIControlVariable-1672766173478]: 
                                   comment: new variable
@@ -2291,7 +2291,7 @@ title: Administration
                                     '{
                                      "ionBean": "SetLocalAction",
                                      "Property": "plain:sitesFromGroup",
-                                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getSitesByGroupName\",\"marker\":\"\"}],\"path\":\"?.sites\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                     }'
                                   isEnabled: false
                                 ↓removeSitesFromGroups [ngx.components.UICustomAction-1672766173484]: 
@@ -2316,9 +2316,9 @@ title: Administration
                                     varValue: 
                                       - xmlizable: 
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                               ↓CallSequence1 [ngx.components.UIDynamicAction-1672824256615]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getGroupsOf"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getGroupsOf"}'
                                 ↓user [ngx.components.UIControlVariable-1672824256618]: 
                                   comment: new variable
                                   varValue: 
@@ -2347,7 +2347,7 @@ title: Administration
                                     varValue: 
                                       - xmlizable: 
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getGroupsOf","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                 ↓Attr [ngx.components.UIAttribute-1676654852557]: 
                   attrName: class
                   attrValue: 
@@ -2398,7 +2398,7 @@ title: Administration
                             beanData: |
                               '{
                                "ionBean": "CallSequenceAction",
-                               "requestable": "plain:poc_energisme.searchGroup",
+                               "requestable": "plain:energy_management.searchGroup",
                                "noLoading": "plain:true"
                               }'
                             ↓label [ngx.components.UIControlVariable-1672827810031]: 
@@ -2418,14 +2418,14 @@ title: Administration
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓If [ngx.components.UIDynamicAction-1672827810040]: 
                             beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
                             ↓CallSequence [ngx.components.UIDynamicAction-1672827810043]: 
                               beanData: |
                                 '{
                                  "ionBean": "CallSequenceAction",
-                                 "requestable": "plain:poc_energisme.searchGroup",
+                                 "requestable": "plain:energy_management.searchGroup",
                                  "noLoading": "plain:true"
                                 }'
                               ↓label [ngx.components.UIControlVariable-1672827810046]: 
@@ -2445,11 +2445,11 @@ title: Administration
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                         ↓IfElse [ngx.components.UIDynamicIf-1672827810055]: 
                           beanData: '{"ionBean":"IfElseAction","condition":"script:event.detail.value.length >= 3"}'
                           ↓CallSequence [ngx.components.UIDynamicAction-1672827810058]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchGroup"}'
                             ↓label [ngx.components.UIControlVariable-1672827810061]: 
                               comment: new variable
                               varValue: 
@@ -2461,7 +2461,7 @@ title: Administration
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓Else_Handler [ngx.components.UIActionElseEvent-1672827810070]: 
                             ↓If [ngx.components.UIDynamicAction-1672827810073]: 
                               beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
@@ -2469,7 +2469,7 @@ title: Administration
                                 beanData: |
                                   '{
                                    "ionBean": "CallSequenceAction",
-                                   "requestable": "plain:poc_energisme.searchGroup",
+                                   "requestable": "plain:energy_management.searchGroup",
                                    "noLoading": "plain:true"
                                   }'
                                 ↓label [ngx.components.UIControlVariable-1672827810079]: 
@@ -2483,7 +2483,7 @@ title: Administration
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                      - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                 ↓Form [ngx.components.UIForm-1672765769554]: 
                   identifier: formGroups
                   ↓RadioGroup [ngx.components.UIDynamicElement-1672765769557]: 
@@ -2494,13 +2494,13 @@ title: Administration
                       directiveSource: 
                         - xmlizable: 
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                          - MobileSmartSourceType: script:listen(['poc_energisme.searchGroup'])?.groups != undefined
+                          - MobileSmartSourceType: script:listen(['energy_management.searchGroup'])?.groups != undefined
                       ↓Directive [ngx.components.UIControlDirective-1672765769563]: 
                         directiveItemName: group
                         directiveSource: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
                         ↓GridRow [ngx.components.UIDynamicElement-1672765769566]: 
                           beanData: '{"ionBean":"GridRow"}'
                           tagName: ion-row
@@ -2525,8 +2525,8 @@ title: Administration
                                   beanData: |
                                     '{
                                      "ionBean": "Icon",
-                                     "IconName": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
-                                     "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                     "IconName": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                                     "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                     }'
                                   tagName: ion-icon
                                   ↓Style [ngx.components.UIStyle-1672765902071]: 
@@ -2545,7 +2545,7 @@ title: Administration
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                     - MobileSmartSourceType: script:!group.name.includes('ad:')
                                 ↓Icon [ngx.components.UIDynamicElement-1672765902077]: 
-                                  beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                  beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                   isEnabled: false
                                   tagName: ion-icon
                               ↓Text [ngx.components.UIText-1672765902080]: 
@@ -2571,7 +2571,7 @@ title: Administration
                                         beanData: |
                                           '{
                                            "ionBean": "ModalAction",
-                                           "page": "plain:poc_energisme.Application.NgxApp.modalUpdateGroup",
+                                           "page": "plain:energy_management.Application.NgxApp.modalUpdateGroup",
                                            "data": "script:{ name: group.name }",
                                            "blockWhileDisplayed": "plain:true"
                                           }'
@@ -2584,7 +2584,7 @@ title: Administration
                                               varValue: 
                                                 - xmlizable: 
                                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                                             ↓SetLocal1 [ngx.components.UIDynamicAction-1672765902107]: 
                                               beanData: |
                                                 '{
@@ -2596,7 +2596,7 @@ title: Administration
                                         beanData: '{"ionBean":"ToastAction","message":"script:group"}'
                                         isEnabled: false
                                     ↓Icon [ngx.components.UIDynamicElement-1672765902113]: 
-                                      beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                      beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                       tagName: ion-icon
                                   ↓buttonDelete [ngx.components.UIDynamicElement-1672765902116]: 
                                     beanData: '{"ionBean":"Button"}'
@@ -2613,7 +2613,7 @@ title: Administration
                                         ↓IfElse [ngx.components.UIDynamicIf-1672765902128]: 
                                           beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.success == \"true\""}'
                                           ↓CallSequence1 [ngx.components.UIDynamicAction-1672765902131]: 
-                                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeAllSitesOfGroup"}'
+                                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.removeAllSitesOfGroup"}'
                                             ↓CallSequence [ngx.components.UIDynamicAction-1672765902134]: 
                                               beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
                                               ↓user [ngx.components.UIControlVariable-1672765902137]: 
@@ -2621,7 +2621,7 @@ title: Administration
                                                 varValue: 
                                                   - xmlizable: 
                                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                    - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                                               ↓removeSitesFromGroups [ngx.components.UICustomAction-1672765902140]: 
                                                 actionValue: 
                                                   - xmlizable: 
@@ -2645,7 +2645,7 @@ title: Administration
                                                   varValue: 
                                                     - xmlizable: 
                                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                               ↓SetLocal1 [ngx.components.UIDynamicAction-1672765902146]: 
                                                 beanData: |
                                                   '{
@@ -2685,7 +2685,7 @@ title: Administration
                                       comment: case where sites is selected in group so we want to remove
                                       isEnabled: false
                                       ↓CallSequence [ngx.components.UIDynamicAction-1672766017755]: 
-                                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeSiteFromGroup"}'
+                                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.removeSiteFromGroup"}'
                                         isEnabled: false
                                         ↓group [ngx.components.UIControlVariable-1672766017758]: 
                                           comment: new variable
@@ -2700,7 +2700,7 @@ title: Administration
                                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                               - MobileSmartSourceType: script:site.id
                                         ↓IfElse [ngx.components.UIDynamicIf-1672766017764]: 
-                                          beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.removeSiteFromGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                          beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.removeSiteFromGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                           ↓Toast [ngx.components.UIDynamicAction-1672766017767]: 
                                             beanData: |
                                               '{
@@ -2730,7 +2730,7 @@ title: Administration
                                               varValue: 
                                                 - xmlizable: 
                                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                           ↓Else_Handler [ngx.components.UIActionElseEvent-1672766017776]: 
                                             ↓Toast [ngx.components.UIDynamicAction-1672766017779]: 
                                               beanData: |
@@ -2756,13 +2756,13 @@ title: Administration
                                           ↓IfElse [ngx.components.UIDynamicIf-1672766017788]: 
                                             beanData: '{"ionBean":"IfElseAction"}'
                                             ↓CallSequence [ngx.components.UIDynamicAction-1672766017791]: 
-                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.insertGroupSites"}'
+                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.insertGroupSites"}'
                                               ↓groups [ngx.components.UIControlVariable-1672766017794]: 
                                                 comment: new variable
                                                 varValue: 
                                                   - xmlizable: 
                                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                    - MobileSmartSourceType: source:{"filter":"Local","project":"poc_energisme","input":"","model":{"data":[{"localObject":"local"}],"path":"?.selectedGroups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                    - MobileSmartSourceType: source:{"filter":"Local","project":"energy_management","input":"","model":{"data":[{"localObject":"local"}],"path":"?.selectedGroups","prefix":"","suffix":"","custom":"","useCustom":false}}
                                               ↓site_id [ngx.components.UIControlVariable-1672766017797]: 
                                                 comment: new variable
                                                 varValue: 
@@ -2892,8 +2892,8 @@ title: Administration
                                   beanData: |
                                     '{
                                      "ionBean": "Icon",
-                                     "IconName": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
-                                     "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                     "IconName": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                                     "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                     }'
                                   tagName: ion-icon
                                   ↓Style [ngx.components.UIStyle-1672766827075]: 
@@ -2912,7 +2912,7 @@ title: Administration
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                     - MobileSmartSourceType: script:!group.name.includes('ad:')
                                 ↓Icon [ngx.components.UIDynamicElement-1672766827081]: 
-                                  beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                  beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                   isEnabled: false
                                   tagName: ion-icon
                               ↓Text [ngx.components.UIText-1672766827084]: 
@@ -2936,7 +2936,7 @@ title: Administration
                                       beanData: '{"ionBean":"IfElseAction","condition":"script:this.local[''groupsOfUser''].includes(''''+stack.root.scope.group.name)"}'
                                       comment: case where sites is selected in group so we want to remove
                                       ↓CallSequence [ngx.components.UIDynamicAction-1672826268161]: 
-                                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeUserFromGroup"}'
+                                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.removeUserFromGroup"}'
                                         ↓group [ngx.components.UIControlVariable-1672826268164]: 
                                           comment: new variable
                                           varValue: 
@@ -2944,7 +2944,7 @@ title: Administration
                                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                               - MobileSmartSourceType: script:stack.root.scope.group.name
                                         ↓IfElse [ngx.components.UIDynamicIf-1672826268170]: 
-                                          beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.removeUserFromGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                                          beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.removeUserFromGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                                           ↓Toast [ngx.components.UIDynamicAction-1672826268173]: 
                                             beanData: |
                                               '{
@@ -2982,7 +2982,7 @@ title: Administration
                                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                                   - MobileSmartSourceType: script:stack.root.scope.group.name
                                             ↓CallSequence [ngx.components.UIDynamicAction-1673279622438]: 
-                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUsersList"}'
+                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getUsersList"}'
                                           ↓Else_Handler [ngx.components.UIActionElseEvent-1672826268185]: 
                                             ↓Toast [ngx.components.UIDynamicAction-1672826268188]: 
                                               beanData: |
@@ -3014,14 +3014,14 @@ title: Administration
                                           ↓IfElse [ngx.components.UIDynamicIf-1672826268197]: 
                                             beanData: '{"ionBean":"IfElseAction"}'
                                             ↓CallSequence [ngx.components.UIDynamicAction-1672826268200]: 
-                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.insertGroupSites"}'
+                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.insertGroupSites"}'
                                               isEnabled: false
                                               ↓groups [ngx.components.UIControlVariable-1672826268203]: 
                                                 comment: new variable
                                                 varValue: 
                                                   - xmlizable: 
                                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                                    - MobileSmartSourceType: source:{"filter":"Local","project":"poc_energisme","input":"","model":{"data":[{"localObject":"local"}],"path":"?.selectedGroups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                                    - MobileSmartSourceType: source:{"filter":"Local","project":"energy_management","input":"","model":{"data":[{"localObject":"local"}],"path":"?.selectedGroups","prefix":"","suffix":"","custom":"","useCustom":false}}
                                               ↓site_id [ngx.components.UIControlVariable-1672826268206]: 
                                                 comment: new variable
                                                 varValue: 
@@ -3063,7 +3063,7 @@ title: Administration
                                                        "position": "plain:top"
                                                       }'
                                             ↓CallSequence1 [ngx.components.UIDynamicAction-1672827084424]: 
-                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.setUserInGroup"}'
+                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.setUserInGroup"}'
                                               ↓user [ngx.components.UIControlVariable-1672827097718]: 
                                                 comment: new variable
                                                 varValue: 
@@ -3103,7 +3103,7 @@ title: Administration
                                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                                         - MobileSmartSourceType: script:stack.root.scope.group.name
                                                   ↓CallSequence [ngx.components.UIDynamicAction-1673280481902]: 
-                                                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUsersList"}'
+                                                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getUsersList"}'
                                                 ↓Else_Handler [ngx.components.UIActionElseEvent-1672827138874]: 
                                                   ↓Toast [ngx.components.UIDynamicAction-1672827138877]: 
                                                     beanData: |
@@ -3265,15 +3265,15 @@ title: Administration
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
               ↓password [ngx.components.UIControlVariable-1671635151167]: 
                 comment: new variable
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['password']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['password']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
               ↓IfElse [ngx.components.UIDynamicIf-1671635207148]: 
-                beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.AddUser\",\"marker\":\"\"}],\"path\":\"?.user\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.AddUser\",\"marker\":\"\"}],\"path\":\"?.user\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                 ↓CallSequence [ngx.components.UIDynamicAction-1671635060682]: 
                   beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.SetUserInGroup"}'
                   ↓user [ngx.components.UIControlVariable-1671635073576]: 
@@ -3281,7 +3281,7 @@ title: Administration
                     varValue: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1671633784865,"identifier":"addUser"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓group [ngx.components.UIControlVariable-1671635073578]: 
                     comment: new variable
                     varValue: 
@@ -3289,7 +3289,7 @@ title: Administration
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: 'script:(addUser?.controls[''isAdmin'']?.value) ? ''admin'' : ''user'''
                   ↓IfElse [ngx.components.UIDynamicIf-1671639441392]: 
-                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_FullSyncGrp.SetUserInGroup\",\"marker\":\"\"}],\"path\":\"?.success\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                     ↓Toast [ngx.components.UIDynamicAction-1671639536961]: 
                       beanData: |
                         '{
@@ -3362,13 +3362,13 @@ title: Administration
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
               ↓group [ngx.components.UIControlVariable-1672137588720]: 
                 comment: new variable
                 varValue: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                    - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671808998745,"identifier":"formAddGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                    - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1671808998745,"identifier":"formAddGroupSite"}],"path":"?.controls['groupName']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓Style [ngx.components.UIStyle-1672244974778]: 
       isEnabled: false
       styleContent: 
@@ -3401,16 +3401,16 @@ title: Administration
               '
 ↓PageEvent [ngx.components.UIPageEvent-1672060069180]: 
   ↓CallSequence [ngx.components.UIDynamicAction-1672060346412]: 
-    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getGroupsOf"}'
+    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getGroupsOf"}'
     isEnabled: false
     ↓user [ngx.components.UIControlVariable-1672060355712]: 
       comment: new variable
       varValue: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+          - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
   ↓CallSequence1 [ngx.components.UIDynamicAction-1672061856428]: 
-    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesList"}'
+    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesList"}'
     isEnabled: false
     ↓SetGlobal [ngx.components.UIDynamicAction-1672237737761]: 
       beanData: |
@@ -3441,34 +3441,34 @@ title: Administration
        "Value": "plain:referentiels"
       }'
     ↓CallSequence2 [ngx.components.UIDynamicAction-1675354785659]: 
-      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getCurrentUser"}'
       ↓SetGlobal [ngx.components.UIDynamicAction-1675354785662]: 
         beanData: |
           '{
            "ionBean": "SetGlobalAction",
            "Property": "plain:authUser",
-           "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+           "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getCurrentUser\",\"marker\":\"\"}],\"path\":\"?.authenticatedUserID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
           }'
         ↓CallSequence [ngx.components.UIDynamicAction-1676653291387]: 
-          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getFromSessionADusername"}'
+          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getFromSessionADusername"}'
           ↓SetGlobal [ngx.components.UIDynamicAction-1675354785665]: 
             beanData: |
               '{
                "ionBean": "SetGlobalAction",
                "Property": "plain:username",
-               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getFromSessionADusername\",\"marker\":\"\"}],\"path\":\"?.username\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+               "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getFromSessionADusername\",\"marker\":\"\"}],\"path\":\"?.username\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
               }'
             ↓CallSequence [ngx.components.UIDynamicAction-1675354785668]: 
-              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getUserGroups"}'
               ↓SetGlobal1 [ngx.components.UIDynamicAction-1675354785671]: 
                 beanData: |
                   '{
                    "ionBean": "SetGlobalAction",
                    "Property": "plain:isAdmin",
-                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                   }'
                 ↓CallSequence2 [ngx.components.UIDynamicAction-1672752976318]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchGroup"}'
                   ↓label [ngx.components.UIControlVariable-1672752994111]: 
                     comment: new variable
                     varValue: 
@@ -3480,9 +3480,9 @@ title: Administration
                     varValue: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                 ↓CallSequence3 [ngx.components.UIDynamicAction-1672761295224]: 
-                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchSite"}'
+                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchSite"}'
                   ↓label [ngx.components.UIControlVariable-1672761313699]: 
                     comment: new variable
                     varValue: 

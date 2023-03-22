@@ -36,7 +36,7 @@
             - java.lang.String: 
               - ↑value: ''
 ↓Call_Transaction [steps.TransactionStep-1672395790646]: 
-  sourceTransaction: poc_energisme.groups_sites.deleteSitesFromGroup
+  sourceTransaction: energy_management.groups_sites.deleteSitesFromGroup
   ↓_use_docid [variables.StepVariable-1672395800191]: 
     description: Document ID
     sourceDefinition: 

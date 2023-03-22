@@ -1,7 +1,7 @@
 jdbcDriverClassName: org.postgresql.Driver
-jdbcURL: ${poc_energisme.database_url}
-jdbcUserName: ${poc_energisme.database_user_name}
-jdbcUserPassword: x48135d279776b75496c5b78e1e302274c353ff159ff159687ac79d415e987751e9b028a8a1f73f96182e3095469b863b
+jdbcURL: ${energy_management.database_url}
+jdbcUserName: ${energy_management.database_user_name}
+jdbcUserPassword: x878b9aac347df7c69dd37ee0c5edad1f0a8cd3006e3bcdb01a43e64a479bb934f149f12e9a0136d21f5e677587d28fc9
 testOnBorrow: true
 ↓Default_transaction [transactions.SqlTransaction]: 
   ↑default: true
@@ -26,10 +26,10 @@ testOnBorrow: true
     ↓site_id [variables.TestCaseVariable-1672148194989]: 
       value: 7731
     ↓site_table [variables.TestCaseVariable-1674652186354]: 
-      value: ${poc_energisme.sites_table}
+      value: ${energy_management.sites_table}
   ↓site_id [variables.RequestableVariable-1672148077216]: 
   ↓site_table [variables.RequestableVariable-1674048853473]: 
-    value: ${poc_energisme.sites_table}
+    value: ${energy_management.sites_table}
 ↓get_sites_list [transactions.SqlTransaction]: 
   sqlQuery: |
     'SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
@@ -60,7 +60,7 @@ testOnBorrow: true
   ↓filter_condition [variables.RequestableVariable-1673885109667]: 
     description: filter_condition
   ↓site_table [variables.RequestableVariable-1674049074082]: 
-    value: ${poc_energisme.sites_table}
+    value: ${energy_management.sites_table}
 ↓search_site [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
@@ -83,12 +83,12 @@ testOnBorrow: true
       value: bar
     ↓site_table [variables.TestCaseVariable-1674552135802]: 
       description: site_table
-      value: ${poc_energisme.sites_table}
+      value: ${energy_management.sites_table}
   ↓label [variables.RequestableVariable-1672757643644]: 
     description: label
   ↓site_table [variables.RequestableVariable-1674049236006]: 
     description: site_table
-    value: ${poc_energisme.sites_table}
+    value: ${energy_management.sites_table}
 ↓select_UUID [transactions.SqlTransaction]: 
   sqlQuery: |
     SELECT uuid, avg(val) AS moy_val, label
@@ -96,7 +96,7 @@ testOnBorrow: true
     GROUP BY uuid, label
   ↓raw_data_table [variables.RequestableVariable-1674049259761]: 
     description: raw_data_table
-    value: ${poc_energisme.raw_data_table}
+    value: ${energy_management.raw_data_table}
 ↓widget_conso [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
@@ -230,10 +230,10 @@ testOnBorrow: true
   ↓sites [variables.RequestableVariable-1672914161741]: 
   ↓agg_function [variables.RequestableVariable-1672914161744]: 
   ↓raw_data_table [variables.RequestableVariable-1673534902509]: 
-    value: ${poc_energisme.raw_data_table}
+    value: ${energy_management.raw_data_table}
   ↓sensor_mapping_table [variables.RequestableVariable-1674049340461]: 
     description: sensor_mapping_table
-    value: ${poc_energisme.sensor_mapping_table}
+    value: ${energy_management.sensor_mapping_table}
 ↓widget_conso_total [transactions.SqlTransaction]: 
   sqlQuery: |
     select
@@ -273,10 +273,10 @@ testOnBorrow: true
     description: date_end
   ↓sites [variables.RequestableVariable-1672914161764]: 
   ↓raw_data_table [variables.RequestableVariable-1673535861667]: 
-    value: ${poc_energisme.raw_data_table}
+    value: ${energy_management.raw_data_table}
   ↓sensor_mapping_table [variables.RequestableVariable-1674049606383]: 
     description: sensor_mapping_table
-    value: ${poc_energisme.sensor_mapping_table}
+    value: ${energy_management.sensor_mapping_table}
 ↓widget_evol_conso [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
@@ -328,10 +328,10 @@ testOnBorrow: true
     ↓agg_function [variables.TestCaseVariable-1676488532885]: 
       value: MM
     ↓raw_data_table [variables.TestCaseVariable-1676489262177]: 
-      value: ${poc_energisme.raw_data_table}
+      value: ${energy_management.raw_data_table}
     ↓sensor_mapping_table [variables.TestCaseVariable-1676489262179]: 
       description: sensor_mapping_table
-      value: ${poc_energisme.sensor_mapping_table}
+      value: ${energy_management.sensor_mapping_table}
     ↓first_year [variables.TestCaseVariable-1676489262181]: 
       value: 2021
     ↓last_year [variables.TestCaseVariable-1676489262183]: 
@@ -348,10 +348,10 @@ testOnBorrow: true
     ↓agg_function [variables.TestCaseVariable-1676489382688]: 
       value: WW
     ↓raw_data_table [variables.TestCaseVariable-1676489382691]: 
-      value: ${poc_energisme.raw_data_table}
+      value: ${energy_management.raw_data_table}
     ↓sensor_mapping_table [variables.TestCaseVariable-1676489382694]: 
       description: sensor_mapping_table
-      value: ${poc_energisme.sensor_mapping_table}
+      value: ${energy_management.sensor_mapping_table}
     ↓first_year [variables.TestCaseVariable-1676489382697]: 
       value: 2021
     ↓last_year [variables.TestCaseVariable-1676489382700]: 
@@ -363,10 +363,10 @@ testOnBorrow: true
   ↓sites [variables.RequestableVariable-1676488532972]: 
   ↓agg_function [variables.RequestableVariable-1676488532975]: 
   ↓raw_data_table [variables.RequestableVariable-1676488532978]: 
-    value: ${poc_energisme.raw_data_table}
+    value: ${energy_management.raw_data_table}
   ↓sensor_mapping_table [variables.RequestableVariable-1676488532981]: 
     description: sensor_mapping_table
-    value: ${poc_energisme.sensor_mapping_table}
+    value: ${energy_management.sensor_mapping_table}
   ↓first_year [variables.RequestableVariable-1676488949013]: 
   ↓last_year [variables.RequestableVariable-1676488960727]: 
 ↓widget_heatmap [transactions.SqlTransaction]: 
@@ -409,10 +409,10 @@ testOnBorrow: true
   ↓date_end [variables.RequestableVariable-1672914161787]: 
   ↓sites [variables.RequestableVariable-1672914161790]: 
   ↓raw_data_table [variables.RequestableVariable-1673535879411]: 
-    value: ${poc_energisme.raw_data_table}
+    value: ${energy_management.raw_data_table}
   ↓sensor_mapping_table [variables.RequestableVariable-1674049714301]: 
     description: sensor_mapping_table
-    value: ${poc_energisme.sensor_mapping_table}
+    value: ${energy_management.sensor_mapping_table}
 ↓widget_multisite_sites_energivore [transactions.SqlTransaction]: 
   sqlQuery: |
     with conso_by_site as (
@@ -459,13 +459,13 @@ testOnBorrow: true
       description: filter_condition
       value: AND sm.site_id IN (CAST('7626' AS BIGINT))
     ↓raw_data_table [variables.TestCaseVariable-1674226345346]: 
-      value: ${poc_energisme.raw_data_table}
+      value: ${energy_management.raw_data_table}
     ↓sensor_mapping_table [variables.TestCaseVariable-1674226345348]: 
       description: sensor_mapping_table
-      value: ${poc_energisme.sensor_mapping_table}
+      value: ${energy_management.sensor_mapping_table}
     ↓site_table [variables.TestCaseVariable-1674226345350]: 
       description: site_table
-      value: ${poc_energisme.sites_table}
+      value: ${energy_management.sites_table}
     ↓date_start [variables.TestCaseVariable-1674226345352]: 
       description: date_start
       value: 2021-06-01
@@ -475,15 +475,15 @@ testOnBorrow: true
   ↓limit [variables.RequestableVariable-1672914161801]: 
     description: limit
   ↓raw_data_table [variables.RequestableVariable-1673535887851]: 
-    value: ${poc_energisme.raw_data_table}
+    value: ${energy_management.raw_data_table}
   ↓filter_condition [variables.RequestableVariable-1673887813493]: 
     description: filter_condition
   ↓sensor_mapping_table [variables.RequestableVariable-1674050025106]: 
     description: sensor_mapping_table
-    value: ${poc_energisme.sensor_mapping_table}
+    value: ${energy_management.sensor_mapping_table}
   ↓site_table [variables.RequestableVariable-1674050025108]: 
     description: site_table
-    value: ${poc_energisme.sites_table}
+    value: ${energy_management.sites_table}
   ↓date_start [variables.RequestableVariable-1674226333164]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1674226333166]: 

@@ -116,7 +116,7 @@
     //log.warn("#### docs stringify")
     //log.warn(_use_json_base)
 ↓Call_Transaction [steps.TransactionStep-1672224437827]: 
-  sourceTransaction: poc_energisme.groups_sites.insertGroupsSitesPostBulk
+  sourceTransaction: energy_management.groups_sites.insertGroupsSitesPostBulk
   ↓_use_json_base [variables.StepVariable-1672224450383]: 
     description: (string) – JSON use as a base for the array of documents (js array), or for individual documents (js object). Optional
 ↓IfExistThenElse [steps.IfExistThenElseStep-1672224778014]: 

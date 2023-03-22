@@ -23,7 +23,7 @@ tagName: ion-menu
     beanData: '{"ionBean":"MenuItem"}'
     isEnabled: false
     itemicon: bar-chart
-    itempage: poc_energisme.Application.NgxApp.Multisite
+    itempage: energy_management.Application.NgxApp.Multisite
     tagName: ion-menu-toggle
   ↓List [ngx.components.UIDynamicElement-1501343197007]: 
     beanData: '{"ionBean":"List","Inset":"plain:inset"}'
@@ -36,12 +36,12 @@ tagName: ion-menu
       tagName: button
     ↓MenuItem [ngx.components.UIDynamicMenuItem-1671789214646]: 
       beanData: '{"ionBean":"MenuItem"}'
-      itempage: poc_energisme.Application.NgxApp.Multisite
+      itempage: energy_management.Application.NgxApp.Multisite
       itemtitle: '''Multisite'''
       tagName: ion-menu-toggle
     ↓MenuItem1 [ngx.components.UIDynamicMenuItem-1671789227907]: 
       beanData: '{"ionBean":"MenuItem"}'
-      itempage: poc_energisme.Application.NgxApp.Monosite
+      itempage: energy_management.Application.NgxApp.Monosite
       itemtitle: '''Monosite'''
       tagName: ion-menu-toggle
     ↓Directive [ngx.components.UIControlDirective-1671790467693]: 
@@ -52,7 +52,7 @@ tagName: ion-menu
           - MobileSmartSourceType: script:this.global['isAdmin'] != undefined && this.global['isAdmin'] == 'true'
       ↓MenuItem [ngx.components.UIDynamicMenuItem-1671790508996]: 
         beanData: '{"ionBean":"MenuItem"}'
-        itempage: poc_energisme.Application.NgxApp.Adminstration
+        itempage: energy_management.Application.NgxApp.Adminstration
         itemtitle: '''Paramètres'''
         tagName: ion-menu-toggle
   ↓Multisite [ngx.components.UIDynamicElement-1676387510037]: 
@@ -124,7 +124,7 @@ tagName: ion-menu
               '
     ↓Event [ngx.components.UIControlEvent-1676387912231]: 
       ↓RootPage [ngx.components.UIDynamicAction-1676387923032]: 
-        beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+        beanData: '{"ionBean":"RootPageAction","page":"plain:energy_management.Application.NgxApp.Multisite"}'
     ↓Tooltips [ngx.components.UIDynamicAttr-1676387987458]: 
       beanData: |
         '{
@@ -217,7 +217,7 @@ tagName: ion-menu
               '
     ↓Event [ngx.components.UIControlEvent-1676388107585]: 
       ↓RootPage [ngx.components.UIDynamicAction-1676388107588]: 
-        beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Monosite"}'
+        beanData: '{"ionBean":"RootPageAction","page":"plain:energy_management.Application.NgxApp.Monosite"}'
     ↓Tooltips [ngx.components.UIDynamicAttr-1676388107591]: 
       beanData: |
         '{
@@ -301,7 +301,7 @@ tagName: ion-menu
                 '
       ↓Event [ngx.components.UIControlEvent-1676388740379]: 
         ↓RootPage [ngx.components.UIDynamicAction-1676388740382]: 
-          beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Adminstration"}'
+          beanData: '{"ionBean":"RootPageAction","page":"plain:energy_management.Application.NgxApp.Adminstration"}'
       ↓Tooltips [ngx.components.UIDynamicAttr-1676388740385]: 
         beanData: |
           '{

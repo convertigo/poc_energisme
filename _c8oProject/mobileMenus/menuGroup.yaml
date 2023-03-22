@@ -31,7 +31,7 @@ tagName: ion-menu
           directiveSource: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-              - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+              - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
           isEnabled: false
           ↓GenericItem [ngx.components.UIDynamicElement-1676372991258]: 
             beanData: '{"ionBean":"GenericItem"}'
@@ -51,7 +51,7 @@ tagName: ion-menu
                 ↓IfElse [ngx.components.UIDynamicIf-1676372991267]: 
                   beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && parent.out.detail.checked"}'
                   ↓CallSequence [ngx.components.UIDynamicAction-1676372991270]: 
-                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                     ↓group_name [ngx.components.UIControlVariable-1676372991273]: 
                       comment: new variable
                       varValue: 
@@ -98,9 +98,9 @@ tagName: ion-menu
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                       ↓CallSequence [ngx.components.UIDynamicAction-1676372991282]: 
-                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.widget_conso_total"}'
                         isEnabled: false
                         ↓date_start [ngx.components.UIControlVariable-1676372991285]: 
                           comment: date_start
@@ -140,14 +140,14 @@ tagName: ion-menu
                                 →: |
                                   '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                   		/*console.log("native")
-                                  		console.log(page.all_poc_energisme_widget)
+                                  		console.log(page.all_energy_management_widget)
                                   		//@ts-ignore
-                                  		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                  		// page.all_energy_management_widget._results[1].elementRef.nativeElement.update()
                                   		//@ts-ignore
-                                  		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                  		console.log(page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
                                   		//@ts-ignore
-                                  		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
-                                  		page.all_poc_energisme_widget.forEach( (x) => {
+                                  		page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                  		page.all_energy_management_widget.forEach( (x) => {
                                   			console.log("x")
                                   			console.log(x)
                                   		})*/
@@ -166,7 +166,7 @@ tagName: ion-menu
                     ↓IfElse [ngx.components.UIDynamicIf-1676372991309]: 
                       beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll && !stack.root.out.detail.checked"}'
                       ↓CallSequence [ngx.components.UIDynamicAction-1676372991312]: 
-                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                        beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                         ↓group_name [ngx.components.UIControlVariable-1676372991315]: 
                           comment: new variable
                           varValue: 
@@ -207,7 +207,7 @@ tagName: ion-menu
                             varValue: 
                               - xmlizable: 
                                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                       ↓Toast [ngx.components.UIDynamicAction-1676372991324]: 
                         beanData: '{"ionBean":"ToastAction","message":"plain:this.selectAll == true && !this.stack.root.out.detail.checked"}'
                         isEnabled: false
@@ -248,7 +248,7 @@ tagName: ion-menu
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                         ↓SetLocal [ngx.components.UIDynamicAction-1676372991339]: 
                           beanData: |
                             '{
@@ -257,7 +257,7 @@ tagName: ion-menu
                              "Value": "script:[]"
                             }'
                     ↓CallSequence [ngx.components.UIDynamicAction-1676372991342]: 
-                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                       isEnabled: false
                       ↓group_name [ngx.components.UIControlVariable-1676372991345]: 
                         comment: new variable
@@ -297,7 +297,7 @@ tagName: ion-menu
                           varValue: 
                             - xmlizable: 
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                     ↓IfElse1 [ngx.components.UIDynamicIf-1676372991354]: 
                       beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll"}'
                       isEnabled: false
@@ -329,8 +329,8 @@ tagName: ion-menu
                 beanData: |
                   '{
                    "ionBean": "Icon",
-                   "IconName": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
-                   "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                   "IconName": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                   "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                   }'
                 tagName: ion-icon
                 ↓Style [ngx.components.UIStyle-1676372991369]: 
@@ -349,7 +349,7 @@ tagName: ion-menu
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                   - MobileSmartSourceType: script:!group.name.includes('ad:')
               ↓Icon [ngx.components.UIDynamicElement-1676372991375]: 
-                beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                 isEnabled: false
                 tagName: ion-icon
             ↓Text1 [ngx.components.UIText-1676372991378]: 
@@ -375,7 +375,7 @@ tagName: ion-menu
                       beanData: |
                         '{
                          "ionBean": "ModalAction",
-                         "page": "plain:poc_energisme.Application.NgxApp.modalUpdateGroup",
+                         "page": "plain:energy_management.Application.NgxApp.modalUpdateGroup",
                          "data": "script:{ name: group.name }",
                          "blockWhileDisplayed": "plain:true"
                         }'
@@ -388,7 +388,7 @@ tagName: ion-menu
                             varValue: 
                               - xmlizable: 
                                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓SetLocal1 [ngx.components.UIDynamicAction-1676372991405]: 
                             beanData: |
                               '{
@@ -400,7 +400,7 @@ tagName: ion-menu
                       beanData: '{"ionBean":"ToastAction","message":"script:group"}'
                       isEnabled: false
                   ↓Icon [ngx.components.UIDynamicElement-1676372991411]: 
-                    beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                    beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''pencil''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                     tagName: ion-icon
                 ↓buttonDelete [ngx.components.UIDynamicElement-1676372991414]: 
                   beanData: '{"ionBean":"Button"}'
@@ -417,7 +417,7 @@ tagName: ion-menu
                       ↓IfElse [ngx.components.UIDynamicIf-1676372991426]: 
                         beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.success == \"true\""}'
                         ↓CallSequence1 [ngx.components.UIDynamicAction-1676372991429]: 
-                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.removeAllSitesOfGroup"}'
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.removeAllSitesOfGroup"}'
                           ↓CallSequence [ngx.components.UIDynamicAction-1676372991432]: 
                             beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_FullSyncGrp.GroupsOf"}'
                             ↓user [ngx.components.UIControlVariable-1676372991435]: 
@@ -425,7 +425,7 @@ tagName: ion-menu
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓removeSitesFromGroups [ngx.components.UICustomAction-1676372991438]: 
                               actionValue: 
                                 - xmlizable: 
@@ -449,7 +449,7 @@ tagName: ion-menu
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓SetLocal1 [ngx.components.UIDynamicAction-1676372991444]: 
                               beanData: |
                                 '{
@@ -528,7 +528,7 @@ tagName: ion-menu
                       beanData: |
                         '{
                          "ionBean": "CallSequenceAction",
-                         "requestable": "plain:poc_energisme.searchGroup",
+                         "requestable": "plain:energy_management.searchGroup",
                          "noLoading": "plain:true"
                         }'
                       ↓label [ngx.components.UIControlVariable-1676372991489]: 
@@ -548,14 +548,14 @@ tagName: ion-menu
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                     ↓If [ngx.components.UIDynamicAction-1676372991498]: 
                       beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
                       ↓CallSequence [ngx.components.UIDynamicAction-1676372991501]: 
                         beanData: |
                           '{
                            "ionBean": "CallSequenceAction",
-                           "requestable": "plain:poc_energisme.searchGroup",
+                           "requestable": "plain:energy_management.searchGroup",
                            "noLoading": "plain:true"
                           }'
                         ↓label [ngx.components.UIControlVariable-1676372991504]: 
@@ -575,11 +575,11 @@ tagName: ion-menu
                           varValue: 
                             - xmlizable: 
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                              - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                              - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓IfElse [ngx.components.UIDynamicIf-1676372991513]: 
                     beanData: '{"ionBean":"IfElseAction","condition":"script:event.detail.value.length >= 3"}'
                     ↓CallSequence [ngx.components.UIDynamicAction-1676372991516]: 
-                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.searchGroup"}'
+                      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.searchGroup"}'
                       ↓label [ngx.components.UIControlVariable-1676372991519]: 
                         comment: new variable
                         varValue: 
@@ -597,7 +597,7 @@ tagName: ion-menu
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                     ↓Else_Handler [ngx.components.UIActionElseEvent-1676372991528]: 
                       ↓If [ngx.components.UIDynamicAction-1676372991531]: 
                         beanData: '{"ionBean":"IfAction","condition":"script:event.detail.value.length == 0"}'
@@ -605,7 +605,7 @@ tagName: ion-menu
                           beanData: |
                             '{
                              "ionBean": "CallSequenceAction",
-                             "requestable": "plain:poc_energisme.searchGroup",
+                             "requestable": "plain:energy_management.searchGroup",
                              "noLoading": "plain:true"
                             }'
                           ↓label [ngx.components.UIControlVariable-1676372991537]: 
@@ -625,7 +625,7 @@ tagName: ion-menu
                             varValue: 
                               - xmlizable: 
                                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓Event [ngx.components.UIControlEvent-1676372991546]: 
               attrName: (ngSubmit)
               eventName: onSubmit
@@ -657,7 +657,7 @@ tagName: ion-menu
                 ↓IfElse [ngx.components.UIDynamicIf-1676372991570]: 
                   beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.detail.checked"}'
                   ↓CallSequence [ngx.components.UIDynamicAction-1676372991573]: 
-                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllSitesId"}'
+                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getAllSitesId"}'
                     comment: before accordion update
                     isEnabled: false
                     ↓updateParams [ngx.components.UICustomAction-1676372991576]: 
@@ -698,15 +698,15 @@ tagName: ion-menu
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllSitesId","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getAllSitesId","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓CallSequence1 [ngx.components.UIDynamicAction-1676372991582]: 
-                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getAllUserSites"}'
+                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getAllUserSites"}'
                     ↓user [ngx.components.UIControlVariable-1676372991585]: 
                       comment: new variable
                       varValue: 
                         - xmlizable: 
                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                          - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
+                          - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.authUser","prefix":"","suffix":"","custom":"","useCustom":false}}
                     ↓updateParams [ngx.components.UICustomAction-1676372991588]: 
                       actionValue: 
                         - xmlizable: 
@@ -746,7 +746,7 @@ tagName: ion-menu
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getAllUserSites","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓Else_Handler [ngx.components.UIActionElseEvent-1676372991594]: 
                     ↓SetLocal [ngx.components.UIDynamicAction-1676372991597]: 
                       beanData: |
@@ -766,7 +766,7 @@ tagName: ion-menu
               directiveSource: 
                 - xmlizable: 
                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
+                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.searchGroup","marker":""}],"path":"?.groups","prefix":"","suffix":"","custom":"","useCustom":false}}
               ↓Accordion [ngx.components.UIDynamicElement-1676372991609]: 
                 beanData: '{"ionBean":"Accordion","Value":"script:group.name"}'
                 tagName: ion-accordion
@@ -797,7 +797,7 @@ tagName: ion-menu
                       ↓IfElse [ngx.components.UIDynamicIf-1676372991627]: 
                         beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && parent.out.detail.checked"}'
                         ↓CallSequence [ngx.components.UIDynamicAction-1676372991630]: 
-                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                          beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                           comment: works before accordion update
                           isEnabled: false
                           ↓group_name [ngx.components.UIControlVariable-1676372991633]: 
@@ -846,9 +846,9 @@ tagName: ion-menu
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓CallSequence [ngx.components.UIDynamicAction-1676372991642]: 
-                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.widget_conso_total"}'
                               isEnabled: false
                               ↓date_start [ngx.components.UIControlVariable-1676372991645]: 
                                 comment: date_start
@@ -888,14 +888,14 @@ tagName: ion-menu
                                       →: |
                                         '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                         		/*console.log("native")
-                                        		console.log(page.all_poc_energisme_widget)
+                                        		console.log(page.all_energy_management_widget)
                                         		//@ts-ignore
-                                        		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                        		// page.all_energy_management_widget._results[1].elementRef.nativeElement.update()
                                         		//@ts-ignore
-                                        		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                        		console.log(page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
                                         		//@ts-ignore
-                                        		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
-                                        		page.all_poc_energisme_widget.forEach( (x) => {
+                                        		page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                        		page.all_energy_management_widget.forEach( (x) => {
                                         			console.log("x")
                                         			console.log(x)
                                         		})*/
@@ -951,7 +951,7 @@ tagName: ion-menu
                                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                 - MobileSmartSourceType: script:stack.root.scope.group.sites
                           ↓CallSequence [ngx.components.UIDynamicAction-1676372991669]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.widget_conso_total"}'
                             isEnabled: false
                             ↓date_start [ngx.components.UIControlVariable-1676372991672]: 
                               comment: date_start
@@ -991,14 +991,14 @@ tagName: ion-menu
                                     →: |
                                       '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                       		/*console.log("native")
-                                      		console.log(page.all_poc_energisme_widget)
+                                      		console.log(page.all_energy_management_widget)
                                       		//@ts-ignore
-                                      		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                      		// page.all_energy_management_widget._results[1].elementRef.nativeElement.update()
                                       		//@ts-ignore
-                                      		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                      		console.log(page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
                                       		//@ts-ignore
-                                      		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
-                                      		page.all_poc_energisme_widget.forEach( (x) => {
+                                      		page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                      		page.all_energy_management_widget.forEach( (x) => {
                                       			console.log("x")
                                       			console.log(x)
                                       		})*/
@@ -1024,7 +1024,7 @@ tagName: ion-menu
                           ↓IfElse [ngx.components.UIDynamicIf-1676372991699]: 
                             beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll && !stack.root.out.detail.checked"}'
                             ↓CallSequence [ngx.components.UIDynamicAction-1676372991702]: 
-                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                               comment: before accordion update
                               isEnabled: false
                               ↓group_name [ngx.components.UIControlVariable-1676372991705]: 
@@ -1067,7 +1067,7 @@ tagName: ion-menu
                                   varValue: 
                                     - xmlizable: 
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                      - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓removeSitesToLocal [ngx.components.UICustomAction-1676372991714]: 
                               actionValue: 
                                 - xmlizable: 
@@ -1140,7 +1140,7 @@ tagName: ion-menu
                                     varValue: 
                                       - xmlizable: 
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                               ↓IfElse [ngx.components.UIDynamicIf-1676372991732]: 
                                 beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll && !stack.root.out.detail.checked"}'
                                 ↓removeSitesToLocal [ngx.components.UICustomAction-1676372991735]: 
@@ -1196,7 +1196,7 @@ tagName: ion-menu
                                        "Value": "script:[]"
                                       }'
                           ↓CallSequence [ngx.components.UIDynamicAction-1676372991747]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                             isEnabled: false
                             ↓group_name [ngx.components.UIControlVariable-1676372991750]: 
                               comment: new variable
@@ -1236,7 +1236,7 @@ tagName: ion-menu
                                 varValue: 
                                   - xmlizable: 
                                     - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                    - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                           ↓IfElse1 [ngx.components.UIDynamicIf-1676372991759]: 
                             beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll"}'
                             isEnabled: false
@@ -1284,8 +1284,8 @@ tagName: ion-menu
                       beanData: |
                         '{
                          "ionBean": "Icon",
-                         "IconName": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
-                         "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                         "IconName": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                         "IconSource": "source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/Microsoft_Azure.svg''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                         }'
                       tagName: ion-icon
                       ↓Style [ngx.components.UIStyle-1676372991780]: 
@@ -1304,7 +1304,7 @@ tagName: ion-menu
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                         - MobileSmartSourceType: script:!group.name.includes('ad:')
                     ↓Icon [ngx.components.UIDynamicElement-1676372991786]: 
-                      beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                      beanData: '{"ionBean":"Icon","IconSource":"source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/icon\\\/c8o.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                       isEnabled: false
                       tagName: ion-icon
                   ↓Text1 [ngx.components.UIText-1676372991789]: 
@@ -1320,7 +1320,7 @@ tagName: ion-menu
                     directiveSource: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1676372991606}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        - MobileSmartSourceType: source:{"filter":"Iteration","project":"energy_management","input":"","model":{"data":[{"priority":1676372991606}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                     ↓ListItem [ngx.components.UIDynamicElement-1676372991798]: 
                       beanData: '{"ionBean":"ListItem"}'
                       tagName: ion-item
@@ -1347,7 +1347,7 @@ tagName: ion-menu
                               beanData: '{"ionBean":"IfElseAction","condition":"script:this.selectAll == false && !this.local[''parentGroupStatus''] && stack.root.out.detail.checked"}'
                               comment: case not selectAll and group not checked, only site checked
                               ↓CallSequence [ngx.components.UIDynamicAction-1676372991813]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                 comment: before accordion update
                                 isEnabled: false
                                 ↓group_name [ngx.components.UIControlVariable-1676372991816]: 
@@ -1396,9 +1396,9 @@ tagName: ion-menu
                                     varValue: 
                                       - xmlizable: 
                                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                        - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                   ↓CallSequence [ngx.components.UIDynamicAction-1676372991825]: 
-                                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.widget_conso_total"}'
                                     isEnabled: false
                                     ↓date_start [ngx.components.UIControlVariable-1676372991828]: 
                                       comment: date_start
@@ -1438,14 +1438,14 @@ tagName: ion-menu
                                             →: |
                                               '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                               		/*console.log("native")
-                                              		console.log(page.all_poc_energisme_widget)
+                                              		console.log(page.all_energy_management_widget)
                                               		//@ts-ignore
-                                              		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                              		// page.all_energy_management_widget._results[1].elementRef.nativeElement.update()
                                               		//@ts-ignore
-                                              		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                              		console.log(page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
                                               		//@ts-ignore
-                                              		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
-                                              		page.all_poc_energisme_widget.forEach( (x) => {
+                                              		page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                              		page.all_energy_management_widget.forEach( (x) => {
                                               			console.log("x")
                                               			console.log(x)
                                               		})*/
@@ -1499,7 +1499,7 @@ tagName: ion-menu
                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                       - MobileSmartSourceType: script:[stack.root.scope.site.id]
                                 ↓CallSequence [ngx.components.UIDynamicAction-1676372991852]: 
-                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.widget_conso_total"}'
                                   isEnabled: false
                                   ↓date_start [ngx.components.UIControlVariable-1676372991855]: 
                                     comment: date_start
@@ -1539,14 +1539,14 @@ tagName: ion-menu
                                           →: |
                                             '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                             		/*console.log("native")
-                                            		console.log(page.all_poc_energisme_widget)
+                                            		console.log(page.all_energy_management_widget)
                                             		//@ts-ignore
-                                            		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                            		// page.all_energy_management_widget._results[1].elementRef.nativeElement.update()
                                             		//@ts-ignore
-                                            		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                            		console.log(page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
                                             		//@ts-ignore
-                                            		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
-                                            		page.all_poc_energisme_widget.forEach( (x) => {
+                                            		page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                            		page.all_energy_management_widget.forEach( (x) => {
                                             			console.log("x")
                                             			console.log(x)
                                             		})*/
@@ -1601,7 +1601,7 @@ tagName: ion-menu
                                   comment: case all selected and sites unchecked
                                   isEnabled: false
                                   ↓CallSequence [ngx.components.UIDynamicAction-1676372991894]: 
-                                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                    beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                     comment: before accordion update
                                     isEnabled: false
                                     ↓group_name [ngx.components.UIControlVariable-1676372991897]: 
@@ -1644,7 +1644,7 @@ tagName: ion-menu
                                         varValue: 
                                           - xmlizable: 
                                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                            - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                   ↓Toast [ngx.components.UIDynamicAction-1676372991906]: 
                                     beanData: '{"ionBean":"ToastAction","message":"plain:this.selectAll == true && !this.stack.root.out.detail.checked"}'
                                     isEnabled: false
@@ -1720,7 +1720,7 @@ tagName: ion-menu
                                           varValue: 
                                             - xmlizable: 
                                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                              - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                     ↓SetLocal [ngx.components.UIDynamicAction-1676372991927]: 
                                       beanData: |
                                         '{
@@ -1774,7 +1774,7 @@ tagName: ion-menu
                                              "Value": "script:[]"
                                             }'
                                 ↓CallSequence [ngx.components.UIDynamicAction-1676372991945]: 
-                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getSitesByGroupName"}'
+                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getSitesByGroupName"}'
                                   isEnabled: false
                                   ↓group_name [ngx.components.UIControlVariable-1676372991948]: 
                                     comment: new variable
@@ -1814,7 +1814,7 @@ tagName: ion-menu
                                       varValue: 
                                         - xmlizable: 
                                           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"poc_energisme","input":"","model":{"data":[{"sequence":"poc_energisme.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                          - MobileSmartSourceType: source:{"filter":"Sequence","project":"energy_management","input":"","model":{"data":[{"sequence":"energy_management.getSitesByGroupName","marker":""}],"path":"?.sites","prefix":"","suffix":"","custom":"","useCustom":false}}
                                 ↓IfElse1 [ngx.components.UIDynamicIf-1676372991957]: 
                                   beanData: '{"ionBean":"IfElseAction","condition":"script:!this.selectAll"}'
                                   isEnabled: false
@@ -2014,7 +2014,7 @@ tagName: ion-menu
                                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                                   - MobileSmartSourceType: script:[stack.root.scope.site.id]
                                             ↓CallSequence [ngx.components.UIDynamicAction-1676372992005]: 
-                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.widget_conso_total"}'
                                               isEnabled: false
                                               ↓date_start [ngx.components.UIControlVariable-1676372992008]: 
                                                 comment: date_start
@@ -2054,14 +2054,14 @@ tagName: ion-menu
                                                       →: |
                                                         '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                                         		/*console.log("native")
-                                                        		console.log(page.all_poc_energisme_widget)
+                                                        		console.log(page.all_energy_management_widget)
                                                         		//@ts-ignore
-                                                        		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                                        		// page.all_energy_management_widget._results[1].elementRef.nativeElement.update()
                                                         		//@ts-ignore
-                                                        		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                                        		console.log(page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
                                                         		//@ts-ignore
-                                                        		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
-                                                        		page.all_poc_energisme_widget.forEach( (x) => {
+                                                        		page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                                        		page.all_energy_management_widget.forEach( (x) => {
                                                         			console.log("x")
                                                         			console.log(x)
                                                         		})*/
@@ -2119,7 +2119,7 @@ tagName: ion-menu
                                                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                                                       - MobileSmartSourceType: script:[stack.root.scope.site.id]
                                                 ↓CallSequence [ngx.components.UIDynamicAction-1676372992038]: 
-                                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.widget_conso_total"}'
+                                                  beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.widget_conso_total"}'
                                                   isEnabled: false
                                                   ↓date_start [ngx.components.UIControlVariable-1676372992041]: 
                                                     comment: date_start
@@ -2159,14 +2159,14 @@ tagName: ion-menu
                                                           →: |
                                                             '		page.c8o.log.debug(''[MB] ''+ props.actionFunction +'': ''+ props.actionName);
                                                             		/*console.log("native")
-                                                            		console.log(page.all_poc_energisme_widget)
+                                                            		console.log(page.all_energy_management_widget)
                                                             		//@ts-ignore
-                                                            		// page.all_poc_energisme_widget._results[1].elementRef.nativeElement.update()
+                                                            		// page.all_energy_management_widget._results[1].elementRef.nativeElement.update()
                                                             		//@ts-ignore
-                                                            		console.log(page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
+                                                            		console.log(page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas"))
                                                             		//@ts-ignore
-                                                            		page.all_poc_energisme_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
-                                                            		page.all_poc_energisme_widget.forEach( (x) => {
+                                                            		page.all_energy_management_widget._results[1].elementRef.nativeElement.getElementsByTagName("canvas")[0][''$chartjs''].update();
+                                                            		page.all_energy_management_widget.forEach( (x) => {
                                                             			console.log("x")
                                                             			console.log(x)
                                                             		})*/
@@ -2185,4 +2185,4 @@ tagName: ion-menu
                           textValue: 
                             - xmlizable: 
                               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                              - MobileSmartSourceType: source:{"filter":"Iteration","project":"poc_energisme","input":"","model":{"data":[{"priority":1676372991795},{"priority":1676372991606}],"path":"?.name","prefix":"","suffix":"","custom":"","useCustom":false}}
+                              - MobileSmartSourceType: source:{"filter":"Iteration","project":"energy_management","input":"","model":{"data":[{"priority":1676372991795},{"priority":1676372991606}],"path":"?.name","prefix":"","suffix":"","custom":"","useCustom":false}}

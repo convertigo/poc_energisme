@@ -1,6 +1,6 @@
 path: /widget_multisite_sites_energivore
 ↓GetOperation [rest.GetOperation]: 
-  targetRequestable: poc_energisme.widget_multisite_sites_energivore
+  targetRequestable: energy_management.widget_multisite_sites_energivore
   ↓limit [rest.QueryParameter-1675849429660]: 
     mappedVariableName: limit
     value: 20

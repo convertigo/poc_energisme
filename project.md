@@ -1,5 +1,5 @@
 
-# ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/core/images/project_color_16x16.png?raw=true "Project") poc_energisme
+# ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/core/images/project_color_16x16.png?raw=true "Project") energy_management
 
 Convertigo NGX builder Project
 
@@ -13,6 +13,15 @@ Convertigo NGX builder Project
 
 
 see [documentation](http://localhost:18080/convertigo/xsd/couchdb/CouchDb.xsd)
+</p></blockquote></details>
+
+<details><summary><b>energy_management</b></summary><blockquote><p>
+
+
+## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") energy_management
+
+
+see [readme](https://github.com/convertigo/poc_energisme/tree/main#readme)
 </p></blockquote></details>
 
 <details><summary><b>lib_ExtendedComponents_ui_ngx</b></summary><blockquote><p>
@@ -48,15 +57,6 @@ see [readme](https://github.com/convertigo/c8oprj-lib-oauth/tree/8.0.0#readme)
 ## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") lib_UserManager
 
 
-</p></blockquote></details>
-
-<details><summary><b>poc_energisme</b></summary><blockquote><p>
-
-
-## ![](https://github.com/convertigo/convertigo/blob/develop/engine/src/com/twinsoft/convertigo/beans/references/images/ProjectSchemaReference_16x16.png?raw=true "ProjectSchemaReference") poc_energisme
-
-
-see [readme](https://github.com/convertigo/poc_energisme/tree/6853b62fa29e1d2e82da2c45adaff5234d755ead#readme)
 </p></blockquote></details>
 </p></blockquote></details>
 

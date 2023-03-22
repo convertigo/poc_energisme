@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:poc_energisme_ns="http://www.convertigo.com/convertigo/projects/poc_energisme" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/poc_energisme">
-    <xsd:element name="postgreSQL__get_site" type="poc_energisme_ns:postgreSQL__get_siteRequestData">
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:energy_management_ns="http://www.convertigo.com/convertigo/projects/energy_management" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/energy_management">
+    <xsd:element name="postgreSQL__get_site" type="energy_management_ns:postgreSQL__get_siteRequestData">
         <xsd:annotation/>
     </xsd:element>
     <xsd:element name="postgreSQL__get_siteResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="response" type="poc_energisme_ns:postgreSQL__get_siteResponseData"/>
+                <xsd:element name="response" type="energy_management_ns:postgreSQL__get_siteResponseData"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
     <xsd:complexType name="postgreSQL__get_siteResponseType">
         <xsd:sequence>
-            <xsd:element name="document" type="poc_energisme_ns:postgreSQL__get_siteResponseData"/>
+            <xsd:element name="document" type="energy_management_ns:postgreSQL__get_siteResponseData"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="postgreSQL__get_siteRequestData">
@@ -187,42 +187,42 @@
     </xsd:complexType>
     <xsd:complexType name="postgreSQL_getSite_document_sql_output_rowType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="id" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_idType"/>
-            <xsd:element minOccurs="0" name="nom" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_nomType"/>
-            <xsd:element minOccurs="0" name="adr_num" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_adr_numType"/>
-            <xsd:element minOccurs="0" name="adr_voie" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_adr_voieType"/>
-            <xsd:element minOccurs="0" name="com_cp" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_com_cpType"/>
-            <xsd:element minOccurs="0" name="com_nom" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_com_nomType"/>
-            <xsd:element minOccurs="0" name="structure_rais" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_structure_raisType"/>
-            <xsd:element minOccurs="0" name="structure_num" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_structure_numType"/>
-            <xsd:element minOccurs="0" name="structure_voie" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_structure_voieType"/>
-            <xsd:element minOccurs="0" name="structure_cp" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_structure_cpType"/>
-            <xsd:element minOccurs="0" name="structure_insee" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_structure_inseeType"/>
-            <xsd:element minOccurs="0" name="structure_com" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_structure_comType"/>
-            <xsd:element minOccurs="0" name="position" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_positionType"/>
-            <xsd:element minOccurs="0" name="latitude" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_latitudeType"/>
-            <xsd:element minOccurs="0" name="longitude" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_longitudeType"/>
-            <xsd:element minOccurs="0" name="country" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_countryType"/>
-            <xsd:element minOccurs="0" name="site_last_update_timestamp" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_site_last_update_timestampType"/>
-            <xsd:element minOccurs="0" name="total_area_m2" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_total_area_m2Type"/>
-            <xsd:element minOccurs="0" name="typology" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_typologyType"/>
-            <xsd:element minOccurs="0" name="weather_station_code" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_weather_station_codeType"/>
-            <xsd:element minOccurs="0" name="weather_station_code_dt" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_weather_station_code_dtType"/>
-            <xsd:element minOccurs="0" name="year_of_construction" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_year_of_constructionType"/>
-            <xsd:element minOccurs="0" name="weatherstationdt" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_row_weatherstationdtType"/>
+            <xsd:element minOccurs="0" name="id" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_idType"/>
+            <xsd:element minOccurs="0" name="nom" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_nomType"/>
+            <xsd:element minOccurs="0" name="adr_num" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_adr_numType"/>
+            <xsd:element minOccurs="0" name="adr_voie" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_adr_voieType"/>
+            <xsd:element minOccurs="0" name="com_cp" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_com_cpType"/>
+            <xsd:element minOccurs="0" name="com_nom" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_com_nomType"/>
+            <xsd:element minOccurs="0" name="structure_rais" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_structure_raisType"/>
+            <xsd:element minOccurs="0" name="structure_num" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_structure_numType"/>
+            <xsd:element minOccurs="0" name="structure_voie" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_structure_voieType"/>
+            <xsd:element minOccurs="0" name="structure_cp" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_structure_cpType"/>
+            <xsd:element minOccurs="0" name="structure_insee" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_structure_inseeType"/>
+            <xsd:element minOccurs="0" name="structure_com" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_structure_comType"/>
+            <xsd:element minOccurs="0" name="position" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_positionType"/>
+            <xsd:element minOccurs="0" name="latitude" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_latitudeType"/>
+            <xsd:element minOccurs="0" name="longitude" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_longitudeType"/>
+            <xsd:element minOccurs="0" name="country" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_countryType"/>
+            <xsd:element minOccurs="0" name="site_last_update_timestamp" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_site_last_update_timestampType"/>
+            <xsd:element minOccurs="0" name="total_area_m2" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_total_area_m2Type"/>
+            <xsd:element minOccurs="0" name="typology" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_typologyType"/>
+            <xsd:element minOccurs="0" name="weather_station_code" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_weather_station_codeType"/>
+            <xsd:element minOccurs="0" name="weather_station_code_dt" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_weather_station_code_dtType"/>
+            <xsd:element minOccurs="0" name="year_of_construction" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_year_of_constructionType"/>
+            <xsd:element minOccurs="0" name="weatherstationdt" type="energy_management_ns:postgreSQL_getSite_document_sql_output_row_weatherstationdtType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="postgreSQL_getSite_document_sql_outputType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="row" type="poc_energisme_ns:postgreSQL_getSite_document_sql_output_rowType"/>
+            <xsd:element minOccurs="0" name="row" type="energy_management_ns:postgreSQL_getSite_document_sql_output_rowType"/>
         </xsd:sequence>
         <xsd:attribute default="array" name="type" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="postgreSQL__get_siteResponseData">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sql_output" type="poc_energisme_ns:postgreSQL_getSite_document_sql_outputType"/>
-            <xsd:element minOccurs="0" name="error" type="poc_energisme_ns:ConvertigoError"/>
+            <xsd:element minOccurs="0" name="sql_output" type="energy_management_ns:postgreSQL_getSite_document_sql_outputType"/>
+            <xsd:element minOccurs="0" name="error" type="energy_management_ns:ConvertigoError"/>
         </xsd:sequence>
         <xsd:attribute name="connector" type="xsd:string"/>
         <xsd:attribute name="context" type="xsd:string"/>
@@ -244,7 +244,7 @@
     </xsd:complexType>
     <xsd:complexType name="ConvertigoErrorContext">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="variable" type="poc_energisme_ns:ConvertigoErrorContextVariable"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="variable" type="energy_management_ns:ConvertigoErrorContextVariable"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="ConvertigoError">
@@ -252,7 +252,7 @@
             <xsd:element name="code" type="xsd:integer"/>
             <xsd:element name="message" type="xsd:string"/>
             <xsd:element name="details" type="xsd:string"/>
-            <xsd:element name="context" type="poc_energisme_ns:ConvertigoErrorContext"/>
+            <xsd:element name="context" type="energy_management_ns:ConvertigoErrorContext"/>
             <xsd:element name="exception" type="xsd:string"/>
             <xsd:element name="stacktrace" type="xsd:string"/>
         </xsd:sequence>

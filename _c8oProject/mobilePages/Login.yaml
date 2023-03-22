@@ -40,8 +40,14 @@ title: Login
           beanData: '{"ionBean":"Card"}'
           tagName: ion-card
           ↓LazyImage [ngx.components.UIDynamicElement-1669819616548]: 
-            beanData: '{"ionBean":"LazyImage","Src":"source:{\"filter\":\"Asset\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/logo-energisme.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+            beanData: '{"ionBean":"LazyImage","Src":"source:{\"filter\":\"Asset\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"asset\":\"''assets\\\/loamics2.png''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
             tagName: ion-img
+            ↓Attr [ngx.components.UIAttribute-1678713102041]: 
+              attrName: class
+              attrValue: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+                  - MobileSmartSourceType: plain:img-login
           ↓CardHeader [ngx.components.UIDynamicElement-1669819616550]: 
             beanData: '{"ionBean":"CardHeader"}'
             tagName: ion-card-header
@@ -55,7 +61,7 @@ title: Login
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:Connexion avec Active Directory
+                      - MobileSmartSourceType: plain:Connectez vous pour continuer
           ↓CardContent [ngx.components.UIDynamicElement-1669819616564]: 
             beanData: '{"ionBean":"CardContent"}'
             tagName: ion-card-content
@@ -126,20 +132,20 @@ title: Login
                     varValue: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671719229598,"identifier":"loginForm"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1671719229598,"identifier":"loginForm"}],"path":"?.controls['email']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓password [ngx.components.UIControlVariable-1671719267999]: 
                     comment: new variable
                     varValue: 
                       - xmlizable: 
                         - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                        - MobileSmartSourceType: source:{"filter":"Form","project":"poc_energisme","input":"","model":{"data":[{"priority":1671719229598,"identifier":"loginForm"}],"path":"?.controls['password']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
+                        - MobileSmartSourceType: source:{"filter":"Form","project":"energy_management","input":"","model":{"data":[{"priority":1671719229598,"identifier":"loginForm"}],"path":"?.controls['password']?.value","prefix":"","suffix":"","custom":"","useCustom":false}}
                   ↓IfElse [ngx.components.UIDynamicIf-1671790589542]: 
-                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.SignIn\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                    beanData: '{"ionBean":"IfElseAction","condition":"source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.SignIn\",\"marker\":\"\"}],\"path\":\"?.error\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                     ↓Toast [ngx.components.UIDynamicAction-1671790613312]: 
                       beanData: |
                         '{
                          "ionBean": "ToastAction",
-                         "message": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.SignIn\",\"marker\":\"\"}],\"path\":\"?.error[0]?.message\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                         "message": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_UserManager.SignIn\",\"marker\":\"\"}],\"path\":\"?.error[0]?.message\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
                          "position": "plain:top"
                         }'
                     ↓Else_Handler [ngx.components.UIActionElseEvent-1671790701304]: 
@@ -148,34 +154,34 @@ title: Login
                           '{
                            "ionBean": "SetGlobalAction",
                            "Property": "plain:authUser",
-                           "Value": "source:{\"filter\":\"Form\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1671719229598,\"identifier\":\"loginForm\"}],\"path\":\"?.controls[''email'']?.value\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                           "Value": "source:{\"filter\":\"Form\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1671719229598,\"identifier\":\"loginForm\"}],\"path\":\"?.controls[''email'']?.value\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                           }'
                         ↓SetGlobal [ngx.components.UIDynamicAction-1675354038455]: 
                           beanData: |
                             '{
                              "ionBean": "SetGlobalAction",
                              "Property": "plain:username",
-                             "Value": "source:{\"filter\":\"Form\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1671719229598,\"identifier\":\"loginForm\"}],\"path\":\"?.controls[''email'']?.value\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                             "Value": "source:{\"filter\":\"Form\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"priority\":1671719229598,\"identifier\":\"loginForm\"}],\"path\":\"?.controls[''email'']?.value\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                             }'
                           ↓CallSequence1 [ngx.components.UIDynamicAction-1676649766385]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.setInSessionADusername"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.setInSessionADusername"}'
                             ↓CallSequence [ngx.components.UIDynamicAction-1671790709609]: 
-                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getUserGroups"}'
                               ↓SetGlobal [ngx.components.UIDynamicAction-1672837965924]: 
                                 beanData: |
                                   '{
                                    "ionBean": "SetGlobalAction",
                                    "Property": "plain:isAdmin",
-                                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                   "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                   }'
                                 ↓RootPage [ngx.components.UIDynamicAction-1671790747353]: 
-                                  beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                                  beanData: '{"ionBean":"RootPageAction","page":"plain:energy_management.Application.NgxApp.Multisite"}'
                             ↓username [ngx.components.UIControlVariable-1676649791594]: 
                               comment: new variable
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
             ↓azureButton [ngx.components.UIDynamicElement-1669818578024]: 
               beanData: '{"ionBean":"Button"}'
               tagName: ion-button
@@ -186,7 +192,10 @@ title: Login
                   textValue: 
                     - xmlizable: 
                       - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                      - MobileSmartSourceType: plain:Connexion avec Azure
+                      - MobileSmartSourceType: plain:Connection Azure   
+              ↓Icon [ngx.components.UIDynamicElement-1678713207603]: 
+                beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''logo-microsoft''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                tagName: ion-icon
               ↓Event [ngx.components.UIControlEvent-1669818578030]: 
                 ↓CallSequence [ngx.components.UIDynamicAction-1669741325742]: 
                   beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:lib_OAuth.GetOAuthCredentials"}'
@@ -194,8 +203,8 @@ title: Login
                     beanData: |
                       '{
                        "ionBean": "OAuthLoginAction",
-                       "clientid": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.GetOAuthCredentials\",\"marker\":\"\"}],\"path\":\"?.AzureAdClientID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
-                       "tenantid": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.GetOAuthCredentials\",\"marker\":\"\"}],\"path\":\"?.AzureAdTenantID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                       "clientid": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.GetOAuthCredentials\",\"marker\":\"\"}],\"path\":\"?.AzureAdClientID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+                       "tenantid": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.GetOAuthCredentials\",\"marker\":\"\"}],\"path\":\"?.AzureAdTenantID\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
                        "callbackurl": "plain:https:\/\/c8ocloud.convertigo.net\/convertigo\/projects\/lib_OAuth\/getToken.html"
                       }'
                     ↓If [ngx.components.UIDynamicAction-1669821882104]: 
@@ -222,32 +231,32 @@ title: Login
                                 '{
                                  "ionBean": "SetGlobalAction",
                                  "Property": "plain:groups",
-                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.listGroupsAzureAd\",\"marker\":\"\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                 "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"lib_OAuth.listGroupsAzureAd\",\"marker\":\"\"}],\"path\":\"?.groups\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                 }'
                           ↓CallSequence2 [ngx.components.UIDynamicAction-1676627622641]: 
-                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.setInSessionADusername"}'
+                            beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.setInSessionADusername"}'
                             ↓username [ngx.components.UIControlVariable-1676627636055]: 
                               comment: new variable
                               varValue: 
                                 - xmlizable: 
                                   - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                                  - MobileSmartSourceType: source:{"filter":"Global","project":"poc_energisme","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+                                  - MobileSmartSourceType: source:{"filter":"Global","project":"energy_management","input":"","model":{"data":[{"sharedObject":"router.sharedObject"}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
                             ↓CallSequence1 [ngx.components.UIDynamicAction-1671810183120]: 
-                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.postBulkGroupsFromAuthenticatedUser"}'
+                              beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.postBulkGroupsFromAuthenticatedUser"}'
                               ↓RootPage [ngx.components.UIDynamicAction-1672060823859]: 
-                                beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                                beanData: '{"ionBean":"RootPageAction","page":"plain:energy_management.Application.NgxApp.Multisite"}'
                                 isEnabled: false
                               ↓CallSequence [ngx.components.UIDynamicAction-1673000066453]: 
-                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getUserGroups"}'
+                                beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getUserGroups"}'
                                 ↓SetGlobal [ngx.components.UIDynamicAction-1673000052722]: 
                                   beanData: |
                                     '{
                                      "ionBean": "SetGlobalAction",
                                      "Property": "plain:isAdmin",
-                                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"poc_energisme.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
+                                     "Value": "source:{\"filter\":\"Sequence\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"sequence\":\"energy_management.getUserGroups\",\"marker\":\"\"}],\"path\":\"?.isAdmin\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"
                                     }'
                                   ↓RootPage [ngx.components.UIDynamicAction-1673000052725]: 
-                                    beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Multisite"}'
+                                    beanData: '{"ionBean":"RootPageAction","page":"plain:energy_management.Application.NgxApp.Multisite"}'
                                   ↓CustomAction [ngx.components.UICustomAction-1673002437075]: 
                                     actionValue: 
                                       - xmlizable: 

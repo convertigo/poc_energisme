@@ -11,7 +11,7 @@
 ↓Sequence_JS [steps.SimpleStep-1672235454628]: 
   expression: _use_key = '"' + _use_key + '"';
 ↓Call_Transaction [steps.TransactionStep-1672234132476]: 
-  sourceTransaction: poc_energisme.groups_sites.getGroupNameBySiteId
+  sourceTransaction: energy_management.groups_sites.getGroupNameBySiteId
   ↓_use_key [variables.StepVariable-1672234155898]: 
     description: (string) – Return only documents that match the specified key. Optional
 ↓groups [steps.JsonArrayStep-1672234175132]: 

@@ -10,7 +10,7 @@ comment: Return sites id from a group searching by its name
           - →→: The "group_name" parameter must be defined and not empty
   ↓Return [steps.ReturnStep-1672147499813]: 
 ↓Call_Transaction [steps.TransactionStep-1672147022385]: 
-  sourceTransaction: poc_energisme.groups_sites.getSitesByGroupName
+  sourceTransaction: energy_management.groups_sites.getSitesByGroupName
   ↓_use_key [variables.StepVariable-1672147031745]: 
     description: (string) – Return only documents that match the specified key. Optional
 ↓sites [steps.JsonArrayStep-1672147910442]: 
@@ -31,7 +31,7 @@ comment: Return sites id from a group searching by its name
             - ↑value: ./document/couchdb_output/rows/item
     ↓Call_Sequence [steps.SequenceStep-1672148502786]: 
       isEnabled: false
-      sourceSequence: poc_energisme.getSite
+      sourceSequence: energy_management.getSite
       ↓site_id [variables.StepVariable-1672148516556]: 
         sourceDefinition: 
           - xmlizable: 
@@ -79,7 +79,7 @@ comment: Return sites id from a group searching by its name
               - java.lang.String: 
                 - ↑value: ./value/text()
     ↓Call_Transaction [steps.TransactionStep-1674652006655]: 
-      sourceTransaction: poc_energisme.postgreSQL.get_site
+      sourceTransaction: energy_management.postgreSQL.get_site
       ↓site_id [variables.StepVariable-1674652024331]: 
         sourceDefinition: 
           - xmlizable: 
@@ -90,7 +90,7 @@ comment: Return sites id from a group searching by its name
               - java.lang.String: 
                 - ↑value: ./value/text()
       ↓site_table [variables.StepVariable-1674652024333]: 
-        value: ${poc_energisme.sites_table}
+        value: ${energy_management.sites_table}
     ↓Iterator [steps.IteratorStep-1674652354489]: 
       sourceDefinition: 
         - xmlizable: 

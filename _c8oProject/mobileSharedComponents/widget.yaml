@@ -372,7 +372,7 @@ scriptContent:
           textValue: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-              - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.title","prefix":"","suffix":"","custom":"","useCustom":false}}
+              - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.title","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓colActionButtons [ngx.components.UIDynamicElement-1667815940126]: 
       beanData: '{"ionBean":"GridCol","Size":"plain:3"}'
       tagName: ion-col
@@ -393,12 +393,12 @@ scriptContent:
                   beanData: |
                     '{
                      "ionBean": "ModalAction",
-                     "page": "plain:poc_energisme.Application.NgxApp.zoomChart",
+                     "page": "plain:energy_management.Application.NgxApp.zoomChart",
                      "data": "script:{\r\n\ttitle: this.title,\r\n\tsequenceToCall: this.sequenceToCall,\r\n\tsequenceParams: JSON.stringify(this.sequenceParams),\r\n\tisGoogleMap: this.isGoogleMap,\r\n\tisGauge: this.isGauge,\r\n\tisInModal: ''true'',\r\n\tisHeatmap: this.isHeatmap,\r\n\tsequenceMarker: this.sequenceMarker,\r\n\taggregation: this.aggregation,\r\n\tdisplayTotalOnly: this.displayTotalOnly\r\n}",
                      "cssClass": "plain:modal75"
                     }'
               ↓Icon [ngx.components.UIDynamicElement-1667816344210]: 
-                beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''expand''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                 tagName: ion-icon
           ↓Directive1 [ngx.components.UIControlDirective-1669312766015]: 
             directiveExpression: this.isInModal == "true"
@@ -413,7 +413,7 @@ scriptContent:
                 ↓CloseModal [ngx.components.UIDynamicAction-1675938043811]: 
                   beanData: '{"ionBean":"CloseModalAction"}'
               ↓Icon [ngx.components.UIDynamicElement-1669312766027]: 
-                beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
+                beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''close''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}"}'
                 tagName: ion-icon
         ↓Style [ngx.components.UIStyle-1669287299575]: 
           styleContent: 
@@ -493,7 +493,7 @@ scriptContent:
             tagName: ion-button
             ↓Event [ngx.components.UIControlEvent-1669373419558]: 
             ↓Icon [ngx.components.UIDynamicElement-1667816554836]: 
-              beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"''calendar''\",\"useCustom\":true}}"}'
+              beanData: '{"ionBean":"Icon","IconName":"source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''add''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"''calendar''\",\"useCustom\":true}}"}'
               tagName: ion-icon
               ↓Style [ngx.components.UIStyle-1668517990923]: 
                 styleContent: 
@@ -620,12 +620,12 @@ scriptContent:
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceToCall","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceToCall","prefix":"","suffix":"","custom":"","useCustom":false}}
                       ↓sequenceParams [ngx.components.UIControlVariable-1669374455402]: 
                         varValue: 
                           - xmlizable: 
                             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-                            - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
+                            - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
                       ↓ClosePopover [ngx.components.UIDynamicAction-1669383658652]: 
                         beanData: '{"ionBean":"ClosePopoverAction"}'
                   ↓Attr1 [ngx.components.UIAttribute-1669374198767]: 
@@ -1071,7 +1071,7 @@ scriptContent:
                         beanData: |
                           '{
                            "ionBean": "RootPageAction",
-                           "page": "plain:poc_energisme.Application.NgxApp.Monosite",
+                           "page": "plain:energy_management.Application.NgxApp.Monosite",
                            "data": "script:{ site_id: marker.site_id }"
                           }'
           ↓Style [ngx.components.UIStyle-1676393518387]: 
@@ -1116,7 +1116,7 @@ scriptContent:
                 - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
                 - MobileSmartSourceType: script:this.local['response'] != undefined
             ↓UseSharedComponent [ngx.components.UIUseShared-1669299066340]: 
-              sharedcomponent: poc_energisme.Application.NgxApp.gauge_chart
+              sharedcomponent: energy_management.Application.NgxApp.gauge_chart
               ↓canvasWidth [ngx.components.UIUseVariable-1669299066343]: 
                 varValue: 
                   - xmlizable: 
@@ -1348,7 +1348,7 @@ scriptContent:
             identifier: heatmapBlock
             tagName: ng-template
             ↓UseSharedComponent [ngx.components.UIUseShared-1669388969270]: 
-              sharedcomponent: poc_energisme.Application.NgxApp.heatmap
+              sharedcomponent: energy_management.Application.NgxApp.heatmap
               ↓annotations [ngx.components.UIUseVariable-1669389080677]: 
                 varValue: 
                   - xmlizable: 
@@ -1498,17 +1498,17 @@ scriptContent:
       varValue: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceToCall","prefix":"","suffix":"","custom":"","useCustom":false}}
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceToCall","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓sequenceParams [ngx.components.UIControlVariable-1668612687661]: 
       varValue: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceParams","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓sequenceMarker [ngx.components.UIControlVariable-1673517375949]: 
       varValue: 
         - xmlizable: 
           - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-          - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceMarker","prefix":"","suffix":"","custom":"","useCustom":false}}
+          - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1667815060213,"regular":true}],"path":"?.sequenceMarker","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓sequenceParams [ngx.components.UICompVariable-1668612583513]: 
   comment: 'Params of the sequence to call (object) ex: { myFirstParam: ''myValue'', mySecondParam: ''myValue'' }'
 ↓isGoogleMap [ngx.components.UICompVariable-1669045379585]: 

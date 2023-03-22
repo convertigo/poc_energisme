@@ -38,12 +38,12 @@ responseExpiryDate: absolute,36000
           - ↑mode: PLAIN
           - →→: Aucune liste de sites
 ↓Call_Transaction [steps.TransactionStep-1673859493998]: 
-  sourceTransaction: poc_energisme.postgreSQL.widget_multisite_sites_energivore
+  sourceTransaction: energy_management.postgreSQL.widget_multisite_sites_energivore
   ↓limit [variables.StepVariable-1673859606460]: 
     description: limit
     value: 50
   ↓raw_data_table [variables.StepVariable-1673859606464]: 
-    value: ${poc_energisme.raw_data_table}
+    value: ${energy_management.raw_data_table}
   ↓filter_condition [variables.StepVariable-1674227806586]: 
     description: filter_condition
   ↓date_start [variables.StepVariable-1674227806592]: 

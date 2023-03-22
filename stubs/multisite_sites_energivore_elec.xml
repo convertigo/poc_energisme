@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><document connector="" context="studio_poc_energisme:S:multisite_sites_energivore_elec" contextId="studio_poc_energisme:S:multisite_sites_energivore_elec" expires="Mon Dec 05 23:00:00 CET 2022" fromStub="false" fromcache="false" generated="Mon Dec 05 12:35:50 CET 2022" project="poc_energisme" sequence="multisite_sites_energivore_elec" signature="1670240150491" transaction="" version="8.1.0 (build 14680-8.1.0)">
+<?xml version="1.0" encoding="UTF-8"?><document connector="" context="studio_energy_management:S:multisite_sites_energivore_elec" contextId="studio_energy_management:S:multisite_sites_energivore_elec" expires="Mon Dec 05 23:00:00 CET 2022" fromStub="false" fromcache="false" generated="Mon Dec 05 12:35:50 CET 2022" project="energy_management" sequence="multisite_sites_energivore_elec" signature="1670240150491" transaction="" version="8.1.0 (build 14680-8.1.0)">
     <chartType>bar</chartType>
     <Object originalKeyName="data" type="object">
         <Array originalKeyName="labels" type="array">

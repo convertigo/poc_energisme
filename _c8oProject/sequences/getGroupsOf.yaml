@@ -31,7 +31,7 @@
       condition: group != 'role-admin' && group != 'app-poc-energisme' 
       ↓Object1 [steps.JsonObjectStep-1672737116874]: 
         ↓Call_Sequence [steps.SequenceStep-1672737048629]: 
-          sourceSequence: poc_energisme.getSitesByGroupName
+          sourceSequence: energy_management.getSitesByGroupName
           ↓group_name [variables.StepVariable-1672737056528]: 
             sourceDefinition: 
               - xmlizable: 
@@ -85,7 +85,7 @@
                   - java.lang.String: 
                     - ↑value: ./document/sites/Object_1
             ↓Call_Transaction [steps.TransactionStep-1674655955902]: 
-              sourceTransaction: poc_energisme.postgreSQL.get_site
+              sourceTransaction: energy_management.postgreSQL.get_site
               ↓site_id [variables.StepVariable-1674655973979]: 
                 sourceDefinition: 
                   - xmlizable: 
@@ -96,7 +96,7 @@
                       - java.lang.String: 
                         - ↑value: ./id/text()
               ↓site_table [variables.StepVariable-1674655973981]: 
-                value: ${poc_energisme.sites_table}
+                value: ${energy_management.sites_table}
             ↓Object [steps.JsonObjectStep-1674656004878]: 
               ↓Field [steps.JsonFieldStep-1674656035932]: 
                 key: 

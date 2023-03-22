@@ -154,7 +154,7 @@
                         - java.lang.String: 
                           - ↑value: ./group/text()
               ↓Call_Sequence [steps.SequenceStep-1672752751268]: 
-                sourceSequence: poc_energisme.getSitesByGroupName
+                sourceSequence: energy_management.getSitesByGroupName
                 ↓group_name [variables.StepVariable-1672752760108]: 
                   sourceDefinition: 
                     - xmlizable: 
@@ -175,7 +175,7 @@
                       - java.lang.String: 
                         - ↑value: ./document/sites/Field1
             ↓Call_Sequence [steps.SequenceStep-1674724664510]: 
-              sourceSequence: poc_energisme.getSitesByGroupName
+              sourceSequence: energy_management.getSitesByGroupName
               ↓group_name [variables.StepVariable-1674724664513]: 
                 sourceDefinition: 
                   - xmlizable: 
@@ -230,7 +230,7 @@
                             - ↑value: ./Object_1
   ↓jElse [steps.ElseStep-1672751046775]: 
     ↓Call_Sequence [steps.SequenceStep-1672751065495]: 
-      sourceSequence: poc_energisme.getGroupsOf
+      sourceSequence: energy_management.getGroupsOf
       ↓user [variables.StepVariable-1672751077354]: 
     ↓Copy [steps.XMLCopyStep-1672751146556]: 
       sourceDefinition: 

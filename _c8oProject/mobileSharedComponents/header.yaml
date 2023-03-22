@@ -21,7 +21,7 @@
         textValue: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-            - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.title","prefix":"","suffix":"","custom":"","useCustom":false}}
+            - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.title","prefix":"","suffix":"","custom":"","useCustom":false}}
     ↓ButtonSet2 [ngx.components.UIDynamicElement-1669821781369]: 
       beanData: '{"ionBean":"ButtonSet","SetPosition":"plain:end"}'
       tagName: ion-buttons
@@ -29,7 +29,7 @@
         beanData: |
           '{
            "ionBean": "Icon",
-           "IconName": "source:{\"filter\":\"Icon\",\"project\":\"poc_energisme\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''person''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
+           "IconName": "source:{\"filter\":\"Icon\",\"project\":\"energy_management\",\"input\":\"\",\"model\":{\"data\":[{\"icon\":\"''person''\"}],\"path\":\"\",\"prefix\":\"\",\"suffix\":\"\",\"custom\":\"\",\"useCustom\":false}}",
            "IconMdName": "plain",
            "IconIosName": "plain"
           }'
@@ -53,9 +53,9 @@
                "noAutoLogin": "plain:true"
               }'
             ↓RootPage [ngx.components.UIDynamicAction-1674228973574]: 
-              beanData: '{"ionBean":"RootPageAction","page":"plain:poc_energisme.Application.NgxApp.Login"}'
+              beanData: '{"ionBean":"RootPageAction","page":"plain:energy_management.Application.NgxApp.Login"}'
             ↓PushPage [ngx.components.UIDynamicAction-1674229136796]: 
-              beanData: '{"ionBean":"PushPageAction","page":"plain:poc_energisme.Application.NgxApp.Login"}'
+              beanData: '{"ionBean":"PushPageAction","page":"plain:energy_management.Application.NgxApp.Login"}'
               isEnabled: false
       ↓Label [ngx.components.UIDynamicElement-1669822059801]: 
         beanData: '{"ionBean":"Label"}'
@@ -64,7 +64,7 @@
           textValue: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
-              - MobileSmartSourceType: source:{"filter":"Shared","project":"poc_energisme","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
+              - MobileSmartSourceType: source:{"filter":"Shared","project":"energy_management","input":"","model":{"data":[{"priority":1669821769425,"regular":true}],"path":"?.username","prefix":"","suffix":"","custom":"","useCustom":false}}
 ↓username [ngx.components.UICompVariable-1669821807607]: 
   comment: Username to display
 ↓title [ngx.components.UICompVariable-1671634363713]: 

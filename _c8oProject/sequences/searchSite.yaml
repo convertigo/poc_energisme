@@ -3,12 +3,12 @@
   condition: label != null && label.length > 0
   ↓jThen [steps.ThenStep-1672760692064]: 
     ↓Call_Transaction [steps.TransactionStep-1672760722072]: 
-      sourceTransaction: poc_energisme.postgreSQL.search_site
+      sourceTransaction: energy_management.postgreSQL.search_site
       ↓label [variables.StepVariable-1672760731478]: 
         description: label
       ↓site_table [variables.StepVariable-1674552105494]: 
         description: site_table
-        value: ${poc_energisme.sites_table}
+        value: ${energy_management.sites_table}
     ↓sites [steps.JsonArrayStep-1672760792000]: 
       key: 
         - xmlizable: 
@@ -36,7 +36,7 @@
                   - ↑value: .
   ↓jElse [steps.ElseStep-1672760692066]: 
     ↓Call_Sequence [steps.SequenceStep-1672760971864]: 
-      sourceSequence: poc_energisme.getSitesList
+      sourceSequence: energy_management.getSitesList
     ↓Copy [steps.XMLCopyStep-1672761023256]: 
       sourceDefinition: 
         - xmlizable: 

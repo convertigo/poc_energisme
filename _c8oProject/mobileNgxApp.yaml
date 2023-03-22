@@ -470,7 +470,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
   ↓IfElse [ngx.components.UIDynamicIf-1669818632602]: 
     beanData: '{"ionBean":"IfElseAction","condition":"script:parent.out.pageName != ''Login''"}'
     ↓CallSequence [ngx.components.UIDynamicAction-1669818306905]: 
-      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getCurrentUser"}'
       ↓CustomAction [ngx.components.UICustomAction-1669818354661]: 
         actionValue: 
           - xmlizable: 
@@ -503,7 +503,7 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
     beanData: '{"ionBean":"IfAction","condition":"script:parent.out.pageName != ''Login''"}'
     isEnabled: false
     ↓CallSequence [ngx.components.UIDynamicAction-1669888417731]: 
-      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:poc_energisme.getCurrentUser"}'
+      beanData: '{"ionBean":"CallSequenceAction","requestable":"plain:energy_management.getCurrentUser"}'
       ↓CustomAction [ngx.components.UICustomAction-1669888417734]: 
         actionValue: 
           - xmlizable: 
@@ -643,7 +643,11 @@ tplProjectName: mobilebuilder_tpl_8_1_0_ngx
       - ↑classname: com.twinsoft.convertigo.beans.common.FormatedContent
       - com.twinsoft.convertigo.beans.common.FormatedContent: 
         →: |
-          '.green {
+          '.img-login {
+          	margin: 10px;
+          }
+          
+          .green {
           	background-color: green;
           }
           

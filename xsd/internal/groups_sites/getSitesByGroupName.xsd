@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:poc_energisme_ns="http://www.convertigo.com/convertigo/projects/poc_energisme" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/poc_energisme">
-    <xsd:element name="groups_sites__getSitesByGroupName" type="poc_energisme_ns:groups_sites__getSitesByGroupNameRequestData">
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:energy_management_ns="http://www.convertigo.com/convertigo/projects/energy_management" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/energy_management">
+    <xsd:element name="groups_sites__getSitesByGroupName" type="energy_management_ns:groups_sites__getSitesByGroupNameRequestData">
         <xsd:annotation/>
     </xsd:element>
     <xsd:element name="groups_sites__getSitesByGroupNameResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="response" type="poc_energisme_ns:groups_sites__getSitesByGroupNameResponseData"/>
+                <xsd:element name="response" type="energy_management_ns:groups_sites__getSitesByGroupNameResponseData"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
     <xsd:complexType name="groups_sites__getSitesByGroupNameResponseType">
         <xsd:sequence>
-            <xsd:element name="document" type="poc_energisme_ns:groups_sites__getSitesByGroupNameResponseData"/>
+            <xsd:element name="document" type="energy_management_ns:groups_sites__getSitesByGroupNameResponseData"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="groups_sites__getSitesByGroupNameRequestData">
@@ -74,10 +74,10 @@
     </xsd:complexType>
     <xsd:complexType name="groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_keyType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="_id" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key__idType"/>
-            <xsd:element minOccurs="0" name="_rev" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key__revType"/>
-            <xsd:element minOccurs="0" name="group_name" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key_group_nameType"/>
-            <xsd:element minOccurs="0" name="site_id" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key_site_idType"/>
+            <xsd:element minOccurs="0" name="_id" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key__idType"/>
+            <xsd:element minOccurs="0" name="_rev" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key__revType"/>
+            <xsd:element minOccurs="0" name="group_name" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key_group_nameType"/>
+            <xsd:element minOccurs="0" name="site_id" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_key_site_idType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
@@ -90,15 +90,15 @@
     </xsd:complexType>
     <xsd:complexType name="groups_sites_getSitesByGroupName_document_couchdb_output_rows_itemType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="id" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_idType"/>
-            <xsd:element minOccurs="0" name="key" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_keyType"/>
-            <xsd:element minOccurs="0" name="value" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_valueType"/>
+            <xsd:element minOccurs="0" name="id" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_idType"/>
+            <xsd:element minOccurs="0" name="key" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_keyType"/>
+            <xsd:element minOccurs="0" name="value" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_item_valueType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="groups_sites_getSitesByGroupName_document_couchdb_output_rowsType">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_itemType"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rows_itemType"/>
         </xsd:sequence>
         <xsd:attribute name="length" type="xsd:byte"/>
         <xsd:attribute default="array" name="type" type="xsd:string"/>
@@ -180,38 +180,38 @@
     </xsd:complexType>
     <xsd:complexType name="groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headersType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="Cache_Control" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_Cache_ControlType"/>
-            <xsd:element minOccurs="0" name="Content_Type" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_Content_TypeType"/>
-            <xsd:element minOccurs="0" name="Date" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_DateType"/>
-            <xsd:element minOccurs="0" name="Server" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_ServerType"/>
-            <xsd:element minOccurs="0" name="Transfer_Encoding" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_Transfer_EncodingType"/>
-            <xsd:element minOccurs="0" name="X_Couch_Request_ID" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_X_Couch_Request_IDType"/>
-            <xsd:element minOccurs="0" name="X_CouchDB_Body_Time" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_X_CouchDB_Body_TimeType"/>
+            <xsd:element minOccurs="0" name="Cache_Control" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_Cache_ControlType"/>
+            <xsd:element minOccurs="0" name="Content_Type" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_Content_TypeType"/>
+            <xsd:element minOccurs="0" name="Date" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_DateType"/>
+            <xsd:element minOccurs="0" name="Server" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_ServerType"/>
+            <xsd:element minOccurs="0" name="Transfer_Encoding" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_Transfer_EncodingType"/>
+            <xsd:element minOccurs="0" name="X_Couch_Request_ID" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_X_Couch_Request_IDType"/>
+            <xsd:element minOccurs="0" name="X_CouchDB_Body_Time" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headers_X_CouchDB_Body_TimeType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="groups_sites_getSitesByGroupName_document_couchdb_output__c8oMetaType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="statusCode" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_statusCodeType"/>
-            <xsd:element minOccurs="0" name="status" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_statusType"/>
-            <xsd:element minOccurs="0" name="reasonPhrase" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_reasonPhraseType"/>
-            <xsd:element minOccurs="0" name="headers" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headersType"/>
+            <xsd:element minOccurs="0" name="statusCode" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_statusCodeType"/>
+            <xsd:element minOccurs="0" name="status" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_statusType"/>
+            <xsd:element minOccurs="0" name="reasonPhrase" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_reasonPhraseType"/>
+            <xsd:element minOccurs="0" name="headers" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMeta_headersType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="groups_sites_getSitesByGroupName_document_couchdb_outputType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="total_rows" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_total_rowsType"/>
-            <xsd:element minOccurs="0" name="offset" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_offsetType"/>
-            <xsd:element minOccurs="0" name="rows" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rowsType"/>
-            <xsd:element minOccurs="0" name="_c8oMeta" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMetaType"/>
+            <xsd:element minOccurs="0" name="total_rows" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_total_rowsType"/>
+            <xsd:element minOccurs="0" name="offset" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_offsetType"/>
+            <xsd:element minOccurs="0" name="rows" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output_rowsType"/>
+            <xsd:element minOccurs="0" name="_c8oMeta" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_output__c8oMetaType"/>
         </xsd:sequence>
         <xsd:attribute default="object" name="type" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="groups_sites__getSitesByGroupNameResponseData">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="couchdb_output" type="poc_energisme_ns:groups_sites_getSitesByGroupName_document_couchdb_outputType"/>
-            <xsd:element minOccurs="0" name="error" type="poc_energisme_ns:ConvertigoError"/>
+            <xsd:element minOccurs="0" name="couchdb_output" type="energy_management_ns:groups_sites_getSitesByGroupName_document_couchdb_outputType"/>
+            <xsd:element minOccurs="0" name="error" type="energy_management_ns:ConvertigoError"/>
         </xsd:sequence>
         <xsd:attribute name="connector" type="xsd:string"/>
         <xsd:attribute name="context" type="xsd:string"/>
@@ -233,7 +233,7 @@
     </xsd:complexType>
     <xsd:complexType name="ConvertigoErrorContext">
         <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="variable" type="poc_energisme_ns:ConvertigoErrorContextVariable"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="variable" type="energy_management_ns:ConvertigoErrorContextVariable"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="ConvertigoError">
@@ -241,7 +241,7 @@
             <xsd:element name="code" type="xsd:integer"/>
             <xsd:element name="message" type="xsd:string"/>
             <xsd:element name="details" type="xsd:string"/>
-            <xsd:element name="context" type="poc_energisme_ns:ConvertigoErrorContext"/>
+            <xsd:element name="context" type="energy_management_ns:ConvertigoErrorContext"/>
             <xsd:element name="exception" type="xsd:string"/>
             <xsd:element name="stacktrace" type="xsd:string"/>
         </xsd:sequence>

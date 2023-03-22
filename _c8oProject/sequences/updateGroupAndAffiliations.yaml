@@ -1,6 +1,6 @@
 ↓Input_variables [steps.InputVariablesStep-1672397668064]: 
 ↓Call_Sequence_1 [steps.SequenceStep-1672397642914]: 
-  sourceSequence: poc_energisme.getSitesByGroupName
+  sourceSequence: energy_management.getSitesByGroupName
   ↓group_name [variables.StepVariable-1672397655745]: 
     sourceDefinition: 
       - xmlizable: 
@@ -126,7 +126,7 @@
       //data = JSON.stringify(data)
       //log.warn(data)'
   ↓Call_Transaction [steps.TransactionStep-1672398364203]: 
-    sourceTransaction: poc_energisme.groups_sites.deleteSitesFromGroup
+    sourceTransaction: energy_management.groups_sites.deleteSitesFromGroup
     ↓_use_docid [variables.StepVariable-1672398377594]: 
       description: Document ID
       sourceDefinition: 
@@ -138,7 +138,7 @@
             - java.lang.String: 
               - ↑value: ./text()
   ↓Call_Sequence [steps.SequenceStep-1672398438161]: 
-    sourceSequence: poc_energisme.insertGroupSites
+    sourceSequence: energy_management.insertGroupSites
     ↓groups [variables.StepMultiValuedVariable-1672398448374]: 
     ↓site_id [variables.StepVariable-1672398448376]: 
       sourceDefinition: 
