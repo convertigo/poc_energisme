@@ -10,7 +10,7 @@ responseExpiryDate: absolute,36000
     	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
     }
     
-    string = "AND sm.site_id IN (" + string + ")"
+    string = "site_id IN (" + string + ")"
     filter_condition = string
     //log.warn(string)'
 ↓jElement [steps.ElementStep-1673860885427]: 
@@ -38,7 +38,7 @@ responseExpiryDate: absolute,36000
           - ↑mode: PLAIN
           - →→: Aucune liste de sites
 ↓Call_Transaction [steps.TransactionStep-1673859493998]: 
-  sourceTransaction: energy_management.postgreSQL.widget_multisite_sites_energivore
+  sourceTransaction: energy_management.postgreSQL.widget_multisite_sites_energivore_precalc
   ↓limit [variables.StepVariable-1673859606460]: 
     description: limit
     value: 50
@@ -1019,15 +1019,15 @@ responseExpiryDate: absolute,36000
     description: limit
     value: 20
   ↓sites [variables.TestCaseVariable-1673874265169]: 
-    value: '[7991, 7626]'
+    value: '[14120, 14121]'
   ↓synthese [variables.TestCaseVariable-1673874265172]: 
     value: elec
   ↓date_start [variables.TestCaseVariable-1674227861122]: 
     description: date_start
-    value: 2021-06-01
+    value: 2021-01-01
   ↓date_end [variables.TestCaseVariable-1674227861124]: 
     description: date_end
-    value: 2022-12-31
+    value: 2023-12-31
 ↓multisiteGaz [core.TestCase]: 
   ↓limit [variables.TestCaseVariable-1673874437919]: 
     description: limit
@@ -1047,7 +1047,7 @@ responseExpiryDate: absolute,36000
     description: limit
     value: 20
   ↓sites [variables.TestCaseVariable-1673860487747]: 
-    value: '[7991, 7626]'
+    value: '[14120, 7626]'
   ↓synthese [variables.TestCaseVariable-1673874186172]: 
     value: global
   ↓date_start [variables.TestCaseVariable-1674227855647]: 
@@ -1055,7 +1055,7 @@ responseExpiryDate: absolute,36000
     value: 2021-06-01
   ↓date_end [variables.TestCaseVariable-1674227855649]: 
     description: date_end
-    value: 2022-12-31
+    value: 2023-01-01
 ↓noSites [core.TestCase]: 
   ↓limit [variables.TestCaseVariable-1673860367436]: 
     description: limit

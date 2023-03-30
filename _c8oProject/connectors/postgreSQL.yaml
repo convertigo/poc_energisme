@@ -111,8 +111,8 @@ testOnBorrow: true
     where sm.site_id in ({{sites}})
     and rd.ts >= TO_TIMESTAMP({date_start}, 'YYYY-MM-DD')
     and rd.ts <= TO_TIMESTAMP({date_end}, 'YYYY-MM-DD')
-    group by to_char(rd.ts,'{{agg_function}}')
-    order by to_char(rd.ts,'{{agg_function}}')
+    group by agg_period
+    order by agg_period
   handlers: 
     →: |
       '// Handles the XML generated event.
@@ -143,7 +143,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672928023872]: 
-      value: CAST('7991' AS BIGINT)
+      value: CAST('14120' AS BIGINT)
     ↓agg_function [variables.TestCaseVariable-1672928023875]: 
       value: YYYY
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
@@ -234,6 +234,146 @@ testOnBorrow: true
   ↓sensor_mapping_table [variables.RequestableVariable-1674049340461]: 
     description: sensor_mapping_table
     value: ${energy_management.sensor_mapping_table}
+↓widget_conso_precalc [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select 
+    sum (val) filter (where "type"='gaz') as sum_conso_gaz,
+    sum (val) filter (where "type"='elec')  as sum_conso_elec,
+    sum (val) filter (where "type"='jdu')  as sum_dju,
+    to_char(date_calc,'{{agg_function}}')  as agg_period
+    from {{sum_conso_by_site_table}}
+    where site_id in ({{sites}})
+    and date_calc >= '{{date_start}}'
+    and date_calc <= '{{date_end}}'
+    group by agg_period
+    order by agg_period
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      
+      function onXmlGenerated() {
+      
+      	xpath = context.getXpathApi();
+      
+          root = dom.getDocumentElement();
+      
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      
+      	while((el=els.nextNode()) != null){
+      
+      		el.setAttribute("type", "null");
+      
+      	}
+      
+      }'
+  ↓Test_Case_KO [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685906]: 
+      description: date_start
+      value: 2022-11-01
+    ↓date_end [variables.TestCaseVariable-1679557685909]: 
+      description: date_end
+      value: 2023-02-28
+    ↓sites [variables.TestCaseVariable-1679557685912]: 
+      value: CAST('7991' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557685915]: 
+      value: YYYY-WW
+  ↓Test_Case_Monosite_evolution_conso_agg_annee [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685919]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557685922]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557685925]: 
+      value: CAST('14120' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557685928]: 
+      value: YYYY
+  ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685932]: 
+      description: date_start
+      value: 2022-01-30
+    ↓date_end [variables.TestCaseVariable-1679557685935]: 
+      description: date_end
+      value: 2023-01-30
+    ↓sites [variables.TestCaseVariable-1679557685938]: 
+      value: CAST('14120' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557685941]: 
+      value: YYYY-MM
+  ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685945]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557685948]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557685951]: 
+      value: CAST('14120' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557685954]: 
+      value: YYYY-WW
+  ↓Test_Case_Multisite_evolution_conso_agg_annee [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685958]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557685961]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557685964]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557685967]: 
+      value: YYYY
+  ↓Test_Case_Multisite_evolution_conso_agg_heure [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685971]: 
+      description: date_start
+      value: 2022-10-01
+    ↓date_end [variables.TestCaseVariable-1679557685974]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557685977]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557685980]: 
+      value: YYYY-MM-DD HH:00
+  ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685984]: 
+      description: date_start
+      value: 2022-10-01
+    ↓date_end [variables.TestCaseVariable-1679557685987]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557685990]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557685993]: 
+      value: YYYY-MM-DD
+  ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557685997]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557686000]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557686003]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557686006]: 
+      value: YYYY-MM
+  ↓Test_Case_Multisite_evolution_conso_agg_semaine [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557686010]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557686013]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557686016]: 
+      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557686019]: 
+      value: YYYY-WW
+  ↓date_start [variables.RequestableVariable-1679557686022]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1679557686025]: 
+    description: date_end
+  ↓sites [variables.RequestableVariable-1679557686028]: 
+  ↓agg_function [variables.RequestableVariable-1679557686031]: 
+  ↓sum_conso_by_site_table [variables.RequestableVariable-1679559091917]: 
+    description: sum_conso_by_site_table
+    value: ${energy_management.sum_conso_by_site_table}
 ↓widget_conso_total [transactions.SqlTransaction]: 
   sqlQuery: |
     select
@@ -277,6 +417,52 @@ testOnBorrow: true
   ↓sensor_mapping_table [variables.RequestableVariable-1674049606383]: 
     description: sensor_mapping_table
     value: ${energy_management.sensor_mapping_table}
+↓widget_conso_total_precalc [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select
+    sum (val) filter (where "type"='gaz') as sum_conso_gaz,
+    sum (val) filter (where "type"='elec') as sum_conso_elec,
+    sum (val) filter (where "type"='jdu') as sum_dju
+    from {{sum_conso_by_site_table}}
+    where site_id IN ({{sites}}) 
+    and date_calc >= '{{date_start}}'
+    and date_calc <= '{{date_end}}'
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      
+      function onXmlGenerated() {
+      
+      	xpath = context.getXpathApi();
+      
+          root = dom.getDocumentElement();
+      
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      
+      	while((el=els.nextNode()) != null){
+      
+      		el.setAttribute("type", "null");
+      
+      	}
+      
+      }'
+  ↓Test_Case_Multisite [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557704819]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557704822]: 
+      description: date_end
+      value: 2022-12-01
+    ↓sites [variables.TestCaseVariable-1679557704825]: 
+      value: CAST('13951' AS BIGINT)
+  ↓date_start [variables.RequestableVariable-1679557704828]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1679557704831]: 
+    description: date_end
+  ↓sites [variables.RequestableVariable-1679557704834]: 
+  ↓sum_conso_by_site_table [variables.RequestableVariable-1679561983800]: 
+    description: sum_conso_by_site_table
+    value: ${energy_management.sum_conso_by_site_table}
 ↓widget_evol_conso [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
@@ -369,6 +555,110 @@ testOnBorrow: true
     value: ${energy_management.sensor_mapping_table}
   ↓first_year [variables.RequestableVariable-1676488949013]: 
   ↓last_year [variables.RequestableVariable-1676488960727]: 
+↓widget_evol_conso_precalc [transactions.SqlTransaction]: 
+  sqlQuery: |
+    select 
+    sum (val) filter (where "type"='gaz' and to_char(date_calc ,'YYYY') = '{{last_year}}') as sum_conso_gaz,
+    sum (val) filter (where "type"='gaz' and to_char(date_calc ,'YYYY') = '{{first_year}}') as prec_sum_conso_gaz,
+    sum (val) filter (where "type"='elec' and to_char(date_calc ,'YYYY') = '{{last_year}}') as sum_conso_elec,
+    sum (val) filter (where "type"='elec' and to_char(date_calc ,'YYYY') = '{{first_year}}') as prec_sum_conso_elec,
+    sum (val) filter (where "type"='jdu' and to_char(date_calc ,'YYYY') = '{{last_year}}')  as sum_dju,
+    sum (val) filter (where "type"='jdu' and to_char(date_calc ,'YYYY') = '{{first_year}}')  as prec_sum_dju,
+    to_char(date_calc ,'{{agg_function}}')  as agg_period
+    from {{sum_conso_by_site_table}} 
+    where site_id IN ({{sites}}) 
+    and date_calc >= '{{date_start}}'
+    and date_calc <= '{{date_end}}'
+    group by agg_period
+    order by agg_period
+    
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      
+      
+      
+      function onXmlGenerated() {
+      
+      
+      
+      	xpath = context.getXpathApi();
+      
+      
+      
+          root = dom.getDocumentElement();
+      
+      
+      
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      
+      
+      
+      	while((el=els.nextNode()) != null){
+      
+      
+      
+      		el.setAttribute("type", "null");
+      
+      
+      
+      	}
+      
+      
+      
+      }'
+  ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557715610]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557715613]: 
+      description: date_end
+      value: 2023-01-01
+    ↓sites [variables.TestCaseVariable-1679557715616]: 
+      value: CAST('14120' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557715619]: 
+      value: MM
+    ↓raw_data_table [variables.TestCaseVariable-1679557715622]: 
+      value: ${energy_management.raw_data_table}
+    ↓sensor_mapping_table [variables.TestCaseVariable-1679557715625]: 
+      description: sensor_mapping_table
+      value: ${energy_management.sensor_mapping_table}
+    ↓first_year [variables.TestCaseVariable-1679557715628]: 
+      value: 2021
+    ↓last_year [variables.TestCaseVariable-1679557715631]: 
+      value: 2022
+  ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
+    ↓date_start [variables.TestCaseVariable-1679557715635]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557715638]: 
+      description: date_end
+      value: 2023-01-01
+    ↓sites [variables.TestCaseVariable-1679557715641]: 
+      value: CAST('7626' AS BIGINT)
+    ↓agg_function [variables.TestCaseVariable-1679557715644]: 
+      value: WW
+    ↓raw_data_table [variables.TestCaseVariable-1679557715647]: 
+      value: ${energy_management.raw_data_table}
+    ↓sensor_mapping_table [variables.TestCaseVariable-1679557715650]: 
+      description: sensor_mapping_table
+      value: ${energy_management.sensor_mapping_table}
+    ↓first_year [variables.TestCaseVariable-1679557715653]: 
+      value: 2021
+    ↓last_year [variables.TestCaseVariable-1679557715656]: 
+      value: 2022
+  ↓date_start [variables.RequestableVariable-1679557715659]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1679557715662]: 
+    description: date_end
+  ↓agg_function [variables.RequestableVariable-1679557715668]: 
+  ↓first_year [variables.RequestableVariable-1679557715677]: 
+  ↓last_year [variables.RequestableVariable-1679557715680]: 
+  ↓sum_conso_by_site_table [variables.RequestableVariable-1679562367500]: 
+    description: sum_conso_by_site_table
+    value: ${energy_management.sum_conso_by_site_table}
+  ↓sites [variables.RequestableVariable-1679931076411]: 
+    description: sites
 ↓widget_heatmap [transactions.SqlTransaction]: 
   sqlQuery: |
     select 
@@ -488,3 +778,76 @@ testOnBorrow: true
     description: date_start
   ↓date_end [variables.RequestableVariable-1674226333166]: 
     description: date_end
+↓widget_multisite_sites_energivore_precalc [transactions.SqlTransaction]: 
+  sqlQuery: |
+    with conso_by_site as (
+    	select
+    		sum(val) filter (where "type"='gaz') as avg_conso_gaz, 
+    		sum (val) filter (where "type"='elec') as avg_conso_elec,
+    		site_id
+    		from {{sum_conso_by_site_table}}
+    		where {{filter_condition}}
+    		and date_calc >= '{{date_start}}'
+    		and date_calc <= '{{date_end}}'
+    		
+    	group by site_id)
+    select 
+    	conso_by_site.avg_conso_gaz, 
+    	conso_by_site.avg_conso_elec, 
+    	conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz  as avg_conso,
+    	s.nom, ST_Y(s.position) as latitude, 
+    	ST_X(s.position) as longitude, 
+    	site_id
+    from {{site_table}} s
+    inner join conso_by_site 
+    on conso_by_site.site_id = s.id
+    order by avg_conso desc
+    limit CAST({limit} AS BIGINT);
+    
+    
+  handlers: 
+    →: |
+      '// Handles the XML generated event.
+      
+      function onXmlGenerated() {
+      
+      	xpath = context.getXpathApi();
+      
+          root = dom.getDocumentElement();
+      
+      	els = xpath.selectNodeIterator(root, "//*[@type=''double'' and .='''']");
+      
+      	while((el=els.nextNode()) != null){
+      
+      		el.setAttribute("type", "null");
+      
+      	}
+      
+      }'
+  ↓Test_Case_subset [core.TestCase]: 
+    ↓limit [variables.TestCaseVariable-1679557794047]: 
+      description: limit
+      value: 20
+    ↓filter_condition [variables.TestCaseVariable-1679557794050]: 
+      description: filter_condition
+      value: site_id IN (CAST('14120' AS BIGINT))
+    ↓date_start [variables.TestCaseVariable-1679557794062]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1679557794065]: 
+      description: date_end
+      value: 2023-01-01
+  ↓limit [variables.RequestableVariable-1679557794068]: 
+    description: limit
+  ↓filter_condition [variables.RequestableVariable-1679557794074]: 
+    description: filter_condition
+  ↓site_table [variables.RequestableVariable-1679557794080]: 
+    description: site_table
+    value: ${energy_management.sites_table}
+  ↓date_start [variables.RequestableVariable-1679557794083]: 
+    description: date_start
+  ↓date_end [variables.RequestableVariable-1679557794086]: 
+    description: date_end
+  ↓sum_conso_by_site_table [variables.RequestableVariable-1679562702200]: 
+    description: sum_conso_by_site_table
+    value: ${energy_management.sum_conso_by_site_table}

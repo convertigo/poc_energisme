@@ -2,7 +2,7 @@
 ↓energy_management [core.Project]: 
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
-  version: 0.9
+  version: 0.9.1
   ↓groups_sites [connectors.FullSyncConnector]: 🗏 connectors/groups_sites.yaml
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
