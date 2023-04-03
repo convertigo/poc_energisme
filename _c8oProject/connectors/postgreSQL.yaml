@@ -7,7 +7,7 @@ testOnBorrow: true
   ↑default: true
 ↓get_site [transactions.SqlTransaction]: 
   sqlQuery: |
-    SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
+    SELECT id, nom, com_cp, structure_insee, public.ST_X("position") as latitude, public.ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
     WHERE s.id = CAST({site_id} AS BIGINT);
     
@@ -32,7 +32,7 @@ testOnBorrow: true
     value: ${energy_management.sites_table}
 ↓get_sites_list [transactions.SqlTransaction]: 
   sqlQuery: |
-    'SELECT id, nom, com_cp, structure_insee, ST_X("position") as longitude, ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
+    'SELECT id, nom, com_cp, structure_insee, public.ST_X("position") as longitude, public.ST_Y("position") as latitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
     {{filter_condition}};'
   handlers: 
@@ -63,7 +63,7 @@ testOnBorrow: true
     value: ${energy_management.sites_table}
 ↓search_site [transactions.SqlTransaction]: 
   sqlQuery: |
-    SELECT id, nom, com_cp, structure_insee, ST_X("position") as latitude, ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
+    SELECT id, nom, com_cp, structure_insee, public.ST_X("position") as latitude, public.ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
     WHERE LOWER(nom) LIKE '%{{label}}%';
   handlers: 
@@ -720,8 +720,9 @@ testOnBorrow: true
     	conso_by_site.avg_conso_gaz, 
     	conso_by_site.avg_conso_elec, 
     	conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz  as avg_conso,
-    	s.nom, ST_Y(s.position) as latitude, 
-    	ST_X(s.position) as longitude, 
+    	s.nom, 
+    	public.ST_Y(s.position) as latitude, 
+    	public.ST_X(s.position) as longitude, 
     	site_id
     from {{site_table}} s
     inner join conso_by_site 
@@ -782,8 +783,7 @@ testOnBorrow: true
   sqlQuery: |
     with conso_by_site as (
     	select
-    		sum(val) filter (where "type"='gaz') as avg_conso_gaz, 
-    		sum (val) filter (where "type"='elec') as avg_conso_elec,
+    		sum(val) {{filter_condition_conso}} as avg_conso, 
     		site_id
     		from {{sum_conso_by_site_table}}
     		where {{filter_condition}}
@@ -792,19 +792,16 @@ testOnBorrow: true
     		
     	group by site_id)
     select 
-    	conso_by_site.avg_conso_gaz, 
-    	conso_by_site.avg_conso_elec, 
-    	conso_by_site.avg_conso_elec + conso_by_site.avg_conso_gaz  as avg_conso,
-    	s.nom, ST_Y(s.position) as latitude, 
-    	ST_X(s.position) as longitude, 
+    	conso_by_site.avg_conso, 
+    	s.nom, 
+    	public.ST_Y(s.position) as latitude, 
+    	public.ST_X(s.position) as longitude, 
     	site_id
     from {{site_table}} s
     inner join conso_by_site 
     on conso_by_site.site_id = s.id
     order by avg_conso desc
     limit CAST({limit} AS BIGINT);
-    
-    
   handlers: 
     →: |
       '// Handles the XML generated event.
@@ -824,7 +821,23 @@ testOnBorrow: true
       	}
       
       }'
-  ↓Test_Case_subset [core.TestCase]: 
+  ↓Test_Case_monosite_elec [core.TestCase]: 
+    ↓limit [variables.TestCaseVariable-1680533344803]: 
+      description: limit
+      value: 20
+    ↓filter_condition [variables.TestCaseVariable-1680533344806]: 
+      description: filter_condition
+      value: site_id IN (CAST('14120' AS BIGINT))
+    ↓date_start [variables.TestCaseVariable-1680533344809]: 
+      description: date_start
+      value: 2021-01-01
+    ↓date_end [variables.TestCaseVariable-1680533344812]: 
+      description: date_end
+      value: 2023-01-01
+    ↓filter_condition_conso [variables.TestCaseVariable-1680533344815]: 
+      description: filter_condition_conso
+      value: filter (where "type"='elec')
+  ↓Test_Case_monosite_gaz [core.TestCase]: 
     ↓limit [variables.TestCaseVariable-1679557794047]: 
       description: limit
       value: 20
@@ -837,6 +850,9 @@ testOnBorrow: true
     ↓date_end [variables.TestCaseVariable-1679557794065]: 
       description: date_end
       value: 2023-01-01
+    ↓filter_condition_conso [variables.TestCaseVariable-1680533160268]: 
+      description: filter_condition_conso
+      value: filter (where "type"='gaz')
   ↓limit [variables.RequestableVariable-1679557794068]: 
     description: limit
   ↓filter_condition [variables.RequestableVariable-1679557794074]: 
@@ -851,3 +867,5 @@ testOnBorrow: true
   ↓sum_conso_by_site_table [variables.RequestableVariable-1679562702200]: 
     description: sum_conso_by_site_table
     value: ${energy_management.sum_conso_by_site_table}
+  ↓filter_condition_conso [variables.RequestableVariable-1680533153803]: 
+    description: filter_condition_conso

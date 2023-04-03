@@ -1,5 +1,3 @@
-clientCachable: true
-responseExpiryDate: absolute,36000
 ↓Input_variables [steps.InputVariablesStep-1673859488051]: 
 ↓buildCastStrings [steps.SimpleStep-1673860885424]: 
   expression: |
@@ -12,7 +10,8 @@ responseExpiryDate: absolute,36000
     
     string = "site_id IN (" + string + ")"
     filter_condition = string
-    //log.warn(string)'
+    //log.warn(string)
+    '
 ↓jElement [steps.ElementStep-1673860885427]: 
   expression: string
   isEnabled: false
@@ -28,6 +27,23 @@ responseExpiryDate: absolute,36000
         - java.lang.String: 
           - ↑value: ./synthese/text()
   variableName: synthese
+↓buildFilterConso [steps.SimpleStep-1680533832255]: 
+  expression: |
+    '//log.warn("synthese")
+    //log.warn(synthese)
+    
+    
+    filter_condition_conso = '''';
+    
+    switch(synthese) {
+    	case ''elec'':
+    		filter_condition_conso = "filter (where type=''elec'')"
+    		break;
+    	case ''gaz'':
+    		filter_condition_conso = "filter (where type=''gaz'')"
+    		break;
+    }
+    '
 ↓jIf [steps.IfStep-1673860335233]: 
   condition: sites == null || sites.length == 0
   ↓Error_structure [steps.XMLErrorStep-1673860352305]: 
@@ -50,6 +66,8 @@ responseExpiryDate: absolute,36000
     description: date_start
   ↓date_end [variables.StepVariable-1674227806594]: 
     description: date_end
+  ↓filter_condition_conso [variables.StepVariable-1680534563803]: 
+    description: filter_condition_conso
 ↓jSimpleSource_2 [steps.SimpleSourceStep-1674228130820]: 
   sourceDefinition: 
     - xmlizable: 
@@ -94,233 +112,222 @@ responseExpiryDate: absolute,36000
     ↓Element [steps.XMLElementStep-1673860326495]: 
       nodeName: chartType
       nodeText: bar
-    ↓jIf_1 [steps.IfStep-1673874117967]: 
-      condition: synthese == 'global'
-      ↓Object [steps.JsonObjectStep-1673874136845]: 
+    ↓Object_1 [steps.JsonObjectStep-1673874136896]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: chartOptions
+      ↓Object [steps.JsonObjectStep-1673874136899]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
-              - →→: data
-        ↓Array [steps.JsonArrayStep-1673874136848]: 
+              - →→: plugins
+        ↓Object [steps.JsonObjectStep-1673874136902]: 
           key: 
             - xmlizable: 
               - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
               - SmartType: 
                 - ↑mode: PLAIN
-                - →→: labels
-          ↓Iterator [steps.IteratorStep-1673874136851]: 
-            sourceDefinition: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                - com.twinsoft.convertigo.beans.common.XMLVector: 
-                  - java.lang.String: 
-                    - ↑value: 1673859493998
-                  - java.lang.String: 
-                    - ↑value: ./document/sql_output/row
-            ↓Field [steps.JsonFieldStep-1673874136854]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: Field
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: SOURCE
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1673874136851
-                      - java.lang.String: 
-                        - ↑value: ./nom/text()
-        ↓Array_1 [steps.JsonArrayStep-1673874136857]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: datasets
-          ↓Object [steps.JsonObjectStep-1673874136860]: 
-            ↓Field [steps.JsonFieldStep-1673874136863]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: label
-            ↓Array [steps.JsonArrayStep-1673874136866]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: data
-              ↓Iterator [steps.IteratorStep-1673874136869]: 
-                sourceDefinition: 
-                  - xmlizable: 
-                    - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
-                    - com.twinsoft.convertigo.beans.common.XMLVector: 
-                      - java.lang.String: 
-                        - ↑value: 1673859493998
-                      - java.lang.String: 
-                        - ↑value: ./document/sql_output/row
-                ↓Field [steps.JsonFieldStep-1673874136881]: 
-                  key: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: PLAIN
-                        - →→: Field
-                  value: 
-                    - xmlizable: 
-                      - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                      - SmartType: 
-                        - ↑mode: SOURCE
-                        - com.twinsoft.convertigo.beans.common.XMLVector: 
-                          - java.lang.String: 
-                            - ↑value: 1673874136869
-                          - java.lang.String: 
-                            - ↑value: ./avg_conso/text()
-            ↓Field_2 [steps.JsonFieldStep-1673874136884]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: backgroundColor
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: rgb(250, 150, 12)
-            ↓Field_3 [steps.JsonFieldStep-1673874136887]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: hoverBackgroundColor
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: rgb(250, 150, 12)
-            ↓Field_4 [steps.JsonFieldStep-1673874136890]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: borderColor
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: rgb(250, 150, 12)
-            ↓Field_5 [steps.JsonFieldStep-1673874136893]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: hoverBorderColor
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: rgb(250, 150, 12)
-      ↓Object_1 [steps.JsonObjectStep-1673874136896]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: chartOptions
-        ↓Object [steps.JsonObjectStep-1673874136899]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: plugins
-          ↓Object [steps.JsonObjectStep-1673874136902]: 
+                - →→: legend
+          ↓Field [steps.JsonFieldStep-1673874136905]: 
             key: 
               - xmlizable: 
                 - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
                 - SmartType: 
                   - ↑mode: PLAIN
-                  - →→: legend
-            ↓Field [steps.JsonFieldStep-1673874136905]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: display
-              type: bool
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: false
-        ↓Field [steps.JsonFieldStep-1673874136908]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: maintainAspectRatio
-          type: bool
-          value: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: false
-        ↓responsive [steps.JsonFieldStep-1673874136911]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: responsive
-          type: bool
-          value: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: true
-      ↓Field [steps.JsonFieldStep-1674229754880]: 
+                  - →→: display
+            type: bool
+            value: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: false
+      ↓Field [steps.JsonFieldStep-1673874136908]: 
         key: 
           - xmlizable: 
             - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
             - SmartType: 
               - ↑mode: PLAIN
-              - →→: total
-      ↓ComputeDate [steps.SimpleStep-1674230147587]: 
-        expression: |
-          'String.prototype.replaceAll = function(search, replacement) {
-              var target = this;
-              return target.replace(new RegExp(search, ''g''), replacement);
-          };
-          
-          date_start = date_start.replaceAll(''-'', ''/'')
-          date_end = date_end.replaceAll(''-'', ''/'')
-          var date = date_start + '' - '' + date_end;'
-      ↓jElement_1 [steps.ElementStep-1674230147590]: 
-        expression: date
-        nodeName: date
+              - →→: maintainAspectRatio
+        type: bool
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: false
+      ↓responsive [steps.JsonFieldStep-1673874136911]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: responsive
+        type: bool
+        value: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: true
+    ↓Field [steps.JsonFieldStep-1674229754880]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: total
+    ↓Object [steps.JsonObjectStep-1673874136845]: 
+      key: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+          - SmartType: 
+            - ↑mode: PLAIN
+            - →→: data
+      ↓Array [steps.JsonArrayStep-1673874136848]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: labels
+        ↓Iterator [steps.IteratorStep-1673874136851]: 
+          sourceDefinition: 
+            - xmlizable: 
+              - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+              - com.twinsoft.convertigo.beans.common.XMLVector: 
+                - java.lang.String: 
+                  - ↑value: 1673859493998
+                - java.lang.String: 
+                  - ↑value: ./document/sql_output/row
+          ↓Field [steps.JsonFieldStep-1673874136854]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: Field
+            value: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: SOURCE
+                  - com.twinsoft.convertigo.beans.common.XMLVector: 
+                    - java.lang.String: 
+                      - ↑value: 1673874136851
+                    - java.lang.String: 
+                      - ↑value: ./nom/text()
+      ↓Array_1 [steps.JsonArrayStep-1673874136857]: 
+        key: 
+          - xmlizable: 
+            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+            - SmartType: 
+              - ↑mode: PLAIN
+              - →→: datasets
+        ↓Object [steps.JsonObjectStep-1673874136860]: 
+          ↓Field [steps.JsonFieldStep-1673874136863]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: label
+          ↓Array [steps.JsonArrayStep-1673874136866]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: data
+            ↓Iterator [steps.IteratorStep-1673874136869]: 
+              sourceDefinition: 
+                - xmlizable: 
+                  - ↑classname: com.twinsoft.convertigo.beans.common.XMLVector
+                  - com.twinsoft.convertigo.beans.common.XMLVector: 
+                    - java.lang.String: 
+                      - ↑value: 1673859493998
+                    - java.lang.String: 
+                      - ↑value: ./document/sql_output/row
+              ↓Field [steps.JsonFieldStep-1673874136881]: 
+                key: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: PLAIN
+                      - →→: Field
+                value: 
+                  - xmlizable: 
+                    - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                    - SmartType: 
+                      - ↑mode: SOURCE
+                      - com.twinsoft.convertigo.beans.common.XMLVector: 
+                        - java.lang.String: 
+                          - ↑value: 1673874136869
+                        - java.lang.String: 
+                          - ↑value: ./avg_conso/text()
+          ↓Field_2 [steps.JsonFieldStep-1673874136884]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: backgroundColor
+            value: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: rgb(250, 150, 12)
+          ↓Field_3 [steps.JsonFieldStep-1673874136887]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: hoverBackgroundColor
+            value: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: rgb(250, 150, 12)
+          ↓Field_4 [steps.JsonFieldStep-1673874136890]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: borderColor
+            value: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: rgb(250, 150, 12)
+          ↓Field_5 [steps.JsonFieldStep-1673874136893]: 
+            key: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: hoverBorderColor
+            value: 
+              - xmlizable: 
+                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
+                - SmartType: 
+                  - ↑mode: PLAIN
+                  - →→: rgb(250, 150, 12)
+    ↓jIf_1 [steps.IfStep-1673874117967]: 
+      condition: synthese == 'global'
+      isEnabled: false
     ↓jIf_2 [steps.IfStep-1673874245082]: 
       condition: synthese == 'elec'
+      isEnabled: false
       ↓Object [steps.JsonObjectStep-1673874245085]: 
         key: 
           - xmlizable: 
@@ -461,91 +468,9 @@ responseExpiryDate: absolute,36000
                   - SmartType: 
                     - ↑mode: PLAIN
                     - →→: rgb(50, 193, 113)
-      ↓Object_1 [steps.JsonObjectStep-1673874245136]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: chartOptions
-        ↓Object [steps.JsonObjectStep-1673874245139]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: plugins
-          ↓Object [steps.JsonObjectStep-1673874245142]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: legend
-            ↓Field [steps.JsonFieldStep-1673874245145]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: display
-              type: bool
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: false
-        ↓Field [steps.JsonFieldStep-1673874245148]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: maintainAspectRatio
-          type: bool
-          value: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: false
-        ↓responsive [steps.JsonFieldStep-1673874245151]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: responsive
-          type: bool
-          value: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: true
-      ↓Field [steps.JsonFieldStep-1674229757476]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: total
-      ↓ComputeDate [steps.SimpleStep-1674230150174]: 
-        expression: |
-          'String.prototype.replaceAll = function(search, replacement) {
-              var target = this;
-              return target.replace(new RegExp(search, ''g''), replacement);
-          };
-          
-          date_start = date_start.replaceAll(''-'', ''/'')
-          date_end = date_end.replaceAll(''-'', ''/'')
-          var date = date_start + '' - '' + date_end;'
-      ↓jElement_1 [steps.ElementStep-1674230150177]: 
-        expression: date
-        nodeName: date
     ↓jIf_3 [steps.IfStep-1673874426254]: 
       condition: synthese == 'gaz'
+      isEnabled: false
       ↓Object [steps.JsonObjectStep-1673874426257]: 
         key: 
           - xmlizable: 
@@ -686,89 +611,19 @@ responseExpiryDate: absolute,36000
                   - SmartType: 
                     - ↑mode: PLAIN
                     - →→: rgb(250, 150, 12)
-      ↓Object_1 [steps.JsonObjectStep-1673874426311]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: chartOptions
-        ↓Object [steps.JsonObjectStep-1673874426314]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: plugins
-          ↓Object [steps.JsonObjectStep-1673874426317]: 
-            key: 
-              - xmlizable: 
-                - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                - SmartType: 
-                  - ↑mode: PLAIN
-                  - →→: legend
-            ↓Field [steps.JsonFieldStep-1673874426320]: 
-              key: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: display
-              type: bool
-              value: 
-                - xmlizable: 
-                  - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-                  - SmartType: 
-                    - ↑mode: PLAIN
-                    - →→: false
-        ↓Field [steps.JsonFieldStep-1673874426323]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: maintainAspectRatio
-          type: bool
-          value: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: false
-        ↓responsive [steps.JsonFieldStep-1673874426326]: 
-          key: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: responsive
-          type: bool
-          value: 
-            - xmlizable: 
-              - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-              - SmartType: 
-                - ↑mode: PLAIN
-                - →→: true
-      ↓Field [steps.JsonFieldStep-1674229759148]: 
-        key: 
-          - xmlizable: 
-            - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType
-            - SmartType: 
-              - ↑mode: PLAIN
-              - →→: total
-      ↓ComputeDate [steps.SimpleStep-1674230152895]: 
-        expression: |
-          'String.prototype.replaceAll = function(search, replacement) {
-              var target = this;
-              return target.replace(new RegExp(search, ''g''), replacement);
-          };
-          
-          date_start = date_start.replaceAll(''-'', ''/'')
-          date_end = date_end.replaceAll(''-'', ''/'')
-          var date = date_start + '' - '' + date_end;'
-      ↓jElement_1 [steps.ElementStep-1674230152898]: 
-        expression: date
-        nodeName: date
+    ↓ComputeDate [steps.SimpleStep-1674230147587]: 
+      expression: |
+        'String.prototype.replaceAll = function(search, replacement) {
+            var target = this;
+            return target.replace(new RegExp(search, ''g''), replacement);
+        };
+        
+        date_start = date_start.replaceAll(''-'', ''/'')
+        date_end = date_end.replaceAll(''-'', ''/'')
+        var date = date_start + '' - '' + date_end;'
+    ↓jElement_1 [steps.ElementStep-1674230147590]: 
+      expression: date
+      nodeName: date
 ↓Object [steps.JsonObjectStep-1673860644285]: 
   isEnabled: false
   key: 
@@ -1047,12 +902,12 @@ responseExpiryDate: absolute,36000
     description: limit
     value: 20
   ↓sites [variables.TestCaseVariable-1673860487747]: 
-    value: '[14120, 7626]'
+    value: '[14120,14121,14123,13850,13851,13852,13854,13855]'
   ↓synthese [variables.TestCaseVariable-1673874186172]: 
     value: global
   ↓date_start [variables.TestCaseVariable-1674227855647]: 
     description: date_start
-    value: 2021-06-01
+    value: 2021-01-01
   ↓date_end [variables.TestCaseVariable-1674227855649]: 
     description: date_end
     value: 2023-01-01
