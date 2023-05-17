@@ -27,12 +27,18 @@ responseExpiryDate: absolute,3600
   expression: |
     'sites = JSON.parse(sites)
     var string = "";
-    for(var i = 0; i < sites.length; i++) {
-    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    var sitesLength = sites.length
+    //log.warn("sites length")
+    //log.warn(sitesLength)
+    
+    if (sitesLength > 0) {
+    	for(var i = 0; i < sitesLength -1; i++) {
+    		string += "''" + sites[i] + "'', "
+    	}
+    	string += "''" + sites[i] + "''"
     }
     
-    //log.warn(string)
-    '
+    //log.warn(string)'
 ↓jElement [steps.ElementStep-1673271074788]: 
   expression: string
   nodeName: sites
@@ -684,7 +690,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2023-02-28
   ↓sites [variables.TestCaseVariable-1675701758209]: 
-    value: '[7639,7642,7639,7642,7639,7642,7639,7642]'
+    value: '["7639","7642","7639","7642","7639","7642","7639","7642"]'
   ↓agg_function [variables.TestCaseVariable-1675701758212]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1675701758215]: 
@@ -697,7 +703,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-31
   ↓sites [variables.TestCaseVariable-1674226970905]: 
-    value: '[0]'
+    value: '["0"]'
   ↓agg_function [variables.TestCaseVariable-1674226970907]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1674226970909]: 
@@ -708,9 +714,9 @@ responseExpiryDate: absolute,3600
     value: 2022-02-06
   ↓date_end [variables.TestCaseVariable-1673865672817]: 
     description: date_end
-    value: 2023-02-06
+    value: 2023-05-06
   ↓sites [variables.TestCaseVariable-1673865672820]: 
-    value: '[7632,7634,7635,7636,7637,7638,7731]'
+    value: '["7632","7634","7635","7636","7637","7638","13856"]'
   ↓agg_function [variables.TestCaseVariable-1673865672823]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1673865672826]: 
@@ -723,7 +729,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1675419496700]: 
-    value: '[7991, 7626]'
+    value: '["7991","7626"]'
   ↓agg_function [variables.TestCaseVariable-1675419496703]: 
     value: week
   ↓synthese [variables.TestCaseVariable-1675419496706]: 
@@ -736,7 +742,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1675419498828]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1675419498831]: 
     value: year
   ↓synthese [variables.TestCaseVariable-1675419498834]: 
@@ -749,7 +755,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673867796554]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1673867796557]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1673867796560]: 
@@ -762,7 +768,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1675421074876]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1675421074879]: 
     value: week
   ↓synthese [variables.TestCaseVariable-1675421074882]: 
@@ -775,7 +781,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1675421115292]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1675421115295]: 
     value: year
   ↓synthese [variables.TestCaseVariable-1675421115298]: 
@@ -788,7 +794,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673271075176]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1673271075179]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1673865578130]: 
@@ -801,7 +807,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1675418218142]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1675418218145]: 
     value: week
   ↓synthese [variables.TestCaseVariable-1675418218148]: 
@@ -814,7 +820,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1675418257984]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1675418257987]: 
     value: year
   ↓synthese [variables.TestCaseVariable-1675418257990]: 

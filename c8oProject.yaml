@@ -2,7 +2,7 @@
 ↓energy_management [core.Project]: 
   comment: Convertigo NGX builder Project
   corsOrigin: =Origin
-  version: 0.9.4
+  version: 0.9.6
   ↓groups_sites [connectors.FullSyncConnector]: 🗏 connectors/groups_sites.yaml
   ↓postgreSQL [connectors.SqlConnector]: 🗏 connectors/postgreSQL.yaml
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
@@ -32,7 +32,6 @@
   ↓updateGroupAndAffiliations [sequences.GenericSequence]: 🗏 sequences/updateGroupAndAffiliations.yaml
   ↓widget_conso [sequences.GenericSequence]: 🗏 sequences/widget_conso.yaml
   ↓widget_conso_gauge [sequences.GenericSequence]: 🗏 sequences/widget_conso_gauge.yaml
-  ↓widget_conso_monosite_gaz_dju [sequences.GenericSequence]: 🗏 sequences/widget_conso_monosite_gaz_dju.yaml
   ↓widget_conso_total [sequences.GenericSequence]: 🗏 sequences/widget_conso_total.yaml
   ↓widget_evol_conso [sequences.GenericSequence]: 🗏 sequences/widget_evol_conso.yaml
   ↓widget_heatmap [sequences.GenericSequence]: 🗏 sequences/widget_heatmap.yaml

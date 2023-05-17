@@ -105,7 +105,6 @@
                     - SmartType: 
                       - ↑mode: PLAIN
                       - →→: id
-                type: number
                 value: 
                   - xmlizable: 
                     - ↑classname: com.twinsoft.convertigo.beans.steps.SmartType

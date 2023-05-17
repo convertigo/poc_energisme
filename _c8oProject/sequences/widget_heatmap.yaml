@@ -4,8 +4,15 @@ responseExpiryDate: absolute,36000
   expression: |
     'sites = JSON.parse(sites)
     var string = "";
-    for(var i = 0; i < sites.length; i++) {
-    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    var sitesLength = sites.length
+    //log.warn("sites length")
+    //log.warn(sitesLength)
+    
+    if (sitesLength > 0) {
+    	for(var i = 0; i < sitesLength -1; i++) {
+    		string += "''" + sites[i] + "'', "
+    	}
+    	string += "''" + sites[i] + "''"
     }
     
     //log.warn(string)'
@@ -594,9 +601,9 @@ responseExpiryDate: absolute,36000
   ↓date_start [variables.TestCaseVariable-1674135611570]: 
     value: 2021-01-01
   ↓date_end [variables.TestCaseVariable-1674135611572]: 
-    value: 2022-12-31
+    value: 2023-12-31
   ↓sites [variables.TestCaseVariable-1674135611574]: 
-    value: '[7626]'
+    value: '["13856"]'
 ↓elec1 [core.TestCase]: 
   ↓synthese [variables.TestCaseVariable-1674480673272]: 
     value: elec
@@ -605,4 +612,4 @@ responseExpiryDate: absolute,36000
   ↓date_end [variables.TestCaseVariable-1674480673278]: 
     value: 2023-01-24
   ↓sites [variables.TestCaseVariable-1674480673281]: 
-    value: '[7626]'
+    value: '["7626"]'

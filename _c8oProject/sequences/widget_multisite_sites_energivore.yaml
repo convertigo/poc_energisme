@@ -1,22 +1,21 @@
 ↓Input_variables [steps.InputVariablesStep-1673859488051]: 
 ↓buildCastStrings [steps.SimpleStep-1673860885424]: 
   expression: |
-    '//log.warn(sites)
-    sites = JSON.parse(sites)
-    var string = "";
-    for(var i = 0; i < sites.length; i++) {
-    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
-    }
+    'sites = JSON.parse(sites)
+    var string = "site_id IN (";
+    var sitesLength = sites.length
+    //log.warn("sites length")
+    //log.warn(sitesLength)
     
-    string = "site_id IN (" + string + ")"
-    filter_condition = string
-    //log.warn(string)
-    '
-↓jElement [steps.ElementStep-1673860885427]: 
-  expression: string
-  isEnabled: false
-  nodeName: sites
-  output: false
+    if (sitesLength > 0) {
+    	for(var i = 0; i < sitesLength -1; i++) {
+    		string += "''" + sites[i] + "'', "
+    	}
+    	string += "''" + sites[i] + "''"
+    }
+    string += '')''
+    var filter_condition = string
+    log.warn(filter_condition)'
 ↓jSimpleSource_1 [steps.SimpleSourceStep-1673874081247]: 
   sourceDefinition: 
     - xmlizable: 
@@ -860,7 +859,7 @@
     description: limit
     value: 20
   ↓sites [variables.TestCaseVariable-1674228124121]: 
-    value: '[0]'
+    value: '["0"]'
   ↓synthese [variables.TestCaseVariable-1674228124123]: 
     value: global
   ↓date_start [variables.TestCaseVariable-1674228124125]: 
@@ -874,7 +873,7 @@
     description: limit
     value: 20
   ↓sites [variables.TestCaseVariable-1673874265169]: 
-    value: '[14120, 14121]'
+    value: '["14120","13854"]'
   ↓synthese [variables.TestCaseVariable-1673874265172]: 
     value: elec
   ↓date_start [variables.TestCaseVariable-1674227861122]: 
@@ -888,7 +887,7 @@
     description: limit
     value: 20
   ↓sites [variables.TestCaseVariable-1673874437922]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓synthese [variables.TestCaseVariable-1673874437925]: 
     value: gaz
   ↓date_start [variables.TestCaseVariable-1674227859855]: 
@@ -902,7 +901,7 @@
     description: limit
     value: 20
   ↓sites [variables.TestCaseVariable-1673860487747]: 
-    value: '[14120,14121,14123,13850,13851,13852,13854,13855]'
+    value: '["14120","14121","14123","13850","13851","13852","13854","13855"]'
   ↓synthese [variables.TestCaseVariable-1673874186172]: 
     value: global
   ↓date_start [variables.TestCaseVariable-1674227855647]: 

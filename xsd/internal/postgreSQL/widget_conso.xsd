@@ -36,53 +36,42 @@
                     <xsd:appinfo>new variable</xsd:appinfo>
                 </xsd:annotation>
             </xsd:element>
+            <xsd:element name="raw_data_table" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>new variable</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sensor_mapping_table" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>sensor_mapping_table</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL_widget_conso_document_sql_output_row_sum_conso_gazType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute default="string" name="type" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="postgreSQL_widget_conso_document_sql_output_row_sum_conso_elecType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute default="string" name="type" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="postgreSQL_widget_conso_document_sql_output_row_sum_djuType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute default="string" name="type" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="postgreSQL_widget_conso_document_sql_output_row_agg_periodType">
-        <xsd:simpleContent>
-            <xsd:extension base="xsd:string">
-                <xsd:attribute default="string" name="type" type="xsd:string"/>
-            </xsd:extension>
-        </xsd:simpleContent>
-    </xsd:complexType>
-    <xsd:complexType name="postgreSQL_widget_conso_document_sql_output_rowType">
+    <xsd:complexType name="postgreSQL_widget_conso_document_errorType">
         <xsd:sequence>
-            <xsd:element minOccurs="0" name="sum_conso_gaz" type="energy_management_ns:postgreSQL_widget_conso_document_sql_output_row_sum_conso_gazType"/>
-            <xsd:element minOccurs="0" name="sum_conso_elec" type="energy_management_ns:postgreSQL_widget_conso_document_sql_output_row_sum_conso_elecType"/>
-            <xsd:element minOccurs="0" name="sum_dju" type="energy_management_ns:postgreSQL_widget_conso_document_sql_output_row_sum_djuType"/>
-            <xsd:element minOccurs="0" name="agg_period" type="energy_management_ns:postgreSQL_widget_conso_document_sql_output_row_agg_periodType"/>
+            <xsd:element minOccurs="0" name="code" type="xsd:byte"/>
+            <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="details" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="context" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="exception" type="xsd:string"/>
+            <xsd:element minOccurs="0" name="stacktrace" type="xsd:string"/>
         </xsd:sequence>
-        <xsd:attribute default="object" name="type" type="xsd:string"/>
+        <xsd:attribute name="connector" type="xsd:string"/>
+        <xsd:attribute name="project" type="xsd:string"/>
+        <xsd:attribute name="transaction" type="xsd:string"/>
+        <xsd:attribute default="string" name="type" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="postgreSQL_widget_conso_document_sql_outputType">
-        <xsd:sequence>
-            <xsd:element maxOccurs="unbounded" minOccurs="0" name="row" type="energy_management_ns:postgreSQL_widget_conso_document_sql_output_rowType"/>
-        </xsd:sequence>
-        <xsd:attribute default="array" name="type" type="xsd:string"/>
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute default="array" name="type" type="xsd:string"/>
+            </xsd:extension>
+        </xsd:simpleContent>
     </xsd:complexType>
     <xsd:complexType name="postgreSQL__widget_consoResponseData">
         <xsd:sequence>
+            <xsd:element minOccurs="0" name="error" type="energy_management_ns:postgreSQL_widget_conso_document_errorType"/>
             <xsd:element minOccurs="0" name="sql_output" type="energy_management_ns:postgreSQL_widget_conso_document_sql_outputType"/>
             <xsd:element minOccurs="0" name="error" type="energy_management_ns:ConvertigoError"/>
         </xsd:sequence>

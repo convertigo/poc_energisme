@@ -1,5 +1,3 @@
-clientCachable: true
-responseExpiryDate: absolute,3600
 ↓Input_variables [steps.InputVariablesStep-1676489530511]: 
 ↓jSimpleSource [steps.SimpleSourceStep-1676489530514]: 
   sourceDefinition: 
@@ -36,12 +34,16 @@ responseExpiryDate: absolute,3600
 ↓buildCastStrings [steps.SimpleStep-1676489530520]: 
   expression: |
     'sites = JSON.parse(sites)
-    var sitesStr = "";
+    var string = "";
     var sitesLength = sites.length
     //log.warn("sites length")
     //log.warn(sitesLength)
-    for(var i = 0; i < sites.length; i++) {
-    	sitesStr += "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    
+    if (sitesLength > 0) {
+    	for(var i = 0; i < sitesLength -1; i++) {
+    		string += "''" + sites[i] + "'', "
+    	}
+    	string += "''" + sites[i] + "''"
     }
     
     //log.warn(string)'
@@ -55,7 +57,7 @@ responseExpiryDate: absolute,3600
     //log.error('lastYear')
     //log.error(last_year)
 ↓jElement [steps.ElementStep-1676489530523]: 
-  expression: sitesStr
+  expression: string
   nodeName: sites
   output: false
 ↓jElement_1 [steps.ElementStep-1676492685230]: 
@@ -885,7 +887,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2023-02-16
   ↓sites [variables.TestCaseVariable-1676489531092]: 
-    value: '[7633,7634,7635,7636,7637,7638,7639,7640,7641,7642,7643,7644,7645,7639,7642,7645,7632,7633,7634,7635,7636,7637,7731,7632,7633,7634,7635,7636,7637,7638,7639,7640,7641,7642,7643,7644,7645,7646,7647,7648,7649,7650,7651,7652,7653,7654,7655,7656,7657,7658,7659,7660,7661,7662,7663,7664,7665,7666,7667,7668,7669,7670,7671,7672,7673,7674,7675,7676,7677,7678,7679,7680,7681,7682,7683,7684,7685,7686,7687,7688,7689,7690,7691,7692,7693,7694,7695,7696,7697,7698,7699,7700,7701,7702,7704,7705,7706,7707,7708,7709,7710,7711,7731,7636,7634,7639,7654,7655,7656,7635,7639]'
+    value: '["7633","7634","7635","7636","7637","7638","7639","7640","7641","7642","7643","7644","7645","7639","7642","7645","7632","7633","7634","7635","7636","7637","7731","7632","7633","7634","7635","7636","7637","7638","7639","7640","7641","7642","7643","7644","7645","7646","7647","7648","7649","7650","7651","7652","7653","7654","7655","7656"]'
   ↓agg_function [variables.TestCaseVariable-1676489531095]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1676489531098]: 
@@ -898,9 +900,9 @@ responseExpiryDate: absolute,3600
     value: 2021-01-01
   ↓date_end [variables.TestCaseVariable-1676489531201]: 
     description: date_end
-    value: 2022-12-01
+    value: 2023-12-01
   ↓sites [variables.TestCaseVariable-1676489531204]: 
-    value: '[7991, 7626]'
+    value: '["13854", "13855"]'
   ↓agg_function [variables.TestCaseVariable-1676489531207]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1676489531210]: 
@@ -913,7 +915,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1676489531220]: 
-    value: '[7991, 7626]'
+    value: '["7991","7626"]'
   ↓agg_function [variables.TestCaseVariable-1676489531223]: 
     value: week
   ↓synthese [variables.TestCaseVariable-1676489531226]: 
@@ -926,7 +928,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1676548984315]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓agg_function [variables.TestCaseVariable-1676548984318]: 
     value: month
   ↓synthese [variables.TestCaseVariable-1676548984321]: 

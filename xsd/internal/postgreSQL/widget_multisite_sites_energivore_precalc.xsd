@@ -1,34 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:energy_management_ns="http://www.convertigo.com/convertigo/projects/energy_management" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.convertigo.com/convertigo/projects/energy_management">
-    <xsd:element name="postgreSQL__get_site" type="energy_management_ns:postgreSQL__get_siteRequestData">
+    <xsd:element name="postgreSQL__widget_multisite_sites_energivore_precalc" type="energy_management_ns:postgreSQL__widget_multisite_sites_energivore_precalcRequestData">
         <xsd:annotation/>
     </xsd:element>
-    <xsd:element name="postgreSQL__get_siteResponse">
+    <xsd:element name="postgreSQL__widget_multisite_sites_energivore_precalcResponse">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="response" type="energy_management_ns:postgreSQL__get_siteResponseData"/>
+                <xsd:element name="response" type="energy_management_ns:postgreSQL__widget_multisite_sites_energivore_precalcResponseData"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:complexType name="postgreSQL__get_siteResponseType">
+    <xsd:complexType name="postgreSQL__widget_multisite_sites_energivore_precalcResponseType">
         <xsd:sequence>
-            <xsd:element name="document" type="energy_management_ns:postgreSQL__get_siteResponseData"/>
+            <xsd:element name="document" type="energy_management_ns:postgreSQL__widget_multisite_sites_energivore_precalcResponseData"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__get_siteRequestData">
+    <xsd:complexType name="postgreSQL__widget_multisite_sites_energivore_precalcRequestData">
         <xsd:sequence>
-            <xsd:element name="site_id" type="xsd:string">
+            <xsd:element name="limit" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:appinfo>new variable</xsd:appinfo>
+                    <xsd:appinfo>limit</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="filter_condition" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>filter_condition</xsd:appinfo>
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="site_table" type="xsd:string">
                 <xsd:annotation>
-                    <xsd:appinfo>new variable</xsd:appinfo>
+                    <xsd:appinfo>site_table</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="date_start" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>date_start</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="date_end" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>date_end</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="sum_conso_by_site_table" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>sum_conso_by_site_table</xsd:appinfo>
+                </xsd:annotation>
+            </xsd:element>
+            <xsd:element name="filter_condition_conso" type="xsd:string">
+                <xsd:annotation>
+                    <xsd:appinfo>filter_condition_conso</xsd:appinfo>
                 </xsd:annotation>
             </xsd:element>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:complexType name="postgreSQL__get_siteResponseData">
+    <xsd:complexType name="postgreSQL__widget_multisite_sites_energivore_precalcResponseData">
         <xsd:all>
             <xsd:element minOccurs="0" name="error" type="energy_management_ns:ConvertigoError"/>
         </xsd:all>

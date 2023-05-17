@@ -3,12 +3,17 @@ responseExpiryDate: absolute,3600
 ↓Input_variables [steps.InputVariablesStep-1673276340023]: 
 ↓buildCastStrings [steps.SimpleStep-1673276451923]: 
   expression: |
-    'log.warn(sites)
-    sites = JSON.parse(sites)
-    var sitesLength = sites.length;
+    'sites = JSON.parse(sites)
     var string = "";
-    for(var i = 0; i < sites.length; i++) {
-    	string = string + "CAST(''"+sites[i]+"'' AS BIGINT)" + ((i != sites.length - 1) ? ", " : "")
+    var sitesLength = sites.length
+    //log.warn("sites length")
+    //log.warn(sitesLength)
+    
+    if (sitesLength > 0) {
+    	for(var i = 0; i < sitesLength -1; i++) {
+    		string += "''" + sites[i] + "'', "
+    	}
+    	string += "''" + sites[i] + "''"
     }
     
     //log.warn(string)'
@@ -1035,7 +1040,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2023-06-01
   ↓sites [variables.TestCaseVariable-1673863900705]: 
-    value: '[14123]'
+    value: '["14123"]'
   ↓synthese [variables.TestCaseVariable-1673863900708]: 
     value: gaz
 ↓error [core.TestCase]: 
@@ -1046,7 +1051,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-31
   ↓sites [variables.TestCaseVariable-1674227220022]: 
-    value: '[13850,14121,14122,14123]'
+    value: '["13850","14121","14122","14123"]'
   ↓synthese [variables.TestCaseVariable-1674227220024]: 
     value: global
 ↓gazMultisite [core.TestCase]: 
@@ -1057,7 +1062,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673864082289]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓synthese [variables.TestCaseVariable-1673864082292]: 
     value: gaz
 ↓globalMultisite [core.TestCase]: 
@@ -1068,7 +1073,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673863588995]: 
-    value: '[7991, 7626]'
+    value: '["7991", "7626"]'
   ↓synthese [variables.TestCaseVariable-1673863588997]: 
     value: global
 ↓monositeGaz [core.TestCase]: 
@@ -1079,7 +1084,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2023-12-01
   ↓sites [variables.TestCaseVariable-1675075291387]: 
-    value: '[7731]'
+    value: '["7731"]'
   ↓synthese [variables.TestCaseVariable-1675075291389]: 
     value: gaz
 ↓Test_Case [core.TestCase]: 
@@ -1090,7 +1095,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673276404572]: 
-    value: '[7991, 7626]'
+    value: '["7991","7626"]'
 ↓Test_Case1 [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673454551000]: 
     description: date_start
@@ -1099,7 +1104,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673454551006]: 
-    value: '[7632, 7634, 7635, 7636, 7637, 7638, 7731]'
+    value: '["7632", "7634", "7635", "7636", "7637", "7638", "7731"]'
 ↓Test_Case2 [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1673454701849]: 
     description: date_start
@@ -1108,7 +1113,7 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-01
   ↓sites [variables.TestCaseVariable-1673454701855]: 
-    value: '[7731]'
+    value: '["7731"]'
 ↓Test_Case_1 [core.TestCase]: 
   ↓date_start [variables.TestCaseVariable-1674223973468]: 
     description: date_start
@@ -1117,6 +1122,6 @@ responseExpiryDate: absolute,3600
     description: date_end
     value: 2022-12-31
   ↓sites [variables.TestCaseVariable-1674223973472]: 
-    value:  [13850,14121,14122,14123]
+    value:  ["13850","14121","14122","14123"]
   ↓synthese [variables.TestCaseVariable-1674223973474]: 
     value: global

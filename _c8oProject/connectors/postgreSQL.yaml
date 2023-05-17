@@ -9,7 +9,7 @@ testOnBorrow: true
   sqlQuery: |
     SELECT id, nom, com_cp, structure_insee, public.ST_X("position") as latitude, public.ST_Y("position") as longitude, country, typology, total_area_m2, year_of_construction
     FROM {{site_table}} s 
-    WHERE s.id = CAST({site_id} AS BIGINT);
+    WHERE s.id = '{site_id}';
     
   handlers: 
     →: |
@@ -24,7 +24,7 @@ testOnBorrow: true
       }'
   ↓Test_Case [core.TestCase]: 
     ↓site_id [variables.TestCaseVariable-1672148194989]: 
-      value: 7731
+      value: 14120
     ↓site_table [variables.TestCaseVariable-1674652186354]: 
       value: ${energy_management.sites_table}
   ↓site_id [variables.RequestableVariable-1672148077216]: 
@@ -49,14 +49,14 @@ testOnBorrow: true
   ↓Test_Case [core.TestCase]: 
     ↓filter_condition [variables.TestCaseVariable-1673962883661]: 
       description: filter_condition
-      value: WHERE s.id IN (CAST('7632' AS BIGINT), CAST('7634' AS BIGINT), CAST('7635' AS BIGINT), CAST('7636' AS BIGINT), CAST('7637' AS BIGINT), CAST('7638' AS BIGINT), CAST('7731' AS BIGINT))
+      value: WHERE s.id IN ('7632','7634','7635','7636','7637','7638','14120')
   ↓Test_Case_all_sites [core.TestCase]: 
     ↓filter_condition [variables.TestCaseVariable-1673885180239]: 
       description: filter_condition
   ↓Test_Case_sites_subset [core.TestCase]: 
     ↓filter_condition [variables.TestCaseVariable-1673885138036]: 
       description: filter_condition
-      value: WHERE s.id IN (CAST('14122' AS BIGINT), CAST('13858' AS BIGINT))
+      value: WHERE s.id IN ('14122','13858')
   ↓filter_condition [variables.RequestableVariable-1673885109667]: 
     description: filter_condition
   ↓site_table [variables.RequestableVariable-1674049074082]: 
@@ -132,7 +132,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-02-28
     ↓sites [variables.TestCaseVariable-1676454377914]: 
-      value: CAST('7991' AS BIGINT)
+      value: '''7991'''
     ↓agg_function [variables.TestCaseVariable-1676454377917]: 
       value: YYYY-WW
   ↓Test_Case_Monosite_evolution_conso_agg_annee [core.TestCase]: 
@@ -143,7 +143,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672928023872]: 
-      value: CAST('14120' AS BIGINT)
+      value: '''14120'''
     ↓agg_function [variables.TestCaseVariable-1672928023875]: 
       value: YYYY
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
@@ -154,7 +154,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-01-30
     ↓sites [variables.TestCaseVariable-1672928243859]: 
-      value: CAST('7626' AS BIGINT)
+      value: '''7626'''
     ↓agg_function [variables.TestCaseVariable-1672928243862]: 
       value: YYYY-MM
   ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
@@ -165,7 +165,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672928700579]: 
-      value: CAST('7991' AS BIGINT)
+      value: '''7991'''
     ↓agg_function [variables.TestCaseVariable-1672928700582]: 
       value: YYYY-WW
   ↓Test_Case_Multisite_evolution_conso_agg_annee [core.TestCase]: 
@@ -176,7 +176,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672927932952]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1672927932955]: 
       value: YYYY
   ↓Test_Case_Multisite_evolution_conso_agg_heure [core.TestCase]: 
@@ -187,7 +187,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1675692369454]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1675692369457]: 
       value: YYYY-MM-DD HH:00
   ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
@@ -198,7 +198,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1673943744640]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1673943744643]: 
       value: YYYY-MM-DD
   ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
@@ -209,7 +209,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672914161729]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1672914161732]: 
       value: YYYY-MM
   ↓Test_Case_Multisite_evolution_conso_agg_semaine [core.TestCase]: 
@@ -220,7 +220,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672927548934]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1672927548937]: 
       value: YYYY-WW
   ↓date_start [variables.RequestableVariable-1672914161735]: 
@@ -274,7 +274,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-02-28
     ↓sites [variables.TestCaseVariable-1679557685912]: 
-      value: CAST('7991' AS BIGINT)
+      value: '''7991'''
     ↓agg_function [variables.TestCaseVariable-1679557685915]: 
       value: YYYY-WW
   ↓Test_Case_Monosite_evolution_conso_agg_annee [core.TestCase]: 
@@ -285,7 +285,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557685925]: 
-      value: CAST('14120' AS BIGINT)
+      value: '''14120'''
     ↓agg_function [variables.TestCaseVariable-1679557685928]: 
       value: YYYY
   ↓Test_Case_Monosite_evolution_conso_agg_mois [core.TestCase]: 
@@ -296,7 +296,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-01-30
     ↓sites [variables.TestCaseVariable-1679557685938]: 
-      value: CAST('14120' AS BIGINT)
+      value: '''14120'''
     ↓agg_function [variables.TestCaseVariable-1679557685941]: 
       value: YYYY-MM
   ↓Test_Case_Monosite_evolution_conso_agg_semaine [core.TestCase]: 
@@ -307,7 +307,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557685951]: 
-      value: CAST('14120' AS BIGINT)
+      value: '''14120'''
     ↓agg_function [variables.TestCaseVariable-1679557685954]: 
       value: YYYY-WW
   ↓Test_Case_Multisite_evolution_conso_agg_annee [core.TestCase]: 
@@ -318,7 +318,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557685964]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1679557685967]: 
       value: YYYY
   ↓Test_Case_Multisite_evolution_conso_agg_heure [core.TestCase]: 
@@ -329,7 +329,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557685977]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1679557685980]: 
       value: YYYY-MM-DD HH:00
   ↓Test_Case_Multisite_evolution_conso_agg_jour [core.TestCase]: 
@@ -340,7 +340,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557685990]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1679557685993]: 
       value: YYYY-MM-DD
   ↓Test_Case_Multisite_evolution_conso_agg_mois [core.TestCase]: 
@@ -351,7 +351,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557686003]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1679557686006]: 
       value: YYYY-MM
   ↓Test_Case_Multisite_evolution_conso_agg_semaine [core.TestCase]: 
@@ -362,7 +362,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557686016]: 
-      value: CAST('7991' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''7991'',''7626'''
     ↓agg_function [variables.TestCaseVariable-1679557686019]: 
       value: YYYY-WW
   ↓date_start [variables.RequestableVariable-1679557686022]: 
@@ -406,7 +406,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1672914161755]: 
-      value: CAST('7731' AS BIGINT)
+      value: '''7731'''
   ↓date_start [variables.RequestableVariable-1672914161758]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1672914161761]: 
@@ -454,7 +454,7 @@ testOnBorrow: true
       description: date_end
       value: 2022-12-01
     ↓sites [variables.TestCaseVariable-1679557704825]: 
-      value: CAST('13951' AS BIGINT)
+      value: '''13951'''
   ↓date_start [variables.RequestableVariable-1679557704828]: 
     description: date_start
   ↓date_end [variables.RequestableVariable-1679557704831]: 
@@ -510,7 +510,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-01-01
     ↓sites [variables.TestCaseVariable-1676488532882]: 
-      value: CAST('7626' AS BIGINT)
+      value: '''7626'''
     ↓agg_function [variables.TestCaseVariable-1676488532885]: 
       value: MM
     ↓raw_data_table [variables.TestCaseVariable-1676489262177]: 
@@ -530,7 +530,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-01-01
     ↓sites [variables.TestCaseVariable-1676489382685]: 
-      value: CAST('7626' AS BIGINT)
+      value: '''7626'''
     ↓agg_function [variables.TestCaseVariable-1676489382688]: 
       value: WW
     ↓raw_data_table [variables.TestCaseVariable-1676489382691]: 
@@ -615,7 +615,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-01-01
     ↓sites [variables.TestCaseVariable-1679557715616]: 
-      value: CAST('14120' AS BIGINT)
+      value: '''14120'''
     ↓agg_function [variables.TestCaseVariable-1679557715619]: 
       value: MM
     ↓raw_data_table [variables.TestCaseVariable-1679557715622]: 
@@ -635,7 +635,7 @@ testOnBorrow: true
       description: date_end
       value: 2023-01-01
     ↓sites [variables.TestCaseVariable-1679557715641]: 
-      value: CAST('7626' AS BIGINT)
+      value: '''7626'''
     ↓agg_function [variables.TestCaseVariable-1679557715644]: 
       value: WW
     ↓raw_data_table [variables.TestCaseVariable-1679557715647]: 
@@ -693,7 +693,7 @@ testOnBorrow: true
     ↓date_end [variables.TestCaseVariable-1672914161775]: 
       value: 2022-12-31
     ↓sites [variables.TestCaseVariable-1672914161778]: 
-      value: CAST('14122' AS BIGINT), CAST('7626' AS BIGINT)
+      value: '''14122'',''7626'''
   ↓synthese [variables.RequestableVariable-1672914161781]: 
   ↓date_start [variables.RequestableVariable-1672914161784]: 
   ↓date_end [variables.RequestableVariable-1672914161787]: 
@@ -748,7 +748,7 @@ testOnBorrow: true
       value: 20
     ↓filter_condition [variables.TestCaseVariable-1673888105777]: 
       description: filter_condition
-      value: AND sm.site_id IN (CAST('7626' AS BIGINT))
+      value: AND sm.site_id IN ('14120')
     ↓raw_data_table [variables.TestCaseVariable-1674226345346]: 
       value: ${energy_management.raw_data_table}
     ↓sensor_mapping_table [variables.TestCaseVariable-1674226345348]: 
@@ -827,7 +827,7 @@ testOnBorrow: true
       value: 20
     ↓filter_condition [variables.TestCaseVariable-1680533344806]: 
       description: filter_condition
-      value: site_id IN (CAST('14120' AS BIGINT))
+      value: site_id IN ('14120')
     ↓date_start [variables.TestCaseVariable-1680533344809]: 
       description: date_start
       value: 2021-01-01
@@ -843,7 +843,7 @@ testOnBorrow: true
       value: 20
     ↓filter_condition [variables.TestCaseVariable-1679557794050]: 
       description: filter_condition
-      value: site_id IN (CAST('14120' AS BIGINT))
+      value: site_id IN ('14120')
     ↓date_start [variables.TestCaseVariable-1679557794062]: 
       description: date_start
       value: 2021-01-01
